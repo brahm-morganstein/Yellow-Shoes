@@ -1,0 +1,586 @@
+{% doc %}
+  @prompt
+    Can you give me an optimized countdown timer section at the top of my page for our Free Shipping - Limted Time Only. I need to be abel to add both english header, sub header text. And I want a countdown clock whcih ends 10-19-2025 at 23:59pm It should have red background matching C20000, and white text. , can you make it look stylized maybe with a gradient effect, and give me options to add french language directly in the section. , how come we don't see the backgroudn colour ?, on mobile the countdown timer clock goes on two lines, can we stylize this to fit on one row nicely
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-countdown-timer-{{ ai_gen_id }} {
+    {% if block.settings.enable_gradient %}
+      background: linear-gradient(
+        {{ block.settings.gradient_angle }}deg,
+        {{ block.settings.gradient_start }} 0%,
+        {{ block.settings.gradient_middle }} 50%,
+        {{ block.settings.gradient_end }} 100%
+      ) !important;
+    {% else %}
+      background: {{ block.settings.gradient_start }} !important;
+    {% endif %}
+    color: {{ block.settings.text_color }} !important;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ai-countdown-timer-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    animation: ai-countdown-shine-{{ ai_gen_id }} 3s infinite;
+    pointer-events: none;
+  }
+
+  @keyframes ai-countdown-shine-{{ ai_gen_id }} {
+    0% {
+      left: -100%;
+    }
+    50%, 100% {
+      left: 100%;
+    }
+  }
+
+  .ai-countdown-timer__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-countdown-timer__header-{{ ai_gen_id }} {
+    font-size: {{ block.settings.header_size }}px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-countdown-timer__subheader-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheader_size }}px;
+    margin: 0;
+    line-height: 1.4;
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-countdown-timer__clock-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .ai-countdown-timer__unit-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .ai-countdown-timer__number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.number_size }}px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-countdown-timer__label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_size }}px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    opacity: 0.9;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-countdown-timer__separator-{{ ai_gen_id }} {
+    font-size: {{ block.settings.number_size }}px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.7;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-countdown-timer__expired-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheader_size }}px;
+    font-weight: 600;
+    padding: 8px 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    color: {{ block.settings.text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-countdown-timer-{{ ai_gen_id }} {
+      padding: 14px 10px;
+    }
+
+    .ai-countdown-timer__container-{{ ai_gen_id }} {
+      gap: 8px;
+    }
+
+    .ai-countdown-timer__header-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.header_size }}px * 0.7);
+    }
+
+    .ai-countdown-timer__subheader-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subheader_size }}px * 0.8);
+    }
+
+    .ai-countdown-timer__clock-{{ ai_gen_id }} {
+      gap: 6px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .ai-countdown-timer__unit-{{ ai_gen_id }} {
+      min-width: 0;
+      flex: 1;
+      padding: 8px 4px;
+      border-radius: 6px;
+    }
+
+    .ai-countdown-timer__number-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.number_size }}px * 0.55);
+      margin-bottom: 4px;
+    }
+
+    .ai-countdown-timer__label-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.label_size }}px * 0.75);
+      letter-spacing: 0.3px;
+    }
+
+    .ai-countdown-timer__separator-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.number_size }}px * 0.55);
+      flex-shrink: 0;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .ai-countdown-timer__clock-{{ ai_gen_id }} {
+      gap: 4px;
+    }
+
+    .ai-countdown-timer__unit-{{ ai_gen_id }} {
+      padding: 6px 2px;
+    }
+
+    .ai-countdown-timer__separator-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.number_size }}px * 0.5);
+    }
+  }
+{% endstyle %}
+
+<countdown-timer-{{ ai_gen_id }}
+  class="ai-countdown-timer-{{ ai_gen_id }}"
+  data-end-date="{{ block.settings.end_date }}"
+  data-end-time="{{ block.settings.end_time }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-countdown-timer__container-{{ ai_gen_id }}">
+    {% if block.settings.language == 'en' %}
+      {% if block.settings.header_en != blank %}
+        <h2 class="ai-countdown-timer__header-{{ ai_gen_id }}">
+          {{ block.settings.header_en }}
+        </h2>
+      {% endif %}
+
+      {% if block.settings.subheader_en != blank %}
+        <p class="ai-countdown-timer__subheader-{{ ai_gen_id }}">
+          {{ block.settings.subheader_en }}
+        </p>
+      {% endif %}
+    {% else %}
+      {% if block.settings.header_fr != blank %}
+        <h2 class="ai-countdown-timer__header-{{ ai_gen_id }}">
+          {{ block.settings.header_fr }}
+        </h2>
+      {% endif %}
+
+      {% if block.settings.subheader_fr != blank %}
+        <p class="ai-countdown-timer__subheader-{{ ai_gen_id }}">
+          {{ block.settings.subheader_fr }}
+        </p>
+      {% endif %}
+    {% endif %}
+
+    <div class="ai-countdown-timer__clock-{{ ai_gen_id }}" data-countdown-display>
+      <div class="ai-countdown-timer__unit-{{ ai_gen_id }}">
+        <div class="ai-countdown-timer__number-{{ ai_gen_id }}" data-days>00</div>
+        <div class="ai-countdown-timer__label-{{ ai_gen_id }}">
+          {% if block.settings.language == 'en' %}
+            {{ block.settings.days_label_en }}
+          {% else %}
+            {{ block.settings.days_label_fr }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="ai-countdown-timer__separator-{{ ai_gen_id }}">:</div>
+      <div class="ai-countdown-timer__unit-{{ ai_gen_id }}">
+        <div class="ai-countdown-timer__number-{{ ai_gen_id }}" data-hours>00</div>
+        <div class="ai-countdown-timer__label-{{ ai_gen_id }}">
+          {% if block.settings.language == 'en' %}
+            {{ block.settings.hours_label_en }}
+          {% else %}
+            {{ block.settings.hours_label_fr }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="ai-countdown-timer__separator-{{ ai_gen_id }}">:</div>
+      <div class="ai-countdown-timer__unit-{{ ai_gen_id }}">
+        <div class="ai-countdown-timer__number-{{ ai_gen_id }}" data-minutes>00</div>
+        <div class="ai-countdown-timer__label-{{ ai_gen_id }}">
+          {% if block.settings.language == 'en' %}
+            {{ block.settings.minutes_label_en }}
+          {% else %}
+            {{ block.settings.minutes_label_fr }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="ai-countdown-timer__separator-{{ ai_gen_id }}">:</div>
+      <div class="ai-countdown-timer__unit-{{ ai_gen_id }}">
+        <div class="ai-countdown-timer__number-{{ ai_gen_id }}" data-seconds>00</div>
+        <div class="ai-countdown-timer__label-{{ ai_gen_id }}">
+          {% if block.settings.language == 'en' %}
+            {{ block.settings.seconds_label_en }}
+          {% else %}
+            {{ block.settings.seconds_label_fr }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-countdown-timer__expired-{{ ai_gen_id }}" data-expired-message style="display: none;">
+      {% if block.settings.language == 'en' %}
+        {{ block.settings.expired_message_en }}
+      {% else %}
+        {{ block.settings.expired_message_fr }}
+      {% endif %}
+    </div>
+  </div>
+</countdown-timer-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CountdownTimer{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.endDate = this.dataset.endDate;
+        this.endTime = this.dataset.endTime;
+        this.countdownDisplay = this.querySelector('[data-countdown-display]');
+        this.expiredMessage = this.querySelector('[data-expired-message]');
+        this.daysEl = this.querySelector('[data-days]');
+        this.hoursEl = this.querySelector('[data-hours]');
+        this.minutesEl = this.querySelector('[data-minutes]');
+        this.secondsEl = this.querySelector('[data-seconds]');
+        this.interval = null;
+      }
+
+      connectedCallback() {
+        if (!this.endDate || !this.endTime) {
+          return;
+        }
+
+        this.startCountdown();
+      }
+
+      disconnectedCallback() {
+        if (this.interval) {
+          clearInterval(this.interval);
+        }
+      }
+
+      startCountdown() {
+        this.updateCountdown();
+        this.interval = setInterval(() => {
+          this.updateCountdown();
+        }, 1000);
+      }
+
+      updateCountdown() {
+        const endDateTime = new Date(this.endDate + 'T' + this.endTime).getTime();
+        const now = new Date().getTime();
+        const distance = endDateTime - now;
+
+        if (distance < 0) {
+          clearInterval(this.interval);
+          this.countdownDisplay.style.display = 'none';
+          this.expiredMessage.style.display = 'block';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        this.daysEl.textContent = String(days).padStart(2, '0');
+        this.hoursEl.textContent = String(hours).padStart(2, '0');
+        this.minutesEl.textContent = String(minutes).padStart(2, '0');
+        this.secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    customElements.define('countdown-timer-{{ ai_gen_id }}', CountdownTimer{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Countdown timer",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Language"
+    },
+    {
+      "type": "select",
+      "id": "language",
+      "label": "Language",
+      "options": [
+        {
+          "value": "en",
+          "label": "English"
+        },
+        {
+          "value": "fr",
+          "label": "French"
+        }
+      ],
+      "default": "en"
+    },
+    {
+      "type": "header",
+      "content": "English content"
+    },
+    {
+      "type": "text",
+      "id": "header_en",
+      "label": "Header",
+      "default": "Free Shipping - Limited Time Only"
+    },
+    {
+      "type": "text",
+      "id": "subheader_en",
+      "label": "Subheader",
+      "default": "Offer ends soon! Don't miss out."
+    },
+    {
+      "type": "text",
+      "id": "expired_message_en",
+      "label": "Expired message",
+      "default": "This offer has ended."
+    },
+    {
+      "type": "text",
+      "id": "days_label_en",
+      "label": "Days label",
+      "default": "Days"
+    },
+    {
+      "type": "text",
+      "id": "hours_label_en",
+      "label": "Hours label",
+      "default": "Hours"
+    },
+    {
+      "type": "text",
+      "id": "minutes_label_en",
+      "label": "Minutes label",
+      "default": "Minutes"
+    },
+    {
+      "type": "text",
+      "id": "seconds_label_en",
+      "label": "Seconds label",
+      "default": "Seconds"
+    },
+    {
+      "type": "header",
+      "content": "French content"
+    },
+    {
+      "type": "text",
+      "id": "header_fr",
+      "label": "Header",
+      "default": "Livraison Gratuite - Offre Limitée"
+    },
+    {
+      "type": "text",
+      "id": "subheader_fr",
+      "label": "Subheader",
+      "default": "L'offre se termine bientôt! Ne manquez pas cette occasion."
+    },
+    {
+      "type": "text",
+      "id": "expired_message_fr",
+      "label": "Expired message",
+      "default": "Cette offre est terminée."
+    },
+    {
+      "type": "text",
+      "id": "days_label_fr",
+      "label": "Days label",
+      "default": "Jours"
+    },
+    {
+      "type": "text",
+      "id": "hours_label_fr",
+      "label": "Hours label",
+      "default": "Heures"
+    },
+    {
+      "type": "text",
+      "id": "minutes_label_fr",
+      "label": "Minutes label",
+      "default": "Minutes"
+    },
+    {
+      "type": "text",
+      "id": "seconds_label_fr",
+      "label": "Seconds label",
+      "default": "Secondes"
+    },
+    {
+      "type": "header",
+      "content": "Countdown settings"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End date",
+      "default": "2025-10-19",
+      "info": "Format: YYYY-MM-DD"
+    },
+    {
+      "type": "text",
+      "id": "end_time",
+      "label": "End time",
+      "default": "23:59",
+      "info": "Format: HH:MM (24-hour format)"
+    },
+    {
+      "type": "header",
+      "content": "Gradient"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gradient",
+      "label": "Enable gradient",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Start color",
+      "default": "#C20000"
+    },
+    {
+      "type": "color",
+      "id": "gradient_middle",
+      "label": "Middle color",
+      "default": "#8B0000"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "End color",
+      "default": "#C20000"
+    },
+    {
+      "type": "range",
+      "id": "gradient_angle",
+      "min": 0,
+      "max": 360,
+      "step": 10,
+      "unit": "deg",
+      "label": "Gradient angle",
+      "default": 90
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "header_size",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Header size",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "subheader_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheader size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "number_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Number size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 11
+    }
+  ],
+  "presets": [
+    {
+      "name": "Countdown timer"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+<script>
+  
+document.addEventListener('on:cart:add', async (event) => {
+  let dataLayer = window.dataLayer || [];
+  console.log(event)
+  let variantId = event.detail.variantId;
+  let quantity = $(event.target).find("#quantity").val();
+  // console.log(variantId)
+  // console.log(quantity)
+  let response = await fetch('/cart.js');
+  let cart = await response.json();
+  if(response.ok && cart){
+    //console.log(cart)
+    const item = cart.items.find((_item) => _item.id == variantId);
+    let _event = {
+      'event':     'add_to_cart',
+      'ecommerce': {
+        'currency': 'CAD',
+        'value':    item.final_price / 100,
+        'items':    [
+          {
+            'item_id':   item.id,
+            'item_name': item.title,
+            'quantity': quantity
+          },
+        ],
+      },
+    };
+    console.log(_event)
+    dataLayer.push(_event);
+  }
+})
+</script>

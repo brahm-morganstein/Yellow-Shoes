@@ -1,0 +1,316 @@
+<style>
+/*
+.contact-container a:link, a:visited, a:hover, a:active {
+  color: #f1b600;
+}
+*/
+  
+.contact-container th, td {
+  border-bottom: none;
+  border-collapse: collapse;
+  border-top: none;
+  padding: 0.7em;
+}
+  
+/*
+#contact-left-column .contact-left-column a:link, a:visited, a:hover, a:active {
+	color: #f1b600!important;
+}
+*/
+  
+.contact-left-column {
+  float:left;
+  width:65%;
+}
+  
+.contact-left-column td{
+  border-bottom: solid 1px #efefefef;
+  padding:30px;
+}
+  
+.contact-right-column {
+  float:right;
+  width:25%;
+  margin-left:5%;
+}  
+  
+.contact_header{
+  font-weight: bold;	
+}
+  
+.row2{
+  background:#f5f5f5;
+}
+
+.td_border{
+  border:solid 1px #e1e0e5;  
+}
+  
+#opening_hours{
+  min-width:250px;	  
+}
+  
+.contact-container{
+  max-width:70%;
+  margin:auto;  
+}
+  
+.contact-us-title-with-underline {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+  
+.contact-us-title-with-underline .title-text, .order-totals .title-text {
+    color: #595959;
+    font-size: 17px;
+    font-weight: 600;
+}  
+  
+@media only screen and (max-width: 1200px) {
+  .contact-right-column{
+      float:none;
+      width:100%;
+  }
+
+  .contact-left-column{
+      float:none;
+      width:100%;
+      padding: 20px 10px;
+  }
+  
+  .contact-container  {
+  	max-width:100%;
+  }
+  
+  .contact-left-column td{
+	padding:10px;
+  }
+  
+  .contact-container .title-text{
+  	padding: 0 0 0 30px;
+  }
+  
+  .contact_other_questions{
+  	padding:30px;
+  }
+}  
+</style>
+
+<div class="contact-container" data-cc-animate>    
+    <div class="contact-us-title-with-underline">
+      <div class="title-text d-inline-block w-75">
+        {% if shop.locale == 'en' %}
+        	{{ section.settings.contact_title }}
+        {% else %}
+        	{{ section.settings.contact_title_fr }}
+        {% endif %}
+      </div>
+    </div>      
+    
+	<div class="contact-left-column" id="contact-left-column">
+		<table>
+			<tr>
+              <td style="vertical-align: middle; text-align:center;"><img style="min-width:36px;" width="36" src="https://cdn.shopify.com/s/files/1/1080/2420/files/mail3_icon.svg?v=1650324456"></td>
+              <td style="vertical-align: top;">
+                {% if shop.locale == 'en' %}
+                    {{ section.settings.mail_text }}
+                {% else %}
+                    {{ section.settings.mail_text_fr }}
+                {% endif %}
+              </td>
+			</tr>
+			<tr>
+              <td style="vertical-align: middle; text-align:center;"><img style="min-width:35px;" width="35" src="https://cdn.shopify.com/s/files/1/1080/2420/files/phone_icon.svg?v=1650324833"></td>
+              <td style="vertical-align: top;">
+                {% if shop.locale == 'en' %}
+                    {{ section.settings.phone_text }}
+                {% else %}
+                    {{ section.settings.phone_text_fr }}
+                {% endif %}                
+              </td>
+			</tr>
+			<tr>
+              <td style="vertical-align: middle; text-align:center;"><img style="min-width:32px;" width="32" src="https://cdn.shopify.com/s/files/1/1080/2420/files/pin_icon.svg?v=1650323924"></td>
+              <td style="vertical-align: top;">
+                 {% if shop.locale == 'en' %}
+                    {{ section.settings.address_text }}
+                {% else %}
+                    {{ section.settings.address_text_fr }}
+                {% endif %}                   
+              
+              </td>
+			</tr>
+			<tr>
+              <td colspan="2">
+                <div class="contact_other_questions">
+                  {% if shop.locale == 'en' %}
+                    {{ section.settings.other_questions }}
+                {% else %}
+                    {{ section.settings.other_questions_fr }}
+                {% endif %}                     
+                </div>
+              </td>
+
+			</tr>
+		</table>
+	</div>
+	<div class="contact-right-column">
+		<table id="opening_hours">
+			<tbody>
+              	<tr>
+                  <td colspan="2" style="padding-top: 30px;"><span class="contact_header">{{ 'contact_us.opening_hours' | t }}</span></td> 
+                </tr>
+				<tr>
+					<td class="td_border">{{ 'contact_us.monday' | t }}</td>
+					<td class="td_border">{{ section.settings.monday_hours }}</td>
+				</tr>
+				<tr>
+					<td class="row2 td_border">{{ 'contact_us.tuesday' | t }}</td>
+					<td class="row2 td_border">{{ section.settings.tuesday_hours }}</td>
+				</tr>
+				<tr>
+					<td class="td_border">{{ 'contact_us.wednesday' | t }}</td>
+					<td class="td_border">{{ section.settings.wednesday_hours }}</td>
+				</tr>
+				<tr>
+					<td class="row2 td_border">{{ 'contact_us.thursday' | t }}</td>
+					<td class="row2 td_border">{{ section.settings.thursday_hours }}</td>
+				</tr>
+				<tr>
+					<td class="td_border">{{ 'contact_us.friday' | t }}</td>
+					<td class="td_border">{{ section.settings.friday_hours }}</td>
+				</tr>
+				<tr>
+					<td class="row2 td_border">{{ 'contact_us.saturday' | t }}</td>
+					<td class="row2 td_border">{{ section.settings.saturday_hours }}</td>
+				</tr>
+				<tr>
+					<td class="td_border">{{ 'contact_us.sunday' | t }}</td>
+					<td class="td_border">{{ section.settings.sunday_hours }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+    <div style="clear:both;">&nbsp;</div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Contact page",
+    "class": "page-section-spacing",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_title",
+        "label": "Contact heading (EN)",
+        "default": "Contact us"
+      },
+      {
+        "type": "text",
+        "id": "contact_title_fr",
+        "label": "Contact heading (FR)",
+        "default": "Contact us"
+      },
+      {
+        "type": "header",
+        "content": "Mail"
+      },
+      {
+        "type": "richtext",
+        "id": "mail_text",
+        "label": "Mail Content (EN)"
+      },
+      {
+        "type": "richtext",
+        "id": "mail_text_fr",
+        "label": "Mail Content (FR)"
+      },
+      {
+        "type": "header",
+        "content": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "phone_text",
+        "label": "Phone Content (EN)"
+      },
+      {
+        "type": "richtext",
+        "id": "phone_text_fr",
+        "label": "Phone Content (FR)"
+      },
+      {
+        "type": "header",
+        "content": "Address"
+      },
+      {
+        "type": "richtext",
+        "id": "address_text",
+        "label": "Address Content (EN)"
+      },
+      {
+        "type": "richtext",
+        "id": "address_text_fr",
+        "label": "Address Content (FR)"
+      },
+	  {
+        "type": "header",
+        "content": "Opening Hours"
+      },
+      {
+        "type": "text",
+        "id": "monday_hours",
+        "label": "Monday"
+      },
+      {
+        "type": "text",
+        "id": "tuesday_hours",
+        "label": "Tuesday"
+      },
+      {
+        "type": "text",
+        "id": "wednesday_hours",
+        "label": "Wednesday"
+      },
+      {
+        "type": "text",
+        "id": "thursday_hours",
+        "label": "Thursday"
+      },
+      {
+        "type": "text",
+        "id": "friday_hours",
+        "label": "Friday"
+      },
+      {
+        "type": "text",
+        "id": "saturday_hours",
+        "label": "Saturday"
+      },
+      {
+        "type": "text",
+        "id": "sunday_hours",
+        "label": "Sunday"
+      },
+	  {
+        "type": "header",
+        "content": "Other Questions?"
+      },
+	  {
+        "type": "richtext",
+        "id": "other_questions",
+        "label": "Other questions? (EN)"
+      },
+	  {
+        "type": "richtext",
+        "id": "other_questions_fr",
+        "label": "Other questions? (FR)"
+      }
+    ]
+  }
+{% endschema %}
+

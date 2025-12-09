@@ -1,0 +1,175 @@
+{% doc %}
+  @prompt
+    Create a product badge block that displays a custom logo image in the bottom right corner of product images. The badge should only appear on products that have the tag "Made-in-quebec-collection". The block should include settings to upload a custom logo image and adjust the size and position of the badge. The logo should be positioned absolutely in the bottom right corner with appropriate padding, and should be responsive on mobile devices. We should be able to upload both an english and a frnech version in the block. This icon should appear on collection pages, carousels, product pages in both english and in french. 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% liquid
+  assign has_tag = false
+  for tag in product.tags
+    if tag == 'Made-in-quebec-collection'
+      assign has_tag = true
+      break
+    endif
+  endfor
+%}
+
+{% if has_tag %}
+  {% style %}
+    .ai-product-badge-container-{{ ai_gen_id }} {
+      position: absolute;
+      bottom: {{ block.settings.badge_position_bottom }}px;
+      right: {{ block.settings.badge_position_right }}px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .ai-product-badge-image-{{ ai_gen_id }} {
+      width: {{ block.settings.badge_size }}px;
+      height: auto;
+      display: block;
+    }
+
+    @media screen and (max-width: 749px) {
+      .ai-product-badge-container-{{ ai_gen_id }} {
+        bottom: {{ block.settings.badge_position_bottom_mobile }}px;
+        right: {{ block.settings.badge_position_right_mobile }}px;
+      }
+
+      .ai-product-badge-image-{{ ai_gen_id }} {
+        width: {{ block.settings.badge_size_mobile }}px;
+      }
+    }
+  {% endstyle %}
+
+  <div
+    class="ai-product-badge-container-{{ ai_gen_id }}"
+    {{ block.shopify_attributes }}
+  >
+    {% liquid
+      assign current_locale = request.locale.iso_code
+      assign badge_image = block.settings.badge_image_en
+      
+      if current_locale == 'fr' and block.settings.badge_image_fr != blank
+        assign badge_image = block.settings.badge_image_fr
+      endif
+    %}
+
+    {% if badge_image != blank %}
+      <img
+        src="{{ badge_image | image_url: width: 400 }}"
+        alt="{{ block.settings.badge_alt_text }}"
+        class="ai-product-badge-image-{{ ai_gen_id }}"
+        width="{{ block.settings.badge_size }}"
+        height="auto"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Made in Quebec badge",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Badge images"
+    },
+    {
+      "type": "paragraph",
+      "content": "Upload custom logo images for English and French versions. Badge only appears on products tagged with 'Made-in-quebec-collection'."
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image_en",
+      "label": "Badge image (English)"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image_fr",
+      "label": "Badge image (French)"
+    },
+    {
+      "type": "text",
+      "id": "badge_alt_text",
+      "label": "Image alt text",
+      "default": "Made in Quebec"
+    },
+    {
+      "type": "header",
+      "content": "Desktop settings"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "min": 30,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Badge size",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "badge_position_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Distance from bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "badge_position_right",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Distance from right",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Mobile settings"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Badge size",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "badge_position_bottom_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Distance from bottom",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "badge_position_right_mobile",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Distance from right",
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Made in Quebec badge"
+    }
+  ]
+}
+{% endschema %}

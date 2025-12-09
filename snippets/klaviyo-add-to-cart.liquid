@@ -1,0 +1,42 @@
+<script>
+
+document.addEventListener('on:cart:add',(event) => {
+  // your code here
+  console.log('event',event)
+  sendAddToCartToKlaviyo(event)
+});
+
+
+const sendAddToCartToKlaviyo = async function (event){
+  {% if customer %}
+    let response = await fetch(`${window.location.origin}/cart.js`)
+    let data = await response.json()
+    let variant_id = event.detail.variantId
+    let product = data.items.find((_item)=>_item.variant_id == variant_id)
+    // console.log('variant_id',variant_id)
+    // console.log('data',data)
+    // console.log('product',product)
+    
+    let cart_url = language && language == 'fr' ? 'https://www.yellowshoes.com/fr/cart/' : 'https://www.yellowshoes.com/cart/';
+    let perma_links = data.items.map((_item)=>`${_item.variant_id}:${_item.quantity}`).join(',')
+    let custom_field = cart_url + perma_links;
+    
+    //
+    klaviyo.identify({
+      email: '{{ customer.email }}',  // Replace with dynamic email or other unique identifier
+      $cart_perma_link: custom_field,         //
+    });
+    
+    // Track the "Add to Cart" event
+    klaviyo.track('Added to Cart', {
+      product_id: product.id,                 // ID of the product
+      product_name: product.title,      // Name of the product
+      quantity: product.quantity,                         // Quantity added to the cart
+      price: (product.price/100).toFixed(2),                        // Price of the product
+      total_price: (product.line_price/100).toFixed(2),                  // Total price for the items (in case of multiple products)
+      currency: 'CAD'                     // Currency
+    });
+  {% endif %}
+}
+  
+</script>

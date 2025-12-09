@@ -1,0 +1,264 @@
+<style>
+  #text-cta-block{
+    max-width: 80rem;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1.5rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+
+  #text-cta-block-header{
+    font-size: {{ section.settings.heading_font_size_mobile }}px;
+    font-weight:bold;
+  }
+
+  #text-cta-block-text{
+    font-size: {{ section.settings.text_font_size_mobile }}px;
+  }
+
+  #text-cta-block-btn{
+    color:{{ section.settings.btn_color }}!important;
+    background-color:{{ section.settings.btn_background_color }}!important;
+  }
+  
+  #text-cta-block-btn:hover{
+    color:{{ section.settings.btn_hover_color }}!important;
+    background-color:{{ section.settings.btn_background_hover_color }}!important;
+  }  
+
+  #text-cta-block-header{
+    color:{{section.settings.heading_color}}!important;
+  }
+
+  #text-cta-block-text{
+    color:{{section.settings.text_color}}!important;
+  }
+
+  /* @media (min-width: 80em) {
+    #text-cta-block{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-between;
+      align-items:center;
+      text-align:left;
+    }
+    #text-cta-block p{
+      margin-bottom: 0px;
+    }
+    #text-cta-block-header{
+      font-size: {{ section.settings.heading_font_size }}px;
+      font-weight:bold;
+    }
+    #text-cta-block-text{
+      font-size: {{ section.settings.text_font_size }}px;
+    }    
+  } */
+</style>
+<div style="background-color:{{ section.settings.banner_color }};">
+  <div id="text-cta-block">
+      <div>
+        <span id="text-cta-block-header">
+          {% if shop.locale == 'en' %}
+            {{ section.settings.heading }}
+          {% else %}
+            {{ section.settings.heading_fr }}
+          {% endif %}
+        </span>
+        <div id="text-cta-block-text">
+          {% if shop.locale == 'en' %}
+            {{ section.settings.text }}
+          {% else %}
+            {{ section.settings.text_fr }}
+          {% endif %}
+        </div>
+      </div>
+      <div>
+        <button id="text-cta-block-btn" type="button" class="btn btn--primary button-row__btn">
+          {% if shop.locale == 'en' %}
+            {{ section.settings.button_label }}
+          {% else %}
+            {{ section.settings.button_label_fr }}
+          {% endif %}
+        </button>
+      </div>
+  </div>
+</div>  
+
+<script>
+  $("#text-cta-block-btn").click(function(){
+    {% if section.settings.trigger_newsletter %}
+      //trigger newsletter
+      if(window.Shopify.customerPrivacy.marketingAllowed() 
+           && window.Shopify.customerPrivacy.userCanBeTracked() 
+             && window.Shopify.customerPrivacy.getTrackingConsent() != 'no_interaction'){
+        window._klOnsite = window._klOnsite || [];
+        if(language == 'en'){
+         //window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', 'Y4UPXC']); 
+         window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', '{{ section.settings.klaviyo_popup_id }}']); 
+          
+        }else{
+         //window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', 'Rrt6s4']);
+         window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', '{{ section.settings.klaviyo_popup_id_fr }}']);
+        }
+      }else{
+        $("body").css("overflow", "hidden");
+        $("#customize-cookie-banner-container").css("display", "inline-block");
+      }
+      
+    {% else %}
+      window.location = "{{ section.settings.button_link }}"
+    {% endif %}
+  })
+</script>
+
+{% schema %}
+  {
+    "name": "Text with CTA",
+    "settings": [ 
+    {
+      "type": "color",
+      "id": "banner_color",
+      "label": "Banner color",
+      "default": "#faf2e6"
+    },        
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_fr",
+      "label": "Heading (FR)"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000"
+    },    
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Font size",
+      "default": 32
+    }, 
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Font size (Mobile)",
+      "default": 32
+    }, 
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "text_fr",
+      "label": "Description (FR)"
+    }, 
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000"
+    },      
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font size",
+      "default": 16
+    }, 
+    {
+      "type": "range",
+      "id": "text_font_size_mobile",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font size (Mobile)",
+      "default": 16
+    }, 
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button",
+      "default": "Button text"
+    },
+    {
+      "type": "text",
+      "id": "button_label_fr",
+      "label": "Button (FR)"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btn_hover_color",
+      "label": "Button hover color",
+      "default": "#fff"
+    },    
+    {
+      "type": "color",
+      "id": "btn_background_color",
+      "label": "Button background color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "btn_background_hover_color",
+      "label": "Button background hover color",
+      "default": "#f0b500"
+    },       
+    {
+    "type": "checkbox",
+    "id": "trigger_newsletter",
+    "label": "Enable Newsletter Popup",
+    "default": false
+    },   
+    {
+      "type":"text",
+      "id":"klaviyo_popup_id",
+      "label":"Klaviyo Popup ID"
+    },
+    {
+      "type":"text",
+      "id":"klaviyo_popup_id_fr",
+      "label":"Klaviyo Popup ID (FR)"
+    },      
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }   
+    ],
+  "presets": [
+    {
+      "name": "Text with CTA",
+      "category": "Custom"
+    }
+  ]
+  }
+{% endschema %}

@@ -1,0 +1,51 @@
+
+<div id="availability-reminder-modal" style="display:none; color:#585859; padding:44px!important;">
+  <select class="availability-reminder-input" id="availability-reminder-variant-id" style="display:none;">
+    {% for product_variant in product.variants %}
+    <option value="{{ product_variant.id }}"></option>
+{% endfor %}
+  </select>
+
+  <div style="font-size:1.2em;">{{ 'back_in_stock.notify_me_button' | t }}</div>
+  <div style="margin-top:1rem;"><span style="font-weight:600">{{ 'back_in_stock.email' | t }}</span> </div>
+  <input style="margin-top:0 !important;" type="email" id="availability-reminder-email" class="availability-reminder-input"
+         placeholder="{{ 'back_in_stock.email' | t }}">
+  <div id="availability-reminder-error" style=""></div>
+  <div class="d-flex">
+    <div class="d-inline-block w-50" style="padding-right:5px;">
+
+      <div style="margin-top:1rem;"><span style="font-weight:600">{{ 'back_in_stock.phone' | t }}</span> <small>({{ 'back_in_stock.optional' | t }})</small></div>
+      <input style="margin-top:0 !important;" type="text" id="availability-reminder-phone" class="availability-reminder-input"
+             placeholder="(___) ___-____">
+    </div>
+    <div class="d-inline-block w-50" style="padding-left:5px;">
+      <div style="margin-top:1rem;"><span style="font-weight:600">{{ 'back_in_stock.postal_code' | t }}</span> <small>({{ 'back_in_stock.optional' | t }})</small></div>
+      <input style="margin-top:0 !important;" type="text" id="availability-reminder-zip" class="availability-reminder-input"
+             placeholder="A0A 0A0">
+    </div>
+  </div>
+  <div style="margin-top:10px;">
+    {{ 'back_in_stock.keep_me_posted_email_sms' |t }}
+  </div>
+  <div class="custom-checkbox-container">
+    <div class="custom-checkbox" data-target="#agree-to-get-email">
+      <div class="custom-checkbox-background"></div>
+    </div>
+    <div class="custom-checkbox-label">{{ 'back_in_stock.email' |t }}</div>
+    <input type="checkbox" id="agree-to-get-email" value="true">
+  </div>
+  <div class="custom-checkbox-container">
+    <div class="custom-checkbox" data-target="#agree-to-get-sms">
+      <div class="custom-checkbox-background"></div>
+    </div>
+    <div class="custom-checkbox-label">SMS</div>
+    <input type="checkbox" id="agree-to-get-sms" value="true">
+  </div>
+  <div id="sms-agreement-text">
+    {{ 'back_in_stock.sms_agreement' |t }}
+  </div>
+  <div class="availability-btn btn btn--large w-full" id="availability-reminder-submit-btn">{{ 'back_in_stock.notify_me_submit' | t }}</div>
+  <div style="text-align:center; font-weight: 600;padding-top:14px;">
+    <a class="close-fancy" href="javascript:;" style="text-decoration:underline;">{{ 'back_in_stock.cancel' | t }}</a>
+  </div>
+</div>

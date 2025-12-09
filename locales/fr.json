@@ -1,0 +1,972 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "comp_value": {
+    "now": "Notre prix",
+    "save": "Économisez",
+    "popup": "Nos prix de comparaison mettent en valeur vos économies, selon le prix suggéré d’articles similaires vendus ailleurs.",
+    "comp_value": "Prix comp."
+  },
+  "cancel_order": {
+    "cancel_an_order": "Annuler une commande",
+    "order_number": "Numéro de commande",
+    "email_address": "Adresse courriel",
+    "submit": "Annuler la commande",
+    "order_number_required": "Le numéro de commande est requis",
+    "email_address_required": "L’adresse courriel est requise",
+    "recaptcha_required": " Merci de confirmer que vous n’êtes pas un robot",
+    "cannot_cancel_order": "Il n’est malheureusement pas possible d’annuler cette commande.Si vous avez besoin d’aide,",
+    "order_required_time": "Il n’est malheureusement plus possible d’annuler cette commande.Si vous avez besoin d’aide,",
+    "invalid_order_details": "Le numéro de commande et l’adresse courriel ne correspondent pas. Merci de vérifier puis réessayer. Si vous avez besoin d’aide,",
+    "order_cancel_success": "Votre commande a été annulée avec succès. Vous allez recevoir d’ici quelques minutes un courriel de confirmation d’annulation.",
+    "order_cancel_contact_us_html": "<a href=\"https://www.yellowshoes.com/fr/pages/contact-us\"><u>contactez-nous.<u></a>",
+    "paragraph_need": "Besoin d'annuler votre commande ?",
+    "paragraph": "Vous pouvez le faire dans les 10 minutes qui suivent votre commande. Passé ce délai, il ne sera plus possible d'annuler la commande car elle est envoyée à notre entrepôt et nous commençons à la préparer pour l'expédition.Veuillez saisir votre numéro de commande et votre adresse courriel utilisée lors de la commande pour procéder à l'annulation."
+  },
+  "layout": {
+    "live_search": {
+      "see_all": "Voir tout"
+    },
+    "footer": {
+      "navigation_aria_label": "Navigation secondaire"
+    },
+    "signup": {
+      "post_success": "Merci pour votre inscription!",
+      "placeholder": "Courriel",
+      "input_label": "Courriel",
+      "submit": "Soumettre",
+      "label": "Abonnez-vous à notre newsletter"
+    },
+    "search": {
+      "open": "Recherche",
+      "close": "Fermer",
+      "placeholder": "Recherche...",
+      "title": "Recherche"
+    },
+    "customer": {
+      "account": "Compte",
+      "log_out": "Se déconnecter"
+    },
+    "header": {
+      "cart": "Panier",
+      "search_submit": "Soumettre",
+      "mobile_signin": "Se connecter / S'inscrire"
+    },
+    "breadcrumbs": {
+      "title": "Fil d'Ariane",
+      "home": "Accueil",
+      "collections": "Catalogue"
+    }
+  },
+  "product_bundles": {
+    "customize_this_set": "Complétez cet ensemble"
+  },
+  "collections": {
+    "general": {
+      "see_all_subcollections": "Voir tout...",
+      "view_all": "Voir Tout",
+      "product_count": {
+        "one": "{{ count }} produit",
+        "other": "{{ count }} produits"
+      },
+      "no_matches": "Aucun produit ne correspond à votre recherche.",
+      "more_swatches": "+ {{ count }} de plus",
+      "more_swatches_js": "+ --==count==-- de plus"
+    },
+    "filtering": {
+      "filter": "Affiner",
+      "all": "Tout",
+      "heading": "Affiner",
+      "applied_filters": "Filtres sélectionnés",
+      "clear_all": "Tout effacer",
+      "out_of_stock_label": "En rupture de stock",
+      "show_label": "Afficher",
+      "hide_label": "Masquer",
+      "submit": "Soumettre"
+    },
+    "sorting": {
+      "title": "Trier par"
+    },
+    "price_range": {
+      "min_label": "De",
+      "max_label": "À"
+    }
+  },
+  "data_request_form": {
+    "data_subject_access_request_form_html": "Demande d'accès aux données personnelles",
+    "we_take_your_privacy_seriously_html": "Nous prenons votre vie privée au sérieux et utilisons vos données uniquement pour améliorer votre expérience avec nous.",
+    "as_a_customer_you_have_the_right_to_html": "En tant que client, vous avez le droit de :",
+    "request_a_summary_of_your_personal_information_html": "Demander un résumé de vos informations personnelles",
+    "request_that_we_do_not_share_or_sell_your_data_html": "Demander que nous ne partagions pas ou ne vendions pas vos données",
+    "request_that_we_delete_your_personal_data_html": "Demander que nous supprimions vos données personnelles",
+    "to_enact_these_rights_please_fill_out_the_form_below_html": "Pour exercer ces droits, veuillez remplir le formulaire ci-dessous.",
+    "make_a_data_request_html": "Effectuer une demande de données",
+    "select_a_request_type_html": "Sélectionnez un type de demande <span style=\"color:red;\">*</span>",
+    "delete_all_your_personal_data_html": "Supprimer toutes vos données personnelles",
+    "get_a_copy_of_your_personal_data_html": "Obtenir une copie de vos données personnelles",
+    "unsubscribe_from_marketing_communications_html": "Se désabonner des communications marketing",
+    "first_name_html": "Prénom : <span style=\"color: red;\">*</span>",
+    "last_name_html": "Nom : <span style=\"color: red;\">*</span>",
+    "email_address_html": "Adresse e-mail : <span style=\"color: red;\">*</span>",
+    "country_of_residence_used_in_order_html": "Ville : <span style=\"color: red;\">*</span>",
+    "state_html": "Province : <span style=\"color: red;\">*</span>",
+    "comments_optional_html": "Commentaires (Facultatif) :",
+    "submit_html": "Soumettre"
+  },
+  "crossup_sells": {
+    "complete_with": "À compléter avec",
+    "care_product_related": "Produit d'entretien adapté",
+    "complete_the_look": "Complétez votre tenue avec"
+  },
+  "product_reviews": {
+    "reviews": "Avis",
+    "thank_you": "MERCI D'AVOIR PUBLIÉ UN AVIS!",
+    "review_title": "Titre du commentaire",
+    "review_title_placeholder": "Donnez un titre à votre avis",
+    "review": "Évaluation",
+    "review_placeholder": "Écrivez vos commentaires ici",
+    "write_a_review": "Écrire un avis",
+    "how_rate_quality": "Comment évalueriez-vous la qualité de ce produit?",
+    "how_rate_value": "Comment évalueriez-vous la valeur de ce produit?",
+    "read_review_prior": "Avez-vous lu les avis avant de faire un achat?",
+    "yes": "Oui",
+    "email": "Courriel",
+    "overall_rating": "Note générale",
+    "nickname": "Surnom",
+    "nickname_info": "sera visible par les autres utilisateurs",
+    "nickname_placeholder": "Entrez votre surnom",
+    "fill_required_fields": "Veuillez remplir tous les champs et évaluations obligatoires",
+    "submit_review": "Publier une évaluation",
+    "no": "Non",
+    "write_your_review": "Rédigez votre avis",
+    "size_and_fit": "TAILLE ET AJUSTEMENT*",
+    "overall_product_rating": "NOTE GÉNÉRALE DE L’ARTICLE*",
+    "would_you_recommend_this_item": "RECOMMANDERIEZ-VOUS CET ARTICLE ?*",
+    "share_your_thoughts": "Partagez vos impressions avec les autres",
+    "form_review_title": "Titre de votre avis*",
+    "form_your_review": "Votre message*",
+    "tell_other_customers": "Présentez-vous",
+    "minimum_character_length": "25 caractères au minimum",
+    "minimum_character_length_validation": "Votre message doit contenir au moins 25 caractères.",
+    "location": "Localisation (ville, province)",
+    "size_normally_worn": "Taille portée habituellement",
+    "size_purchased": "Taille achetée*",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "required": "Champs obligatoires*",
+    "enter_location_here": "Entrez votre localisation ici",
+    "enter_review_title_here": "Entrez votre titre de votre avis ici",
+    "fits_one_size_too_small": "Une taille trop petite",
+    "runs_a_little_small": "Taille légèrement petite",
+    "perfect_fit": "Taille parfaite",
+    "runs_a_little_big": "Taille un peu grande",
+    "fits_one_size_too_big": "Taille un peu grande",
+    "ratings_and_reviews": "ÉVALUATIONS ET COMMENTAIRES",
+    "average_customer_rating": "Évaluation moyenne des clients",
+    "customers_say": "Avis des clients",
+    "recommended": "recommandé",
+    "reviews_count": "avis",
+    "stars": "étoile(s)",
+    "review_message": "Votre message*",
+    "select": "Sélectionner",
+    "check_out_our_review_guidelines_html": "Consultez nos <a href=\"/fr/pages/yellow-values-your-feedback/\" style=\"text-decoration: underline;\">Politiques d’Évaluation.</a>",
+    "questions_with_review_html": "Vous avez besoin d’aide ? <a href=\"javascript:$zopim.livechat.window.show();\" style=\"text-decoration: underline;\">Clavardez avec nous !</a>",
+    "load_more_reviews": "Voir plus d'avis"
+  },
+  "favourites": {
+    "share_list": "Partagez votre liste",
+    "share_list_via_email": "Partagez votre liste par courriel",
+    "copy": "Copier",
+    "custom_message": "Message personnalisé",
+    "share": "Message personnalisé",
+    "recipient_email": "Courriel du destinataire",
+    "required_email": "L’adresse courriel est requise",
+    "no_items_header": "ENREGISTREZ VOS STYLES FAVORIS",
+    "no_items_text": "Vous aimeriez enregistrer les styles que vous aimez ? Cliquez simplement sur l'icone en forme de coeur et l'article apparaîtra ici.",
+    "continue_shopping": "Poursuivre vos achats"
+  },
+  "back_in_stock": {
+    "notify_me_button": "M'AVERTIR LORSQUE DISPONIBLE",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "postal_code": "Code postal",
+    "notify_me_submit": "INFORMEZ-MOI",
+    "cancel": "Annuler",
+    "keep_me_posted_email_sms": "Tenez-moi au courant des rabais, nouveautés et autres évènements par SMS et, par la même occasion, j'aurai une chance de gagner ma prochaine commande !",
+    "sms_agreement": "En vous abonnant à nos communications par courriel et/ou SMS, vous acceptez de recevoir nos nouveautés, nos offres spéciales et plus de la part de Yellow. Vous pourrez vous désabonner à tout moment. Des frais de messagerie et de données s'appliquent",
+    "optional": "optionnel"
+  },
+  "dashboard": {
+    "name": "Nom",
+    "email": "Adresse courriel",
+    "mobile": "Cellulaire",
+    "birthday": "Anniversaire",
+    "member_since": "Membre depuis",
+    "view_all": "Voir tout",
+    "default_address": "Adresse de livraison par défaut",
+    "edit": "Modifier",
+    "account_info": "Informations du compte",
+    "save": "Enregistrer"
+  },
+  "contact_us": {
+    "opening_hours": "Heures d'ouverture du bureau",
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mecredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche"
+  },
+  "careers": {
+    "banner_line1_html": "<nobr>REJOINS NOTRE ÉQUIPE<nobr>",
+    "banner_line2_html": "Un poste chez Chaussures Yellow pourrait être votre<br>premier pas vers une carrière passionnante dans le  secteur de la mode!",
+    "role_at_yellow_html": "Que vous aimiez rechercher les dernières tendances de style,{{ desktop_break }} utiliser des données, ou travailler en équipe,{{ desktop_break }}il y a un rôle pour vous chez YELLOW!",
+    "view_head_office_opportunities": "VOIR LES OPPORTUNITÉS DU SIÈGE SOCIAL",
+    "view_head_office_opportunities_link": "/fr/pages/careers-opportunities-head-office",
+    "view_store_opportunities": "VOIR LES OPPORTUNITÉS DES MAGASINS",
+    "view_store_opportunities_link": "/fr/pages/careers-opportunities-stores",
+    "who_we_are_h1": "Qui sommes-nous",
+    "who_we_are_p_html": "Fondée en 1916, Chaussures Yellow est une entreprise fièrement québécoise. Dans tous les moments de votre vie, depuis plus de 100 ans.",
+    "about_us_btn_label": "À PROPOS DE NOUS",
+    "about_us_btn_link": "https://www.yellowshoes.com/fr/pages/about-us",
+    "what_we_are_looking_for_h1": "Ce que nous recherchons",
+    "what_we_are_looking_for_p_html": "<p>Nos employés sont passionnés, curieux, motivés et dynamiques, avec quelque chose de différent à apporter. Ils sont enthousiastes, créatifs, imparables, intelligents et proactifs.</p><p>Chacun des plus de 600 employés qui travaillent chez Yellow est important pour le succès de l'entreprise. Nous sommes en évolution et en croissance continue, donc avoir la meilleure équipe a été la clé pour continuer à grandir ensemble.</p>",
+    "yellow_eco_h1": "Yellow Eco, durabilité pour une meilleure planète",
+    "yellow_eco_p_html": "À mesure que le monde évolue et que la mode évolue, nous devons également évoluer. YELLOW ECO, notre collection de chaussures fabriquée à partir de matières écoresponsables. C'est un nouveau départ pour nous, une nouvelle voie pour nous de faire un pas à la fois. En choisissant une paire de notre collection, vous suivrez également sur notre chemin, une meilleure direction, et pour cela nous vous remercions.",
+    "yellow_echo_button": "EN SAVOIR PLUS",
+    "yellow_echo_link": "https://www.yellowshoes.com/fr/pages/yellow-eco",
+    "yellow_cares_h1_html": "Yellow prend soin, en redonnant{{ desktop_break }}à la communauté",
+    "yellow_cares_p_html": "<p>Nous partageons l'amour en offrant des dons d'argent, des chaussures et de la nourriture à diverses organisations afin d'aider les autres et de répandre la joie et le bonheur.</p><p>Depuis des années, le Groupe Yellow Inc. donne des milliers de paires de chaussures et d'accessoires à diverses associations et organismes communautaires à travers la province de Québec.</p>",
+    "yellow_cares_button": "EN SAVOIR PLUS",
+    "yellow_cares_link": "https://www.yellowshoes.com/fr/pages/yellow-cares",
+    "why_choose_yellow_h1_html": "Pourquoi choisir Yellow?{{ desktop_break }}Il y a des tonnes de raisons! ",
+    "why_choose_yellow_p_html": "Le talent se déplace dans toutes les directions.{{ desktop_break }}Avec cela, et votre désir d'apprendre, vous arriverez là où vous voulez aller.",
+    "continue_shopping_btn_label": "Continuer à magasiner",
+    "continue_shopping_btn_link": "https://www.yellowshoes.com/fr/",
+    "table_header_job_title": "Titre de poste désiré",
+    "table_header_location": "Ville",
+    "back_to_careers_btn_label": "Retour à la page carrière",
+    "back_to_careers_btn_link": "/fr/pages/careers",
+    "current_openings_h1": "Possibilités d’emplois actuels",
+    "current_openings_p": "Merci de votre intérêt pour nos opportunités d’emplois. Vous voyez un poste qui vous plaît? Soumettez votre candidature ici.",
+    "filter_by_city": "Filtrer par ville",
+    "company_name": "Chaussures Yellow",
+    "join_talent_network_btn": "JOINDRE NOTRE RESEAU DE TALENT",
+    "join_talent_network_btn_url": "/fr/pages/join-talent-network"
+  },
+  "join_talent": {
+    "form_msg_html": "Joindre notre reseau de <br class='mobile-break'>talent aujourd'hui!",
+    "required": "Requis",
+    "email": "Adresse Courriel",
+    "province": "Province",
+    "select": "Sélectionner",
+    "location": "Emplacement",
+    "job": "Titre de poste désiré",
+    "first_name": "Prénom",
+    "last_name": "Nom de famille",
+    "resume": "Télécharger votre CV",
+    "resume_size_format": "Max 4M / PDF, JPEG, WORD",
+    "choose-file": "CHOISIR UN FICHIER",
+    "accept-terms_html": "J'accepte la <a target='_blank' class='mustard' href='https://www.yellowshoes.com/fr/pages/privacy-policy-legal'>confidentialité et les termes et conditions</a>",
+    "terms": "En rejoignant notre réseau de talents, vous n'avez pas officiellement postulé à un poste",
+    "success_alert_msg": "Votre application a ete envoyer",
+    "join": "JOINDRE",
+    "validation": {
+      "email": "Une adresse courriel est requise",
+      "province": "Selectionner une province",
+      "location": "Emplacement est requis",
+      "job": "Titre de poste est requise",
+      "first_name": "Prenom est requis",
+      "last_name": "Nom de famille est requis",
+      "resume_size_format": "Max 4M / PDF, JPEG, WORD SEULEMENT",
+      "recaptcha": "Recaptcha est requise",
+      "terms": "Les conditions doivent être acceptées",
+      "resume": "CV est requis"
+    }
+  },
+  "general": {
+    "localization": {
+      "country_label": "Pays",
+      "countries_error": "Erreur lors de la récupération des pays, veuillez réessayer.",
+      "language_label": "Langue",
+      "update": "Mettre à jour"
+    },
+    "icon_labels": {
+      "close": "Fermer",
+      "play": "Lecture"
+    },
+    "labels": {
+      "please_select": "Veuillez sélectionner"
+    },
+    "navigation": {
+      "menu": "Menu",
+      "show_links": "Voir les liens",
+      "back": "Retour",
+      "close": "Fermer"
+    },
+    "breadcrumbs": {
+      "title": "Fil d’Ariane",
+      "home": "Accueil",
+      "collections": "Collections"
+    },
+    "pagination": {
+      "next": "Suivant",
+      "previous": "Précédent"
+    },
+    "search": {
+      "title": "Recherche",
+      "input_label": "Recherche",
+      "placeholder": "Recherchez sur notre boutique",
+      "submit": "Rechercher",
+      "close": "Fermer",
+      "results_with_count": {
+        "one": "{{ count }} résultat trouvé",
+        "other": "{{ count }} résultats trouvés"
+      },
+      "no_results": "Aucun résultat trouvé pour \"{{ terms }}\".",
+      "no_results_without_terms": "Désolé, nous n'avons trouvé aucun résultat",
+      "suggestions": "Suggestions",
+      "pages": "Pages",
+      "view_all": "Voir tous les résultats de recherche"
+    },
+    "slider": {
+      "next": "Suivant",
+      "previous": "Précédent",
+      "of": "de"
+    },
+    "social": {
+      "share_heading": "Partager",
+      "share_on_facebook": "Partager sur Facebook",
+      "share_on_twitter": "Tweeter sur X",
+      "share_on_pinterest": "Épingler sur Pinterest",
+      "follow_shop": "{{ shop_name }} sur {{ social_platform }}"
+    },
+    "meta": {
+      "page": "Page {{ page }}",
+      "tags": "Taggué \"{{ tags }}\""
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Aller au contenu",
+    "close": "Fermer",
+    "main_navigation": "Principal",
+    "secondary_navigation": "Secondaire",
+    "star_reviews_info": "{{ rating_value }} sur {{ rating_max }} étoiles",
+    "view_details": "Voir les détails",
+    "shop_now": "Magasiner"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Ajouter au panier",
+      "added_to_cart_with_link_html": "Ajouté à votre <a href=\"{{ cart_url }}\">Panier</a>",
+      "backorder": "est en rupture de stock et sera expédié dès qu’il sera de retour en stock.",
+      "notify_when_available_text": "M'AVERTIR LORSQUE DISPONIBLE",
+      "barcode": "Code-barres:",
+      "choose_a": "Choisir un",
+      "description": "Description",
+      "from": "À partir de",
+      "include_taxes": "Taxes incluses",
+      "media": {
+        "gallery_viewer": "Visionneuse de galerie",
+        "load_image": "Charger l’image {{ index }} dans la vue de galerie",
+        "play_video": "Lire la vidéo"
+      },
+      "more_swatches": "+ {{ count }} de plus",
+      "new": "Nouvelle arrivée",
+      "next_product": "Suivant",
+      "percent_reduction": "{{ amount }}% de rabais",
+      "pickup_availability": {
+        "check_other_stores": "Vérifier la disponibilité dans d’autres boutiques",
+        "pick_up_available": "Service de retrait disponible",
+        "pick_up_available_at_html": "Service de retrait disponible à <strong>{{ location_name }}</strong>",
+        "pick_up_unavailable": "Service de retrait actuellement indisponible",
+        "pick_up_unavailable_at_html": "Service de retrait actuellement indisponible à <strong>{{ location_name }}</strong>",
+        "refresh": "Actualiser",
+        "unavailable": "Impossible de charger la disponibilité pour le Service de retrait",
+        "view_store_info": "Voir les informations de la boutique"
+      },
+      "preorder": "Pré-commande",
+      "prev_product": "Précédent",
+      "price": {
+        "unit_price": "Prix unitaire",
+        "unit_price_separator": " / "
+      },
+      "product_variants": "Variantes de produit",
+      "quantity": "Quantité",
+      "quick_buy": "Coup d'oeil",
+      "reviews_count": {
+        "one": "{{ count }} avis",
+        "other": "{{ count }} avis"
+      },
+      "sale": "Solde",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Frais de livraison</a> calculés lors du paiement.",
+      "size_chart": "Guide des tailles",
+      "sku": "SKU :",
+      "sold_out": "Épuisé",
+      "value_reduction_html": "{{ amount }} de réduction",
+      "vendor": "Distributeur",
+      "view_details": "Voir les détails",
+      "xr_button": "Voir dans votre espace",
+      "length_cm": "LONGUEUR (CM)",
+      "womens_footwear": "POINTURES FEMMES",
+      "mens_footwear": "POINTURES HOMMES",
+      "baby_footwear": "POINTURES BÉBÉS",
+      "toddler_footwear": "POINTURES TOUT(ES)-PETIT(E)S",
+      "junior_footwear": "POINTURES JUNIORS",
+      "more_details": "Afficher plus"
+    },
+    "filtering": {
+      "title": "Filtres",
+      "applied_filters": "Filtres appliqués",
+      "apply": "Appliquer",
+      "clear_all": "Tout effacer",
+      "filter": "Filtrer",
+      "out_of_stock_label": "En rupture de stock",
+      "show_label": "Afficher",
+      "hide_label": "Masquer",
+      "min_price_label": "De",
+      "max_price_label": "À"
+    },
+    "sorting": {
+      "sort_by_label": "Trier par"
+    },
+    "inventory": {
+      "in_stock": "En stock",
+      "low_stock": "Stock faible",
+      "only_x_left": "{{ quantity }} en stock",
+      "x_left": "{{ quantity }} en stock, prêts à être expédiés"
+    },
+    "transfers": {
+      "will_not_ship_until": "Expédié à partir du {{ date }}",
+      "will_be_in_stock_after": "Disponible à partir du {{ date }}",
+      "waiting_for_stock": "Plus de stock bientôt disponible"
+    },
+    "variant": {
+      "no_stock": "Épuisé",
+      "non_existent": "Indisponible",
+      "change": "Modifier"
+    }
+  },
+  "sections": {
+    "header": {
+      "account": "Compte",
+      "search": "Recherche",
+      "cart": "Panier"
+    },
+    "footer": {
+      "copyright_html": "&copy; {{ year }} <a href=\"{{ shop_url }}\">{{ shop_name }}</a>."
+    },
+    "faq_header": {
+      "search_label": "Rechercher dans la FAQ",
+      "search_placeholder": "Rechercher dans la FAQ"
+    },
+    "collection": {
+      "empty": "Aucun produit trouvé",
+      "product_count": {
+        "one": "{{ count }} produit",
+        "other": "{{ count }} produits"
+      },
+      "grid_layout": "Grille",
+      "list_layout": "Liste",
+      "view_all_related_collections": "Voir tout..."
+    },
+    "countdown": {
+      "days_short": "Jours",
+      "hours_short": "Heures",
+      "minutes_short": "Mins",
+      "seconds_short": "Secs",
+      "end_date": "Se termine le {{ date }}"
+    },
+    "featured_collection": {
+      "view_all": "Voir tout"
+    },
+    "slideshow": {
+      "load_slide": "Charger la diapositive",
+      "carousel": "Carrousel",
+      "slide": "Diapositive"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Page non trouvée",
+      "subtext": "La page que vous avez demandée n’existe pas.",
+      "link": "Retour à l’accueil"
+    },
+    "password": {
+      "general": {
+        "login_link": "Entrer avec un mot de passe",
+        "powered_by": "Cette boutique est propulsée par"
+      },
+      "login_form": {
+        "admin_link_html": "Vous êtes propriétaire de cette boutique ? <a href=\"/admin\">Connectez-vous ici</a>",
+        "heading": "Entrer dans la boutique avec un mot de passe",
+        "password_label": "Mot de passe",
+        "password_placeholder": "Mot de passe",
+        "submit": "Entrer"
+      },
+      "signup_form": {
+        "email_label": "E-mail",
+        "email_placeholder": "Votre e-mail",
+        "submit": "S’inscrire",
+        "success": "Merci de votre inscription."
+      }
+    }
+  },
+  "newsletter": {
+    "label": "E-mail",
+    "placeholder": "Votre e-mail",
+    "button_label": "S’inscrire",
+    "success": "Merci pour votre inscription."
+  },
+  "contact": {
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "message": "Message",
+      "send": "Envoyer",
+      "post_success": "Merci de nous contacter. Nous vous répondrons dès que possible.",
+      "error_heading": "Veuillez corriger les erreurs suivantes :"
+    }
+  },
+  "blogs": {
+    "article": {
+      "back_to_blog": "Retour à {{ title }}",
+      "no_matches": "Vous n’avez pas encore d’articles ! Une fois que vous en aurez écrit un, il apparaîtra ici.",
+      "read_more": "Lire la suite"
+    },
+    "comments": {
+      "title": "Commentaires",
+      "form_title": "Laissez un commentaire",
+      "name": "Nom",
+      "email": "E-mail",
+      "message": "Commentaire",
+      "post": "Poster un commentaire",
+      "moderated": "Veuillez noter : les commentaires doivent être approuvés avant d’être publiés.",
+      "success": "Votre commentaire a été publié avec succès ! Merci !",
+      "error_heading": "Veuillez corriger les erreurs suivantes :"
+    },
+    "filtering": {
+      "all": "Tous",
+      "filter_by": "Filtrer par"
+    },
+    "pagination": {
+      "newer_articles": "Articles plus récents",
+      "older_articles": "Articles plus anciens"
+    },
+    "tags": {
+      "label": "Taggué"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Votre panier",
+      "backorder": "Le produit est en rupture de stock et sera expédié dès qu’il sera de retour en stock.",
+      "free_shipping": "Votre commande est éligible à la livraison gratuite !",
+      "free_shipping_deficit_html": "Dépensez <strong>{{ amount }}</strong> de plus pour <strong>la livraison gratuite</strong> !",
+      "taxes_and_shipping_at_checkout": "Taxes, réductions et frais d’expédition calculés à l’étape du paiement.",
+      "taxes_and_shipping_at_checkout_html": "Taxes, réductions et <a href=\"{{ link }}\">frais d’expédition</a> calculés à l’étape du paiement.",
+      "taxes_included_shipping_at_checkout": "Taxe incluse, frais d’expédition et réductions calculés à l’étape du paiement.",
+      "taxes_included_shipping_at_checkout_html": "Taxe incluse. <a href=\"{{ link }}\">Frais d’expédition</a> et réductions calculés à l’étape du paiement.",
+      "update": "Mettre à jour le panier"
+    },
+    "items": {
+      "product": "Produit",
+      "quantity": "Quantité",
+      "increase_quantity": "Augmenter la quantité",
+      "decrease_quantity": "Diminuer la quantité",
+      "price": "Prix",
+      "remove": "Supprimer",
+      "total": "Sous-total",
+      "quantity_error": "Vous ne pouvez ajouter que {{ quantity }} de cet article à votre panier."
+    },
+    "note": {
+      "label": "Note de commande"
+    },
+    "shipping_calculator": {
+      "show": "Estimer les frais de livraison",
+      "hide": "Masquer le calculateur de frais de livraison",
+      "title": "Estimation des frais de livraison",
+      "country": "Pays",
+      "province": "Région",
+      "zip": "Code postal",
+      "submit": "Calculer",
+      "single_rate": "Il y a un tarif de livraison pour cette destination :",
+      "multiple_rates": "Il y a plusieurs tarifs de livraison pour cette destination :",
+      "no_rates": "Nous n’expédions pas vers cette destination.",
+      "error": "Veuillez corriger les erreurs suivantes :"
+    },
+    "summary": {
+      "subtotal": "Sous-total",
+      "checkout": "Paiement",
+      "continue_shopping": "Continuer les achats"
+    },
+    "terms": {
+      "agreement_html": "J’accepte les <a href=\"{{ terms_url }}\" target=\"_blank\">conditions générales de vente et la politique de remboursement</a>",
+      "confirmation": "Vous devez accepter les termes et conditions avant de continuer."
+    }
+  },
+  "provinces": {
+    "select": "choisir",
+    "british_columbia": "Colombie-Britannique",
+    "new_brunswick": "Nouveau-Brunswick",
+    "newfoundland_labrador": "Terre-Neuve-et-Labrador",
+    "nova_scotia": "Nouvelle-Écosse",
+    "prince_edward_island": "Île-du-Prince-Édouard",
+    "quebec": "Québec",
+    "northwest_territories": "Territoires du nord-ouest"
+  },
+  "customer": {
+    "order_history": {
+      "order_number": "Numéro de commande",
+      "date_ordered": "Date de la commande",
+      "order_details": "DÉTAILS DE LA COMMANDE",
+      "view_all": "Voir tout",
+      "search_by_order_number": "Rechercher par numéro de commande",
+      "find_an_order": "TROUVER UNE COMMANDE",
+      "store_receipts": "ACHATS EN MAGASIN",
+      "online_orders": "COMMANDES EN LIGNE",
+      "dont_see_order_html": "Vous ne voyez pas votre commande ?<br>Vous aviez peut-être commandé en tant qu’invité !",
+      "check_order_status": "Entrez votre numéro de commande pour vérifier son statut.",
+      "email_accossiated_with_order": "Adresse courriel associée à la commande",
+      "order_status": "Statut de la commande",
+      "check_status": "VÉRIFIER LE STATUT",
+      "back_to_list": "Retour à la liste",
+      "order_total": "Total de la commande",
+      "delivered_on": "Livré le",
+      "shipping_to": "Livraison à"
+    },
+    "account": {
+      "contact_preferences": "Préférences de contact",
+      "please_note_msg": "En vous désabonnant de nos communications, vous ne recevrez plus d'offres spéciales, de notifications de nouveaux arrivages et d’autres avantages.",
+      "sms_agreement": "En vous abonnant à nos communications par courriel et/ou SMS, vous acceptez de recevoir nos nouveautés, nos offres spéciales et plus de la part de Yellow. Vous pourrez vous désabonner à tout moment. Des frais de messagerie et de données s'appliquent.",
+      "select_both": "*Sélectionnez les deux pour être éligible à notre concours hebdomadaire. Voir règlement du concours.",
+      "keep_me_updated": "Tenez-moi au courant des rabais, nouveautés et autres évènements par SMS et, par la même occasion, j'aurai une chance de gagner ma prochaine commande !",
+      "phone": "Numéro de cellulaire",
+      "email_signup": "Courriel",
+      "title": "Mon compte",
+      "view_addresses": "Voir les adresses",
+      "return": "Retour aux détails du compte",
+      "dashboard": "Tableau de bord",
+      "profile": "Mes informations",
+      "order_history": "Historique des commandes",
+      "favourites": "Favoris",
+      "sign_out": "Se déconnecter",
+      "personal_information": "Informations personnelles",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Adresse courriel",
+      "mobile": "Cellulaire",
+      "member_information": "Informations personnelles",
+      "member_since": "Membre depuis",
+      "birthday": "Anniversaire",
+      "cancel": "Annuler",
+      "interest": "Intérêts",
+      "all_products": "Tous les produits",
+      "womens_products": "Articles pour femmes",
+      "mens_products": "Articles pour hommes",
+      "kids_products": "Articles pour enfants",
+      "accessories": "Accessoires",
+      "frequency": "Fréquence",
+      "marketing_frequency_all": "Je ne veux rien rater !",
+      "marketing_frequency_promos": "J’aimerais recevoir les offres et promotions.",
+      "marketing_frequency_unsubscribe": "Se désabonner de tous les courriels de Yellow",
+      "update_preferences_title": "METTRE À JOUR LES PRÉFÉRENCES",
+      "update_preferences_button": "METTRE À JOUR LES PRÉFÉRENCES",
+      "language": "Langue",
+      "edit_personal_information": "Modifier vos informations personnelles",
+      "edit_your_default_address": "Modifier l'adresse par défaut",
+      "save": "Enregistrer",
+      "update_your_preferences": "Mettez à jour la façon dont vous souhaitez être contacté",
+      "view_tracking_info_btn": "SUIVI DE LA COMMANDE",
+      "view_email_order_btn": "VOIR COURRIEL DE LA COMMANDE",
+      "return_an_item_btn": "RETOURNER UN ARTICLE",
+      "item": "Item",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total_price": "Prix Total",
+      "review_this_product_btn": "RÉDIGER UN AVIS",
+      "load_more_btn": "VOIR PLUS",
+      "billing_address": "Adresse de facturation",
+      "order_summary": "Information de la commande",
+      "subtotal": "Sous-total",
+      "shipping": "Livraison",
+      "discounts": "Discounts",
+      "tax": "Taxes",
+      "see_our_return_policy_html": "Pour la FAQ ou les retours, consultez notre <a href=\"/fr/pages/return-policy\">Politique de retour</a>.",
+      "questions_about_your_order_html": "Des questions sur votre commande ? <a href=\"javascript:$zopim.livechat.window.show();\">Clavardez avec nous</a>."
+    },
+    "order_items": {
+      "item_status": "Statut",
+      "style_number": "Numéro de style",
+      "color": "Couleur",
+      "size": "Taille"
+    },
+    "activate_account": {
+      "title": "Activer le compte",
+      "subtext": "Créez votre mot de passe pour activer votre compte.",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmer le mot de passe",
+      "submit": "Activer le compte",
+      "cancel": "Refuser l’invitation"
+    },
+    "addresses": {
+      "title": "Adresses",
+      "default": "Défaut",
+      "edit": "Modifier",
+      "edit_address": "Modifier l’adresse",
+      "delete": "Supprimer",
+      "delete_confirm": "Êtes-vous sûr de vouloir supprimer cette adresse ?",
+      "add_new": "Ajouter une nouvelle adresse",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "company": "Société",
+      "address1": "Adresse 1",
+      "address2": "Adresse 2",
+      "city": "Ville",
+      "country": "Pays",
+      "province": "Région",
+      "zip": "Code postal",
+      "phone": "Téléphone",
+      "set_default": "Définir comme adresse par défaut",
+      "add": "Ajouter une adresse",
+      "update": "Mettre à jour l’adresse",
+      "cancel": "Annuler"
+    },
+    "login": {
+      "title": "Connexion",
+      "email": "Adresse courriel",
+      "password": "Mot de passe",
+      "forgot_password": "Mot de passe oublié?",
+      "sign_in": "Se connecter",
+      "register": "S’inscrire",
+      "guest_title": "Continuer en tant qu'invité",
+      "guest_continue": "Continuer",
+      "create_account": "Créer un compte",
+      "dont_have_an_account_yet": "Pas encore de compte ?",
+      "reset_your_password": "Réinitialiser votre mot de passe",
+      "reset_message_html": "Si un compte avec l’adresse courriel <span id=\"reset-email\"></span> existe, vous allez recevoir un lien pour réinitialiser votre mot de passe.",
+      "back": "Retour",
+      "send": "Envoyer",
+      "click_here": "Cliquer ici",
+      "first_name": "Prénom",
+      "last_name": "Nom de famille",
+      "have_an_account": "Vous avez déjà un compte ?",
+      "password_must_be_x_characters": "Le mot de passe doit comporter au moins 8 caractères",
+      "email_already_exists": "Un compte existe déjà avec cette adresse courriel.",
+      "invalid_phone": "Téléphone invalide.",
+      "phone": "Téléphone",
+      "incorrect_email_or_password": "Courriel ou mot de passe incorrect.",
+      "to_save_this_item_to_your_favourites": "Pour enregistrer cet article dans vos Favoris, merci de vous connecter ou créer un compte.",
+      "email_is_required": "L’adresse courriel est obligatoire",
+      "first_name_is_required": "Le prénom est obligatoire",
+      "last_name_is_required": "Le nom de famille est obligatoire",
+      "sms_agreement": "En vous abonnant à nos communications par courriel et/ou SMS, vous acceptez de recevoir nos nouveautés, nos offres spéciales et plus de la part de Yellow. Vous pourrez vous désabonner à tout moment. Des frais de messagerie et de données s'appliquent."
+    },
+    "order": {
+      "title": "Commande {{ name }}",
+      "date": "Passée le {{ date }}",
+      "cancelled_on": "Commande annulée le {{ date }}",
+      "cancelled_reason": "Motif : {{ reason }}",
+      "billing_address": "Adresse de facturation",
+      "payment_status": "Statut de paiement",
+      "fulfillment_status": "Statut d’expédition",
+      "fulfilled_on": "Expédiée le {{ date }}",
+      "shipping": "Livraison",
+      "shipping_address": "Adresse de livraison",
+      "product": "Produit",
+      "sku": "SKU",
+      "quantity": "Quantité",
+      "price": "Prix",
+      "subtotal": "Sous-total",
+      "tax": "Taxes",
+      "total": "Total",
+      "track_shipment": "Suivre la commande"
+    },
+    "orders": {
+      "order_number": "Commande",
+      "view_order": "Voir la commande",
+      "date": "Date",
+      "payment_status": "Statut de paiement",
+      "fulfillment_status": "Statut d’expédition",
+      "total": "Total",
+      "none": "Vous n’avez encore passé aucune commande."
+    },
+    "recover_password": {
+      "title": "Réinitialiser votre mot de passe",
+      "subtext": "Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.",
+      "email": "Adresse e-mail",
+      "submit": "Envoyer",
+      "cancel": "Annuler",
+      "success": "Nous vous avons envoyé un e-mail avec un lien pour réinitialiser votre mot de passe."
+    },
+    "register": {
+      "title": "Créer un compte",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "submit": "Créer un compte",
+      "have_account": "Déjà inscrit ?",
+      "log_in": "Connectez-vous ici"
+    },
+    "reset_password": {
+      "title": "Réinitialiser le mot de passe",
+      "subtext": "Entrez un nouveau mot de passe pour {{ email }}",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmez le mot de passe",
+      "submit": "Réinitialiser le mot de passe"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Voici votre carte-cadeau de {{ value }} pour {{ shop }} !",
+      "subtext": "Voici votre carte-cadeau !",
+      "expired": "Expirée le {{ expiry }}",
+      "remaining_html": "{{ balance }} restant",
+      "qr_image_alt": "QR code - scannez pour utiliser la carte-cadeau",
+      "code": "Code de carte-cadeau",
+      "add_to_apple_wallet": "Ajouter à Apple Wallet",
+      "shop_link": "Commencer les achats",
+      "print": "Imprimer"
+    },
+    "recipient": {
+      "checkbox": "Je veux envoyer ce produit comme cadeau",
+      "email_label_optional": "E‑mail du destinataire",
+      "email_label_required": "E‑mail du destinataire *",
+      "name_label": "Nom du destinataire",
+      "message_label": "Message",
+      "max_characters": "{{ max_chars }} caractères maximum",
+      "send_on_label": "Envoyer"
+    }
+  },
+  "onboarding": {
+    "article": {
+      "title": "Article de blog",
+      "excerpt": "Montrez à vos clients un résumé de votre article de blog.",
+      "author": "Nom de l'auteur"
+    },
+    "blog": {
+      "empty": "Vous n’avez encore aucun article ! Une fois que vous en aurez écrit un, il apparaîtra ici."
+    },
+    "collection": {
+      "title": "Collection"
+    },
+    "product": {
+      "title": "Titre du produit",
+      "vendor": "Distributeur du produit",
+      "sku": "SKU",
+      "description": "Une description du produit, comprenant des détails tels que la qualité de construction, les matériaux utilisés et les raisons d’acheter."
+    }
+  },
+  "store_availability": {
+    "general": {
+      "pick_up_available_at_html": "Ramassage disponible à <strong>{{ location_name }}</strong>",
+      "view_store_info": "Afficher les informations de la boutique",
+      "check_other_stores": "Vérifier la disponibilité dans d'autres boutiques",
+      "pick_up_unavailable_at_html": "Ramassage actuellement indisponible à <strong>{{ location_name }}</strong>",
+      "miles": "mi",
+      "kilometers": "km",
+      "pick_up_available": "Ramassage disponible",
+      "pick_up_currently_unavailable": "Ramassage actuellement indisponible",
+      "invalid_location_address": "Contacter la boutique pour confirmer l'adresse",
+      "check_in-store_link": "Vérifiez la disponibilité en magasin"
+    }
+  },
+  "instore_availability": {
+    "find_your_store": "TROUVER CETTE POINTURE EN MAGASIN",
+    "enter_location": "Entrez le nom de votre ville ou votre code postal pour trouver le magasin Yellow le plus près de chez vous ayant votre produit.",
+    "search_button": "RECHERCHER",
+    "use_my_location": "UTILISER MA POSITION",
+    "availability_disclaimer": "Puisque les quantités sont limitées, téléphonez en magasin dès maintenant afin de réserver votre produit pour 24 heures !",
+    "city_or_postal_code": "Ville ou code postal*",
+    "call_the_store": "Call the store",
+    "color": "Couleur",
+    "close": "fermer"
+  },
+  "cookie_banner": {
+    "description_html": "Avec votre accord, nous et nos partenaires pouvons utiliser des témoins de connexion (cookies) ou des technologies similaires sur nos sites web pour personnaliser nos contenus, améliorer votre expérience de navigation, et faciliter celle-ci. En cliquant sur « Accepter », vous consentez à cette utilisation. En choisissant «Préférences», vous définissez vos autorisations. Pour obtenir plus de détails, consultez notre <a href=\"https://www.yellowshoes.com/fr/pages/privacy-policy-legal\">Politique de confidentialité</a>. Peu importe votre choix, notre site Web reste accessible en tout temps.",
+    "customize": "Personnaliser",
+    "accept": "Accepter",
+    "customize_welcome": "Bienvenue chez Yellow ! Gestion du consentement",
+    "customize_description_html": "Nos partenaires et nous déposons des cookies et utilisons des informations non sensibles de votre appareil pour améliorer nos produits et afficher des publicités et contenus personnalisés. Vous pouvez accepter ou refuser ces différentes opérations. Pour en savoir plus sur les cookies, les données que nous utilisons, les traitements que nous réalisons et les partenaires avec qui nous travaillons, vous pouvez consulter notre politique de confidentialité.",
+    "customize_you_allow": "Vous autorisez",
+    "customize_description_2_html": "Ce site et ses partenaires pourront également réaliser les traitements de données suivants : Assurer la sécurité, prévenir et détecter la fraude et réparer les erreurs, Fournir et présenter des publicités et du contenu, Identifier les appareils en fonction des informations transmises automatiquement, Mettre en correspondance et combiner des données à partir d’autres sources de données, et Relier différents appareils",
+    "customize_partners_btn": "Voir nos partenaires",
+    "customize_save_info": "Définir toutes vos préférences à enregistrer et continuer",
+    "save_btn": "Enregistrer",
+    "agree_btn": "Accepter",
+    "disagree_btn": "Refuser",
+    "partners_select": "Sélectionner les partenaires pour Yellow",
+    "partners_description": "Vous pouvez définir vos préférences de consentement pour chaque partenaire listé ci-dessous individuellement. Cliquez sur le nom d'un partenaire pour obtenir plus d'informations sur ce qu'il fait, les données qu'il récolte et comment il les utilise.",
+    "all_partners": "Tous les partenaires",
+    "block_btn": "Bloquer",
+    "authorize_btn": "Autoriser"
+  },
+  "featured_collection": {
+    "mens": "Hommes",
+    "womens": "Femmes",
+    "girls": "Filles",
+    "boys": "Garçons",
+    "accessories": "Accessoires"
+  },
+  "partnership_program": {
+    "form": {
+      "choose_file": "Choisir un fichier",
+      "personal_information": "Informations personnelles",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Adresse e-mail",
+      "phone_number": "Numéro de téléphone",
+      "street_address": "Adresse postale (Veuillez noter que l'utilisation d'une boîte postale (P.O. Box) n'est pas acceptée pour l'adresse postale.)",
+      "city": "Ville",
+      "zip": "Code postal",
+      "language": "Langue principale",
+      "english": "Anglais",
+      "french": "Français",
+      "additional_information": "Informations supplémentaires",
+      "shoe_size": "Genre",
+      "women": "Femmes",
+      "men": "Hommes",
+      "babies": "Bébés",
+      "toddlers": "Tout(es)-petit(e)s",
+      "juniors": "Juniors",
+      "social_media_information": "Informations sur les réseaux sociaux",
+      "profile_link": "Lien vers le profil",
+      "subscribers": "Nombre d'abonnés",
+      "engagement_rate": "Taux d'engagement",
+      "formerly": "auparavant",
+      "target_audience": "Publique cible sur les réseaux sociaux",
+      "family": "Famille",
+      "_other": "Autre",
+      "prev_exp_info": "Expérience antérieure en tant qu'ambassadeur ou dans des programmes similaires*",
+      "prev_biz": "Entreprises ou organisations précédentes",
+      "prev_biz_description": "Description des activités réalisées en tant qu'ambassadeur",
+      "why_become": "Pourquoi souhaitez-vous devenir ambassadeur pour le programme #GenYELLOW?",
+      "what_goals": "Quels sont vos objectifs en tant qu'ambassadeur?",
+      "media_kit": "Kit multimédia",
+      "submit": "envoyer",
+      "accept-terms_html": "Acceptation des termes et conditions, voir notre <a href='/fr/pages/privacy-policy-legal'>politique</a>.*<br>En soumettant ce formulaire, je confirme avoir lu, compris et accepté les conditions du programme d'ambassadeurs, et je m'engage à respecter les directives énoncées.",
+      "validation": {
+        "email": "Une adresse courriel est requise",
+        "province": "Selectionnez une province",
+        "first_name": "Prenom est requis",
+        "last_name": "Nom de famille est requis",
+        "phone_number": "Numero de téléphone est requis",
+        "street_address": "Adresse postale est requise",
+        "city": "Ville est requise",
+        "required_field": "Ce champ est requis"
+      },
+      "yes": "Oui",
+      "no": "Non"
+    }
+  }
+}

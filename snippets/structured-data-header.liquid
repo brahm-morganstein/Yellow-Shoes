@@ -1,0 +1,212 @@
+{% if shop.locale == "en" %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "Yellow Shoes",
+    "address": "5680 rue St-Dominique Montréal, Québec H2T 1V6",
+    "areaServed": [
+      "Canada",
+      "Quebec",
+      "Ontario"
+    ],
+    "description": "Yellow Shoes has a selection of footwear that everyone in the family will enjoy. Discover our latest shoes, boots and accessories for the entire family, women, men and kids on our official site. Fast delivery and easy returns! Shop now and Save!",
+    "email": "serviceclient@yellow.qc.ca",
+    "foundingDate": "1916-01-01",
+    "image": "https://cdn.shopify.com/s/files/1/1080/2420/files/STORE_FRONT_CARRIERE_mobile?v=1618422772",
+    "knowsLanguage": [
+      "English",
+      "French"
+    ],
+    "legalName": "Yellow Shoes",
+    "logo": "https://cdn.shopify.com/s/files/1/1080/2420/files/466x80_logo_yellow_150x_9e4a3628-bad1-4312-888b-efa65d8613fd_320x.png?v=1637787892",
+    "mainEntityOfPage": "https://en.wikipedia.org/wiki/Shoe",
+    "name": "Yellow Shoes",
+    "ownershipFundingInfo": "Family-owned business",
+    "slogan": "From Quebec Since 1916 - Footwear for the whole family",
+    "telephone": "1-888-970-7056",
+    "url": "https://www.yellowshoes.com/",
+    "founder": {
+      "@id": "Samuel Avrith"
+    },
+    {% capture sameAs_json %}
+      {%- if settings.social_facebook_url != blank -%}
+        {{ settings.social_facebook_url | json }},
+      {%- endif -%}
+      {%- if settings.social_youtube_url != blank -%}
+        {{ settings.social_youtube_url | json }},
+      {%- endif -%}
+      {%- if settings.social_instagram_url != blank -%}
+        {{ settings.social_instagram_url | json }},
+      {%- endif -%}
+      {%- if settings.social_whatsapp_url != blank -%}
+        {{ settings.social_whatsapp_url | json }},
+      {%- endif -%}
+      {%- if settings.social_tiktok_url != blank -%}
+        {{ settings.social_tiktok_url | json }},
+      {%- endif -%}
+      {%- if settings.social_snapchat_url != blank -%}
+        {{ settings.social_snapchat_url | json }},
+      {%- endif -%}
+      {%- if settings.social_pinterest_url != blank -%}
+        {{ settings.social_pinterest_url | json }},
+      {%- endif -%}
+      {%- if settings.social_twitter_url != blank -%}
+        {{ settings.social_twitter_url | json }},
+      {%- endif -%}
+      {%- if settings.social_linkedin_url != blank -%}
+        {{ settings.social_linkedin_url | json }},
+      {%- endif -%}
+      {%- if settings.social_wechat_url != blank -%}
+        {{ settings.social_wechat_url | json }},
+      {%- endif -%}
+      {%- if settings.social_vimeo_url != blank -%}
+        {{ settings.social_vimeo_url | json }},
+      {%- endif -%}
+      {%- if settings.social_tumblr_url != blank -%}
+        {{ settings.social_tumblr_url | json }},
+      {%- endif -%}
+      {%- if settings.social_twitch_url != blank -%}
+        {{ settings.social_twitch_url | json }},
+      {%- endif -%}
+      {%- if settings.social_spotify_url != blank -%}
+        {{ settings.social_spotify_url | json }},
+      {%- endif -%}
+      {%- if settings.social_discord_url != blank -%}
+        {{ settings.social_discord_url | json }},
+      {%- endif -%}
+      {%- if settings.social_mastodon_url != blank -%}
+        {{ settings.social_mastodon_url | json }},
+      {%- endif -%}
+      {%- if settings.social_threads_url != blank -%}
+        {{ settings.social_threads_url | json }},
+      {%- endif -%}
+      {%- if settings.social_custom_url != blank -%}
+        {{ settings.social_custom_url | json }},
+      {%- endif -%}
+    {% endcapture %}
+    "sameAs": [
+      "https://www.facebook.com/chaussuresyellow/",
+      "https://www.instagram.com/chaussuresyellow/",
+      "https://ca.linkedin.com/company/chaussure-yellow",
+      "https://montrealgazette.com/business/yellow-shoes-steps-into-its-second-century",
+      "https://offtomontreal.com/mes-looks-dhiver-chaussures-yellow/",  
+      {{ sameAs_json | remove_last: ',' }}
+    ]
+  }
+</script>
+
+  {% else %}
+    <script type="application/ld+json" class="Chaussures Yellow">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "Chaussures Yellow",
+      "address": "5680 rue St-Dominique Montréal, Québec H2T 1V6",
+      "areaServed": [
+        "Canada",
+        "Quebec",
+        "Ontario"
+      ],
+      "description": "Chaussures Yellow vous offre une sélection de souliers qui plairont à toute la famille. Découvrez nos nouvelles chaussures, bottes et nos accessoires pour toute la famille, les femmes, hommes et enfants, sur notre site officiel. Livraison rapide et retours faciles ! Magasinez maintenant et économisez !",
+      "email": "serviceclient@yellow.qc.ca",
+      "foundingDate": "1916-01-01",
+      "image": "https://cdn.shopify.com/s/files/1/1080/2420/files/STORE_FRONT_CARRIERE_mobile?v=1618422772",
+      "knowsLanguage": [
+        "Anglais",
+        "Français"
+      ],
+      "legalName": "Yellow Shoes",
+      "logo": "https://cdn.shopify.com/s/files/1/1080/2420/files/466x80_logo_yellow_150x_9e4a3628-bad1-4312-888b-efa65d8613fd_320x.png?v=1637787892",
+      "mainEntityOfPage": "https://fr.wikipedia.org/wiki/Chaussure",
+      "name": "Yellow Shoes",
+      "ownershipFundingInfo": "Entreprise Familiale",
+      "slogan": "Depuis 1916 - Magasin québécois de souliers, sandales et bottes",
+      "telephone": "1-888-970-7056",
+      "url": "https://www.yellowshoes.com/fr",
+      "founder": {
+        "@id": "Samuel Avrith"
+      },
+    {% capture sameAs_json %}
+      {%- if settings.social_facebook_url != blank -%}
+        {{ settings.social_facebook_url | json }},
+      {%- endif -%}
+      {%- if settings.social_youtube_url != blank -%}
+        {{ settings.social_youtube_url | json }},
+      {%- endif -%}
+      {%- if settings.social_instagram_url != blank -%}
+        {{ settings.social_instagram_url | json }},
+      {%- endif -%}
+      {%- if settings.social_whatsapp_url != blank -%}
+        {{ settings.social_whatsapp_url | json }},
+      {%- endif -%}
+      {%- if settings.social_tiktok_url != blank -%}
+        {{ settings.social_tiktok_url | json }},
+      {%- endif -%}
+      {%- if settings.social_snapchat_url != blank -%}
+        {{ settings.social_snapchat_url | json }},
+      {%- endif -%}
+      {%- if settings.social_pinterest_url != blank -%}
+        {{ settings.social_pinterest_url | json }},
+      {%- endif -%}
+      {%- if settings.social_twitter_url != blank -%}
+        {{ settings.social_twitter_url | json }},
+      {%- endif -%}
+      {%- if settings.social_linkedin_url != blank -%}
+        {{ settings.social_linkedin_url | json }},
+      {%- endif -%}
+      {%- if settings.social_wechat_url != blank -%}
+        {{ settings.social_wechat_url | json }},
+      {%- endif -%}
+      {%- if settings.social_vimeo_url != blank -%}
+        {{ settings.social_vimeo_url | json }},
+      {%- endif -%}
+      {%- if settings.social_tumblr_url != blank -%}
+        {{ settings.social_tumblr_url | json }},
+      {%- endif -%}
+      {%- if settings.social_twitch_url != blank -%}
+        {{ settings.social_twitch_url | json }},
+      {%- endif -%}
+      {%- if settings.social_spotify_url != blank -%}
+        {{ settings.social_spotify_url | json }},
+      {%- endif -%}
+      {%- if settings.social_discord_url != blank -%}
+        {{ settings.social_discord_url | json }},
+      {%- endif -%}
+      {%- if settings.social_mastodon_url != blank -%}
+        {{ settings.social_mastodon_url | json }},
+      {%- endif -%}
+      {%- if settings.social_threads_url != blank -%}
+        {{ settings.social_threads_url | json }},
+      {%- endif -%}
+      {%- if settings.social_custom_url != blank -%}
+        {{ settings.social_custom_url | json }},
+      {%- endif -%}
+    {% endcapture %}
+    "sameAs": [
+      "https://www.facebook.com/chaussuresyellow/",
+      "https://www.instagram.com/chaussuresyellow/",
+      "https://ca.linkedin.com/company/chaussure-yellow",
+      "https://montrealgazette.com/business/yellow-shoes-steps-into-its-second-century",
+      "https://offtomontreal.com/mes-looks-dhiver-chaussures-yellow/",  
+      {{ sameAs_json | remove_last: ',' }}
+    ]
+    }</script>
+  
+  {% endif %}
+
+{%- if request.page_type == 'index' -%}
+  {%- assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" -%}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "url": {{ shop.url | append: page.url | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+{%- endif -%}

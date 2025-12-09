@@ -1,0 +1,957 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "full_width": false
+      }
+    },
+    "background_video_7c9Rii": {
+      "type": "background-video",
+      "blocks": {
+        "subheading_XYKTdX": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "This seasons must-have boots",
+            "subheading_fr": "Les bottes incontournables de la saison"
+          }
+        },
+        "heading_9mfJ3c": {
+          "type": "heading",
+          "settings": {
+            "title": "Riverland Heritage Collection",
+            "title_fr": "LA COLLECTION RIVERLAND HÉRITAGE",
+            "heading_max_width": 15,
+            "title_size": 84,
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_style": "regular",
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text_QrnhQf": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use a video to get a customer's attention</p>",
+            "text_fr": "",
+            "text_color": "#ffffff",
+            "enlarge_text": true,
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_style": "regular"
+          }
+        },
+        "button_8LnPy4": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 0,
+            "button_label": "Shop memory",
+            "button_label_fr": "magasiner memory",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://products/119901",
+            "button_link_fr": "shopify://products/119901",
+            "button_color_transparent": false,
+            "button_color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color_hover": "#ffffff",
+            "button_text_color_hover": "#ffffff",
+            "button_style": "primary"
+          }
+        },
+        "button_tjgd6G": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 0,
+            "button_label": "Shop legend",
+            "button_label_fr": "magsiner legend",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://products/120337",
+            "button_link_fr": "shopify://products/120337",
+            "button_color_transparent": false,
+            "button_color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color_hover": "#ffffff",
+            "button_text_color_hover": "#ffffff",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XYKTdX",
+        "heading_9mfJ3c",
+        "text_QrnhQf",
+        "button_8LnPy4",
+        "button_tjgd6G"
+      ],
+      "disabled": true,
+      "settings": {
+        "video_shopify": "shopify://files/videos/Yellow Shoot 2 Website for Computer Extra Womens - Final.mp4",
+        "video_shopify_fr": "shopify://files/videos/Yellow Shoot 2 Website for Computer Extra Womens - Final.mp4",
+        "video_external": "",
+        "video_external_fr": "",
+        "video_description": "",
+        "video_description_fr": "",
+        "placeholder_image": "shopify://shop_images/2-DESKTOP_584a748e-3ea6-493c-89c9-213bf824b30a.jpg",
+        "placeholder_image_fr": "shopify://shop_images/2-DESKTOP.jpg",
+        "video_shopify_mobile": "shopify://files/videos/Yellow Shoot 2 Extra Womens Website for Mobile - Final (2).mp4",
+        "video_shopify_mobile_fr": "shopify://files/videos/Yellow Shoot 2 Extra Womens Website for Mobile - Final (2).mp4",
+        "video_external_mobile": "",
+        "video_external_mobile_fr": "",
+        "video_description_mobile": "",
+        "video_description_mobile_fr": "",
+        "placeholder_image_mobile": "shopify://shop_images/2-MOBILE.jpg",
+        "placeholder_image_mobile_fr": "shopify://shop_images/2-MOBILE.jpg",
+        "text_alignment": "center center",
+        "height_desktop": 600,
+        "height_mobile": 500,
+        "full_width": true,
+        "overlay_style": "shadow"
+      }
+    },
+    "slideshow_LRWdAd": {
+      "type": "slideshow",
+      "blocks": {
+        "image_a39R63": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
+            "image_fr": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
+            "mobile_image": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
+            "mobile_image_fr": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
+            "slide_link": "",
+            "subheading": "This seasons must-have",
+            "subheading_fr": "Les incontournables de la saison",
+            "title": "Riverland Heritage Collection",
+            "title_fr": "LA COLLECTION RIVERLAND HÉRITAGE",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 84,
+            "title_size_mobile": 46,
+            "use_h1": false,
+            "text": "",
+            "text_fr": "",
+            "enlarge_text": true,
+            "min_buttons_width_1": 0,
+            "min_buttons_width_1_fr": 0,
+            "min_buttons_mobile_width_1": 0,
+            "min_buttons_mobile_width_1_fr": 0,
+            "button_label_1": "",
+            "button_label_1_fr": "",
+            "button_background_color_1": "",
+            "button_text_color_1": "",
+            "button_background_color_hover_1": "",
+            "button_text_color_hover_1": "",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "",
+            "button_url_1_fr": "",
+            "min_buttons_width_2": 0,
+            "min_buttons_width_2_fr": 0,
+            "min_buttons_mobile_width_2": 0,
+            "min_buttons_mobile_width_2_fr": 0,
+            "button_label_2": "",
+            "button_label_2_fr": "",
+            "button_background_color_2": "",
+            "button_text_color_2": "",
+            "button_background_color_hover_2": "",
+            "button_text_color_hover_2": "",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "",
+            "button_url_2_fr": "",
+            "min_buttons_width_3": 0,
+            "min_buttons_width_3_fr": 0,
+            "min_buttons_mobile_width_3": 0,
+            "min_buttons_mobile_width_3_fr": 0,
+            "button_label_3": "",
+            "button_label_3_fr": "",
+            "button_background_color_3": "",
+            "button_text_color_3": "",
+            "button_background_color_hover_3": "",
+            "button_text_color_hover_3": "",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "",
+            "button_url_3_fr": "",
+            "min_buttons_width_4": 0,
+            "min_buttons_width_4_fr": 0,
+            "min_buttons_mobile_width_4": 0,
+            "min_buttons_mobile_width_4_fr": 0,
+            "button_label_4": "",
+            "button_label_4_fr": "",
+            "button_background_color_4": "",
+            "button_text_color_4": "",
+            "button_background_color_hover_4": "",
+            "button_text_color_hover_4": "",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "",
+            "button_url_4_fr": "",
+            "text_alignment": "center center",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        }
+      },
+      "block_order": [
+        "image_a39R63"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow",
+        "transition": "fade",
+        "navigation": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "accessibility_info": ""
+      }
+    },
+    "slideshow_JP7RpF": {
+      "type": "slideshow",
+      "blocks": {
+        "image_YrXTiA": {
+          "type": "image",
+          "settings": {
+            "slide_link": "",
+            "subheading": "RING IN THE",
+            "subheading_fr": "LES ESSENTIELS DE",
+            "title": "SCHOOL YEAR",
+            "title_fr": "LA RENTRÉE",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 86,
+            "title_size_mobile": 52,
+            "use_h1": false,
+            "text": "<p>Time to gear up for back-to-school season!</p>",
+            "text_fr": "<p>Prenez vous d'avance cette année et trouvez tout ce qu'il vous faut pour une rentrée réussie!</p>",
+            "enlarge_text": true,
+            "min_buttons_width_1": 0,
+            "min_buttons_width_1_fr": 0,
+            "min_buttons_mobile_width_1": 0,
+            "min_buttons_mobile_width_1_fr": 0,
+            "button_label_1": "SHOP BOYS",
+            "button_label_1_fr": "POUR GARÇONS",
+            "button_background_color_1": "",
+            "button_text_color_1": "",
+            "button_background_color_hover_1": "",
+            "button_text_color_hover_1": "",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "shopify://collections/boys-new-arrivals",
+            "button_url_1_fr": "shopify://collections/boys-new-arrivals",
+            "min_buttons_width_2": 0,
+            "min_buttons_width_2_fr": 0,
+            "min_buttons_mobile_width_2": 0,
+            "min_buttons_mobile_width_2_fr": 0,
+            "button_label_2": "SHOP GIRLS",
+            "button_label_2_fr": "POUR FILLES",
+            "button_background_color_2": "",
+            "button_text_color_2": "",
+            "button_background_color_hover_2": "",
+            "button_text_color_hover_2": "",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "shopify://collections/girls-new-arrivals",
+            "button_url_2_fr": "shopify://collections/girls-new-arrivals",
+            "min_buttons_width_3": 0,
+            "min_buttons_width_3_fr": 0,
+            "min_buttons_mobile_width_3": 0,
+            "min_buttons_mobile_width_3_fr": 0,
+            "button_label_3": "Shop this",
+            "button_label_3_fr": "",
+            "button_background_color_3": "",
+            "button_text_color_3": "",
+            "button_background_color_hover_3": "",
+            "button_text_color_hover_3": "",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "",
+            "button_url_3_fr": "",
+            "min_buttons_width_4": 0,
+            "min_buttons_width_4_fr": 0,
+            "min_buttons_mobile_width_4": 0,
+            "min_buttons_mobile_width_4_fr": 0,
+            "button_label_4": "Shop this",
+            "button_label_4_fr": "",
+            "button_background_color_4": "",
+            "button_text_color_4": "",
+            "button_background_color_hover_4": "",
+            "button_text_color_hover_4": "",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "",
+            "button_url_4_fr": "",
+            "text_alignment": "center center",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        }
+      },
+      "block_order": [
+        "image_YrXTiA"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow",
+        "transition": "fade",
+        "navigation": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "accessibility_info": ""
+      }
+    },
+    "rich_text_9HbeM4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_J8DyeK": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Riverland Heritage Collection",
+            "title_fr": "LA COLLECTION RIVERLAND HÉRITAGE",
+            "use_h1": false
+          }
+        },
+        "subheading_bFMMDr": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "A Canadian story of superior quality at an unbeatable price",
+            "subheading_fr": "Une histoire québécoise de qualité supérieure à prix inégalé"
+          }
+        },
+        "text_AXU8FW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The RIVERLAND™ Heritage collection now extends to the whole family, with styles for women, men, and kids. Crafted with genuine Australian sheepskin, these boots deliver exceptional softness, warmth, and comfort all fall and winter long. Discover a variety of new silhouettes, including select H2O styles treated for water resistance—combining premium quality and modern practicality. All the coziness, style, and durability you expect, at an accessible price.</p>",
+            "text_fr": "<p><strong>La collection RIVERLAND™ Heritage s’agrandit pour toute la famille, avec des modèles pour femmes, hommes et enfants.</strong> Confectionnées en véritable peau de mouton australienne, ces bottes offrent douceur, chaleur et confort tout au long de l'automne et l’hiver. Découvrez une variété de nouveaux styles, dont certains avec la technologie H2O pour une résistance à l’eau, alliant qualité supérieure et praticité moderne. Tout le confort, le style et la durabilité que vous attendez, à un prix accessible.</p><p></p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_J8DyeK",
+        "subheading_bFMMDr",
+        "text_AXU8FW"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "1"
+      }
+    },
+    "product_list_9dJ77P": {
+      "type": "product-list",
+      "settings": {
+        "title": "FOR WOMEN",
+        "title_fr": "POUR FEMMES",
+        "product_list": [
+          "121206",
+          "121336",
+          "121212",
+          "121207",
+          "120337",
+          "119901"
+        ],
+        "show_vendor": false,
+        "enable_carousel": false,
+        "show_variants_separately": false,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "hotspots_NRb4tC": {
+      "type": "hotspots",
+      "blocks": {
+        "hotspot_E9EaDr": {
+          "type": "hotspot",
+          "settings": {
+            "hotspot_x": 36,
+            "hotspot_y": 24,
+            "hotspot_x_mobile": 27,
+            "hotspot_y_mobile": 15,
+            "heading": "ULTRA SOFT",
+            "heading_fr": "ULTRA DOUX",
+            "text": "<p>Incredibly soft and plush, offering a luxurious feel and exceptional comfort</p>",
+            "text_fr": "<p>Incroyablement doux et moelleux, offrant une sensation de luxe et un bien-être exceptionnel</p>",
+            "icon": "heart",
+            "icon_width": 32
+          }
+        },
+        "hotspot_rzqKXx": {
+          "type": "hotspot",
+          "settings": {
+            "hotspot_x": 59,
+            "hotspot_y": 23,
+            "hotspot_x_mobile": 67,
+            "hotspot_y_mobile": 23,
+            "heading": "NATURAL SHEEPSKIN",
+            "heading_fr": "MOUTON NATUREL",
+            "text": "<p>Natural sheepskin provides unmatched comfort</p>",
+            "text_fr": "<p>La laine de mouton naturelle assure un confort inégalé</p>",
+            "icon": "leather",
+            "icon_width": 32
+          }
+        },
+        "hotspot_fiXVVm": {
+          "type": "hotspot",
+          "settings": {
+            "hotspot_x": 44,
+            "hotspot_y": 85,
+            "hotspot_x_mobile": 15,
+            "hotspot_y_mobile": 53,
+            "heading": "ALL WEATHER GRIP OUTSOLE",
+            "heading_fr": "SEMELLE ADHÉRENTE TOUTE SAISON",
+            "text": "<p>Riverland outsole in non-slip, ultra-durable rubber</p>",
+            "text_fr": "<p>Semelle d’usure Riverland en caoutchouc antidérapant et ultradurable</p>",
+            "icon": "shoe",
+            "icon_width": 32
+          }
+        },
+        "hotspot_8tV4GD": {
+          "type": "hotspot",
+          "settings": {
+            "hotspot_x": 65,
+            "hotspot_y": 53,
+            "hotspot_x_mobile": 82,
+            "hotspot_y_mobile": 54,
+            "heading": "H2O TREATED – Water Resistant",
+            "heading_fr": "H2O – Résistant à l’eau",
+            "text": "<p>Treated for water resistance to keep feet dry.</p>",
+            "text_fr": "<p>Traitement pour résister à l’eau et garder les pieds au sec.</p>",
+            "icon": "washing",
+            "icon_width": 32
+          }
+        },
+        "hotspot_PYAB9b": {
+          "type": "hotspot",
+          "settings": {
+            "hotspot_x": 31,
+            "hotspot_y": 63,
+            "hotspot_x_mobile": 35,
+            "hotspot_y_mobile": 82,
+            "heading": "ULTIMATE COMFORT",
+            "heading_fr": "CONFORT ULTIME",
+            "text": "<p>Memory foam for ultimate comfort with every step</p>",
+            "text_fr": "<p>Mousse mémoire pour un confort ultime à chaque pas</p>",
+            "icon": "star",
+            "icon_width": 32
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_E9EaDr",
+        "hotspot_rzqKXx",
+        "hotspot_fiXVVm",
+        "hotspot_8tV4GD",
+        "hotspot_PYAB9b"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/DESKTOP_BANNER_HERITAGE_NO-TEXT_CENTERED.jpg",
+        "mobile_image": "shopify://shop_images/WEBSITE-HERITAGE-PAGE-1.jpg",
+        "hotspot_color": "#fcfaf3",
+        "button_content": "plus",
+        "outer_circle": "pulse",
+        "full_width": true,
+        "text_alignment": "top left",
+        "overlay_style": "shadow",
+        "subheading": "Premium quality boots",
+        "subheading_fr": "Bottes de qualité supérieure",
+        "title": "RIVERLAND BOOTS IN AUSTRALIAN SHEEPSKIN",
+        "title_fr": "BOTTES RIVERLAND EN MOUTON RENVERSÉ D’AUSTRALIE",
+        "use_h1": false,
+        "heading_max_width": 10,
+        "text": "",
+        "text_fr": "",
+        "button_1_label": "",
+        "button_1_label_fr": "",
+        "button_1_link": "",
+        "button_1_style": "secondary",
+        "button_2_label": "",
+        "button_2_label_fr": "",
+        "button_2_link": "",
+        "button_2_style": "primary"
+      }
+    },
+    "product_list_pbppVK": {
+      "type": "product-list",
+      "settings": {
+        "title": "FOR THE LITTLE ONES",
+        "title_fr": "POUR ENFANTS",
+        "product_list": [
+          "121326",
+          "121316",
+          "121318"
+        ],
+        "show_vendor": false,
+        "enable_carousel": false,
+        "show_variants_separately": false,
+        "grid": 3,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "image_with_text_overlay_mMWWGr": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_VjiCCD": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Tell your story",
+            "subheading_fr": ""
+          }
+        },
+        "heading_eBVe68": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Image with text overlay",
+            "title_fr": "",
+            "heading_max_width": 15,
+            "title_size": 84,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text_QgCNCB": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Promote your brand or products with this feature section</p>",
+            "text_fr": "",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_VjiCCD",
+        "heading_eBVe68",
+        "text_QgCNCB"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/DESKTOP_BANNER_HERITAGE_NO-TEXT_CENTERED.jpg",
+        "image_fr": "shopify://shop_images/DESKTOP_BANNER_HERITAGE_NO-TEXT_CENTERED.jpg",
+        "mobile_image": "shopify://shop_images/DESKTOP_BANNER_HERITAGE_TEXT_EN_14544a05-79f9-4d75-ae06-f2eedcf2c986.jpg",
+        "mobile_image_fr": "shopify://shop_images/DESKTOP_BANNER_HERITAGE_TEXT_FR_d731f575-9c72-4864-9a28-6784cfb70570.jpg",
+        "height": "fixed",
+        "height_desktop": 540,
+        "height_mobile": 140,
+        "image_link": "",
+        "full_width": false,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "no_background"
+      }
+    },
+    "logo_list_jt97dt": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_wcBeRr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-14.png",
+            "image_width": 100,
+            "link": "",
+            "title": "Sheepskin offers superior insulation, keeping your feet warm even in extreme cold.",
+            "title_fr": "La laine de mouton offre une isolation supérieure, gardant vos pieds bien au chaud, même par très grand froid."
+          }
+        },
+        "logo_wtNY6L": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-15.png",
+            "image_width": 100,
+            "link": "",
+            "title": "Natural sheepskin provides unmatched comfort.",
+            "title_fr": "La laine de mouton naturelle assure un confort inégalé."
+          }
+        },
+        "logo_G9FL6M": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-11.png",
+            "image_width": 100,
+            "link": "",
+            "title": "Incredibly soft and plush, offering a luxurious feel and exceptional comfort.",
+            "title_fr": "Incroyablement doux et moelleux, offrant une sensation de luxe et un bien-être exceptionnel."
+          }
+        },
+        "logo_taMrUX": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-10.png",
+            "image_width": 100,
+            "link": "",
+            "title": "The H2O boots are specially treated for water resistance, keeping your feet dry.",
+            "title_fr": "Les bottes H2O sont spécialement traitées pour résister à l’eau et garder les pieds au sec."
+          }
+        },
+        "logo_BVjWmC": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-13.png",
+            "image_width": 100,
+            "link": "",
+            "title": "The natural lanolin in sheepskin provides natural resistance to bacteria and odors.",
+            "title_fr": "La lanoline naturelle de la laine de mouton procure une résistance naturelle aux bactéries et aux odeurs."
+          }
+        },
+        "logo_yWL8nE": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-16.png",
+            "image_width": 100,
+            "link": "",
+            "title": "Memory foam for ultimate comfort with every step.",
+            "title_fr": "Mousse mémoire pour un confort ultime à chaque pas."
+          }
+        },
+        "logo_bGUrrE": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-12.png",
+            "image_width": 100,
+            "link": "",
+            "title": "Riverland outsole in non-slip, ultra-durable rubber.",
+            "title_fr": "Semelle d’usure Riverland en caoutchouc antidérapant et ultradurable."
+          }
+        },
+        "logo_thJfQf": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ICONES_HERITAGE-09.png",
+            "image_width": 100,
+            "link": "",
+            "title": "Shock absorption thanks to a compressed EVA midsole for optimal support.",
+            "title_fr": "Absorption des chocs grâce à une semelle intercalaire en EVA compressé pour un soutien optimal."
+          }
+        }
+      },
+      "block_order": [
+        "logo_wcBeRr",
+        "logo_wtNY6L",
+        "logo_G9FL6M",
+        "logo_taMrUX",
+        "logo_BVjWmC",
+        "logo_yWL8nE",
+        "logo_bGUrrE",
+        "logo_thJfQf"
+      ],
+      "settings": {
+        "title": "Built to last",
+        "title_fr": "Conçues pour durer",
+        "image_opacity": 75,
+        "color_scheme": "default"
+      }
+    },
+    "product_list_PTFD8Y": {
+      "type": "product-list",
+      "settings": {
+        "title": "FOR MEN",
+        "title_fr": "POUR HOMMES",
+        "product_list": [
+          "121279",
+          "121278"
+        ],
+        "show_vendor": false,
+        "enable_carousel": false,
+        "show_variants_separately": true,
+        "grid": 3,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "custom_content_reatd9": {
+      "type": "custom-content",
+      "blocks": {
+        "text_gXMyah": {
+          "type": "text",
+          "settings": {
+            "width": "half",
+            "subheading": "",
+            "title": "Stay Cozy, Stay Chic",
+            "text": "<p>The RIVERLAND HERITAGE boots are your new go-to for effortless fall and winter style. With their soft suede and super cozy lining, these boots will keep you looking stylish, whether you're running errands or hitting brunch with friends. A perfect mix of cool and comfy.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "text_alignment": "center"
+          }
+        },
+        "image_kBDbFT": {
+          "type": "image",
+          "settings": {
+            "width": "half",
+            "image": "shopify://shop_images/1_bc95f664-8696-435b-91cf-d6c4faf095b8.jpg",
+            "height": "adapt",
+            "height_desktop": 600,
+            "height_mobile": 500,
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "enlarge_text": false,
+            "button_label": "",
+            "button_style": "primary",
+            "image_link": "",
+            "text_alignment": "center center",
+            "mobile_overlay_under": false,
+            "overlay_style": "shadow"
+          }
+        }
+      },
+      "block_order": [
+        "text_gXMyah",
+        "image_kBDbFT"
+      ],
+      "disabled": true,
+      "settings": {
+        "alignment": "middle"
+      }
+    },
+    "custom_content_QG49W9": {
+      "type": "custom-content",
+      "blocks": {
+        "image_xj7PqD": {
+          "type": "image",
+          "settings": {
+            "width": "half",
+            "image": "shopify://shop_images/4.jpg",
+            "height": "adapt",
+            "height_desktop": 600,
+            "height_mobile": 500,
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "enlarge_text": false,
+            "button_label": "",
+            "button_style": "primary",
+            "image_link": "",
+            "text_alignment": "center center",
+            "mobile_overlay_under": false,
+            "overlay_style": "shadow"
+          }
+        },
+        "text_r8CkTn": {
+          "type": "text",
+          "settings": {
+            "width": "half",
+            "subheading": "",
+            "title": "Fall’s Must-Have Boot",
+            "text": "<p>Looking for that one piece that pulls together your fall/winter wardrobe? The RIVERLAND HERITAGE boots are it! These boots bring you warmth, style, and that must-have look, making them the ultimate pick for every fashion-forward woman this season.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_xj7PqD",
+        "text_r8CkTn"
+      ],
+      "disabled": true,
+      "settings": {
+        "alignment": "middle"
+      }
+    },
+    "custom_content_W998GW": {
+      "type": "custom-content",
+      "blocks": {
+        "text_RYA83X": {
+          "type": "text",
+          "settings": {
+            "width": "half",
+            "subheading": "",
+            "title": "Your Everyday Style Hero",
+            "text": "<p>From running around town to weekend getaways, the RIVERLAND HERITAGE boots are built for your busy life. Available in two heights and seven stunning shades, these versatile boots will easily match all your fave fall looks—without skipping on absolute comfort.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "text_alignment": "center"
+          }
+        },
+        "image_EifVxM": {
+          "type": "image",
+          "settings": {
+            "width": "half",
+            "image": "shopify://shop_images/5.jpg",
+            "height": "adapt",
+            "height_desktop": 600,
+            "height_mobile": 500,
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "enlarge_text": false,
+            "button_label": "",
+            "button_style": "primary",
+            "image_link": "",
+            "text_alignment": "center center",
+            "mobile_overlay_under": false,
+            "overlay_style": "shadow"
+          }
+        }
+      },
+      "block_order": [
+        "text_RYA83X",
+        "image_EifVxM"
+      ],
+      "disabled": true,
+      "settings": {
+        "alignment": "middle"
+      }
+    },
+    "multi_column_Nfh9FJ": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_TxRNXd": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/121206-28-LEGEND_H2O-07.jpg",
+            "image_fr": "shopify://shop_images/121206-28-LEGEND_H2O-07.jpg",
+            "title": "LEGEND H2O",
+            "title_fr": "LEGEND H2O",
+            "text": "<p><strong>Soft. Snug. Stylish.</strong><br/><br/>Meet Legend H2O: double-face sheepskin inside and out, water-resistant, and built for comfort all year. Lightweight, cushy, and timeless.<br/></p>",
+            "text_fr": "<p><strong>Douce. Confortable. Stylée.</strong><br/><br/>Découvrez Legend H2O : en peau de mouton double-face à l’intérieur comme à l’extérieur, résistante à l’eau et ultra-confortable toute l’année. Légère, moelleuse et intemporelle.<br/></p>",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "shopify://products/121206",
+            "link_fr": "shopify://products/121206"
+          }
+        },
+        "text_block_CzMbHq": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/121318-28-MEMORY_H2O_JR-06.jpg",
+            "image_fr": "shopify://shop_images/121318-28-MEMORY_H2O_JR-06.jpg",
+            "title": "MEMORY H2O JR",
+            "title_fr": "MEMORY H2O JR",
+            "text": "<p><strong>Warm, cozy, ready to play!</strong><br/><br/>Soft double-face sheepskin, HEAT-MX insulation, and memory foam keep little feet warm and comfy all day. Water-resistant, lightweight, and made to move—perfect for school, outdoor adventures, and weekend fun!</p>",
+            "text_fr": "<p><strong>Chaud, douillet et prêt à jouer !</strong><br/><br/>Avec sa peau de mouton double-face, son isolation HEAT-MX et sa semelle à mémoire de forme, il garde les petits pieds bien au chaud toute la journée. Résistant à l’eau, léger et conçu pour bouger, idéal pour l’école, les aventures et les fins de semaine!<br/><br/></p>",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "shopify://products/121318",
+            "link_fr": "shopify://products/121318"
+          }
+        },
+        "text_block_BYnj8Y": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/121212-28-EVOCATION_H2O-07.jpg",
+            "image_fr": "shopify://shop_images/121212-28-EVOCATION_H2O-07.jpg",
+            "title": "EVOCATION H2O",
+            "title_fr": "EVOCATION H2O",
+            "text": "<p><strong>Fashion meets cozy.</strong><br/><br/>Made with soft double-face sheepskin, this water-resistant platform boot delivers warmth, breathability, and all-day comfort. Ultra-light with a modern edge, it’s the stylish upgrade every cold-season wardrobe needs.</p>",
+            "text_fr": "<p><strong>Le style prend de la hauteur.</strong><br/><br/>En peau de mouton double-face pour une douceur et une chaleur incomparables, cette botte plateforme légère et résistante à l’eau allie confort et allure. L’alliée parfaite pour rester chic et cosy, même quand il fait froid.</p>",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "shopify://products/121212",
+            "link_fr": "shopify://products/121212"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_TxRNXd",
+        "text_block_CzMbHq",
+        "text_block_BYnj8Y"
+      ],
+      "settings": {
+        "title": "GET ON THE TREND",
+        "title_fr": "Adoptez le look de l'heure",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "t",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "default"
+      }
+    },
+    "spacer_TQnfrr": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "background_video_7c9Rii",
+    "slideshow_LRWdAd",
+    "slideshow_JP7RpF",
+    "rich_text_9HbeM4",
+    "product_list_9dJ77P",
+    "spacer_TQnfrr",
+    "hotspots_NRb4tC",
+    "product_list_pbppVK",
+    "image_with_text_overlay_mMWWGr",
+    "logo_list_jt97dt",
+    "product_list_PTFD8Y",
+    "custom_content_reatd9",
+    "custom_content_QG49W9",
+    "custom_content_W998GW",
+    "multi_column_Nfh9FJ"
+  ]
+}

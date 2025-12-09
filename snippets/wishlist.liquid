@@ -1,0 +1,320 @@
+<script>
+  $(document).ready(function(){
+    let $body = $('body');
+
+    $body.on('click', '.wishlist-item', function(e) {
+      e.preventDefault();
+        {% if customer.id == blank %}
+      showLogin();
+      return;
+        {% endif %}
+      let $this = $(this);
+
+      let product_id  = $(this).closest('.product-block').attr('data-product-id');
+      let product_url = $(this).closest('.product-block').find('.product-link').attr('href');
+      product_url     = product_url.split('/fr/').join('/');
+      let sku         = $(this).closest('.product-block').attr('data-sku');
+      $.ajax({
+               url:     'https://apps-yellow.meginteractive.net/api/wishlist',
+               method:  'POST',
+               data:    {
+                 email:       '{{ customer.email }}',
+                 first_name: '{{ customer.first_name }}',
+                 last_name:   '{{ customer.last_name }}',
+                 action:      'add-remove-wishlist',
+                 product_id:  product_id,
+                 product_url: product_url,
+                 sku:         sku,
+               },
+               success: function(response_data) {
+                 response_data = JSON.parse(response_data);
+                 if (response_data.success !== undefined && response_data.success) {
+                   if (response_data.removed) {
+                     if ($this.find('.fa-trash').length > 0) {
+                       $this.closest('.product-block').remove();
+                       if ($body.find('#items-container .product-block').length == 0) {
+                         $body.find('#no-items-container').show();
+                       }
+                     } else {
+                       $body.find('.wishlist-item').each(function(){
+                         if($(this).closest('.product-block').attr('data-product-id') == product_id){
+                           $(this).find('.wishlist-selected').addClass('wishlist-hidden');
+                           $(this).find('.wishlist-unselected').removeClass('wishlist-hidden');
+                         }
+                       });
+                       $this.find('.wishlist-selected').addClass('wishlist-hidden');
+                       $this.find('.wishlist-unselected').removeClass('wishlist-hidden');
+                     }
+                   } else {
+                     $body.find('.wishlist-item').each(function(){
+                       if($(this).closest('.product-block').attr('data-product-id') == product_id){
+                         $(this).find('.wishlist-unselected').addClass('wishlist-hidden');
+                         $(this).find('.wishlist-selected').removeClass('wishlist-hidden');
+                       }
+                     });
+                     $this.find('.wishlist-unselected').addClass('wishlist-hidden');
+                     $this.find('.wishlist-selected').removeClass('wishlist-hidden');
+                   }
+
+                   if (response_data.removed != undefined && response_data.removed == true && $('#number-items').length > 0) {
+                     var count = $('#number-items').find('div').html();
+                     count     = parseInt(count) - 1;
+                     if (count == 1) {
+                       $('#number-items').html('<div style=\'padding:16px 0;\'>' + count + ' item</div>');
+                     } else {
+                       $('#number-items').html('<div style=\'padding:16px 0;\'>' + count + ' items</div>');
+                     }
+                   }
+                   updateCount();
+                 }
+               },
+               error:   function(response_data) {
+                 console.log(response_data);
+               },
+             });
+    });
+    setTimeout(function() {
+      getWishlistItems();
+      updateCount();
+    }, 500);
+
+  });
+  function getWishlistItems() {
+    let $body = $('body');
+    let skus  = '';
+    $body.find('.wishlist-item').each(function() {
+      let pContainer = $(this).closest('.product-block');
+      let sku        = pContainer.attr('data-sku');
+      skus += sku + ',';
+
+    });
+
+    $.ajax({
+             url:     'https://apps-yellow.meginteractive.net/api/wishlist',
+             method:  'POST',
+             data:    {
+               action: 'check-items',
+               email:  theme.customer_email,
+               skus:   skus,
+             },
+             success: function(response_data) {
+               response_data = JSON.parse(response_data);
+               if (response_data.success !== undefined && response_data.success) {
+                 $body.find('.wishlist-item').each(function() {
+                   let pContainer = $(this).closest('.product-block');
+                   let sku        = pContainer.attr('data-sku');
+                   if ($(this).find('.fa-trash').length == 0) {
+                     if (response_data.skus.indexOf(sku) == (-1)) {
+                       pContainer.find('.wishlist-selected').addClass('wishlist-hidden');
+                       pContainer.find('.wishlist-unselected').removeClass('wishlist-hidden');
+                     } else {
+                       pContainer.find('.wishlist-unselected').addClass('wishlist-hidden');
+                       pContainer.find('.wishlist-selected').removeClass('wishlist-hidden');
+                     }
+                   }
+                 });
+               }
+             },
+             error:   function(response_data) {
+               console.log(response_data);
+             },
+           });
+  }
+  function updateCount() {
+    let $body = $('body');
+    $.ajax({
+             url:     'https://apps-yellow.meginteractive.net/api/wishlist',
+             method:  'POST',
+             data:    {
+               action: 'get-items-count',
+               email:  '{{ customer.email }}',
+             },
+             success: function(response_data) {
+               response_data = JSON.parse(response_data);
+               if (response_data.success !== undefined && response_data.success) {
+                 $body.find('#wishlist-count').text(response_data.count);
+                 $body.find('#wishlist-count').show();
+               }
+             },
+             error:   function(response_data) {
+               console.log(response_data);
+             },
+           });
+  }
+</script>
+<style>
+  
+#wishlist-count {
+  color: #fff;
+  background: #e9b63f;
+  text-align: center;
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 10;
+}
+    .text-right{
+        text-align:right;
+    }
+    .text-left{
+        text-align:left;
+    }
+    .text-center{
+        text-align:center;
+    }
+
+    .product-block{
+        /*   position:relative; */
+    }
+    .product-block .wishlist-item{
+        display:inline-block;
+        position:absolute;
+        z-index:2;
+        top:5px;
+        right:10px;
+
+    }
+    .product-detail .product-block .wishlist-item{
+        /*   bottom: 10px; */
+        right:10px;
+        /*   top:inherit; */
+    }
+    .product-detail .gallery .product-label {
+        left: 10px;
+        right: inherit;
+    }
+    #items-container .wishlist-item{
+        top:15px;
+        right:50px;
+
+    }
+    .wishlist-item, .wishlist-item * {
+        cursor:pointer;
+    }
+
+    .wishlist-hidden{
+        display:none;
+    }
+    .wishlist-item a{
+        font-size:1.4rem;
+    }
+    .wishlist-selected a,.wishlist-item a:hover {
+        color:red;
+    }
+    .wishlist-selected > a > i {
+        color:red;
+    }
+    .wishlist-loader {
+        display:inline-block;
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #333; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: wlist-spin 2s linear infinite;
+    }
+
+    @keyframes wlist-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    #wishlist-url,#share-list-email,#share-list-your-email,#share-list-name,#share-list-btn,#share-list-your-text-message {
+        width:500px;
+        max-width:85%;
+    }
+    #loader-container{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding-top:50px;
+    }
+
+    #items-container{
+        display:flex;
+        flex-wrap:wrap;
+        padding-top:100px;
+    }
+    #items-container .product-block{
+        display:inline-block;
+        width:33.33%;
+        margin-bottom: 5%;
+    }
+    #share-list-container{
+        position:fixed;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background:rgba(0,0,0,.5);
+        z-index:1000;
+    }
+    #share-list-content{
+        max-width:100%;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        background:#fff;
+        /*   width: 90%; */
+        padding:30px 30px 60px 30px;
+        width: 570px;
+    }
+
+    #share-list-close{
+        position:absolute;
+        top:15px;
+        right:20px;
+    }
+    .m-auto{
+        margin:auto;
+    }
+    .product-block .image-label-wrap {
+        /*   padding-top: 40px; */
+    }
+    .product-label {
+        top:0;
+    }
+    .template-product .product-label{
+        /*   top:inherit;
+          bottom:0;
+          left:0; */
+        display: flex;position: relative;left: inherit;right: inherit; top:0;bottom:inherit;
+    }
+    .pr-3{
+        padding-right: 1rem !important;
+    }
+    .pl-3{
+        padding-left: 1rem !important;
+    }
+    #wishlist-url-container{
+        border-bottom: 1px solid #eee;
+    }
+    .px-0{
+        padding-left:0;
+        padding-right:0;
+    }
+    @media screen and (min-width:1024px){
+        .the-wishlist-image{
+            position:relative;
+            width:100%;height:100%;object-fit:cover;
+            height:260px;
+        }
+    }
+    @media screen and (max-width:800px){
+      #wishlist-count {
+    top: 5px;
+    right: 0;
+}
+        #share-list-container {
+            top: 50px;
+        }
+    }
+
+</style>

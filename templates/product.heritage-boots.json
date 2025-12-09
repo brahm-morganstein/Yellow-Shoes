@@ -1,0 +1,299 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "enable_product_reviews_by_price": true
+          }
+        },
+        "divider": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_in_quickbuy": false
+          }
+        },
+        "feature_rating_jxJf6D": {
+          "type": "feature-rating",
+          "settings": {
+            "heading": "Fit",
+            "heading_fr": "Ajustement",
+            "segments": 5,
+            "active_segment": "3",
+            "fill_segments": false,
+            "show_labels": true,
+            "label_left": "Small",
+            "label_left_fr": "Petit",
+            "label_middle": "True to size",
+            "label_middle_fr": "Correspond à la taille",
+            "label_right": "Large",
+            "label_right_fr": "Grand",
+            "show_in_quickbuy": false
+          }
+        },
+        "variant-picker": {
+          "type": "variant-picker",
+          "settings": {
+            "show_single": false,
+            "selector_style": "listed",
+            "enable_dynamic_availability": true,
+            "enable_size_chart": false,
+            "size_chart_variant": "Size",
+            "size_chart_page": ""
+          }
+        },
+        "buy-buttons": {
+          "type": "buy-buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_backorder_text": false,
+            "show_pickup_availability": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "divider_tHNeq6": {
+          "type": "divider",
+          "settings": {
+            "show_in_quickbuy": false
+          }
+        },
+        "countdown_NJM3Vt": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Free shipping - limited time only",
+            "heading_fr": "Livraison gratuite - temps limité",
+            "end_date": "2025-10-19",
+            "end_time": "23:59",
+            "end_text": "",
+            "hide_on_end": true,
+            "box_color": "#db2128",
+            "text_color": "#ffffff",
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true,
+            "show_in_quickbuy": false
+          }
+        },
+        "product_icons_Rdkdae": {
+          "type": "product-icons",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": false,
+            "open_tab": false,
+            "icon": "",
+            "show_in_quickbuy": false
+          }
+        },
+        "feature_rating_cnbh4D": {
+          "type": "feature-rating",
+          "disabled": true,
+          "settings": {
+            "heading": "Fit",
+            "heading_fr": "Fit",
+            "segments": 5,
+            "active_segment": "4",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "Small",
+            "label_left_fr": "Small",
+            "label_middle": "True to size",
+            "label_middle_fr": "True to size",
+            "label_right": "Large",
+            "label_right_fr": "Large",
+            "show_in_quickbuy": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "divider",
+        "feature_rating_jxJf6D",
+        "variant-picker",
+        "buy-buttons",
+        "divider_tHNeq6",
+        "countdown_NJM3Vt",
+        "product_icons_Rdkdae",
+        "description",
+        "feature_rating_cnbh4D"
+      ],
+      "settings": {
+        "show_breadcrumbs": true,
+        "select_first_variant": true,
+        "show_location_underneath": false,
+        "inventory_transfers_enable": true,
+        "enable_sticky_columns": false,
+        "enable_sticky_atc": false,
+        "sticky_atc_position": "end",
+        "sticky_atc_mobile": true,
+        "sticky_atc_behavior": "add_to_cart",
+        "sticky_atc_button_style": "secondary",
+        "gallery_size": "medium",
+        "gallery_layout": "collage-1",
+        "enable_zoom": true,
+        "show_alt_text": false,
+        "alt_text_icon": "",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "enable_media_grouping": true,
+        "media_grouping_option": "color,Color,Colour,Couleur,Farbe"
+      }
+    },
+    "collapsible_tabs_cwC6Nc": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "content_c4gUQY": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Riverland™ Heritage Collection of footwear products made from genuine Australian double-faced sheepskin.</p>",
+            "content_fr": "<p>Collection Riverland Héritage<br/>de produits de chaussures en véritable peau de mouton renversée australienne</p>"
+          }
+        },
+        "question_wGN6gt": {
+          "type": "question",
+          "settings": {
+            "title": "Are the RIVERLAND™ Heritage boots made from real sheepskin?",
+            "title_fr": "Est-ce que les bottes Riverland Héritage sont faites en vraie peau de mouton ?",
+            "answer": "<p>Yes, our models are made from genuine Australian double-faced sheepskin, offering a premium experience at a remarkably accessible price.</p>",
+            "answer_fr": "<p>Oui, nos modèles sont conçus en véritable peau de mouton renversée australienne offrant une expérience haut de gamme à un prix remarquablement accessible.</p>"
+          }
+        },
+        "question_bkNN9d": {
+          "type": "question",
+          "settings": {
+            "title": "What is double-faced sheepskin?",
+            "title_fr": "Qu’est-ce qu’une peau de mouton renversée?",
+            "answer": "<p>Double-faced sheepskin is when the wool and the leather are part of a single continuous piece, providing superior warmth and comfort.</p>",
+            "answer_fr": "<p>Il s’agit d’une peau de mouton renversée lorsque la laine et le cuir ne forment qu’une seule pièce continue, offrant ainsi une chaleur et un confort supérieur.</p>"
+          }
+        },
+        "question_WtQV7D": {
+          "type": "question",
+          "settings": {
+            "title": "Does Yellow Shoes sell products to protect my double-faced sheepskin boots?",
+            "title_fr": "Chaussures Yellow vend-il des produits pour protéger mes bottes en mouton renversé ?",
+            "answer": "<p>Yes! We recommend the <a href=\"https://www.yellowshoes.com/products/119245\" title=\"https://www.yellowshoes.com/products/119245\">PEDAG waterproofing protector</a>, which protects against water and stains and makes cleaning dirt easier. While sheepskin has naturally water-resistant properties, it is not fully waterproof.</p>",
+            "answer_fr": "<p>Oui! Nous recommandons le <a href=\"https://www.yellowshoes.com/fr/products/119245\" title=\"https://www.yellowshoes.com/fr/products/119245\">protecteur imperméabilisant PEDAG</a>; qui protège contre l’eau et les tâches et facilite le nettoyage de la saleté. La peau de mouton a des propriétés naturellement résistante à l’eau, mais toutefois n’est pas imperméable.</p>"
+          }
+        },
+        "question_64eEbe": {
+          "type": "question",
+          "settings": {
+            "title": "How can I protect my double-faced sheepskin boots?",
+            "title_fr": "Comment puis-je protéger mes bottes en peau de mouton renversée ?",
+            "answer": "<p>Follow the instructions for applying the PEDAG waterproofing protector. Apply it before the first use to protect the boots from stains and make maintenance easier.</p>",
+            "answer_fr": "<p>Suivez les instructions concernant l’application du protecteur imperméabilisant PEDAG. Appliquez-le avant la première utilisation pour protéger les bottes contre les taches et faciliter l’entretien.</p>"
+          }
+        },
+        "question_4Ki9hm": {
+          "type": "question",
+          "settings": {
+            "title": "Can I use the machine to wash or dry my double-faced sheepskin boots?",
+            "title_fr": "Puis-je utiliser la machine pour laver ou sécher mes bottes en mouton renversé?",
+            "answer": "<p>No, our double-faced sheepskin boots are made from high-quality natural materials. Therefore, they should be handled gently, avoiding heat sources and exposure to sunlight in order to maintain their properties and shape. It is recommended to follow the care instructions on the back and to air-dry your boots in a well-ventilated room.</p>",
+            "answer_fr": "<p>Non, nos bottes en peau de mouton renversée sont fabriquées à partir de matériaux naturels de haute qualité. Il faut donc les traiter avec douceur et éviter les sources de chaleur ainsi que l’exposition au soleil afin de conserver leurs propriétés et leur forme. Il est recommandé de suivre les instructions au dos pour l’entretien et de sécher vos bottes à l’air libre dans une pièce bien aérée.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_c4gUQY",
+        "question_wGN6gt",
+        "question_bkNN9d",
+        "question_WtQV7D",
+        "question_64eEbe",
+        "question_4Ki9hm"
+      ],
+      "settings": {
+        "title": "FAQ: Protection and Care Guide",
+        "title_fr": "FAQ: GUIDE DE PROTECTION ET D’ENTRETIEN"
+      }
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "title": "You may also like",
+        "title_fr": "VOUS AIMEREZ AUSSI",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4
+      }
+    },
+    "featured_collection_aT7HfV": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New arrivals",
+        "title_fr": "Nouveautés",
+        "collection": "homepage-new-arrivals",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": false,
+        "full_width": false,
+        "has_subcategories": true
+      }
+    },
+    "featured_collection_JgwV8T": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best sellers",
+        "title_fr": "MEILLEURS VENDEURS",
+        "collection": "homepage-best-sellers",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": false,
+        "full_width": false,
+        "has_subcategories": true
+      }
+    },
+    "spacer_R49BNm": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collapsible_tabs_cwC6Nc",
+    "reviews",
+    "related-products",
+    "featured_collection_aT7HfV",
+    "featured_collection_JgwV8T",
+    "spacer_R49BNm"
+  ]
+}

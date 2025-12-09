@@ -1,0 +1,975 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "comp_value":{
+    "now":"Our price",
+    "save":"Save",
+    "popup":"Our comparison prices highlight your savings based on the suggested retail price of similar items sold elsewhere.",
+    "comp_value": "Comp. value"
+  },
+  "cancel_order": {
+    "cancel_an_order": "Cancel an order",
+    "order_number": "Order Number",
+    "email_address": "Email Address",
+    "submit": "Cancel the order",
+    "order_number_required": "Order number is required",
+    "email_address_required": "Email address is required",
+    "recaptcha_required": "Please confirm you’re not a robot",
+    "cannot_cancel_order": "Unfortunately, it is not possible to cancel this order. If you need assistance,",
+    "order_required_time": "Unfortunately, it is no longer possible to cancel this order. If you need assistance,",
+    "invalid_order_details": "Order number and email address are not matching. Please check and try again. If you need assistance,",
+    "order_cancel_success": "Your order has been successfully cancelled. You will receive a cancellation confirmation email within a few minutes.",
+    "order_cancel_contact_us_html": "<a href=\"https://www.yellowshoes.com/pages/contact-us\"><u>please contact us.</u><a>",
+    "paragraph_need": "Need to cancel your order?",
+    "paragraph": "You can do so within 10 minutes after placing your order. After this time, it will no longer be possible to cancel the order, as it will be sent to our warehouse and we will start preparing it for shipment.Please enter your order number and the e-mail address you used to place your order to proceed with the cancellation."
+  },
+  "layout": {
+    "live_search": {
+      "see_all": "See all results"
+    },
+    "footer": {
+      "navigation_aria_label": "Secondary navigation"
+    },
+    "signup": {
+      "post_success": "Thank you for signing up!",
+      "placeholder": "Enter email",
+      "input_label": "Email",
+      "submit": "Sign up",
+      "label": "Sign up for our newsletter"
+    },
+    "search": {
+      "open": "Search",
+      "close": "Close",
+      "placeholder": "Search...",
+      "title": "Search Store"
+    },
+    "customer": {
+      "account": "Account",
+      "log_out": "Log out"
+    },
+    "header": {
+      "cart": "Cart",
+      "search_submit": "Submit",
+      "mobile_signin": "Sign In / Sign Up"
+    },
+    "breadcrumbs": {
+      "title": "Breadcrumbs",
+      "home": "Home",
+      "collections": "Collections"
+    }
+  },
+  "product_bundles": {
+    "customize_this_set": "Complete this set"
+  },
+  "collections": {
+    "general": {
+      "see_all_subcollections": "See all...",
+      "view_all": "View all",
+      "product_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "no_matches": "Sorry, there are no products in this collection",
+      "more_swatches": "+ {{ count }} more",
+      "more_swatches_js": "+ --==count==-- more"
+    },
+    "filtering": {
+      "filter": "Filter",
+      "all": "All",
+      "heading": "Filter",
+      "applied_filters": "Applied filters",
+      "clear_all": "Clear all",
+      "out_of_stock_label": "Out of stock",
+      "show_label": "Show",
+      "hide_label": "Hide",
+      "submit": "Submit"
+    },
+    "sorting": {
+      "title": "Sort by"
+    },
+    "price_range": {
+      "min_label": "From",
+      "max_label": "To"
+    }
+  },
+  "dashboard": {
+    "name": "Name",
+    "email": "Email",
+    "mobile": "Mobile Number",
+    "birthday": "Birthday",
+    "member_since": "Member Since",
+    "view_all": "View All",
+    "default_address": "Default Address",
+    "edit": "Edit",
+    "account_info": "Account Info",
+    "save": "Save"
+  },
+  "crossup_sells": {
+    "complete_with": "Complete with",
+    "care_product_related": "Suggested shoe care",
+    "complete_the_look": "Complete the look with"
+  },
+  "product_reviews": {
+    "reviews": "Reviews",
+    "thank_you": "THANK YOU FOR POSTING A REVIEW!",
+    "review_title": "Review Title",
+    "review_title_placeholder": "Give your review a title",
+    "review": "Review",
+    "review_placeholder": "Write your comments here",
+    "write_a_review": "Write a Review",
+    "how_rate_quality": "How would you rate the quality of this product?",
+    "how_rate_value": "How would you rate the value of this product?",
+    "read_review_prior": "Did you read reviews before making a purchase?",
+    "no": "No",
+    "yes": "Yes",
+    "email": "Email",
+    "overall_rating": "Overall Rating",
+    "nickname": "Nickname",
+    "nickname_info": "Will be used to show your review on our website",
+    "nickname_placeholder": "Enter your name",
+    "fill_required_fields": "Please fill all required fields and ratings",
+    "submit_review": "Submit Review",
+    "write_your_review": "Write Your Review",
+    "size_and_fit": "SIZE AND FIT*",
+    "overall_product_rating": "OVERALL PRODUCT RATING*",
+    "would_you_recommend_this_item": "WOULD YOU RECOMMEND THIS ITEM?*",
+    "share_your_thoughts": "Share your thoughts with others.",
+    "form_review_title": "Review Title*",
+    "form_your_review": "YOUR REVIEW*",
+    "tell_other_customers": "Tell other customers about yourself.",
+    "minimum_character_length": "Minimum character length: 25",
+    "minimum_character_length_validation": "Your review must be at least 25 characters in length.",
+    "location": "Location (city, province) ",
+    "size_normally_worn": "Size normally worn",
+    "size_purchased": "Size purchased*",
+    "submit": "SUBMIT",
+    "cancel": "Cancel",
+    "required": "Required*",
+    "enter_location_here": "Enter location here",
+    "enter_review_title_here": "Enter review title here",
+    "fits_one_size_too_small": "Fits one size too small",
+    "runs_a_little_small": "Runs a little small",
+    "perfect_fit": "Perfect fit",
+    "runs_a_little_big": "Runs a little big",
+    "fits_one_size_too_big": "Fits one size too big",
+    "ratings_and_reviews": "RATINGS AND REVIEWS",
+    "average_customer_rating": "Average customer rating",
+    "customers_say": "Customers say",
+    "recommended": "recommended",
+    "reviews_count": "review(s)",
+    "stars": "star(s)",
+    "review_message": "Review Message*",
+    "select": "Select",
+    "check_out_our_review_guidelines_html": "Check out our <a href=\"/pages/yellow-values-your-feedback/\" style=\"text-decoration: underline;\">Review Guidelines.</a>",
+    "questions_with_review_html": "Need additional help or have a question? <a href=\"javascript:$zopim.livechat.window.show();\" style=\"text-decoration: underline;\">Chat with us!</a>",
+    "load_more_reviews": "Load more reviews"
+  },
+  "favourites": {
+    "share_list": "Share your list",
+    "share_list_via_email": "Share your list via Email",
+    "copy": "Copy",
+    "custom_message": "Custom Message",
+    "share": "Share",
+    "recipient_email": "Recipient email",
+    "required_email": "Email address is required",
+    "no_items_header": "Save your favourite items",
+    "no_items_text": "Like to save the items you love? Just click on the heart symbol on the item and it will show up here.",
+    "continue_shopping": "Continue Shopping"
+  },
+  "back_in_stock": {
+    "notify_me_button": "Notify me when available",
+    "email": "Email",
+    "phone": "Phone",
+    "postal_code": "Postal Code",
+    "notify_me_submit": "NOTIFY ME",
+    "cancel": "Cancel",
+    "keep_me_posted_email_sms": "Keep me updated of latest promotions, new arrivals and other events through Emails and SMS and automatically get a chance to win my next order free!",
+    "sms_agreement": "By signing via text, you agree to receive recurring automated promotional and personalized marketing text messages (e.g. cart reminders) form Yellow. You can unsubscribe anytime. Message and data rates apply.",
+    "optional": "optional"
+  },
+  "data_request_form": {
+    "data_subject_access_request_form_html": "Data Subject Access Request Form",
+    "we_take_your_privacy_seriously_html": "We take your privacy seriously and only use your data to enhance your experience with us.",
+    "as_a_customer_you_have_the_right_to_html": "As a customer, you have the right to:",
+    "request_a_summary_of_your_personal_information_html": "Request a summary of your personal information",
+    "request_that_we_do_not_share_or_sell_your_data_html": "Request that we do not share or sell your data",
+    "request_that_we_delete_your_personal_data_html": "Request that we delete your personal data",
+    "to_enact_these_rights_please_fill_out_the_form_below_html": "To enact these rights, please fill out the form below.",
+    "make_a_data_request_html": "Make a Data Request",
+    "select_a_request_type_html": "Select a request type <span style=\"color:red;\">*</span>",
+    "delete_all_your_personal_data_html": "Delete all your personal data",
+    "get_a_copy_of_your_personal_data_html": "Get a copy of your personal data",
+    "unsubscribe_from_marketing_communications_html": "Unsubscribe from marketing communications",
+    "first_name_html": "First Name: <span style=\"color: red;\">*</span>",
+    "last_name_html": "Last Name: <span style=\"color: red;\">*</span>",
+    "email_address_html": "Email Address: <span style=\"color: red;\">*</span>",
+    "country_of_residence_used_in_order_html": "City: <span style=\"color: red;\">*</span>",
+    "state_html": "Province: <span style=\"color: red;\">*</span>",
+    "comments_optional_html": "Comments (Optional):",
+    "submit_html": "Submit"
+  },
+  "contact_us": {
+    "opening_hours": "Opening hours",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "careers": {
+    "banner_line1_html": "Join our team",
+    "banner_line2_html": "A role at Yellow Shoes could be your first step toward <br> an exciting fashion career!",
+    "role_at_yellow_html": "Whether you enjoy researching the latest style trends, focussing {{ desktop_break }} on data, or working on a team, there is a role for you at Yellow.",
+    "view_head_office_opportunities": "view head office opportunities",
+    "view_head_office_opportunities_link": "/pages/careers-opportunities-head-office",
+    "view_store_opportunities": "view store opportunities",
+    "view_store_opportunities_link": "/pages/careers-opportunities-stores",
+    "who_we_are_h1": "Who we are",
+    "who_we_are_p_html": "Founded in 1916, Chaussures Yellow is a proudly Quebec based company, here to be by your side, in all moments of your life, for over 100 years.",
+    "about_us_btn_label": "about us",
+    "about_us_btn_link": "https://www.yellowshoes.com/pages/about-us",
+    "what_we_are_looking_for_h1": "What we are looking for",
+    "what_we_are_looking_for_p_html": "<p>Our people are passionate, curious, well-rounded, motivated and dynamic, with something different to contribute. They're enthusiastic about everything they do, and are creative, unstoppable, clever and proactive.</p><p>Each of the over 600 people who make up Yellow is important to the success of the company. We are in a constant state of growth and evolution so having the best team has been key to continuing to grow together.</p>",
+    "yellow_eco_h1": "Yellow Eco, sustainability for a better planet",
+    "yellow_eco_p_html": "As the world evolves, and as fashion evolves, we must evolve as well. Introducing for a second season: YELLOW ECO, our shoe collection made {{ desktop_break }} using ecoresponsable materials. It's a new start for us, a new path for us to take one step at a time. By choosing a pair from our collection, you {{ desktop_break }} are journeying on our path as well, a better direction, and for that we thank you.",
+    "yellow_echo_button": "find out more",
+    "yellow_echo_link": "https://www.yellowshoes.com/pages/yellow-eco",
+    "yellow_cares_h1_html": "Yellow cares, giving back to {{ desktop_break }} the community",
+    "yellow_cares_p_html": "<p>We share the love by offering donations of money, shoes and food to various organizations in order to help others and spread joy and happiness.</p><p>Over the years, the Yellow Group Inc. has donated thousands of pairs of{{ desktop_break }} shoes and accessories to various associations and community organizations{{ desktop_break }} through the province of Quebec.</p>",
+    "yellow_cares_button": "find out more",
+    "yellow_cares_link": "https://www.yellowshoes.com/pages/yellow-cares",
+    "why_choose_yellow_h1_html": "Why choose Yellow? {{ desktop_break }} There's tons of reason!",
+    "why_choose_yellow_p_html": "Talent moves in all directions. With that, and your desire {{ desktop_break }}to learn, you'll get to where you want to go.",
+    "continue_shopping_btn_label": "continue shopping",
+    "continue_shopping_btn_link": "https://www.yellowshoes.com/",
+    "table_header_job_title": "Job Title",
+    "table_header_location": "City",
+    "back_to_careers_btn_label": "Back to careers",
+    "back_to_careers_btn_link": "/pages/careers",
+    "current_openings_h1": "Current Openings",
+    "current_openings_p": "Thanks for checking out our job openings. See something that interests you?",
+    "filter_by_city": "Filter by city",
+    "company_name": "Yellow Shoes",
+    "join_talent_network_btn": "JOIN TALENT NETWORK",
+    "join_talent_network_btn_url": "/pages/join-talent-network"
+  },
+  "join_talent": {
+    "form_msg_html": "Join our talent <br class='mobile-break'>network today!",
+    "required": "Required",
+    "email": "Email Address",
+    "province": "Province",
+    "select": "Select",
+    "location": "Location",
+    "job": "Desired Job Title",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "resume": "Upload A Resume",
+    "resume_size_format": "Max 4M / PDF, JPEG, WORD",
+    "choose-file": "CHOOSE FILE",
+    "accept-terms_html": "I accept the <a target='_blank' class='mustard' href='https://www.yellowshoes.com/pages/privacy-policy-legal'>Privacy & Terms and Conditions</a>",
+    "terms": "By joining our talent network you have not officialy applied to a position",
+    "success_alert_msg": "Your application has been sent",
+    "join": "JOIN",
+    "validation": {
+      "email": "Valid Email is required",
+      "province": "Select a Province",
+      "location": "Location is required",
+      "job": "Desired Job Title is required",
+      "first_name": "First Name is required",
+      "last_name": "Last Name is required",
+      "resume_size_format": "Max 4M / PDF, JPEG, WORD ONLY",
+      "recaptcha": "Recaptcha is required",
+      "terms": "The terms must be accepted",
+      "resume": "Resume is required"
+    }
+  },
+  "general": {
+    "localization": {
+      "country_label": "Country/Region",
+      "countries_error": "Error fetching countries, please try again.",
+      "language_label": "Language",
+      "update": "Update"
+    },
+    "icon_labels": {
+      "close": "Close",
+      "play": "Play"
+    },
+    "labels": {
+      "please_select": "Please select"
+    },
+    "navigation": {
+      "menu": "Menu",
+      "show_links": "Show links",
+      "back": "Back",
+      "close": "Close"
+    },
+    "breadcrumbs": {
+      "title": "Breadcrumbs",
+      "home": "Home",
+      "collections": "Collections"
+    },
+    "pagination": {
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "search": {
+      "title": "Search",
+      "input_label": "Search",
+      "placeholder": "Search our store",
+      "submit": "Search",
+      "close": "Close",
+      "results_with_count": {
+        "one": "We found {{ count }} result",
+        "other": "We found {{ count }} results"
+      },
+      "no_results": "No results found for \"{{ terms }}\".",
+      "no_results_without_terms": "Sorry, we couldnʼt find any results",
+      "suggestions": "Suggestions",
+      "pages": "Pages",
+      "view_all": "View all search results"
+    },
+    "slider": {
+      "next": "Next",
+      "previous": "Previous",
+      "of": "of"
+    },
+    "social": {
+      "share_heading": "Share",
+      "share_on_facebook": "Share on Facebook",
+      "share_on_twitter": "Tweet on X",
+      "share_on_pinterest": "Pin on Pinterest",
+      "follow_shop": "{{ shop_name }} on {{ social_platform }}"
+    },
+    "meta": {
+      "page": "Page {{ page }}",
+      "tags": "Tagged \"{{ tags }}\""
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "close": "Close",
+    "main_navigation": "Primary",
+    "secondary_navigation": "Secondary",
+    "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
+    "view_details": "View details",
+    "shop_now": "Shop now"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "added_to_cart_with_link_html": "Added to your <a href=\"{{ cart_url }}\">Cart</a>",
+      "backorder": "is backordered and will ship as soon as it is back in stock.",
+      "notify_when_available_text": "Notify me when available",
+      "barcode": "Barcode:",
+      "choose_a": "Choose a",
+      "description": "Description",
+      "from": "Starting from",
+      "include_taxes": "Tax included",
+      "media": {
+        "gallery_viewer": "Gallery Viewer",
+        "load_image": "Load image {{ index }} in gallery view",
+        "play_video": "Play video"
+      },
+      "more_swatches": "+ {{ count }} more",
+      "new": "New arrival",
+      "next_product": "Next",
+      "percent_reduction": "{{ amount }}% off",
+      "pickup_availability": {
+        "check_other_stores": "Check availability at other stores",
+        "pick_up_available": "Pickup available",
+        "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
+        "pick_up_unavailable": "Pickup currently unavailable",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>",
+        "refresh": "Refresh",
+        "unavailable": "Couldn't load pickup availability",
+        "view_store_info": "View store information"
+      },
+      "preorder": "Pre-order",
+      "prev_product": "Previous",
+      "price": {
+        "unit_price": "Unit price",
+        "unit_price_separator": " / "
+      },
+      "product_variants": "Product variants",
+      "quantity": "Quantity",
+      "quick_buy": "Quick buy",
+      "reviews_count": {
+        "one": "{{ count }} review",
+        "other": "{{ count }} reviews"
+      },
+      "sale": "Sale",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "size_chart": "Size guide",
+      "sku": "SKU:",
+      "sold_out": "Sold out",
+      "value_reduction_html": "{{ amount }} off",
+      "vendor": "By",
+      "view_details": "View details",
+      "xr_button": "View in your space",
+      "length_cm": "LENGTH (CM)",
+      "womens_footwear": "WOMEN’S FOOTWEAR",
+      "mens_footwear": "MEN'S FOOTWEAR",
+      "baby_footwear": "BABY FOOTWEAR",
+      "toddler_footwear": "TODDLER FOOTWEAR",
+      "junior_footwear": "JUNIOR FOOTWEAR",
+      "more_details": "More details"
+    },
+    "filtering": {
+      "title": "Filters",
+      "applied_filters": "Applied Filters",
+      "apply": "Apply",
+      "clear_all": "Clear all",
+      "filter": "Filter",
+      "out_of_stock_label": "Out of stock",
+      "show_label": "Show",
+      "hide_label": "Hide",
+      "min_price_label": "From",
+      "max_price_label": "To"
+    },
+    "sorting": {
+      "sort_by_label": "Sort by"
+    },
+    "inventory": {
+      "in_stock": "In stock",
+      "low_stock": "Low stock",
+      "only_x_left": "{{ quantity }} in stock",
+      "x_left": "{{ quantity }} in stock, ready to ship"
+    },
+    "transfers": {
+      "will_not_ship_until": "Ships {{ date }}",
+      "will_be_in_stock_after": "In stock after {{ date }}",
+      "waiting_for_stock": "More stock coming soon"
+    },
+    "variant": {
+      "no_stock": "Sold out",
+      "non_existent": "Unavailable",
+      "change": "Change"
+    }
+  },
+  "sections": {
+    "header": {
+      "account": "Account",
+      "search": "Search",
+      "cart": "Cart"
+    },
+    "footer": {
+      "copyright_html": "&copy; {{ year }} <a href=\"{{ shop_url }}\">{{ shop_name }}</a>."
+    },
+    "faq_header": {
+      "search_label": "Search FAQ",
+      "search_placeholder": "Search FAQ"
+    },
+    "collection": {
+      "empty": "No products found",
+      "product_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "grid_layout": "Grid",
+      "list_layout": "List",
+      "view_all_related_collections": "View all..."
+    },
+    "countdown": {
+      "days_short": "Days",
+      "hours_short": "Hours",
+      "minutes_short": "Mins",
+      "seconds_short": "Secs",
+      "end_date": "Ends {{ date }}"
+    },
+    "featured_collection": {
+      "view_all": "View all"
+    },
+    "slideshow": {
+      "load_slide": "Load slide",
+      "carousel": "Carousel",
+      "slide": "Slide"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "Sorry, the page you requested does not exist.",
+      "link": "Back to home"
+    },
+    "password": {
+      "general": {
+        "login_link": "Enter using password",
+        "powered_by": "This shop will be powered by"
+      },
+      "login_form": {
+        "admin_link_html": "Are you the store owner? <a href=\"/admin\">Log in here</a>",
+        "heading": "Enter store using password",
+        "password_label": "Password",
+        "password_placeholder": "Password",
+        "submit": "Enter"
+      },
+      "signup_form": {
+        "email_label": "Email",
+        "email_placeholder": "Your email",
+        "submit": "Submit",
+        "success": "Thank you for your interest. We'll be sure to keep you up to date."
+      }
+    }
+  },
+  "newsletter": {
+    "label": "Email",
+    "placeholder": "Your email",
+    "button_label": "Subscribe",
+    "success": "Thank you for subscribing."
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send",
+      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+      "error_heading": "Please correct the following errors:"
+    }
+  },
+  "blogs": {
+    "article": {
+      "back_to_blog": "Back to {{ title }}",
+      "no_matches": "You don't have any articles yet! Once you've written one, it will show up here.",
+      "read_more": "Read more"
+    },
+    "comments": {
+      "title": "Comments",
+      "form_title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "post": "Post comment",
+      "moderated": "Please note: comments must be approved before they are published.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "error_heading": "Please correct the following errors:"
+    },
+    "filtering": {
+      "all": "All",
+      "filter_by": "Filter by"
+    },
+    "pagination": {
+      "newer_articles": "Newer articles",
+      "older_articles": "Older articles"
+    },
+    "tags": {
+      "label": "Tagged"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your cart",
+      "backorder": "Product is backordered and will ship as soon as it is back in stock.",
+      "free_shipping": "Your order is eligible for free shipping!",
+      "free_shipping_deficit_html": "Spend <strong>{{ amount }}</strong> more for <strong>free shipping</strong>!",
+      "taxes_and_shipping_at_checkout": "Taxes, discounts and shipping calculated at checkout.",
+      "taxes_and_shipping_at_checkout_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "taxes_included_shipping_at_checkout": "Tax included, shipping and discounts calculated at checkout.",
+      "taxes_included_shipping_at_checkout_html": "Tax included, <a href=\"{{ link }}\">shipping</a> and discounts calculated at checkout.",
+      "update": "Update cart"
+    },
+    "items": {
+      "product": "Product",
+      "quantity": "Quantity",
+      "increase_quantity": "Increase quantity",
+      "decrease_quantity": "Decrease quantity",
+      "price": "Price",
+      "remove": "Remove",
+      "total": "Subtotal",
+      "quantity_error": "You can only add {{ quantity }} of this item to your cart."
+    },
+    "note": {
+      "label": "Order note"
+    },
+    "shipping_calculator": {
+      "show": "Estimate shipping",
+      "hide": "Hide shipping calculator",
+      "title": "Estimate shipping",
+      "country": "Country",
+      "province": "Province",
+      "zip": "Zip/Postal Code",
+      "submit": "Calculate",
+      "single_rate": "There is one shipping rate for this destination:",
+      "multiple_rates": "There are multiple shipping rates for this destination:",
+      "no_rates": "We do not ship to this destination.",
+      "error": "Please correct the following errors:"
+    },
+    "summary": {
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "continue_shopping": "Continue shopping"
+    },
+    "terms": {
+      "agreement_html": "I agree to the <a href=\"{{ terms_url }}\" target=\"_blank\">terms and refund policy</a>",
+      "confirmation": "You must agree to the terms and conditions before continuing."
+    }
+  },
+  "provinces": {
+    "select": "Select",
+    "british_columbia": "British Columbia",
+    "new_brunswick": "New Brunswick",
+    "newfoundland_labrador": "Newfoundland and Labrador",
+    "nova_scotia": "Nova Scotia",
+    "prince_edward_island": "Prince Edward Island",
+    "quebec": "Quebec",
+    "northwest_territories": "Northwest Territories"
+  },
+  "customer": {
+    "account": {
+      "title": "My Account",
+      "view_addresses": "View addresses",
+      "home": "Account home",
+      "log_out": "Log out",
+      "contact_preferences": "Contact Preferences",
+      "please_note_msg": "Please note: Unsubscribing means no more only-for you emails with special offers on exclusive promotions and first dibs on new arrivals.",
+      "sms_agreement": "By signing via text, you agree to receive recurring automated promotional and personalized marketing text messages (e.g. cart reminders) form Yellow. You can unsubscribe anytime. Message and data rates apply.",
+      "select_both": "*Select both to qualify for our weekly contest.",
+      "keep_me_updated": "Keep me updated of latest promotions, new arrivals and other events through Emails and SMS and automatically get a chance to win my next order free!",
+      "phone": "Mobile Number",
+      "email_signup": "Email",
+      "return": "Return to Account Details",
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "order_history": "Order History",
+      "favourites": "Favourites",
+      "sign_out": "Sign Out",
+      "personal_information": "Personal Information",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "mobile": "Mobile number",
+      "member_information": "Member Information",
+      "member_since": "Member since",
+      "birthday": "Birthday",
+      "cancel": "Cancel",
+      "interest": "Interest",
+      "all_products": "All products",
+      "womens_products": "Women's products",
+      "mens_products": "Men's products",
+      "kids_products": "Kids products",
+      "accessories": "Accessories",
+      "frequency": "Frequency",
+      "marketing_frequency_all": "I don't want to miss a thing!",
+      "marketing_frequency_promos": "I'm happy to hear about Yellow's promotions and deals.",
+      "marketing_frequency_unsubscribe": "Unsubscribe from all Yellow's Emails",
+      "update_preferences_title": "Update Your Contact Preferences",
+      "update_preferences_button": "Update Preferences",
+      "language": "Language",
+      "edit_personal_information": "Edit Your Personal Information",
+      "edit_your_default_address": "Edit Your Default Address",
+      "save": "Save",
+      "update_your_preferences": "Update how you would like to be contacted",
+      "view_tracking_info_btn": "VIEW TRACKING INFO",
+      "view_email_order_btn": "VIEW EMAIL ORDER",
+      "return_an_item_btn": "RETURN AN ITEM",
+      "item": "Item",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total_price": "Total Price",
+      "review_this_product_btn": "REVIEW THIS PRODUCT",
+      "load_more_btn": "LOAD MORE",
+      "billing_address": "Billing Address",
+      "order_summary": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "discounts": "Discounts",
+      "tax": "Tax",
+      "see_our_return_policy_html": "For FAQs and returns, see our <a href=\"/pages/return-policy\">Return Policy</a>.",
+      "questions_about_your_order_html": "Questions about your order? <a href=\"javascript:$zopim.livechat.window.show();\">Chat with us</a> for more information."
+    },
+    "order_history": {
+      "order_number": "Order number",
+      "date_ordered": "Date ordered",
+      "order_details": "Order details",
+      "view_all": "View All",
+      "search_by_order_number": "Search by order number",
+      "find_an_order": "FIND AN ORDER",
+      "store_receipts": "STORE PURCHASES",
+      "online_orders": "ONLINE ORDERS",
+      "dont_see_order_html": "Don't see your order in this list?<br>Perhaps you checked out as a guest!",
+      "check_order_status": "Enter your order number to check its status.",
+      "email_accossiated_with_order": "Email address associated with the order",
+      "order_status": "Order Status",
+      "check_status": "CHECK STATUS",
+      "back_to_list": "Back to list",
+      "order_total": "Order Total",
+      "delivered_on": "Delivered on",
+      "shipping_to": "Shipping to"
+    },
+    "order_items": {
+      "item_status": "Item status",
+      "style_number": "Style number",
+      "color": "Color",
+      "size": "Size"
+    },
+    "activate_account": {
+      "title": "Activate account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "default": "Default",
+      "edit": "Edit",
+      "edit_address": "Edit address",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?",
+      "add_new": "Add a new address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "city": "City",
+      "country": "Country",
+      "province": "Province",
+      "zip": "Postal/Zip code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add address",
+      "update": "Update address",
+      "cancel": "Cancel"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot your password?",
+      "sign_in": "Sign In",
+      "register": "Register",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue",
+      "create_account": "Create account",
+      "dont_have_an_account_yet": "Don't have an account yet?",
+      "reset_your_password": "Reset your password",
+      "reset_message_html": "If an account with <span id=\"reset-email\"></span> exists you should receive a link to reset your password.",
+      "back": "Back",
+      "send": "Send",
+      "click_here": "Click here",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "have_an_account": "Have an account?",
+      "password_must_be_x_characters": "Password must be 8+ characters",
+      "email_already_exists": "This email address is already associated with an account.",
+      "invalid_phone": "Invalide phone",
+      "phone": "Phone",
+      "incorrect_email_or_password": "Incorrect email or password.",
+      "to_save_this_item_to_your_favourites": "To save this item to your Favourites, please sign in or register.",
+      "email_is_required": "Email address is required",
+      "first_name_is_required": "First name is required",
+      "last_name_is_required": "Last name is required",
+      "sms_agreement": "By signing via text and/or e-mail, you agree to receive recurring automated promotional and personalized marketing messages (e.g. cart reminders) from Yellow. You can unsubscribe anytime. Message and data rates apply."
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password.",
+      "success": "We've sent you an email with a link to update your password.",
+      "email": "Email",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date": "Placed on {{ date }}",
+      "cancelled_on": "Order cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing address",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment status",
+      "fulfilled_on": "Fulfilled {{ date }}",
+      "shipping": "Shipping",
+      "shipping_address": "Shipping address",
+      "product": "Product",
+      "sku": "SKU",
+      "quantity": "Quantity",
+      "price": "Price",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "total": "Total",
+      "track_shipment": "Track shipment"
+    },
+    "orders": {
+      "order_number": "Order",
+      "view_order": "View order",
+      "date": "Date",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment Status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "register": {
+      "title": "Create account",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "have_account": "Already have an account?",
+      "log_in": "Log in here"
+    },
+    "reset_password": {
+      "title": "Reset Password",
+      "subtext": "Enter a new password for {{ email }}",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Reset password"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Here's your gift card!",
+      "expired": "Expired on {{ expiry }}",
+      "remaining_html": "{{ balance }} left",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "code": "Gift card code",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "shop_link": "Start shopping",
+      "print": "Print"
+    },
+    "recipient": {
+      "checkbox": "I want to send this as a gift",
+      "email_label_optional": "Recipient email",
+      "email_label_required": "Recipient email *",
+      "name_label": "Recipient name",
+      "message_label": "Message",
+      "max_characters": "{{ max_chars }} characters max",
+      "send_on_label": "Send on"
+    }
+  },
+  "onboarding": {
+    "article": {
+      "title": "Blog post",
+      "excerpt": "Give your customers a summary of your blog post.",
+      "author": "Author name"
+    },
+    "blog": {
+      "empty": "You don't have any articles yet! Once you've written one, it will show up here."
+    },
+    "collection": {
+      "title": "Collection"
+    },
+    "product": {
+      "title": "Product title",
+      "vendor": "Product vendor",
+      "sku": "SKU1234",
+      "description": "A description of the product, including details such as build quality, materials used and reasons to purchase."
+    }
+  },
+  "store_availability": {
+    "general": {
+      "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
+      "view_store_info": "View store information",
+      "check_other_stores": "Check availability at other stores",
+      "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>",
+      "miles": "mi",
+      "kilometers": "km",
+      "pick_up_available": "Pickup available",
+      "pick_up_currently_unavailable": "Pickup currently unavailable",
+      "invalid_location_address": "Contact store to confirm address",
+      "check_in-store_link": "Check availability in store"
+    }
+  },
+  "instore_availability": {
+    "find_your_store": "Find your size in a store near you",
+    "enter_location": "Please enter a location to check store availability.",
+    "search_button": "SEARCH",
+    "use_my_location": "USE MY LOCATION",
+    "availability_disclaimer": "Due to limited availabilities, call your store now to reserve your item for 24 hours !",
+    "city_or_postal_code": "City or postal code*",
+    "call_the_store": "Call the store",
+    "color": "Color",
+    "close": "close"
+  },
+  "cookie_banner": {
+    "description_html": "With your consent, we and our partners may use cookies or similar technologies on our website to personalize our content, enhance your browsing experience and make it easier for you. By clicking “Accept,” you agree to allow the use of cookies. If you would like to individually adjust your settings, click “Customize.” For more details, please see our <a href=\"https://www.yellowshoes.com/pages/privacy-policy-legal\">Privacy Policy</a>. Regardless of your choice, our website remains accessible at all times. ",
+    "customize": "Customize",
+    "accept": "Accept",
+    "customize_welcome": "Welcome to Yellow! Consent Management",
+    "customize_description_html": " We and our partners place cookies, access and use non-sensitive information from your device to improve our products and personalize ads and other contents throughout this website. You may accept all or part of these operations. To learn more about cookies, partners, and how we use your data, to review your options or these operations for each partner, visit our privacy policy. ",
+    "customize_you_allow": "YOU ALLOW",
+    "customize_description_2_html": "By giving consent to the purposes above, you also allow this website and its partners to operate the following data processing: Deliver and present advertising and content, Ensure security, prevent and detect fraud, and fix errors , Identify devices based on information transmitted automatically, Link different devices, and Match and combine data from other data sources ",
+    "customize_partners_btn": "View our partners",
+    "customize_save_info": "Set all your preferences to save and continue",
+    "save_btn": "Save",
+    "agree_btn": "Agree",
+    "disagree_btn": "Disagree",
+    "partners_select": "Select partners for Yellow",
+    "partners_description": "You can set your consent preferences for every partner listed below individually. Click on a partner name to get more information on what it does, what data it is collecting and how it is using it.",
+    "all_partners": "All partners",
+    "block_btn": "Block",
+    "authorize_btn": "Authorize"
+  },
+  "featured_collection": {
+    "mens": "Men's",
+    "womens": "Women's",
+    "girls": "Girls",
+    "boys": "Boys",
+    "accessories": "Accessories"
+  },
+  "partnership_program": {
+    "form": {
+      "choose_file": "Choose a file",
+      "personal_information": "Personal Information",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "phone_number": "Phone Number",
+      "street_address": "Mailing Address (Please note that the use of a P.O. Box is not accepted for the mailing address.)",
+      "city": "City",
+      "zip": "Postal Code",
+      "language": "Primary Language",
+      "english": "English",
+      "french": "French",
+      "additional_information": "ADDITIONAL INFORMATION",
+      "shoe_size": "Gender",
+      "women": "Women",
+      "men": "Men",
+      "babies": "Babies",
+      "toddlers": "Toddler(s)",
+      "juniors": "Juniors",
+      "social_media_information": "Social Media Information",
+      "profile_link": "Profile Link",
+      "subscribers": "Subscribers",
+      "engagement_rate": "Engagement rate",
+      "formerly": "formerly",
+      "target_audience": "Target audience on social media",
+      "family": "Family",
+      "_other": "Other",
+      "prev_exp_info": "Previous experience as an ambassador or in similar programs*",
+      "prev_biz": "Previous businesses or organizations",
+      "prev_biz_description": "Previous businesses or organizations",
+      "why_become": "Why do you want to become an ambassador for our program?",
+      "what_goals": "What are your goals as ambassador?",
+      "media_kit": "Media Kit",
+      "submit": "submit",
+      "accept-terms_html": "Acceptance of terms and conditions in our <a href='/pages/privacy-policy-legal'>privacy policy</a>.*<br>By submitting this form, I confirm that I have read, understood and accepted the terms of the Ambassador Program, and I agree to comply with the stated guidelines.",
+      "validation": {
+        "email": "Valid Email is required",
+        "province": "Select a Province",
+        "first_name": "First Name is required",
+        "last_name": "Last Name is required",
+        "phone_number": "Phone number is required",
+        "street_address": "Mailing address is required",
+        "city": "City is required",
+        "zip": "Postal code is required",
+        "required_field": "This field is required"
+      },
+      "yes": "Yes",
+      "no": "No"
+    }
+  }
+}

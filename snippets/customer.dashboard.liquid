@@ -1,0 +1,1192 @@
+<style>
+  .d-flex{
+    display:flex;
+  }
+  .account-sidebar-item{
+    margin: 7px 0;
+  }
+
+  .account-sidebar-item a{
+    color:#595959;
+  }
+  .account-sidebar-item.active a{
+    color:#dfb858;
+    font-weight:600;
+  }
+
+  #my-account-heading{
+    /*     text-transform:capitalize; */
+    color:#595959;
+    margin-bottom:30px;
+    font-size:23px;
+    font-weight:100;
+  }
+
+.d-inline-block{
+  display:inline-block;
+}
+  .w-25{
+    width:25%;
+  }
+  .w-75{
+    width:75%;
+  }
+  .w-50{
+    width:50%;
+  }
+  .w-100{
+    width:100%;
+  }
+  .my-account-title-with-underline{
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom:20px;
+  }
+  .my-account-title-with-underline .title-text,.order-totals .title-text{
+    color: #595959;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .my-account-title-with-underline a{
+    color:#595959;
+    text-decoration: underline;
+  }
+
+  .my-account-left-block{
+    width: 49%;
+    margin-right: 1%;
+  }
+  .my-account-right-block{
+    width: 49%;
+    margin-left: 1%;
+  }
+  .account-subsection{
+    margin-bottom:48px;
+  }
+  .account-info p{
+    color: #595959;
+    font-size:14px;
+  }
+
+  .dashboard-def-add div{
+    margin-bottom:5px;
+  }
+
+  .dashboard-def-add{
+    margin-bottom:20px;
+  }
+
+  .customer-dashboard-order *{
+    color:#595959;
+    font-size:12px;
+  }
+  .customer-dashboard-order .order-fulfillment{
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .customer-dashboard-order{
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+  }
+
+
+  .customer-dashboard-order.single-order{
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+  }
+  .customer-dashboard-order.single-order:last-child{
+    border-bottom: 1px solid #eee;
+  }
+
+
+  .dashboard-order-right{
+    padding-left:10px;
+    flex-grow:1;
+  }
+  .customer-dashboard-order:not(.single-order) .dashboard-order-left{
+    width: 200px;
+    max-width: 100%;
+  }
+  .dashboard-order-btn{
+    margin-top:10px;
+  }
+  .dashboard-order-btn a{
+    width: 100%;
+    display:inline-block;
+    color:#595959;
+    border: 1px solid #595959;
+    text-align:center;
+    text-decoration:none;
+    padding: 7px;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .dashboard-order-btn a:hover{
+    color:#fff;
+    background:#595959;
+    text-decoration:none;
+  }
+  .dashboard-order-image-block{
+    width: 200px;
+  }
+
+  .dashboard-order-prev, .dashboard-order-next{
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .dashboard-order-prev{
+    left:30px;
+  }
+  .dashboard-order-next{
+    right: 30px;
+  }
+  .dashboard-order-image-hidden{
+    display:none;
+  }
+  .dashboard-order-right *,  .unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .text-left{
+    text-align:left;
+  }
+  .text-right{
+    text-align:right;
+  }
+  #tracking-return{
+    padding-top:10px;
+    border-top:1px solid #eee;
+    margin-bottom:20px;
+  }
+  #tracking-return .d-inline-block{
+    padding: 0 5px;
+  }
+
+  #order_details th {
+    border-top: none;
+    border-bottom-width: 1px;
+  }
+  #order_details td{
+    border:none;
+  }
+  .new-price{
+    color:red;
+  }
+  .review-this-product{
+    position:absolute;
+    width: 200px;
+    max-width:100%;
+    bottom:10px;
+    right:0;
+  }
+  .load-mode-review{
+    text-decoration:underline;
+    color:#dfb858;
+    margin-top: 9px;
+    cursor:pointer;
+    /* position:absolute;
+    top:0;
+    right:0; */
+  }
+  .order-totals-table th, .order-totals-table td{
+    border:none;
+  }
+  .p-0{
+    padding:0 !important;
+  }
+  .order-totals-table{
+    font-size:14px;
+    color:#595959;
+    width:300px;
+    max-width:100%;
+  }
+  .order-totals{
+    border-bottom:1px solid #eee;
+    padding-bottom:10px;
+    margin-bottom:10px;
+  }
+
+  .order-support a{
+    text-decoration:underline;
+  }
+
+  .profile-left {
+    width: 50%;
+    padding-right: 4%;
+  }
+
+  .profile-right {
+    width: 50%;
+    padding-left: 4%;
+  }
+
+  #customer_profile_section{
+    color:#595959;
+    font-size: 14px;
+  }
+
+  .profile-info-row{
+    margin-bottom: 20px;
+  }
+
+  .profile-popup-container::-webkit-scrollbar {
+    display: none;
+  }
+  .profile-popup-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index:9999;
+    overflow-y:scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .profile-popup-content-absolute {
+    position:   absolute;
+    top:        0;
+    left:       50%;
+    transform:  translateX(-50%);
+    background: #ffffff;
+    width:      665px;
+    max-width:  90%;
+    display:    inline-block;
+    margin-top:30px;
+  }
+
+
+  .profile-popup-content {
+    position:   relative;
+    padding:25px;
+  }
+
+  .profile-popup-close {
+    position: absolute;
+    top:      10px;
+    right:    10px;
+    font-weight: 600;
+  }
+
+  .profile-select,.profile-dob{
+
+    font-size: 16px;
+    line-height: 15px;
+    font-family: Basic Commercial,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #ffffff;
+    color: #787a7c;
+    border: 1px solid #dddede;
+    padding: 0.91em 15px;
+    margin: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    border-radius: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+  }
+
+  .save-profile,.save-marketing{
+    background-color:#2B2B2B;
+  }
+
+  .label{
+    margin-top:18px;
+  }
+
+  .owl-stage{
+    display:flex;
+  }
+  .owl-item{
+    min-width:248px!important;
+  }
+</style>
+<div id="customer_dashboard_section" class="account-section" style="display: none;">
+  <div class="account-subsection">
+    <div class="d-flex flex-wrap">
+      <div class="d-inline-block my-account-left-block">
+        <div class="my-account-title-with-underline">
+          <div class="title-text d-inline-block w-75">
+            {{ 'dashboard.account_info' | t }}
+          </div>
+          <div class="d-inline-block w-25 text-right">
+            <a href="javascript:;" onclick="showPopup('#profile-info-popup');">{{ 'dashboard.edit' | t }}</a>
+          </div>
+        </div>
+
+        <div class="account-info">
+          <p>
+            <strong>{{ 'dashboard.name' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong><span style="text-transform:capitalize;">{{customer.name | downcase}}</span>
+          </p>
+
+          <!--
+<p>
+<strong>{{ 'dashboard.mobile' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+<span class="phone">{{customer.phone}}</span>
+</p>
+-->
+          {% if customer.orders.size != 0 %}
+          <p>
+            {% assign order = customer.orders | first %}
+              {% if shop.locale == 'en' %}
+            <strong>{{ 'dashboard.member_since' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong> <span class="date-container">{{ order.created_at | split: " " | first  | date: "%B, %d %Y"}}</span>
+                {% else %}
+            <strong>{{ 'dashboard.member_since' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong> <span class="date-container">{{ order.created_at | split: " " | first  | date: "%d %B %Y" | replace: "January", "janvier" | replace: "February", "février" | replace: "March", "mars" | replace: "April", "avril" | replace: "May", "mai" | replace: "June", "juin" | replace: "July", "juillet" | replace: "August", "août" | replace: "September", "septembre" | replace: "October", "octobre" | replace: "November", "novembre" | replace: "December", "décembre"}}</span>
+                {% endif %}
+          </p>
+          {% endif %}
+          <p class="birthday-container">
+            <strong>{{ 'dashboard.birthday' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+            <span class="dob"></span>
+          </p>
+          <p>
+            <strong>{{ 'dashboard.email' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>{{customer.email}}
+          </p>
+          <p class="phone-container">
+            <strong>{{ 'customer.account.phone' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+            <span class="phone mobile-phone"></span>
+          </p>
+        </div>
+      </div>
+      <div class="d-inline-block my-account-right-block">
+        <div class="my-account-title-with-underline">
+          <div class="title-text d-inline-block w-75">
+            Address
+          </div>
+          <div class="d-inline-block w-25 text-right">
+            <a href="javascript:;" onclick="showPopup('#profile-address-popup')">{{ 'dashboard.edit' | t }}</a>
+          </div>
+        </div>
+
+        <div class="dashboard-def-add">
+          {% if customer.default_address %}
+          <div style="text-transform:capitalize;">{{ customer.default_address.name | downcase }}</div>
+          <div>{{ customer.default_address.address1 }}</div>
+
+          {% if customer.default_address.address2 != blank %}
+          <div>{{ customer.default_address.address2 }}</div>
+          {% endif %}
+
+          <div>{{ customer.default_address.city }}, {% if customer.default_address.province_code %}{{ customer.default_address.province }}{% endif %} <span class="postal-code">{{ customer.default_address.zip }}</span>
+            <div>{{ customer.default_address.country }}</div>
+          </div>
+          {%endif%}
+        </div>
+        <div style="font-style:italic;font-weight:600;">{{ 'dashboard.default_address' | t }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="account-subsection">
+    <div class="my-account-title-with-underline">
+      <div class="title-text d-inline-block w-75">
+        {{ 'customer.account.order_history' | t }}
+      </div>
+      <div class="d-inline-block w-25 text-right">
+        <a href="{% if shop.locale == 'fr'%}/fr{% endif %}/account?section=order-history">{{ 'dashboard.view_all' | t }}</a>
+      </div>
+    </div>
+    <div>
+      {% if customer.orders.size != 0 %}
+      {%assign iter = 0 %}
+      {% for order in customer.orders %}
+      {% if iter < 2 %}
+
+
+      {%- liquid
+      assign status_label = order.fulfillment_status_label
+      if shop.locale == 'en'
+         if order.financial_status_label == 'Refunded'
+           assign status_label = order.financial_status_label
+         endif
+      else
+         if order.financial_status_label == 'Remboursée'
+           assign status_label = order.financial_status_label
+         endif
+      endif   
+      -%}
+      <div class="d-flex customer-dashboard-order">
+        <div class="dashboard-order-left">
+          <div class="order-fulfillment">{{ status_label }}</div>
+          <div class="order-total">
+            <strong><span class="theme-money">{{ order.total_price | money }}</span> | {{ order.line_items.size }} item(s)</strong>
+          </div>
+          <div>
+              {% if shop.locale == 'en' %}
+            <strong>{{ 'customer.order_history.date_ordered' | t }}:</strong> <span class="date-container">{{ order.created_at | date: "%B, %d %Y" }}</span>
+                {% else %}
+            <strong>{{ 'customer.order_history.date_ordered' | t }}:</strong> <span class="date-container">{{ order.created_at | date: "%d %B %Y" | replace: "January", "janvier" | replace: "February", "février" | replace: "March", "mars" | replace: "April", "avril" | replace: "May", "mai" | replace: "June", "juin" | replace: "July", "juillet" | replace: "August", "août" | replace: "September", "septembre" | replace: "October", "octobre" | replace: "November", "novembre" | replace: "December", "décembre" }}</span>
+                {% endif %}
+          </div>
+          <div>
+            <strong>{{ 'customer.order_history.order_number' | t }}</strong> {{ order.name | link_to: order.customer_url }}
+          </div>
+          <div class="dashboard-order-btn">
+            <a href="{{order.customer_url}}">{{ 'customer.order_history.order_details' | t }}</a>
+          </div>
+        </div>
+        <div class="dashboard-order-right position-relative text-center">
+          {%if order.line_items.size < 3 %}
+          {% for item in order.line_items %}
+          <div class="d-inline-block dashboard-order-image-block">
+            <a href="{{item.url}}">
+              <img src="{{ item.image | image_url }}" class="w-100 position-relative" alt="{{ item.title }}">
+            </a>
+          </div>
+          {%endfor%}
+          {%else %}
+          <div class="dashboard-order-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><title>Left</title><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </div>
+          <div class="dashboard-order-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><title>Right</title><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+          {% assign items_count = 0 %}
+
+          {% for item in order.line_items %}
+          {% if items_count < 3 %}
+          {% assign item_class = '' %}
+          {%else %}
+          {% assign item_class = 'dashboard-order-image-hidden' %}
+          {%endif%}
+          <div class="d-inline-block dashboard-order-image-block {{item_class}}">
+            <a href="{{item.url}}">
+              <img src="{{ item.image | image_url }}" class="w-100 position-relative" alt="{{ item.title }}">
+            </a>
+          </div>
+          {% assign items_count = items_count | plus: 1 %}
+          {%endfor%}
+          {%endif%}
+        </div>
+      </div>
+      {%endif%}
+      {% assign iter = iter | plus: 1 %}
+      {% endfor %}
+
+      {% else %}
+      <p>{{ 'customer.orders.none' | t }}</p>
+      {% endif %}    
+    </div>
+  </div>
+</div>
+
+<script>
+
+
+function showPopup(selector = '#some-selector') {
+    let $body = $('body');
+    $body.find(selector).show();
+}
+  $(document).ready(function(){
+    let $body = $('body');
+
+$body.on('click', '#store_purchases a', function(){
+   $body.find('#shopify_orders_container').hide();
+   $body.find('#store_purchases_container').show();
+});
+$body.on('click', '#shopify_orders_btn', function(){
+   $body.find('#shopify_orders_container').show();
+   $body.find('#store_purchases_container').hide();
+});
+$body.on('click', '.store_orders_switcher', function() {
+  $body.find('.orders-type').removeClass('active');
+  $(this).closest('.orders-type').addClass('active');
+});
+let $_GET = getQueryString();
+    if($_GET.section !== undefined && $_GET.section === 'order-history'){
+       $.ajax({
+         url:      'https://app.yellowshoes.com/api/internal-orders',
+         method:   'POST',
+         data:     {
+           action:      'get-orders',
+           customer_id: '{{customer.id}}',
+           email:       '{{customer.email}}',
+           lang:        '{{shop.locale}}',
+         },
+         dataType: 'json',
+         success:  function(response_data) {
+           if (response_data.success) {
+             if(response_data.order_count == undefined || (response_data.order_count !== undefined && response_data.order_count == 0)){
+               return;
+             }
+             $body.find('#store_purchases_count').html(response_data.order_count);
+              $body.find('#store_purchases').show();
+             populateAPTOS(response_data);
+           }
+         },
+         error:    function(response_data) {
+           console.log(response_data);
+         },
+       });
+    }
+
+   
+
+    setTimeout(function(){
+      $body.find('.phone').each(function(){
+        let phone = $(this).text();
+        if(phone.length > 9){
+          phone = phone.replace(/\D/g, "");
+          if(phone.length > 10){
+            phone = phone[0] + '-' + phone[1] + phone[2] + phone[3] + '-' + phone[4] + phone[5] + phone[6] + '-' + phone[7] + phone[8] + phone[9] + phone[10]
+          }else{
+            phone = phone[0] + phone[1] + phone[2] + '-' + phone[3] + phone[4] + phone[5] + '-' + phone[6] + phone[7] + phone[8] + phone[9]
+
+          }
+          $(this).html(phone);
+        }
+      });
+    }, 500);
+
+
+
+    {% if shop.locale == 'fr'%}
+    setTimeout(function(){
+      $body.find('.date-container').each(function(){
+        $(this).text($(this).text().split(',').join(''));
+      });
+      $body.find('.theme-money').each(function(){
+        $(this).text($(this).text().split('.').join(',').split('$').join('') + '$');
+      });
+      $body.find('.postal-code').each(function(){
+        $(this).text($(this).text().toUpperCase());
+      });
+    }, 500);
+    {% endif %}  
+    setTimeout(function(){
+      $body.find('.postal-code').each(function(){
+        let code = $(this).text().toUpperCase().split(' ').join('')
+        code = code.slice(0, 3) + " " + code.slice(3)
+        $(this).text(code);
+      });
+    }, 100);
+
+    $body.on('click', '#checkOrderStatusBtn', function() {
+      $body.find('#find-order-error').hide();
+      let $this = $(this);
+      $this.attr('disabled', 'disabled');
+      $.ajax({
+        url:      'https://app.yellowshoes.com/api/customers',
+        method:   'POST',
+        data:     {
+          action:       'get order',
+          customer_id:  '{{customer.id}}',
+          order_number: '{{order.order_number}}',
+          lang:         '{{shop.locale}}',
+        },
+        dataType: 'json',
+        success:  function(response_data) {
+          if (!response_data.success) {
+            $body.find('#find-order-error').html(response_data.error);
+            $body.find('#find-order-error').show();
+            $this[0].removeAttribute('disabled');
+          } else {
+            window.location.href = '/account/orders/' + response_data.token;
+          }
+        },
+        error:    function(response_data) {
+          $this[0].removeAttribute('disabled');
+        },
+      });
+
+    });
+
+    $body.on('click', 'div[data-target="#marketing-frequency-all"]', function(){
+      if(!$body.find('div[data-target="#marketing-email-subscribe"]').hasClass('selected')){
+        $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+      }
+    });
+
+    $body.on('click', 'div[data-target="#marketing-frequency-promo"]', function(){
+      if(!$body.find('div[data-target="#marketing-email-subscribe"]').hasClass('selected')){
+        $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+      }
+    });
+
+    $body.on('click', 'div[data-target="#marketing-frequency-uns"]', function(){
+      if($body.find('div[data-target="#marketing-email-subscribe"]').hasClass('selected')){
+        $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+      }
+    });
+    $body.on('click', '.profile-popup-close-btn', function() {
+      $(this).closest('.profile-popup-container').hide();
+    });
+    $body.find('#province_field').val('{{ customer.default_address.province_code }}');
+
+
+                                      $.ajax({
+                                      url:      'https://app.yellowshoes.com/api/customers',
+                                      method:   'POST',
+                                      data:     {
+                                      action:   'get customer info',
+                                      lang:     '{{shop.locale}}',
+                                      id:       '{{customer.id}}',
+                                      dataType: 'json',
+                                      },
+                                      dataType: 'json',
+                                      success:  function(response_data) {
+      if (response_data.success) {
+        $body.find('#gender_field').val(response_data.customer.gender);
+        $body.find('#dob_field').val(response_data.customer.dob);
+        if(response_data.customer.dob != null && response_data.customer.dob.trim() !== ''){
+          $body.find('#dob_field').attr('disabled','');
+        }
+        $body.find('#marketing_phone_field').val(response_data.customer.marketing_phone);
+        if(response_data.customer.marketing_phone != null && response_data.customer.marketing_phone.trim() !== ''){
+          $body.find('.mobile-phone').text(response_data.customer.marketing_phone);
+        }else{
+          $body.find('.phone-container').hide();
+        }
+        if(response_data.customer.sms_subscribed == 1){
+          $body.find('div[data-target="#marketing-phone-subscribe"]')[0].click();
+        }
+        $body.find('#gender').
+        html(response_data.customer.formatted_gender);
+        if (response_data.customer.formatted_gender.trim() === '') {
+          $body.find('.gender-container').hide();
+        }
+        if (response_data.customer.formatted_dob.trim() === '') {
+          $body.find('.birthday-container').hide();
+        }
+        $body.find('.dob').html(response_data.customer.formatted_dob);
+        if(response_data.customer.marketing_frequency === 'unsubscribe'){
+          $body.find('#interests_in').html('Unsubscribed');
+          $body.find('div[data-target="#marketing-frequency-uns"]')[0].click();
+        }else{
+          let all_products = false;
+          if (
+            response_data.customer.marketing_products.women == 'true'
+            && response_data.customer.marketing_products.men == 'true'
+            && response_data.customer.marketing_products.kids == 'true'
+            && response_data.customer.marketing_products.accessories ==
+            'true'
+          ) {
+            all_products = true;
+          }
+          if (all_products) {
+            $body.find('#all-marketing-products')[0].click();
+            $body.find('#interests_in').html("All products");
+          } else {
+            let interest_html = '';
+            if (response_data.customer.marketing_products.women == 'true') {
+              interest_html += "Women's products";
+              $body.find('div[data-target="#marketing-products-women"]')[0].click();
+            }
+            if (response_data.customer.marketing_products.men == 'true') {
+              if(interest_html === ''){
+                interest_html += "Men's products";
+              }else{
+                interest_html += ", Men's products";
+              }
+              $body.find('div[data-target="#marketing-products-men"]')[0].click();
+            }
+            if (response_data.customer.marketing_products.kids == 'true') {
+
+              if(interest_html === ''){
+                interest_html += 'Kids products';
+              }else{
+                interest_html += ', Kids products';
+              }
+              $body.find('div[data-target="#marketing-products-kids"]')[0].click();
+            }
+            if (response_data.customer.marketing_products.accessories ==
+                'true') {
+
+              if(interest_html === ''){
+                interest_html += 'Accessories';
+              }else{
+                interest_html += ', Accessories';
+              }
+              $body.find('div[data-target="#marketing-products-accessories"]')[0].click();
+            }
+            $body.find('#interests_in').html(interest_html);
+          }
+
+        }
+        if(response_data.customer.marketing_frequency === 'all'){
+          $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+          $body.find('div[data-target="#marketing-frequency-all"]')[0].click();
+          if($body.find('#interests_in').text().trim() === ''){
+            $body.find('#interests_in').text("All products");
+          }
+          {% if shop.locale == 'en' %}
+          $body.find('#frequency_in').text("I don't want to miss a thing!");
+          {% else %}
+          $body.find('#frequency_in').text("Je ne veux rien rater !");
+          {% endif %}
+
+        }
+        if(response_data.customer.marketing_frequency === 'unsubscribe'){
+
+          $body.find('#frequency_in').text("Unsubscribe from all Yellow's Emails");
+
+        }
+        if(response_data.customer.marketing_frequency === 'promos'){
+          $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();        
+          $body.find('#frequency_in').text("I'm happy to hear about Yellow's promotions and deals.");
+          $body.find('div[data-target="#marketing-frequency-promo"]')[0].click();
+        }
+        if(response_data.customer.marketing_language !== null){
+          if(response_data.customer.marketing_language === 'fr'){
+            $body.find('div[data-target="#marketing-language-fr"]')[0].click();
+            $body.find('#language_in').text("J'aimerais recevoir les communications en français");
+
+          }else{
+            $body.find('div[data-target="#marketing-language-en"]')[0].click();
+
+            $body.find('#language_in').text("I would like to receive communications in English");
+          }
+        }else{
+          $body.find('#language_in').closest('div').hide();
+        }
+
+        setTimeout(function(){
+          $body.find('.phone').each(function(){
+            let phone = $(this).text();
+            if(phone.length > 9){
+              phone = phone.replace(/\D/g, "");
+              if(phone.length > 10){
+                phone = phone[0] + '-' + phone[1] + phone[2] + phone[3] + '-' + phone[4] + phone[5] + phone[6] + '-' + phone[7] + phone[8] + phone[9] + phone[10]
+              }else{
+                phone = phone[0] + phone[1] + phone[2] + '-' + phone[3] + phone[4] + phone[5] + '-' + phone[6] + phone[7] + phone[8] + phone[9]
+
+              }
+              $(this).html(phone);
+            }
+          });
+        }, 500);
+
+      }
+    },
+      error:    function(response_data) {
+      },
+  });
+
+  $body.on('click', '.save-address', function() {
+    let $this = $(this);
+    $this.attr('disabled', 'disabled');
+    $body.find('.profile-error-message').hide();
+    $.ajax({
+      url:      'https://app.yellowshoes.com/api/customers',
+      method:   'POST',
+      data:     {
+        action:   'edit address',
+        first_name: $body.find('#address_first_name_field').val().trim(),
+        last_name: $body.find('#address_last_name_field').val().trim(),
+        address1: $body.find('#address1_field').val().trim(),
+        address2: $body.find('#address2_field').val().trim(),
+        city:     $body.find('#city_field').val().trim(),
+        province: $body.find('#province_field').val().trim(),
+        zip:      $body.find('#zip_field').val().trim(),
+        lang:     '{{shop.locale}}',
+        id:       '{{customer.id}}',
+        address_id:       '{{customer.default_address.id}}',
+      },
+      dataType: 'json',
+      success:  function(response_data) {
+        $this[0].removeAttribute('disabled');
+
+        if (!response_data.success) {
+          for (let error_field of response_data.error_fields) {
+            let $error_container = $body.find(error_field.selector).
+            closest('div').
+            find('.profile-error-message');
+            $error_container.html(error_field.error_message);
+            $error_container.show();
+          }
+        } else {
+          $this.closest('.profile-popup-container').hide();
+          new Swal({
+            title: '',
+            text:  '',
+            icon:  'success',
+          }).then(function() {window.location.reload();});
+        }
+      },
+      error:    function(response_data) {
+        $this[0].removeAttribute('disabled');
+        console.log(response_data);
+        new Swal({
+          title: 'Error',
+          text:  'Something went wrong!',
+          icon:  'error',
+        });
+      },
+    });
+  });
+$body.on('click', '.change-password', function(){
+      let $this = $(this);
+      $this.attr('disabled','disabled');
+      $body.find('.profile-error-message').hide();
+      $.ajax({
+               url:      'https://app.yellowshoes.com/api/customers',
+               method:   'POST',
+               data:     {
+                 action:     'change password',
+                 // old_password: $body.find('#password_field').val().trim(),
+                 password:  $body.find('#new_password_field').val().trim(),
+                 conf_password:  $body.find('#confirm_password_field').val().trim(),
+                 email:  $body.find('#email_field').val().trim(),
+                 lang:  '{{shop.locale}}',
+                 id:  '{{customer.id}}',
+               },
+               dataType: 'json',
+               success:  function(response_data) {
+                 $this[0].removeAttribute('disabled');
+
+                 if(!response_data.success){
+                   for (let error_field of response_data.error_fields) {
+                     let $error_container = $body.find(error_field.selector).closest('div').find('.profile-error-message');
+                     $error_container.html(error_field.error_message);
+                     $error_container.show();
+                   }
+                 }else{
+                   $this.closest('.profile-popup-container').hide();
+                   new Swal({
+                              title: '',
+                              text:  '',
+                              icon:  'success',
+                            }).then(function(){window.location.reload()});
+                 }
+               },
+               error:    function(response_data) {
+                 $this[0].removeAttribute('disabled');
+                 console.log(response_data);
+                 new Swal({
+                            title: 'Error',
+                            text:  'Something went wrong!',
+                            icon:  'error',
+                          });
+               },
+             });
+    });
+  $body.on('click', '.save-profile', function(){
+    let $this = $(this);
+    $this.attr('disabled','disabled');
+    $body.find('.profile-error-message').hide();
+    $.ajax({
+      url:      'https://app.yellowshoes.com/api/customers',
+      method:   'POST',
+      data:     {
+        action:     'update profile',
+        first_name: $body.find('#first_name_field').val().trim(),
+        last_name:  $body.find('#last_name_field').val().trim(),
+        //           phone:  $body.find('#phone_field').val().trim(),
+        email:  $body.find('#email_field').val().trim(),
+        old_email:  '{{customer.email}}',
+        //           gender:  $body.find('#gender_field').val().trim(),
+        dob:  $body.find('#dob_field').val().trim(),
+        lang:  '{{shop.locale}}',
+        id:  '{{customer.id}}',
+      },
+      dataType: 'json',
+      success:  function(response_data) {
+        $this[0].removeAttribute('disabled');
+
+        if(!response_data.success){
+          for (let error_field of response_data.error_fields) {
+            let $error_container = $body.find(error_field.selector).closest('div').find('.profile-error-message');
+            $error_container.html(error_field.error_message);
+            $error_container.show();
+          }
+        }else{
+          $this.closest('.profile-popup-container').hide();
+          new Swal({
+            title: '',
+            text:  '',
+            icon:  'success',
+          }).then(function(){window.location.reload()});
+        }
+      },
+      error:    function(response_data) {
+        $this[0].removeAttribute('disabled');
+        console.log(response_data);
+        new Swal({
+          title: 'Error',
+          text:  'Something went wrong!',
+          icon:  'error',
+        });
+      },
+    });
+  });
+  $body.on('change', '#marketing-email-subscribe', function(){
+    if(this.checked){
+      $body.find('div[data-target="#marketing-frequency-all"]')[0].click();
+    }else{
+      $body.find('div[data-target="#marketing-frequency-uns"]')[0].click();
+    }
+  });
+
+  $body.on('click', '.save-marketing', function() {
+    let $this = $(this);
+    $this.attr('disabled', 'disabled');
+    $body.find('.profile-error-message').hide();
+    $.ajax({
+      url:      'https://app.yellowshoes.com/api/customers',
+      method:   'POST',
+      data:     {
+        action: 'update marketing',
+       first_name: "{{ customer.first_name }}",
+        last_name: "{{ customer.last_name }}",
+        email:  $body.find('#marketing_email_field').val().trim(),
+        old_email:  '{{customer.email}}',
+        phone:  $body.find('#marketing_phone_field').val().trim(),
+        sms_subscribe:  $body.find('#marketing-phone-subscribe')[0].checked ? '1' : '0',
+        frequency: $body.find('input[name="marketing-frequency"]:checked').val(),
+        marketing_language: $body.find('input[name="marketing-language"]:checked').val(),
+
+        women: $body.find('#marketing-products-women')[0].checked,
+        men: $body.find('#marketing-products-men')[0].checked,
+        kids: $body.find('#marketing-products-kids')[0].checked,
+        accessories: $body.find('#marketing-products-accessories')[0].checked,
+        lang:   '{{shop.locale}}',
+        id:     '{{customer.id}}',
+      },
+      dataType: 'json',
+      success:  function(response_data) {
+        $this[0].removeAttribute('disabled');
+
+        if (!response_data.success) {
+          for (let error_field of response_data.error_fields) {
+            let $error_container = $body.find(error_field.selector).
+            closest('div').
+            find('.profile-error-message');
+            $error_container.html(error_field.error_message);
+            $error_container.show();
+          }
+        } else {
+          $this.closest('.profile-popup-container').hide();
+          new Swal({
+            title: '',
+            text:  '',
+            icon:  'success',
+          }).then(function() {
+            window.location.reload();
+          });
+        }
+      },
+      error:    function(response_data) {
+        $this[0].removeAttribute('disabled');
+        console.log(response_data);
+        new Swal({
+          title: 'Error',
+          text:  'Something went wrong!',
+          icon:  'error',
+        });
+      },
+    });
+  });
+
+
+
+  $body.on('click', '.load-more-orders-btn', function() {
+    let $this = $(this);
+    let index = 0;
+    let $container = $(this).closest('.hidden-orders-container');
+    $container.find('.customer-dashboard-order.hidden').each(function() {
+      if (index < 2) {
+        $(this).removeClass('hidden');
+      }
+      index++;
+      if (!$container.find('.customer-dashboard-order.hidden').length) {
+        $this.hide();
+        $container.find('.load-all-orders-btn').hide();
+      }
+    });
+
+  });
+  $body.on('click', '.load-all-orders-btn', function() {
+    let $container = $(this).closest('.hidden-orders-container');
+    $container.find('.customer-dashboard-order.hidden').each(function() {
+      $(this).removeClass('hidden');
+    });
+    $(this).hide();
+    $container.find('.load-more-orders-btn').hide();
+
+  });
+  $body.on('click', '.dashboard-order-prev', function() {
+    let length = $body.find('.dashboard-order-image-block').length;
+    let has_zero = false;
+    $body.find('.dashboard-order-image-block').each(function(index, el) {
+      if (!$(this).hasClass('hidden') && (index == 0)) {
+        $(this).addClass('hidden');
+        $body.find('.dashboard-order-image-block')[length - 1].classList.remove('hidden');
+        has_zero = true;
+      }
+
+      if(!has_zero){
+        if (!$(this).hasClass('hidden') && index != 0) {
+          $(this).addClass('hidden');
+          $body.find('.dashboard-order-image-block')[index - 1].classList.remove('hidden');
+          return;
+        }
+
+      }
+    });
+  });
+
+  $body.on('click', '.dashboard-order-next', function() {
+    let accepted_length = 3;
+    //       if($(window).width() > 900){
+    //         accepted_length = 3;
+    //       }
+    let $parent_el = $(this).closest('.dashboard-order-right');
+    if($parent_el.find('.dashboard-order-image-block').length > accepted_length){
+      $parent_el.find('.dashboard-order-image-hidden').each(function(){
+        $(this).clone().appendTo($parent_el);
+        $(this).remove();
+      });
+
+      let $el_to_hide = $parent_el.find('.dashboard-order-image-block:not(.dashboard-order-image-hidden)').eq(0);
+      let $el_to_show = $parent_el.find('.dashboard-order-image-hidden').eq(0);
+
+      $el_to_hide.addClass('dashboard-order-image-hidden');
+      let $clone  = $el_to_hide.clone().appendTo($parent_el);
+      $el_to_hide.remove();
+      $el_to_show.removeClass('dashboard-order-image-hidden');
+    }
+  });
+  $body.on('click', '.dashboard-order-prev', function() {
+    let accepted_length = 3;
+    // if($(window).width() > 900){
+    //   accepted_length = 3;
+    // }
+    let $parent_el = $(this).closest('.dashboard-order-right');
+    if($parent_el.find('.dashboard-order-image-block').length > accepted_length){
+      let $cloned_items = [];
+      $parent_el.find('.dashboard-order-image-hidden').each(function(){
+        $cloned_items.push($(this).clone());
+        $(this).remove();
+      });
+      $cloned_items = $cloned_items.reverse();
+      for(let cloned_item of $cloned_items){
+        cloned_item.prependTo($parent_el)
+      }
+      let $el_to_hide = $parent_el.find('.dashboard-order-image-block:not(.dashboard-order-image-hidden)').eq($parent_el.find('.dashboard-order-image-block:not(.dashboard-order-image-hidden)').length - 1);
+      let $el_to_show = $parent_el.find('.dashboard-order-image-hidden').eq($parent_el.find('.dashboard-order-image-hidden').length  - 1);
+      let $el_to_insert_after = $parent_el.find('.dashboard-order-image-hidden').eq($parent_el.find('.dashboard-order-image-hidden').length  - 1);
+
+      $el_to_hide.addClass('dashboard-order-image-hidden');
+      //       let $clone  = $el_to_hide.clone().insertAfter($el_to_insert_after);
+      let $clone  = $el_to_hide.clone().prependTo($parent_el);
+      $el_to_hide.remove();
+      $el_to_show.removeClass('dashboard-order-image-hidden');
+    }
+  });
+  $body.on('click', '.marketing-products:not(#all-marketing-products)', function(){
+    setTimeout(function() {
+      let all_selected = true;
+      $body.find('.marketing-products:not(#all-marketing-products').each(function() {
+        if(!$(this).hasClass('selected')){
+          all_selected = false;
+        }
+      });
+      if($body.find('#all-marketing-products').length){
+        if(all_selected){
+          $body.find('#all-marketing-products').addClass('selected');
+        }else{
+          $body.find('#all-marketing-products').removeClass('selected');
+        }
+      }
+    }, 150);
+  });
+  $body.on('click', '.marketing-radio:not(#all-marketing-products)', function() {
+    let target = $(this).attr('data-target');
+    if ($(this).attr('data-type') === 'radio' && !$(this).hasClass('selected')) {
+      let name   = $(this).attr('data-name');
+      $body.find('div[data-name="' + name + '"]').removeClass('selected');
+      $body.find(target)[0].checked = true;
+      $(this).addClass('selected');
+    } else if($(this).attr('data-type') !== 'radio') {
+      if ($(this).hasClass('selected')) {
+        $(this).removeClass('selected');
+
+      } else {
+        $(this).addClass('selected');
+      }
+      $body.find(target)[0].checked = !$body.find(target)[0].checked;
+      $body.find(target).trigger('change');
+    }
+  });
+
+
+  $body.on('click', '.marketing-label', function() {
+    $(this).closest('.marketing-radio-container').find('.marketing-radio')[0].click();
+  });
+
+
+  $body.on('click', '#all-marketing-products', function() {
+    if ($(this).hasClass('selected')) {
+      $body.find('.marketing-products').each(function() {
+        if ($(this).hasClass('selected')) {
+          $(this).trigger('click');
+        }
+      });
+      $(this).removeClass('selected');
+    } else {
+      $body.find('.marketing-products').each(function() {
+        if (!$(this).hasClass('selected')) {
+          $(this).trigger('click');
+        }
+      });
+      $(this).addClass('selected');
+    }
+  });
+  });
+  function populateAPTOS(response_data){
+    let $body = $('body');
+ let orders_html = '';
+for (let i = 0; i < response_data.orders.length; i++) {
+  let order_html = $body.find('#aptos_order_template').html();
+  if (response_data.orders.length > 2 && i >= 2) {
+    order_html = order_html.split('--==hidden-replacement==--').join('hidden');
+  }
+  order_html = order_html.split('--==order_status==--').join(response_data.orders[i].order_status);
+  order_html = order_html.split('--==order_total==--').join('{% if shop.locale == 'en' %}${% endif %}' + response_data.orders[i].order_total);
+  order_html = order_html.split('--==order_date==--').join(response_data.orders[i].order_date);
+  order_html = order_html.split('--==order_number==--').join(response_data.orders[i].order_number);
+let items = [];
+for(let shipping_address of response_data.orders[i].order_shipping_addresses){
+  for(let item of shipping_address.Items){
+    if(item.ItemProduct != null){
+      items.push(item);
+    }
+  }
+}
+  order_html = order_html.split('--==items_count==--').join(items.length);
+
+let items_html = '';
+  for(let j =0; j < items.length;j++ ){
+    let item_html = $body.find('#aptos_order_item_template').html();
+    if(items.length>3 && j == 0){
+      order_html = order_html.split('--==items-nav==--').join($body.find('#aptos_order_items_nav_template').html());
+    }
+    if(items.length<=3 && j == 0){
+      order_html = order_html.split('--==items-nav==--').join('');
+    }
+    if(items.length>3 && j > 3){
+      item_html = item_html.split('--==class==--').join('dashboard-order-image-hidden');
+    }
+    item_html = item_html.split('--==image==--').join(items[j].image);
+    item_html = item_html.split('--==url==--').join('javascript:;');
+    item_html = item_html.split('--==title==--').join(items[j].ItemProduct.ProductName);
+    items_html += item_html;
+  }
+  order_html = order_html.split('--==items==--').join(items_html);
+  orders_html += order_html;
+}
+if(response_data.orders.length > 2){
+  orders_html += $body.find('#load-more-template').html();
+}
+$body.find('#store_purchases_container').html(orders_html);
+  }
+</script>

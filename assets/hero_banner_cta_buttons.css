@@ -1,0 +1,376 @@
+.banner-area {
+  position: relative;
+}
+
+.home-page-slider-slide, .home-page-slider-slide-mobile {
+  position:  relative;
+  width:     100%;
+  max-width: 100%;
+  display:   inline-block;
+}
+
+.buttons-frame {
+  display:    inline-block;
+  position:   absolute;
+  z-index:    100;
+
+  max-width:  100%;
+  max-height: 100%;
+}
+
+.buttons-container-relative {
+  display:  inline-block;
+  position: relative;
+  width:    100%;
+  height:   100%;
+}
+
+.buttons-container {
+  position:  absolute;
+  width:     80%;
+  top:       50%;
+  left:      50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-cta-btn {
+  display:         inline-block;
+  text-transform:  uppercase;
+  text-align:      center;
+  text-decoration: none;
+  position:        relative;
+  width:           100%;
+/*   padding:         1.81% 0; */
+  padding: 0px;
+}
+
+
+.hero-cta-btn-full .hero-cta-btn{
+  padding:1% 0;	
+}
+.five-btns .buttons-container{
+  display:flex;
+  flex-wrap:wrap;
+}
+.five-btns .hero-cta-btn-full, .hero-cta-btn-half{
+  float:none;
+}
+
+.five-btns .hero-cta-btn{
+  padding: 1% 0;
+  font-size:0.8rem;
+}
+.five-btns .hero-cta-btn-full .hero-cta-btn{
+  padding:0.5% 0;	
+}
+
+.hero-cta-btn-half {
+  display:  inline-block;
+  float:    left;
+  position: relative;
+  width:    49%;
+  margin:   0.5%;
+}
+
+.hero-cta-btn-full {
+  display:  inline-block;
+  float:    left;
+  position: relative;
+  width:    99%;
+  margin:   0.5%;
+}
+
+.home-page-slider-slide-mobile {
+  display: none;
+}
+#tooltip-container{
+  margin-top:15px;
+}
+#tooltip-btn-text{
+  font-size: 17px;
+}
+#tooltip-btn-text, .tooltip__btn--2{
+  font-size: 17px;
+}
+
+@media screen and (max-width:1366px){
+
+  #tooltip-btn-text, .tooltip__btn--2{
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width:1024px){
+
+  /*               #tooltip-container {
+  margin-top: 1px;
+} */
+
+  #tooltip-btn-text, .tooltip__btn--2{
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width:800px){
+  #tooltip-btn-text, .tooltip__btn--2{
+    font-size: 12px;
+  }
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .home-page-slider-slide {
+    display: none;
+  }
+
+  .buttons-container {
+    width:     95%;
+    transform: translate(-50%, -50%);
+  }
+
+  .home-page-slider-slide-mobile {
+    display: inline-block;
+  }
+  .hero-cta-btn {
+    padding: 1.5% 0;
+  }
+
+  .hero-cta-btn-full .hero-cta-btn {
+    padding: .75% 0;
+  }
+
+  .five-btns .hero-cta-btn {
+    padding: .75% 0;
+  }
+
+  .five-btns .hero-cta-btn-full .hero-cta-btn {
+    padding: .375% 0;
+  }
+  .hero-cta-btn {
+    font-size: 16px;
+  }
+  .five-btns .hero-cta-btn {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:800px){
+  #tooltip-btn-text, .tooltip__btn--2{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:400px){
+  /*               #tooltip-container{
+  margin-top:3px;
+} */
+
+  #tooltip-btn-text, .tooltip__btn--2{
+    font-size: 12px;
+  }    
+}
+
+@media screen and (max-width: 375px) {
+  .hero-cta-btn {
+    padding:   2% 0;
+    font-size: 10px;
+  }
+  .hero-cta-btn-full .hero-cta-btn {
+    padding: 1% 0;
+  }
+  .five-btns .hero-cta-btn {
+    padding:   1% 0;
+    font-size: 10px;
+  }
+  .five-btns .hero-cta-btn-full .hero-cta-btn {
+    padding: 0.5% 0;
+  }
+  .five-btns .hero-cta-btn-full, .five-btns .hero-cta-btn-half{
+    /*     margin:0.1%; */
+  }
+
+}
+
+/*=============================
+
+TOOLTIP | ANNOUNCEMENT.
+
+==============================*/
+
+
+.tooltip__btn {
+  
+  color: #fff;
+}
+.tooltip__btn:hover {
+    cursor: pointer;
+  }
+.tooltip__btn--2::before {
+  position: relative;
+}
+
+.tooltip__btn--2 {
+  position: absolute;
+  display: inline-block;
+  font-size: 18px;
+  right: 50%;
+  //left: 50%;
+  top: auto;
+  bottom: 5px;
+}
+
+// Added for page sale
+.tooltip__btn--sale {
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  margin: 20px auto;
+
+  @include media-query(medium-up) {
+    display: inline-block;
+    margin: auto;
+  }
+}
+
+.tooltip__text {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px;
+  color: #000;
+  background-color: #f3f3f3;
+  box-shadow:0 5px 15px rgba(255,255,255,0.5);
+
+  &:before {
+    content:'';
+    display:block;
+    width:0;
+    height:0;
+    right: 49%;
+    top: -8px;
+    position:absolute;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom:8px solid #fff;
+    box-shadow:0 5px 15px rgba(255,255,255,0.5);
+
+  }
+
+  @include media-query(medium-up) {   
+
+    width: 320px;
+    top: 0;
+    left: 50%;
+
+
+    &:before {
+      right: 38%;
+      top: -8px;
+    }
+  }
+}
+
+.tooltip__text--2 {
+  @extends .tooltip__text;
+  max-width: 320px;
+  position: absolute;
+  bottom: initial;
+  left: auto;
+  max-width: 100%;
+  z-index: 2;
+
+  @include media-query(medium-up) {
+    //left: 50%;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &:before {
+    top: 107px;
+    right: auto;
+    left: -16px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right:8px solid #fff;
+    visibility: hidden;
+
+    @include media-query($medium-up) {
+      visibility: hidden;
+    }
+  }
+
+
+  svg {
+    position: absolute;
+    width: 15px;
+    top: 10px;
+    right: 12px;
+    height: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.tooltip__text--3 {
+  //top: -50%;
+  right: 0;
+  left: 0;
+
+  @include media-query(medium-up) {
+    right: 50%;
+    left: 50%;
+  }
+}
+
+// Added for page sale
+.tooltip__text--sale {
+  top: 15%;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  padding: 25px;
+
+  @include media-query(medium-up) {
+    top: auto;
+    bottom: 26%;
+    left: 1.02em;  
+    right: auto;
+  }
+
+  .hero__link a {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 17px !important;
+    color: #e82b27 !important;
+    margin: 0 !important;;
+    padding: 0 !important;
+    text-transform: initial !important;
+    font-weight: bold;
+  }
+}
+
+.tooltip__text--collection-item {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0em;
+  line-height: 1.6;
+  font-size: 17px;
+  text-shadow: none;
+  text-transform: initial; 
+  font-weight: initial;
+
+  @include media-query(medium-up) {
+    max-width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  button {
+    color: red;
+  }
+
+}

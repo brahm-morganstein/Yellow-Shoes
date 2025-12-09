@@ -1,0 +1,31 @@
+<div class="product-ratings" style="padding-left:6px;">
+    <div class="shopify-product-reviews-badge">
+        <div class="spr-badge" style="display: flex;">
+
+            <div style="display: inline-block; margin-right: 10px;">
+                <span class="spr-starrating spr-badge-starrating">
+              <i class="spr-icon spr-icon-star-empty"></i>
+              <i class="spr-icon spr-icon-star-empty"></i>
+              <i class="spr-icon spr-icon-star-empty"></i>
+              <i class="spr-icon spr-icon-star-empty"></i>
+              <i class="spr-icon spr-icon-star-empty"></i>
+            </span>
+                <span id="overall-product-rating" class="review-star d-inline-block"></span>
+            </div>
+            <div style="display: inline-block; padding-top: 6px;">
+
+                <a href="#ratings-and-reviews-container" id="product-page-reviews-count" class="scrollTop"><span id="over-all-reviews-count"></span></a>
+              &nbsp;
+              {% assign url_prefix = '' %}
+                    {% if shop.locale == 'fr' %}
+                        {% assign url_prefix = '/fr' %}
+                    {% endif %}
+                    {% if customer %}
+                        <a data-fancybox data-src="#write-review" href="javascript:;" class="review-form-activator" style="text-decoration: underline; padding-top: 10px; padding-left: 10px; font-size: 14px;">{{ 'product_reviews.write_a_review' | t }}</a>
+                    {% else %}
+                        <a onclick="showLogin(true)" href="javascript:;" style="text-decoration: underline; padding-top: 10px; padding-left: 10px; font-size: 14px;">{{ 'product_reviews.write_a_review' | t }}</a>
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,430 @@
+<div id="customer_orders_section" class="account-section" style="display: none;">
+
+  <div class="account-subsection">
+    <div class="my-account-title-with-underline">
+      <div class="title-text d-inline-block w-50">
+        {{ 'customer.account.order_history' | t }}
+      </div>
+      <div class="d-inline-block w-50 text-right">
+        <a href="javascript:;" onclick="showPopup('#profile-order-popup')">{{
+          'customer.order_history.search_by_order_number' | t }}</a>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap">
+      <div class="d-inline-block w-50 text-right orders-type orders-type-left active">
+
+        <a id="shopify_orders_btn" class="store_orders_switcher" href="javascript:;"> {{ "customer.order_history.online_orders" | t }} ({{ customer.orders.size
+          }})</a>
+
+      </div>
+      <div id="store_purchases" class="d-inline-block w-50 orders-type orders-type-right" style="display:none;">
+        <a href="javascript:;" class="store_orders_switcher"> {{ "customer.order_history.store_receipts" | t }} (<span id="store_purchases_count">0</span>)</a>
+      </div>
+    </div>
+  </div>
+  <div class="account-subsection">
+    <div style="padding-bottom:30px; border-bottom: 1px solid #eeeeee;" id="shopify_orders_container" class="hidden-orders-container">
+      {% if customer.orders.size != 0 %}
+      {%assign iter = 0 %}
+      {% for order in customer.orders %}
+        {% if iter < 2 %}
+          {%- liquid
+            assign status_label = order.fulfillment_status_label
+            if shop.locale == 'en'
+              if order.financial_status_label == 'Refunded'
+                assign status_label = order.financial_status_label
+              endif
+            else
+              if order.financial_status_label == 'Remboursée'
+                assign status_label = order.financial_status_label
+              endif
+            endif
+          -%}
+          <div class="d-flex customer-dashboard-order">
+            <div class="dashboard-order-left">
+              <div class="order-fulfillment">{{ status_label }}</div>
+              <div class="order-total">
+                {% assign order_total_items = 0 %}
+                {% for item in order.line_items %}
+                  {% assign order_total_items = order_total_items | plus: item.quantity %}
+                {% endfor %}
+                <strong><span class="theme-money">{{ order.total_price | money }}</span> | {{
+                  order_total_items }} item(s)</strong>
+              </div>
+              <div>
+                <strong>{{ "customer.order_history.date_ordered" | t }}:</strong> 
+                {% if shop.locale == 'en' %}
+                <span class="date-container">{{ order.created_at | date: "%B %d, %Y" }}</span>
+                {% else %}
+                  <span class="date-container">{{ order.created_at | date: "%d %B  %Y" | replace: "January", "janvier" | replace: "February", "février" | replace: "March", "mars" | replace: "April", "avril" | replace: "May", "mai" | replace: "June", "juin" | replace: "July", "juillet" | replace: "August", "août" | replace: "September", "septembre" | replace: "October", "octobre" | replace: "November", "novembre" | replace: "December", "décembre" }}</span>
+                {% endif %}
+              </div>
+              <div>
+                <strong>{{ "customer.order_history.order_number" | t }}</strong> {{ order.name | link_to:
+                order.customer_url }}
+              </div>
+              <div class="dashboard-order-btn">
+                <a href="{{order.customer_url}}">{{ "customer.order_history.order_details" | t }}</a>
+              </div>
+            </div>
+            <div class="dashboard-order-right position-relative text-center">
+              {%if order.line_items.size < 3 %}
+                {% for item in order.line_items %}
+                  <div class="d-inline-block dashboard-order-image-block">
+                    <a href="{{item.url}}">
+                      <img src="{{ item.image | image_url }}" class="w-100 position-relative"
+                           alt="{{ item.title }}">
+                    </a>
+                  </div>
+                {%endfor%}
+              {%else %}
+                <div class="dashboard-order-prev">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                       class="feather feather-chevron-left"><title>Left</title>
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </div>
+                <div class="dashboard-order-next">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                       class="feather feather-chevron-right"><title>Right</title>
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+                {% assign items_count = 0 %}
+
+                {% for item in order.line_items %}
+                  {% if items_count < 3 %}
+                    {% assign item_class = '' %}
+                  {%else %}
+                    {% assign item_class = 'dashboard-order-image-hidden' %}
+                  {%endif%}
+                  <div class="d-inline-block dashboard-order-image-block {{item_class}}">
+                    <a href="{{item.url}}">
+                      <img src="{{ item.image | image_url }}" class="w-100 position-relative"
+                           alt="{{ item.title }}">
+                    </a>
+                  </div>
+                  {% assign items_count = items_count | plus: 1 %}
+                {%endfor%}
+              {%endif%}
+            </div>
+          </div>
+        {% else %}
+          {%- liquid
+            assign status_label = order.fulfillment_status_label
+            if shop.locale == 'en'
+              if order.financial_status_label == 'Refunded'
+                assign status_label = order.financial_status_label
+              endif
+            else
+              if order.financial_status_label == 'Remboursée'
+                assign status_label = order.financial_status_label
+              endif
+            endif
+          -%}
+          <div class="d-flex customer-dashboard-order hidden">
+            <div class="dashboard-order-left">
+              <div class="order-fulfillment">{{ status_label }}</div>
+              <div class="order-total">
+                {% assign order_total_items = 0 %}
+                {% for item in order.line_items %}
+                  {% assign order_total_items = order_total_items | plus: item.quantity %}
+                {% endfor %}
+                <strong><span class="theme-money">{{ order.total_price | money }}</span> | {{
+                  order_total_items }} item(s)</strong>
+              </div>
+              <div>
+                <strong>{{ 'customer.order_history.date_ordered' | t }}:</strong>
+                  {% if shop.locale == 'en' %}
+                <span class="date-container">{{ order.created_at | date: "%B %d, %Y" }}</span>
+                {% else %}
+                  <span class="date-container">{{ order.created_at | date: "%d %B  %Y" | replace: "January", "janvier" | replace: "February", "février" | replace: "March", "mars" | replace: "April", "avril" | replace: "May", "mai" | replace: "June", "juin" | replace: "July", "juillet" | replace: "August", "août" | replace: "September", "septembre" | replace: "October", "octobre" | replace: "November", "novembre" | replace: "December", "décembre" }}</span>
+                {% endif %}
+              </div>
+              <div>
+                <strong>{{ 'customer.order_history.order_number' | t }}</strong> {{ order.name | link_to:
+                order.customer_url }}
+              </div>
+              <div class="dashboard-order-btn">
+                <a href="{{order.customer_url}}">{{ "customer.order_history.order_details" | t }}</a>
+              </div>
+            </div>
+            <div class="dashboard-order-right position-relative text-center">
+              {%if order.line_items.size < 3 %}
+                {% for item in order.line_items %}
+                  <div class="d-inline-block dashboard-order-image-block">
+                    <a href="{{item.url}}">
+                      <img src="{{ item.image | image_url }}" class="w-100 position-relative" alt="{{ item.title }}"/>
+                    </a>
+                  </div>
+                {%endfor%}
+              {%else %}
+                <div class="dashboard-order-prev">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                       class="feather feather-chevron-left"><title>Left</title>
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </div>
+                <div class="dashboard-order-next">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                       class="feather feather-chevron-right"><title>Right</title>
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+                {% assign items_count = 0 %}
+
+                {% for item in order.line_items %}
+                  {% if items_count < 3 %}
+                    {% assign item_class = '' %}
+                  {%else %}
+                    {% assign item_class = 'dashboard-order-image-hidden' %}
+                  {%endif%}
+                  <div class="d-inline-block dashboard-order-image-block {{item_class}}">
+                    <a href="{{item.url}}">
+                      <img src="{{ item.image | image_url }}" class="w-100 position-relative" alt="{{ item.title }}"/>
+                    </a>
+                  </div>
+                  {% assign items_count = items_count | plus: 1 %}
+                {%endfor%}
+              {%endif%}
+            </div>
+          </div>
+        {%endif%}
+        {% assign iter = iter | plus: 1 %}
+      {%endfor%}
+      {%if customer.orders.size > 2 %}
+      <div class="text-center dashboard-order-btn">
+        <a href="javascript:;" class="load-more-orders-btn">{{ 'customer.account.load_more_btn' | t }}</a>
+        <div class="load-all-orders-btn" style="text-decoration:underline;margin-top:5px; cursor:pointer;">{{
+          'customer.order_history.view_all' | t }}
+        </div>
+        {%endif%}
+        {% else %}
+          <p>{{ 'customer.orders.none' | t }}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div style="padding-bottom:30px; border-bottom: 1px solid #eeeeee;display:none;" id="store_purchases_container" class="hidden-orders-container">APTOS</div>
+    <div class="account-subsection">
+      <div style="font-weight:bold; margin:10px 0;">
+        {{ "customer.order_history.dont_see_order_html" | t }}
+      </div>
+      <div class="dashboard-order-btn">
+        <a href="javascript:;" onclick="showPopup('#profile-order-popup')" style="width:220px; max-width:100%;">{{
+          "customer.order_history.find_an_order" | t }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="profile-popup-container" id="profile-order-popup" style="display: none;">
+  <div class="profile-popup-content-absolute">
+    <div class="profile-popup-content">
+      <div class="profile-popup-close">
+        <a href="javascript:;" class="profile-popup-close-btn">{% render 'svg-x' %}</a>
+      </div>
+
+      <div class="my-account-title-with-underline">
+        <div class="title-text d-inline-block w-100 text-center">
+          {{ 'customer.order_history.order_status' | t }}
+        </div>
+      </div>
+      <div class="text-center">{{ 'customer.order_history.check_order_status' | t }}</div>
+
+      <div style="margin-top:20px;">
+        <div class="label">{{ 'customer.order_history.order_number' | t }}</div>
+        <input class="w-100" type="text" id="order_number_field">
+
+        <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"
+             id="find-order-error"></div>
+      </div>
+      <div style="margin-top:20px;">
+        <div class="label">{{ customer.order_history.email_accossiated_with_order }}</div>
+        <input class="w-100" type="email" id="order_email_field" value="{{ customer.email }}" readonly>
+      </div>
+      <div style="margin-top:20px;">
+        <button id="checkOrderStatusBtn" class="btn w-100 check-order" type="button">
+          {{ 'customer.order_history.check_status' | t }}
+        </button>
+      </div>
+      <div style="margin-top:40px;" class="text-center">
+        {% if shop.locale == 'en' %}
+          <p>
+            For FAQs and returns, see our
+            <a href="/pages/return-policy" style="font-weight: 600;text-decoration: underline;">Return
+              Policy</a>.
+          </p>
+          <p>
+            Questions about your order?
+            <a href="javascript:$zopim.livechat.window.show();"
+               style="font-weight: 600;text-decoration: underline;">Chat with us</a>
+            for more information.
+          </p>
+        {% else %}
+          <p>
+            Pour la FAQ ou les retours, consultez notre
+            <a href="/pages/return-policy" style="font-weight: 600;text-decoration: underline;">Politique de
+              retour</a>.
+          </p>
+          <p>
+            Des questions sur votre commande ?
+            <a href="javascript:$zopim.livechat.window.show();"
+               style="font-weight: 600;text-decoration: underline;">Clavardez avec nous</a>.
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="load-more-template" style="display: none;">
+  <div class="text-center dashboard-order-btn">
+    <a href="javascript:;" class="load-more-orders-btn">{{ 'customer.account.load_more_btn' | t }}</a>
+    <div class="load-all-orders-btn" style="text-decoration:underline;margin-top:5px; cursor:pointer;">{{
+      'customer.order_history.view_all' | t }}
+    </div>
+  </div>
+</div>
+
+
+<div id="aptos_order_template" style="display: none;">
+  <div class="d-flex customer-dashboard-order --==hidden-replacement==--">
+    <div class="dashboard-order-left">
+      <div class="order-fulfillment">--==order_status==--</div>
+      <div class="order-total">
+        <strong><span class="theme-money">--==order_total==--</span> | --==items_count==-- item(s)</strong>
+      </div>
+      <div>
+        <strong>{{ 'customer.order_history.date_ordered' | t }}:</strong> <span class="date-container">--==order_date==--</span>
+      </div>
+      <div>
+        <strong>{{ "customer.order_history.order_number" | t }}</strong>
+        --==order_number==--
+      </div>
+      <div class="dashboard-order-btn">
+        <a href="--==order_url==--">{{ "customer.order_history.order_details" | t }}</a>
+      </div>
+    </div>
+    <div class="dashboard-order-right position-relative text-center">
+      --==items-nav==--
+      --==items==--
+    </div>
+  </div>
+</div>
+
+<div id="aptos_order_item_template" style="display: none;">
+  <div class="d-inline-block dashboard-order-image-block --==class==--">
+    <a href="--==url==--">
+      <img src="--==image==--" class="w-100 position-relative"
+           alt="--==title==-">
+    </a>
+  </div>
+</div>
+
+<div id="aptos_order_items_nav_template" style="display: none;">
+  <div class="dashboard-order-prev">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         class="feather feather-chevron-left"><title>Left</title>
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </div>
+  <div class="dashboard-order-next">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         class="feather feather-chevron-right"><title>Right</title>
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </div>
+</div>
+
+
+
+
+
+
+
+{% comment %}
+
+<div id="customer_orders_section" class="account-section" style="display: none;">
+  {% paginate customer.orders by 20 %}
+  {% if customer.orders.size != 0 %}
+  <table class="responsive-table">
+    <thead>
+      <tr>
+        <th class="order_number">{{ 'customer.orders.order_number' | t }}</th>
+        <th class="date">{{ 'customer.orders.date' | t }}</th>
+        <th class="payment_status">{{ 'customer.orders.payment_status' | t }}</th>
+        <th class="fulfillment_status">{{ 'customer.orders.fulfillment_status' | t }}</th>
+        <th class="total">{{ 'customer.orders.total' | t }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in customer.orders %}
+      <tr class="{% if order.cancelled %}cancelled_order{% endif %}">
+        <td class="responsive-table__cell-head">
+          <span class="responsive-table__cell-label">{{ 'customer.orders.order_number' | t }}</span>
+          {{ order.name | link_to: order.customer_url }}
+           {% if shop.locale == 'en' %}
+          <span class="mobile-only-ib">- {{ order.created_at | date: "%B, %d %Y" }}</span>
+                {% else %}
+          <span class="mobile-only-ib">- {{ order.created_at |  date: "%d %B  %Y" | replace: "January", "janvier" | replace: "February", "février" | replace: "March", "mars" | replace: "April", "avril" | replace: "May", "mai" | replace: "June", "juin" | replace: "July", "juillet" | replace: "August", "août" | replace: "September", "septembre" | replace: "October", "octobre" | replace: "November", "novembre" | replace: "December", "décembre" }}</span> 
+                {% endif %}
+          <span class="responsive-table__cell-head__icon">{% render 'svg-chevron-right' %}</span>
+        </td>
+        <td class="desktop-only">
+          {% if shop.locale == 'en' %}
+          <span class="note">{{ order.created_at | date: "%B, %d %Y" }}</span>
+                {% else %}
+          <span class="note">{{ order.created_at |  date: "%d %B %Y" | replace: "January", "janvier" | replace: "February", "février" | replace: "March", "mars" | replace: "April", "avril" | replace: "May", "mai" | replace: "June", "juin" | replace: "July", "juillet" | replace: "August", "août" | replace: "September", "septembre" | replace: "October", "octobre" | replace: "November", "novembre" | replace: "December", "décembre" }}</span>
+                {% endif %}
+        </td>
+        <td class="responsive-table__first-mobile-cell">
+          <span class="responsive-table__cell-label">{{ 'customer.orders.payment_status' | t }}</span>
+          <span class="status_{{ order.financial_status }}">{{ order.financial_status_label }}</span>
+        </td>
+        <td>
+          <span class="responsive-table__cell-label">{{ 'customer.orders.fulfillment_status' | t }}</span>
+          <span class="status_{{ order.fulfillment_status }}">{{ order.fulfillment_status_label }}</span>
+        </td>
+        <td>
+          <span class="responsive-table__cell-label">{{ 'customer.orders.total' | t }}</span>
+          <span class="total"><span class="theme-money">{{ order.total_price | money }}</span></span>
+
+          <div class="responsive-table__more">
+            <a href="{{ order.customer_url }}">{{ 'customer.orders.full_details_html' | t }}</a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>{{ 'customer.orders.none' | t }}</p>
+  {% endif %}
+
+  <div class="pagination-row">{% render 'pagination-control', paginate: paginate %}</div>
+  {% endpaginate %}
+</div>
+{%endcomment%}
+<script type="text/javascript">
+
+  //   $("#checkOrderStatusBtn").click(function(){
+  //     var track_order_number = $('#order_number_field').val();
+  //     var lang = $(':lang(en)').length ? 'en' : 'fr';
+  //     var lang_link = 'en_CA';
+
+  //     if(lang == 'fr') {
+  //       lang_link = 'fr_CA';
+  //     }
+
+  //     if(track_order_number != ''){
+  //       window.location.href = 'https://chaussuresyellow.narvar.com/chaussuresyellow/tracking/canadapost?tracking_numbers=' + track_order_number + '&order_number=GY332878&service=&ozip=H2T%201V6&dzip=T0J%200B0&order_date=2020-11-05%2013:35:43%20-0500&ship_date=2020-11-05%2020:16:29%20-0500&locale=' + lang_link;
+  //     }
+  //   });
+
+</script>

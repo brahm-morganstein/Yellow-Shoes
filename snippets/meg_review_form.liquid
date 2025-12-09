@@ -1,0 +1,1049 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign customer_name = '' %}
+{% assign customer_email = '' %}
+{% if shop.customer_accounts_enabled %}
+    {% if customer %}
+        {% assign customer_name = customer.first_name %}
+        {% assign customer_email = customer.email %}
+    {% endif %}
+{% endif %}
+
+<script>
+
+  let product_review_sku = '{{ product.selected_or_first_available_variant.sku }}';
+  let theme_language     = '{{ shop.locale }}';
+  let reviews_count      = 0;
+  let overall_rating     = 0;
+  let quality_rating     = 0;
+  let value_rating       = 0;
+
+  function getTheReviews(sku) {
+    let $body       = $('body');
+    let reviews_url = '{{ 'product_reviews.txt' | asset_url }}';
+    $body.find('#reviews-container').html('');
+    reviews_count  = 0;
+    overall_rating = 0;
+    quality_rating = 0;
+    value_rating   = 0;
+    jQuery.ajax({
+                  type:     'GET',
+                  url:      reviews_url,
+                  data:     {},
+                  dataType: 'json',
+                  success:  function(reviews) {
+
+                    let res = {};
+                    for (let rv of reviews) {
+                      if (rv.sku == sku) {
+                        res = rv;
+                      }
+                    }
+                    console.log('res');
+                    console.log(res);
+                    if (res.reviews === undefined) {
+                      res.reviews = [];
+                    }
+                    setTimeout(function() {
+                      reviews_count          = res.reviews_count;
+                      overall_rating         = res.overall_rating;
+                      quality_rating         = res.quality_rating;
+                      value_rating           = res.value_rating;
+                      let res_overall_rating = res.overall_rating + ' {{ 'product_reviews.stars' | t }}';
+                      if (res_overall_rating.includes('undefined')) {
+                        if (theme_language == 'en') {
+                          res_overall_rating = 'No star(s) yet';
+                        } else {
+                          res_overall_rating = 'Aucune étoile(s)';
+                        }
+                      }
+                      $('#reviews-overall').html(res_overall_rating);
+                      if (res.recommended == undefined) {
+                        if (theme_language == 'en') {
+                          $('#recommended-perc').parent().html('No recommendations yet');
+                        } else {
+                          $('#recommended-perc').parent().html('Aucune recommandation');
+                        }
+                      }
+                      $('#recommended-perc').html(res.recommended);
+                      if (res.fits !== undefined) {
+                        $('#fits-value').html(theme_language == 'en' ? res.fits.value_en : res.fits.value_fr);
+                        if (res.fits.index == 0) {
+                          $('#review-ruler-circle').attr('style', 'left:0px;');
+                        }
+                        if (res.fits.index == 1) {
+                          $('#review-ruler-circle').attr('style', 'left:25%;');
+                        }
+                        if (res.fits.index == 2) {
+                          $('#review-ruler-circle').attr('style', 'left:50%; transform:translate(-50%, -50%);');
+                        }
+                        if (res.fits.index == 3) {
+                          $('#review-ruler-circle').attr('style', 'left:75%;');
+                        }
+                        if (res.fits.index == 4) {
+                          $('#review-ruler-circle').attr('right', '-15%;');
+                        }
+                      }
+
+                      $('#overal-review-stars').attr('data-rating', res.overall_rating);
+                      let ratging_count_html = '';
+                      let ratging_count_top_html = '';
+                        {% if shop.locale == 'en' %}
+
+                      if (overall_rating == undefined) {
+                        ratging_count_html += 'No star(s) yet | ';
+                      } else {
+                        ratging_count_html += overall_rating + ' star(s) | ';
+                        ratging_count_top_html += overall_rating + ' star(s) | ';
+                      }
+                      if (reviews_count == undefined) {
+                        ratging_count_html += '<span id="over-all-reviews-count"> No review(s) yet</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count"></span>';
+                      } else {
+                        ratging_count_html += '<span id="over-all-reviews-count">' + reviews_count + ' review(s)</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count">' + reviews_count + ' review(s)</span>';
+                      }
+                        {% else %}
+
+
+                      if (overall_rating == undefined) {
+                        ratging_count_html += 'Aucunes étoile(s) | ';
+                      } else {
+                        ratging_count_html += overall_rating + ' étoile(s) | ';
+                        ratging_count_top_html += overall_rating + ' étoile(s) | ';
+                      }
+                      if (reviews_count == undefined) {
+                        ratging_count_html += '<span id="over-all-reviews-count"> Aucun avis</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count"></span>';
+                      } else {
+                        ratging_count_html += '<span id="over-all-reviews-count">' + reviews_count + ' avis</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count">' + reviews_count + ' avis</span>';
+                      }
+                        {% endif %}
+                      try {
+
+                        $body.find('#overall-product-rating').rateYo({
+                                                                       normalFill: "#A0A0A0",
+                                                                       //       ratedFill: "#DC0B0B",
+                                                                       halfStar: false,
+                                                                       readOnly: true,
+                                                                       starWidth: "18px",
+                                                                       rating:overall_rating
+                                                                     });
+                      }catch (e){
+                        console.log('rateyo problem');
+                        console.log(e);
+                      }
+                      if(overall_rating !== undefined){
+                        let overAllInterval = setInterval(function(){
+                          try {
+                            $body.find('#overall-product-rating').rateYo('option','rating', overall_rating);
+                            if(overall_rating>0){
+                              clearInterval(overAllInterval);
+                            }
+                          }catch (e){
+                            console.log('rateyo problem');
+                            console.log(e);
+                          }
+
+                        }, 200);
+                        try {
+
+                          $body.find('#overal-review-stars').rateYo({
+                                                                      normalFill: "#A0A0A0",
+                                                                      //       ratedFill: "#DC0B0B",
+                                                                      halfStar: false,
+                                                                      readOnly: true,
+                                                                      starWidth: "18px",
+                                                                      rating:overall_rating
+                                                                    });
+                        }catch (e){
+                          console.log('rateyo problem');
+                          console.log(e);
+                        }
+                        $body.find('#overal-review-stars').rateYo('option','rating', overall_rating);
+                      }
+                      $('#product-page-reviews-count').html(ratging_count_top_html);
+                      setTimeout(function() {
+                        let index = 0;
+                        // First sort the array
+                        res.reviews.sort();
+
+                        // Then reverse it:
+                        res.reviews.reverse();
+                        for (let review of res.reviews) {
+                          let _class = index > 1 ? 'hidden' : '';
+                          if (index > 1) {
+                            $body.find('.load-mode-review').show();
+                          }
+                          let html = '<div class="review ' + _class + '">';
+                          html += '<div class="d-flex">';
+                          html += '<div class="d-inline-block" style="width:34%;">';
+                          html += '<div class="font-weight-bold">' + review.name + '</div>';
+                          if (review.location.trim() !== '') {
+                            html += '<div style="margin-top: 10px">';
+                            html += '<span class="font-weight-bold">Location:</span> ' + review.location;
+                            html += '</div>';
+                          }
+
+                          html += '</div>';
+                          html += '<div class="d-inline-block" style="width:66%;">';
+                          html += '<div class="d-flex">';
+                          html += '<div class="d-inline-block w-50">';
+                          html += '<div class="review-star customer-review" data-rating="' + review.overall_rating + '"></div>';
+                          html += '</div>';
+                          html += '<div class="d-inline-block w-50 text-right" style="display:none;">';
+                          html += theme_language == 'en' ? review.date_en : review.date_fr;
+                          html += '</div>';
+                          html += '</div>';
+                          html += '';
+                          html += '<div class="review-title">' + review.review_title + '</div>';
+                          html += '<p>';
+                          html += review.review_text.replace(/\\/g, '');
+                          html += '</p>';
+                          html += '<div class="review-options">';
+                          html += '<div class="review-option">';
+                            {% if shop.locale == 'en' %}
+                          html += '<span class="font-weight-bold">Fits:</span> ' + review['fits_{{ shop.locale }}'];
+                            {% else %}
+                          html += '<span class="font-weight-bold">Taille et ajustement :</span> ' + review['fits_{{ shop.locale }}'];
+                            {% endif %}
+                          html += '</div>';
+                          if (review.size_purchased.trim() !== '') {
+                            html += '<div class="review-option">';
+                              {% if shop.locale == 'en' %}
+                            html += '<span class="font-weight-bold">Size Purchased:</span> ' + review.size_purchased;
+                              {% else %}
+                            html += '<span class="font-weight-bold">Taille achetée :</span> ' + review.size_purchased;
+                              {% endif %}
+                            html += '</div>';
+                          }
+                          if (review.size_normally_worn.trim() !== '') {
+                            html += '<div class="review-option">';
+                              {% if shop.locale == 'en' %}
+                            html += '<span class="font-weight-bold">Size Normally Worn :</span> ' + review.size_normally_worn;
+                              {% else %}
+                            html += '<span class="font-weight-bold">Taille portée habituellement :</span> ' + review.size_normally_worn;
+                              {% endif %}
+                            html += '</div>';
+                          }
+
+                          html += '</div>';
+                          if (review.recommended == 1) {
+
+                            html += '<div class="review-recommended">';
+                              {% if shop.locale == 'en' %}
+                            html += '<span class="font-weight-bold">Yes,</span> I recommend this product.';
+                              {% else %}
+                            html += '<span class="font-weight-bold">Oui.</span> Je recommande ce produit.';
+                              {% endif %}
+                            html += '</div>';
+                          }
+                          html += '</div>';
+                          html += '</div>';
+                          html += '<div class="hr"></div>';
+                          html += '</div>';
+                            /*
+                             let html = '<div style="padding: 1rem 0;">';
+                             html += '<div style="margin-bottom:0.55rem;">';
+                             html += '<strong><small>' + review.name  + '</small></strong>';
+                             html += '</div>';
+                             html += '<div style="margin-bottom:1.5rem;">';
+                             html += '<div class="review-star customer-review" data-rating="' + review.overall_rating + '"></div>';
+                             html += '</div>';
+                             html += '<div style="margin-bottom:0.5rem;">';
+                             html += '<strong>' + review.review_title  + '</strong>';
+                             html += '</div>';
+                             html += '<div style="margin-bottom:0.5rem;">';
+                             html += review.review_text;
+                             html += '</div>';
+                             html += '</div><hr style="border:1px solid #cecece;" />';
+                             */
+                          $('body').find('#reviews-container').append(html);
+                          index++;
+                        }
+
+                      }, 500);
+                    }, 500);
+                  },
+                  error:    function(res) {
+                    console.log(res);
+                  },
+                });
+  }
+  function getTheReviewsMultipleSkus(sku) {
+    let $body       = $('body');
+    let reviews_url = '{{ 'product_reviews.txt' | asset_url }}';
+    $body.find('#reviews-container').html('');
+    reviews_count  = 0;
+    overall_rating = 0;
+    quality_rating = 0;
+    value_rating   = 0;
+    jQuery.ajax({
+                  type:     'GET',
+                  url:      reviews_url,
+                  data:     {},
+                  dataType: 'json',
+                  success:  function(reviews) {
+
+                    let res = {};
+                    for (let rv of reviews) {
+                      if (sku.includes(rv.sku)) {
+                        res = rv;
+                      }
+                    }
+                    if (res.reviews === undefined) {
+                      res.reviews = [];
+                    }
+                    setTimeout(function() {
+                      reviews_count          = res.reviews_count;
+                      overall_rating         = res.overall_rating;
+                      quality_rating         = res.quality_rating;
+                      value_rating           = res.value_rating;
+                      let res_overall_rating = res.overall_rating + ' {{ 'product_reviews.stars' | t }}';
+                      if (res_overall_rating.includes('undefined')) {
+                        if (theme_language == 'en') {
+                          res_overall_rating = 'No star(s) yet';
+                        } else {
+                          res_overall_rating = 'Aucune étoile(s)';
+                        }
+                      }
+                      $('#reviews-overall').html(res_overall_rating);
+                      if (res.recommended == undefined) {
+                        if (theme_language == 'en') {
+                          $('#recommended-perc').parent().html('No recommendations yet');
+                        } else {
+                          $('#recommended-perc').parent().html('Aucune recommandation');
+                        }
+                      }
+                      $('#recommended-perc').html(res.recommended);
+                      if (res.fits !== undefined) {
+                        $('#fits-value').html(theme_language == 'en' ? res.fits.value_en : res.fits.value_fr);
+                        if (res.fits.index == 0) {
+                          $('#review-ruler-circle').attr('style', 'left:0px;');
+                        }
+                        if (res.fits.index == 1) {
+                          $('#review-ruler-circle').attr('style', 'left:25%;');
+                        }
+                        if (res.fits.index == 2) {
+                          $('#review-ruler-circle').attr('style', 'left:50%; transform:translate(-50%, -50%);');
+                        }
+                        if (res.fits.index == 3) {
+                          $('#review-ruler-circle').attr('style', 'left:75%;');
+                        }
+                        if (res.fits.index == 4) {
+                          $('#review-ruler-circle').attr('right', '-15%;');
+                        }
+                      }
+
+                      $('#overal-review-stars').attr('data-rating', res.overall_rating);
+                      let ratging_count_html = '';
+                      let ratging_count_top_html = '';
+                        {% if shop.locale == 'en' %}
+
+                      if (overall_rating == undefined) {
+                        ratging_count_html += 'No star(s) yet | ';
+                      } else {
+                        ratging_count_html += overall_rating + ' star(s) | ';
+                        ratging_count_top_html += overall_rating + ' star(s) | ';
+                      }
+                      if (reviews_count == undefined) {
+                        ratging_count_html += '<span id="over-all-reviews-count"> No review(s) yet</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count"></span>';
+                      } else {
+                        ratging_count_html += '<span id="over-all-reviews-count">' + reviews_count + ' review(s)</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count">' + reviews_count + ' review(s)</span>';
+                      }
+                        {% else %}
+
+
+                      if (overall_rating == undefined) {
+                        ratging_count_html += 'Aucunes étoile(s) | ';
+                      } else {
+                        ratging_count_html += overall_rating + ' étoile(s) | ';
+                        ratging_count_top_html += overall_rating + ' étoile(s) | ';
+                      }
+                      if (reviews_count == undefined) {
+                        ratging_count_html += '<span id="over-all-reviews-count"> Aucun avis</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count"></span>';
+                      } else {
+                        ratging_count_html += '<span id="over-all-reviews-count">' + reviews_count + ' avis</span>';
+                        ratging_count_top_html += '<span id="over-all-reviews-count">' + reviews_count + ' avis</span>';
+                      }
+                        {% endif %}
+                      try {
+
+                        $body.find('#overall-product-rating').rateYo({
+                                                                       normalFill: "#A0A0A0",
+                                                                       //       ratedFill: "#DC0B0B",
+                                                                       halfStar: false,
+                                                                       readOnly: true,
+                                                                       starWidth: "18px",
+                                                                       rating:overall_rating
+                                                                     });
+                      }catch (e){
+                        console.log('rateyo problem');
+                        console.log(e);
+                      }
+                      if(overall_rating !== undefined){
+                        let overAllInterval = setInterval(function(){
+                          try {
+                            $body.find('#overall-product-rating').rateYo('option','rating', overall_rating);
+                            if(overall_rating>0){
+                              clearInterval(overAllInterval);
+                            }
+                          }catch (e){
+                            console.log('rateyo problem');
+                            console.log(e);
+                          }
+
+                        }, 200);
+                        try {
+
+                          $body.find('#overal-review-stars').rateYo({
+                                                                      normalFill: "#A0A0A0",
+                                                                      //       ratedFill: "#DC0B0B",
+                                                                      halfStar: false,
+                                                                      readOnly: true,
+                                                                      starWidth: "18px",
+                                                                      rating:overall_rating
+                                                                    });
+                        }catch (e){
+                          console.log('rateyo problem');
+                          console.log(e);
+                        }
+                        $body.find('#overal-review-stars').rateYo('option','rating', overall_rating);
+                      }
+                      $('#product-page-reviews-count').html(ratging_count_top_html);
+                      setTimeout(function() {
+                        let index = 0;
+                        // First sort the array
+                        res.reviews.sort();
+
+                        // Then reverse it:
+                        res.reviews.reverse();
+                        for (let review of res.reviews) {
+                          let _class = index > 1 ? 'hidden' : '';
+                          if (index > 1) {
+                            $body.find('.load-mode-review').show();
+                          }
+                          let html = '<div class="review ' + _class + '">';
+                          html += '<div class="d-flex">';
+                          html += '<div class="d-inline-block" style="width:34%;">';
+                          html += '<div class="font-weight-bold">' + review.name + '</div>';
+                          if (review.location.trim() !== '') {
+                            html += '<div style="margin-top: 10px">';
+                            html += '<span class="font-weight-bold">Location:</span> ' + review.location;
+                            html += '</div>';
+                          }
+
+                          html += '</div>';
+                          html += '<div class="d-inline-block" style="width:66%;">';
+                          html += '<div class="d-flex">';
+                          html += '<div class="d-inline-block w-50">';
+                          html += '<div class="review-star customer-review" data-rating="' + review.overall_rating + '"></div>';
+                          html += '</div>';
+                          html += '<div class="d-inline-block w-50 text-right" style="display:none;">';
+                          html += theme_language == 'en' ? review.date_en : review.date_fr;
+                          html += '</div>';
+                          html += '</div>';
+                          html += '';
+                          html += '<div class="review-title">' + review.review_title + '</div>';
+                          html += '<p>';
+                          html += review.review_text.replace(/\\/g, '');
+                          html += '</p>';
+                          html += '<div class="review-options">';
+                          html += '<div class="review-option">';
+                            {% if shop.locale == 'en' %}
+                          html += '<span class="font-weight-bold">Fits:</span> ' + review['fits_{{ shop.locale }}'];
+                            {% else %}
+                          html += '<span class="font-weight-bold">Taille et ajustement :</span> ' + review['fits_{{ shop.locale }}'];
+                            {% endif %}
+                          html += '</div>';
+                          if (review.size_purchased.trim() !== '') {
+                            html += '<div class="review-option">';
+                              {% if shop.locale == 'en' %}
+                            html += '<span class="font-weight-bold">Size Purchased:</span> ' + review.size_purchased;
+                              {% else %}
+                            html += '<span class="font-weight-bold">Taille achetée :</span> ' + review.size_purchased;
+                              {% endif %}
+                            html += '</div>';
+                          }
+                          if (review.size_normally_worn.trim() !== '') {
+                            html += '<div class="review-option">';
+                              {% if shop.locale == 'en' %}
+                            html += '<span class="font-weight-bold">Size Normally Worn :</span> ' + review.size_normally_worn;
+                              {% else %}
+                            html += '<span class="font-weight-bold">Taille portée habituellement :</span> ' + review.size_normally_worn;
+                              {% endif %}
+                            html += '</div>';
+                          }
+
+                          html += '</div>';
+                          if (review.recommended == 1) {
+
+                            html += '<div class="review-recommended">';
+                              {% if shop.locale == 'en' %}
+                            html += '<span class="font-weight-bold">Yes,</span> I recommend this product.';
+                              {% else %}
+                            html += '<span class="font-weight-bold">Oui.</span> Je recommande ce produit.';
+                              {% endif %}
+                            html += '</div>';
+                          }
+                          html += '</div>';
+                          html += '</div>';
+                          html += '<div class="hr"></div>';
+                          html += '</div>';
+                            /*
+                             let html = '<div style="padding: 1rem 0;">';
+                             html += '<div style="margin-bottom:0.55rem;">';
+                             html += '<strong><small>' + review.name  + '</small></strong>';
+                             html += '</div>';
+                             html += '<div style="margin-bottom:1.5rem;">';
+                             html += '<div class="review-star customer-review" data-rating="' + review.overall_rating + '"></div>';
+                             html += '</div>';
+                             html += '<div style="margin-bottom:0.5rem;">';
+                             html += '<strong>' + review.review_title  + '</strong>';
+                             html += '</div>';
+                             html += '<div style="margin-bottom:0.5rem;">';
+                             html += review.review_text;
+                             html += '</div>';
+                             html += '</div><hr style="border:1px solid #cecece;" />';
+                             */
+                          $('body').find('#reviews-container').append(html);
+                          index++;
+                        }
+
+                      }, 500);
+                    }, 500);
+                  },
+                  error:    function(res) {
+                    console.log(res);
+                  },
+                });
+  }
+
+
+  $(document).ready(function() {
+    let $body            = $('body');
+    $body.on('click', '.scrollTop', function(e){
+      e.preventDefault();
+
+      let selector = $(this).attr('href');
+      let $el = $('body').find(selector);
+      if($el.length){
+        $('html, body').animate({
+                                  scrollTop: ($body.find(selector).offset().top -100)
+                                }, 'fast');
+      }
+    });
+    let product_ratings_html = $body.find('.product-ratings').html();
+    let ratings_and_reviews_container_html = $body.find('#ratings-and-reviews-container').html();
+
+    let queryString      = window.location.search;
+    let product_variants = {{ product.variants | json }};
+    let skus = [];
+    for(let variant of product_variants){
+
+    }
+    for(let variant of product_variants){
+      skus.push(variant.sku);
+    }
+
+    let urlParams = new URLSearchParams(queryString);
+
+    let the_current_variant = urlParams.get('variant');
+    setTimeout(function(){
+      // getTheReviews(product_review_sku);
+      getTheReviewsMultipleSkus(skus);
+    }, 500);
+    /*setInterval(function() {
+      queryString = window.location.search;
+
+      urlParams = new URLSearchParams(queryString);
+
+      let variant = urlParams.get('variant');
+      if (variant != the_current_variant) {
+        the_current_variant = variant;
+        for (let v of product_variants) {
+          if (v.id == variant) {
+            $body.find('.product-ratings').html(product_ratings_html);
+            $body.find('#ratings-and-reviews-container').html(ratings_and_reviews_container_html);
+            // getTheReviews(v.sku);
+            getTheReviewsMultipleSkus(skus);
+            break;
+          }
+        }
+      }
+    }, 25);*/
+  });
+
+</script>
+
+<style>
+
+    .review-title {
+        text-transform: capitalize;
+    }
+
+    .d-inline-block {
+        display: inline-block;
+    }
+
+    #write-review {
+        display:       none;
+        width:         650px;
+        max-width:     100%;
+        padding:       0 0 40px 0;
+        text-align:    justify;
+        border-radius: 3px;
+        box-shadow:    0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .spr-form {
+        padding:    3.125rem 1.25rem;
+        margin-top: 0;
+    }
+
+    .spr-form .spr-form-label {
+        font-style: normal;
+        display:    block;
+        margin-top: 1.75rem;
+    }
+
+    #new-review-form fieldset {
+        margin:  0 2px;
+        padding: .35em .625em .75em;
+    }
+
+    #new-review-form input:not(.i-chbx), #new-review-form textarea {
+        width: 100%;
+    }
+
+    #write-review .fancybox-close-small {
+        top: 15px;
+    }
+
+    #write-review .content-header {
+        border-bottom: 1px solid #eee;
+        padding:       20px;
+    }
+
+    #write-review .content-scroll {
+        max-height: calc(100vh - 200px);
+        overflow:   auto;
+        padding:    40px 20px 0 20px;
+    }
+
+    .review-star {
+        padding:    0;
+        margin-top: 0.5em;
+    }
+
+    .input-error {
+        color:        #dc3545 !important;
+        border-color: #dc3545 !important;
+    }
+
+    .text-error {
+        color: #dc3545 !important;
+    }
+
+    #form-overlay {
+        position:   fixed;
+        top:        0;
+        right:      0;
+        bottom:     0;
+        left:       0;
+        background: rgba(0, 0, 0, 0.75);
+        z-index:    1000;
+
+    }
+</style>
+
+<div style="display: none;" id="write-review">
+    <!-- Start Write Review Form -->
+    <div id="form-overlay" style="display:none;">
+    </div>
+    <div class=" product-reviews--content">
+        <div id="shopify-product-reviews">
+
+            <div class="spr-container">
+
+                <div class="spr-content">
+                    <div class="spr-form" style="">
+                        <div id="review-submitted-success" style="display:none;">
+
+                            <h1 style="text-align:center; color: #28a745!important; font-size:5em; margin-bottom:0;">
+                                <i class="fas fa-check-circle"></i>
+                            </h1>
+                            <h3 style="text-align:center;">{{ 'product_reviews.thank_you' | t }}</h3>
+                        </div>
+                        <form method="post" action="" id="new-review-form" class="new-review-form">
+
+                            <div id="write-review-header">
+                                {{ 'product_reviews.write_your_review' | t }}
+                            </div>
+                            <div class="d-flex flex-wrap" id="w-review-product-title-container">
+                                <div class="d-inline-block w-50">
+                                    <div id="w-review-product-title">
+                                        {{ product.title }}
+                                    </div>
+                                </div>
+                                <div class="d-inline-block w-50 text-center" style="font-weight: 600;">
+                                    {{ 'product_reviews.required' | t }}
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap form-top">
+                                <div class="d-inline-block left position-relative">
+                                    <img src="{{ current_variant.featured_image.src | img_url: '1024x1024' }}"
+                                         alt="Review prod image" class="w-100">
+                                </div>
+                                <div class="d-inline-block right text-center">
+
+                                    <div class="review-fieldset">
+                                        <div class="label-container">
+                                            <label for="" class="label">
+                                                {{ 'product_reviews.overall_product_rating' | t }}
+                                            </label>
+                                        </div>
+                                        <div id="overall-rating" class="review-star"></div>
+                                        <input type="hidden" id="overall-rating-input" class="required" value=""/>
+                                    </div>
+
+                                    <div class="review-fieldset">
+                                        <div class="label-container">
+                                            <label for="fits_field" class="label">
+                                                {{ 'product_reviews.size_and_fit' | t }}
+                                            </label>
+                                        </div>
+                                        <select class="spr-form-input w-100" id="fits_field">
+                                            <option value="Fits one size too small:Une Taille trop petite">{{ 'product_reviews.fits_one_size_too_small' | t }}
+                                            </option>
+                                            <option value="Runs a little small:Taille légèrement petite">{{ 'product_reviews.runs_a_little_small' | t }}</option>
+                                            <option value="Perfect fit:Taille parfaite" selected="">{{ 'product_reviews.perfect_fit' | t }}</option>
+                                            <option value="Runs a little big:Taille un peu grande">{{ 'product_reviews.runs_a_little_big' | t }}</option>
+                                            <option value="Fits one size too big:Taille un peu grande">{{ 'product_reviews.fits_one_size_too_big' | t }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="review-fieldset">
+                                        <div class="label-container">
+                                            <label for="fits_field" class="label">
+                                                {{ 'product_reviews.would_you_recommend_this_item' | t }}
+                                            </label>
+                                        </div>
+                                        <div class="d-flex recommend-container">
+                                            <div class="d-inline-block w-50" style="padding-right: 10px;">
+                                                <button class="w-review-btn w-100" id="do-not-recommend" style="border-color:inherit;">{{ 'product_reviews.no' | t }}</button>
+                                            </div>
+                                            <div class="d-inline-block w-50" style="padding-left: 10px;">
+                                                <button class="w-review-btn w-100 active" id="recommend-this" style="border-color:inherit;">{{ 'product_reviews.yes' | t }}</button>
+                                            </div>
+                                        </div>
+                                        <div style="display: none;">
+                                            <label for="recommended_field"><input type="radio" checked="" id="recommended_field"
+                                                                                  name="recommended_field" value="1" class="i-chbx">&nbsp;
+                                                Yes</label>
+                                            <label for="recommended_field_no"><input type="radio" id="recommended_field_no"
+                                                                                     name="recommended_field"
+                                                                                     value="0" class="i-chbx">&nbsp; No</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="w-review-full">
+                                <div class="w-review-full-header">
+                                    {{ 'product_reviews.share_your_thoughts' | t }}
+                                </div>
+                                <div class="review-fieldset">
+                                    <div class="label-container">
+                                        <label class="label">{{ 'product_reviews.form_review_title' | t }}</label>
+                                    </div>
+                                    <input class="spr-form-input spr-form-input-text required w-100" id="review_title" type="text" name="review[title]" value="" placeholder="{{ 'product_reviews.enter_review_title_here' | t }}">
+                                </div>
+                                <div class="review-fieldset">
+                                    <div class="label-container">
+                                        <label class="label">{{ 'product_reviews.review_message' | t }}</label>
+                                    </div>
+                                    <textarea class="spr-form-input spr-form-input-textarea required w-100" id="review_body" name="review[body]" rows="3" placeholder=""></textarea>
+                                    <div>
+                                        <i>{{ 'product_reviews.minimum_character_length' | t }}</i>
+                                    </div>
+                                    <div id="review-body-error" class="text-danger" style="display: none;margin-top:7px;">
+                                        {{ 'product_reviews.minimum_character_length_validation' | t }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-review-full">
+                                <div class="w-review-full-header">{{ 'product_reviews.tell_other_customers' | t }}</div>
+                                <div class="review-fieldset">
+                                    <div class="label-container">
+                                        <label class="label">{{ 'product_reviews.nickname' | t }} <span class="font-weight-slim">({{ 'product_reviews.nickname_info' | t }})</span></label>
+                                    </div>
+                                    <input class="spr-form-input spr-form-input-text required w-100" id="review_author" type="text" name="review[author]" value="{{ customer_name }}" placeholder="{{ 'product_reviews.nickname_placeholder' | t }}">
+                                    <input class="spr-form-input spr-form-input-email required" id="review_email" type="hidden" name="review[email]" value="{{ customer_email }}" placeholder="john.smith@example.com">
+                                </div>
+                            </div>
+                            <div class="w-review-full">
+                                <div class="review-fieldset">
+                                    <div class="label-container">
+                                        <label class="label">{{ 'product_reviews.location' | t }}</label>
+                                    </div>
+                                    <input class="spr-form-input spr-form-input-text w-100" id="review_location" type="text" name="review[location]" value="" placeholder="{{ 'product_reviews.enter_location_here' | t }}">
+                                </div>
+                                <div>
+                                    <div>
+                                        <div class="review-fieldset">
+                                            <div class="label-container">
+                                                <label for="size_normally_worn_field" class="label">
+                                                    {{ 'product_reviews.size_normally_worn' | t }}
+                                                </label>
+                                            </div>
+                                            <select class="spr-form-input w-100" id="size_normally_worn_field">
+                                                <option value="">{{ 'product_reviews.select' | t }}</option>
+                                                {% for option in product.options_with_values %}
+                                                    {% if option.name == 'size' %}
+                                                        {% for value in option.values %}
+                                                            <option value="{{ value | escape }}">{{ value }}</option>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="label-container">
+                                            <label for="size_purchased_field" class="label">
+                                                {{ 'product_reviews.size_purchased' | t }}
+                                            </label>
+                                        </div>
+                                        <select class="spr-form-input w-100 required" id="size_purchased_field">
+                                            <option value="">{{ 'product_reviews.select' | t }}</option>
+                                            {% for option in product.options_with_values %}
+                                                {% if option.name == 'size' %}
+                                                    {% for value in option.values %}
+                                                        <option value="{{ value | escape }}">{{ value }}</option>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="reviews-error-message" class="text-danger" style="display:none;">
+                                    {{ 'product_reviews.fill_required_fields' | t }}
+                                </div>
+                            </div>
+                            <div id="reviews-error-message-res" class="text-error" style="display:none;">
+                            </div>
+                            <div class="w-review-full">
+                                <button class="btn w-100" id="submit-review">{{ 'product_reviews.submit' | t }}</button>
+                                <div class="text-center" style="margin-top:7px;">
+                                    <a href="javascript:;" id="w-review-cancel-btn" style="text-decoration: underline;">{{ 'product_reviews.cancel' | t }}</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    {{ 'product_reviews.check_out_our_review_guidelines_html' | t }}
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End Write Review Form -->
+</div>
+<script>
+  let v_p = 0;
+
+  {% assign verified_purchase = false %}
+  {% for order in customer.orders %}
+  {% for line_item in order.line_items %}
+  {% if line_item.sku == current_variant.sku %}
+  {% assign verified_purchase = true %}
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+
+  {% if verified_purchase == true %}
+  v_p = 1;
+  {% endif %}
+
+  $(document).ready(function() {
+    let $body = $('body');
+    $body.on('click', '#w-review-cancel-btn', function() {
+      $(this).closest('#write-review').find('.fancybox-close-small')[0].click();
+    });
+    $body.on('click', '.load-mode-review', function() {
+      let index = 0;
+      let $this = $(this);
+      $body.find('.review.hidden').each(function() {
+        if (index < 2) {
+          $(this).removeClass('hidden');
+        }
+        if (!$body.find('.review.hidden').length) {
+          $this.hide();
+        }
+        index++;
+      });
+    });
+    $body.on('click', '#recommend-this', function(e) {
+      e.preventDefault();
+      $body.find('.recommend-container').find('.w-review-btn').removeClass('active');
+      $(this).addClass('active');
+      $body.find('input[name="recommended_field"]').each(function() {
+        if (this.value == 1) {
+          this.checked = true;
+        }
+      });
+    });
+    $body.on('click', '#do-not-recommend', function(e) {
+      e.preventDefault();
+      $body.find('.recommend-container').find('.w-review-btn').removeClass('active');
+      $(this).addClass('active');
+      $body.find('input[name="recommended_field"]').each(function() {
+        if (this.value == 0) {
+          this.checked = true;
+        }
+      });
+    });
+  });
+  try {
+    $('#overall-rating').rateYo({
+                                  normalFill: '#a0a0a0',
+                                  //     ratedFill: "#DC0B0B",
+                                  fullStar:  true,
+                                  starWidth: '30px',
+                                  onSet:     function(rating, rateYoInstance) {
+                                    rating = Math.ceil(rating);
+                                    $('#overall-rating-input').val(rating);
+                                  },
+                                });
+  } catch (e) {
+    console.log('rateyo problem');
+    console.log(e);
+  }
+
+  //   $('#quality-rating').rateYo({
+  //     normalFill: "#A0A0A0",
+  //     //     ratedFill: "#DC0B0B",
+  //     halfStar: true,
+  //     starWidth: "24px",
+  //     onSet: function (rating, rateYoInstance) {
+  //       $('#quality-rating-input').val(rating);
+  //     }
+  //   });
+  //   $('#value-rating').rateYo({
+  //     normalFill: "#A0A0A0",
+  //     //     ratedFill: "#DC0B0B",
+  //     halfStar: true,
+  //     starWidth: "24px",
+  //     onSet: function (rating, rateYoInstance) {
+  //       $('#value-rating-input').val(rating);
+  //     }
+  //   });
+
+  $('#submit-review').on('click', function(e) {
+    e.preventDefault();
+    $('#reviews-error-message-res').html('');
+    $('#reviews-error-message-res').hide();
+
+    $('#review-body-error').hide();
+    e.preventDefault();
+    let $overlay = $('#form-overlay');
+    $overlay.show();
+    let process = true;
+    $('#reviews-error-message').hide();
+    let $form = $('#new-review-form');
+    $form.find('.required').each(function() {
+      $(this).removeClass('input-error');
+      if ($(this).val().trim() === '') {
+        process = false;
+        $(this).addClass('input-error');
+      }
+    });
+    if (!validateEmail($('#review_email').val())) {
+      $('#review_email').addClass('input-error');
+      process = false;
+    }
+
+    if ($('#review_body').val().length < 24) {
+      process = false;
+      $('#review-body-error').show();
+      $('#review-body-error').addClass('input-error');
+    }
+
+    if (!process) {
+      $('#reviews-error-message').show();
+      $overlay.hide();
+      return;
+    }
+    if (process) {
+      jQuery.ajax({
+                    type:    'POST',
+                    url:     'https://app.yellowshoes.com/api/product-reviews',
+                    data:    {
+                      action:         'add-review',
+                      sku:            '{{ current_variant.sku }}',
+                      variant_id:     '{{ current_variant.id }}',
+                      name:           $form.find('#review_author').val(),
+                      email:          $form.find('#review_email').val(),
+                      review_title:   $form.find('#review_title').val(),
+                      review_text:    $form.find('#review_body').val(),
+                      overall_rating: $form.find('#overall-rating-input').val(),
+                      //           quality_rating: $form.find('#quality-rating-input').val(),
+                      //           value_rating: $form.find('#value-rating-input').val(),
+                      //           reviews_checked: $form.find('#reviews_checked')[0].checked ? '1' : '0',
+                      recommended:        $form.find('input[name="recommended_field"]:checked').val(),
+                      fits:               $form.find('#fits_field').val(),
+                      size_purchased:     $form.find('#size_purchased_field').val(),
+                      size_normally_worn: $form.find('#size_normally_worn_field').val(),
+                      location:           $form.find('#review_location').val(),
+                      v_p:                v_p,
+                      language:           '{{ shop.locale }}',
+
+                    },
+                    success: function(res) {
+                      res = JSON.parse(res);
+                      if (res.success) {
+                        $form[0].reset();
+                        $form.closest('.fancybox-inner').find('.fancybox-close-small')[0].click();
+                        new Swal({
+                                   title: '',
+                                   text:  '',
+                                   icon:  'success',
+                                 });
+                      } else {
+                        $('#reviews-error-message-res').html(res.error_message);
+                        $('#reviews-error-message-res').show();
+                      }
+                      $overlay.hide();
+                    },
+                    statusCode: {
+                      200: function() {
+                       Swal.fire({
+                         icon: "success"
+                       }); 
+                      }
+                    },    
+                    error:   function(res) {
+                      console.log(res);
+                      $overlay.hide();
+                    },
+                  });
+    }
+  });
+
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+</script>

@@ -1,0 +1,763 @@
+<style>
+    .header-dropdown-toggle{
+        position:relative;
+        cursor:pointer;
+        display:inline;
+    }
+    .header-dropdown{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        background: #fff;
+        padding: 0 10px 5px 10px;
+        top: 99%;
+        left:0;
+        text-align:center;
+        border: 0.5px solid #dadfe5;
+    }
+    .header-dropdown a{
+        display:inline-block;
+        width: 100%;
+        margin-top: 5px;
+        text-align:left;
+        line-height:20px;
+    }
+    .header-dropdown-toggle:hover .header-dropdown{
+        display:inline-block;
+    }
+    .header-dropdown-toggle{
+        font-size:1.3em;
+    }
+   
+    .header-dropdown-toggle:not(.header-lang-swtich) .header-dropdown{
+        width:200px;
+        left:-75px;
+        padding: 15px 15px 15px 20px;
+    }
+    .position-relative{
+        position:relative!important;
+    }
+    .load-more-orders-btn{
+        width:200px !important;
+        max-width:100%;
+    }
+    .label{
+        font-weight:600;
+    }
+
+    .hidden{
+        display:none!important;
+    }
+
+    .marketing-radio-container{
+        display:flex;
+        align-items:center;
+        margin-top:10px;
+    }
+    .marketing-radio-container input{
+        display:none;
+    }
+    .marketing-radio, .marketing-label{
+        display:inline-block;
+        cursor:pointer;
+    }
+    .marketing-label{
+        margin-left: 7px;
+    }
+
+    .marketing-radio{
+        width:20px;
+        height:20px;
+        border:1px solid #D6D6D6;
+        position:relative;
+        background:#F8F8F8FF;
+        border-radius:3px;
+    }
+
+    .marketing-radio-background{
+        display:inline-block;
+        width:13px;
+        height:13px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+    .marketing-radio.selected .marketing-radio-background{
+        background:#EDBC57;
+    }
+    .custom-checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .custom-checkbox {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #D6D6D6;
+        position: relative;
+        background: #F8F8F8FF;
+        border-radius: 3px;
+    }
+    .custom-checkbox, .custom-checkbox-label {
+        display: inline-block;
+        cursor: pointer;
+        max-width:95%;
+    }
+    .custom-checkbox-label{
+        margin-left: 7px;
+    }
+    .custom-checkbox-background {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .custom-checkbox.selected .custom-checkbox-background {
+        background: #e9b82b;
+    }
+    .custom-checkbox-container input {
+        display: none;
+    }
+    #sms-agreement-text, #register-sms-agreement-text {
+        border:     1px solid #e9b929;
+        padding:    10px;
+        background: #fbfafb;
+        color:      #e9b929;
+        margin: 25px 0 15px 0;
+    }
+    #register-sms-agreement-text{
+        margin:10px 0;
+    }
+    .product-block-labels{
+        min-height:65px;
+        position:relative;
+    }
+    #sms-agreement-text, #register-sms-agreement-text {
+        border:     1px solid #e9b929;
+        padding:    10px;
+        background: #fbfafb;
+        color:      #e9b929;
+        margin: 25px 0 15px 0;
+    }
+    #register-sms-agreement-text{
+        margin:10px 0;
+    }
+    .product-block-labels{
+        min-height:65px;
+        position:relative;
+    }
+    .d-flex{
+        display:flex;
+    }
+    .flex-wrap{
+        flex-wrap:wrap;
+    }
+
+    .d-inline-block{
+        display:inline-block;
+    }
+    .w-25{
+        width:25%;
+    }
+    .w-75{
+        width:75%;
+    }
+    .w-50{
+        width:50%;
+    }
+    .w-100{
+        width:100%;
+    }
+    @media screen and (max-width:800px){
+        .header-dropdown-toggle:hover .header-dropdown, .header-dropdown-icon{
+            display:none;
+        }
+    }
+</style>
+<script>
+  let rb_breaker       = 0;
+  let rb_breaker_limit = 3;
+
+  $(document).ready(function() {
+    let $body = $('body');
+    $body.on('click', '#reset-password-btn', function() {
+      let $_GET = getQueryStringParameters();
+      $.ajax({
+               url:      'https://app.yellowshoes.com/api/multipass',
+               method:   'POST',
+               data:     {
+                 'action':      'reset_pass',
+                 'email':       $_GET.email,
+                 password:      $body.find('#customer_password').val().trim(),
+                 conf_password: $body.find('#customer_password_confirmation').val().trim(),
+                 token:         decodeURIComponent($_GET.token),
+                 'language':    theme.locale,
+               },
+               dataType: 'json',
+               success:  function(response_data) {
+                 if (!response_data.success) {
+                   new Swal({
+                              title: '',
+                              text:  response_data.error_message,
+                              icon:  'error',
+                            });
+                   return;
+                 }
+                 new Swal({
+                            title: '',
+                            text:  '',
+                            icon:  'success',
+                          }).then((value) => {
+                   window.location.href = response_data.url;
+                 });
+               },
+               error:    function(response_data) {
+                 console.log(response_data);
+               },
+             });
+    });
+    $("#student-create-account").click(function(){
+      $('a.popup-blank-btn[data-target="#register-popup-form"]').trigger('click');
+      showLogin(true);
+    });
+
+    $('#student-login').click(function(){
+      $('a.popup-blank-btn[data-target="#login-popup-form"]').trigger('click');
+      showLogin(true);
+    })
+
+    $body.on('click', '.header-account-link', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if(typeof $(this).attr('href') !== "undefined" ){
+        if($(this).attr('href').includes('/login')){
+          showLogin(true);
+        }else{
+          window.location.href = $(this).attr('href');
+        }
+      }
+    });
+    $body.on('click', '.section-footer__menu-block__menu a', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if($(this).attr('href').includes('/login') || $(this).attr('href').includes('/register')){
+        showLogin(true);
+      }else{
+        window.location.href = $(this).attr('href');
+      }
+    });
+
+    setInterval(function() {
+      rb_breaker++;
+    }, 1000);
+    $body.on('click', '#rb_breaker', function() {
+      $(this).html('✓');
+    });
+    $body.on('click', '#register-page-submit-btn', function() {
+
+      if (rb_breaker < rb_breaker_limit || $body.find('#login_popup_hp').val().trim() !== '') {
+        showLoginCaptcha(false);
+        rb_breaker = 0;
+        return;
+      }
+      rb_breaker = 0;
+      $body.find('#register-page-form').find('.register-popup-error-msg').hide();
+      let can_go = true;
+      $body.find('#register-page-submit-btn').addClass('btn-disabled');
+      let email = $body.find('#register_page_email').val().trim();
+      $body.find('#register-page-form').
+            find('input').
+            removeClass('register-page-error');
+      $body.find('#register-page-form').
+            find('input').
+            removeClass('register-popup-error');
+
+      $body.find('#register-page-form').find('.register-page-error-msg').hide();
+      if (!validateEmail(email)) {
+        $body.find('#register_page_email').addClass('register-page-error');
+        $body.find('#register_page_email_err_message').show();
+        can_go = false;
+      }
+      let firstName = $body.find('#register_page_first_name').val().trim();
+      if (firstName === '') {
+        $body.find('#register_page_first_name').addClass('register-page-error');
+        $body.find('#register_page_first_name_err_message').show();
+        can_go = false;
+      }
+      let lastName = $body.find('#register_page_last_name').val().trim();
+      if (lastName === '') {
+        $body.find('#register_page_last_name').addClass('register-page-error');
+        $body.find('#register_page_last_name_err_message').show();
+        can_go = false;
+      }
+      let phone_number = $body.find('#register_page_phone').val().trim();
+      let password     = $body.find('#register_page_password').val().trim();
+      if (password.length < 8) {
+        $body.find('#register_page_password').addClass('register-page-error');
+        $body.find('#register_page_password_err_message').show();
+        can_go = false;
+      }
+      can_go = true;
+      if (!can_go) {
+        $body.find('#register-page-submit-btn').removeClass('btn-disabled');
+        return;
+      } else {
+        $.ajax({
+                 url:      'https://app.yellowshoes.com/api/multipass',
+                 method:   'POST',
+                 data:     {
+                   'action':         'register-page',
+                   first_name:       firstName,
+                   last_name:        lastName,
+                   'email':          email,
+                   password:         password,
+                   'language':       theme.locale,
+                   phone:            phone_number,
+                   signup_for_sms:   $body.find('#register-page-agree-to-get-sms')[0].checked ? '1' : '0',
+                   signup_for_email: $body.find('#register-page-agree-to-get-email')[0].checked ? '1' : '0',
+                 },
+                 dataType: 'json',
+                 success:  function(response_data) {
+                   if (!response_data.success) {
+                     $body.find('#register-page-submit-btn').removeClass('btn-disabled');
+                     if (response_data.error_message_selector == undefined) {
+                       $body.find('#login-popup-overlay').hide();
+                       new Swal({
+                                  title: '',
+                                  text:  response_data.error_message,
+                                  icon:  'error',
+                                }).then((value) => {
+                         $body.find('#login-popup-overlay').show();
+                       });
+                     } else {
+                       let phone_checkbox_found = false;
+                       for (let selector of response_data.error_fields_selector) {
+                         $body.find(selector).addClass('register-popup-error');
+                       }
+                       for (let selector of response_data.error_message_selector) {
+                         $body.find(selector).show();
+
+                         if (selector === '#register_page_error_checkbox') {
+                           phone_checkbox_found = true;
+                         }
+                       }
+                       if (phone_checkbox_found) {
+                         $body.find('#register-page-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox').attr('style', 'border-color:red;');
+                         $body.find('#register-page-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox-label').attr('style', 'color:red;');
+                       } else {
+                         $body.find('#register-page-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox').attr('style', '');
+                         $body.find('#register-page-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox-label').attr('style', '');
+                       }
+                       $body.find(response_data.error_message_selector).show();
+                     }
+                     return;
+                   }
+                   window.location.href = response_data.url;
+
+                 },
+                 error:    function(response_data) {
+                   $body.find('#register-page-submit-btn').removeClass('btn-disabled');
+                   console.log(response_data);
+                 },
+               });
+      }
+    });
+
+    $body.on('click', '#login-popup-overlay .popup-blank-btn,#login-popup-overlay .login-popup-tab-changer', function() {
+      $body.find('.login-popup-tab').hide();
+      $body.find($(this).attr('data-target')).show();
+    });
+
+    $body.on('click', '.login-popup-close', function() {
+      $body.find('#login-popup-overlay').hide();
+      $body.removeClass('ov-hidden');
+    });
+
+    $body.on('click', '#login-popup-submit-btn', function() {
+      if (rb_breaker < rb_breaker_limit || $body.find('#login_popup_hp').val().trim() !== '') {
+        showLoginCaptcha();
+        rb_breaker = 0;
+        return;
+      }
+      rb_breaker = 0;
+
+      let redirect_url = $body.find('#login_popup_redirect_url').val().trim();
+      if (redirect_url === '') {
+        redirect_url = window.location.href;
+      }
+      $body.find('#login-popup-submit-btn').addClass('btn-disabled');
+      let email = $body.find('#login_popup_email').val().trim();
+      $body.find('#login-popup-form').
+            find('input').
+            removeClass('login-popup-error');
+      $body.find('#login-popup-form').find('.login-popup-error-msg').hide();
+
+      let password = $body.find('#login_popup_password').val().trim();
+      $.ajax({
+               url:      'https://app.yellowshoes.com/api/multipass',
+               method:   'POST',
+               data:     {
+                 'action':       'login',
+                 'email':        email,
+                 'password':     password,
+                 'language':     theme.locale,
+                 'redirect_url': redirect_url,
+               },
+               dataType: 'json',
+               success:  function(response_data) {
+                 if (!response_data.success) {
+                   $body.find('#login_popup_email_err_message').html(response_data.error_message).show();
+
+                   $body.find('#login-popup-submit-btn').removeClass('btn-disabled');
+                   return;
+                 }
+
+                 window.location.href = response_data.url;
+               },
+               error:    function(response_data) {
+                 $body.find('#login-popup-submit-btn').removeClass('btn-disabled');
+                 console.log(response_data);
+               },
+             });
+      return;
+
+      ajaxLogin(email, password).done(function(html) {
+        if (html.includes('To continue, let us know you')) {
+          window.location.href = '/challenge';
+          //$("#login-popup-container").html(content);
+        }
+        //       if (html.indexOf('Incorrect email or password') !== -1) {
+        //         $body.find('#login_popup_login_err_message').show();
+        //       } else {
+        //         window.location.reload();
+        //         return;
+        //       }
+        $body.find('#login-popup-submit-btn')[0].removeAttribute('disabled');
+      });
+
+    });
+
+    $body.on('click', '#forgot-popup-submit-btn', function() {
+      if (rb_breaker < rb_breaker_limit || $body.find('#login_popup_hp').val().trim() !== '') {
+        showLoginCaptcha();
+        rb_breaker = 0;
+        return;
+      }
+      rb_breaker = 0;
+      $body.find('#forgot-popup-submit-btn').addClass('btn-disabled');
+      $body.find('#forgot_popup_email_err_message').hide();
+
+      $.ajax({
+               url:      'https://app.yellowshoes.com/api/multipass',
+               method:   'POST',
+               data:     {
+                 'action':   'forgot_pass',
+                 'email':    $body.find('#forgot_popup_email').val().trim(),
+                 'language': theme.locale,
+               },
+               dataType: 'json',
+               success:  function(response_data) {
+                 $body.find('#forgot-popup-submit-btn').removeClass('btn-disabled');
+                 if (!response_data.success) {
+                   $body.find('#forgot_popup_email_err_message').text(response_data.error_message).show();
+                   return;
+                 }
+                 //         $body.find('#login-popup-overlay').hide();
+                 $body.find('#reset-email').text($body.find('#forgot_popup_email').val().trim());
+                 $body.find('#forgot_popup_email').val('');
+
+                 //         $body.find('#forgot-popup-form').find('.popup-blank-btn')[0].click();
+
+                 $body.find('#forgot-popup-success').show();
+               },
+               error:    function(response_data) {
+                 $body.find('#forgot-popup-submit-btn').removeClass('btn-disabled');
+                 console.log(response_data);
+               },
+             });
+
+      return;
+      $body.find('#forgot-popup-submit-btn').attr('disabled', 'disabled');
+      $body.find('#forgot-success').hide();
+      let email = $body.find('#forgot_popup_email').val().trim();
+      $body.find('#forgot-popup-form').
+            find('input').
+            removeClass('login-popup-error');
+      $body.find('#forgot-popup-form').find('.login-popup-error-msg').hide();
+      if (!validateEmail(email)) {
+        $body.find('#forgot_popup_email').addClass('login-popup-error');
+        $body.find('#forgot_popup_email_err_message').show();
+        $body.find('#forgot-popup-submit-btn')[0].removeAttribute('disabled');
+        return;
+      }
+
+      ajaxReset(email).done(function(html) {
+        $body.find('#reset-email').text($body.find('#forgot_popup_email').val());
+        $body.find('#forgot_popup_email').val('');
+        $body.find('#forgot-popup-success').show();
+        setTimeout(function() {
+          $body.find('#forgot-popup-success').hide();
+        }, 7000);
+        $body.find('#forgot-popup-submit-btn')[0].removeAttribute('disabled');
+      });
+
+    });
+    $body.on('click', '#register-popup-submit-btn', function() {
+      if (rb_breaker < rb_breaker_limit || $body.find('#login_popup_hp').val().trim() !== '') {
+        showLoginCaptcha();
+        rb_breaker = 0;
+        return;
+      }
+      rb_breaker = 0;
+      let can_go = true;
+      $body.find('#register-popup-submit-btn').addClass('btn-disabled');
+      let email = $body.find('#register_popup_email').val().trim();
+      $body.find('#register-popup-form').
+            find('input').
+            removeClass('register-popup-error');
+      $body.find('#register-popup-form').find('.register-popup-error-msg').hide();
+      if (!validateEmail(email)) {
+        $body.find('#register_popup_email').addClass('register-popup-error');
+        $body.find('#register_popup_email_err_message').show();
+        can_go = false;
+      }
+      let firstName = $body.find('#register_popup_first_name').val().trim();
+      if (firstName === '') {
+        $body.find('#register_popup_first_name').addClass('register-popup-error');
+        $body.find('#register_popup_first_name_err_message').show();
+        can_go = false;
+      }
+      let lastName = $body.find('#register_popup_last_name').val().trim();
+      if (lastName === '') {
+        $body.find('#register_popup_last_name').addClass('register-popup-error');
+        $body.find('#register_popup_last_name_err_message').show();
+        can_go = false;
+      }
+      let phone_number = $body.find('#register_popup_phone').val().trim();
+      let password     = $body.find('#register_popup_password').val().trim();
+      if (password.length < 8) {
+        $body.find('#register_popup_password').addClass('register-popup-error');
+        $body.find('#register_popup_password_err_message').show();
+        can_go = false;
+      }
+      can_go = true;
+      if (!can_go) {
+        $body.find('#register-popup-submit-btn').removeClass('btn-disabled');
+        return;
+      } else {
+        $.ajax({
+                 url:      'https://app.yellowshoes.com/api/multipass',
+                 method:   'POST',
+                 data:     {
+                   'action':         'register',
+                   first_name:       firstName,
+                   last_name:        lastName,
+                   'email':          email,
+                   password:         password,
+                   phone:            phone_number,
+                   'language':       theme.locale,
+                   signup_for_sms:   $body.find('#register-agree-to-get-sms')[0].checked ? '1' : '0',
+                   signup_for_email: $body.find('#register-agree-to-get-email')[0].checked ? '1' : '0',
+                 },
+                 dataType: 'json',
+                 success:  function(response_data) {
+                   if (!response_data.success) {
+                     $body.find('#register-popup-submit-btn').removeClass('btn-disabled');
+                     if (response_data.error_message_selector == undefined) {
+                       $body.find('#login-popup-overlay').hide();
+                       new Swal({
+                                  title: '',
+                                  text:  response_data.error_message,
+                                  icon:  'error',
+                                }).then((value) => {
+                         $body.find('#login-popup-overlay').show();
+                       });
+                     } else {
+                       let phone_checkbox_found = false;
+                       for (let selector of response_data.error_fields_selector) {
+                         $body.find(selector).addClass('register-popup-error');
+                       }
+                       for (let selector of response_data.error_message_selector) {
+                         $body.find(selector).show();
+
+                         if (selector === '#register_phone_error_checkbox') {
+                           phone_checkbox_found = true;
+                         }
+                       }
+                       if (phone_checkbox_found) {
+                         $body.find('#register-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox').attr('style', 'border-color:red;');
+                         $body.find('#register-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox-label').attr('style', 'color:red;');
+                       } else {
+                         $body.find('#register-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox').attr('style', '');
+                         $body.find('#register-agree-to-get-sms').closest('.custom-checkbox-container').find('.custom-checkbox-label').attr('style', '');
+                       }
+                     }
+                     return;
+                   }
+                   //Google analytics
+                   dataLayer.push({
+                                    _event: 'account_created',
+                                    event:  'Account Created',
+                                  });
+                   window.location.href = response_data.url;
+
+                 },
+                 error:    function(response_data) {
+                   $body.find('#register-popup-submit-btn').removeClass('btn-disabled');
+                   console.log(response_data);
+                 },
+               });
+      }
+    });
+    $body.on('click', '.custom-checkbox-label', function() {
+      $(this).closest('.custom-checkbox-container').find('.custom-checkbox')[0].click();
+    });
+
+    $body.on('click', '.custom-checkbox', function() {
+      let target = $(this).attr('data-target');
+      if ($(this).attr('data-type') === 'radio' && !$(this).hasClass('selected')) {
+        let name = $(this).attr('data-name');
+        $body.find('div[data-name="' + name + '"]').removeClass('selected');
+        $body.find(target)[0].checked = true;
+        $(this).addClass('selected');
+      } else if ($(this).attr('data-type') !== 'radio') {
+        if ($(this).hasClass('selected')) {
+          $(this).removeClass('selected');
+        } else {
+          $(this).addClass('selected');
+        }
+        $body.find(target)[0].checked = !$body.find(target)[0].checked;
+      }
+    });
+    $('#login_popup_password').on('keypress', function(e) {
+      if (e.key === 'Enter') {
+        $('#login-popup-submit-btn').click();
+      }
+    });
+  });
+
+
+
+  function getQueryStringParameters() {
+    var parameters = {}, hash;
+    var q          = document.URL.split('?')[1];
+    if (q != undefined) {
+      q = q.split('&');
+      for (var i = 0; i < q.length; i++) {
+        hash                = q[i].split('=');
+        parameters[hash[0]] = hash[1];
+      }
+    }
+    return parameters;
+  }
+
+
+
+  function showLoginCaptcha(showPopup = true) {
+    let $body = $('body');
+    $body.find('#login-popup-overlay').hide();
+    new Swal({
+               title: '',
+               html:  '<div class="text-center"">I\'m not a robot<div id="rb_breaker"></div></div>',
+               icon:  'warning',
+             }).then((value) => {
+      if ($body.find('#rb_breaker').html().trim() !== '✓') {
+        showLoginCaptcha();
+      } else {
+        rb_breaker = 4;
+        if (showPopup) {
+          $body.find('#login-popup-overlay').show();
+        }
+      }
+    });
+  }
+  function stripHTML(htmlString){
+    let noHtml = htmlString.replace(/<[^>]*>/g, '');
+
+    var tempDiv = document.createElement("div");
+    tempDiv.innerHTML = noHtml;
+
+    return tempDiv.textContent || tempDiv.innerText || "";
+  }
+  function updateCount() {
+    let $body = $('body');
+    $.ajax({
+             url:     'https://apps-yellow.meginteractive.net/api/wishlist',
+             method:  'POST',
+             data:    {
+               action: 'get-items-count',
+               email:  theme.customer_email,
+             },
+             success: function(response_data) {
+               response_data = JSON.parse(response_data);
+               if (response_data.success !== undefined && response_data.success) {
+                 $body.find('#wishlist-count').text(response_data.count);
+                 $body.find('#wishlist-count').show();
+               }
+             },
+             error:   function(response_data) {
+               console.log(response_data);
+             },
+           });
+  }
+
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+
+
+  function showPreloader() {
+    let $body = $('body');
+    $body.find('.theme-preloader').show();
+  }
+
+  function hidePreloader() {
+    let $body = $('body');
+    $body.find('.theme-preloader').hide();
+  }
+
+  function ajaxReset(email, password) {
+    var data = {
+      'email':   email,
+      form_type: 'recover_customer_password',
+      utf8:      '✓',
+    };
+
+    var promise = $.ajax({
+                           url:      '/account/recover',
+                           method:   'post',
+                           data:     data,
+                           dataType: 'html',
+                           async:    true,
+                         });
+
+    return promise;
+  }
+  function showLogin(show_login = false, redirect_url = '') {
+    let $body = $('body');
+    $body.addClass('ov-hidden');
+    if (redirect_url !== '') {
+      $body.find('#login_popup_redirect_url').val(redirect_url);
+    }
+    $body.find('#login-popup-overlay').show();
+    if (show_login) {
+      $body.find('#login-popup-wishlist-warning').hide();
+    } else {
+      $body.find('#login-popup-wishlist-warning').show();
+    }
+
+  }
+
+  function hideLogin() {
+    let $body = $('body');
+    $body.find('#login-popup-overlay').hide();
+
+  }
+
+</script>

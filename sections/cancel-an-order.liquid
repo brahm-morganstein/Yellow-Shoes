@@ -1,0 +1,121 @@
+<div style="max-width: 80rem;margin-left: auto;margin-right: auto;margin-top:1em;margin-bottom:1em;">
+  <h2>{{ 'cancel_order.cancel_an_order' | t | upcase}}</h2>
+  <p>{{ 'cancel_order.paragraph_need' | t }}</p>
+  <p>{{ 'cancel_order.paragraph' | t }}</p>
+  <div style="max-width: 36rem;margin-left: auto;margin-right: auto;margin-top:1em;margin-bottom:1em;padding:1em;">
+    <div>
+      <div id="error-msg" style="background-color:#ffcfcc; padding:1em;display:none;">
+        <div id="error-msg-text"></div>
+      </div>
+      <div id="success-msg" style="background-color:#ccffd0; padding:1em;display:none;">
+        <div id="success-msg-text">{{ 'cancel_order.order_cancel_success' | t }}</div>
+      </div>    
+      <div style="margin-top:1em;margin-bottom:1em;">
+        <div>{{ 'cancel_order.order_number' | t }}<span style="color:red;">*</span></div>
+        <input id="inputOrderNumber" type='text' style="width:100%;"/>
+      </div>
+      <div style="margin-top:1em;margin-bottom:1em;">
+        <div>{{ 'cancel_order.email_address' | t }}<span style="color:red;">*</span></div>
+        <input id="inputEmail" type='email' style="width:100%;"/>
+      </div>
+      <div class="g-recaptcha" data-sitekey="6LcRGDkbAAAAAOIwsnhnymvafALKMEwqp2Os8DST"></div>
+      <button id="cancel-order-button" class="w-100 btn" style="margin-top:1em;">{{ 'cancel_order.submit' | t }}</button>
+    </div>
+  </div>
+</div>
+<script src="https://www.google.com/recaptcha/api.js?hl={{shop.locale}}" async defer></script>
+<script>
+  $("#cancel-order-button").click(function(){
+    $("#error-msg").hide();
+    $("#success-msg").hide();
+    $('#cancel-order-button').prop('disabled', true);
+    var fd = new FormData();
+    fd.append('order_number',$("#inputOrderNumber").val());
+    fd.append('contact_email',$("#inputEmail").val());
+    fd.append('g-recaptcha-response',grecaptcha.getResponse());
+
+    var error_msg = '{{ 'cancel_order.cannot_cancel_order' | t }} {{ 'cancel_order.order_cancel_contact_us_html' | t }}';
+    var success_msg = '{{ 'cancel_order.order_cancel_success' | t }}';
+
+    $.ajax({
+      url: 'https://app.yellowshoes.com/api/cancel-order',
+      type:'post',
+      data: fd,
+      contentType: false,
+      processData: false, 
+      beforeSend: function(request) {
+        //CORS
+        request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      },  
+      success: function(response){
+        grecaptcha.reset();
+        //console.log(response);
+        if(response.success){
+          //console.log('success');
+          $("#error-msg").hide();
+          $("#success-msg").show();
+          $('#cancel-order-button').prop('disabled', false);
+        }else{
+          //console.log('failed');
+          if(response.code){
+            switch (response.code) {
+              case 15:
+                error_msg = '{{ 'cancel_order.order_required_time' | t }} {{ 'cancel_order.order_cancel_contact_us_html' | t }}';
+                break;
+              case 'email':
+                error_msg = '{{ 'cancel_order.invalid_order_details' | t }} {{ 'cancel_order.order_cancel_contact_us_html' | t }}';
+                break; 
+              case 'order_number':
+                error_msg = '{{ 'cancel_order.invalid_order_details' | t }} {{ 'cancel_order.order_cancel_contact_us_html' | t }}';
+                break;  
+              default:    
+                error_msg = '{{ 'cancel_order.cannot_cancel_order' | t }}';
+                break;
+            }            
+          }
+          $("#error-msg-text").html(error_msg);
+          $("#error-msg").show();
+          $('#cancel-order-button').prop('disabled', false);
+        }
+      },
+      error:function(data){
+        grecaptcha.reset();
+        //console.log(data.responseJSON.errors);
+        if(data.responseJSON.errors){
+          switch (Object.keys(data.responseJSON.errors)[0]) {
+            case 'order_number':
+              error_msg = '{{ 'cancel_order.order_number_required' | t }}';
+              break;
+            case 'contact_email':
+              error_msg = '{{ 'cancel_order.email_address_required' | t }}';
+              break; 
+            case 'contact_email':
+              error_msg = '{{ 'cancel_order.email_address_required' | t }}';
+              break; 
+            case 'g-recaptcha-response':
+              error_msg = '{{ 'cancel_order.recaptcha_required' | t }}';
+              break;  
+            default:
+              error_msg = '{{ 'cancel_order.cannot_cancel_order' | t }}{{ 'cancel_order.order_cancel_contact_us_html' | t }}';
+              break;
+          }
+        }
+        $("#error-msg-text").html(error_msg);
+        $("#error-msg").show();
+        ('#cancel-order-button').prop('disabled', false);
+      }
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

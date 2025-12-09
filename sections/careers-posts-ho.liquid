@@ -1,0 +1,264 @@
+<style>
+    .lds-spinner {
+        color: official;
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-spinner div {
+        transform-origin: 40px 40px;
+        animation: lds-spinner 1.2s linear infinite;
+    }
+    .lds-spinner div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 37px;
+        width: 6px;
+        height: 18px;
+        border-radius: 20%;
+        background: #000;
+    }
+    .lds-spinner div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -1.1s;
+    }
+    .lds-spinner div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -1s;
+    }
+    .lds-spinner div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.9s;
+    }
+    .lds-spinner div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.8s;
+    }
+    .lds-spinner div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.7s;
+    }
+    .lds-spinner div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.6s;
+    }
+    .lds-spinner div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.5s;
+    }
+    .lds-spinner div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.4s;
+    }
+    .lds-spinner div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.3s;
+    }
+    .lds-spinner div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.2s;
+    }
+    .lds-spinner div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.1s;
+    }
+    .lds-spinner div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+    }
+    @keyframes lds-spinner {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    .opportunity-location{
+        color: #8F6900;
+        font-size:0.9em;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .career-button {
+        display:         inline-block;
+        text-transform:  uppercase;
+        background:      #000000;
+        color:           #f6f4f4;
+        width:           30%;
+        padding:         10px 0;
+        text-align:      center;
+        text-decoration: none;
+        font-weight:     600;
+        font-family:     'Roboto', sans-serif;
+        margin:          20px 1.5% !important;
+    }
+
+    .career-button:hover {
+        text-decoration: none;
+        color:           #f6f4f4 !important;
+    }
+    @media screen and (max-width: 800px) {
+        .career-button {
+            width:  100%;
+            margin: 10px 0 !important;
+        }
+    }
+</style>
+
+<div class="container{% unless section.settings.full_width %} container--reading-width{% endunless %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+  {%- if section.settings.show_page_title -%}
+    <div class="page-header">
+      <h1 class="majortitle">{{ page.title }}</h1>
+    </div>
+  {%- endif -%}
+
+  <div class="rte cf">
+    {{- page.content -}}
+  </div>
+
+  <div id="BambooHR" style="display: none;">
+      <script src="https://yellow.bamboohr.com/js/jobs2.php" type="text/javascript"></script>
+      <div id="BambooHR-Footer">Powered by<a href="http://www.bamboohr.com" target="_blank"
+                                             rel="noopener external nofollow noreferrer"><img
+                      src="https://resources.bamboohr.com/images/footer-logo.png" alt="BambooHR - HR software"/></a></div>
+  </div>
+  <div class="page-width page-content">
+      <div style="margin-bottom:1em;">
+          <a href="{{ 'careers.back_to_careers_btn_link' | t }}" style="margin-left:0; display: flex; align-items: center;">
+              <i class="fa fa-chevron-circle-left" aria-hidden="true" style="font-size: 25px; color:#f1b601; margin-right:7px;"></i>
+              <span>{{ 'careers.back_to_careers_btn_label' | t }}</span>
+          </a>
+      </div>
+      <h1 style="text-transform:none; font-family:'Roboto', sans-serif; margin-bottom 0;">{{ 'careers.current_openings_h1' | t }}</h1>
+      <p>
+          {{ 'careers.current_openings_p' | t }}
+      </p>
+  
+      <div style="margin:1em 0;">
+          <a href="{{ 'careers.view_head_office_opportunities_link' | t }}" class="btn career-button" style="margin-left:0px;"><nobr>{{ 'careers.view_head_office_opportunities' | t }}</nobr></a>
+          <a href="{{ 'careers.view_store_opportunities_link' | t }}" class="btn career-button"><nobr>{{ 'careers.view_store_opportunities' | t }}</nobr></a>
+          <a href="{{ 'careers.join_talent_network_btn_url' | t }}" class="btn career-button">{{ 'careers.join_talent_network_btn' | t }}</a>
+      </div>
+  
+      <div class="text-right" style="margin-bottom: 10px;">
+          <select id="city-select" style="display:none;">
+              <option value="">{{ 'careers.filter_by_city' | t }}</option>
+          </select>
+      </div>
+      <table style="width:100%;">
+          <thead>
+          <tr>
+              <td><strong>{{ 'careers.table_header_job_title' | t }}</strong></td>
+              <td><strong>{{ 'careers.table_header_location' | t }}</strong></td>
+          </tr>
+          </thead>
+          <tbody id="jobs">
+          <tr id="loader">
+              <td colspan="2">
+                  <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              </td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
+  </div>  
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    let $body        = $('body');
+    let $bambooHR    = $body.find('#BambooHR');
+    let $bambooHRats = null;
+    let opportunity_html = '';
+    let cities = new Object();
+    let select_cities_html = '';
+
+    if ($bambooHR.length) {
+      let bambooHRinterval = setInterval(function() {
+        $bambooHRats = $body.find('.BambooHR-ATS-board');
+        if ($bambooHRats.length) {
+          let $departments = $bambooHRats.find('.BambooHR-ATS-Department-Item');
+          if ($departments.length) {
+            $departments.each(function() {
+              let header = $(this).find('.BambooHR-ATS-Department-Header');
+              header     = header.length ? header.text().trim() : '';
+              let $job_list = $(this).find('.BambooHR-ATS-Jobs-Item');
+              if (($job_list.length && header === '') || (header.length >= 2 && header[1].toLowerCase() !== '-')) {
+                $job_list.each(function() {
+                  let job_name     = $(this).find('a');
+                  let job_url = job_name.length ? job_name.attr('href') : 'javascript:void(0)';
+                  job_name         = job_name.length ? job_name.text().trim() : '';
+                  let job_location = $(this).find('.BambooHR-ATS-Location');
+                  job_location     = job_location.length ? job_location.text().trim() : '';
+                  if(job_name !== ''){
+                    let job_opportunity_key = job_location.split(' ').join('').split(',').join('_').toLowerCase();
+                    cities[job_opportunity_key] = job_location;
+                    opportunity_html += '<tr class="career-city career-city-'+job_opportunity_key+'">';
+                    opportunity_html += '<td>';
+                    opportunity_html += header !== '' ? '<span class="opportunity-location">' + header + '</span><br>' : '';
+                    opportunity_html += '<a data-fancybox data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="' + job_url + '">' + job_name + '</a>';
+                    opportunity_html += '</td>';
+                    opportunity_html += '<td>';
+                    opportunity_html += job_location;
+                    opportunity_html += '</td>';
+                    opportunity_html += '</tr>';
+                  }
+                });
+              }
+              $body.find('#loader').hide();
+            });
+          }
+          clearInterval(bambooHRinterval);
+          $body.find('#jobs').append(opportunity_html);
+          cities = sortObject(cities);
+          Object.keys(cities).forEach(function(key) {
+            select_cities_html += '<option value="'+key+'">'+cities[key]+'</option>';
+          });
+          $body.find('#city-select').append(select_cities_html).show();
+        }
+      }, 100);
+    }
+
+    $body.on('change', '#city-select', function(){
+      if($(this).val().trim() === ''){
+        $body.find('.career-city').show();
+      }else{
+        $body.find('.career-city').hide();
+        $body.find('.career-city-' + $(this).val()).show();
+      }
+    });
+  });
+  function sortObject(obj) {
+    return Object.keys(obj).sort().reduce(function (result, key) {
+      result[key] = obj[key];
+      return result;
+    }, {});
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Page",
+  "class": "page-section-spacing",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_page_title",
+      "label": "Show the default page heading",
+      "info": "If hidden, you should provide a primary page heading (h1 tag) in another section with h1 capability (e.g. image with overlay text, or background video) for SEO purposes.",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

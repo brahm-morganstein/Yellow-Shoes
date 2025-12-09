@@ -1,0 +1,24 @@
+{% if template == 'collection' %}
+  <a id="scrollTopBtn" onclick="topFunction()" aria-label="Back to top" class="boost-pfs-filter-scroll-to-top style1" style="display: inline;"></a>
+  
+  <script>
+  // Get the button
+  let mybutton = document.getElementById("scrollTopBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    globalThis.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }   
+  </script>
+{% endif %}

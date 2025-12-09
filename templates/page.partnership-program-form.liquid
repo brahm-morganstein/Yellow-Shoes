@@ -1,0 +1,699 @@
+<style>
+  .input-full{
+    width:100%;
+  }
+  .btn--full {
+    width: 100%;
+    transition: none;
+    padding: 13px 20px;
+    display: block;
+  }
+  h3{
+    font-weight:bold;
+  }
+  .sub-heading{
+    font-size:24px;
+  }
+  
+  .error_label{
+    display:none;
+  }
+  .m-container{
+    max-width: 48rem;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1em;
+  }
+
+  .error_label{
+    color:red;
+    font-size:13px;
+  }
+
+  .m-select{
+    border: 1px solid #e8e8e1;
+    max-width: 100%;
+    padding: 15px 28px 15px 10px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-position: right center;
+    background-image: url(/cdn/shop/t/572/assets/ico-select.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-color: transparent;
+    background-size: 11px;
+    text-indent: .01px;
+    text-overflow: "";
+    cursor: pointer;
+    background-color: inherit;
+    color: inherit;  
+  }
+
+  .select2-selection{
+    border-radius: 0!important;
+    height:40px!important;
+  }
+  .select2-selection__choice{
+;
+    padding-right:6px!important;
+  }
+  .mt-30{
+    margin-top:30px;
+  }
+  .mt-10{
+    margin-top:10px;
+  }
+  #fileMedia:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    color:rgb(0 0 0 / 0.8)
+  }
+
+  .mt-10{
+    margin-top:10px;
+  }
+  
+  .select2-search--inline {
+      display: contents; /*this will make the container disappear, making the child the one who sets the width of the element*/
+  }
+  
+  .select2-search__field:placeholder-shown {
+      width: 100% !important; /*makes the placeholder to be 100% of the width while there are no options selected*/
+  }
+
+  #partnership-succes-message{
+    display:hidden;
+  }
+</style>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<div id="partnership-header">
+{% if shop.locale == 'en' %}
+<div class="m-container" style="padding: 50px 0px;">
+<p>
+We're so excited that you're interested becoming a content creator for Yellow! Before proceeding, please review the program conditions listed below:
+</p>
+ 
+<p>
+<strong>Program Terms</strong>
+<ul style="list-style: disc!important;margin: 1em!impoatant;">
+<li>Be a Canadian citizen and at least 18 years old</li>
+
+<li>Have knowledge of social media platforms and be active on different platforms</li>
+
+<li>Have active engagement and be able to share your statistics</li>
+
+<li>Have a passion for the mission and values of the Yellow brand</li>
+
+<li>Not be affiliated with another shoe company</li>
+
+<li>Create appropriate content that positively reflects the Yellow brand and respects company values</li>
+
+<li>Communicate transparently with Yellow</li>
+</ul>
+</p>
+<p>
+For any other questions, contact us at <a href="mailto:ambassadeur@yellow.qc.ca">ambassadeur@yellow.qc.ca</a>
+</p>
+</div> 
+{% else %}
+<div class="m-container" style="padding: 50px 0px;">
+<p>
+Nous sommes ravis que vous souhaitez rejoindre notre réseaux de créateurs et créatrices de contenu. Avant de procéder, veuillez prendre connaissance des conditions du programme énumérées ci-dessous :
+</p>
+ 
+<p>
+<strong>CONDITIONS</strong>
+<ul>
+<li>Être citoyens canadiens âgés d'au moins 18 ans.</li>
+
+<li>Avoir une connaissance des réseaux sociaux et être actif sur différentes plateformes.</li>
+
+<li>Détenir un engagement actif et être en mesure de partager vos statistiques.</li>
+
+<li>Avoir une passion pour la mission et les valeurs de la marque Yellow.</li>
+
+<li>Ne pas être affilié à une autre compagnie de chaussures.</li>
+
+<li>Créer du contenu approprié qui reflète positivement la marque Yellow et respecte les valeurs de l'entreprise.</li>
+
+<li>Communiquer de manière transparente avec Yellow.</li>
+</ul>
+</p>
+<p>
+Pour toutes autres questions, communiquez avec nous à <a href="mailto:ambassadeur@yellow.qc.ca">ambassadeur@yellow.qc.ca</a>
+</p>
+</div>  
+{% endif %}
+</div>
+
+<div id="partnership-succes-message">
+    <div class="m-container" style="padding:50px 0px;text-align:center;font-size: large;">
+      {% if shop.locale == 'en' %}
+        Thank you! Your request has been sent successfully.
+      {% else %}
+        Merci! Votre demande a été envoyée avec succès.
+      {% endif %}
+    </div>}
+</div>
+
+<div id="partnership-form" class="m-container">
+  <form>
+    <div>
+      <h3>{{"partnership_program.form.personal_information"|t}}</h3>
+      <div>
+        <label for="inputFirstName" style="margin-top:30px;">{{"partnership_program.form.first_name"|t}}*</label>
+        <input type="text" name="first_name" id="inputFirstName" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+        <div id="error_first_name" class="error_label">{{"partnership_program.form.validation.first_name"|t}}</div> 
+      </div>    
+      <div class="mt-10">
+        <label for="inputLastName" style="margin-top:30px;">{{"partnership_program.form.last_name"|t}}*</label>
+        <input type="text" name="last_name" id="inputLastName" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+        <div id="error_last_name" class="error_label">{{"partnership_program.form.validation.last_name"|t}}</div>  
+      </div>
+      <div class="mt-10">
+        <label for="inputEmail">{{"partnership_program.form.email"|t}}*</label>
+        <input type="email" name="email" id="inputEmail" class="input-full" style="margin-bottom:0;" autocorrect="off" autocapitalize="off"> 
+        <div id="error_email" class="error_label">{{"partnership_program.form.validation.email"|t}}</div>
+      </div>
+      <div class="mt-10">
+        <label for="inputPhoneNumber" style="margin-top:30px;">{{"partnership_program.form.phone_number"|t}}*</label>
+        <input type="text" name="phone_number" id="inputPhoneNumber" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+        <div id="error_phone_number" class="error_label">{{"partnership_program.form.validation.phone_number"|t}}</div>  
+      </div> 
+      <div class="mt-10">
+        <label for="inputStreetAddress" style="margin-top:30px;">{{ 'partnership_program.form.street_address' | t }}*</label>
+        <input type="text" name="street_address" id="inputStreetAddress" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+        <div id="error_street_address" class="error_label">{{ 'partnership_program.form.validation.street_address' | t }}</div>  
+      </div>   
+      <div class="mt-10">
+        <label for="inputCity" style="margin-top:30px;">{{ 'partnership_program.form.city' | t }}*</label>
+        <input type="text" name="city" id="inputCity" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+        <div id="error_city" class="error_label">{{ 'partnership_program.form.validation.city' | t }}</div>  
+      </div>  
+      <div class="mt-10">
+        <label for="selectProvince" style="margin-top:30px;">Province*</label>
+        <select id="selectProvince" class="m-select input-full" style="margin-bottom:0;" disabled="true">
+          <option value="">{{"join_talent.select"|t}}</option>
+        </select>
+        <div id="error_province" class="error_label">{{"join_talent.validation.province"|t}}</div>        
+      </div>
+      <div class="mt-10">
+        <label for="inputZip" style="margin-top:30px;">{{ 'partnership_program.form.zip' | t }}*</label>
+        <input type="text" name="zip" id="inputZip" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+        <div id="error_zip" class="error_label">{{ 'partnership_program.form.validation.zip' | t }}</div>  
+      </div>  
+      <div class="mt-10">
+        <label for="selectLanguage" style="margin-top:30px;">{{ 'partnership_program.form.language' | t }}*</label>
+        <select id="selectLanguage" class="m-select input-full" style="margin-bottom:0;">
+          <option value="en" {% if shop.locale == 'en' %} selected {% endif %}>{{ 'partnership_program.form.english' | t }}</option>
+          <option value="fr" {% if shop.locale == 'fr' %} selected {% endif %}>{{ 'partnership_program.form.french' | t }}</option>
+        </select>
+      </div>    
+    </div>
+    <div class="mt-30">  
+      <h3>{{ 'partnership_program.form.additional_information' | t }}*</h3>
+      <div>
+        <label for="selectShoeSize" style="margin-top:30px;">{{ 'partnership_program.form.shoe_size' | t }}</label>
+        <select id="selectShoeSize" class="m-select input-full" style="margin-bottom:0;" multiple="multiple">
+          <option value="women">{{ 'partnership_program.form.women' | t }}</option>
+          <option value="men">{{ 'partnership_program.form.men' | t }}</option>
+          <option value="babies">{{ 'partnership_program.form.babies' | t }}</option>
+          <option value="toddlers">{{ 'partnership_program.form.toddlers' | t }}</option>
+          <option value="juniors">{{ 'partnership_program.form.juniors' | t }}</option>
+        </select>      
+      </div>
+      <div id="shoe_size_container">
+        
+      </div>
+    </div>
+    <div class="mt-30">
+      <h3>{{ 'partnership_program.form.social_media_information' | t }}</h3>
+      <div>
+        <span class="sub-heading">Instagram*</span>
+        <div>
+          <label>{{ 'partnership_program.form.profile_link' | t }}</label>
+          <input type="text" class="input-full" id="instagram_profile" name="instagram_profile">
+        </div>
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.subscribers' | t }}</label>
+          <select class="m-select input-full" id="instagram_subscribers" name="instagram_subscribers">
+            <option value="0">{{"join_talent.select"|t}}</option>
+            <option value="0-499">0 - 499</option>
+            <option value="500-999">500 - 999</option>
+            <option value="1000-4999">1000 - 4 999</option>
+            <option value="5000-9999">5000 - 9 999</option>
+            <option value="10000-19999">10 000 - 19 999</option>
+            <option value=20000-49999>20 000 - 49 999</option>
+            <option value="50000-99999">500 00 - 99 999</option>
+            <option value="100000+">100 000+</option>            
+          </select>          
+        </div>  
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.engagement_rate' | t }}</label>
+          <input type="text" class="input-full" id="instagram_engagement" name="instagram_engagement">
+        </div>          
+      </div>
+      <div class="mt-30">
+        <span class="sub-heading">TikTok</span>
+        <div>
+          <label>{{ 'partnership_program.form.profile_link' | t }}</label>
+          <input type="text" class="input-full" id="tiktok_profile" name="tiktok_profile">
+        </div>
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.subscribers' | t }}</label>
+          <select class="m-select input-full" id="tiktok_subscribers" name="tiktok_subscribers">
+            <option value="0">{{"join_talent.select"|t}}</option>
+            <option value="0-499">0 - 499</option>
+            <option value="500-999">500 - 999</option>
+            <option value="1000-4999">1000 - 4 999</option>
+            <option value="5000-9999">5000 - 9 999</option>
+            <option value="10000-19999">10 000 - 19 999</option>
+            <option value=20000-49999>20 000 - 49 999</option>
+            <option value="50000-99999">500 00 - 99 999</option>
+            <option value="100000+">100 000+</option>            
+          </select>            
+        </div>  
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.engagement_rate' | t }}</label>
+          <input type="text" class="input-full" id="tiktok_engagement" name="tiktok_engagement">         
+      </div>      
+      <div class="mt-30">
+        <span class="sub-heading">YouTube</span>
+        <div>
+          <label>{{ 'partnership_program.form.profile_link' | t }}</label>
+          <input type="text" class="input-full" id="youtube_profile" name="youtube_profile">
+        </div>
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.subscribers' | t }}</label>
+          <select class="m-select input-full" id="youtube_subscribers" name="youtube_subscribers">
+            <option value="0">{{"join_talent.select"|t}}</option>
+            <option value="0-499">0 - 499</option>
+            <option value="500-999">500 - 999</option>
+            <option value="1000-4999">1000 - 4 999</option>
+            <option value="5000-9999">5000 - 9 999</option>
+            <option value="10000-19999">10 000 - 19 999</option>
+            <option value=20000-49999>20 000 - 49 999</option>
+            <option value="50000-99999">500 00 - 99 999</option>
+            <option value="100000+">100 000+</option>            
+          </select>          
+        </div>  
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.engagement_rate' | t }}</label>
+          <input type="text" class="input-full" id="youtube_engagement" name="youtube_engagement">         
+        </div>          
+      </div>  
+      <div class="mt-30">
+        <span class="sub-heading">X ({{ 'partnership_program.form.formerly' | t }} Twitter)</span>
+        <div>
+          <label>{{ 'partnership_program.form.profile_link' | t }}</label>
+          <input type="text" class="input-full" id="x_profile" name="x_profile">
+        </div>
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.subscribers' | t }}</label>
+          <select class="m-select input-full" id="x_subscribers" name="x_subscribers">
+            <option value="0">{{"join_talent.select"|t}}</option>
+            <option value="0-499">0 - 499</option>
+            <option value="500-999">500 - 999</option>
+            <option value="1000-4999">1000 - 4 999</option>
+            <option value="5000-9999">5000 - 9 999</option>
+            <option value="10000-19999">10 000 - 19 999</option>
+            <option value=20000-49999>20 000 - 49 999</option>
+            <option value="50000-99999">500 00 - 99 999</option>
+            <option value="100000+">100 000+</option>            
+          </select>          
+        </div>  
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.engagement_rate' | t }}</label>
+          <input type="text" class="input-full" id="x_engagement" name="x_engagement">          
+        </div>          
+      </div> 
+      <div class="mt-30">
+        <span class="sub-heading">Facebook</span>
+        <div>
+          <label>{{ 'partnership_program.form.profile_link' | t }}</label>
+          <input type="text" class="input-full" id="facebook_profile" name="facebook_profile">
+        </div>
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.subscribers' | t }}</label>
+          <select class="m-select input-full" id="facebook_subscribers" name="facebook_subscribers">
+            <option value="0">{{"join_talent.select"|t}}</option>
+            <option value="0-499">0 - 499</option>
+            <option value="500-999">500 - 999</option>
+            <option value="1000-4999">1000 - 4 999</option>
+            <option value="5000-9999">5000 - 9 999</option>
+            <option value="10000-19999">10 000 - 19 999</option>
+            <option value=20000-49999>20 000 - 49 999</option>
+            <option value="50000-99999">500 00 - 99 999</option>
+            <option value="100000+">100 000+</option>            
+          </select>           
+        </div>  
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.engagement_rate' | t }}</label>
+         <input type="text" class="input-full" id="facebook_engagement" name="facebook_engagement"> 
+        </div>          
+      </div> 
+      <div class="mt-30">
+        <span class="sub-heading">{{ 'partnership_program.form.target_audience' | t }}</span>
+        <div>
+           <select id="selectAudience" class="m-select input-full" multiple="multiple">
+             <option value="family">{{ 'partnership_program.form.family' | t }}</option>
+             <option value="women">{{ 'partnership_program.form.women' | t }}</option>
+             <option value="men">{{ 'partnership_program.form.men' | t }}</option>
+             <option value="other">{{ 'partnership_program.form._other' | t }}</option>
+           </select>
+          <input type="text" class="input-full" name="other" id="other" style="margin-top:10px;display:none;"/>
+        </div>
+      </div>
+    </div>
+    <div class="mt-30">
+      <div>
+        <label>{{ "partnership_program.form.prev_exp_info" | t }}</label>
+        <div>
+          <input type="radio" id="has_prev_exp_yes" name="has_prev_exp" value="yes"/><label for="has_prev_exp_yes">{{ 'partnership_program.form.yes' | t }}</label>
+          <input type="radio" id="has_prev_exp_no" name="has_prev_exp" value="No"/><label for="has_prev_exp_no">{{ 'partnership_program.form.no' | t }}</label>          
+        </div>
+      </div>
+      <div class="mt-10" id="prev_biz_container" style="display:none;">
+        <div>
+          <label>{{ 'partnership_program.form.prev_biz' | t }}</label>
+          <input type="text" class="input-full" name="prev_biz" id="prev_biz"/>
+        </div>
+        <div class="mt-10">
+          <label>{{ 'partnership_program.form.prev_biz_description' | t }}</label>
+          <textarea class="input-full" name="prev_biz_description" id="prev_biz_description"></textarea>       
+        </div>
+      </div>
+    </div>
+    <div class="mt-30">
+      <h3>Motivation</h3>
+      <div>
+        <label>{{ 'partnership_program.form.why_become' | t }}</label>
+        <textarea class="input-full" id="motivation"></textarea>
+        <div id="error_motivation" class="error_label">{{ 'partnership_program.form.validation.required_field' | t }}</div>  
+      </div>
+      <div class="mt-10">
+        <label>{{ 'partnership_program.form.what_goals' | t }}</label>
+        <textarea class="input-full" id="goals"></textarea>
+        <div id="error_goals" class="error_label">{{ 'partnership_program.form.validation.required_field' | t }}</div>  
+      </div>      
+    </div>
+    <div class="mt-30">
+      <h3>{{ 'partnership_program.form.media_kit' | t }}</h3>
+      <input type="file" name="resume" id="fileMedia" style="display:none;">
+      <label type="button" class="btn--full btn-upload" for="fileMedia" id="fileMedia" style="border:1px solid #ccc;text-align: center;font-weight: bold;">
+            {{ 'partnership_program.form.choose_file' | t }}
+      </label>
+    </div>
+    <div class="mt-30">
+      <div class="g-recaptcha" data-sitekey="6LcRGDkbAAAAAOIwsnhnymvafALKMEwqp2Os8DST"></div>
+      <div id="error_g-recaptcha-response" class="error_label">{{"join_talent.validation.recaptcha"|t}}</div> 
+    </div>
+    <div class="mt-30" style="text-align:left;">
+      <input type="checkbox" id="chkboxTerms" style="vertical-align:middle;min-width:20px;min-height:20px;"/> <span>{{"partnership_program.form.accept-terms_html"|t}}</span>
+       <div id="error_terms" class="error_label">{{"join_talent.validation.terms"|t}}</div> 
+    </div>    
+    <div style="margin-top:30px;margin-bottom:30px;">
+      <input type="button" id="btnSubmit" value="{{ 'partnership_program.form.submit' | t }}" class="btn btn--full">
+    </div>
+  </form>
+</div>
+<script src="https://www.google.com/recaptcha/api.js?hl={{shop.locale}}" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#selectShoeSize').select2({
+      placeholder: window.location.toString().includes('/fr') ? 'Sélectionner' : 'Select'
+    });
+    $('#selectAudience').select2();
+    //Get Provinces
+    $.getJSON('https://app.yellowshoes.com/api/provinces',function(provinces){
+      //console.log(provinces);
+      provinces.forEach(function(province){
+          var option = $('<option>');
+          if(language=='en'){
+            option.html(province.name_en);
+          }else{
+            option.html(province.name_fr);
+          }
+          option.val(province.name_en);
+          $("#selectProvince").append(option);
+      });
+      $("#selectProvince").prop('disabled', false);    
+    }); 
+    //
+    $("#selectAudience").change(function(){
+      $("#other").hide()
+      if($("#selectAudience").val() == 'other'){
+        $("#other").show()
+      }
+    });
+
+    $("#has_prev_exp_yes").change(function(){
+      if($(this).is(":checked")){
+        $("#prev_biz_container").show();
+      }else{
+         $("#prev_biz_container").hide();
+      }
+    });
+    $("#has_prev_exp_no").change(function(){
+      if($(this).is(":checked")){
+        $("#prev_biz_container").hide();
+      }else{
+         $("#prev_biz_container").show();
+      }
+    });    
+    //
+    $("#fileMedia").change(function(){
+      $(".btn-upload").html(this.files[0].name);
+    });
+
+    $("#selectShoeSize").change(function(){
+      var values = $(this).val()
+      $("#shoe_size_container").html("")
+      values.forEach(function(value,index){
+        var html = getOptions(value)
+        $("#shoe_size_container").append(html)
+        $(`#${value}_select`).select2()
+      })
+    })
+
+    function getOptions(value){
+      switch(value){
+        case 'women':
+          return `
+            <div class="mt-10">
+              <label>{% if shop.locale == "en" %} Women shoe sizes {% else %} Pointures pour femmes {% endif %}</label>
+              <select id="${value}_select" class="m-select input-full" multiple="multiple">
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>      
+                <option value="11">11</option> 
+              </select>
+            </div> 
+          `
+          break          
+        case 'men':
+          return `
+            <div class="mt-10">
+              <label>{% if shop.locale == "en" %} Men shoe sizes {% else %} Pointures pour hommes {% endif %}</label>
+              <select id="${value}_select" class="m-select input-full" multiple="multiple">
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>    
+                <option value="13">13</option>    
+              </select>
+            </div>
+          `
+          break
+        case 'babies':
+          return `
+            <div class="mt-10">
+              <label>{% if shop.locale == "en" %} Babies shoe sizes {% else %} Pointures pour bébés {% endif %}</label>
+              <select id="${value}_select" class="m-select input-full" multiple="multiple">
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>    
+                <option value="9">9</option>    
+              </select>
+            </div>
+          `
+          break   
+        case 'toddlers':
+          return `
+            <div class="mt-10">
+              <label>{% if shop.locale == "en" %} Toddler(s) shoe sizes {% else %} Pointures pour tout(es)-petit(e)s {% endif %}</label>
+              <select id="${value}_select" class="m-select input-full" multiple="multiple">
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>   
+              </select>
+            </div>
+          `
+          break
+        case 'juniors':
+          return `
+            <div class="mt-10">
+              <label>{% if shop.locale == "en" %} Junior shoe sizes {% else %} Pointures pour juniors {% endif %}</label>
+              <select id="${value}_select" class="m-select input-full" multiple="multiple">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>  
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>                  
+              </select>
+            </div>
+          `
+          break          
+      }
+    }
+
+    $("#btnSubmit").click(function(){
+      $(".error_label").hide();
+      $("#btnSubmit").prop('disabled', true);
+
+      var shoe_sizes = $("#selectShoeSize").val();
+
+      var fd = new FormData();
+      //
+      fd.append('first_name',$("#inputFirstName").val());
+      fd.append('last_name',$("#inputLastName").val());
+      fd.append('email',$("#inputEmail").val());
+      fd.append('phone_number',$("#inputPhoneNumber").val());
+      fd.append('street_address',$("#inputStreetAddress").val());
+      fd.append('city',$("#inputCity").val());
+      fd.append('province',$("#selectProvince").val());
+      fd.append('zip',$("#inputZip").val());
+      fd.append('language',$("#selectLanguage").val());
+      fd.append('shoe_size',shoe_sizes);
+      fd.append('audience',$("#selectAudience").val());
+      fd.append('motivation',$("#motivation").val());
+      fd.append('goals',$("#goals").val());
+
+      if($('#has_prev_exp_yes').is(":checked")){
+        fd.append('prev_biz',$("#prev_biz").val());
+        fd.append('prev_biz_description',$("#prev_biz_description").val());
+      }
+
+      if(shoe_sizes.length > 0){
+        shoe_sizes.forEach(function(value,index){
+          fd.append(`${value}_sizes`,$(`#${value}_select`).val());
+        })
+      }
+
+      var social_media = [];
+      
+      if($("#instagram_profile").val().trim() != ''){
+        social_media.push({
+          platform:'instagram',
+          profile:$("#instagram_profile").val(),
+          subscribers:$("#instagram_subscribers").val(),
+          engagement:$("#instagram_engagement").val()
+        })
+      }
+
+      if($("#tiktok_profile").val().trim() != ''){
+        social_media.push({
+          platform:'tiktok',
+          profile:$("#tiktok_profile").val(),
+          subscribers:$("#tiktok_subscribers").val(),
+          engagement:$("#tiktok_engagement").val()
+        })
+      }  
+
+      if($("#youtube_profile").val().trim() != ''){
+        social_media.push({
+          platform:'youtube',
+          profile:$("#youtube_profile").val(),
+          subscribers:$("#youtube_subscribers").val(),
+          engagement:$("#youtube_engagement").val()
+        })
+      }  
+
+      if($("#x_profile").val().trim() != ''){
+        social_media.push({
+          platform:'x',
+          profile:$("#x_profile").val(),
+          subscribers:$("#x_subscribers").val(),
+          engagement:$("#x_engagement").val()
+        })
+      } 
+
+      if($("#facebook_profile").val().trim() != ''){
+        social_media.push({
+          platform:'facebook',
+          profile:$("#facebook_profile").val(),
+          subscribers:$("#facebook_subscribers").val(),
+          engagement:$("#facebook_engagement").val()
+        })
+      }       
+
+      fd.append('social_medias',JSON.stringify(social_media));
+
+      // Check file selected or not
+      var files = $('#fileMedia')[0].files;
+      if(files.length > 0 ){
+        fd.append('media',files[0]);
+      }
+      //
+      fd.append('g-recaptcha-response',grecaptcha.getResponse());
+      //
+      fd.append('terms',$("#chkboxTerms").is(':checked'));
+      
+      //
+      $.ajax({
+        url: 'https://app.yellowshoes.com/api/partnership-program',
+        type: 'post',
+        data: fd,
+        contentType: false,
+        processData: false,
+        beforeSend: function(request) {
+          //CORS
+          request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        },        
+        success: function(response){
+          $("#partnership-header").hide()
+          $("#partnership-form").hide()
+          $("#partnership-succes-message").show();
+         Swal.fire({
+           icon: "success"
+         });
+          //window.location.hash = '#partnership-succes-message';
+          //grecaptcha.reset();
+          //$("#btnSubmit").prop('disabled', false);                       
+        },
+        error:function(data){
+          console.log(data.status);
+          grecaptcha.reset();
+          //handle form errors
+          if(data.status === 422){
+            let response = $.parseJSON(data.responseText);
+            $.each(response.errors,function(key,value){
+              console.log(key+":"+value);
+              $("#error_"+key).show();
+            });
+          }
+          if(data.status === 413 || data.status === 0){
+              $("#error_media").show();
+          }
+          $("#btnSubmit").prop('disabled', false);
+        }
+      });
+    });
+  })
+</script>

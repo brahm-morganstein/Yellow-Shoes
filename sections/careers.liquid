@@ -1,0 +1,51 @@
+<script>
+    $(document).ready(function() {
+        let $body = $('body');
+
+        $body.find('form#contact_form').attr('id', 'contact-form-adjusted');
+        setTimeout(function(){
+            $body.find('#contact-form-adjusted').attr('action', 'javascript:;');
+        }, 100);
+        $body.on('submit', '#contact-form-adjusted', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            if($(this).find('input[type="submit"]').length){
+                $(this).find('input[type="submit"]').remove();
+            }
+            let name    = $(this).find('#contact_name').length ? $(this).find('#contact_name').val().trim() : '';
+            let email   = $(this).find('#contact_email').length ? $(this).find('#contact_email').val().trim() : '';
+            let phone = $(this).find('#contact_form').length ? $(this).find('#contact_form').val().trim() : '';
+            let message   = $(this).find('#message').length ? $(this).find('#message').val().trim() : '';
+
+            $.ajax({
+                       url:      'https://app.yellowshoes.com/api/careers',
+                       method:   'POST',
+                       data:     {
+                           action:  'questions-form',
+                           name:    name,
+                           email:   email,
+                           message: message,
+                           phone:   phone,
+                           lang: '{{ shop.locale }}',
+                       },
+                       dataType: 'json',
+                       success:  function(response_data) {
+                           //window.location.href = window.location.href.split('?')[0] + '?contact_posted=true#contact-form-adjusted';
+                         Swal.fire({
+                           icon: "success"
+                         });
+                       },
+                       error:    function(response_data) {
+                       },
+                   });
+
+        });
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}

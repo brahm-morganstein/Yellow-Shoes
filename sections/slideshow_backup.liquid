@@ -1,0 +1,1588 @@
+{% comment %}<style>
+    .banner-area .rimage-outer-wrapper {
+        background: none !important;
+    }
+
+    @media screen and (max-width: 1368px) {
+        .hero-cta-btn {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 1180px) {
+            .hero-cta-btn {
+                font-size: 12px;
+            }
+        }
+        @media screen and (max-width: 900px) {
+            .hero-cta-btn {
+                font-size: 12px;
+                padding:   0.75% 0;
+            }
+        }
+        @media screen and (min-width: 819px) and (max-width: 821px) {
+            .hero-cta-btn {
+                font-size: 14px;
+            }
+        }
+        @media screen and (max-width: 414px) {
+            .hero-cta-btn {
+                padding: 0.75% 0;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .hero-cta-btn {
+                font-size: 10px;
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .hero-cta-btn {
+                font-size: 9px;
+            }
+        }
+
+</style>
+{%- if section.blocks.size > 1 -%}
+    <script src="{{ 'slideshow.s.min.js' | asset_url }}" defer></script>
+{%- endif -%}
+
+<div id="section-id-{{ section.id }}" {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.2s"' -%}>
+    {% style %}
+        {%- if section.settings.autoplay -%}
+            #section-id-{{ section.id }} slide-show {
+            --duration: {{ section.settings.autoplay_speed }}s;
+            --play-state: paused;
+            }
+        {%- endif -%}
+
+        {%- if section.settings.height == 'fixed' %}
+            #section-id-{{ section.id }} .height--fixed {
+            --image-height: {{ section.settings.height_mobile }}px;
+            }
+
+            @media (min-width: 768px) {
+            #section-id-{{ section.id }} .height--fixed {
+            --image-height: {{ section.settings.height_desktop }}px;
+            }
+            }
+        {%- endif -%}
+
+        {%- if section.settings.height == 'adapt' %}
+            #section-id-{{ section.id }} .height--adapt {
+            {%- if section.blocks.first.settings.mobile_image -%}
+                --aspect-ratio: {{ section.blocks.first.settings.mobile_image.aspect_ratio }};
+            {%- else -%}
+                --aspect-ratio: {{ section.blocks.first.settings.image.aspect_ratio | default: 2.0 }};
+            {%- endif -%}
+            }
+            {%- if section.blocks.first.settings.mobile_image -%}
+                @media (min-width: 768px) {
+                #section-id-{{ section.id }} .height--adapt {
+                --aspect-ratio: {{ section.blocks.first.settings.image.aspect_ratio | default: 2.0 }};
+                }
+                }
+            {%- endif -%}
+        {%- endif -%}
+
+        {%- for block in section.blocks -%}
+            #section-id-{{ section.id }} .slide-{{ forloop.index }} .text-overlay__title {
+            font-size: {{ block.settings.title_size_mobile }}px;
+            {%- if block.settings.title_size_mobile >= 90 -%}
+                line-height: 1em;
+            {%- endif %}
+            }
+        {%- endfor -%}
+
+        @media (min-width: 768px) {
+        {%- for block in section.blocks -%}
+            #section-id-{{ section.id }} .slide-{{ forloop.index }} .text-overlay__title {
+            {%- assign title_size_medium = block.settings.title_size | times: 0.7 | at_least: block.settings.title_size_mobile -%}
+            font-size: {{ title_size_medium }}px;
+            {%- if title_size_medium >= 90 -%}
+                line-height: 1em;
+            {%- endif %}
+            }
+        {%- endfor -%}
+        }
+
+        @media (min-width: 1100px) {
+        {%- for block in section.blocks -%}
+            #section-id-{{ section.id }} .slide-{{ forloop.index }} .text-overlay__title {
+            font-size: {{ block.settings.title_size }}px;
+            {%- if block.settings.title_size >= 90 -%}
+                line-height: 1em;
+            {%- endif %}
+            }
+        {%- endfor -%}
+        }
+    {% endstyle %}
+
+{%- unless section.settings.full_width -%}<div class="container container--not-mobile fully-spaced-row--medium fully-spaced-row--not-mobile">{%- endunless -%}
+
+        <slide-show role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}" data-autoplay="{{ section.settings.autoplay }}" data-speed="{{ section.settings.autoplay_speed }}" data-transition="{{ section.settings.transition }}" data-transition-out-delay="0" data-pause-autoplay-on-mouseover="false">
+            <div class="slideshow slideshow--navigation-{{ section.settings.navigation }}" id="slideshow-{{ section.id }}" aria-live="polite" aria-atomic="true">
+                {%- for block in section.blocks -%}
+                    {%- liquid
+                        assign show_overlay_text = false
+                        if block.settings.title != blank or block.settings.subheading != blank or block.settings.text != blank or block.settings.button_label_1 != blank or block.settings.button_label_2 != blank
+                            assign show_overlay_text = true
+                            assign wrap_slide_with_link = true
+                            if block.settings.slide_link == blank or block.settings.text contains '</a>' or block.settings.button_url_1 != blank or block.settings.button_url_2 != blank
+                                assign wrap_slide_with_link = false
+                            endif
+                        elsif block.settings.slide_link != blank
+                            assign wrap_slide_with_link = true
+                        endif
+                    -%}
+                    <image-with-text-overlay class="slideshow__slide slide-{{ forloop.index }}{% if forloop.first %} is-active{% endif %} height--{{ section.settings.height }} image-overlay image-overlay--bg-{{ section.settings.overlay_style }}{% if section.settings.mobile_overlay_under %} text-overlay-parent--mobile-stack{% endif %}"
+                                             role="group" aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+                                             aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                                             {%- unless forloop.first %}tabindex="-1"{% endunless %}
+                        {%- if request.design_mode %}data-index="{{ forloop.index0 }}"{% endif %}
+                                             style="--slide-index: {{ forloop.index }}"
+                            {{ block.shopify_attributes }}>
+
+                        {% comment %}  CTA        {% endcomment %}
+                        {%- if block.settings.enable_cta_buttons -%}
+                            <style>
+                                #hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }} {
+                                    color: {{ block.settings.buttons_left_top_color}};
+                                    background: {{ block.settings.buttons_left_top_background}};
+                                }
+
+                                #hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }}:hover {
+                                    color: {{ block.settings.buttons_left_top_color_hover}};
+                                    background: {{ block.settings.buttons_left_top_background_hover}};
+                                }
+
+                                #hero-cta-btn-top-right-{{ section.id }}-{{ forloop.index }} {
+                                    color: {{ block.settings.buttons_right_top_color}};
+                                    background: {{ block.settings.buttons_right_top_background}};
+                                }
+
+                                #hero-cta-btn-top-right-{{ section.id }}-{{ forloop.index }}:hover {
+                                    color: {{ block.settings.buttons_right_top_color_hover}};
+                                    background: {{ block.settings.buttons_right_top_background_hover}};
+                                }
+
+                                #hero-cta-btn-bottom-left-{{ section.id }}-{{ forloop.index }} {
+                                    color: {{ block.settings.buttons_left_bottom_color}};
+                                    background: {{ block.settings.buttons_left_bottom_background}};
+                                }
+
+                                #hero-cta-btn-bottom-left-{{ section.id }}-{{ forloop.index }}:hover {
+                                    color: {{ block.settings.buttons_left_bottom_color_hover}};
+                                    background: {{ block.settings.buttons_left_bottom_background_hover}};
+                                }
+
+                                #hero-cta-btn-bottom-right-left-{{ section.id }}-{{ forloop.index }} {
+                                    color: {{ block.settings.buttons_right_bottom_color}};
+                                    background: {{ block.settings.buttons_right_bottom_background}};
+                                }
+
+                                #hero-cta-btn-bottom-right-left-{{ section.id }}-{{ forloop.index }}:hover {
+                                    color: {{ block.settings.buttons_right_bottom_color_hover}};
+                                    background: {{ block.settings.buttons_right_bottom_background_hover}};
+                                }
+
+                                #hero-cta-btn-bottom-{{ section.id }}-{{ forloop.index }} {
+                                    color: {{ block.settings.buttons_bottom_color}};
+                                    background: {{ block.settings.buttons_right_bottom_background}};
+                                }
+
+                                #hero-cta-btn-bottom-{{ section.id }}-{{ forloop.index }}:hover {
+                                    color: {{ block.settings.buttons_bottom_color_hover}};
+                                    background: {{ block.settings.buttons_bottom_background_hover}};
+                                }
+                            </style>
+
+
+                        {% if block.settings.cta_buttons_position == "center_bottom" %}
+                            <style>
+                                @media screen and (min-width: 901px) {
+                                    #buttons-frame-{{ section.id }}-{{ forloop.index }} {
+                                        right:     inherit;
+                                        left:      50%;
+                                        transform: translateX(-50%);
+                                        bottom:    10%;
+                                    }
+
+                                }
+                            </style>
+
+                        {% endif %}
+
+
+                        {% if block.settings.cta_buttons_position == "bottom_left" %}
+                            <style>
+                                @media screen and (min-width: 901px) {
+                                    #buttons-frame-{{ section.id }}-{{ forloop.index }} {
+                                        right:     initial;
+                                        left:      100px;
+                                    }
+
+                                }
+                            </style>
+
+                        {% endif %}
+                        {%  if block.settings.cta_buttons_center_on_desktop %}
+                            <style>
+                                @media screen and (min-width: 1024px) {
+                                    #buttons-frame-{{ section.id }}-{{ forloop.index }} {
+                                        right:     inherit;
+                                        bottom:    inherit;
+                                        top:      50%;
+                                        left:      50%;
+                                        transform: translate(-50%, -50%);
+                                    }
+
+                                }
+                            </style>
+                        {% endif %}
+
+
+                        {% if block.settings.cta_buttons_qty == "1" %}
+                            <div id="buttons-frame-{{ section.id }}-{{ forloop.index }}" class="buttons-frame">
+                                <div class="buttons-container-relative">
+                                    <div class="buttons-container">
+                                        <div class="hero-cta-btn-full">
+                                            {%- assign cta_text = block.settings.buttons_left_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_top_href_fr -%}
+                                            {%- endif -%}
+                                            {% assign is_catalogue_btn1 = block.settings.is_catalogue_btn1 %}
+                                            {% if is_catalogue_btn1 %}
+                                                <a href="{{ cta_url }}" class="hero-cta-btn" data-src="{{ cta_url }}" data-fancybox="" data-type="iframe"
+                                                   id="hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                            {% else %}
+                                                <a href="{{ cta_url }}" class="hero-cta-btn"
+                                                   id="hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                            {% endif %}
+                                        </div>
+
+                                        <div style="clear: both;"></div>
+                                        {% if block.settings.enable_hero_tooltip %}
+                                            <div style="position:relative;">
+                                                <div style="position:absolute;left:50%; transform:translateX(-50%); bottom: -25px;">
+                                                    <i id="announcement-tooltip-btn-2--{{ section.id }}"
+                                                       class="fas fa-info-circle tooltip__btn tooltip__btn--2"
+                                                       style="cursor:pointer;color: {{ block.settings.toolip_icon_color }}; position: unset; vertical-align:middle;"></i>
+                                                    {% if shop.locale == 'en' %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading }}</span>
+                                                    {% else %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading_fr }}</span>
+                                                    {% endif %}
+                                                </div>
+                                                <div id="announcement-tooltip-text-2--{{ section.id }}"
+                                                     class="tooltip__text tooltip__text--2 tooltip__text--{{ section.id }}">
+                                                    <svg class="close-tooltip-2" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+                                                    <!--<svg class="close-tooltip-2" width="64" version="1.1"
+                                                         xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 64 64"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         enable-background="new 0 0 64 64">
+                                                        <g>
+                                                            <path fill="#1D1D1B"
+                                                                  d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
+                                                        </g>
+                                                    </svg>-->
+                                                    {% if shop.locale == 'en' %}
+                                                        {{ block.settings.text_tooltip_en }}
+                                                    {% else %}
+                                                        {{ block.settings.text_tooltip_fr }}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if block.settings.cta_buttons_qty == "2" %}
+                            <div id="buttons-frame-{{ section.id }}-{{ forloop.index }}" class="buttons-frame">
+                                <div class="buttons-container-relative">
+                                    <div class="buttons-container">
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_left_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_right_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_right_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_right_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_right_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-right-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        {% if block.settings.enable_hero_tooltip %}
+                                            <div style="position:relative;">
+                                                <div style="position:absolute;left:50%; transform:translateX(-50%); bottom: -25px;">
+                                                    <i id="announcement-tooltip-btn-2--{{ section.id }}"
+                                                       class="fas fa-info-circle tooltip__btn tooltip__btn--2"
+                                                       style="cursor:pointer;color: {{ block.settings.toolip_icon_color }}; position: unset; vertical-align:middle;"></i>
+                                                    {% if shop.locale == 'en' %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading }}</span>
+                                                    {% else %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading_fr }}</span>
+                                                    {% endif %}
+                                                </div>
+                                                <div id="announcement-tooltip-text-2--{{ section.id }}"
+                                                     class="tooltip__text tooltip__text--2 tooltip__text--{{ section.id }}">
+                                                    <svg class="close-tooltip-2" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+                                                    <!--<svg class="close-tooltip-2" width="64" version="1.1"
+                                                         xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 64 64"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         enable-background="new 0 0 64 64">
+                                                        <g>
+                                                            <path fill="#1D1D1B"
+                                                                  d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
+                                                        </g>
+                                                    </svg>-->
+                                                    {% if shop.locale == 'en' %}
+                                                        {{ block.settings.text_tooltip_en }}
+                                                    {% else %}
+                                                        {{ block.settings.text_tooltip_fr }}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if block.settings.cta_buttons_qty == "3" %}
+                            <div id="buttons-frame-{{ section.id }}-{{ forloop.index }}" class="buttons-frame">
+                                <div class="buttons-container-relative">
+                                    <div class="buttons-container">
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_left_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_right_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_right_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_right_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_right_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-right-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-full">
+                                            {%- assign cta_text = block.settings.buttons_left_bottom_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_bottom_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_bottom_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_bottom_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-bottom-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div style="clear: both;"></div>
+
+                                        {% if block.settings.enable_hero_tooltip %}
+                                            <div style="position:relative;">
+                                                <div style="position:absolute;left:50%; transform:translateX(-50%); bottom: -25px;">
+                                                    <i id="announcement-tooltip-btn-2--{{ section.id }}"
+                                                       class="fas fa-info-circle tooltip__btn tooltip__btn--2"
+                                                       style="cursor:pointer;color: {{ block.settings.toolip_icon_color }}; position: unset; vertical-align:middle;"></i>
+                                                    {% if shop.locale == 'en' %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading }}</span>
+                                                    {% else %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading_fr }}</span>
+                                                    {% endif %}
+                                                </div>
+                                                <div id="announcement-tooltip-text-2--{{ section.id }}"
+                                                     class="tooltip__text tooltip__text--2 tooltip__text--{{ section.id }}">
+                                                    <svg class="close-tooltip-2" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+                                                    <!--<svg class="close-tooltip-2" width="64" version="1.1"
+                                                         xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 64 64"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         enable-background="new 0 0 64 64">
+                                                        <g>
+                                                            <path fill="#1D1D1B"
+                                                                  d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
+                                                        </g>
+                                                    </svg>-->
+                                                    {% if shop.locale == 'en' %}
+                                                        {{ block.settings.text_tooltip_en }}
+                                                    {% else %}
+                                                        {{ block.settings.text_tooltip_fr }}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if block.settings.cta_buttons_qty == "4" %}
+                            <div id="buttons-frame-{{ section.id }}-{{ forloop.index }}" class="buttons-frame">
+                                <div class="buttons-container-relative">
+                                    <div class="buttons-container">
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_left_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_right_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_right_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_right_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_right_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-right-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_left_bottom_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_bottom_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_bottom_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_bottom_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-bottom-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_right_bottom_text -%}
+                                            {%- assign cta_url = block.settings.buttons_right_bottom_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_right_bottom_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_right_bottom_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-bottom-right-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                        {% if block.settings.enable_hero_tooltip %}
+                                            <div style="position:relative;">
+                                                <div style="position:absolute;left:50%; transform:translateX(-50%); bottom: -25px;">
+                                                    <i id="announcement-tooltip-btn-2--{{ section.id }}"
+                                                       class="fas fa-info-circle tooltip__btn tooltip__btn--2"
+                                                       style="cursor:pointer;color: {{ block.settings.toolip_icon_color }}; position: unset; vertical-align:middle;"></i>
+                                                    {% if shop.locale == 'en' %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading }}</span>
+                                                    {% else %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading_fr }}</span>
+                                                    {% endif %}
+                                                </div>
+                                                <div id="announcement-tooltip-text-2--{{ section.id }}"
+                                                     class="tooltip__text tooltip__text--2 tooltip__text--{{ section.id }}">
+                                                    <div class="slider-tooltip-container">
+                                                        <svg class="close-tooltip-2 tooltip-top-right" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+                                                        <!--<svg class="close-tooltip-2" width="64" version="1.1"
+                                                             xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 64 64"
+                                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             enable-background="new 0 0 64 64">
+                                                            <g>
+                                                                <path fill="#1D1D1B"
+                                                                      d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
+                                                            </g>
+                                                        </svg>-->
+                                                        {% if shop.locale == 'en' %}
+                                                            {{ block.settings.text_tooltip_en }}
+                                                        {% else %}
+                                                            {{ block.settings.text_tooltip_fr }}
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if block.settings.cta_buttons_qty == "5" %}
+                            <div id="buttons-frame-{{ section.id }}-{{ forloop.index }}" class="buttons-frame five-btns">
+                                <div class="buttons-container-relative">
+                                    <div class="buttons-container">
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_left_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_right_top_text -%}
+                                            {%- assign cta_url = block.settings.buttons_right_top_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_right_top_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_right_top_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-top-right-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_left_bottom_text -%}
+                                            {%- assign cta_url = block.settings.buttons_left_bottom_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_left_bottom_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_left_bottom_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-bottom-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <div class="hero-cta-btn-half">
+                                            {%- assign cta_text = block.settings.buttons_right_bottom_text -%}
+                                            {%- assign cta_url = block.settings.buttons_right_bottom_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_right_bottom_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_right_bottom_href_fr -%}
+                                            {%- endif -%}
+                                            <a href="{{ cta_url }}" class="hero-cta-btn"
+                                               id="hero-cta-btn-bottom-right-left-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                        </div>
+                                        <!-- Button 5 Text -->
+                                        <div class="hero-cta-btn-full">
+                                            {%- assign cta_text = block.settings.buttons_bottom_text -%}
+                                            {%- assign cta_url = block.settings.buttons_bottom_href -%}
+                                            {%- if shop.locale == 'fr' -%}
+                                                {%- assign cta_text = block.settings.buttons_bottom_text_fr -%}
+                                                {%- assign cta_url = block.settings.buttons_bottom_href_fr -%}
+                                            {%- endif -%}
+                                            {% assign is_catalogue = true %}
+                                            {% if is_catalogue %}
+                                                <a href="{{ cta_url }}" class="hero-cta-btn" data-src="{{ cta_url }}" data-fancybox="" data-type="iframe"
+                                                   id="hero-cta-btn-bottom-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                            {% else %}
+                                                <a href="{{ cta_url }}" class="hero-cta-btn"
+                                                   id="hero-cta-btn-bottom-{{ section.id }}-{{ forloop.index }}">{{ cta_text }}</a>
+                                            {% endif %}
+                                        </div>
+                                        {% if block.settings.enable_hero_tooltip %}
+                                            <div style="position:relative; display:inline-block;width:100%;">
+                                                <div style="position:absolute;left:50%; transform:translateX(-50%);bottom: -25px;">
+                                                    <i id="announcement-tooltip-btn-2--{{ section.id }}"
+                                                       class="fas fa-info-circle tooltip__btn tooltip__btn--2"
+                                                       style="cursor:pointer;color: {{ block.settings.toolip_icon_color }}; position: unset; vertical-align:middle;"></i>
+                                                    {% if shop.locale == 'en' %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading }}</span>
+                                                    {% else %}
+                                                        <span style="font-size:0.9em; vertical-align:middle; color: {{ block.settings.tooltip_subheading_color }};">{{ block.settings.tooltip_subheading_fr }}</span>
+                                                    {% endif %}
+                                                </div>
+                                                <div id="announcement-tooltip-text-2--{{ section.id }}"
+                                                     class="tooltip__text tooltip__text--2 tooltip__text--{{ section.id }}">
+                                                    <svg class="close-tooltip-2" width="64" version="1.1"
+                                                         xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 64 64"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         enable-background="new 0 0 64 64">
+                                                        <g>
+                                                            <path fill="#1D1D1B"
+                                                                  d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
+                                                        </g>
+                                                    </svg>
+                                                    {% if shop.locale == 'en' %}
+                                                        {{ block.settings.text_tooltip_en }}
+                                                    {% else %}
+                                                        {{ block.settings.text_tooltip_fr }}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endif %}
+
+
+                        {% if block.settings.enable_hero_tooltip %}
+                            <script>
+                              $(document).ready(function() {
+                                let $body = $('body');
+
+                                $('#announcement-tooltip-btn-2--{{ section.id }}').on('mouseover', function(evt) {
+                                  evt.preventDefault();
+                                  $('#announcement-tooltip-text-2--{{ section.id }}').fadeIn('slow');
+                                });
+
+                                $('.close-tooltip-2').on('click', function() {
+
+                                  $('#announcement-tooltip-text-2--{{ section.id }}').fadeOut('slow');
+                                });
+
+                                $('#announcement-tooltip-btn-3--{{ section.id }}').on('click', function(evt) {
+                                  evt.preventDefault();
+                                  $('#announcement-tooltip-text-3--{{ section.id }}').fadeIn('slow');
+                                });
+
+                                $('.close-tooltip-3').on('click', function() {
+                                  $('#announcement-tooltip-text-3--{{ section.id }}').fadeOut('slow');
+                                });
+                              });
+                            </script>
+                        {%- endif -%}
+                        {%- endif -%}
+
+                        {% case block.settings.mobile_cta_position %}
+                            {% when 'centered' %}
+                                <style>
+                                    @media screen and (max-width: 900px){
+                                        #buttons-frame-{{ section.id }}-{{ forloop.index }}{
+                                            top:42% !important;
+                                            left:50% !important;
+                                            right:inherit !important;
+                                            bottom:inherit !important;
+                                            transform: translate(-50%,-50%);
+                                        }
+                                    }
+                                </style>
+                            {% when '3_4_bottom' %}
+                                <style>
+                                    @media screen and (max-width: 900px){
+                                        #buttons-frame-{{ section.id }}-{{ forloop.index }}{
+                                            top:60% !important;
+                                            left:50% !important;
+                                            right:inherit !important;
+                                            bottom:inherit !important;
+                                            transform: translateX(-50%);
+                                        }
+                                    }
+                                </style>
+                            {% when 'bottom' %}
+                                <style>
+                                    @media screen and (max-width: 900px){
+                                        #buttons-frame-{{ section.id }}-{{ forloop.index }}{
+                                            top:auto !important;
+                                            left:50% !important;
+                                            right:inherit !important;
+                                            bottom:30px !important;
+                                            transform: translateX(-50%);
+                                        }
+                                        #buttons-frame-{{ section.id }}-{{ forloop.index }} .buttons-container {
+                                            top: auto !important;
+                                            transform: translate(-50%,0) !important;
+                                            bottom: 0 !important;
+                                        }
+                                    }
+                                </style>
+
+                            {% else %}
+                                <style>
+                                    @media screen and (max-width: 900px){
+                                        #buttons-frame-{{ section.id }}-{{ forloop.index }}{
+                                            top:78% !important; /*78*/
+                                            left:50% !important;
+                                            right:inherit !important;
+                                            bottom:inherit !important;
+                                            transform: translateX(-50%);
+                                        }
+                                        /*.buttons-container {*/
+                                        /*  width: 95%;*/
+                                        /*  transform: translate(-50%, 0) !important;*/
+                                        /*  top:auto !important;*/
+                                        /*}*/
+                                    }
+                                </style>
+                        {% endcase %}
+                        {% comment %}  CTA   END     {% endcomment %}
+
+                    {%- if wrap_slide_with_link -%}
+                        <a class="image-overlay__image-link" href="{{ block.settings.slide_link }}">
+                            {%- endif -%}
+
+                            {%- if block.settings.image == blank -%}
+                                <div class="height__image image-overlay__image overflow-hidden">
+                                    <div class="slideshow__motion-media has-motion placeholder-image{% if show_overlay_text %} dark{% endif %}">
+                                        {%- capture current %}{% cycle 1, 2 %}{% endcapture -%}
+                                        {{- 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' -}}
+                                    </div>
+                                </div>
+                            {%- else -%}
+
+                                {%- liquid
+                                    assign loading = 'lazy'
+                                    assign fetchpriority = nil
+                                    if forloop.first
+                                        if section.location == 'header' or section.location == 'template' and section.index == 1
+                                            assign loading = 'eager'
+                                            assign fetchpriority = 'high'
+                                        endif
+                                    endif
+
+                                    if shop.locale == 'en'
+                                        assign desktop_image = block.settings.image
+                                        assign mobile_image = block.settings.mobile_image
+                                    else
+                                        unless block.settings.image_fr == blank
+                                            assign desktop_image = block.settings.image_fr
+                                            assign mobile_image = block.settings.mobile_image_fr
+                                        else
+                                            assign desktop_image = block.settings.image
+                                            assign mobile_image = block.settings.mobile_image
+                                        endunless
+
+                                    endif
+                                -%}
+
+                                <div class="height__image image-overlay__image overflow-hidden">
+                                    {%- render 'image-desktop-and-mobile',
+                                            class: 'slideshow__motion-media has-motion',
+                                            desktop_image: desktop_image,
+                                            mobile_image: mobile_image,
+                                            loading: loading,
+                                            fetchpriority: fetchpriority,
+                                            block: block
+                                    -%}
+                                </div>
+                            {%- endif -%}
+
+                            {%- if show_overlay_text -%}
+                                <div class="text-overlay text-overlay--with-reveal text-overlay--for-banner text-overlay--v-{{ block.settings.text_alignment | split: ' ' | first }} text-overlay--h-{{ block.settings.text_alignment | split: ' ' | last }} image-overlay__over has-motion">
+                                    <div class="text-overlay__inner" style="--heading-max-width: {{ block.settings.heading_max_width }}em">
+                                        <div class="text-overlay__text slideshow__motion-overlay has-motion">
+                                            {%- if block.settings.subheading != blank -%}
+                                                <div class="text-overlay__reveal">
+                                                    <div class="text-overlay__subheading subheading subheading--over has-motion">
+                                                        {% if shop.locale == 'en' %}
+                                                            {{ block.settings.subheading | escape }}
+                                                        {% else %}
+                                                            {{ block.settings.subheading_fr | escape }}
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {%- endif -%}
+                                            {%- if block.settings.title != blank -%}
+                                                {%-liquid
+                                                    if shop.locale == 'en'
+                                                        assign title = block.settings.title
+                                                    else
+                                                        assign title = block.settings.title_fr
+                                                    endif
+                                                -%}
+                                                <div class="text-overlay__reveal">
+                                                    {% if block.settings.use_h1 %}
+                                                        <h1 class="text-overlay__title has-motion">{% render 'multiline-text' with title %}</h1>
+                                                    {% else %}
+                                                        <h2 class="text-overlay__title h1 has-motion">{% render 'multiline-text' with title %}</h2>
+                                                    {% endif %}
+                                                </div>
+                                            {%- endif -%}
+                                            {%- if block.settings.text != blank -%}
+                                                <div class="text-overlay__reveal">
+                                                    <div class="text-overlay__rte rte {% if block.settings.enlarge_text %}large-text{% endif %} has-motion">
+                                                        {% if shop.locale == 'en' %}
+                                                            {{ block.settings.text }}
+                                                        {% else %}
+                                                            {{ block.settings.text_fr }}
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {%- endif -%}
+                                        </div>
+                                    </div>
+                                </div>
+                            {%- endif -%}
+
+                            {%- if wrap_slide_with_link -%}
+                        </a>
+                        {%- endif -%}
+                    </image-with-text-overlay>
+                {%- endfor -%}
+            </div>
+
+            {%- if section.blocks.size > 1 and section.settings.navigation != 'none' -%}
+                <div class="slideshow-ctrl js-only{% if section.settings.mobile_overlay_under %} slideshow-ctrl--mobile-stack{% endif %}">
+                    <div class="slideshow-pagination{% if section.settings.navigation == 'arrows' %} mobile-only{% endif %}">
+                        {%- for block in section.blocks -%}
+                            <button class="page-btn" data-index="{{ forloop.index0 }}" aria-controls="slideshow-{{ section.id }}"{% if forloop.first %} aria-current="true"{% endif %}>
+                                <span class="visually-hidden">{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="page-btn__circle">
+                                    <circle class="page-btn__fg-circle" cx="12" cy="12" r="6" />
+                                    <circle class="page-btn__bg-circle" cx="12" cy="12" r="6" />
+                                </svg>
+                            </button>
+                        {%- endfor -%}
+                    </div>
+
+                    {%- if section.settings.navigation == 'arrows' -%}
+                        <div class="slideshow-nav desktop-only">
+                            <button type="button" class="slideshow-nav__btn has-ltr-icon" name="prev" aria-controls="slideshow-{{ section.id }}">
+                                <span class="visually-hidden">{{ 'general.slider.previous' | t }}</span>
+                                {% render 'icon-chevron-left' %}
+                            </button>
+
+                            <button type="button" class="slideshow-nav__btn has-ltr-icon" name="next" aria-controls="slideshow-{{ section.id }}">
+                                <span class="visually-hidden">{{ 'general.slider.next' | t }}</span>
+                                {% render 'icon-chevron-right' %}
+                            </button>
+                        </div>
+                    {%- endif -%}
+                </div>
+            {%- endif -%}
+        </slide-show>
+
+        {%- unless section.settings.full_width -%}</div>{%- endunless -%}
+</div>
+
+
+{% schema %}
+{
+"name": "Slideshow",
+"class": "section-slideshow",
+"disabled_on": {
+"groups": [
+"aside"
+]
+},
+"max_blocks": 8,
+"settings": [
+{
+"type": "radio",
+"id": "height",
+"label": "Slide height",
+"options": [
+{
+"value": "adapt",
+"label": "Adapt to first image"
+},
+{
+"value": "full",
+"label": "Full screen"
+},
+{
+"value": "fixed",
+"label": "Fixed height"
+}
+],
+"default": "fixed"
+},
+{
+"type": "range",
+"id": "height_desktop",
+"min": 200,
+"max": 1000,
+"step": 20,
+"unit": "px",
+"label": "Desktop fixed height",
+"default": 600
+},
+{
+"type": "range",
+"id": "height_mobile",
+"min": 100,
+"max": 1000,
+"step": 20,
+"unit": "px",
+"label": "Mobile fixed height",
+"default": 460
+},
+{
+"id": "full_width",
+"type": "checkbox",
+"label": "Full page width",
+"default": true
+},
+{
+"id": "mobile_overlay_under",
+"type": "checkbox",
+"label": "Show text below image on mobile",
+"default": false
+},
+{
+"id": "overlay_style",
+"type": "select",
+"label": "Overlay style",
+"default": "shadow",
+"options": [
+{
+"value": "full",
+"label": "Tint"
+},
+{
+"value": "box",
+"label": "Box"
+},
+{
+"value": "shadow",
+"label": "Text shadow"
+},
+{
+"value": "full image-overlay--bg-shadow",
+"label": "Text shadow and tint"
+},
+{
+"value": "no_background",
+"label": "No background"
+}
+]
+},
+{
+"type": "header",
+"content": "Slideshow navigation"
+},
+{
+"type": "select",
+"id": "transition",
+"label": "Transition",
+"options": [
+{
+"value": "zoom-fade",
+"label": "Zoom"
+},
+{
+"value": "fade",
+"label": "Fade"
+},
+{
+"value": "slide-fade",
+"label": "Slide & Fade"
+},
+{
+"value": "instant",
+"label": "Instant"
+}
+],
+"default": "fade"
+},
+{
+"id": "navigation",
+"type": "select",
+"label": "Slide navigation style",
+"default": "arrows",
+"options": [
+{
+"value": "arrows",
+"label": "Arrows"
+},
+{
+"value": "dots",
+"label": "Dots"
+},
+{
+"value": "none",
+"label": "None"
+}
+]
+},
+{
+"id": "autoplay",
+"type": "checkbox",
+"label": "Auto-rotate slides",
+"default": true
+},
+{
+"type": "range",
+"id": "autoplay_speed",
+"min": 1,
+"max": 20,
+"step": 1,
+"unit": "s",
+"label": "Change slides every",
+"default": 7
+},
+{
+"type": "header",
+"content": "Accessibility"
+},
+{
+"type": "text",
+"id": "accessibility_info",
+"label": "Slideshow description",
+"info": "Describe the slideshow for customers using screen readers."
+}
+],
+"blocks": [
+{
+"type": "image",
+"name": "Slide",
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image",
+"info": "2048 x 1024px recommended"
+},
+{
+"type": "image_picker",
+"id": "image_fr",
+"label": "Image (FR)"
+},
+{
+"type": "image_picker",
+"id": "mobile_image",
+"label": "Mobile image",
+"info": "1024px x 1024px recommended"
+},
+{
+"type": "image_picker",
+"id": "mobile_image_fr",
+"label": "Mobile image (FR)"
+},
+{
+"type": "url",
+"id": "slide_link",
+"label": "Slide link",
+"info": "Not used if buttons or text contain links"
+},
+{
+"type": "header",
+"content": "Overlay"
+},
+{
+"type": "text",
+"id": "subheading",
+"label": "Subheading",
+"default": "Tell your story"
+},
+{
+"type": "text",
+"id": "subheading_fr",
+"label": "Subheading (FR)"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"info": "Enter <br> for a line-break",
+"default": "Slide heading"
+},
+{
+"type": "text",
+"id": "title_fr",
+"label": "Heading (FR)"
+},
+{
+"type": "range",
+"id": "heading_max_width",
+"min": 4,
+"max": 40,
+"step": 1,
+"unit": "em",
+"label": "Maximum heading width",
+"default": 15
+},
+{
+"type": "range",
+"id": "title_size",
+"min": 20,
+"max": 150,
+"step": 2,
+"unit": "px",
+"label": "Desktop heading text size",
+"default": 84
+},
+{
+"type": "range",
+"id": "title_size_mobile",
+"min": 20,
+"max": 150,
+"step": 2,
+"unit": "px",
+"label": "Mobile heading text size",
+"default": 46
+},
+{
+"type": "checkbox",
+"id": "use_h1",
+"label": "Set as primary page heading",
+"info": "Use <h1> tag. One per page recommended. [Read more](https://cleancanvas.co.uk/support/symmetry/section-h1-setting)",
+    "default": false
+    },
+    {
+    "type": "richtext",
+    "id": "text",
+    "label": "Text",
+    "default": "<p>And optional subtext</p>"
+    },
+    {
+    "type": "richtext",
+    "id": "text_fr",
+    "label": "Text (FR)"
+    },
+    {
+    "type": "checkbox",
+    "id": "enlarge_text",
+    "label": "Enlarge text",
+    "default": true
+    },
+    {
+    "type": "checkbox",
+    "id": "enable_cta_buttons",
+    "label": "Enable CTA Buttons",
+    "default": false
+    },
+    {
+    "type": "checkbox",
+    "id": "cta_buttons_center_on_desktop",
+    "label": "Center CTA Buttons on Desktop",
+    "default": false
+    },
+    {
+    "type": "radio",
+    "id": "cta_buttons_qty",
+    "label": "How many CTA buttons?",
+    "options": [
+    {
+    "value": "1",
+    "label": "1 Button"
+    },
+    {
+    "value": "2",
+    "label": "2 Buttons"
+    },
+    {
+    "value": "3",
+    "label": "3 Buttons"
+    },
+    {
+    "value": "4",
+    "label": "4 Buttons"
+    },
+    {
+    "value": "5",
+    "label": "5 Buttons"
+    }
+    ],
+    "default": "4"
+    },
+    {
+    "type": "radio",
+    "id": "cta_buttons_position",
+    "label": "Buttons Position",
+    "options": [
+    {
+    "value": "bottom_right",
+    "label": "Bottom Right"
+    },
+    {
+    "value": "bottom_left",
+    "label": "Bottom Left"
+    },
+    {
+    "value": "center_bottom",
+    "label": "Center Bottom"
+    }
+    ],
+    "default": "bottom_right"
+    },
+    {
+    "type": "radio",
+    "id": "mobile_cta_position",
+    "label": "Buttons Position Mobile",
+    "options": [
+    {
+    "value": "default",
+    "label": "Default"
+    },
+    {
+    "value": "centered",
+    "label": "Centered"
+    },
+    {
+    "value": "3_4_bottom",
+    "label": "3/4 Buttom"
+    },
+    {
+    "value": "bottom",
+    "label": "Bottom"
+    }
+    ],
+    "default": "default"
+    },
+    {
+    "type": "header",
+    "content": "Button 1 Left Top"
+    },
+    {
+    "type": "text",
+    "id": "buttons_left_top_text",
+    "label": "Button 1 Text",
+    "default": "SHOP WOMEN'S"
+    },
+    {
+    "type": "text",
+    "id": "buttons_left_top_text_fr",
+    "label": "Button 1 Text (français)",
+    "default": "MAGASINER FEMMES"
+    },
+    {
+    "type": "url",
+    "id": "buttons_left_top_href",
+    "label": "Button 1 Link",
+    "default": "/collections"
+    },
+    {
+    "type": "url",
+    "id": "buttons_left_top_href_fr",
+    "label": "Button 1 Link  (français)",
+    "default": "/collections"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_top_color",
+    "label": "Button 1 Text Color",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_top_color_hover",
+    "label": "Button 1 Text Color Hover",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_top_background",
+    "label": "Button 1 Background Color",
+    "default": "#d9cebb"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_top_background_hover",
+    "label": "Button 1 Background Color Hover",
+    "default": "#eee"
+    },
+    {
+    "type": "header",
+    "content": "Button 2 Right Top"
+    },
+    {
+    "type": "text",
+    "id": "buttons_right_top_text",
+    "label": "Button 2 Text",
+    "default": "SHOP MEN'S"
+    },
+    {
+    "type": "text",
+    "id": "buttons_right_top_text_fr",
+    "label": "Button 2 Text (français)",
+    "default": "MAGASINER HOMMES"
+    },
+    {
+    "type": "url",
+    "id": "buttons_right_top_href",
+    "label": "Button 2 Link",
+    "default": "/collections"
+    },
+    {
+    "type": "url",
+    "id": "buttons_right_top_href_fr",
+    "label": "Button 2 Link  (français)",
+    "default": "/collections"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_top_color",
+    "label": "Button 2 Text Color",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_top_color_hover",
+    "label": "Button 2 Text Color Hover",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_top_background",
+    "label": "Button 2 Background Color",
+    "default": "#d9cebb"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_top_background_hover",
+    "label": "Button 2 Background Color Hover",
+    "default": "#eee"
+    },
+    {
+    "type": "header",
+    "content": "Button 3 Left Bottom"
+    },
+    {
+    "type": "text",
+    "id": "buttons_left_bottom_text",
+    "label": "Button 3 Text",
+    "default": "SHOP KIDS"
+    },
+    {
+    "type": "text",
+    "id": "buttons_left_bottom_text_fr",
+    "label": "Button 3 Text (français)",
+    "default": "MAGASINER ENFANTS"
+    },
+    {
+    "type": "url",
+    "id": "buttons_left_bottom_href",
+    "label": "Button 3 Link",
+    "default": "/collections"
+    },
+    {
+    "type": "url",
+    "id": "buttons_left_bottom_href_fr",
+    "label": "Button 3 Link  (français)",
+    "default": "/collections"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_bottom_color",
+    "label": "Button 3 Text Color",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_bottom_color_hover",
+    "label": "Button 3 Text Color Hover",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_bottom_background",
+    "label": "Button 3 Background Color",
+    "default": "#d9cebb"
+    },
+    {
+    "type": "color",
+    "id": "buttons_left_bottom_background_hover",
+    "label": "Button 3 Background Color Hover",
+    "default": "#eee"
+    },
+    {
+    "type": "header",
+    "content": "Button 4 Right Bottom"
+    },
+    {
+    "type": "text",
+    "id": "buttons_right_bottom_text",
+    "label": "Button 4 Text",
+    "default": "SHOP ACCESSORIES"
+    },
+    {
+    "type": "text",
+    "id": "buttons_right_bottom_text_fr",
+    "label": "Button 4 Text (français)",
+    "default": "MAGASINER ACCESSOIRES"
+    },
+    {
+    "type": "url",
+    "id": "buttons_right_bottom_href",
+    "label": "Button 4 Link",
+    "default": "/collections"
+    },
+    {
+    "type": "url",
+    "id": "buttons_right_bottom_href_fr",
+    "label": "Button 4 Link  (français)",
+    "default": "/collections"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_bottom_color",
+    "label": "Button 4 Text Color",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_bottom_color_hover",
+    "label": "Button 4 Text Color Hover",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_bottom_background",
+    "label": "Button 4 Background Color",
+    "default": "#d9cebb"
+    },
+    {
+    "type": "color",
+    "id": "buttons_right_bottom_background_hover",
+    "label": "Button 4 Background Color Hover",
+    "default": "#eee"
+    },
+    {
+    "type": "header",
+    "content": "Button 5 Bottom"
+    },
+    {
+    "type": "text",
+    "id": "buttons_bottom_text",
+    "label": "Button 5 Text",
+    "default": "SHOP COLLECTION"
+    },
+    {
+    "type": "text",
+    "id": "buttons_bottom_text_fr",
+    "label": "Button 5 Text (français)",
+    "default": "MAGASINER COLLECTION"
+    },
+    {
+    "type": "url",
+    "id": "buttons_bottom_href",
+    "label": "Button 5 Link",
+    "default": "/collections"
+    },
+    {
+    "type": "url",
+    "id": "buttons_bottom_href_fr",
+    "label": "Button 5 Link  (français)",
+    "default": "/collections"
+    },
+    {
+    "type": "color",
+    "id": "buttons_bottom_color",
+    "label": "Button 5 Text Color",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_bottom_color_hover",
+    "label": "Button 5 Text Color Hover",
+    "default": "#000000"
+    },
+    {
+    "type": "color",
+    "id": "buttons_bottom_background",
+    "label": "Button 5 Background Color",
+    "default": "#d9cebb"
+    },
+    {
+    "type": "color",
+    "id": "buttons_bottom_background_hover",
+    "label": "Button 5 Background Color Hover",
+    "default": "#eee"
+    },
+    {
+    "type": "header",
+    "content": "Tool Tip"
+    },
+    {
+    "type": "checkbox",
+    "id": "enable_hero_tooltip",
+    "label": "Enable Tooltip",
+    "default": false
+    },
+    {
+    "type": "text",
+    "id": "tooltip_subheading",
+    "label": "Tooltip Tagline",
+    "default": "Add a tagline for the tooltip"
+    },
+    {
+    "type": "text",
+    "id": "tooltip_subheading_fr",
+    "label": "Tooltip Tagline (Français)",
+    "default": "Add a tagline for the tooltip (Français)"
+    },
+    {
+    "type": "color",
+    "id": "tooltip_subheading_color",
+    "label": "Tooltip Tagline Color",
+    "default": "rgb(0,0,0)"
+    },
+    {
+    "type": "richtext",
+    "id": "text_tooltip_en",
+    "label": "Tooltip text"
+    },
+    {
+    "type": "richtext",
+    "id": "text_tooltip_fr",
+    "label": "Tooltip text (Français)"
+    },
+    {
+    "type": "color",
+    "id": "toolip_icon_color",
+    "label": "Color tooltip icon",
+    "default": "rgb(220,220,220)"
+    },
+    {
+    "type": "select",
+    "id": "text_alignment",
+    "label": "Text overlay position",
+    "options": [
+    {
+    "value": "top left",
+    "label": "Top left"
+    },
+    {
+    "value": "top center",
+    "label": "Top center"
+    },
+    {
+    "value": "top right",
+    "label": "Top right"
+    },
+    {
+    "value": "center left",
+    "label": "Middle left"
+    },
+    {
+    "value": "center center",
+    "label": "Middle center"
+    },
+    {
+    "value": "center right",
+    "label": "Middle right"
+    },
+    {
+    "value": "bottom left",
+    "label": "Bottom left"
+    },
+    {
+    "value": "bottom center",
+    "label": "Bottom center"
+    },
+    {
+    "value": "bottom right",
+    "label": "Bottom right"
+    }
+    ],
+    "default": "center center"
+    }
+    ]
+    }
+    ],
+    "presets": [
+    {
+    "name": "Slideshow",
+    "settings": {
+    },
+    "blocks": [
+    {
+    "type": "image"
+    },
+    {
+    "type": "image"
+    }
+    ]
+    }
+    ]
+    }
+    {% endschema %}
+{% endcomment %}

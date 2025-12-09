@@ -1,0 +1,211 @@
+<script>
+  function renderCollectionBanners(clean = false) {
+    let $body         = $('body');
+    let collection_id = '{{ collection.id }}';
+    if (clean) {
+      $body.find('.collection-banners-container').remove();
+    }
+
+    setTimeout(function() {
+      let $product_blocks = $body.find('.product-grid').find('.product-block');
+      if ($product_blocks.length) {
+
+        $.getJSON('{{ 'collection-promo-banners.txt' | asset_url }}', function(result) {
+          Object.keys(result).forEach(key => {
+            let colletion_ids = JSON.parse(key);
+            if (colletion_ids.includes(collection_id)) {
+              result[key].forEach(item => {
+                let banner_key        = 'banner_{{ shop.locale }}';
+                let banner_mobile_key = 'banner_mobile_{{ shop.locale }}';
+                let is_desktop        = $(window).width() > 900;
+
+                if (!is_desktop && (typeof item[banner_mobile_key] === 'string') && item[banner_mobile_key].trim() !== '') {
+                  banner_key = banner_mobile_key;
+                }
+                let cta      = item.urls;
+                let cta_html = '';
+                if (cta.settings !== undefined && Array.isArray(cta.cta_buttons)) {
+                  let cta_style     = '';
+                  let tagline_style = '';
+                  if (is_desktop) {
+                    cta_style += 'display:flex;flex-wrap:wrap; width:/*calc(100% - 30px)*/ 100%; right:0; justify-content:center;';
+                    cta_style += 'position:absolute; z-index:10;';
+                    cta_style += 'bottom:' + cta.settings.top_alignment_desktop + '%;';
+                    tagline_style = 'padding: 7px 20px; display:inline-block;width:100%; font-weight:bold; color: ' + cta.settings.tagline_desktop_color + '; font-size:' + cta.settings.tagline_font_size_desktop + 'px;text-align:' + cta.settings.tagline_text_alignment + '!important;';
+                  } else {
+                    cta_style += 'display:flex;flex-wrap:wrap; width:100%; justify-content:center;';
+                    cta_style += 'position:absolute; z-index:10;';
+                    cta_style += 'bottom:' + cta.settings.top_alignment_mobile + '%;';
+                    tagline_style = 'display:inline-block;width:100%;padding: 0 20px;margin-bottom: 7px; font-weight:bold; color: ' + cta.settings.tagline_mobile_color + '; font-size:' + cta.settings.tagline_font_size_mobile + 'px;text-align:' + cta.settings.tagline_text_alignment_mobile + '!important;';
+
+                  }
+
+                  cta_html += '<div class="cb-cta-container" style="' + cta_style + '">';
+                  let tagline_key = 'tagline_{{ shop.locale }}';
+                  if (cta.settings[tagline_key] !== undefined && cta.settings[tagline_key] !== null && cta.settings[tagline_key].trim() !== '') {
+                    cta_html += '<div style="' + tagline_style + '">' + cta.settings[tagline_key] + '</div>';
+                  }
+                  let buttons_html = '';
+
+                  for (let button of cta.cta_buttons) {
+                    let cta_button_style = 'margin: ' + (is_desktop ? cta.settings.margin_y_desktop : cta.settings.margin_y_mobile) + 'px ' + (is_desktop ? cta.settings.margin_x_desktop : cta.settings.margin_x_mobile) + 'px;';
+                    cta_button_style += 'padding: ' + (is_desktop ? button.padding_y : button.padding_y_mobile) + 'px ' + (is_desktop ? button.padding_x : button.padding_x_mobile) + 'px;';
+
+                    if (button.font_weight_bold == 'yes') {
+                      cta_button_style += 'font-weight:bold;';
+                    }
+                    if (button.text_underline == 'yes') {
+                      cta_button_style += 'text-decoration:underline;';
+                    }
+                    if (is_desktop) {
+                      if (cta.settings.desktop_position === 'stacked') {
+                        cta_button_style += 'width: calc(100% - ' + ((is_desktop ? (cta.settings.margin_x_desktop) : cta.settings.margin_x_mobile) * 2) + 'px);';
+                      } else {
+                        cta_button_style += 'width: calc(50% - ' + ((is_desktop ? cta.settings.margin_x_desktop : cta.settings.margin_x_mobile) * 2) + 'px);';
+                      }
+                    } else {
+                      if (cta.settings.mobile_position === 'stacked') {
+                        cta_button_style += 'width: calc(100% - ' + ((is_desktop ? cta.settings.margin_x_desktop : cta.settings.margin_x_mobile) * 2) + 'px);';
+                      } else {
+                        cta_button_style += 'width: calc(50% - ' + ((is_desktop ? cta.settings.margin_x_desktop : cta.settings.margin_x_mobile) * 2) + 'px);';
+                      }
+                    }
+
+                    cta_button_style += 'color: ' + (is_desktop ? cta.settings.font_color_desktop : cta.settings.font_color_mobile) + ';';
+                    cta_button_style += 'background: ' + (is_desktop ? cta.settings.bg_color_desktop : cta.settings.bg_color_mobile) + ';';
+                    cta_button_style += 'font-size: ' + (is_desktop ? cta.settings.font_size_desktop : cta.settings.font_size_mobile) + 'px;';
+
+                    cta_button_style += 'text-align: ' + (is_desktop ? cta.settings.text_alignment_inside_buttons : cta.settings.text_alignment_inside_buttons_mobile) + ';';
+
+                    let onmouseover_style  = 'this.style.color=\'' + (is_desktop ? cta.settings.hover_color_desktop : cta.settings.hover_color_mobile) + '\';this.style.backgroundColor=\'' + (is_desktop ? cta.settings.bg_hover_color_desktop : cta.settings.bg_hover_color_mobile) + '\';';
+                    let onmouseleave_style = 'this.style.color=\'' + (is_desktop ? cta.settings.font_color_desktop : cta.settings.font_color_mobile) + '\';this.style.backgroundColor=\'' + (is_desktop ? cta.settings.bg_color_desktop : cta.settings.bg_color_mobile) + '\';';
+
+                    let cta_button_html = '';
+
+                    if ('{{ shop.locale }}' === 'fr') {
+                      cta_button_html += '<a class="collection_banner" data-banner-title="'+ item.title +'" href="' + button.url_fr + '" style="' + cta_button_style + '" onmouseover="' + onmouseover_style + '" onmouseleave="' + onmouseleave_style + '">';
+                      cta_button_html += button.text_fr;
+                      cta_button_html += '</a>';
+                    } else {
+                      cta_button_html += '<a class="collection_banner" data-banner-title="'+ item.title +'" href="' + button.url_en + '" style="' + cta_button_style + '" onmouseover="' + onmouseover_style + '" onmouseleave="' + onmouseleave_style + '">';
+                      cta_button_html += button.text_en;
+                      cta_button_html += '</a>';
+                    }
+                    buttons_html += cta_button_html;
+
+                  }
+                  cta_html += buttons_html;
+                  cta_html += '</div>';
+                }
+                let content_html = '<div class="' + (item.grid_span_2 == 1 ? 'collection-banner-grid-span-2' : 'collection-banner-grid-span-1') + '" style="position:relative;">';
+                content_html += '<div style="display: inline-block; width: 100%; height: 72%;">';
+                content_html += '<img style="display: block;width: 100%;height: 100%;object-fit: cover;" src="' + item[banner_key] + '" alt="Colletion Banner">';
+                content_html += '</div>';
+
+                content_html += '<div style="background:#000;display:inline-block; margin-top:0; width:100%; height:20%;position:relative; cursor:pointer; user-select:none;" onclick="window.location.href = \'' + item['url_{{ shop.locale }}'] + '\'">';
+                content_html += cta_html;
+                content_html += '</div>';
+
+                content_html += '</div>';
+
+                let $pb_image    = $body.find('.product-block:not(.collection-banner-grid-span-on-product-block-2)');
+                let image_height = '';
+
+                let two_on_1_class = item.grid_span_2 == 1 ? 'collection-banner-grid-span-on-product-block-2' : '';
+
+                let aspect_ratio = '1.0';
+                if (two_on_1_class !== '') {
+                  if ($(window).width() <= 900) {
+                    aspect_ratio = '0.8';
+                  }
+                } else {
+                  aspect_ratio = $(window).width() <= 900 ? '0.7' : '0.8';
+                }
+                // if(two_on_1_class !== ''){
+                if ($pb_image.length) {
+                  image_height = $pb_image.find('.image-cont').height();
+                  image_height = `height:${image_height}px;`;
+                }
+                // }
+                content_html = `
+   <product-block class="product-block collection-banners-container ${two_on_1_class}" style="display: block;">
+    <div class="block-inner">
+      <div class="block-inner-inner">
+
+        <div class="image-cont collection-banners-image-cont image-cont--with-secondary-image image-cont--same-aspect-ratio" style="${image_height}">
+
+          <div class="image-label-wrap">
+            <div>
+              <div style="opacity:1;" class="product-block__image product-block__image--primary" data-media-id="36228655579329">
+                <div class="img-ar" style="--aspect-ratio: ${aspect_ratio}">
+                  <img src="${item[banner_key]}" alt="Promo Banner" class="theme-img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="" style="padding:0;background:#000;">
+
+          <div class="inner" style="background:#000000;position:relative;" cursor:pointer; user-select:none;" onclick="window.location.href = '${item['url_{{ shop.locale }}']}'">
+          ${cta_html}
+          <div class="innerer position-relative">
+
+            <div class="product-block__title">
+              <div class="product-block__title_title">&nbsp;</div>
+              <div class="item_type">&nbsp;</div>
+            </div>
+            <div class="product-price"><span class="product-price__item product-price__amount theme-money  ">&nbsp;</span></div>
+            <div style="margin-top:5px;"></div>
+            <div class="product-block-options product-block-options--swatch" data-option-name="Color" style="display: inline-block;width: 100%;height: 30px;">
+              <div class="product-block-options__inner">
+                &nbsp;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</product-block>`;
+
+                if (item.position <= $product_blocks.length) {
+                  $product_blocks.eq((item.position - 1)).after(content_html);
+                  $(".collection_banner").click(function(){
+                    let banner_title = $(this).data('banner-title');
+                    let dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                       'event':'collection_banner_click',
+                       'collection_title':"{{ collection.title }}",
+                       'banner_title':banner_title
+                     });
+                  });
+                } else {
+                  // $product_blocks.last().after(content_html);
+                }
+              });
+            }
+          });
+        });
+      }
+    }, 800);
+  }
+
+  $(document).ready(function() {
+    let $body = $('body');
+
+    $(window).on('resize', function() {
+      setTimeout(function() {
+        let height = $body.find('.image-cont:not(.collection-banners-image-cont)').height();
+        let image_height = `height:${height}px;`;
+        $body.find('.collection-banners-image-cont').each(function() {
+          $(this).attr('style', image_height);
+        });
+      }, 50);
+    });
+
+    $body.on('click', '.pagination__number, .pagination .next, .pagination .prev, .layout-switch', function() {
+      renderCollectionBanners(true);
+    });
+    renderCollectionBanners();
+
+  });
+</script>

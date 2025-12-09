@@ -1,0 +1,183 @@
+{% liquid
+  assign subtotal_cents = cart.original_total_price
+  assign subtotal_dollars = subtotal_cents | divided_by: 100.0
+
+  if subtotal_dollars < 75
+    assign remaining = 75 | minus: subtotal_dollars
+    assign remaining_in_dollars = remaining 
+    assign msg = "$" | append: remaining_in_dollars | append: " more to get Free shipping."
+    if shop.locale != 'en'
+      assign msg = "Encore " | append: remaining_in_dollars | append: "$ pour bénéficier de la livraison gratuite."
+    endif
+  elsif subtotal_dollars < 100
+    assign remaining = 100 | minus: subtotal_dollars
+    assign remaining_in_dollars = remaining 
+   assign msg = "$" | append: remaining_in_dollars | append: " more to get $10 Off."
+    if shop.locale != 'en'
+      assign msg = "Encore " | append: remaining_in_dollars | append: "$ pour obtenir 10$ de réduction"
+    endif   
+  elsif subtotal_dollars < 125
+    assign remaining = 125 | minus: subtotal_dollars
+    assign remaining_in_dollars = remaining 
+    assign msg = "$" | append: remaining_in_dollars | append: " more to get $20 Off."
+    if shop.locale != 'en'
+      assign msg = "Encore " | append: remaining_in_dollars | append: "$ pour obtenir 20$ de réduction"
+    endif     
+  else
+    assign remaining = 0
+    assign msg = "Maximum reward reached"
+    if shop.locale != 'en'
+      assign msg = "Récompense maximale atteinte"
+    endif   
+  endif
+
+ assign subtotal = subtotal_dollars
+
+  if subtotal <= 75
+    assign progress = subtotal | times: 33.33 | divided_by: 75
+  elsif subtotal <= 100
+    assign remaining = subtotal | minus: 75
+    assign second_segment = remaining | times: 33.33 | divided_by: 25
+    assign progress = 33.33 | plus: second_segment
+  elsif subtotal <= 125
+    assign remaining = subtotal | minus: 100
+    assign third_segment = remaining | times: 33.34 | divided_by: 25
+    assign progress = 66.66 | plus: third_segment
+  else
+    assign progress = 100
+  endif   
+%}
+
+
+
+<div>
+  <link rel="stylesheet" href="{{ 'cart_progress_bar.s.min.css' | asset_url }}">
+
+  <div class="progress-bar progress-bar--gwp">
+    <p class="progress-bar__subheading text-center" style="color:#000;">
+      {{ msg }}
+    </p>
+
+    <div class="progress-bar__body" style="margin-top: 28px;">
+      <div class="progress-bar__progress" style="--height: 26px; --percentage: {{ progress }}%; --bg-progress: linear-gradient(90deg, #A5C792 0%, #6CAD47 100%);">
+        
+        <div class="progress-bar__progress-candycane-bg"></div>
+
+        <!-- Milestone Dots -->
+        <div class="progress-bar__dot progress-bar__dot--amount" style="left: 17.0%;">
+          <span class="money">{% if shop.locale == 'en' %}$75{% else %}75${% endif %}</span>
+        </div>
+        <div class="progress-bar__dot progress-bar__dot--amount" style="left: 50.0%;">
+          <span class="money">{% if shop.locale == 'en' %}$100{% else %}100${% endif %}</span>
+        </div>
+        <div class="progress-bar__dot progress-bar__dot--amount" style="left: 83.0%;">
+          <span class="money">{% if shop.locale == 'en' %}$125{% else %}125${% endif %}</span>
+        </div>
+
+        <!-- Dividers -->
+        <span class="progress-bar__divider progress-bar__divider--clip" style="--left: 33.3333%;"></span>
+        <span class="progress-bar__divider progress-bar__divider--clip" style="--left: 66.6667%;"></span>
+
+        <!-- Tooltip (only if progress < 100%) -->
+        {% if progress < 100 %}
+          <div class="progress-bar__tooltip" style="--left: {{ progress }}%;">
+            <span class="money">{{- cart.original_total_price | money -}}</span>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <!-- Label List -->
+    <div class="progress-bar__label">
+      <ul class="progress-bar__label__list">
+        <li class="progress-bar__label__item">
+          <span>{% if shop.locale == 'en' %}Free shipping{% else %}Livraison gratuite{% endif %}</span>
+        </li>
+        <li class="progress-bar__label__item">
+          <span>{% if shop.locale == 'en' %}$10 Off{% else %}10$ de réduction{% endif %}</span>
+        </li>
+        <li class="progress-bar__label__item">
+          <span>{% if shop.locale == 'en' %}$20 Off{% else %}20$ de réduction{% endif %}</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+
+  function updateCartProgressBar(subtotal){
+    let percentage = calculateProgressBar(subtotal)
+    let language = '{{ shop.locale }}'
+    let _subtotal = subtotal.toFixed(2)
+    _subtotal = language == 'en' ? "$"+_subtotal : _subtotal+"$";
+    $(".progress-bar__tooltip").first().find('.money').first().html(`${_subtotal}`)
+    
+    let msg = getRewardMessage(subtotal)
+    
+    $(".progress-bar__subheading").first().html(msg)
+    $(".progress-bar__tooltip").first().css('--left',`${percentage}%`)
+    $(".progress-bar__progress").first().css('--percentage',`${percentage}%`)
+    
+    console.log(percentage,remaining,msg)
+  }
+
+function getRewardMessage(subtotalDollars) {
+  let msg;
+  let language = '{{ shop.locale }}'
+  if (subtotalDollars < 75) {
+    remaining = 75 - subtotalDollars;
+    remaining = remaining.toFixed(2)
+    remainingInDollars = language == 'en' ? "$"+remaining : remaining+"$";
+    msg = language == 'en' ? `${remainingInDollars} more to get Free shipping.` : `Encore ${remainingInDollars} pour bénéficier de la livraison gratuite.`;
+  } else if (subtotalDollars < 100) {
+    remaining = 100 - subtotalDollars;
+    remaining = remaining.toFixed(2)
+    remainingInDollars = language == 'en' ? "$"+remaining : remaining+"$";
+    msg = language == 'en' ? `${remainingInDollars} more to get $10 Off.`: `Encore ${remainingInDollars} pour obtenir 10$ de réduction`;
+  } else if (subtotalDollars < 125) {
+    remaining = 125 - subtotalDollars;
+    remaining = remaining.toFixed(2)
+    remainingInDollars = language == 'en' ? "$"+remaining : remaining+"$";
+    msg = language == 'en' ? `${remainingInDollars} more to get $20 Off.` : `Encore ${remainingInDollars} pour obtenir 20$ de réduction`;
+  } else {
+    remaining = 0;
+    msg = language == 'en' ? "Maximum reward reached" : "Récompense maximale atteinte";
+  }
+
+  return msg;
+}  
+
+function calculateProgressBar(subtotal) {
+  let progress = 0;
+
+  if (subtotal <= 75) {
+    // First segment: $0 - $75 → 0% to 33.33%
+    progress = (subtotal / 75) * 33.33;
+  } else if (subtotal <= 100) {
+    // Second segment: $75 - $100 → 33.33% to 66.66%
+    progress = 33.33 + ((subtotal - 75) / 25) * 33.33;
+  } else if (subtotal <= 125) {
+    // Third segment: $100 - $125 → 66.66% to 100%
+    progress = 66.66 + ((subtotal - 100) / 25) * 33.34;
+  } else {
+    progress = 100;
+  }
+
+  return Math.min(progress, 100); // Clamp to 100%
+}
+  
+document.addEventListener('on:cart:after-merge', async (event) => {
+  // your code here
+  console.log(event)
+  const cartResponse = await fetch('https://www.yellowshoes.com/cart.json');
+  const cartData = await cartResponse.json();
+  let subtotal = cartData.original_total_price / 100;
+  subtotal = Number.parseFloat(subtotal.toString().replace('$',''));
+  updateCartProgressBar(subtotal)
+});
+  
+</script>

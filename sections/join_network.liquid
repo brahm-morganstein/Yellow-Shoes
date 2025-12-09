@@ -1,0 +1,271 @@
+<style>
+  .md-flex{
+    display:flex;
+  }
+  .md-half{
+    width:50%;
+  }
+  .p-join{
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right:40px;
+  }
+  ul.a {
+    list-style-type: circle;
+    padding-right:40px;
+    margin-left:6px;
+  }
+  .mustard{
+    color:#f1b601;
+  }
+  .join-top-msg{
+    text-align:center;
+  }
+  #talentForm{
+    display:flex;
+    flex-direction:column;
+  }
+  
+  #slctProvince {
+    border: 1px solid #e8e8e1;
+    max-width: 100%;
+    padding: 15px 28px 15px 10px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-position: right center;
+    background-image: url(/cdn/shop/t/572/assets/ico-select.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-color: transparent;
+    background-size: 11px;
+    text-indent: .01px;
+    text-overflow: "";
+    cursor: pointer;
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .error_label{
+    color:red;
+    display:none;
+  }
+    
+  @media only screen and (max-width: 900px) {
+     .md-half{
+        width:100%;
+     }
+     .md-flex{
+        display:block;
+     }
+    .join-top-msg{
+        margin-bottom:10px;
+    }
+  }
+  @media screen and (min-width: 600px)  {
+    .mobile-break { display: none; }
+    .md-flex{
+      width:80%;
+      margin:auto;
+    }
+  }
+</style>
+
+<div class="">
+  {%- if section.settings.show_page_title -%}
+    <div class="page-header">
+      <h1 class="majortitle">{{ page.title }}</h1>
+    </div>
+  {%- endif -%}
+
+  <div class="rte cf">
+    {{- page.content -}}
+  </div>
+
+  <div style="max-width: 42rem;margin-left:auto;margin-right:auto;">
+    <form id="talentForm"> 
+      <label>* <span class="mustard">{{"join_talent.required"|t}}</span></label>
+      <label for="inputEmail">{{"join_talent.email"|t}}*</label>
+      <input type="email" name="email" id="inputEmail" class="input-full" style="margin-bottom:0;" autocorrect="off" autocapitalize="off"> 
+      <div id="error_email" class="error_label">{{"join_talent.validation.email"|t}}</div>
+        
+        
+      <label for="slctProvince" style="margin-top:30px;">Province*</label>
+      <select id="slctProvince" class="input-full" style="margin-bottom:0;" disabled="true">
+        <option value="0">{{"join_talent.select"|t}}</option>
+      </select>
+      <div id="error_province" class="error_label">{{"join_talent.validation.province"|t}}</div>  
+          
+      <label for="inputLocation" style="margin-top:30px;">{{"join_talent.location"|t}}*</label>
+      <input type="text" name="location" id="inputLocation" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+      <div id="error_location" class="error_label">{{"join_talent.validation.location"|t}}</div>  
+        
+      <label for="inputJobTitle" style="margin-top:30px;">{{"join_talent.job"|t}}*</label>
+      <input type="text" name="job_title" id="inputJobTitle" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+      <div id="error_job_title" class="error_label">{{"join_talent.validation.job"|t}}</div> 
+        
+      <label for="inputFirstName" style="margin-top:30px;">{{"join_talent.first_name"|t}}*</label>
+      <input type="text" name="first_name" id="inputFirstName" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+      <div id="error_first_name" class="error_label">{{"join_talent.validation.first_name"|t}}</div> 
+        
+      <label for="inputLastName" style="margin-top:30px;">{{"join_talent.last_name"|t}}*</label>
+      <input type="text" name="last_name" id="inputLastName" class="input-full" style="margin-bottom:0;" autocapitalize="words">
+      <div id="error_last_name" class="error_label">{{"join_talent.validation.last_name"|t}}</div>     
+      
+      <label style="margin-top:30px;">{{"join_talent.resume"|t}}* <span style="color:#808080;font-size:10px;">{{"join_talent.resume_size_format"|t}}</span></label>
+      <input type="file" name="resume" id="fileResume" class="input-full" style="display:none;"/>
+      <label type="button" class="btn--full btn-upload" for="fileResume" style="border:1px solid #ccc;text-align: center;padding: 17px 15px;">
+        {{"join_talent.choose-file"|t}}
+      </label>    
+      <div id="error_resume_required" class="error_label">{{"join_talent.validation.resume"|t}}</div>
+      <div id="error_resume" class="error_label">{{"join_talent.validation.resume_size_format"|t}}</div>
+      <p style="margin-top:30px;">
+        <div class="g-recaptcha" data-sitekey="6LcRGDkbAAAAAOIwsnhnymvafALKMEwqp2Os8DST"></div>
+        <div id="error_g-recaptcha-response" class="error_label">{{"join_talent.validation.recaptcha"|t}}</div> 
+        <div style="margin-top:10px;margin-bottom:10px;text-align:left;">
+            {{"join_talent.terms"|t}}
+        </div>
+        <div style="text-align:left;">
+          <input type="checkbox" id="chkboxTerms"/><span>{{"join_talent.accept-terms_html"|t}}</span>
+           <div id="error_terms" class="error_label">{{"join_talent.validation.terms"|t}}</div> 
+        </div>
+        <input type="button" id="btnJoin" value="{{"join_talent.join"|t}}" class="btn btn--full">
+      </p>
+    </form>  
+  </div>
+</div>  
+
+
+{% schema %}
+{
+  "name": "Page",
+  "class": "page-section-spacing",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_page_title",
+      "label": "Show the default page heading",
+      "info": "If hidden, you should provide a primary page heading (h1 tag) in another section with h1 capability (e.g. image with overlay text, or background video) for SEO purposes.",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    }
+  ]
+}
+{% endschema %}
+
+
+
+<script src="https://www.google.com/recaptcha/api.js?hl={{shop.locale}}" async defer></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+  var language = '{{shop.locale}}';
+
+  //Get Provinces
+  $.getJSON('https://app.yellowshoes.com/api/provinces',function(provinces){
+    //console.log(provinces);
+    provinces.forEach(function(province){
+        var option = $('<option>');
+        if(language=='en'){
+          option.html(province.name_en);
+        }else{
+          option.html(province.name_fr);
+        }
+        option.val(province.id);
+        $("#slctProvince").append(option);
+    });
+    $("#slctProvince").prop('disabled', false);
+  });
+  //handle file name
+  $("#fileResume").change(function(){
+    $(".btn-upload").html(this.files[0].name);
+  });
+  //handle join button
+  $("#btnJoin").click(function(){
+    //hide errors and disabled join button
+    $(".error_label").hide();
+    $("#btnJoin").prop('disabled', true);
+    
+    var fd = new FormData();
+    //Add Form Values Here
+    fd.append('email',$("#inputEmail").val());
+    fd.append('province',$("#slctProvince").val());
+    fd.append('location',$("#inputLocation").val());
+    fd.append('job_title',$("#inputJobTitle").val());
+    fd.append('first_name',$("#inputFirstName").val());
+    fd.append('last_name',$("#inputLastName").val());
+    fd.append('language','{{shop.locale}}');
+    fd.append('g-recaptcha-response',grecaptcha.getResponse());
+    fd.append('terms',$("#chkboxTerms").is(':checked'));
+
+    // Check file selected or not
+    var files = $('#fileResume')[0].files;
+    if(files.length > 0 ){
+      fd.append('resume',files[0]);
+    }
+    //POST REQUEST TO /api/talent
+    //console.log(fd);
+    $.ajax({
+      url: 'https://app.yellowshoes.com/api/talent',
+      type: 'post',
+      data: fd,
+      contentType: false,
+      processData: false,
+      beforeSend: function(request) {
+        //CORS
+        request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      },        
+      success: function(response){
+        grecaptcha.reset();
+        $("#btnJoin").prop('disabled', false);
+//         $("#btnJoin").css('background-color', '#34A853');
+//         $("#btnJoin").val('Thank you');
+//         setTimeout(function(){
+//             $("#btnJoin").css('background-color', 'black');
+//          $("#btnJoin").val('JOIN');
+//         },5000);
+        //SweetAlert2 success message
+//         Swal.fire({
+//          // position: 'top-end',
+//           title: 'Thank you',
+//           text: '{{"join_talent.success_alert_msg"|t}}',
+//           icon: 'success',
+//           showConfirmButton: false,
+//           timer: 5000
+//         });
+        //
+        if('{{shop.locale}}'=='en'){
+            window.location.href = "https://www.yellowshoes.com/pages/join-talent-network-confirmation";
+        }else{
+            window.location.href = "https://www.yellowshoes.com/fr/pages/join-talent-network-confirmation";
+        }
+                          
+      },
+      error:function(data){
+        console.log(data.status);
+        grecaptcha.reset();
+        //handle form errors
+        if(data.status === 422){
+            let response = $.parseJSON(data.responseText);
+          $.each(response.errors,function(key,value){
+            console.log(key+":"+value);
+            if(key == 'resume' && value == 'The resume field is required.'){
+              key = 'resume_required';
+            }
+            $("#error_"+key).show();
+          });
+        }
+        if(data.status === 413 || data.status === 0){
+            $("#error_resume").show();
+        }
+        $("#btnJoin").prop('disabled', false);
+      }
+    });
+  });  
+
+</script>

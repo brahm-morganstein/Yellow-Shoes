@@ -1,0 +1,95 @@
+{% assign pdf = section.settings.pdf %}
+{% if shop.locale == 'fr' %}
+  {% assign pdf = section.settings.pdf_fr %}
+{% endif %}
+<div id="catalogue_container-{{ section.id }}">
+
+</div>
+
+<script>
+  function getQueryStringParameters() {
+    let parameters = {}, hash;
+    let q          = document.URL.split('?')[1];
+    if (q != undefined) {
+      q = q.split('&');
+      for (let i = 0; i < q.length; i++) {
+        hash                = q[i].split('=');
+        parameters[hash[0]] = hash[1];
+      }
+    }
+    return parameters;
+  }
+
+  $(document).ready(function() {
+    let $body = $('body');
+
+    setTimeout(function() {
+      let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      let bookOptions = {
+        height:      600
+        , width:     1000
+        , maxWidth:  '100%'
+        , maxHeight: '100%'
+
+        , centeredWhenClosed: true
+        , hardcovers:         false
+        , pageNumbers:        false
+        {% if section.settings.enable_toolbar %}
+        , toolbar:               "lastLeft, left, right, lastRight, toc, zoomin, zoomout, slideshow, flipsound, fullscreen, thumbnails, download"
+        {% else %}
+        , toolbar:  "left, fullscreen, right"
+        {% endif %}
+        , thumbnailsPosition:    'left'
+        , responsiveHandleWidth: 50
+
+        , container:        $body.find('#catalogue_container-{{ section.id }}')[0]
+        , containerPadding: '20px'
+        // ,toolbarContainerPosition: "top" // default "bottom"
+
+        // The pdf and your webpage must be on the same domain
+        , pdf: '{{ pdf }}',
+touchEnabled: false,
+        // Uncomment the option toc to create a Table of Contents
+        // ,toc: [                    // table of contents in the format
+        // 	[ "Introduction", 2 ],  // [ "title", page number ]
+        // 	[ "First chapter", 5 ],
+        // 	[ "Go to codecanyon.net", "http://codecanyon.net" ] // or [ "title", "url" ]
+        // ]
+      };
+
+      $body.find('#catalogue_container-{{ section.id }}').wowBook(bookOptions);
+    }, 500);
+
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Flipbook",
+  "class": "section-flipbook",
+  "settings": [
+    {
+      "type": "url",
+      "id": "pdf",
+      "label": "PDF"
+    },
+    {
+      "type": "url",
+      "id": "pdf_fr",
+      "label": "PDF FR"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_toolbar",
+      "label": "Show full toolbar",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flipbook",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

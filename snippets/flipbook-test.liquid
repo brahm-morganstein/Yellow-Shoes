@@ -1,0 +1,41 @@
+<div class='book_container' style="position:relative;">
+		<div id="book"></div>
+	</div>
+<script>
+		$(function(){
+			let bookOptions = {
+				 height   : 500
+				,width    : 800
+				// ,maxWidth : 800
+				,maxHeight : 600
+
+				,centeredWhenClosed : true
+				,hardcovers : true
+				,pageNumbers: true
+				,toolbar : "lastLeft, left, right, lastRight, toc, zoomin, zoomout, slideshow, flipsound, fullscreen, thumbnails, download"
+				,thumbnailsPosition : 'left'
+				,responsiveHandleWidth : 50
+
+				,container: $('#book')[0]
+				,containerPadding: "20px"
+				// ,toolbarContainerPosition: "top" // default "bottom"
+
+				// The pdf and your webpage must be on the same domain
+				,pdf: "https://ontheline.trincoll.edu/images/bookdown/sample-local-pdf.pdf"
+
+				// Uncomment the option toc to create a Table of Contents
+				// ,toc: [                    // table of contents in the format
+				// 	[ "Introduction", 2 ],  // [ "title", page number ]
+				// 	[ "First chapter", 5 ],
+				// 	[ "Go to codecanyon.net", "http://codecanyon.net" ] // or [ "title", "url" ]
+				// ]
+			};
+
+			$('#book').wowBook( bookOptions ); // create the book
+
+			// How to use wowbook API
+			// let book=$.wowBook("#book"); // get book object instance
+			// book.gotoPage( 4 ); // call some method
+		})
+  console.log('Im good to go')
+	</script>

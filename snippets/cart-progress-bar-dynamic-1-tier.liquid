@@ -1,0 +1,228 @@
+{% liquid
+  assign subtotal_cents = cart.original_total_price
+  assign subtotal_dollars = subtotal_cents | divided_by: 100.0
+  assign subtotal = subtotal_dollars 
+  assign item_count = cart.item_count
+
+  assign number_of_tier = section.settings.progress_bar_nb_tier
+  assign number_of_tier_int = number_of_tier | plus: 0
+  assign tier_type = section.settings.tier_type
+  assign tier_reward_type = section.settings.tier_reward_type
+  
+  assign tier_1_reward_text = section.settings.tier_1_reward_text
+  if shop.locale != 'en'
+    assign tier_1_reward_text = section.settings.tier_1_reward_text_fr
+  endif
+  assign tier_1_value = section.settings.tier_1_value
+  assign tier_1_reward_value = section.settings.tier_1_reward_value
+  assign is_tier_1_free_shipping = section.settings.tier_1_free_shipping
+
+
+  if tier_type == "money"
+      assign tier_1_condition = false
+      if subtotal_dollars < tier_1_value
+          assign tier_1_condition = true
+      endif
+
+      assign tier_1_progress_condition = false
+      if subtotal_dollars <= tier_1_value
+          assign tier_1_progress_condition = true
+      endif
+      assign remaining = tier_1_value | minus: subtotal_dollars
+      assign msg_tier_1 = "$" | append: remaining | append: " more to get " | append: tier_1_reward_text
+      if shop.locale != 'en'
+          assign msg_tier_1 = "Encore " | append: remaining | append: "$ pour bénéficier de " | append: tier_1_reward_text
+      endif  
+      assign tier_1_progress = subtotal_dollars | times: 100 | divided_by: tier_1_value       
+
+  else
+      assign tier_1_condition = false
+      if item_count < tier_1_value
+          assign tier_1_condition = true
+      endif
+
+      assign tier_1_progress_condition = false
+      if item_count <= tier_1_value
+          assign tier_1_progress_condition = true
+      endif
+      assign remaining = tier_1_value | minus: item_count
+      assign msg_tier_1 = "Add" | append: remaining | append: " more item to get " | append: tier_1_reward_text
+      if shop.locale != 'en'
+          assign msg_tier_1 = "Ajouter " | append: remaining | append: "item pour bénéficier de " | append: tier_1_reward_text
+      endif
+      assign tier_1_progress = item_count | times: 100 | divided_by: tier_1_value        
+  endif
+    
+
+
+  if tier_1_condition
+      assign msg = msg_tier_1 
+  else
+      assign remaining = 0
+      assign msg = "Maximum reward reached"
+      if shop.locale != 'en'
+      assign msg = "Récompense maximale atteinte"
+      endif   
+  endif
+
+  assign subtotal = subtotal_dollars
+
+  if tier_1_progress_condition
+      assign progress = tier_1_progress
+  else
+      assign progress = 100
+  endif 
+
+    
+%}
+
+<script>
+    //alert('{{ progress }}')
+    console.log('subtotal_dollars','{{ subtotal_dollars }}')
+    console.log('tier_1_value','{{ tier_1_value }}')
+    console.log('remaining','{{ remaining }}')
+    console.log('progress','{{ progress }}')
+</script>
+
+<div>
+  <link rel="stylesheet" href="{{ 'cart_progress_bar.s.min.css' | asset_url }}">
+
+  <div class="progress-bar progress-bar--gwp">
+    <p class="progress-bar__subheading text-center" style="color:#000;">
+      {{ msg }}
+    </p>
+
+    <div class="progress-bar__body" style="margin-top: 28px;">
+      <div class="progress-bar__progress" style="--height: 26px; --percentage: {{ progress }}%; --bg-progress: linear-gradient(90deg, #A5C792 0%, #6CAD47 100%);">
+        
+        <div class="progress-bar__progress-candycane-bg"></div>
+
+        <!-- Milestone Dots -->
+        <div class="progress-bar__dot progress-bar__dot--amount" style="left: 50.0%;">
+            <span class="money">
+              {% unless tier_1_value == 0 and is_tier_1_free_shipping %}
+                {% if tier_type == "money"%}
+                    {% if shop.locale == 'en' %}${{tier_1_value}}{% else %}{{tier_1_value}}${% endif %}
+                {% else %}
+                    {% if shop.locale == 'en' %}{{tier_1_value}} item{% else %}{{tier_1_value}} article{% endif %}
+                {% endif %}
+              {% else %}
+                {% if shop.locale == 'en' %}LIMITED TIME ONLY{% else %}OFFRE POUR UNE DURÉE LIMITÉE{% endif %}
+              {% endunless %}
+
+            </span>
+        </div>
+
+        <!-- Tooltip (only if progress < 100%) -->
+        {% if progress < 100 %}
+          <div class="progress-bar__tooltip" style="--left: {{ progress }}%;">
+            <span class="money">{% if tier_type == "money"%}{{- cart.original_total_price | money -}}{% else %}{{item_count}}{% endif %}</span>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <!-- Label List -->
+    <div class="progress-bar__label">
+      <ul class="progress-bar__label__list">
+        <li class="progress-bar__label__item">
+          <span></span>
+        </li>
+        <li class="progress-bar__label__item">
+          <span>{{ tier_1_reward_text }}</span>
+        </li>
+        <li class="progress-bar__label__item">
+          <span></span>
+        </li>
+      </ul>      
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+
+  function updateCartProgressBar(subtotal, item_count){
+    let percentage = calculateProgressBar(subtotal, item_count)
+    let language = '{{ shop.locale }}'
+    let _subtotal = subtotal.toFixed(2)
+    _subtotal = language == 'en' ? "$"+_subtotal : _subtotal+"$";
+
+    {% if tier_type == "money" %}
+    $(".progress-bar__tooltip").first().find('.money').first().html(`${_subtotal}`)
+    {% else %}
+      $(".progress-bar__tooltip").first().find('.money').first().html(`${item_count}`)
+    {% endif %}
+    
+    let msg = getRewardMessage(subtotal, item_count)
+    
+    $(".progress-bar__subheading").first().html(msg)
+    $(".progress-bar__tooltip").first().css('--left',`${percentage}%`)
+    $(".progress-bar__progress").first().css('--percentage',`${percentage}%`)
+    
+    console.log(percentage,remaining,msg)
+  }
+
+function getRewardMessage(subtotalDollars, item_count) {
+  let msg;
+  let language = '{{ shop.locale }}'
+  {% if tier_type == "money" %}
+  if (subtotalDollars < parseFloat('{{ tier_1_value }}')) {
+    remaining = parseFloat('{{ tier_1_value }}') - subtotalDollars;
+    remaining = remaining.toFixed(2)
+    remainingInDollars = language == 'en' ? "$"+remaining : remaining+"$";
+    msg = language == 'en' ? `${remainingInDollars} more to get {{ tier_1_reward_text }}.` : `Encore ${remainingInDollars} pour bénéficier de {{ tier_1_reward_text }}.`;
+  } else {
+    remaining = 0;
+    msg = language == 'en' ? "Maximum reward reached" : "Récompense maximale atteinte";
+  }
+{% else %}
+  if (item_count < parseInt('{{ tier_1_value }}')) {
+    remaining = parseInt('{{ tier_1_value }}') - item_count;
+    msg = language == 'en' ? ` Add ${remaining} more item to get {{ tier_1_reward_text }}.`: `Ajouter ${remaining} article pour obtenir {{ tier_1_reward_text }}`;
+  } else {
+    remaining = 0;
+    msg = language == 'en' ? "Maximum reward reached" : "Récompense maximale atteinte";
+  }
+{% endif %}
+
+  return msg;
+} 
+
+function calculateProgressBar(subtotal, item_count) {
+  let progress = 0;
+
+  {% if tier_type == "money" %}
+    if (subtotal <= parseFloat('{{ tier_1_value }}')) {
+      // First segment: $0 - $85 → 0% to 33.33%
+      progress = (subtotal / parseFloat('{{ tier_1_value }}')) * 100;
+    } else {
+      progress = 100;
+    }
+  {% else %}
+    if (item_count <= parseInt('{{ tier_1_value }}')) {
+      // First segment: $0 - $85 → 0% to 33.33%
+      progress = (item_count / parseInt('{{ tier_1_value }}')) * 100;
+    } else {
+      progress = 100;
+    }
+  {% endif %}
+
+  return Math.min(progress, 100); // Clamp to 100%
+}
+  
+document.addEventListener('on:cart:after-merge', async (event) => {
+  // your code here
+  console.log(event)
+  const cartResponse = await fetch('https://www.yellowshoes.com/cart.json');
+  const cartData = await cartResponse.json();
+  console.log('cartData',cartData)
+  let subtotal = cartData.original_total_price / 100;
+  subtotal = Number.parseFloat(subtotal.toString().replace('$',''));
+  const item_count = cartData.item_count;
+  updateCartProgressBar(subtotal, item_count)
+});
+  
+</script>

@@ -1,0 +1,281 @@
+{% unless customer %}
+    <style>
+
+        #login-popup-overlay {
+            position:   fixed;
+            z-index:    9999;
+            top:        0;
+            right:      0;
+            bottom:     0;
+            left:       0;
+            background: rgba(0, 0, 0, 0.5);
+            overflow:auto;
+            padding:50px 0;
+        }
+
+        #login-popup-container {
+            display:   inline-block;
+            position:  absolute;
+            top:      0;
+            left:      50%;
+            transform: translateX(-50%);
+            width: 500px;
+            max-width: 98%;
+            padding:20px;
+            background:#ffffff;
+        max-height: 95%;
+        overflow:auto;
+        }
+        #login-popup-overlay input{
+            width:100%;
+            background: #f7f3ec;
+        }
+
+        #rb_breaker{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            margin-left: 10px;
+            vertical-align: bottom;
+            cursor:pointer;
+            text-align: center;
+            line-height: 1;
+        }
+        #login-popup-wishlist-warning{
+            padding: 10px 20px;
+            font-size: 0.85em;
+            color: #e9b63f;
+            border: 1px solid #e9b63f;
+            background: #F9F7F8;
+        }
+
+        .popup-blank-btn, .popup-blank-btn:hover{
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid #292929;
+            display: inline-block;
+            color: #292929;
+        }
+
+        .login-popup-error, .register-popup-error{
+            border-color:red !important;
+            color:red !important;
+        }
+
+        .login-popup-close{
+            float:right;
+            cursor:pointer;
+        }
+     .login-popup-close  svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    vertical-align: middle;
+    transition: fill .1s;
+}
+      .close-icon:hover {
+    color: #dfb858 !important;
+}
+      @media screen and (max-width:900px){
+         #login-popup-container {
+            top:      50%;
+            left:      50%;
+          transform:translate(-50%,-50%);
+        }
+      }
+    </style>
+    <div id="login-popup-overlay" style="display: none;">
+        <input type="text" id="login_popup_hp" name="first_name" value="">
+        <div id="login-popup-container">
+            <div class="position-relative">
+                <div id="login-popup-form" class="login-popup-tab">
+                    <div style="font-size:1.2rem; margin-bottom:1rem;">
+                        {{ 'customer.login.sign_in' | t }}
+                        <!--             <span class="login-popup-close"><i class="fas fa-times"></i></span> -->
+                        <span class="login-popup-close"><svg class="close-icon" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></span>
+                    </div>
+                    <p id="login-popup-wishlist-warning">
+                        {{ 'customer.login.to_save_this_item_to_your_favourites' | t }}
+                        <i class="fas fa-info-circle"></i>
+                    </p>
+                    <div class="input-row">
+                        <label for="login_popup_email" class="login">{{ 'customer.login.email' | t }}</label>
+                        <input type="hidden" id="login_popup_redirect_url" value="">
+
+                        <input type="email" id="login_popup_email" class="large" size="30" style="background:#f7f3ec;">
+                        <div id="login_popup_email_err_message" class="login-popup-error login-popup-error-msg" style="display:none;">
+                            {{ 'customer.login.email_is_required' | t }}
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <label for="login_popup_password" class="login">{{ 'customer.login.password' | t }}</label>
+                        <div class="text-over-input">
+                            <input type="password" value="" name="customer[password]" id="login_popup_password"
+                                   class="large password" size="16">
+                            <div id="login_popup_login_err_message" class="login-popup-error login-popup-error-msg" style="display:none;">
+                                {{ 'customer.login.incorrect_email_or_password' | t }}
+                            </div>
+                            <div class="mt-3">
+                                <!--                 text-over-input__text -->
+                                {{ 'customer.login.forgot_password' | t }}
+                                <a href="javascript:;" class="login-popup-tab-changer" data-target="#forgot-popup-form" style="text-decoration:underline;">{{ 'customer.login.click_here' | t }}</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="action_bottom">
+                        <div>
+                            <div class="btn w-100" id="login-popup-submit-btn">{{ 'customer.login.sign_in' | t }}</div>
+                        </div>
+                        <div class="mt-3">
+                            <hr style="margin-top:2.5rem;"/>
+                        </div>
+                        <div class="text-center">
+                            <div style="font-size:1.3rem; margin-bottom:1rem;">{{ 'customer.login.dont_have_an_account_yet' | t }}</div>
+                            <a href="javascript:;" class="popup-blank-btn" data-target="#register-popup-form">{{ 'customer.login.create_account' | t }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="forgot-popup-form" class="login-popup-tab" style="display:none;">
+                    <div style="font-size:1.2rem; margin-bottom:1rem;">
+                        {{ 'customer.login.reset_your_password' | t }}
+                        <!--             <span class="login-popup-close"><i class="fas fa-times"></i></span> -->
+                        <span class="login-popup-close"><svg class="close-icon" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></span>
+                    </div>
+                    <div style="font-size:1rem; margin-bottom:1rem;display:none;color: green;" id="forgot-popup-success">
+                        {{ 'customer.login.reset_message_html' | t }}
+                    </div>
+                    <div class="input-row">
+                        <label for="forgot_popup_email" class="login">{{ 'customer.login.email' | t }}</label>
+                        <input type="email" id="forgot_popup_email" class="large" size="30">
+                        <div id="forgot_popup_email_err_message" class="login-popup-error login-popup-error-msg" style="display:none;">
+                            {{ 'customer.login.email_is_required' | t }}
+                        </div>
+                    </div>
+
+                    <div class="action_bottom">
+                        <div>
+                            <div class="btn w-100" id="forgot-popup-submit-btn">{{ 'customer.login.send' | t }}</div>
+                        </div>
+                        <div class="mt-3">
+                            <hr style="margin-top:2.5rem;"/>
+                        </div>
+                        <div class="text-center">
+                            <a href="javascript:;" class="popup-blank-btn" data-target="#login-popup-form">{{ 'customer.login.back' | t }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="register-popup-form" class="login-popup-tab" style="display: none;">
+                    <div style="font-size:1.2rem; margin-bottom:1rem;">
+                        {{ 'customer.login.register' | t }}
+                        <!--             <span class="login-popup-close"><i class="fas fa-times"></i></span> -->
+                        <span class="login-popup-close"><svg class="close-icon" xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></span>
+                    </div>
+                    <div class="d-flex">
+                        <div class="d-inline-block" style="padding-right: 1%; width:49.9%;">
+                            <div class="input-row">
+                                <label for="login_popup_email" class="login">{{ 'customer.login.first_name' | t }}</label>
+                                <input type="text" id="register_popup_first_name" class="large" size="30">
+                                <div id="register_popup_first_name_err_message" class="register-popup-error register-popup-error-msg" style="display:none;">
+                                    {{ 'customer.login.first_name_is_required' | t }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-inline-block" style="padding-left: 1%; width:49.9%;">
+                            <div class="input-row">
+                                <label for="login_popup_email" class="login">{{ 'customer.login.last_name' | t }}</label>
+                                <input type="text" id="register_popup_last_name" class="large" size="30">
+                                <div id="register_popup_last_name_err_message" class="register-popup-error register-popup-error-msg" style="display:none;">
+                                    {{ 'customer.login.last_name_is_required' | t }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <label for="login_popup_email" class="login">{{ 'customer.login.email' | t }}</label>
+                        <input type="email" id="register_popup_email" class="large" size="30">
+                        <div id="register_popup_email_err_message" class="register-popup-error register-popup-error-msg" style="display:none;">
+                            {{ 'customer.login.email_is_required' | t }}
+                        </div>
+                        <div id="register_popup_email_exists_err_message" class="register-popup-error register-popup-error-msg" style="display:none;">
+                            {{ 'customer.login.email_already_exists' | t }}
+                        </div>
+                    </div>
+
+
+                    <div class="d-flex">
+                        <div class="d-inline-block" style="padding-right: 1%; width:49.9%;">
+                            <div class="input-row">
+                                <label for="register_popup_phone" class="login">{{ 'customer.login.phone' | t }} <small>({{ 'back_in_stock.optional' | t }})</small></label>
+                                <input type="text" id="register_popup_phone" class="large" size="30">
+                                <div id="register_popup_phone_error" class="register-popup-error register-popup-error-msg" style="display:none;">
+                                    {{ 'customer.login.invalid_phone' | t }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-inline-block" style="padding-left: 1%; width:49.9%;">
+                            <div class="input-row">
+                                <label for="register_popup_password" class="register">{{ 'customer.login.password' | t }}</label>
+                                <div class="text-over-input">
+                                    <input type="password" value="" name="" id="register_popup_password"
+                                           class="large password" size="16">
+                                    <div id="register_popup_password_err_message" class="register-popup-error register-popup-error-msg" style="display:none;">
+                                        {{ 'customer.login.password_must_be_x_characters' | t }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        {{ 'back_in_stock.keep_me_posted_email_sms' |t }}
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="d-inline-block" style="padding-right: 1%;">
+                            <div class="custom-checkbox-container">
+                                <div class="custom-checkbox" data-target="#register-agree-to-get-email">
+                                    <div class="custom-checkbox-background"></div>
+                                </div>
+                                <div class="custom-checkbox-label">{{ 'back_in_stock.email' |t }}</div>
+                                <input type="checkbox" id="register-agree-to-get-email" value="true">
+                            </div>
+                        </div>
+                        <div class="d-inline-block" style="padding-left: 1%;">
+                            <div class="custom-checkbox-container">
+                                <div class="custom-checkbox" data-target="#register-agree-to-get-sms">
+                                    <div class="custom-checkbox-background"></div>
+                                </div>
+                                <div class="custom-checkbox-label">SMS</div>
+                                <input type="checkbox" id="register-agree-to-get-sms" value="true">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="register-sms-agreement-text">
+                        {{ 'customer.login.sms_agreement' |t }}
+                    </div>
+
+                    <div class="action_bottom">
+                        <div>
+                            <div class="btn w-100" id="register-popup-submit-btn">{{ 'customer.login.register' | t }}</div>
+                        </div>
+                        <div class="mt-3">
+                            <hr style="margin-top:2.5rem;"/>
+                        </div>
+                        <div class="text-center">
+                            <div style="font-size:1.3rem; margin-bottom:1rem;">{{ 'customer.login.have_an_account' | t }}</div>
+                            <a href="javascript:;" class="popup-blank-btn" data-target="#login-popup-form">{{ 'customer.login.sign_in' | t }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endunless %}

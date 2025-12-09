@@ -1,0 +1,120 @@
+<style>
+  .navigation__mobile-header *:not(.mobile-nav-toggle){
+  font-weight:700;
+}
+.mobile-navigation-drawer .navigation__tier-1>.navigation__item>.navigation__link{
+  font-weight:400!important;
+}
+.mobile-navigation-drawer .navigation__tier-2>.navigation__item>.navigation__link{
+  font-weight:400!important;
+}
+.mobile-header-nav-foot{
+  display:none;
+}
+  .header-lang-swtich{
+    display:none;
+  font-size:1.3em;
+}
+  .header-lang-swtich .header-account-link:hover .header-dropdown{
+      display:block;
+    }
+  @media screen and (max-width:900px){
+    .header-lang-swtich{
+      display:inline-block;
+    }
+    .header-my-account{
+      display:none;
+    }
+      .mobile-header-nav-foot{
+    text-align:center;
+        display:block;
+  }
+
+  .mobile-header-nav-foot i {
+    font-size: 1.3em;margin-right: 0.5rem;
+  }
+
+  .mobile-header-nav-foot a {
+    color:#e9b63f !important;
+  }
+
+  .mobile-header-nav-foot div {
+    padding: 12px 20px 12px 20px;
+    border-bottom: 2px solid #eee;
+  }
+  }
+
+</style>
+<div id="mobile-account-menu-link-html" style="display:none;">
+            {% if customer %}
+
+              <li class="navigation__item navigation__item--with-children  mobile-account-trigger">
+                <a href="javascript:;" class="navigation__link" aria-haspopup="true" aria-expanded="false"
+                   aria-controls="NavigationTier9999-1-mob">
+                  <div style="display:flex; align-items:center;">
+                    <div style="display:inline-block;">
+                      <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/my_account_icon_b9f750dc-cb91-42ba-885b-65a088e618a3.png?v=1647457117" alt="icon">
+                    </div>
+                    <!--<div style="display:inline-block;">
+    <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/arrown-down.png?v=1647457117" alt="icon">
+    </div>-->
+                    <div style="display:inline-block; margin-left: 10px;">
+                      My Account
+                    </div>
+                  </div>
+                </a>
+                <a class="navigation__children-toggle" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"
+                       class="feather feather-chevron-down"><title>Toggle menu</title>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </a>
+                <div id="NavigationTier9999-1-mob" class="navigation__tier-2-container navigation__child-tier">
+                  <ul class="NavigationTier9999-1-mob">
+                    <li class="navigation__item">
+                      <a href="{% if shop.locale == 'fr' %}/fr{%endif%}/account" class="navigation__link">{{ 'customer.account.dashboard' | t }}</a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="{% if shop.locale == 'fr' %}/fr{%endif%}/account?section=profile" class="navigation__link">{{ 'customer.account.profile' | t }}</a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="{% if shop.locale == 'fr' %}/fr{%endif%}/account?section=order-history" class="navigation__link">{{ 'customer.account.order_history' | t }}</a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="{% if shop.locale == 'fr' %}/fr{%endif%}/pages/wishlist" class="navigation__link">{{ 'customer.account.favourites' | t }}</a>
+                    </li>
+
+                  </ul>
+                  <div class="mobile-header-nav-foot">
+                    <div>
+                      <a href="{% if shop.locale == 'fr' %}/fr{% endif %}/account/logout">
+                        Sign Out
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {% else %}
+
+              <li class="navigation__item  mobile-account-trigger">
+                <a  style="flex-grow: 1;" href="javascript:;" onclick="showLogin(true);" class="navigation__link">
+                  <div style="display:flex; align-items:center;">
+                    <div style="display:inline-block;">
+                      <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/my_account_icon_b9f750dc-cb91-42ba-885b-65a088e618a3.png?v=1647457117" alt="icon">
+                    </div>
+                    <div style="display:inline-block; margin-left: 10px;">
+                      {{ 'layout.header.mobile_signin' | t }}
+                    </div>
+                  </div>
+                </a>
+                <a class="navigation__children-toggle signup-mobile-link" href="javascript:;" onclick="showLogin(true);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"
+                       class="feather feather-chevron-down"><title>Toggle menu</title>
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </a>
+              </li>
+            {% endif %}
+          </div>

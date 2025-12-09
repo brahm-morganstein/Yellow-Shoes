@@ -1,0 +1,259 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "new-arrivals-family",
+      "settings": {}
+    },
+    "slideshow_p3JgLL": {
+      "type": "slideshow",
+      "blocks": {
+        "image_biKyN6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
+            "image_fr": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
+            "mobile_image": "shopify://shop_images/MEMORY_H20_0392.jpg",
+            "mobile_image_fr": "shopify://shop_images/MEMORY_H20_0392.jpg",
+            "slide_link": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "title": "READY FOR NEW",
+            "title_fr": "Place aux nouveautés",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 84,
+            "title_size_mobile": 46,
+            "use_h1": false,
+            "text": "<p>SHOP THE LATEST STYLES FOR THE WHOLE FAMILY</p>",
+            "text_fr": "<p>DÉCOUVREZ NOS NOUVEAUX STYLES POUR TOUTE LA FAMILLE</p>",
+            "enlarge_text": true,
+            "min_buttons_width_1": 0,
+            "min_buttons_width_1_fr": 0,
+            "min_buttons_mobile_width_1": 0,
+            "min_buttons_mobile_width_1_fr": 0,
+            "button_label_1": "",
+            "button_label_1_fr": "",
+            "button_background_color_1": "",
+            "button_text_color_1": "",
+            "button_background_color_hover_1": "",
+            "button_text_color_hover_1": "",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "",
+            "button_url_1_fr": "",
+            "min_buttons_width_2": 0,
+            "min_buttons_width_2_fr": 0,
+            "min_buttons_mobile_width_2": 0,
+            "min_buttons_mobile_width_2_fr": 0,
+            "button_label_2": "",
+            "button_label_2_fr": "",
+            "button_background_color_2": "",
+            "button_text_color_2": "",
+            "button_background_color_hover_2": "",
+            "button_text_color_hover_2": "",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "",
+            "button_url_2_fr": "",
+            "min_buttons_width_3": 0,
+            "min_buttons_width_3_fr": 0,
+            "min_buttons_mobile_width_3": 0,
+            "min_buttons_mobile_width_3_fr": 0,
+            "button_label_3": "",
+            "button_label_3_fr": "",
+            "button_background_color_3": "",
+            "button_text_color_3": "",
+            "button_background_color_hover_3": "",
+            "button_text_color_hover_3": "",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "",
+            "button_url_3_fr": "",
+            "min_buttons_width_4": 0,
+            "min_buttons_width_4_fr": 0,
+            "min_buttons_mobile_width_4": 0,
+            "min_buttons_mobile_width_4_fr": 0,
+            "button_label_4": "",
+            "button_label_4_fr": "",
+            "button_background_color_4": "",
+            "button_text_color_4": "",
+            "button_background_color_hover_4": "",
+            "button_text_color_hover_4": "",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "",
+            "button_url_4_fr": "",
+            "text_alignment": "center center",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        }
+      },
+      "block_order": [
+        "image_biKyN6"
+      ],
+      "settings": {
+        "height": "fixed",
+        "height_desktop": 360,
+        "height_mobile": 500,
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "box",
+        "transition": "fade",
+        "navigation": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "accessibility_info": ""
+      }
+    },
+    "featured_collection_dajmPe": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Women's New Arrivals",
+        "title_fr": "Nouveautés pour femmes",
+        "collection": "womens-new-arrivals",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": false
+      }
+    },
+    "spacer_CExLHM": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "featured_collection_ixj48f": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Men's New Arrivals",
+        "title_fr": "Nouveautés pour hommes",
+        "collection": "mens-new-arrivals",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": false
+      }
+    },
+    "spacer_y93Gyn": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "featured_collection_qMtPGT": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Kids New Arrivals",
+        "title_fr": "Nouveautés pour enfants",
+        "collection": "kids-new-arrivals",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": false
+      }
+    },
+    "spacer_qemLpN": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "featured_collection_47yBWd": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Accessories New Arrivals",
+        "title_fr": "Nouveaux Accessoires",
+        "collection": "new-arrivals-accessories",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": false
+      }
+    },
+    "rich_text_fhpB6Q": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Hjy9cd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Step into the latest trends with Yellow Shoes’ New Arrivals For the Entire Family collection. Offering a diverse range of shoes, boots, winter boots, wedges, heels, sneakers, flats, athletic shoes, and sandals, we have something for everyone in your family. Embrace the new season with the freshest styles in footwear and accessories.</p><p><a href=\"https://www.yellowshoes.com/pages/new-arrivals-for-the-entire-family\" title=\"New Arrivals For the Entire Family - Yellow Shoes\"><strong>Discover Fresh Styles for Everyone</strong></a></p><p><strong>Women's New Arrivals</strong></p><p><a href=\"https://www.yellowshoes.com/collections/womens-new-arrivals?page=1\" title=\"Women's New Arrivals - Yellow Shoes\">Explore our Women's New Arrivals</a>, featuring the latest in fashionable footwear. From chic heels to comfy flats, upgrade your wardrobe with our newest selections designed for style and comfort.</p><p><strong>Men's New Arrivals</strong></p><p><a href=\"https://www.yellowshoes.com/collections/mens-new-arrivals?page=1\" title=\"Men's New Arrivals - Yellow Shoes\">Check out our Men's New Arrivals</a>, offering the latest in shoes and boots. Perfect for any occasion, our new collection combines modern design with functionality.</p><p><strong>Kids New Arrivals</strong></p><p><a href=\"https://www.yellowshoes.com/collections/kids-new-arrivals?page=1\" title=\"Kids New Arrivals - Yellow Shoes\">Discover our Kids New Arrivals</a>, perfect for the young and active. From playful sneakers to sturdy winter boots, find the newest trends for the little ones.</p><p><strong>Accessories New Arrivals</strong></p><p><a href=\"https://www.yellowshoes.com/collections/new-arrivals-accessories?page=1\" title=\"Accessories New Arrivals - Yellow Shoes\">Browse our Accessories New Arrivals</a> to complete your look. Our latest accessories range from stylish handbags to practical shoe care products.</p><p>Yellow Shoes’ New Arrivals For the Entire Family brings together the latest styles and trends in footwear and accessories. Shop now and step into the new season with confidence and style!</p>",
+            "text_fr": "<p>Plongez dans les dernières tendances avec la collection Nouveautés Pour Toute la Famille de Yellow. Offrant une gamme variée de chaussures, bottes, bottes d'hiver, compensées, talons, baskets, chaussures plates, chaussures de sport et sandales, nous avons quelque chose pour chaque membre de votre famille. Embrassez la nouvelle saison avec les styles les plus frais en matière de chaussures et d'accessoires.</p><p><a href=\"https://www.yellowshoes.com/fr/pages/new-arrivals-for-the-entire-family\" title=\"Nouveautés Pour Toute la Famille - Yellow Shoes\"><strong>Découvrez des Styles Frais pour Tout le Monde</strong></a></p><p><strong>Nouveautés pour Femmes</strong></p><p><a href=\"https://www.yellowshoes.com/fr/collections/womens-new-arrivals?page=1\" title=\"Nouveautés pour Femmes - Yellow Shoes\">Explorez nos Nouveautés pour Femmes</a>, présentant les dernières tendances en matière de chaussures à la mode. Des talons chics aux chaussures plates confortables, renouvelez votre garde-robe avec nos nouvelles sélections conçues pour le style et le confort.</p><p><strong>Nouveautés pour Hommes</strong></p><p><a href=\"https://www.yellowshoes.com/fr/collections/mens-new-arrivals?page=1\" title=\"Nouveautés pour Hommes - Yellow Shoes\">Découvrez nos Nouveautés pour Hommes</a>, offrant les dernières tendances en matière de chaussures et de bottes. Parfaites pour toute occasion, notre nouvelle collection allie design moderne et fonctionnalité.</p><p><strong>Nouveautés pour Enfants</strong></p><p><a href=\"https://www.yellowshoes.com/fr/collections/kids-new-arrivals?page=1\" title=\"Nouveautés pour Enfants - Yellow Shoes\">Visitez nos Nouveautés pour Enfants</a>, idéales pour les jeunes actifs. Des baskets ludiques aux bottes d'hiver robustes, trouvez les dernières tendances pour les petits.</p><p><strong>Nouveautés en Accessoires</strong></p><p><a href=\"https://www.yellowshoes.com/fr/collections/new-arrivals-accessories?page=1\" title=\"Nouveautés en Accessoires - Yellow Shoes\">Parcourez nos Nouveautés en Accessoires</a> pour compléter votre look. Notre gamme d'accessoires la plus récente va des sacs à main élégants aux produits d'entretien de chaussures pratiques.</p><p>La collection Nouveautés Pour Toute la Famille de Yellow rassemble les derniers styles et tendances en matière de chaussures et d'accessoires. Magasinez maintenant et entrez dans la nouvelle saison avec confiance et style !</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "text_Hjy9cd"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "left",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_p3JgLL",
+    "featured_collection_dajmPe",
+    "spacer_CExLHM",
+    "featured_collection_ixj48f",
+    "spacer_y93Gyn",
+    "featured_collection_qMtPGT",
+    "spacer_qemLpN",
+    "featured_collection_47yBWd",
+    "rich_text_fhpB6Q"
+  ]
+}

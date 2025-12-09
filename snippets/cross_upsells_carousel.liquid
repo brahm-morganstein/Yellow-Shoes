@@ -1,0 +1,25 @@
+<div id="product-crosssell-carousel" class="meg-featured-collection megint-slider collection-slider-row">
+  
+        <div class="container fully-spaced-row container--not-mobile">
+           <carousel-slider class="carousel block collection-slider">
+          <h4 class="align-center hometitle   slider--mobile-container-pad  has-paging slider-nav">
+            {{ "crossup_sells.complete_the_look" | t }}
+          </h4>
+
+            <div class="collection-listing related-collection slider slider--edge-peek slider--mobile-container-pad slider--no-scrollbar">
+                <div class="product-grid product-grid--per-row-4 product-grid--per-row-mob-2 slider__grid product-grid--carousel">
+                  
+                </div>
+            </div>
+          </carousel-slider>
+        </div>
+{%- if settings.quickbuy_style != 'off' -%}
+        {%- unless no_quick_buy_markup or no_quick_buy -%}
+            <div class="quickbuy-container use-color-scheme use-color-scheme--{{ settings.quickbuy_color_scheme }}">
+                <a href="#" class="close-detail" aria-label="{{ 'accessibility.close' | t }}" tabindex="-1">{% render 'icon-close', stroke_width: 1 %}</a>
+                <div class="inner"></div>
+            </div>
+        {%- endunless -%}
+    {%- endif -%}
+
+</div>

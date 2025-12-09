@@ -1,0 +1,1124 @@
+<style>
+  .mt-1{
+    margin-top:1rem;
+  }
+  .bg-white{
+    background-color:white;
+  }
+  .bg-yellow{
+    background-color:#dd9a1a;
+  }
+  .text-black{
+    color:black!important;
+  }
+  #partners-cookie-banner-container {
+    background-color: rgb(255, 255, 255, 0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 401;
+    display: none;
+    overflow: scroll;
+  }
+  #partners-cookie-banner-modal {
+    background-color: white;
+    max-width: 42rem;
+    margin: auto;
+    margin-top: 10px;
+    padding: 1rem;
+    border: 1px solid rgb(240, 181, 0);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }  
+  #partners-cookie-banner-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  #customize-cookie-banner-container {
+    background-color: rgb(255, 255, 255, 0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 401;
+    display: none;
+    overflow: scroll;
+  }
+  #customize-cookie-banner-modal {
+    background-color: white;
+    max-width: 42rem;
+    margin: auto;
+    margin-top: 10px;
+    padding: 1rem;
+    border: 1px solid rgb(240, 181, 0);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  #customize-cookie-banner-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+  }  
+  #cookie-banner {
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    width: 100%;
+    padding: 1rem;
+    display:none;
+    background-color:white;
+    z-index:10;
+  }
+
+  #cookie-banner-message {
+    font-size: 0.8rem;
+  }
+
+  #cookie-banner-customize-btn {
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    color: black;
+    width: 100%;
+    font-weight: bold;
+    padding: 1.2em 25px;
+  }
+  #cookie-banner-customize-btn:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  #cookie-banner-accept-btn {
+    background-color: rgb(240, 181, 0);
+    border-color: rgb(240, 181, 0);
+    color: black;
+    width: 100%;
+    font-weight: bold;
+    padding: 1em 25px;
+    font-size:1rem;
+  }
+  #cookie-banner-accept-btn:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+
+  #customize-cookie-banner-modal-header-close-btn {
+    width: 1.25rem;
+    --height: 1.25rem;
+    cursor:pointer;
+  }
+
+  #partners-cookie-banner-modal-header-close-btn{
+     width: 1.25rem;
+    --height: 1.25rem;
+    cursor:pointer;   
+  }
+
+  #customize-cookie-banner-modal-body {
+    margin-top: 1rem;
+  }
+
+  .customize-cookie-banner-modal-agreements-btn {
+    border: solid 1px #eee;
+    padding: 0 20px;
+    color: #526e7a;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .customize-cookie-banner-modal-agreements-btn:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  #customize-cookie-banner-modal-partners-btn {
+    border: solid 1px #eee;
+    padding: 0 20px;
+    color: #526e7a;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #customize-cookie-banner-modal-partners-btn:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .customize-cookie-banner-modal-required {
+    color: #526e7a;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  #customize-cookie-banner-modal-footer{
+    margin-top:1rem;  
+  }
+  
+  #customize-cookie-banner-modal-save-btn{
+    border: solid 1px #eee;
+    padding: 5px 20px;
+    color: #526e7a;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;   
+    background-color: #f1f1f1;
+  }
+
+  #customize-cookie-banner-modal-save-btn:hover{
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  #cookie-banner-partners-btn{
+    cursor:pointer;
+    color:rgb(240, 181, 0);
+    text-decoration:underline;
+  }
+
+  .ml-6p {
+    margin-left: 6px;
+  }
+
+  .ml-16p {
+    margin-left: 16px;
+  }
+  
+  #cookie-banner-buttons {
+    display: flex;
+    margin-top:1rem;
+    font-size:0.9rem;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    #cookie-banner-body {
+      display: flex;
+      align-items: center;
+    }
+
+    #cookie-banner-customize-btn {
+      --min-width: 140px;
+    }
+
+    #cookie-banner-accept-btn {
+      margin-left: 0.5rem;
+      margin-top: 0px;
+      min-width: 140px;
+    }
+    #customize-cookie-banner-modal {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #partners-cookie-banner-modal {
+      margin-left: auto;
+      margin-right: auto;
+    }    
+    #cookie-banner-message{
+      flex: 1;
+      margin-right: 1rem;      
+      font-size: 0.875rem;      
+    }
+    #cookie-banner-buttons {
+      display: flex;
+      margin-top:0;
+    }    
+  }
+</style>
+
+<div id="customize-cookie-banner-container">
+  <div id="customize-cookie-banner-modal">
+    <div id="customize-cookie-banner-modal-header">
+      <div>{{ 'cookie_banner.customize_welcome' | t }}</div>
+      <div id="customize-cookie-banner-modal-header-close-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+    </div>
+    <div id="customize-cookie-banner-modal-body">
+      <p>
+        {{ 'cookie_banner.customize_description_html' | t }}
+      </p>
+        <div style="background-color:#f2f2f2;display:flex;align-items:center;justify-content:space-between;padding:0.5rem;margin:0px;">
+          <div style="font-weight:bold;">{{ 'cookie_banner.all_partners' | t }}</div>
+          <div style="display: flex; align-items: center;">
+            <div id="customize-cookie-banner-modal-agreements-btn-block" onclick="handleDecline()" class="customize-cookie-banner-modal-agreements-btn bg-white">{{ 'cookie_banner.block_btn' | t }}</div>
+            <div id="customize-cookie-banner-modal-agreements-btn-auth" onclick="handleAccept()" class="customize-cookie-banner-modal-agreements-btn bg-white ml-6p">{{ 'cookie_banner.authorize_btn' | t }}</div>
+          </div>          
+        </div>      
+      <div id="partners-cookie-banner-modal-body-list" style="border:1px solid #f2f2f2;max-height:240px;overflow:scroll;padding-left:1rem;">
+      </div>
+    </div>
+    <div id="customize-cookie-banner-modal-footer" class="hidden">
+      <div style="display:flex;align-items:center;justify-content:end;">
+        <div style="color:#757575;font-style:italic;">{{ 'cookie_banner.customize_save_info' | t }}</div>
+        <div class="ml-16p" id="customize-cookie-banner-modal-save-btn">{{ 'cookie_banner.save_btn' | t }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="cookie-banner">
+  <div id="cookie-banner-body">
+    <div id="cookie-banner-message">
+      <div>
+        {{ 'cookie_banner.description_html' | t }}
+      </div>
+    </div>
+    <div id="cookie-banner-buttons">
+      <button id="cookie-banner-customize-btn">{{ 'cookie_banner.customize' | t }}</button>
+      <button onclick="handleAccept()" id="cookie-banner-accept-btn">{{ 'cookie_banner.accept' | t }}</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#cookie-banner-customize-btn").click(function () {
+    setPreference()
+    $("body").css("overflow", "hidden");
+    $("#customize-cookie-banner-container").css("display", "inline-block");
+  });
+
+  $("#customize-cookie-banner-modal-header-close-btn").click(function () {
+    $("#customize-cookie-banner-container").css("display", "none");
+    $("body").css("overflow", "auto");
+  });
+
+  $("#customize-cookie-banner-modal-partners-btn").click(function () {
+    //close modal
+    $("#customize-cookie-banner-container").css("display", "none");
+    $("#partners-cookie-banner-container").css("display", "inline-block");
+ 
+  });
+
+  $("#cookie-banner-partners-btn").click(function () {
+    //close modal
+    $("#customize-cookie-banner-container").css("display", "none");
+    $("#partners-cookie-banner-container").css("display", "inline-block");
+ 
+  });
+
+  $("#partners-cookie-banner-modal-header-close-btn").click(function () {
+    $("#partners-cookie-banner-container").css("display", "none");
+    $("body").css("overflow", "auto");
+  });  
+
+  $("#cookie-banner-accept-btn").click(function(){
+    handleAccept()
+  })
+
+  $("#customize-cookie-banner-modal-save-btn").click(function(){
+    $("#customize-cookie-banner-container").css("display", "none");
+    $("body").css("overflow", "auto");   
+  })
+  
+  //
+const cookie_policies = [
+	{
+		"name":"Performance cookies",
+		"description":"We use these cookies to measure and analyze website traffic (number of visitors, error messages, etc.) in order to improve your overall experience. All the information is collected anonymously.",
+		"sub":[
+			{
+				"name":"Develop and improve services",
+				"description":"Information about your activity on this service, such as your interaction with ads or content, can be very helpful to improve products and services and to build new products and services based on user interactions, the type of audience, etc. This specific purpose does not include the development or improvement of user profiles and identifiers.",
+				"examples":[
+					"A technology platform working with a social media provider notices a growth in mobile app users, and sees based on their profiles that many of them are connecting through mobile connections. It uses a new technology to deliver ads that are formatted for mobile devices and that are low-bandwidth, to improve their performance.",
+					"An advertiser is looking for a way to display ads on a new type of consumer device. It collects information regarding the way users interact with this new kind of device to determine whether it can build a new mechanism for displaying advertising on this type of device."
+				],
+				"agreements":[
+					"consent",
+					"interest"
+				],
+				"required":false
+			},
+			{
+				"name":"Measure content performance",
+				"description":"Information regarding which content is presented to you and how you interact with it can be used to determine whether the (non-advertising) content e.g. reached its intended audience and matched your interests. For instance, whether you read an article, watch a video, listen to a podcast or look at a product description, how long you spent on this service and the web pages you visit etc. This is very helpful to understand the relevance of (non-advertising) content that is shown to you. ",
+				"examples":[
+					"You have read a blog post about hiking on a mobile app of a publisher and followed a link to a recommended and related post. Your interactions will be recorded as showing that the initial hiking post was useful to you and that it was successful in interesting you in the related post. This will be measured to know whether to produce more posts on hiking in the future and where to place them on the home screen of the mobile app.",
+					"You were presented a video on fashion trends, but you and several other users stopped watching after 30 seconds. This information is then used to evaluate the right length of future videos on fashion trends."
+				],
+				"agreements":[
+					"consent",
+					"interest"
+				],
+				"required":false
+			},
+			{
+				"name":"Store and/or access information on a device",
+				"description":"Cookies, device or similar online identifiers (e.g. login-based identifiers, randomly assigned identifiers, network based identifiers) together with other information (e.g. browser type and information, language, screen size, supported technologies etc.) can be stored or read on your device to recognise it each time it connects to an app or to a website, for one or several of the purposes presented here.",
+				"examples":[
+					"Most purposes explained in this notice rely on the storage or accessing of information from your device when you use an app or visit a website. For example, a vendor or publisher might need to store a cookie on your device during your first visit on a website, to be able to recognise your device during your next visits (by accessing this cookie each time).",
+				],
+				"agreements":[
+					"consent",
+				],
+				"required":false
+			},
+			{
+				"name":"Sezzle Cookie",
+				"description":"We collect Personal and Financial Information about you to provide you with and manage Sezzle Services, to detect and prevent fraud, to help Sezzle follow government regulations and otherwise comply with law, to communicate with you, and to help us personalize and improve your experience.",
+				"required":true
+			}									
+		]
+	},
+	{
+		"name":"Personalized experienced cookies",
+		"description":"We use these cookies to offer you content and products that may be of interest to you to improve and ease your shopping experience.",
+		"sub":[
+			{
+				"name":"Create profiles to personalise content",
+				"description":"Information about your activity on this service (for instance, forms you submit, non-advertising content you look at) can be stored and combined with other information about you (such as your previous activity on this service or other websites or apps) or similar users. This is then used to build or improve a profile about you (which might for example include possible interests and personal aspects). Your profile can be used (also later) to present content that appears more relevant based on your possible interests, such as by adapting the order in which content is shown to you, so that it is even easier for you to find content that matches your interests.",
+				"examples":[
+					"You read several articles on how to build a treehouse on a social media platform. This information might be added to a profile to mark your interest in content related to outdoors as well as do-it-yourself guides (with the objective of allowing the personalisation of content, so that for example you are presented with more blog posts and articles on treehouses and wood cabins in the future)",
+					"You have viewed three videos on space exploration across different TV apps. An unrelated news platform with which you have had no contact builds a profile based on that viewing behaviour, marking space exploration as a topic of possible interest for other videos."
+				],
+				"agreements":[
+					"consent",
+				],
+				"required":false
+			},
+			{
+				"name":"Actively scan device characteristics for identification",
+				"description":"With your acceptance, certain characteristics specific to your device might be requested and used to distinguish it from other devices (such as the installed fonts or plugins, the resolution of your screen) in support of the purposes explained in this notice",
+				"agreements":[
+					"consent",
+				],
+                "examples":[],
+				"required":false
+			},	
+			{
+				"name":"Use profiles to select personalised content",
+				"description":"Content presented to you on this service can be based on your content personalisation profiles, which can reflect your activity on this or other services (for instance, the forms you submit, content you look at), possible interests and personal aspects. This can for example be used to adapt the order in which content is shown to you, so that it is even easier for you to find (non-advertising) content that matches your interests.",
+				"examples":[
+					"You read articles on vegetarian food on a social media platform and then use the cooking app of an unrelated company. The profile built about you on the social media platform will be used to present you vegetarian recipes on the welcome screen of the cooking app.",
+					"You have viewed three videos about rowing across different websites. An unrelated video sharing platform will recommend five other videos on rowing that may be of interest to you when you use your TV app, based on a profile built about you when you visited those different websites to watch online videos."
+				],
+				"agreements":[
+					"consent",
+				],
+				"required":false
+			},	
+			{
+				"name":"Use limited data to select content",
+				"description":"Content presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type, or which content you are (or have been) interacting with (for example, to limit the number of times a video or an article is presented to you).",
+				"examples":[
+					"A travel magazine has published an article on its website about the new online courses proposed by a language school, to improve travelling experiences abroad. The school’s blog posts are inserted directly at the bottom of the page, and selected on the basis of your non-precise location (for instance, blog posts explaining the course curriculum for different languages than the language of the country you are situated in).",
+					"A sports news mobile app has started a new section of articles covering the most recent football games. Each article includes videos hosted by a separate streaming platform showcasing the highlights of each match. If you fast-forward a video, this information may be used to select a shorter video to play next."
+				],
+				"agreements":[
+					"interest",
+				],
+				"required":false
+			},
+			{
+				"name":"Kimonix",
+				"description":"Improve product sorting on collection pages",
+				"required":true
+			}											
+		]
+	},
+	{
+		"name":"Personalized ad cookies",
+		"description":"We use these cookies to show you relevant ads and measure their performance. This is a great way to discover products that might interest you.",
+		"sub":[
+			{
+				"name":"Create profiles for personalised advertising",
+				"description":"Information about your activity on this service (such as forms you submit, content you look at) can be stored and combined with other information about you (for example, information from your previous activity on this service and other websites or apps) or similar users. This is then used to build or improve a profile about you (that might include possible interests and personal aspects). Your profile can be used (also later) to present advertising that appears more relevant based on your possible interests by this and other entities.",
+				"examples":[
+					"If you read several articles about the best bike accessories to buy, this information could be used to create a profile about your interest in bike accessories. Such a profile may be used or improved later on, on the same or a different website or app to present you with advertising for a particular bike accessory brand. If you also look at a configurator for a vehicle on a luxury car manufacturer website, this information could be combined with your interest in bikes to refine your profile and make an assumption that you are interested in luxury cycling gear.",
+					"An apparel company wishes to promote its new line of high-end baby clothes. It gets in touch with an agency that has a network of clients with high income customers (such as high-end supermarkets) and asks the agency to create profiles of young parents or couples who can be assumed to be wealthy and to have a new child, so that these can later be used to present advertising within partner apps based on those profiles."
+				],
+				"agreements":[
+					"consent",
+					"interest"
+				],
+				"required":false
+			},
+			{
+				"name":"Measure advertising performance",
+				"description":"Information regarding which advertising is presented to you and how you interact with it can be used to determine how well an advert has worked for you or other users and whether the goals of the advertising were reached. For instance, whether you saw an ad, whether you clicked on it, whether it led you to buy a product or visit a website, etc. This is very helpful to understand the relevance of advertising campaigns.",
+				"examples":[
+					"You have clicked on an advertisement about a “black Friday” discount by an online shop on the website of a publisher and purchased a product. Your click will be linked to this purchase. Your interaction and that of other users will be measured to know how many clicks on the ad led to a purchase.",
+					"You are one of very few to have clicked on an advertisement about an “international appreciation day” discount by an online gift shop within the app of a publisher. The publisher wants to have reports to understand how often a specific ad placement within the app, and notably the “international appreciation day” ad, has been viewed or clicked by you and other users, in order to help the publisher and its partners (such as agencies) optimise ad placements."
+				],
+				"agreements":[
+					"consent",
+					"interest"
+				],
+				"required":false
+			},
+			{
+				"name":"Understand audiences through statistics or combinations of data from different sources",
+				"description":"Reports can be generated based on the combination of data sets (like user profiles, statistics, market research, analytics data) regarding your interactions and those of other users with advertising or (non-advertising) content to identify common characteristics (for instance, to determine which target audiences are more receptive to an ad campaign or to certain contents).",
+				"examples":[
+					"The owner of an online bookstore wants commercial reporting showing the proportion of visitors who consulted and left its site without buying, or consulted and bought the last celebrity autobiography of the month, as well as the average age and the male/female distribution of each category. Data relating to your navigation on its site and to your personal characteristics is then used and combined with other such data to produce these statistics.",
+					"An advertiser wants to better understand the type of audience interacting with its adverts. It calls upon a research institute to compare the characteristics of users who interacted with the ad with typical attributes of users of similar platforms, across different devices. This comparison reveals to the advertiser that its ad audience is mainly accessing the adverts through mobile devices and is likely in the 45-60 age range."
+				],
+				"agreements":[
+					"consent",
+					"interest"
+				],
+				"required":false
+			},
+			{
+				"name":"Use limited data to select advertising",
+				"description":"Advertising presented to you on this service can be based on limited data, such as the website or app you are using, your non-precise location, your device type or which content you are (or have been) interacting with (for example, to limit the number of times an ad is presented to you).",
+				"examples":[
+					"A car manufacturer wants to promote its electric vehicles to environmentally conscious users living in the city after office hours. The advertising is presented on a page with related content (such as an article on climate change actions) after 6:30 p.m. to users whose non-precise location suggests that they are in an urban zone.",
+					"A large producer of watercolour paints wants to carry out an online advertising campaign for its latest watercolour range, diversifying its audience to reach as many amateur and professional artists as possible and avoiding showing the ad next to mismatched content (for instance, articles about how to paint your house). The number of times that the ad has been presented to you is detected and limited, to avoid presenting it too often."
+				],
+				"agreements":[
+					"consent",
+					"interest"
+				],
+				"required":false
+			},
+			{
+				"name":"Use profiles to select personalised advertising",
+				"description":"Advertising presented to you on this service can be based on your advertising profiles, which can reflect your activity on this service or other websites or apps (like the forms you submit, content you look at), possible interests and personal aspects.",
+				"examples":[
+					"An online retailer wants to advertise a limited sale on running shoes. It wants to target advertising to users who previously looked at running shoes on its mobile app. Tracking technologies might be used to recognise that you have previously used the mobile app to consult running shoes, in order to present you with the corresponding advertisement on the app.",
+					"A profile created for personalised advertising in relation to a person having searched for bike accessories on a website can be used to present the relevant advertisement for bike accessories on a mobile app of another organisation."
+				],
+				"agreements":[
+					"consent",
+				],
+				"required":false
+			},
+			{
+				"name":"Use precise geolocation data",
+				"description":"With your acceptance, your precise location (within a radius of less than 500 metres) may be used in support of the purposes explained in this notice.",
+				"examples":[],
+				"agreements":[
+					"consent",
+				],
+				"required":false
+			},	
+			{
+				"name":"MetaAds",
+				"description":"MetaAds uses and stores information on your device to create personalized advertising profiles, select and measure the effectiveness of ads, improve services, and understand audience preferences through statistics and data from various sources.",
+				"required":true
+			}																	
+		]
+	}
+];  
+var _html = '';  
+cookie_policies.forEach(function(cookie_policy,index){
+  //console.log(cookie_policy)
+  let subsection = ''
+  cookie_policy.sub.forEach(function(sub,subindex){
+    //console.log(sub)
+    //
+    let examples = ''
+    if(sub.required === false && sub.examples.length > 0){
+      examples  += `
+      <div style="background-color: #f1f0f1;border: 1px solid #ccc;padding: 6px;font-size: 13px;">
+        <div style="font-weight: bold">
+          Examples illustrating how our partners process data based on this purpose:
+        </div>
+      `
+      sub.examples.forEach(function(example,example_index){
+        if(example_index != 0){
+          examples += '<hr style="margin-top: 3px; margin-bottom: 3px" />'
+        }
+        examples +=`<div>
+          ${example}
+        </div>`
+      })
+
+      examples += `</div>`
+    }
+  
+    //
+    let agreements = ''
+    if(sub.required === false && sub.agreements.length > 0){
+      sub.agreements.forEach(function(agreement){
+        agreements += `
+        <div style="display: flex; align-items: center; justify-content: end">
+          <div style="display: flex; align-items: center; margin-top: 1rem">
+            <div style="font-weight: bold">${agreement == 'consent' ? 'Consent' : 'Legitimate interest'}</div>
+            <div class="customize-cookie-banner-modal-agreements-btn ml-16p">Disagree</div>
+            <div class="customize-cookie-banner-modal-agreements-btn ml-6p">Agree</div>
+          </div>
+        </div>
+        `        
+      })
+    }
+    
+    subsection += `
+      <div class="${subindex != 0 ? 'mt-1' : ''}">
+        <div style="display: flex;align-items: center;justify-content: space-between;">
+          <div style="font-weight: bold;cursor:pointer;${sub.required ? 'flex:5;':''}" class="cookie-policy-sign-sub" data-index="${index}" data-subindex="${subindex}" data-open="close">
+            <span id="cookie-policy-sign-sub-${index}-${subindex}">+</span> ${sub.name}
+          </div>
+          ${sub.required ? `
+            <div style="display: flex;align-items: center;justify-content: center;flex: 2.75;">
+              <div class="customize-cookie-banner-modal-required">
+                REQUIRED
+              </div>
+            </div>          
+          `:`
+            <div style="display: flex; align-items: center">
+              <div class="customize-cookie-banner-modal-agreements-btn">
+                Disagree
+              </div>
+              <div class="customize-cookie-banner-modal-agreements-btn ml-6p">
+                Agree
+              </div>
+            </div>
+          `}
+        </div>
+        <div id="cookie-policy-section-${index}-${subindex}" style="display: none">
+          <p style="margin-top: 1rem">
+            ${sub.description}
+          </p>
+          ${examples}
+          ${agreements}
+          ${sub.required ? `
+            <div style="color: #526e7a; font-weight: bold">
+              This purpose is required by our website to operate normally and
+              cannot be disabled
+            </div>          
+          `
+          :''}
+        </div>
+      </div>
+    `
+  })  
+  _html += `
+    <div class="${index != 0 ? 'mt-1' : ''}">
+      <div style="display: flex;align-items: center;justify-content: space-between;">
+        <div style="font-weight: bold;cursor:pointer;" class="cookie-policy-sign" data-index="${index}" data-open="close"><span id="cookie-policy-sign-${index}">+</span> ${cookie_policy.name}</div>
+        <div style="display: flex; align-items: center">
+          <div class="customize-cookie-banner-modal-agreements-btn" id="cookie-policy-disagree-${index}">
+            Disagree
+          </div>
+          <div class="customize-cookie-banner-modal-agreements-btn ml-6p" id="cookie-policy-agree-${index}">
+            Agree
+          </div>
+        </div>
+      </div>
+      <div id="cookie-policy-section-${index}" style="margin-left: 1rem;margin-top: 1rem;padding-left: 1rem;border-left: 1px solid #ccc;display: none;">
+        <p>${cookie_policy.description}</p>
+        ${subsection}
+      </div>
+    </div>
+  `
+})
+$("#customize-cookie-banner-modal-body-policies").html(_html)
+
+$(".cookie-policy-sign").click(function(){
+  let index = $(this).data('index');
+  let open = $(this).data('open');
+  if(open==="close"){
+    $(this).data('open','open')
+    $(`#cookie-policy-section-${index}`).show();
+    $(`#cookie-policy-sign-${index}`).html('-');
+  }else{
+    $(this).data('open','close')
+    $(`#cookie-policy-section-${index}`).hide();
+    $(`#cookie-policy-sign-${index}`).html('+');
+  }
+  
+})
+
+$(".cookie-policy-sign-sub").click(function(){
+  let index = $(this).data('index');
+  let subindex = $(this).data('subindex');
+  let open = $(this).data('open');
+  if(open==="close"){
+    $(this).data('open','open')
+    $(`#cookie-policy-section-${index}-${subindex}`).show();
+    $(`#cookie-policy-sign-sub-${index}-${subindex}`).html('-');
+  }else{
+    $(this).data('open','close')
+    $(`#cookie-policy-section-${index}-${subindex}`).hide();
+    $(`#cookie-policy-sign-sub-${index}-${subindex}`).html('+');
+  }
+  
+})  
+
+const cookie_partners = [
+    {
+    "name":"DV360",
+    "required":false,
+    "policy_url":"https://transparency.google/our-policies/product-terms/display-and-video-360/",
+    "policies":[
+      {
+        "name":"Data processing based on consent",
+        "agreeable":true,
+        "sub":[
+          "Actively scan device characteristics for identification",
+          "Create profiles for personalised advertising",
+          "Create profiles to personalise content",
+          "Store and/or access information on a device",
+          "Use precise geolocation data",
+          "Use profiles to select personalised advertising",
+          "Use profiles to select personalised content"
+        ]
+      },
+      {
+        "name":"Data processing based on legitimate interest",
+        "agreeable":true,
+        "sub":[
+          "Develop and improve services",
+          "Measure advertising performance",
+          "Measure content performance",
+          "Understand audiences through statistics or combinations of data from different sources",
+          "Use limited data to select advertising",
+          "Use limited data to select content"
+        ]
+      },
+      {
+        "name":"Categories of data",
+        "description":"This partner processes the following categories of data:",
+        "agreeable":false,
+        "sub":[
+          "IP addresses",
+          "Device characteristics",
+          "Device identifiers",
+          "Probabilistic identifiers",
+          "Browsing and interaction data",
+          "Non-precise location data",
+          "Precise location data",
+          "Users’ profiles",
+          "Privacy choices"
+        ]
+      }, 
+      {
+        "name":"Device storage",
+        "description":"StackAdapt Inc. stores cookies with a maximum duration of about 1 year (31,536,000 seconds). This partner also uses other methods like \"local storage\" to store and access information on your device.",
+        "agreeable":false,
+        "sub":[
+          "sa-user-id",
+          "sa-user-id-v2",
+          "sa-camp-*",
+          "sa_aid_pv",
+          "sa_*_sid",
+          "sa_*_adurl",
+          "sa-user-id",
+          "sa-user-id-v2",
+          "sa-user-id",
+          "sa-user-id-v2",
+          "sa-camp-*"
+        ]
+      },       
+    ]
+  },  
+  {
+    "name":"Google Advertising Products",
+    "required":false,
+    "policy_url":"https://business.safety.google/privacy/",
+    "policies":[
+      {
+        "name":"Data processing based on consent",
+        "agreeable":true,
+        "sub":[
+          "Create profiles for personalised advertising",
+          "Store and/or access information on a device",
+          "Use profiles to select personalised advertising"
+        ]
+      },
+      {
+        "name":"Data processing based on legitimate interest",
+        "agreeable":true,
+        "sub":[
+          "Develop and improve services",
+          "Measure advertising performance",
+          "Understand audiences through statistics or combinations of data from different sources",
+          "Use limited data to select advertising"
+        ]
+      },
+      {
+        "name":"Categories of data",
+        "description":"This partner processes the following categories of data:",
+        "agreeable":false,
+        "sub":[
+          "IP addresses",
+          "Device characteristics",
+          "Device identifiers",
+          "Authentication-derived identifiers",
+          "Browsing and interaction data",
+          "User-provided data",
+          "Non-precise location data",
+          "Users’ profiles",
+          "Privacy choices"
+        ]
+      },
+      {
+        "name":"Device storage",
+        "description":"Google Advertising Products stores cookies with a maximum duration of about 1 year and 1 month (34,190,000 seconds). This partner also uses other methods like \"local storage\" to store and access information on your device.",
+        "agreeable":false,
+        "sub":[
+          "NID",
+          "DSID",
+          "id",
+          "__gads",
+          "ANID",
+          "AID",
+          "IDE",
+          "TAID",
+          "_gcl_dc",
+          "_gcl_au",
+          "FLC",
+          "RUL",
+          "_gac_<wpid>",
+          "_gcl_aw",
+          "Conversion",
+          "FCNEC",
+          "test_cookie",
+          "_gcl_gf",
+          "_gcl_ha",
+          "FPGCLDC",
+          "__gsas",
+          "FPAU",
+          "FPGCLAW",
+          "FPGCLGB",
+          "_gcl_gb",
+          "_gac_gb_<wpid>"
+        ]
+      }
+    ]
+  },
+  {
+    "name":"Google Analytics Products",
+    "required":false,
+    "policy_url":"https://policies.google.com/privacy",
+    "policies":[
+      {
+        "name":"Data processing based on consent",
+        "agreeable":true,
+        "sub":[
+          "Measure content performance",
+          "Measure content performance"
+        ]
+      }
+    ]
+  },
+  {
+    "name":"Kimonix",
+    "required":true,
+    "policy_url":"https://www.kimonix.com/privacy-policy",
+    "policies":[
+      {
+        "name":"Required data processing",
+        "agreeable":false,
+        "sub":[
+          "Kimonix"
+        ]
+      }
+    ]
+  },
+  {
+    "name":"Klaviyo",
+    "required":false,
+    "policy_url":"https://www.klaviyo.com/legal",
+    "policies":[
+      {
+        "name":"Data processing based on consent",
+        "agreeable":true,
+        "sub":[
+          "Create profiles to personalise content"
+        ]
+      },
+      {
+        "name":"Data processing based on legitimate interest",
+        "agreeable":true,
+        "sub":[
+          "Create profiles for personalised advertising",
+          "Device storage"
+        ]
+      }      
+    ]
+  },
+  {
+    "name":"MetaAds",
+    "required":true,
+    "policy_url":"https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0",
+    "policies":[
+      {
+        "name":"Required data processing",
+        "agreeable":false,
+        "sub":[
+          "MetaAds"
+        ]
+      }
+    ]
+  },
+  {
+    "name":"Pinterest",
+    "required":false,
+    "policy_url":"https://policy.pinterest.com/fr/privacy-policy",
+    "policies":[
+      {
+        "name":"Data processing based on consent",
+        "agreeable":true,
+        "sub":[
+          "Create profiles for personalised advertising",
+          "Create profiles to personalise content",
+          "Develop and improve services",
+          "Measure advertising performance",
+          "Measure content performance",
+          "Store and/or access information on a device",
+          "Understand audiences through statistics or combinations of data from different sources",
+          "Use limited data to select advertising",
+          "Use profiles to select personalised advertising",
+          "Use profiles to select personalised content"
+        ]
+      }
+    ]
+  },  
+  {
+    "name":"Sezzle",
+    "required":true,
+    "policy_url":"https://legal.sezzle.com/privacy",
+    "policies":[
+      {
+        "name":"Required data processing",
+        "agreeable":false,
+        "sub":[
+          "Sezzle Cookie"
+        ]
+      },
+      {
+        "name":"Device storage",
+        "agreeable":false,
+        "description":"Sezzle stores cookies with a maximum duration of about 1 year and 1 day (31,622,400 seconds).",
+        "sub":[]
+      }      
+    ]
+  }
+]
+  let arr_letters = [];
+if(cookie_partners !== undefined && cookie_partners){
+  arr_letters = cookie_partners.map(function(partner){
+    return partner.name.charAt(0)
+  })
+}
+  
+let phtml = ''
+let set_letters = new Set(arr_letters)
+set_letters.forEach(function(letter,letter_index){
+  phtml += `
+    <div style="${letter_index != 0 ? 'margin-top:6px;':''}">
+      <b>${letter.toUpperCase()}</b>
+  `
+  cookie_partners.forEach(function(partner,partner_index){
+    if(partner.name.charAt(0).toUpperCase() == letter.toUpperCase()){
+      let polhtml = ''
+      partner.policies.forEach(function(policy,policy_index){
+        let subhtml = '<ul style="margin:0px;margin-left:3rem;">'
+        policy.sub.forEach(function(sub,sub_index){
+          subhtml += `
+            <li>${sub}</li>
+          `
+        })
+        subhtml += '</ul>'
+        polhtml += `
+        <div>
+          <div style="margin-top:6px;margin-left:12px;margin-right:6px;display:flex;align-items:center;justify-content:space-between;">
+            <div class="policy-title" data-index="${policy_index}" data-open="close" data-partner="${partner_index}"><span id="policy-title-${partner_index}-${policy_index}">+</span> ${policy.name}</div>
+            <div style="display: flex; align-items: center;">
+              ${policy.agreeable == true ? `
+                <div class="customize-cookie-banner-modal-agreements-btn bg-white">{{ 'cookie_banner.block_btn' | t }}</div>
+                <div class="customize-cookie-banner-modal-agreements-btn bg-white ml-6p">{{ 'cookie_banner.authorize_btn' | t }}</div>
+              `:''}
+            </div>            
+          </div>
+          <div id="policy-sub-section-${partner_index}-${policy_index}" style="display:none;">
+            ${subhtml}
+          </div>
+        </div>  
+        `
+      })
+      phtml += `
+        <div style="display:flex;align-items:center;justify-content:space-between;margin:6px;">
+          <div class="partner-title" data-index="${partner_index}" data-open="close">${partner.name}</div>
+          <div style="display: flex; align-items: center;">
+          </div>
+        </div>
+        <div id="partner-section-${partner_index}" style="display:none;">
+          ${polhtml}
+        </div>
+      `
+    }
+  })
+  phtml += '</div>'
+})
+
+$("#partners-cookie-banner-modal-body-list").html(phtml)
+
+$(".policy-title").click(function(){
+  let index = $(this).data('index');
+  let open = $(this).data('open');
+  let partner_index = $(this).data('partner');
+  if(open==="close"){
+    $(this).data('open','open')
+    $(`#policy-sub-section-${partner_index}-${index}`).show();
+    $(`#policy-title-${partner_index}-${index}`).html('-');
+  }else{
+    $(this).data('open','close')
+    $(`#policy-sub-section-${partner_index}-${index}`).hide();
+    $(`#policy-title-${partner_index}-${index}`).html('+');
+  }
+  
+}) 
+
+$(".partner-title").click(function(){
+  let index = $(this).data('index');
+  let open = $(this).data('open');
+  if(open==="close"){
+    $(this).data('open','open')
+    $(`#partner-section-${index}`).show();
+    $(`#partner-title-${index}`).html('-');
+  }else{
+    $(this).data('open','close')
+    $(`#partner-section-${index}`).hide();
+    $(`#partner-title-${index}`).html('+');
+  }
+  
+}) 
+
+document.addEventListener('trackingConsentAccepted',function(event) {
+  console.log('trackingConsentAccepted event fired');
+  console.log(event)
+});
+
+document.addEventListener("visitorConsentCollected", function (event){
+  console.log('visitorConsentCollected')
+  console.log(event)
+});  
+
+function setPreference(){
+  //customize-cookie-banner-modal-agreements-btn-block
+  //customize-cookie-banner-modal-agreements-btn-auth
+  //customize-cookie-banner-modal-agreements-btn bg-white
+  $('#customize-cookie-banner-modal-agreements-btn-block').addClass('bg-white');
+  $('#customize-cookie-banner-modal-agreements-btn-auth').addClass('bg-white');
+  $('#customize-cookie-banner-modal-agreements-btn-block').removeClass('bg-yellow');
+  $('#customize-cookie-banner-modal-agreements-btn-auth').removeClass('bg-yellow');
+  $('#customize-cookie-banner-modal-agreements-btn-block').removeClass('text-black');
+  $('#customize-cookie-banner-modal-agreements-btn-auth').removeClass('text-black;');  
+  const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+  if(userCanBeTracked){
+    $('#customize-cookie-banner-modal-agreements-btn-auth').removeClass('bg-white');
+    $('#customize-cookie-banner-modal-agreements-btn-auth').addClass('bg-yellow');
+    $('#customize-cookie-banner-modal-agreements-btn-auth').addClass('text-black');
+  }else{
+    $('#customize-cookie-banner-modal-agreements-btn-block').removeClass('bg-white');
+    $('#customize-cookie-banner-modal-agreements-btn-block').addClass('bg-yellow');
+    $('#customize-cookie-banner-modal-agreements-btn-block').addClass('text-black');
+  }
+}
+  
+function handleAccept(e) {
+  window.Shopify.customerPrivacy.setTrackingConsent(
+    {
+      "marketing":true,
+      "analytics": true,
+      "preferences": true,
+    }, 
+    handlePreferenceChange
+  );
+}  
+
+function handleDecline() {
+  window.Shopify.customerPrivacy.setTrackingConsent(
+    {
+      "marketing":false,
+      "analytics": false,
+      "preferences": false,
+      "sale_of_data":false
+    }, 
+    handlePreferenceChange
+  );
+}
+
+function handlePreferenceChange(){
+  new Swal({
+    title: '',
+    text:  '',
+    icon:  'success',
+  });
+  hideBanner();
+}
+  
+function hideBanner() {
+  $("#cookie-banner").hide();
+    $("#customize-cookie-banner-container").css("display", "none");
+    $("body").css("overflow", "auto");  
+}
+
+function showBanner() {
+  $("#cookie-banner").show();
+}  
+
+function initCookieBanner() {
+  //alert('initCookieBanner');
+  const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+  const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+
+  if(userTrackingConsent === 'no_interaction') {
+    showBanner();
+    return
+  }
+
+  
+  //trigger custom gtag consent event
+  if(window.Shopify.customerPrivacy.marketingAllowed()){
+    dataLayer.push({
+      event: "didomi-consent",
+      didomiVendorsConsent: "iab:238,didomi:google,c:cloudflare,c:googlea" +
+                        "na-4TXnJigR,c:metaads-6qFLjR3N,c:klaviyo-MQw" +
+                        "7tgJM,c:sezzle-LaNLy4PJ,c:kimonix-3pirF9wQ,c" +
+                        ":pinterest,"
+    })
+
+    //Show Zendesk Dialog
+    setTimeout(function(){
+      $("#launcher").css('display','block');  
+    },2000)
+    
+  }else{
+    dataLayer.push({
+      event: "didomi-consent",
+      didomiVendorsConsent: "didomi:google,c:googleana-4TXnJigR,c:metaads-6qFLjR3N"
+    })    
+  }
+}
+
+window.Shopify.loadFeatures([
+  {
+    name: 'consent-tracking-api',
+    version: '0.1',
+  }
+],
+function(error) {
+  if (error) {
+    throw error;
+  }
+
+  initCookieBanner();
+}); 
+$(".section-footer__lower-menu__list").find('a').click(function(){
+  if($(this).html().toLowerCase().includes('cookie')){
+    setPreference()
+    $("body").css("overflow", "hidden");
+    $("#customize-cookie-banner-container").css("display", "inline-block");
+  }
+})  
+</script>

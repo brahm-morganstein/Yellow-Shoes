@@ -1,0 +1,78 @@
+<div id="featured-product-block-js" style="display: none;">
+<div class="slider__item">
+  <product-block data-product-id="--==product-id==--" data-sku="--==sku==--" class="product-block" data-tags="--==tags-with-spaces==--">
+
+
+
+        <div class="block-inner"{% if animate %}{%- render 'animation-attrs', attrs: 'data-cc-animate', always: true -%}{% endif %}>
+            <div class="block-inner-inner">
+                <div class="position-relative">
+                    <div style="position: absolute;top: 10px;right: 10px;bottom: 10px;left: 10px;z-index:2;height:12px;">
+                        <div class="{% comment %}product-block-labels{% endcomment %} product-label-container">
+
+                            {% comment %}
+                            {% render 'product-label', product: product, cheapest_variant: cheapest_variant %}
+                            {% endcomment %}
+                        </div>
+  <div class="product-label-container">
+    --==sale-tag==--
+  </div>
+                    </div>
+                </div>
+                <div data-tags="--==tags-array==--" class="product-tags-hidden" style="display:none;"></div>
+                <div class="image-cont image-cont--with-secondary-image image-cont--same-aspect-ratio">
+  <div style="position: absolute;top: 0;right: 0;bottom: 0;left: 0;background: rgba(0,0,0,0.05);z-index:2;" class="mg-custom-link" data-href="-==product-url==--?variant=--==variant-id==--"></div>
+                        <div class="image-label-wrap">
+                            <div>
+                                --==images==--
+                            </div>
+                        </div>
+                    --==gallery-pagination==--
+                    {%- if settings.quickbuy_style == 'button' -%}
+                        {%- unless no_quick_buy -%}
+                            <a class="btn btn--secondary quickbuy-toggle" href="-==product-url==--?variant=--==variant-id==--">{{ 'products.product.quick_buy' | t }}</a>
+                        {%- endunless -%}
+                    {%- endif -%}
+                       {% render 'wishlist-item' %}
+                </div>
+
+                <div class="product-block__detail align-ltr-{{ settings.prod_thumb_text_align }}">
+                    <div class="inner">
+                        <div class="innerer">
+                            <a class="product-link" href="-==product-url==--?variant=--==variant-id==--">
+                                {%- if show_vendor -%}
+                                    <div class="vendor">--==product-vendor==--</div>
+                                {%- endif -%}
+
+                                <div class="product-block__title">
+                                            --==product-title==---
+                                </div>
+                               <div class="product-block__type">--==product-type==--</div>
+
+
+
+                                --==prices==--
+                            </a>
+
+                            <div class="d-inline-block product-block-options product-block-options--swatch" data-option-name="color">
+                                <div class="product-block-options__inner">
+                                    --==swatches==--
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      {% comment %}
+       <div class="quickbuy-container use-color-scheme use-color-scheme--{{ settings.quickbuy_color_scheme }}">
+                <a href="#" class="close-detail" aria-label="{{ 'accessibility.close' | t }}" tabindex="-1">{% render 'icon-close', stroke_width: 1 %}</a>
+                <div class="inner"></div>
+            </div>
+        {% endcomment %}
+
+    </product-block>
+                                   </div>
+</div>

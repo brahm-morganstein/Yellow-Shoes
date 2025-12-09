@@ -1,0 +1,976 @@
+<div class="section-id-{{section.id}}">
+<style>
+
+    #instagram {
+        min-height:  150px;
+        width:       100%;
+        overflow:    hidden;
+        white-space: nowrap;
+    }
+
+    .plus-icon-inst{
+        display: inline-block;
+        height: 45px;
+        width: 45px;
+        border: 2px solid #fff;
+        font-size: 2rem;
+        border-radius: 100%;
+        line-height: 1.3;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    .instagram-container-div {
+        height: 550px;
+        max-height: 90%;
+    }
+
+    #instagram-slider-listing-hp {
+        position: relative;
+    }
+
+    .instagram-nav {
+        position: absolute;
+    }
+
+    .instagram-nav[name="prev"] {
+        left:      -2%;
+        top:       50%;
+        transform: translateY(-50%);
+        z-index:   10;
+    }
+
+    .instagram-nav[name="next"] {
+        right:     -2%;
+        top:       50%;
+        transform: translateY(-50%);
+        z-index:   10;
+    }
+
+    .instagram-item {
+        position:    relative;
+        width:       23%;
+        height:      calc(23vw);
+        margin:      1%;
+        display:     inline-block;
+        user-select: none;
+    }
+
+    #instagram-slider-listing-hp .prev {
+        position:   absolute;
+        left:       0;
+        top:        50%;
+        transform:  translateY(-50%);
+        z-index:    100;
+        background: #fff;
+    }
+
+    #instagram-slider-listing-hp .next {
+        position:   absolute;
+        right:      0;
+        top:        50%;
+        transform:  translateY(-50%);
+        z-index:    100;
+        background: #fff;
+    }
+
+    .instagram-prev-post, .instagram-next-post {
+        color:         #fff;
+        position:      absolute;
+        top:           225px;
+        z-index:       3;
+        display:       inline-block;
+        text-align:    center;
+        line-height:   1;
+        /* width: 55px; */
+        /* height: 55px; */
+        /* padding: 10px; */
+        border-radius: 100%;
+    }
+
+    .instagram-prev-post {
+        left: 15px;
+    }
+
+    .instagram-next-post {
+        right: 20px;
+    }
+
+    .instagram-prev-post svg, .instagram-next-post svg {
+        width:  50px;
+        height: 50px;
+    }
+
+    .instagram-prev-post:hover, .instagram-next-post:hover {
+        background: rgba(0, 0, 0, 0.24);
+    }
+
+
+    .insta-prod-img-container {
+        position: relative;
+    }
+
+    .insta-prods-container {
+        display:   flex;
+        flex-wrap: wrap;
+    }
+
+    .insta-prods-qty {
+        padding: 15px 0 15px 1%;
+    }
+
+    .fancybox-slide--html .fancybox-close-small {
+        right: 17px;
+    }
+
+    .insta-single-container {
+        display:       inline-block;
+        width:         48%;
+        margin:        1%;
+        border:        1px solid rgba(0, 0, 0, 0.2);
+        padding:       5px;
+        border-radius: 5px;
+    }
+
+
+    .fancybox-content {
+        padding:  0 !important;
+        overflow: hidden;
+    }
+
+    #instagramFancyboxModalRight {
+        overflow-y: auto;
+        height:     550px;
+    }
+
+    .instagram_image_wrapper {
+        display:  inline-block;
+        position: relative;
+        height:   100%;
+        width:    100%;
+    }
+
+    .instagram_title {
+        text-align: center;
+        margin-top: 4.25rem;
+    }
+
+    .instagram_title h2 {
+        color:          #222222;
+        font-size:      var(--font-size-section-heading);
+        letter-spacing: 0.01em;
+    }
+
+    #load-more-btn, #load-more-btn:focus, #load-more-btn:active {
+        background:      none;
+        border-collapse: collapse;
+        box-shadow:      none;
+        border:          1px solid #000;
+        padding:         10px 15px;
+        cursor:          pointer;
+    }
+
+    #load-more-btn:hover {
+        background: #000;
+        color:      #fff;
+    }
+
+    .insta-prod-img {
+        /*     float:left;  */
+        width:      100%;
+        background: #fff;
+    }
+
+    .insta-prod-img-image {
+        width: 100%;
+    }
+
+    .instagramHoverableContainer {
+        /*     float:left; */
+    }
+
+    .grid {
+        display:  grid;
+        grid-gap: 0.5rem;
+    }
+
+    .grid > div {
+        background: #f3f3f3;
+        padding:    1rem;
+        position:   relative;
+        border:     1px solid rgba(128, 128, 128, 0.16);
+        /*     box-shadow: 0 1px 4px #999; */
+        overflow:   hidden;
+    }
+
+    .grid > div::before {
+        content:        "";
+        display:        block;
+        padding-bottom: 100%;
+    }
+
+    .grid > div img, .grid > div video {
+        position:  absolute;
+        max-width: 100%;
+        top:       50%;
+        left:      50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .instagram_container {
+        max-width: 99%;
+        margin:    auto;
+    }
+
+
+    .instagram_image, .instagram_video {
+        opacity:             1;
+        display:             block;
+        width:               100%;
+        height:              auto;
+        transition:          .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .instagram_image_details {
+        max-width: 300px;
+    }
+
+    .instagram_middle {
+        transition:    .5s ease;
+        opacity:       0;
+        position:      absolute;
+        top:           0;
+        left:          0;
+        -ms-transform: translate(-50%, -50%);
+        text-align:    center;
+        width:         100%;
+        bottom:        0;
+        background:    rgba(0, 0, 0, 0.5);
+    }
+
+    .instagram_text {
+        position:  absolute;
+        width:     100%;
+        top:       50%;
+        transform: translateY(-50%);
+        color:     #ffffff;
+        font-size: 14px;
+        padding:   16px 16px;
+        cursor:    pointer;
+    }
+
+    }
+
+    .instagram_image_wrapper:hover .instagram_image {
+        opacity: 0.3;
+    }
+
+    .instagram_image_wrapper:hover .instagram_middle {
+        opacity: 1;
+    }
+
+    .instagram_text .fa-instagram {
+        font-size:   25px;
+        line-height: 40px;
+    }
+
+    .instagram_text .fa-plus-circle {
+        font-size:   25px;
+        line-height: 40px;
+        margin-top:  20px;
+    }
+
+    .instagramHoverable {
+        color: #666666;
+    }
+
+    #instagram .owl-item {
+        margin: 0 3px;
+    }
+
+    #instagram-slider-listing-hp.collection-listing .product-block {
+        padding-left: 0;
+    }
+
+
+    #instagramFancyboxModalLeft, #instagramFancyboxModalRight {
+        position: relative;
+    }
+
+    @media screen and (min-width: 1904px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 1674px) and (max-width: 1903px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 1565px) and (max-width: 1673px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 1480px) and (max-width: 1564px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 1270px) and (max-width: 1479px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 1149px) and (max-width: 1269px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 1028px) and (max-width: 1148px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 800px) and (max-width: 1028px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 906px) and (max-width: 1028px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        }
+    }
+
+    @media screen and (min-width: 801px) and (max-width: 905px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+    }
+
+
+    @media screen and (max-width: 800px) {
+    
+       .instagram-container-div{
+         
+    height:100%;
+         overflow:auto !important;
+  }
+        .instagram-item {
+            position:    relative;
+            width:       88%;
+            margin:      1% 3%;
+            height:      calc(100vw);
+            display:     inline-block;
+            user-select: none;
+        }
+
+        .instagram-item:first-child {
+            margin-left: 7.5%;
+        }
+
+        .instagram-nav[name="prev"] {
+            left: 0%;
+        }
+
+        .fancybox-content {
+            padding:    0 !important;
+            max-height: inherit;
+        }
+
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
+        }
+
+        .fancybox-content {
+            padding: 5px;
+        }
+
+        #instagramFancyboxModalLeft img {
+            position: relative;
+            width:    100%;
+        }
+
+        .insta-prod-img {
+            float: none;
+            width: 100%;
+        }
+
+        .insta-prod-img-container {
+            width:        100%;
+            display:      inline-block;
+            margin-right: 9%;
+            float:        left;
+        }
+
+        .insta-prod-img-image {
+            width: 100%;
+        }
+
+        .instagramHoverable {
+            width:      100%;
+            text-align: center;
+        }
+
+        .insta-prods-container {
+            margin-top:  0;
+            padding-top: 20px;
+        }
+
+        .insta-prods-qty {
+            padding: 15px 10px 0 10px;
+        }
+
+        .instagramHoverableContainer {
+            float:   left;
+            width:   49%;
+            display: inline-block;
+        }
+
+        .fancybox-close-small {
+            background-color: #f1b600;
+        }
+    }
+  @media screen and (max-width: 900px) {
+    .insta-prods-container {
+        padding: 30px 10px;
+    }
+    .section-id-{{section.id}} .collection-slider-row {
+      width: calc(100% - 10px);
+    }
+}
+
+    @media screen and (min-width: 800px) {
+
+        #instagramFancyboxModalLeft {
+            width:      50%;
+            float:      left;
+            max-height: 550px;
+            /*       padding-bottom: 15px; */
+        }
+
+        #instagramFancyboxModalRight {
+            width:        50%;
+            float:        right;
+            padding-left: 10px;
+        }
+
+        #instagramFancyboxModalLeft img {
+            width: 98%;
+        }
+    }
+</style>
+<div id="instagram_details" style="position:relative;">
+
+</div>
+
+<div class="collection-slider-row {%comment%}use-alt-bg{%endcomment%}" data-section-type="featured-collection" data-components="accordion,modal,price-range">
+    <div class="container container--not-mobile container--no-max">
+        <div class="collection-slider" id="instagram-slider-hp">
+
+            <div style="padding:0 10px;">
+                <h2 id="instagram-title" class="align-center has-paging" data-cc-animate data-cc-animate-delay="0.3s" style="display:block; text-align:center;">
+                  {% if shop.locale == 'en' %}
+                    {{ section.settings.title | escape }}
+                  {% else %}
+                    {{ section.settings.title_fr | escape }}
+                  {% endif %}
+                </h2>
+                <div class="h6 align-center" style="text-transform: none; margin-bottom: 11px;">
+                  {% if shop.locale == 'en' %}
+                    {{ section.settings.sub_title | escape }}
+                  {% else %}
+                    {{ section.settings.sub_title_fr | escape }}
+                  {% endif %}
+                </div>
+            </div>
+
+            <div class="collection-listing" id="instagram-slider-listing-hp">
+                <button name="prev" class="instagram-nav slider-nav__btn has-ltr-icon">
+                    <span class="visually-hidden">Previous</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon feather feather-chevron-left" aria-hidden="true" focusable="false" role="presentation">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </button>
+                <button name="next" class="instagram-nav slider-nav__btn has-ltr-icon">
+                    <span class="visually-hidden">Next</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon feather feather-chevron-right" aria-hidden="true" focusable="false" role="presentation">
+                        <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                </button>
+                <div id="instagram" class="product-list product-list--per-row-4 product-list--image-shape-square " style="margin-bottom:50px; position:relative;">
+                    <div id="instagram-preloader" class="local-preloader">
+                        <svg class="spinner rotate" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="none" height="256" width="256"/>
+                            <line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128" x2="128" y1="32" y2="64"/>
+                            <line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="224" x2="192" y1="128" y2="128"/>
+                            <line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="195.9" x2="173.3" y1="195.9" y2="173.3"/>
+                            <line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128" x2="128" y1="224" y2="192"/>
+                            <line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="60.1" x2="82.7" y1="195.9" y2="173.3"/>
+                            <line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="32" x2="64" y1="128" y2="128"/>
+                            <line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="60.1" x2="82.7" y1="60.1" y2="82.7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="quickbuy-container">
+        <a href="#" class="close-detail" aria-label="{{ 'products.quick_buy.close' | t }}" tabindex="-1">{% render 'svg-x' %}</a>
+        <div class="inner"></div>
+    </div>
+</div>
+<style>
+    #instagram .owl-stage {
+        display: flex;
+    }
+
+    #instagram .owl-nav {
+        display: none;
+    }
+
+    /*
+    #instagram .owl-item{
+    display:inline-block;
+    height:100%;
+    } */
+</style>
+<script>
+
+  $(document).ready(function() {
+    let $lazyLoaders = $('.lazyLoader');
+
+    
+    $lazyLoaders.length ? lazyLoading() : false;
+    $(window).on('scroll', function(e) {
+      $lazyLoaders = $('.lazyLoader');
+      if ($lazyLoaders.length) {
+        lazyLoading();
+      }
+    });
+
+    let $body = $('body');
+    $body.on('click', '.instagram-nav.slider-nav__btn', function() {
+      let container = $('#instagram');
+      scrollLeft    = container.scrollLeft();
+      let walk      = $(this).closest('.container').width(); //scroll-fast
+      walk          = $(window).width() >= 800 ? walk * .25 : walk * .9426;
+      if ($(this).attr('name') === 'next') {
+        container.animate({scrollLeft: scrollLeft + walk}, 500);
+      } else {
+        container.animate({scrollLeft: scrollLeft - walk}, 500);
+      }
+    });
+
+    if ($(window).width() < 800) {
+      let startX, startY, endX, endY;
+
+      $('#instagram').on('touchstart', function(event) {
+        const touch = event.touches[0];
+        startX      = touch.pageX;
+        startY      = touch.pageY;
+      });
+      $('#instagram').on('touchmove', function(event) {
+        const touch = event.touches[0];
+        endX        = touch.pageX;
+        endY        = touch.pageY;
+      });
+
+      $('#instagram').on('touchend', function(event) {
+        const deltaX = endX - startX;
+        const deltaY = endY - startY;
+
+        // Check if the swipe is horizontal
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          let container  = $(this);
+          let scrollLeft = container.scrollLeft();
+          let walk       = container.closest('.container').width() * .9426; //scroll-fast
+
+          if (deltaX > 0) {
+            // Swipe right
+            container.animate({scrollLeft: scrollLeft - walk}, 500); // 500ms for smooth scrolling
+          } else {
+            // Swipe left
+            container.animate({scrollLeft: scrollLeft + walk}, 500); // 500ms for smooth scrolling
+          }
+        }
+      });
+    }
+
+    var startX, scrollLeft;
+    var isDown    = false;
+    var container = $('#instagram');
+
+    // container.on('mouseleave', function() {
+    //   isDown = false;
+    //   container.removeClass('active');
+    // });
+
+    let i            = 0;
+    let html         = '';
+    let html2        = '';
+    let post_allowed = 60;
+      {% if shop.locale == 'fr' %}
+    let filename = '{{ 'instagram_fr.txt' | asset_url }}';
+      {% else %}
+    let filename = '{{ 'instagram.txt' | asset_url }}';
+      {% endif %}
+    fetch(filename).then(response => response.json()).then(data => {
+      Object.keys(data).forEach(key => {
+        if (i < 60) {
+          //console.log(key, data[key]);
+          let products_html     = '';
+          let media_url         = data[key].media_url;
+          let media_type        = data[key].media_type;
+          let permalink         = data[key].permalink;
+          let id_instagram_post = data[key].id_instagram_post;
+          let caption           = ''; //data[key].caption;
+          let products          = data[key].products;
+            {% if shop.locale == 'en' %}
+          let hover_text = '{{ section.settings.hover_text | escape }}';
+            {% else %}
+          let hover_text = '{{ section.settings.hover_text_fr | escape }}';
+            {% endif %}
+
+          if (products.length > 0) {
+            products_html += '<div class="insta-prods-qty">';
+            if (theme.locale === 'fr') {
+              products_html += 'Magasinez ce look (' + products.length + (products.length > 1 ? ' styles' : ' style') + ')';
+            } else {
+              products_html += 'Shop this look (' + products.length + (products.length > 1 ? ' Items' : ' Item') + ')';
+            }
+            products_html += '</div>';
+            products_html += '<div class="insta-prods-container">';
+            //           products_html += '<b>Products in this image:</b><br><br>';
+          }
+          for (let product of products) {
+
+            var url = theme.locale === 'fr' ? product.url_fr : product.url;
+            products_html += '<div class="insta-single-container"><a href="' + url + '"><div class="insta-prod-img-container" style="' + (product.image !== null && product.image !== '' ? '' : 'display:none;') + '">';
+            products_html += '<div class="insta-prod-img" style="' + (product.image !== null && product.image !== '' ? 'min-height:95px;' : 'min-height:20px;') + '">';
+            if (product.image !== null && product.image !== '') {
+              products_html += '<img class="insta-prod-img-image lazyLoader" data-type="image" data-src="' + product.image.replace('.jpg', '_300x.jpg') + '" src="https://cdn.shopify.com/s/files/1/1080/2420/files/image-loader.jpg" alt="product">';
+            } else {
+              products_html += '&nbsp;';
+            }
+            products_html += '</div>';
+            products_html += '</a>';
+            products_html += '</div>';
+            products_html += '<div class="instagramHoverableContainer">';
+            if (product.title !== null && product.title !== '') {
+              products_html += '<b style="font-size:14px;">' + product.title + '</b>';
+            }
+            if (product.sku !== null && product.sku !== '') {
+              products_html += '<br />';
+              if (!product.compare_at_price || product.compare_at_price == 0) {
+                if (theme.locale === 'fr') {
+                  products_html += product.price.split('.').join(',') + '$';
+                } else {
+                  products_html += '$' + product.price;
+                }
+              } else {
+                if (theme.locale === 'fr') {
+                  products_html += '<del>' + product.compare_at_price.split('.').join(',') + '$' + '</del> ';
+                  products_html += '<span style="color:red;margin-right:9px;">' + product.price.split('.').join(',') + '$</span>';
+                } else {
+                  products_html += '<del>' + '$' + product.compare_at_price + '</del> ';
+                  products_html += '<span style="color:red;margin-right:9px;">$' + product.price + '</span>';
+
+                }
+
+              }
+            }
+            //             products_html += '<div style="margin-top:'+(product.image !== null && product.image !== "" ? "1.5em;" : "min-height:0;")+'">';
+            //             products_html += '<a target="_blank" href="' + product.url +'" style="text-decoration:none; display:inline-block; padding:7px; font-size:14px; border:1px solid #000000; color: #fff;color: #fff;background: #2F2F2F;" class="instagramHoverable">';
+            //             products_html += (product.image !== null && product.image !== "" ? '{{ 'instagram.shop_now' | t }}'  : product.button_text );
+            //                               products_html += '</a>';
+            //                               products_html += '</div>';
+
+            products_html += '</div>';
+            //                               products_html += '<div style="clear:both; padding: 20px 0; position:relative;">';
+            //                               products_html += '<div style="position:absolute;top:50%;transform:translateY(-50%);width: 100%;height: 1px;border:1px solid #f3f3f3;"></div>';
+            //                               products_html += '</div>';
+            products_html += '</div>';
+          }
+
+          if (products.length > 0) {
+            products_html += '</div>';
+          }
+
+          html += '<div class="instagram-item" style="">';
+          html += '<a style="display:inline-block; height:100%; width:100%; left:0; right:0;" class="product-link instagram-popup" data-fancybox data-src="#instagram_details' + id_instagram_post + '" href="javascript:;">';
+          html += '<div class="instagram_image_wrapper ' + (key < post_allowed ? '' : 'hidden-instagram-post') + '" style="' + (key < post_allowed ? '' : 'display:none;') + '">';
+          if (media_type == 'VIDEO') {
+            html += ' <video playsinline loop muted preload="metadata" style="position: relative;width:100%;height:100%;object-fit:cover;" class="lazyLoader" data-type="video" data-src="' + media_url + '" src=""></video>';
+          } else {
+            html += '<img style="position:relative;width:100%;height:100%;object-fit:cover;"  class="lazyLoader" data-type="image" data-src="' + media_url + '" src="https://cdn.shopify.com/s/files/1/1080/2420/files/image-loader.jpg">';
+          }
+          html += '<div class="instagram_middle"><div style="position:relative;display: inline-block;width: 100%;height: 100%;"><div class="instagram_text"><div class="text-center" style="margin-bottom:1.5em; font-weight:700;font-size: 1.2rem;">' + hover_text + '</div><div class="plus-icon-inst">+</div><div class="text-center" style="margin-top:2.5em; font-weight:700; font-size: 1.2rem;">@chaussuresyellow</div></div></div></div>';
+          html += '</div>';
+          html += '</a>';
+          html += '</div>';
+
+          html2 += '<div style="display: none;" id="instagram_details' + id_instagram_post + '" class="instagram-container-div">';
+          html2 += '<div id="instagramFancyboxModal" style="width:1000px; max-width:100%;">';
+          html2 += '<div>';
+          html2 += '<div id="instagramFancyboxModalLeft" style="background-image: url(' + media_url + '); background-position: left bottom;background-size: cover;background-repeat:no-repeat;">';
+          html2 += '<div class="instagram-prev-post" data-index="' + i + '"><svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><title>Prev</title><polyline points="15 18 9 12 15 6"></polyline></svg></div>';
+          html2 += '<div class="instagram-next-post" data-index="' + i + '"><svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><title>Next</title><polyline points="9 18 15 12 9 6"></polyline></svg></div>';
+          if (media_type == 'VIDEO') {
+            if ($(window).width() >= 850) {
+              html2 += ' <div style="position:relative; height:550px;"><video playsinline loop muted preload="metadata" style="position: relative;width: 100%; height: 100%; object-fit: cover;" data-type="video" class="lazyLoader" data-src="' + media_url + '" src=""></video></div>';
+
+            } else {
+              html2 += ' <div style="position:relative; "><video playsinline loop muted preload="metadata" style="position: relative;width: 100%; height: 100%; object-fit: cover;" data-type="video" class="lazyLoader" data-src="' + media_url + '" src=""></video></div>';
+
+            }
+          } else {
+            html2 += '<img style="opacity:0; visibility:hidden; object-fit:contain;" class="lazyLoader" data-type="image" data-src="' + media_url + '" src="https://cdn.shopify.com/s/files/1/1080/2420/files/image-loader.jpg" alt="instagram post image">';
+          }
+          html2 += '</div>';
+          html2 += '<div id="instagramFancyboxModalRight">';
+          html2 += products_html;
+          html2 += '<div style="padding:20px;"><b style="font-size:18px; line-height:24px;">' + (caption == null || caption == 'null' ? '' : caption) + '</b></div>';
+          html2 += '</div>';
+          html2 += '</div>';
+          html2 += '</div>';
+          html2 += '<div style="clear:both">&nbsp;</div>';
+          html2 += '</div>';
+          html2 += '</div>';
+        }
+        i++;
+      });
+      $body.find('#instagram').html(html);
+      $body.find('#instagram-preloader').hide();
+        /*
+         $body.find('#instagram').owlCarousel({
+         dots: false,
+         responsive:{
+         0:{
+         margin: 15,
+         items:1,
+         nav:false,
+         touchDrag  : true,
+         },
+         900:{
+         items:4,
+         margin: 15,
+         nav:false,
+         touchDrag  : false,
+         mouseDrag  : false,
+         }
+         }
+         });
+         */
+      //         owl.data('owlCarousel').reinit({
+      //           touchDrag  : true,
+      //           mouseDrag  : true
+      //         });
+      $body.find('#instagram_details').html(html2);
+
+      setTimeout(function() {
+        let items_container_width = $body.find('#instagram .owl-stage').attr('style');
+
+        // if( items_container_width.split('width:')[1] !== undefined){
+        //   items_container_width = items_container_width.split('width:')[1].trim();
+        //   items_container_width = items_container_width.split('px')[0].trim();
+        // }
+        let item_width = $body.find('#instagram .owl-item').attr('style');
+        // item_width = item_width.split('width:')[1].trim();
+        // item_width = item_width.split('px')[0].trim();
+        //           item_width = (item_width / items_container_width) * 100;
+        //           item_width = (Number(item_width)  + 5);
+        let item_width_value = item_width;
+        item_width           = ';width:' + (item_width) + 'px;';
+        //           $body.find('#instagram .owl-item').attr('style', $body.find('#instagram .owl-item').attr('style') + item_width);
+
+        // setTimeout(function() {
+        //   $body.find('#instagram').find('.product-block').each(function() {
+        //     let style = $(this).attr('style') + '; width:'+item_width_value+'px; height:' + item_width_value + 'px;';
+        //     $(this).attr('style', style);
+        //   });
+        // }, 500);
+
+        // $('#instagram .owl-item.active').eq(0).find('.prev').show();
+        // $('#instagram .owl-item.active').eq($('#instagram .owl-item.active').length - 1).find('.next').show();
+
+      }, 500);
+    });
+
+    $body.on('click', '.fancybox-close-small', function() {
+      $body.find('.fancybox-close-small').each(function() {
+        this.click();
+      });
+
+    });
+    $body.on('click', '.instagram-prev-post', function() {
+      $body.find('.instagram-nav[name="prev"]').trigger('click');
+      let index  = $body.find('.instagram-item.active').index();
+      let length = $body.find('.instagram-popup').length;
+      $body.find('.fancybox-inner').find('.fancybox-close-small')[0].click();
+      if (index === 0) {
+        $body.find('.instagram-popup')[length - 1].click();
+      } else {
+        $body.find('.instagram-popup')[--index].click();
+      }
+    });
+    // setInterval(function(){
+    //   if($body.find('#instagramFancyboxModal').length && $body.find('#instagramFancyboxModal').is(':visible')){
+    //     $body.addClass('no-scroll');
+    //   }else{
+    //     $body.removeClass('no-scroll')
+    //   }
+    // },25)
+    $body.on('click', '.instagram-item', function() {
+      $body.find('.instagram-item').removeClass('active');
+      $(this).addClass('active');
+    });
+    $body.on('click', '.instagram-next-post', function() {
+      $body.find('.instagram-nav[name="next"]').trigger('click');
+      let index  = $body.find('.instagram-item.active').index();
+      let length = $body.find('.instagram-popup').length;
+      $body.find('.fancybox-inner').find('.fancybox-close-small')[0].click();
+      if ((index + 1) === length) {
+        $body.find('.instagram-popup')[0].click();
+      } else {
+        $body.find('.instagram-popup')[++index].click();
+      }
+    });
+    $body.on('click', '.instgram-toggle', function(e) {
+      e.preventDefault();
+      let content = $body.find($(this).attr('href')).html();
+      $(this).closest('.shopify-section').find('.quickbuy-container').find('.inner').html(content);
+      $(this).closest('.shopify-section').find('.quickbuy-container').attr('style', 'height:auto;');
+    });
+    $body.on('click', '.quickbuy-container .close-detail', function(e) {
+      e.preventDefault();
+      $(this).closest('.quickbuy-container').attr('style', 'height:0;');
+    });
+    $body.on('click', '#instagram-title .next', function(e) {
+      e.preventDefault();
+      $(this).closest('.shopify-section').find('.owl-nav').find('.owl-next').click();
+    });
+    $body.on('click', '#instagram-title .prev', function(e) {
+      e.preventDefault();
+      $(this).closest('.shopify-section').find('.owl-nav').find('.owl-prev').click();
+    });
+    $body.on('click', '#instagram-slider-listing-hp .next', function(e) {
+      e.preventDefault();
+      $(this).closest('.shopify-section').find('.owl-nav').find('.owl-next').click();
+      $('#instagram .prev').hide();
+      $('#instagram .next').hide();
+      $('#instagram .owl-item.active').eq(0).find('.prev').show();
+      $('#instagram .owl-item.active').eq($('#instagram .owl-item.active').length - 1).find('.next').show();
+    });
+    $body.on('click', '#instagram-slider-listing-hp .prev', function(e) {
+      e.preventDefault();
+      $(this).closest('.shopify-section').find('.owl-nav').find('.owl-prev').click();
+      $('#instagram .prev').hide();
+      $('#instagram .next').hide();
+      $('#instagram .owl-item.active').eq(0).find('.prev').show();
+      $('#instagram .owl-item.active').eq($('#instagram .owl-item.active').length - 1).find('.next').show();
+    });
+    $body.on('click', '.insta-read-more', function() {
+      let $insta_caption = $(this).closest('.insta-caption');
+      $insta_caption.find('.small-caption').hide();
+      $insta_caption.find('.whole-caption').show();
+    });
+  });
+
+  function lazyLoading() {
+    let docTop    = $(window).scrollTop();
+    let docBottom = $(window).height() + docTop;
+    $('.lazyLoader').each(function(index, el) {
+      let type    = $(this).attr('data-type');
+      let thisTop = $(this).position().top;
+      if (thisTop <= (type != 'image' ? docBottom : docBottom + 100)) {
+        switch (type) {
+          case 'video':
+            $(this).attr('src') == ''
+            ? $(this).attr('src', $(this).attr('data-src'))
+            : false;
+            $(this)[0].paused ? $(this)[0].play() : false;
+            break;
+          case 'image':
+            $(this).attr('src').includes('image-loader')
+            ? $(this).attr('src', $(this).attr('data-src'))
+            : false;
+            break;
+        }
+      }
+    });
+
+  }
+</script>
+{% schema %}
+{
+  "name": "Instagram Posts",
+  "settings": [
+    {
+      "type": "text",
+      "id": "hover_text",
+      "label": "Post hover text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "text",
+      "id": "hover_text_fr",
+      "label": "Post hover text FR",
+      "default": "Acheter maintenant"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "LIVE FROM THE 'GRAM"
+    },
+    {
+      "type": "text",
+      "id": "title_fr",
+      "label": "Heading (FR)"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Heading",
+      "default": "Share your looks with #iweargarage for the chance to be featured!"
+    },
+    {
+      "type": "text",
+      "id": "sub_title_fr",
+      "label": "Sub Heading (FR)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Posts"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+
+
+{% endjavascript %}
+
+
+
+</div>

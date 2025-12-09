@@ -1,0 +1,57 @@
+<div id="catalogue_container">
+
+</div>
+
+<script>
+  function getQueryStringParameters() {
+    let parameters = {}, hash;
+    let q          = document.URL.split('?')[1];
+    if (q != undefined) {
+      q = q.split('&');
+      for (let i = 0; i < q.length; i++) {
+        hash                = q[i].split('=');
+        parameters[hash[0]] = hash[1];
+      }
+    }
+    return parameters;
+  }
+
+  $(document).ready(function() {
+    let $body = $('body');
+    let $_GET = getQueryStringParameters();
+    if($_GET.catalogue !== undefined){
+      setTimeout(function(){
+        let bookOptions = {
+          height   : 600
+          ,width    : 1000
+          ,maxWidth : '100%'
+          ,maxHeight : '100%'
+
+          ,centeredWhenClosed : true
+          ,hardcovers : true
+          ,pageNumbers: true
+          ,toolbar : $_GET.toolbar == 'true' ? "lastLeft, left, right, lastRight, toc, zoomin, zoomout, slideshow, flipsound, fullscreen, thumbnails, download": "left, fullscreen, right"
+          ,thumbnailsPosition : 'left'
+          ,responsiveHandleWidth : 50
+
+          ,container: $body.find('#catalogue_container')[0]
+          ,containerPadding: "20px"
+          // ,toolbarContainerPosition: "top" // default "bottom"
+
+          // The pdf and your webpage must be on the same domain
+          ,pdf: decodeURIComponent($_GET.catalogue),
+
+          // Uncomment the option toc to create a Table of Contents
+          // ,toc: [                    // table of contents in the format
+          // 	[ "Introduction", 2 ],  // [ "title", page number ]
+          // 	[ "First chapter", 5 ],
+          // 	[ "Go to codecanyon.net", "http://codecanyon.net" ] // or [ "title", "url" ]
+          // ]
+        };
+
+        $body.find('#catalogue_container').wowBook( bookOptions );
+      }, 500);
+    }
+
+  });
+</script>

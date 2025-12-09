@@ -1,0 +1,359 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "full_width": false
+      }
+    },
+    "slideshow_JP7RpF": {
+      "type": "slideshow",
+      "blocks": {
+        "image_YrXTiA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/FRIKSION-DESKTOP.jpg",
+            "image_fr": "shopify://shop_images/FRIKSION-DESKTOP.jpg",
+            "mobile_image": "shopify://shop_images/FRIKSION-MOBILE.jpg",
+            "mobile_image_fr": "shopify://shop_images/FRIKSION-MOBILE.jpg",
+            "slide_link": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "title": "FRIKSION",
+            "title_fr": "FRIKSION",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 86,
+            "title_size_mobile": 52,
+            "use_h1": false,
+            "text": "<p>NEW ANTI-SLIP TECHNOLOGY</p>",
+            "text_fr": "<p>NOUVELLE TECHNOLOGIE ANTI-GLISSE</p>",
+            "enlarge_text": false,
+            "min_buttons_width_1": 0,
+            "min_buttons_width_1_fr": 0,
+            "min_buttons_mobile_width_1": 0,
+            "min_buttons_mobile_width_1_fr": 0,
+            "button_label_1": "SHOP WOMEN",
+            "button_label_1_fr": "POUR FEMMES",
+            "button_background_color_1": "",
+            "button_text_color_1": "",
+            "button_background_color_hover_1": "",
+            "button_text_color_hover_1": "",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "https://www.yellowshoes.com/collections/anti-slip-friksion-boots?filter.p.m.filter.gender=womens&filter.v.price.gte=&filter.v.price.lte=&sort_by=title-ascending",
+            "button_url_1_fr": "https://www.yellowshoes.com/fr/collections/anti-slip-friksion-boots?filter.p.m.filter.gender=Femmes&filter.v.price.gte=&filter.v.price.lte=&sort_by=title-ascending",
+            "min_buttons_width_2": 0,
+            "min_buttons_width_2_fr": 0,
+            "min_buttons_mobile_width_2": 0,
+            "min_buttons_mobile_width_2_fr": 0,
+            "button_label_2": "SHOP MEN",
+            "button_label_2_fr": "POUR HOMMES",
+            "button_background_color_2": "",
+            "button_text_color_2": "",
+            "button_background_color_hover_2": "",
+            "button_text_color_hover_2": "",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "https://www.yellowshoes.com/collections/anti-slip-friksion-boots?filter.p.m.filter.gender=mens&filter.v.price.gte=&filter.v.price.lte=&sort_by=title-ascending",
+            "button_url_2_fr": "https://www.yellowshoes.com/fr/collections/anti-slip-friksion-boots?filter.p.m.filter.gender=Hommes&filter.v.price.gte=&filter.v.price.lte=&sort_by=title-ascending",
+            "min_buttons_width_3": 0,
+            "min_buttons_width_3_fr": 0,
+            "min_buttons_mobile_width_3": 0,
+            "min_buttons_mobile_width_3_fr": 0,
+            "button_label_3": "",
+            "button_label_3_fr": "",
+            "button_background_color_3": "",
+            "button_text_color_3": "",
+            "button_background_color_hover_3": "",
+            "button_text_color_hover_3": "",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "",
+            "button_url_3_fr": "",
+            "min_buttons_width_4": 0,
+            "min_buttons_width_4_fr": 0,
+            "min_buttons_mobile_width_4": 0,
+            "min_buttons_mobile_width_4_fr": 0,
+            "button_label_4": "",
+            "button_label_4_fr": "",
+            "button_background_color_4": "",
+            "button_text_color_4": "",
+            "button_background_color_hover_4": "",
+            "button_text_color_hover_4": "",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "",
+            "button_url_4_fr": "",
+            "text_alignment": "bottom left",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        }
+      },
+      "block_order": [
+        "image_YrXTiA"
+      ],
+      "settings": {
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow",
+        "transition": "fade",
+        "navigation": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "accessibility_info": ""
+      }
+    },
+    "product_list_9dJ77P": {
+      "type": "product-list",
+      "settings": {
+        "title": "friksion for women",
+        "title_fr": "friksion pour femmes",
+        "product_list": [
+          "121216",
+          "121209",
+          "121211",
+          "120006",
+          "121210",
+          "120042",
+          "120017",
+          "120018"
+        ],
+        "show_vendor": false,
+        "enable_carousel": true,
+        "show_variants_separately": false,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "spacer_zQGdHh": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "image_with_text_overlay_jNcCxT": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_UC8pR6": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Walk with confidence, no matter the conditions",
+            "subheading_fr": "Marchez avec confiance cet hiver !"
+          }
+        },
+        "text_dphbaB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Experience ultimate safety this winter with our advanced grip system, crafted entirely from fiberglass and natural rubber. Engineered for maximum traction on all icy surfaces.</p>",
+            "text_fr": "<p>Un système d'adhérence optimisé composé entièrement de fibres de verre et de caoutchouc naturel pour maximiser votre sécurité sur tous les types de surfaces glacées.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_UC8pR6",
+        "text_dphbaB"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/SLIDE-HEADING-DESKTOP.jpg",
+        "image_fr": "shopify://shop_images/SLIDE-HEADING-DESKTOP.jpg",
+        "mobile_image": "shopify://shop_images/SLIDE-HEADING-MOBILE.jpg",
+        "mobile_image_fr": "shopify://shop_images/SLIDE-HEADING-MOBILE.jpg",
+        "height": "fixed",
+        "height_desktop": 200,
+        "height_mobile": 260,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    },
+    "product_list_hqKwEa": {
+      "type": "product-list",
+      "settings": {
+        "title": "friksion for men",
+        "title_fr": "friksion pour hommes",
+        "product_list": [
+          "120020",
+          "118668",
+          "120019",
+          "120021",
+          "116732"
+        ],
+        "show_vendor": false,
+        "enable_carousel": true,
+        "show_variants_separately": false,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true
+      }
+    },
+    "spacer_X6dHGh": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "gallery_yW6ANj": {
+      "type": "gallery",
+      "blocks": {
+        "media_zk9Kjw": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/4-SNOWFALL_08_26_241018.jpg",
+            "enlarge_media": true,
+            "subheading": "",
+            "subheading_fr": "",
+            "title": "",
+            "title_fr": "",
+            "button_label": "Shop SNOWFALL",
+            "button_label_fr": "Magasiner SNOWFALL",
+            "link": "shopify://products/120017",
+            "text_alignment": "bottom left"
+          }
+        },
+        "media_yHQpKt": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/SOPRANO_FW24_08_28_242852.jpg",
+            "enlarge_media": true,
+            "subheading": "",
+            "subheading_fr": "",
+            "title": "",
+            "title_fr": "",
+            "button_label": "Shop SOPRANO",
+            "button_label_fr": "Magasiner soprano",
+            "link": "shopify://products/120021",
+            "text_alignment": "bottom left"
+          }
+        },
+        "media_maU6T4": {
+          "type": "media",
+          "settings": {
+            "enlarge_media": true,
+            "subheading": "",
+            "subheading_fr": "",
+            "title": "",
+            "title_fr": "",
+            "button_label": "SHOP ARCHIPEL",
+            "button_label_fr": "MAGASINER ARCHIPEL",
+            "link": "",
+            "text_alignment": "bottom left"
+          }
+        },
+        "media_6kKmHg": {
+          "type": "media",
+          "settings": {
+            "enlarge_media": true,
+            "subheading": "",
+            "subheading_fr": "",
+            "title": "",
+            "title_fr": "",
+            "button_label": "SHOP LOIRE",
+            "button_label_fr": "MAGASINER LOIRE",
+            "link": "",
+            "text_alignment": "bottom left"
+          }
+        }
+      },
+      "block_order": [
+        "media_zk9Kjw",
+        "media_yHQpKt",
+        "media_maU6T4",
+        "media_6kKmHg"
+      ],
+      "disabled": true,
+      "settings": {
+        "grid_desktop": 2,
+        "grid_mobile": "1",
+        "height": "fixed",
+        "desktop_image_height": 460,
+        "mobile_image_height": 400,
+        "title_size": 30,
+        "title_size_mobile": 22,
+        "enable_margin": false,
+        "enable_row_spacing": true,
+        "full_width": true,
+        "color_scheme": "default",
+        "enable_carousel": true,
+        "overlay_style": "full",
+        "button_style": "primary"
+      }
+    },
+    "hotspots_bKTtrW": {
+      "type": "hotspots",
+      "settings": {
+        "image": "shopify://shop_images/HOT-SPOTS-DESKTOP-EN.jpg",
+        "image_fr": "shopify://shop_images/FRIKSION-OUTSOLE_f95a0a9f-b870-4676-a784-e73803f7dece.jpg",
+        "mobile_image": "shopify://shop_images/HOT-SPOTS-MOBILE-EN.jpg",
+        "mobile_image_fr": "shopify://shop_images/HOT-SPOTS-MOBILE-EN.jpg",
+        "hotspot_color": "#070707",
+        "button_content": "plus",
+        "outer_circle": "pulse",
+        "full_width": true,
+        "text_alignment": "top left",
+        "overlay_style": "no_background",
+        "subheading": "",
+        "subheading_fr": "",
+        "title": "FRIKSION ANTI-SLIP TECHNOLOGY",
+        "title_fr": "FRIKSION TECHNOLOGIE ANTI-GLISSE",
+        "use_h1": false,
+        "heading_max_width": 7,
+        "text": "<p>Walk with confidence, no matter the conditions</p>",
+        "text_fr": "<p>Marchez avec confiance cet hiver !</p>",
+        "button_1_label": "SHOP THE COLLECTION",
+        "button_1_label_fr": "MAGASINER LA COLLECTION",
+        "button_1_link": "shopify://collections/anti-slip-friksion-boots",
+        "button_1_style": "primary",
+        "button_2_label": "",
+        "button_2_label_fr": "",
+        "button_2_link": "",
+        "button_2_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_JP7RpF",
+    "product_list_9dJ77P",
+    "spacer_zQGdHh",
+    "image_with_text_overlay_jNcCxT",
+    "product_list_hqKwEa",
+    "spacer_X6dHGh",
+    "gallery_yW6ANj",
+    "hotspots_bKTtrW"
+  ]
+}

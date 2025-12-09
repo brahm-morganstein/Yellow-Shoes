@@ -1,0 +1,754 @@
+<style>
+  .add-item-to-cart.disabled{
+    pointer-events: none !important;
+    opacity: .5;
+  }
+
+</style>
+<div class="container fully-spaced-row--medium cf" id="wishlist-container">
+  {% if customer %}
+    {% render 'customer-sidebar', customer: customer %}
+  {% endif %}
+  <div id="customer_orders" {% unless customer %} style="margin:auto !important; float:none !important;" {% endunless %}>
+    <div id="wishlist-url-container" style="display:none;">
+      <div style="display:flex;">
+        <div style="display:inline-block; width:50%;">
+          <h5 style="letter-spacing: 1px;">
+            {% if shop.locale == 'en' %}
+              <span id="wishlist_first_name">{{customer.first_name}}</span>'s Favourites
+            {% else %}
+              Les styles favoris de <span id="wishlist_first_name">{{customer.first_name}}</span>
+            {% endif %}
+          </h5>
+        </div>
+        <div style="display:inline-block; width:50%;" class="text-right wishlist-right-part">
+          <a href="javascript:;" id="share-list-modal">
+            <span style="margin-right:4px; color: #787a7c;">{{'favourites.share_list' | t}}</span>
+            <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/share_icon.svg?v=1647649064" alt="Share Icon" width="15" />
+          </a>
+        </div>
+      </div>
+
+      <div style="display:none;" id="share-list-container">
+        <div id="share-list-content" class="text-center">
+          <div style="font-size:1.5em;text-align:left;font-weight:100;width:500px;max-width:85%; margin:auto;">{{'favourites.share_list' | t}}</div>
+          <a href="javascript:;" id="share-list-close">
+            <svg class="Icon Icon--close " role="presentation" viewBox="0 0 16 14" style="width:18px;height:18px;">
+              <path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path>
+            </svg></a>
+          <div style="position:relative">
+            <form id="share-list-form" action="javascript:;">
+              <div class="mt-3" style="position:relative;">
+                <input type="text" readonly id="wishlist-url">
+                <div style="cursor:pointer;display:inline-block; position:absolute;margin-left: 10px;"  onclick="toClipboard()">
+                  <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/plus_icon.svg?v=1647652988" width="20" />
+                  <div style="font-size:0.9em;text-decoration:underline;">{{'favourites.copy' | t}}</div>
+                </div>
+              </div>
+
+              <div style="widht:500px; max-width:85%; margin:auto;"><hr /></div>
+              <div style="font-size:1.5em;text-align:left;font-weight:100;width:500px;max-width:85%; margin:auto;">{{ 'favourites.share_list_via_email' | t }}</div>
+              <div class="mt-3">
+                <label for="share-list-email"  style="font-weight:600;display:block; text-align:left;width:500px;max-width:85%; margin:auto;">{{'favourites.recipient_email' | t}}</label>
+                <input type="email" placeholder="{{'favourites.recipient_email' | t}}"  id="share-list-email" class="required">
+
+                <div id="email-err-msg" style="display:none;font-weight:600;text-align:left;width:500px;max-width:85%; margin:auto;" class="subscribe-error">{{'favourites.required_email' | t}}</div>
+              </div>
+              <div>
+                <input type="text" placeholder="Your name"  id="share-list-name" value="{{customer.name}}" class="required" style="display:none;">
+              </div>
+              <div class="mt-3">
+                <input type="email" placeholder="Your name"  id="share-list-your-email" value="{{customer.email}}" class="required" style="display:none;">
+              </div>
+              <div class="mt-3">
+                <label for="share-list-your-text-message" style="font-weight:600;display:block; text-align:left;width:500px;max-width:85%; margin:auto;">{{'favourites.custom_message' | t}}</label>
+                <textarea style="height:125px;"  id="share-list-your-text-message" class=""></textarea>
+              </div>
+              <div class="mt-3">
+                <button class="btn" id="share-list-btn" type="submit">{{'favourites.share' | t}}</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="number-items"></div>
+
+
+    <div id="items-container" style="position:relative;">
+      <div  id="loader-container" class="theme-preloader">
+        <svg class="spinner rotate"  viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128" x2="128" y1="32" y2="64"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="224" x2="192" y1="128" y2="128"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="195.9" x2="173.3" y1="195.9" y2="173.3"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128" x2="128" y1="224" y2="192"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="60.1" x2="82.7" y1="195.9" y2="173.3"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="32" x2="64" y1="128" y2="128"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="60.1" x2="82.7" y1="60.1" y2="82.7"/></svg>
+      </div>
+    </div>
+
+    <div id="no-items-container" class="text-center" style="display:none;">
+      <h6>{{ 'favourites.no_items_header' | t }}</h6>
+      <p>{{ 'favourites.no_items_text' | t }}</p>
+      <p>
+        <button  onclick="redirectHome()">{{ 'favourites.continue_shopping' | t }}</button>
+      </p>
+    </div>
+
+  </div>
+
+  {% comment %} product template to populate with server response {%endcomment%}
+  {%raw%}
+  <div id="grid-tpl" style="display:none;">
+    <div data-product-id="--==itemId==--" class="product-block text-center" data-sku="--==itemSku==--">
+      <div class="position-relative">
+        <div class="block-inner">
+          <div class="block-inner-inner">
+            <div class="wishlist-item" style="display:none; display:block; position:relative; top:0;right:0;">
+              <div class="wishlist-unselected" style="text-align:right;">
+                <a href="javascript:;" class="ly-languages-switcher-link">
+                  <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/trash_icon.svg?v=1647649585"  alt="trash-icon" width="20px" />
+                  <i class="fas fa-trash" style="display:none;"></i>
+                </a>
+              </div>
+            </div>
+            <div class="favourite_img image-cont --==hoverClass==--">
+              <a class="product-link position-relative" href="--==itemUrl==--" data-ly-locked="true">
+                <div style="display:inline-block; width:100%;  overflow:hidden; position:relative;" class="the-wishlist-image">
+                  --==itemImages==--
+                </div>
+              </a>
+            </div>
+            <div class="product-info">
+              <div class="inner">
+                <div class="innerer">
+                  <div style="display:flex;flex-wrap:wrap; align-items:center;justify-content:center;" class="add-cart-container">
+
+                    <div style="display:inline-block; width:80%; padding:5px; margin:0;">
+                      <div class="product-block__title" style="font-size:1.1em;">
+                        <div style="overflow:hidden; height:22px;">--==itemTitle==--</div>
+                        <div class="product-block__title_title"> --==itemType==-- <div>
+                            --==itemPrice==-- <br/> <span style="text-transform:uppercase;">--==itemColor==--</span></div>
+
+                        </div>
+                        <div style="display:inline-block; width:80%; padding:5px; margin:0;">
+                          <div style="display:flex;align-items:center;" class="favourites-sizes">
+                            --==itemSizes==--
+                          </div>
+                        </div>
+                        <div style="width:80%; display:inline-block; padding:5px; margin:0;">
+                          <input type="hidden" class="itemTags" value="--==itemTags==--"/>
+                          <input type="hidden" class="finalSale" value="--==itemFinalSale==--"/>
+                          <button class="add-item-to-cart btn  btn--large"  style="width:100%; display:inline-block;padding: 10px;font-size: 1.1em;margin-top:10px;">
+                            {%endraw%}{{ 'products.product.add_to_cart' | t }}{%raw%}
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endraw%}
+      {% comment %} /produt template {%endcomment%}
+
+      <script>
+        $(document).ready(function(){
+          let $body = $('body');
+          $body.find('.account-sidebar-item.wishlist').addClass('active');
+          let $_GET = getQueryString();
+          let res_email;
+
+          {% if customer %}
+          {% if shop.locale == 'en' %}
+          let text = "Hey!\nI'd love to share my wishlist from Yellow shoes with you.\nLet me know what you think!\n{{customer.first_name}}";
+          {% else %}
+          let text = "J'aimerais te partager ma liste de souhaits de chez Chaussures Yellow !\n{{customer.first_name}}";
+
+          {% endif %}
+          //       $body.find('#share-list-your-text-message').val(text);
+          $body.on('click', '.add-item-to-cart', function() {
+            let $this = $(this);
+            $this.addClass('disabled');
+            let $select = $(this).closest('.add-cart-container').find('.sizes-select');
+            let tags =$(this).parent().find('.itemTags').val();
+            let finalSale =$(this).parent().find('.finalSale').val();
+
+            $select.removeClass('subscribe-error');
+
+            if($select !== undefined){
+              if ($select.val().trim() === '') {
+                $select.addClass('subscribe-error');
+                return;
+              }
+              if(finalSale == 'true'){
+                console.log('FINAL IS TRUE');
+                var postData = {
+                  id:$select.val().trim(),
+                  quantity:1,
+                  properties: {
+                    '_tags': tags,
+                    '_final_sale':finalSale
+                  }
+                };
+              }else{
+                var postData = {
+                  id:$select.val().trim(),
+                  quantity:1,
+                  properties: {
+                    '_tags': tags
+                  }
+                };
+              }
+              $.ajax({
+                       url:         '/cart/add.js',
+                       type:        'POST',
+                       dataType:    'json',
+                       contentType: 'application/json',
+                       data:        JSON.stringify(postData),
+                       success:     function(cart) {
+                         setTimeout(function() {
+                           document.dispatchEvent(
+                                   new CustomEvent('on:cart:change'),
+                           );
+                           document.dispatchEvent(
+                                   new CustomEvent('on:cart:add'),
+                           );
+                           setTimeout(function() {
+                             document.dispatchEvent(
+                                     new CustomEvent('dispatch:cart-drawer:refresh'),
+                             );
+                           }, 300);
+                           setTimeout(function() {
+                             document.dispatchEvent(
+                                     new CustomEvent('dispatch:cart-drawer:open'),
+                             );
+                           }, 500);
+                         }, 200);
+                         setTimeout(function(){
+                           $this.removeClass('disabled');
+                         }, 1000);
+                       },
+                       error:       function(xhr, textStatus, error) {
+                         $this.removeClass('disabled');
+                         console.log('Error adding item to cart:', error);
+                       },
+                     });
+
+            }
+
+          });
+          $body.on('click', '#share-list-btn', function() {
+            let submit = true;
+            $body.find('#email-err-msg').hide();
+            $body.find('#share-list-form .required').each(function() {
+
+              $(this).removeClass('subscribe-error');
+              if ($(this).val().trim() === '') {
+                $(this).addClass('subscribe-error');
+                submit = false;
+              }
+              if ($(this).attr('type') === 'email' && !validateEmail($(this).val().trim())) {
+                $(this).addClass('subscribe-error');
+                submit = false;
+                $body.find('#email-err-msg').show();
+              }
+            });
+            if(submit){
+              $.ajax({
+                       url:      'https://apps-yellow.meginteractive.net/api/wishlist',
+                       method:   'POST',
+                       data:     {
+                         action:       'share-wishlist',
+                         email:        $body.find('#share-list-email').val().trim(),
+                         sender_email: $body.find('#share-list-your-email').val().trim(),
+                         sender_name:  $body.find('#share-list-name').val().trim(),
+                         wishlist_url:  $body.find('#wishlist-url').val().trim(),
+                         message:  $body.find('#share-list-your-text-message').val().trim(),
+                         language: '{{shop.locale}}',
+
+                       },
+                       dataType: "json",
+                       success:  function(response_data) {
+                         if (response_data.success) {
+                           $body.find('#share-list-close')[0].click();
+                           $body.find('#share-list-email').val('');
+                           $body.find('#share-list-your-text-message').val('');
+                           new Swal({
+                                      title: "",
+                                      text: "",
+                                      icon: "success",
+                                    });
+                         }
+                       },
+                       error:    function(response_data) {
+                       },
+                     });
+            }
+          });
+
+
+          $body.on('click', '#share-list-close', function(){
+            $body.find('#share-list-container').hide();
+          });
+          $body.on('click', '#share-list-modal', function(){
+            $body.find('#share-list-container').show();
+          });
+
+          if($_GET.favorites === undefined){
+            let wishlist_url = 'https://yellowshoes.com';
+            //         if(theme.locale === 'fr'){
+            //           wishlist_url += '/fr';
+            //         }
+            wishlist_url += '/pages/wishlist?favorites=';
+            $.ajax({
+                     url: "https://apps-yellow.meginteractive.net/api/wishlist",
+                     method: "POST",
+                     data: {
+                       email: theme.customer_email,
+                       action: 'get-url',
+                     },
+                     success: function(response_data){
+                       response_data = JSON.parse(response_data);
+                       if(response_data.success !== undefined && response_data.success){
+                         wishlist_url += response_data.user;
+                         $body.find('#wishlist-url').val(wishlist_url);
+                         $body.find('#wishlist-url-container').show();
+                       }
+                     },
+                     error: function(response_data){
+                       console.log(response_data);
+                     }
+                   });
+            getItems(theme.customer_email);
+          }else{
+            getItems($_GET.favorites.trim(), true);
+          }
+
+          {%else%}
+
+          if($_GET.favorites === undefined || ($_GET.favorites !== undefined && $_GET.favorites.trim() === '')){
+            window.location.href = (theme.locale === 'fr' ? '/fr/' : '/') + 'account/login?return=/pages/wishlist';
+            return;
+          }
+          getItems($_GET.favorites.trim(), true);
+          {%endif%}
+
+        });
+
+        function getQueryString(){
+          let urlParams;
+          (window.onpopstate = function () {
+            var match,
+                pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query  = window.location.search.substring(1);
+
+            urlParams = {};
+            while (match = search.exec(query))
+              urlParams[decode(match[1])] = decode(match[2]);
+          })();
+          return urlParams;
+        }
+        function toClipboard() {
+          var copyText = document.getElementById("wishlist-url");
+
+          copyText.select();
+          copyText.setSelectionRange(0, 99999);
+
+          navigator.clipboard.writeText(copyText.value);
+
+          new Swal({
+                     title: "",
+                     text: "",
+                     icon: "success",
+                   });
+        }
+        function insertAt(index, string, char)
+        {
+          return string.substr(0, index) + char + string.substr(index);
+        }
+
+        let frenchItemCounter = 0;
+        function addItemFr(product, data){
+          frenchItemCounter += frenchItemCounter;
+          setTimeout(function(){
+
+            $.ajax({
+                     url: "https://app.yellowshoes.com/api/wishlist",
+                     method: "POST",
+                     data: {
+                       action: 'get-french-item',
+                       data: data,
+                       product: product,
+                     },
+                     success: function(response_data){
+                       response_data = JSON.parse(response_data);
+                       if(response_data.success !== undefined && response_data.success){
+                         //console.log('Product data below');
+                         //console.log(response_data.product.tags.join(','));
+                         let sizes = [];
+                         let color = response_data.product.color;
+                         let img_html = '<img src="'+response_data.product.featured_image+'"  alt="'+data.sku+'"/>';
+                         for(let variant of response_data.product.variants){
+                           console.log('language below');
+                           console.log(language);
+                           var variant_color_fr = '';
+                           window.color_translations.forEach(function(_color){
+                             if(_color.color_en == variant.option2 || variant.option2 == _color.color_fr){
+                               variant_color_fr = _color.color_fr;
+                             }
+                           });
+
+                           if(variant_color_fr == color){
+                             if(variant.featured_image != null && variant.featured_image.src !== undefined && variant.featured_image.src.trim() !== ''){
+                               img_html = '<img src="'+variant.featured_image.src+'"  alt="'+data.sku+'"/>';
+                             }
+                             if(variant.available){
+                               sizes.push({
+                                            variant_id: variant.id,
+                                            size: variant.option1
+                                          });
+                             }
+                           }
+
+                         }
+                         let sizes_html = '';
+
+                         if(sizes.length > 0){
+                           sizes_html = '<div class="text-center" style="font-size:1.1em; width:80px;">Size</div><select class="sizes-select" style="padding:0.4em 5px; background:#F9F7F8; border-radius:5px;color: #787a7c; width:calc(100% - 80px); border: 1px solid #dadfe5;font-weight: 600; font-size:14px;text-align:center;">';
+                           for(let size of sizes){
+                             var size_name = size.size;
+                             if(language == 'fr'){
+                               size_translations.forEach(function(_size){
+                                 if(_size.size_en == size.size){
+                                   size_name  = _size.size_fr;
+                                 }
+                               });
+                             }
+                             sizes_html += '<option value="'+ size.variant_id +'">';
+                             sizes_html += size_name;
+                             sizes_html += '</option>';
+                           }
+
+                           sizes_html += '</select>';
+                         }
+                         setTimeout(function(){
+                           let html = $('#grid-tpl').html();
+                           console.log('Product below');
+                           console.log(product);
+                           html = html.replace('--==itemSizes==--', sizes_html);
+                           html = html.replace('--==itemTags==--', product.tags.join(','));
+                           html = html.replace('--==itemColor==--', color);
+                           html = html.replace('--==itemId==--', data.product_id);
+                           html = html.replace('--==itemSku==--', data.sku);
+                           html = html.replace('--==itemUrl==--', data.product_url);
+                           html = html.replace('--==itemTitle==--', response_data.product.title);
+                           html = html.replace('--==itemType==--', response_data.product.type);
+                           for(let image_obj of product.media){
+                             if(image_obj.alt == data.sku){
+                               img_html = '<img style="width:100%;height:100%;object-fit:cover;" src="'+image_obj.src+'"  alt="'+data.sku+'"/>';
+                               break;
+                             }
+                           }
+                           html = html.replace('--==itemImages==--', img_html);
+                           let price_html = '';
+                           let price = response_data.product.price;
+                           price = insertAt((price.toString().length - 2),price.toString(), '.');
+                           if(Number(response_data.product.compare_at_price) !== 0){
+                             var percent = response_data.price/response_data.compare_at_price;
+                             if(percent <= 0.499){
+                               html = html.replace('--==itemFinalSale==--', 'true');
+                             }else{
+                               html = html.replace('--==itemFinalSale==--', 'false');
+                             }
+                             let cprice = response_data.product.compare_at_price;
+                             cprice = insertAt((cprice.toString().length - 2),cprice.toString(), '.');
+                             price_html = '<span class="money theme-money text-red">$--==price==--</span></span> <span class="product-price__item product-price__compare theme-money">$--==oldprice==--</span>';
+                             price_html = price_html.replace('--==oldprice==--', cprice);
+                             price_html = price_html.replace('--==price==--', price);
+                           }else{
+                             html = html.replace('--==itemFinalSale==--', 'false');
+                             price_html = '<span class="money theme-money">$'+price+'</span>';
+                           }
+                           html = html.replace('--==itemPrice==--', price_html);
+
+                           $('#items-container').append(html);
+                         }, 500);
+                       }
+                     },
+                     error: function(response_data){
+                       $.ajax({
+                                url:     'https://apps-yellow.meginteractive.net/api/wishlist',
+                                method:  'POST',
+                                data:    {
+                                  email:       theme.customer_email,
+                                  first_name:  theme.customer_first_name,
+                                  last_name:   theme.customer_last_name,
+                                  action:      'add-remove-wishlist',
+                                  product_id:  data.product_id,
+                                  product_url: data.product_url,
+                                  sku:         data.sku,
+                                },
+                                success: function(response_data) {
+                                  response_data = JSON.parse(response_data);
+                                  if (response_data.success !== undefined && response_data.success) {
+                                    if (response_data.removed) {
+                                      if ($this.find('.fa-trash').length > 0) {
+                                        $this.closest('.product-block').remove();
+                                        if ($body.find('#items-container .product-block').length == 0) {
+                                          $body.find('#no-items-container').show();
+                                        }
+                                      } else {
+                                        $this.find('.wishlist-selected').addClass('wishlist-hidden');
+                                        $this.find('.wishlist-unselected').removeClass('wishlist-hidden');
+                                      }
+                                    } else {
+                                      $this.find('.wishlist-unselected').addClass('wishlist-hidden');
+                                      $this.find('.wishlist-selected').removeClass('wishlist-hidden');
+                                    }
+
+                                    if (response_data.removed != undefined && response_data.removed == true && $('#number-items').length > 0) {
+                                      var count = $('#number-items').find('div').html();
+                                      count     = parseInt(count) - 1;
+                                      if (count == 1) {
+                                        $('#number-items').html('<div style=\'padding:16px 0;\'>' + count + ' item</div>');
+                                      } else {
+                                        $('#number-items').html('<div style=\'padding:16px 0;\'>' + count + ' items</div>');
+                                      }
+                                    }
+                                    updateCount();
+                                  }
+                                },
+                                error:   function(response_data) {
+                                  console.log(response_data);
+                                },
+                              });
+                       console.log(response_data);
+                     }
+                   });
+          }, frenchItemCounter);
+
+        }
+
+        function addItem(product_url, data){
+          $.ajax({
+                   url: product_url,
+                   method: "GET",
+                   contentType: "application/json",
+                   dataType: "text",
+                   success: function(response_data){
+                     response_data = JSON.parse(response_data);
+                     if(theme.locale == 'en'){
+                       //console.log('Product data below');
+                       //console.log(response_data.tags.join(','));
+                       let sizes = [];
+                       let color = '';
+                       for(let variant of response_data.variants){
+                         if(variant.sku == data.sku){
+                           color = variant.option2;
+                         }
+                       }
+                       let img_html = '<img src="'+response_data.featured_image+'"  alt="'+data.sku+'"/>';
+                       for(let variant of response_data.variants){
+                         if(variant.option2 == color){
+                           if(variant.featured_image != null && variant.featured_image.src !== undefined && variant.featured_image.src.trim() !== ''){
+                             img_html = '<img src="'+variant.featured_image.src+'"  alt="'+data.sku+'"/>';
+                           }
+                           if(variant.available){
+                             sizes.push({
+                                          variant_id: variant.id,
+                                          size: variant.option1
+                                        });
+                           }
+                         }
+                       }
+                       let sizes_html = '';
+                       if(sizes.length > 0){
+                         sizes_html = '<div class="text-center" style="font-size:1.1em; width:80px;">Size</div><select class="sizes-select" style="width:calc(100% - 80px);padding:0.4em 5px; background:#F9F7F8; border-radius:5px;color: #787a7c; border: 1px solid #dadfe5;font-weight: 600; font-size:14px;text-align:center;">';
+                         for(let size of sizes){
+                           sizes_html += '<option value="'+ size.variant_id +'">';
+                           sizes_html += size.size;
+                           sizes_html += '</option>';
+                         }
+
+                         sizes_html += '</select>';
+                       }
+                       setTimeout(function(){
+
+                         let html = $('#grid-tpl').html();
+                         html = html.replace('--==itemSizes==--', sizes_html);
+                         html = html.replace('--==itemTags==--', response_data.tags.join(','));
+                         html = html.replace('--==itemColor==--', color);
+                         html = html.replace('--==itemId==--', data.product_id);
+                         html = html.replace('--==itemSku==--', data.sku);
+                         html = html.replace('--==itemUrl==--', data.product_url);
+                         html = html.replace('--==itemTitle==--', response_data.title);
+                         html = html.replace('--==itemType==--', response_data.type);
+                         for(let image_obj of response_data.media){
+                           if(image_obj.alt == data.sku){
+                             img_html = '<img style="width:100%;height:100%;object-fit:cover;" src="'+image_obj.src+'"  alt="'+data.sku+'"/>';
+                             break;
+                           }
+                         }
+                         html = html.replace('--==itemImages==--', img_html);
+                         let price_html = '';
+                         let price = response_data.price;
+                         price = insertAt((price.toString().length - 2),price.toString(), '.');
+                         if(Number(response_data.compare_at_price) !== 0){
+
+                           var percent = response_data.price/response_data.compare_at_price;
+                           if(percent <= 0.499){
+                             html = html.replace('--==itemFinalSale==--', 'true');
+                           }else{
+                             html = html.replace('--==itemFinalSale==--', 'false');
+                           }
+                           let cprice = response_data.compare_at_price;
+                           cprice = insertAt((cprice.toString().length - 2),cprice.toString(), '.');
+                           price_html = '<span class="money theme-money text-red">$--==price==--</span></span> <span class="product-price__item product-price__compare theme-money">$--==oldprice==--</span>';
+                           price_html = price_html.replace('--==oldprice==--', cprice);
+                           price_html = price_html.replace('--==price==--', price);
+                         }else{
+                           html = html.replace('--==itemFinalSale==--', 'false');
+                           price_html = '<span class="money theme-money">$'+price+'</span>';
+                         }
+                         html = html.replace('--==itemPrice==--', price_html);
+
+                         $('#items-container').append(html);
+                       }, 500);
+                     }else{
+                       addItemFr(response_data, data);
+                     }
+
+                   },
+                   error: function(response_data){
+                     $.ajax({
+                              url:     'https://apps-yellow.meginteractive.net/api/wishlist',
+                              method:  'POST',
+                              data:    {
+                                email:       theme.customer_email,
+                                first_name:  theme.customer_first_name,
+                                last_name:   theme.customer_last_name,
+                                action:      'add-remove-wishlist',
+                                product_id:  data.product_id,
+                                product_url: product_url,
+                                sku:         data.sku,
+                              },
+                              success: function(response_data) {
+                                response_data = JSON.parse(response_data);
+                                if (response_data.success !== undefined && response_data.success) {
+                                  if (response_data.removed) {
+                                    if ($this.find('.fa-trash').length > 0) {
+                                      $this.closest('.product-block').remove();
+                                      if ($body.find('#items-container .product-block').length == 0) {
+                                        $body.find('#no-items-container').show();
+                                      }
+                                    } else {
+                                      $this.find('.wishlist-selected').addClass('wishlist-hidden');
+                                      $this.find('.wishlist-unselected').removeClass('wishlist-hidden');
+                                    }
+                                  } else {
+                                    $this.find('.wishlist-unselected').addClass('wishlist-hidden');
+                                    $this.find('.wishlist-selected').removeClass('wishlist-hidden');
+                                  }
+
+                                  if (response_data.removed != undefined && response_data.removed == true && $('#number-items').length > 0) {
+                                    var count = $('#number-items').find('div').html();
+                                    count     = parseInt(count) - 1;
+                                    if (count == 1) {
+                                      $('#number-items').html('<div style=\'padding:16px 0;\'>' + count + ' item</div>');
+                                    } else {
+                                      $('#number-items').html('<div style=\'padding:16px 0;\'>' + count + ' items</div>');
+                                    }
+                                  }
+                                  updateCount();
+                                }
+                              },
+                              error:   function(response_data) {
+                                console.log(response_data);
+                              },
+                            });
+                     console.log(response_data);
+                   }
+                 });
+        }
+
+        function getItems(email, view_only = false){
+          let $body = $('body');
+          $.ajax({
+                   url: "https://apps-yellow.meginteractive.net/api/wishlist",
+                   method: "POST",
+                   data: {
+                     email: email,
+                     action: 'get-items',
+                     locale: '{{ shop.locale }}',
+                   },
+                   success: function(response_data){
+                     response_data = JSON.parse(response_data);
+                     if(response_data.success !== undefined && response_data.success){
+                       for(let item of response_data.items){
+                         let product_url_js = item.product_url_js;
+                         if(theme.locale == 'fr' && !product_url_js.includes('/fr')){
+                           product_url_js = product_url_js.split('https://www.yellowshoes.com\\').join('https://www.yellowshoes.com\\/fr');
+                         }
+                         addItem(product_url_js,item);
+                       }
+                       if(response_data.name !== ''){
+                         $body.find('#wishlist_first_name').text(response_data.name);
+                         $body.find('#wishlist-url-container').show();
+                         if(view_only){
+                           $body.find('.wishlist-right-part').hide();
+                         }
+                       }
+                       $('#loader-container').hide();
+                       $('#items-container').show();
+                       setTimeout(function(){
+                         if(!view_only){
+                           $body.find('.wishlist-item').show();
+                         }else{
+                           $body.find('.wishlist-item').remove();
+                         }
+                         if($body.find('#items-container .product-block').length == 0){
+                           $body.find('#no-items-container').show();
+                         }
+                       }, 1000);
+
+                       if(response_data.items.length > 0){
+                         if(response_data.items.length == 1){
+                           $("#number-items").html("<div style='padding:16px 0;'>"+response_data.items.length+" " + (theme.locale == 'fr' ? 'objet' : 'item') +"</div>");
+                         }else{
+                           $("#number-items").html("<div style='padding:16px 0;'>"+response_data.items.length+" " + (theme.locale == 'fr' ? 'objets' : 'items') +"</div>");
+                         }
+                       }
+                       {% if shop.locale == 'fr'%}
+                       setTimeout(function(){
+                         $body.find('.date-container').each(function(){
+                           $(this).text($(this).text().split(',').join(''));
+                         });
+                         $body.find('.theme-money').each(function(){
+                           $(this).text($(this).text().split('.').join(',').split('$').join('') + '$');
+                         });
+                       }, 300);
+                       {% endif %}
+                     }
+                   },
+                   error: function(response_data){
+                     console.log(response_data);
+                   }
+                 });
+        }
+        function validateEmail (email)
+        {
+          var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          return re.test(String(email).toLowerCase())
+        }
+        function redirectHome ()
+        {
+          var url = sessionStorage.collection != undefined ? sessionStorage.collection : '/';
+          {%if shop.locale == 'fr' %}
+          window.location.href = '/fr' + url;
+          {%else %}
+          window.location.href = url;
+          {%endif%}
+        }
+
+      </script>

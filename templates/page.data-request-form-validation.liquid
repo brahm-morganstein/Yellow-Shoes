@@ -1,0 +1,78 @@
+<style>
+    #validation-thank-you-message {
+        display:     inline-block;
+        text-align:  center;
+        display:     none;
+        font-weight: bold;
+        font-size:   2em;
+    }
+
+    @media screen and (max-width: 900px) {
+        #validation-thank-you-message {
+            font-size: 1.2em;
+        }
+    }
+</style>
+<div style="padding: 80px 0; display: flex; align-items: center;justify-content: center">
+    <div id="validation-thank-you-message">
+        {% if shop.locale == 'en' %}
+            Thank you for validating your account.
+            <br>
+            <br>
+            <a class="button" href="/">Home</a>
+        {% else %}
+            Merci d'avoir validé votre compte.
+            <br>
+            <br>
+            <a class="button" href="/fr">Accueil</a>
+        {% endif %}
+    </div>
+    <div style="display: inline-block;text-align: center; display: none; font-weight: bold; font-size: 2em;" id="validation-error-message">
+        {% if shop.locale == 'en' %}
+            Something went wrong. <br> Please try again.
+        {% else %}
+            Quelque chose s'est mal passé. <br> Veuillez réessayer.
+        {% endif %}
+    </div>
+
+</div>
+<script>
+    $(document).ready(function() {
+        let $body = $('body');
+        $body.find('#theme-preloader').show();
+        let validate = getQueryStringByName('validate');
+        $.ajax({
+                   url:      'https://app.yellowshoes.com/api/customers',
+                   method:   'POST',
+                   data:     {
+                       action:   'data-request-validate',
+                       id:       validate,
+                       language: '{{ shop.locale }}',
+                   },
+                   dataType: 'json',
+                   success:  function(response_data) {
+                       if (response_data.success) {
+                           $body.find('#validation-thank-you-message').show();
+                       }
+                       setTimeout(function() {
+                           $body.find('#theme-preloader').hide();
+                       }, 500);
+                   },
+                   error:    function(response_data) {
+                       setTimeout(function() {
+                           $body.find('#theme-preloader').hide();
+                       }, 500);
+                   },
+               });
+
+    });
+
+    function getQueryStringByName(name, url = window.location.href) {
+        name        = name.replace(/[\[\]]/g, '\\$&');
+        var regex   = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+</script>

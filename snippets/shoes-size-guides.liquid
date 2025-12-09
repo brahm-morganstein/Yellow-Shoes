@@ -1,0 +1,503 @@
+<style>
+  
+  .modal_width_sizeguide .cc-accordion-item__title{
+  	text-align:center;
+    text-transform:uppercase;
+  }   
+  
+  .modal_width_sizeguide .title{
+  	font-size:20px;
+  	font-weight:bold;
+  }  
+  
+  .modal_width_sizeguide table{
+  margin-bottom: 0px;
+  }
+  
+  .modal_width_sizeguide .more_details a{
+  	font-size: 14px;
+    text-decoration: underline;
+    color:#787a7cbf;
+  }
+  
+  .cc-accordion{
+  margin-bottom: 0px;
+  border-top: none;
+  }
+  
+  .cc-accordion-item__title{
+  	font-weight:bold;
+  }
+  
+  .border_td{
+    border: 1px solid #e2e2e2;
+  }
+  
+  .border_alternate_color{
+  	background: #f3f3f3;
+  }  
+
+  
+@media (min-width:480px)  {
+  .modal_width_sizeguide{
+  	min-width:480px;
+  }	
+  
+  
+} 
+    
+</style>
+
+<!-- WOMEN'S FOOTWEAR -->
+<div class="modal_width_sizeguide">
+  <div class="" style="text-align:center;">
+    <p class="title">{{ "products.product.size_chart" | t }}</p>
+    <p>
+      {% if shop.locale == 'en' %}
+      	Use the sizing guide to determine which shoe size is best for you
+      {% else %}
+      	Utilisez le guide des pointures pour déterminer la taille qui vous convient le mieux.
+      {% endif %}
+    </p>
+  </div>
+  
+  <hr>
+
+  {%- liquid  
+  
+      if gender_type == 'type-womens'
+        assign item_attr = 'class="cc-accordion-item is-open" open'
+      else
+        if gender_type == blank
+    	    assign item_attr = 'class="cc-accordion-item is-open" open'
+        else
+	        assign item_attr = 'class="cc-accordion-item"'
+        endif
+      endif
+  -%}
+
+
+  <div class="cc-accordion" data-allow-multi-open="false">
+    <details {{ item_attr }} id="type-womens">
+      <summary class="cc-accordion-item__title">
+            {{ 'products.product.womens_footwear' | t }} {{- toggle_icon -}}
+      </summary>
+      <div class="cc-accordion-item__panel">
+        <div class="cc-accordion-item__content">      
+
+            <table width="99%" style="border-spacing: 1px;">
+              <tr>
+                <td class="border_td" width="33.3%" align="center"><strong>US</strong></td>
+                <td class="border_td" width="33.3%" align="center"><strong>EURO</strong></td>
+                <td class="border_td" width="33.3%" align="center"><strong>{{ 'products.product.length_cm' | t }}</td>
+              </tr>
+              <tr>
+                <td class="border_td" align="center">5</td>
+                <td class="border_td" align="center">36</td>
+                <td class="border_td" align="center">22.6 - 23.3</td>
+              </tr>  
+              <tr>
+                <td class="border_td border_alternate_color" align="center">6</td>
+                <td class="border_td border_alternate_color" align="center">37</td>
+                <td class="border_td border_alternate_color" align="center">23.3 - 24.0</td>
+              </tr>
+              <tr>
+                <td class="border_td" align="center">7</td>
+                <td class="border_td" align="center">38</td>
+                <td class="border_td" align="center">24.0 - 24.7</td>
+              </tr>
+              <tr>
+                <td class="border_td border_alternate_color" align="center">8</td>
+                <td class="border_td border_alternate_color" align="center">39</td>
+                <td class="border_td border_alternate_color" align="center">24.7 - 25.4</td>
+              </tr>
+              <tr>
+                <td class="border_td" align="center">9</td>
+                <td class="border_td" align="center">40</td>
+                <td class="border_td" align="center">25.4 - 26.1</td>
+              </tr>
+              <tr>
+                <td class="border_td border_alternate_color" align="center">10</td>
+                <td class="border_td border_alternate_color" align="center">41</td>
+                <td class="border_td border_alternate_color" align="center">26.1 - 26.8</td>
+              </tr>  
+              <tr>
+                <td class="border_td" align="center">11</td>
+                <td class="border_td" align="center">42</td>
+                <td class="border_td" align="center">26.9 - 27.5</td>
+              </tr>  
+              <tr>
+                <td class="border_td border_alternate_color" align="center">12</td>
+                <td class="border_td border_alternate_color" align="center">43</td>
+                <td class="border_td border_alternate_color" align="center">27.5 - 28.2</td>
+              </tr> 
+              <tr>
+                <td class="border_td" align="center">13</td>
+                <td class="border_td" align="center">44</td>
+                <td class="border_td" align="center">28.2 - 28.9</td>
+              </tr>     
+            </table>
+
+          	{% unless template == 'page.size-guide' %}
+            <span class="more_details"><a href="/pages/size-guide?gender_type=type-womens">{{ "products.product.more_details" | t }}</a></span>
+          	{% endunless %}
+        </div>
+      </div>
+    </details>
+
+
+  <!-- MEN'S FOOTWEAR -->
+  {%- liquid
+      if gender_type == 'type-mens'
+        assign item_attr = 'class="cc-accordion-item is-open" open'
+      else
+        assign item_attr = 'class="cc-accordion-item"'
+      endif
+  -%}
+
+    <details {{ item_attr }} id="type-mens">
+      <summary class="cc-accordion-item__title">
+            {{ 'products.product.mens_footwear' | t }} {{- toggle_icon -}}
+      </summary>
+      <div class="cc-accordion-item__panel">
+        <div class="cc-accordion-item__content"> 
+
+            <table width="99%" style="border-spacing: 1px; border-top:solid 1px e2e2e2;" class="border_td">
+              <tr>
+                <td class="border_td" width="33.3%" align="center"><strong>US</td>
+                <td class="border_td" width="33.3%" align="center"><strong>EURO</strong></td>
+                <td class="border_td" width="33.3%" align="center"><strong>{{ 'products.product.length_cm' | t }}</td>
+              </tr>
+              <tr>
+                <td class="border_td" align="center">7</td>
+                <td class="border_td" align="center">40</td>
+                <td class="border_td" align="center">24.8 - 25.6</td>
+              </tr>  
+              <tr>
+                <td class="border_td border_alternate_color" align="center">8</td>
+                <td class="border_td border_alternate_color" align="center">41</td>
+                <td class="border_td border_alternate_color" align="center">25.6 - 26.4</td>
+              </tr>
+              <tr>
+                <td class="border_td" align="center">9</td>
+                <td class="border_td" align="center">42</td>
+                <td class="border_td" align="center">26.4 - 27.2</td>
+              </tr>
+              <tr>
+                <td class="border_td border_alternate_color" align="center">10</td>
+                <td class="border_td border_alternate_color" align="center">43</td>
+                <td class="border_td border_alternate_color" align="center">27.2 - 28.0</td>
+              </tr>
+              <tr>
+                <td class="border_td" align="center">11</td>
+                <td class="border_td" align="center">44</td>
+                <td class="border_td" align="center">28.0 - 28.8</td>
+              </tr>
+              <tr>
+                <td class="border_td border_alternate_color" align="center">12</td>
+                <td class="border_td border_alternate_color" align="center">45</td>
+                <td class="border_td border_alternate_color" align="center">28.8 - 29.6</td>
+              </tr>  
+              <tr>
+                <td class="border_td" align="center">13</td>
+                <td class="border_td" align="center">46</td>
+                <td class="border_td" align="center">29.6 - 30.3</td>
+              </tr>    
+            </table>
+          	{% unless template == 'page.size-guide' %}
+            <span class="more_details"><a href="/pages/size-guide?gender_type=type-mens">{{ "products.product.more_details" | t }}</a></span>
+          	{% endunless %}
+        </div>
+      </div>
+    </details>
+
+
+  <!-- GIRLS FOOTWEAR -->
+  {% comment %}  
+  {%- liquid
+      if gender_type == 'girls chart'
+        assign item_attr = 'class="cc-accordion-item is-open" open'
+      else
+        assign item_attr = 'class="cc-accordion-item"'
+      endif
+  -%}
+
+
+    <details {{ item_attr }}>
+      <summary class="cc-accordion-item__title">
+            GIRLS FOOTWEAR {{- toggle_icon -}}
+      </summary>
+      <div class="cc-accordion-item__panel">
+        <div class="cc-accordion-item__content"> 
+          <table width="99%" style="border-spacing: 1px;">
+            <tr>
+              <td class="border_td" width="33.3%" align="center"><strong>US</td>
+              <td class="border_td" width="33.3%" align="center"><strong>EURO</strong></td>
+              <td class="border_td" width="33.3%" align="center"><strong>{{ 'products.product.length_cm' | t }}</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">7</td>
+              <td class="border_td" align="center">40</td>
+              <td class="border_td" align="center">24.8 - 25.6</td>
+            </tr>  
+            <tr>
+              <td class="border_td border_alternate_color" align="center">8</td>
+              <td class="border_td border_alternate_color" align="center">41</td>
+              <td class="border_td border_alternate_color" align="center">25.6 - 26.4</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">9</td>
+              <td class="border_td" align="center">42</td>
+              <td class="border_td" align="center">26.4 - 27.2</td>
+            </tr>
+            <tr>
+              <td class="border_td border_alternate_color" align="center">10</td>
+              <td class="border_td border_alternate_color" align="center">43</td>
+              <td class="border_td border_alternate_color" align="center">27.2 - 28.0</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">11</td>
+              <td class="border_td" align="center">44</td>
+              <td class="border_td" align="center">28.0 - 28.8</td>
+            </tr>
+            <tr>
+              <td class="border_td border_alternate_color" align="center">12</td>
+              <td class="border_td border_alternate_color" align="center">45</td>
+              <td class="border_td border_alternate_color" align="center">28.8 - 29.6</td>
+            </tr>  
+            <tr>
+              <td class="border_td" align="center">13</td>
+              <td class="border_td" align="center">46</td>
+              <td class="border_td" align="center">29.6 - 30.3</td>
+            </tr>    
+          </table>
+          	{% unless template == 'page.size-guide' %}
+            <span class="more_details"><a href="/pages/size-guide">{{ "products.product.more_details" | t }}</a></span>
+          	{% endunless %}
+        </div>
+      </div>
+    </details>
+    {% endcomment %}  
+    
+    
+  <!-- BABY FOOTWEAR -->
+  {%- liquid
+      if gender_type == 'type-babies'
+        assign item_attr = 'class="cc-accordion-item is-open" open'
+      else
+        assign item_attr = 'class="cc-accordion-item"'
+      endif
+  -%}
+
+    <details {{ item_attr }} id="type-babies">
+      <summary class="cc-accordion-item__title">
+            {{ 'products.product.baby_footwear' | t }} {{- toggle_icon -}}
+      </summary>
+      <div class="cc-accordion-item__panel" id="type-babies">
+        <div class="cc-accordion-item__content"> 
+          <table width="99%" style="border-spacing: 1px;">
+            <tr>
+              <td class="border_td" width="33.3%" align="center"><strong>US</td>
+              <td class="border_td" width="33.3%" align="center"><strong>EURO</strong></td>
+              <td class="border_td" width="33.3%" align="center"><strong>{{ 'products.product.length_cm' | t }}</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">3</td>
+              <td class="border_td" align="center">19</td>
+              <td class="border_td" align="center">12.60 - 13.32</td>
+            </tr>  
+            <tr>
+              <td class="border_td border_alternate_color" align="center">4</td>
+              <td class="border_td border_alternate_color" align="center">20</td>
+              <td class="border_td border_alternate_color" align="center">13.32 - 13.98</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">5</td>
+              <td class="border_td" align="center">21</td>
+              <td class="border_td" align="center">13.98 - 14.65</td>
+            </tr>
+            <tr>
+              <td class="border_td border_alternate_color" align="center">6</td>
+              <td class="border_td border_alternate_color" align="center">22</td>
+              <td class="border_td border_alternate_color" align="center">14.65 - 15.31</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">7</td>
+              <td class="border_td" align="center">23</td>
+              <td class="border_td" align="center">15.31 - 15.98</td>
+            </tr>
+            <tr>
+              <td class="border_td border_alternate_color" align="center">7.5</td>
+              <td class="border_td border_alternate_color" align="center">24</td>
+              <td class="border_td border_alternate_color" align="center">15.98 - 16.65</td>
+            </tr>  
+            <tr>
+              <td class="border_td" align="center">8</td>
+              <td class="border_td" align="center">25</td>
+              <td class="border_td" align="center">16.65 - 17.31</td>
+            </tr> 
+            <tr>
+              <td class="border_td border_alternate_color" align="center">9</td>
+              <td class="border_td border_alternate_color" align="center">26</td>
+              <td class="border_td border_alternate_color" align="center">17.31 - 17.98</td>
+            </tr>             
+          </table>
+          	{% unless template == 'page.size-guide' %}
+            <span class="more_details"><a href="/pages/size-guide?gender_type=type-babies">{{ "products.product.more_details" | t }}</a></span>
+          	{% endunless %}
+        </div>
+      </div>
+    </details>
+    
+    
+  <!-- TODDLER FOOTWEAR -->
+  {%- liquid
+      if gender_type == 'type-toddlers'
+        assign item_attr = 'class="cc-accordion-item is-open" open'
+      else
+        assign item_attr = 'class="cc-accordion-item"'
+      endif
+  -%}
+
+    <details {{ item_attr }} id="type-toddlers">
+      <summary class="cc-accordion-item__title">
+            {{ 'products.product.toddler_footwear' | t }} {{- toggle_icon -}}
+      </summary>
+      <div class="cc-accordion-item__panel">
+        <div class="cc-accordion-item__content"> 
+          <table width="99%" style="border-spacing: 1px;">
+            <tr>
+              <td class="border_td" width="33.3%" align="center"><strong>US</td>
+              <td class="border_td" width="33.3%" align="center"><strong>EURO</strong></td>
+              <td class="border_td" width="33.3%" align="center"><strong>{{ 'products.product.length_cm' | t }}</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">10</td>
+              <td class="border_td" align="center">27</td>
+              <td class="border_td" align="center">17.98 - 18.64</td>
+            </tr>  
+            <tr>
+              <td class="border_td border_alternate_color" align="center">11</td>
+              <td class="border_td border_alternate_color" align="center">28</td>
+              <td class="border_td border_alternate_color" align="center">18.64 - 19.31</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">12</td>
+              <td class="border_td" align="center">29</td>
+              <td class="border_td" align="center">19.31 - 19.98</td>
+            </tr>
+            <tr>
+              <td class="border_td border_alternate_color" align="center">12.5</td>
+              <td class="border_td border_alternate_color" align="center">30</td>
+              <td class="border_td border_alternate_color" align="center">19.98 - 20.64</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">13</td>
+              <td class="border_td" align="center">31</td>
+              <td class="border_td" align="center">20.64 - 21.31</td>
+            </tr>
+          </table>
+          	{% unless template == 'page.size-guide' %}
+            <span class="more_details"><a href="/pages/size-guide?gender_type=type-toddlers">{{ "products.product.more_details" | t }}</a></span>
+          	{% endunless %}
+        </div>
+      </div>
+    </details>  
+    
+    
+    
+  <!-- JUNIOR FOOTWEAR -->
+  {%- liquid
+      if gender_type == 'type-junior'
+        assign item_attr = 'class="cc-accordion-item is-open" open'
+      else
+        assign item_attr = 'class="cc-accordion-item"'
+      endif
+  -%}
+
+    <details {{ item_attr }} id="type-junior">
+      <summary class="cc-accordion-item__title">
+            {{ 'products.product.junior_footwear' | t }} {{- toggle_icon -}}
+      </summary>
+      <div class="cc-accordion-item__panel">
+        <div class="cc-accordion-item__content"> 
+          <table width="99%" style="border-spacing: 1px;">
+            <tr>
+              <td class="border_td" width="33.3%" align="center"><strong>US</td>
+              <td class="border_td" width="33.3%" align="center"><strong>EURO</strong></td>
+              <td class="border_td" width="33.3%" align="center"><strong>{{ 'products.product.length_cm' | t }}</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">1</td>
+              <td class="border_td" align="center">32</td>
+              <td class="border_td" align="center">21.31 - 21.97</td>
+            </tr>  
+            <tr>
+              <td class="border_td border_alternate_color" align="center">2</td>
+              <td class="border_td border_alternate_color" align="center">33</td>
+              <td class="border_td border_alternate_color" align="center">21.97 – 22.64</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">2.5</td>
+              <td class="border_td" align="center">34</td>
+              <td class="border_td" align="center">22.64 - 23.31</td>
+            </tr>
+            <tr>
+              <td class="border_td border_alternate_color" align="center">3</td>
+              <td class="border_td border_alternate_color" align="center">35</td>
+              <td class="border_td border_alternate_color" align="center">23.31 - 23.97</td>
+            </tr>
+            <tr>
+              <td class="border_td" align="center">4</td>
+              <td class="border_td" align="center">36</td>
+              <td class="border_td" align="center">23.97 - 24.64</td>
+            </tr>
+            <tr>
+              <td class="border_td border_alternate_color" align="center">5</td>
+              <td class="border_td border_alternate_color" align="center">37</td>
+              <td class="border_td border_alternate_color" align="center">24.64 - 25.30</td>
+            </tr>  
+            <tr>
+              <td class="border_td" align="center">6</td>
+              <td class="border_td" align="center">38</td>
+              <td class="border_td" align="center">25.30 - 25.97</td>
+            </tr> 
+            <tr>
+              <td class="border_td border_alternate_color" align="center">6.5</td>
+              <td class="border_td border_alternate_color" align="center">39</td>
+              <td class="border_td border_alternate_color" align="center">25.97 - 26.64</td>
+            </tr>             
+          </table>
+          	{% unless template == 'page.size-guide' %}
+            <span class="more_details"><a href="/pages/size-guide?gender_type=type-junior">{{ "products.product.more_details" | t }}</a></span>
+          	{% endunless %}
+        </div>
+      </div>
+    </details>         
+    
+    
+  </div>
+</div>
+
+{% if template == 'page.size-guide' %}
+<script type="text/javascript">  
+  function getUrlVars(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++){
+      hash = hashes[i].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+    }
+    return vars;
+  }  
+  var type_gender = getUrlVars()["gender_type"];  
+
+  if($("details")[0].hasAttribute("open")) {
+   $("details").removeAttr("open");
+  }
+
+  $('#'+type_gender).attr('open', '');
+  $('.cc-accordion-item__content').css("opacity", "unset");    
+</script>  
+{% endif %}

@@ -1,0 +1,405 @@
+<style>
+    :root {
+        --form-width: 600px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        --argin:      50px;
+    }
+
+    .input-wrapper {
+        position: relative;
+    }
+
+    .floating-label {
+        position:       absolute;
+        top:            50%;
+        left:           15px;
+        transform:      translateY(-50%);
+        transition:     all 0.3s ease;
+        pointer-events: none;
+    }
+
+    .input-wrapper.textarea-wrapper .floating-label {
+        top:       30px;
+        transform: translateY(-50%);
+
+    }
+
+    .floating-input:focus + .floating-label,
+    .floating-input:not(:placeholder-shown) + .floating-label {
+        top:       5px;
+        font-size: 0.75em;
+    }
+
+    h2 {
+        padding-bottom: 10px;
+        margin-bottom:  30px;
+    }
+
+    #top-part-of-the-form {
+        width:      var(--form-width);
+        max-width:  100%;
+        margin-top: 20px;
+    }
+
+    form {
+        width:         var(--form-width);
+        max-width:     100%;
+        margin-bottom: 20px;
+    }
+
+    input[type="radio"] {
+        margin: 10px 0;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    label {
+        width: 100%;
+    }
+
+    input[type="text"], input[type="email"], select, textarea {
+        width:       100%;
+        padding:     10px;
+        margin:      10px 0;
+        box-sizing:  border-box;
+        border:      1px solid #000000;
+        background:  #ffffff;
+        outline:     none;
+        font-size:   1rem;
+        font-weight: 600;
+    }
+
+    select {
+
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .flex-space-between {
+        justify-content: space-between;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .d-inline-block {
+        display: inline-block;
+    }
+
+    .w-49 {
+        width: 49%;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    button {
+        padding:          10px 15px;
+        background-color: #333333;
+        color:            white;
+        border:           none;
+        cursor:           pointer;
+    }
+
+    button:hover {
+        background-color: #555555;
+    }
+
+    select {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    select option {
+        color:       #000000;
+        font-weight: 600;
+    }
+
+    .select-wrapper {
+        position: relative;
+    }
+
+    .select-wrapper label {
+        position:  absolute;
+        top:       50%;
+        transform: translateY(-50%);
+        left:      15px;
+        color:     #000000;
+        z-index:   1;
+        width:     auto;
+    }
+
+    .select-value {
+        font-weight: 600;
+    }
+
+
+    input.has-error, textarea.has-error, select.has-error {
+        border-color: red;
+        border-width: 2px;
+    }
+    @media only screen and (max-width: 767px) {
+        :root {
+            --form-width: 100%;
+        }
+
+        body {
+            margin: 20px;
+        }
+
+        h2, h3 {
+            font-size: 1.5rem; /* Smaller font size on mobile */
+        }
+
+        .input-wrapper,
+        .select-wrapper {
+            margin: 0; /* Reduce the bottom margin */
+        }
+
+        .d-flex.flex-wrap {
+            flex-direction: column; /* Stack the elements vertically */
+        }
+
+        .w-49 {
+            width: 100%; /* Full width for input fields */
+        }
+
+        .floating-label {
+            font-size: 0.9rem; /* Smaller labels on mobile */
+        }
+
+        button {
+            width: 100%; /* Full-width buttons */
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+        #top-part-of-the-form h2{
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        #top-part-of-the-form h3{
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+       .w-100-mobile{
+           width: 100%;
+       }
+    }
+
+</style>
+
+<div class="text-center">
+    <div class="d-inline-block text-left w-100-mobile" id="top-part-of-the-form">
+        <h2 class="text-center" style="text-transform: none;">
+            {{  'data_request_form.data_subject_access_request_form_html' |  t }}
+        </h2>
+
+        <p>{{ 'data_request_form.we_take_your_privacy_seriously_html' |  t }}</p>
+        <p class="text-left">{{  'data_request_form.as_a_customer_you_have_the_right_to_html' |  t }}
+        <ul class="text-left">
+            <li>{{  'data_request_form.request_a_summary_of_your_personal_information_html' |  t }}</li>
+            <li>{{  'data_request_form.request_that_we_do_not_share_or_sell_your_data_html' |  t }}</li>
+            <li>{{  'data_request_form.request_that_we_delete_your_personal_data_html' |  t }}</li>
+        </ul>
+        </p>
+        <p>{{  'data_request_form.to_enact_these_rights_please_fill_out_the_form_below_html' |  t }}</p>
+    </div>
+</div>
+
+<div class="text-center">
+    <div class="d-inline-block text-left w-100-mobile">
+        <form id="request-info-form" action="javascript:;" method="post">
+            <h3 style="text-transform: none;">{{  'data_request_form.make_a_data_request_html' |  t }}</h3>
+
+            <label for="request-type"><strong>{{  'data_request_form.select_a_request_type_html' |  t }}</strong></label><br>
+            <input id="request-type" type="radio" name="request-type" value="do-not-share" checked> <label for="request-type">{{  'data_request_form.request_that_we_do_not_share_or_sell_your_data_html' |  t }}</label> <br>
+            <input id="request-type-2" type="radio" name="request-type" value="delete-data"> <label for="request-type-2">{{  'data_request_form.delete_all_your_personal_data_html' |  t }}</label><br>
+            <input id="request-type-3" type="radio" name="request-type" value="get-copy"> <label for="request-type-3">{{  'data_request_form.get_a_copy_of_your_personal_data_html' |  t }}</label><br>
+            <input id="request-type-4" type="radio" name="request-type" value="unsubscribe"> <label for="request-type-4">{{  'data_request_form.unsubscribe_from_marketing_communications_html' |  t }}</label><br>
+
+            <div class="d-flex flex-wrap flex-space-between" style="margin-top:10px;">
+                <div class="d-inline-block w-49">
+                    <div class="input-wrapper">
+                        <label for="first-name" class="floating-label">{{  'data_request_form.first_name_html' |  t }}</label>
+                        <input type="text" class="floating-input required" id="first-name" name="first-name">
+                    </div>
+                </div>
+                <div class="d-inline-block w-49">
+                    <div class="input-wrapper">
+                        <label for="last-name" class="floating-label">{{  'data_request_form.last_name_html' |  t }}</label>
+                        <input type="text" class="floating-input required" id="last-name" name="last-name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="email" class="floating-label">{{  'data_request_form.email_address_html' |  t }}</label>
+                <input type="email" class="floating-input required" id="email" name="email">
+            </div>
+
+            <div class="input-wrapper">
+                <label for="city" class="floating-label">
+                    {{  'data_request_form.country_of_residence_used_in_order_html' |  t }} <span class="select-value"></span>
+                </label>
+                <input type="text" name="country" id="city" class="floating-input required">
+            </div>
+
+            <div class="select-wrapper">
+                <label for="state">{{  'data_request_form.state_html' |  t }} <span class="select-value"></span></label>
+                <select id="state" class="required" name="state">
+                    <option value=""></option>
+                    <option class="Canada" value="Alberta">Alberta</option>
+                    <option class="Canada" value="British Columbia">British Columbia</option>
+                    <option class="Canada" value="Manitoba">Manitoba</option>
+                    <option class="Canada" value="New Brunswick">New Brunswick</option>
+                    <option class="Canada" value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                    <option class="Canada" value="Nova Scotia">Nova Scotia</option>
+                    <option class="Canada" value="Northwest Territories">Northwest Territories</option>
+                    <option class="Canada" value="Nunavut">Nunavut</option>
+                    <option class="Canada" value="Ontario">Ontario</option>
+                    <option class="Canada" value="Prince Edward Island">Prince Edward Island</option>
+                    <option class="Canada" value="Quebec">Quebec</option>
+                    <option class="Canada" value="Saskatchewan">Saskatchewan</option>
+                    <option class="Canada" value="Yukon">Yukon</option>
+                </select>
+            </div>
+            <div class="input-wrapper textarea-wrapper">
+                <label for="comments" class="floating-label">{{  'data_request_form.comments_optional_html' |  t }}</label>
+                <textarea id="comments" class="floating-input" name="comments" rows="4"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" id="request-form-submit-btn">{{  'data_request_form.submit_html' |  t }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        let $body = $('body');
+
+        $body.on('click', '#request-form-submit-btn', function() {
+            let $this   = $(this);
+            let $form   = $body.find('#request-info-form');
+            let process = true;
+            $this.attr('disabled', 'disabled');
+            $this.attr('style', 'pinter-events:none;opacity:0.5; cursor:not-allowed;');
+
+            $form.find('.required').each(function() {
+                $(this).removeClass('has-error');
+                if ($(this).val().trim() === '') {
+                    $(this).addClass('has-error');
+                    process = false;
+                }
+            });
+
+            setTimeout(function() {
+                if (!process) {
+                    $this[0].removeAttribute('disabled');
+                    $this[0].removeAttribute('style');
+                } else {
+                    $.ajax({
+                               url:      'https://app.yellowshoes.com/api/customers',
+                               method:   'POST',
+                               data:     {
+                                   action:       'data-request',
+                                   request_type: $body.find('input[name="request-type"]:checked').val(),
+                                   first_name:   $body.find('#first-name').val().trim(),
+                                   last_name:    $body.find('#last-name').val().trim(),
+                                   email:        $body.find('#email').val().trim(),
+                                   country:      $body.find('#city').val().trim(),
+                                   state:        $body.find('#state').val().trim(),
+                                   comments:     $body.find('#comments').val().trim(),
+                                   language:     '{{ shop.locale }}',
+                               },
+                               dataType: 'json',
+                               success:  function(response_data) {
+                                   $form[0].reset();
+                                   $form.find('.select-value').text('');
+                                   Swal.fire({
+                                                 title: '',
+                                                 icon:  'success',
+                                             });
+                                   $this[0].removeAttribute('disabled');
+                                   $this[0].removeAttribute('style');
+
+                               },
+                               error:    function(response_data) {
+                                   $this[0].removeAttribute('disabled');
+                                   $this[0].removeAttribute('style');
+
+                               },
+                           });
+                }
+            }, 500);
+        });
+
+        $body.on('change', '.select-wrapper select', function() {
+            let $value_container = $(this).closest('.select-wrapper').find('.select-value');
+            if ($value_container.length) {
+                $value_container.html(this.value);
+            }
+        });
+
+        $body.on('change', '#select-country', function() {
+            $body.find('#state').val('');
+            $body.find('#state').trigger('change');
+            $body.find('option.US').hide();
+            $body.find('option.Canada').hide();
+            if (this.value.trim() == 'United States') {
+                $body.find('option.US').show();
+            }
+            if (this.value.trim() == 'Canada') {
+                $body.find('option.Canada').show();
+            }
+        });
+        $('label[for=\'select-country\']').click(function() {
+            $('#select-country').mousedown();
+        });
+        $body.on('focus blur input', '.floating-input', function() {
+            let $this      = $(this);
+            let isTextArea = $this.closest('.input-wrapper').hasClass('textarea-wrapper');
+            let $label     = $this.closest('.input-wrapper').find('label');
+
+            if ($this.val() || $this.is(':focus')) {
+                $label.css({
+                               'top':       '2px',
+                               'left':      '0',
+                               'font-size': '0.75em',
+                           });
+            } else {
+                if (isTextArea) {
+                    $label.css({
+                                   'top':       '20px',
+                                   'left':      '15px',
+                                   'transform': 'translateY(-50%)',
+                                   'font-size': '1em',
+                                   'color':     'initial',
+                               });
+                } else {
+                    $label.css({
+                                   'top':       '50%',
+                                   'left':      '15px',
+                                   'transform': 'translateY(-50%)',
+                                   'font-size': '1em',
+                                   'color':     'initial',
+                               });
+                }
+
+            }
+        });
+    });
+
+</script>

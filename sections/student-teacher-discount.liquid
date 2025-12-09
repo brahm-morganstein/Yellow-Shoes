@@ -1,0 +1,801 @@
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+    }
+
+    label{
+        font-weight:bold;
+    }
+    .student-teacher-login-buttons{
+        display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0.5rem;
+    }
+
+    .hero {
+        position: relative;
+        background: url("https://cdn.shopify.com/s/files/1/1080/2420/files/SHOP-THE-LOOK-DESKTOP_ba5edc3c-ad5a-40ad-b4af-d2e8eee762fc.jpg?v=1753822274")
+                  no-repeat fixed top;
+        background-size: cover;
+        background-position: center;
+        padding: 6rem 2rem;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-bottom:20px;
+    }
+
+    /* Background image layer */
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: inherit;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5; /* image transparency */
+        z-index: 0;
+    }
+
+    /* Dark overlay layer */
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4); /* black overlay at 40% opacity */
+        z-index: 1;
+    }
+
+    .hero-text {
+        position: relative;
+        z-index: 2; /* ensures text is above both image + overlay */
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .hero-text h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .subhead {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta {
+        background-color: #ffcc00;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+    .cta:hover {
+        background-color: #e6b800;
+    }
+
+    /* Form Styling */
+    .form-section {
+        background-color: white;
+        padding: 2rem;
+        margin-top: -50px;
+        margin-bottom: 8rem!important;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+
+    h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 1rem;
+        margin: 1rem 0 0.5rem;
+    }
+
+    input, select, button {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+    }
+
+    #student-discount-btn {
+        background-color: #ffcc00;
+        border: none;
+        cursor: pointer;
+        margin-top:1rem;
+    }
+
+    #student-discount-btn:hover {
+        background-color: #e6b800;
+    }
+
+    /* File Upload Styling */
+    input[type="file"] {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Role Selector Styling */
+    .role-selector {
+        margin-bottom: 1rem;
+    }
+
+    .role-selector label {
+        font-size: 1rem;
+        margin-right: 1rem;
+    }
+
+    .dob {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .dob select {
+        flex: 1;
+    }
+
+    #confirmationMessage {
+        background-color: #d4edda;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        font-size: 24px;
+        margin-bottom: 4rem;
+    }
+    .error_label{
+        color:red;
+        display:none;
+    }
+    @media screen and (max-width: 767px) {
+        #student-login, #student-create-account{
+            width:300px;
+            height: auto;
+            padding:0.8rem;
+            margin:0;
+            justify-content: center;
+        }
+        .hero {
+            position: relative;
+            background-image: url(https://cdn.shopify.com/s/files/1/1080/2420/files/SHOP-THE-LOOK-DESKTOP_ba5edc3c-ad5a-40ad-b4af-d2e8eee762fc.jpg?v=1753822274);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: scroll;   /* <-- key change */
+
+            padding: 6rem 2rem;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+<script src="https://www.google.com/recaptcha/api.js?hl={{shop.locale}}" async defer></script>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-text">
+        <h1 id="headline">
+            {%if shop.locale == 'en' %}
+                Students & Teachers, Save 10%
+            {% else %}
+                Étudiants & Enseignants, Économisez 10 %
+            {% endif %}
+        </h1>
+        {%if shop.locale == 'en' %}
+            <p class="subhead">Exclusive year-round discount just for you.</p>
+            <button id="verifyBtn" class="cta">Verify Now</button>
+        {% else %}
+            <p class="subhead">Un rabais exclusif, offert toute l’année, juste pour vous.</p>
+            <button id="verifyBtn" class="cta">Vérifier maintenant</button>
+        {% endif %}
+    </div>
+</section>
+
+{% if customer %}
+    <!-- Verification Form Section -->
+    <section id="student-form-section" class="form-section">
+        {% if shop.locale == 'en' %}
+            <h3>Unlock this Student-Teacher Only Offer</h3>
+            <p>Verify you're a student or teacher at a degree-granting school.</p>
+        {% else %}
+            <h3>Profitez de cette offre exclusive pour étudiants et enseignants</h3>
+            <p>Confirmez votre statut d’étudiant ou d’enseignant dans un établissement reconnu.</p>
+        {% endif %}
+
+        <form id="verificationForm" class="column">
+
+            <div id="student-form-step-1" class="column" style="display:none;">
+                {% if shop.locale == 'en' %}
+                    <label for="role">Select your role*</label>
+                {% else %}
+                    <label for="fole">Sélectionnez votre rôle*</label>
+                {% endif %}
+                <div class="role-selector">
+                    <label>
+                        <input type="radio" id="student" name="role" value="student" required> {%if shop.locale == 'en'%}Student{% else %}Étudiant{% endif %}
+                    </label>
+                    <label>
+                        <input type="radio" id="teacher" name="role" value="teacher" required> {%if shop.locale == 'en'%}Teacher{% else %}Enseignant{% endif %}
+                    </label>
+                    <span class="error_label" id="role-error">{%if shop.locale == 'en'%}Role is required{% else %}Role est requise{% endif %}</span>
+                </div>
+                {% if shop.locale == 'en' %}
+                    <p>* Required information</p>
+                {% else %}
+                    <p>* Information requise</p>
+                {% endif %}
+
+                <!-- Common Fields -->
+                {% if shop.locale == 'en' %}
+                    <label for="school">School*</label>
+                    <input type="text" id="school" name="school" placeholder="School / Institution" required>
+                    <span class="error_label" id="school-error">School is required</span>
+                {% else %}
+                    <label for="school">École*</label>
+                    <input type="text" id="school" name="school" placeholder="École / Institution" required>
+                    <span class="error_label" id="school-error">Le nom de l'école est requis</span>
+                {% endif %}
+
+                {% if shop.locale == 'en' %}
+                    <label for="firstName">First Name*</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <span class="error_label" id="firstName-error">First name is required</span>
+                {% else %}
+                    <label for="firstName">Prénom*</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Prénom" required>
+                    <span class="error_label" id="firstName-error">Prénom est requise</span>
+                {% endif %}
+
+                {% if shop.locale == 'en' %}
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    <span class="error_label" id="lastName-error">Last name is required</span>
+                {% else %}
+                    <label for="lastName">Nom de famille*</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Nom de famille" required>
+                    <span class="error_label" id="lastName-error">Nom de famille est requise</span>
+                {% endif %}
+
+                {% if shop.locale == 'en' %}
+                    <label for="dob">Date of Birth*</label>
+                    <p>Used for verification purposes only</p>
+                    <div class="dob">
+                        <select id="dobMonth" name="dobMonth" required>
+                            <option value="">Month</option>
+                            <!-- Month options here -->
+                        </select>
+                        <select id="dobDay" name="dobDay" required>
+                            <option value="">Day</option>
+                            <!-- Day options here -->
+                        </select>
+                        <select id="dobYear" name="dobYear" required>
+                            <option value="">Year</option>
+                            <!-- Year options here -->
+                        </select>
+                    </div>
+                    <span class="error_label" id="dob-error">Date of birth is required</span>
+                {% else %}
+                    <label for="dob">Date de naissance*</label>
+                    <p>Utilisée uniquement à des fins de vérification</p>
+                    <div class="dob">
+                        <select id="dobMonth" name="dobMonth" required>
+                            <option value="">Mois</option>
+                            <!-- Month options here -->
+                        </select>
+                        <select id="dobDay" name="dobDay" required>
+                            <option value="">Jour</option>
+                            <!-- Day options here -->
+                        </select>
+                        <select id="dobYear" name="dobYear" required>
+                            <option value="">Année</option>
+                            <!-- Year options here -->
+                        </select>
+                    </div>
+                    <span class="error_label" id="dob-error">Date de naissance est requise</span>
+                {% endif %}
+
+                {% if shop.locale == 'en' %}
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required readonly value="{{ customer.email }}">
+                    <span class="error_label" id="email-error">Email is required or invalid</span>
+                {% else %}
+                    <label for="email">Adresse courriel*</label>
+                    <input type="email" id="email" name="email" placeholder="Adresse courriel" required>
+                    <span class="error_label" id="email-error">Adresse courriel est requise ou invalide</span>
+                {% endif %}
+
+                {% if shop.locale == 'en' %}
+                    <label for="marketing">
+                        <input type="checkbox" id="marketing"> Yes, I’d like to receive marketing communications.
+                    </label>
+                {% else %}
+                    <label for="marketing">
+                        <input type="checkbox" id="marketing"> Oui, je souhaite recevoir des communications marketing.
+                    </label>
+                {% endif %}
+
+                {% if shop.locale == 'en' %}
+                    <label for="consent" style="margin-bottom:0px;">
+                        <input type="checkbox" id="consent" required> I agree to the <a href="/privacy-policy">privacy policy</a>.
+                    </label>
+                    <span style="margin-bottom:1rem;" class="error_label" id="consent-error">Please agree to our privacy policy to continue</span>
+                {% else %}
+                    <label for="consent" style="margin-bottom:0px;">
+                        <input type="checkbox" id="consent" required> J’accepte la <a href="/privacy-policy">politique de confidentialité</a>.
+                    </label>
+                    <span style="margin-bottom:1rem;" class="error_label" id="consent-error">Veuillez accepter notre politique de confidentialité pour continuer</span>
+                {% endif %}
+
+            </div>
+
+            <div id="student-form-step-2" class="column" style="display:none;">
+                <style>
+                    .card{
+                        border:1px solid #ccc;
+                        border-radius:6px;
+                    }
+                    .card-header{
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        padding:1rem;
+                        font-weight:bold;
+                        cursor:pointer;
+                    }
+                    .card-body{
+                        background-color:#f1f3f6;
+                        border-top:1px solid #ccc;
+                        padding:1rem;
+                        overflow:hidden;
+                        border-radius: 0 0 6px 6px;
+                        display:none;
+                    }
+                    .card-toggle{
+                        font-size:18px;
+                    }
+                </style>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>{%if shop.locale == 'en'%}Suggested document types{% else %}Types de documents acceptés{% endif %}</div>
+                            <div class="card-toggle">+</div>
+                        </div>
+                        <div class="card-body">
+                            <ul id="student-doc" style="list-style: disc;padding-left:1rem;">
+                                <li>{%if shop.locale == 'en'%}School ID card with expiration date{% else %}Carte étudiante avec date d’expiration{% endif %}</li>
+                                <li>{%if shop.locale == 'en'%}Class schedule{% else %}Horaire des cours{% endif %}</li>
+                                <li>{%if shop.locale == 'en'%}Tuition receipt{% else %}Reçu de scolarité{% endif %}</li>
+                                <li>{%if shop.locale == 'en'%}File must be .jpg .jpeg .png .pdf{% else %}Formats acceptés : .jpg, .jpeg, .png ou .pdf{% endif %}</li>
+                            </ul>
+                            <ul id="teacher-doc" style="list-style: disc;padding-left:1rem;display:none;">
+                                <li>{%if shop.locale == 'en'%}School ID card with expiration date{% else %}Carte étudiante avec date d’expiration{% endif %}</li>
+                                <li>{%if shop.locale == 'en'%}Employment letter{% else %}Lettre d’emploi{% endif %}</li>
+                                <li>{%if shop.locale == 'en'%}Pay stub{% else %}Talon de paie{% endif %}</li>
+                                <li>{%if shop.locale == 'en'%}File must be .jpg .jpeg .png .pdf{% else %}Formats acceptés : .jpg, .jpeg, .png ou .pdf{% endif %}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top:1rem;">
+                        <div class="card-header">
+                            <div>{%if shop.locale == 'en'%}What happens next?{% else %}Prochaine étape{% endif %}</div>
+                            <div class="card-toggle">+</div>
+                        </div>
+                        {%if shop.locale == 'en'%}
+                            <div class="card-body">
+                                <p>The documents will be reviewed for authenticity by an optimized mix of manual and automated document review and compared against the information you provided.</p>
+                                <p>Expected review time is 24 to 48 hours.</p>
+                            </div>
+                        {% else %}
+                            <div class="card-body">
+                                <p>Vos documents seront vérifiés afin de confirmer leur authenticité à l’aide d’un processus combinant révision manuelle et automatisée. Ils seront comparés aux informations fournies.</p>
+                                <p>Le délai de traitement est estimé entre <b>24 et 48 heures.</b></p>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="card" style="margin-top:1rem;">
+                        <div class="card-header">
+                            <div>{%if shop.locale == 'en'%}Can I finish later?{% else %}Puis-je revenir plus tard?{% endif %}</div>
+                            <div class="card-toggle">+</div>
+                        </div>
+                        {%if shop.locale == 'en'%}
+                            <div class="card-body">
+                                <p>Yes, If you don't finish now, we'll automatically send an email to the address you provided with a link back to this step.</p>
+                            </div>
+                        {% else %}
+                            <div class="card-body">
+                                <p>Oui. Si vous n’avez pas terminé la procédure maintenant, un courriel sera automatiquement envoyé à l’adresse que vous avez fournie, incluant un lien pour revenir à cette étape.</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- File Upload Section -->
+                <label for="proof">{%if shop.locale == 'en'%}Upload Proof*{% else %}Téléverser votre preuve*{% endif %}</label>
+                {% if shop.locale == 'en' %}
+                    <p>
+                        By submitting the personal information above, I acknowledge that my information is being collected in accordance with <b>Yellow Shoes' Privacy Policy</b> for the purpose of verifying my eligibility for a special <b>student/teacher discount</b>. This information will be used <b>solely for authentication and verification purposes</b> and will be <b>deleted upon acceptance or rejection</b> of my request. It will <b>not be stored or kept</b> by Yellow Shoes once the verification process is complete.
+                    </p>
+                {% else %}
+                    <p>En soumettant les renseignements personnels ci-dessus, je reconnais que mes informations sont recueillies conformément à la <b>politique de confidentialité de Yellow</b> dans le but de vérifier mon admissibilité à un <b>rabais spécial pour étudiants et enseignants</b>. Ces informations seront utilisées <b>uniquement à des fins d’authentification et de vérification</b>, puis <b>supprimées dès l’acceptation ou le refus</b> de ma demande. Elles <b>ne seront pas conservées</b> par Yellow une fois le processus de vérification complété.</p>
+                {% endif %}
+                <input type="file" id="proof" name="proof" accept=".jpg,.png,.pdf" required>
+                <span style="margin-bottom:1rem;" class="error_label" id="proof-error">{%if shop.locale == 'en'%}The proof must be a file of type: jpg, doc, docx, pdf, png.{% else %}{% endif %}</span>
+                <input type="hidden" id="student-ref">
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6LcRGDkbAAAAAOIwsnhnymvafALKMEwqp2Os8DST"></div>
+            <div id="g-recaptcha-response-error" class="error_label">{{"join_talent.validation.recaptcha"|t}}</div>
+
+            <button id="student-discount-btn" type="button">{%if shop.locale == 'en'%}Verify My Student Status{% else %}Vérifier mon statut{% endif %}</button>
+        </form>
+    </section>
+{% else %}
+    <section class="form-section">
+        <h3>
+            {%if shop.locale=='en' %}
+                Unlock your 10% Student Discount!
+            {% else %}
+                Débloquez votre remise étudiante de 10 % !
+            {% endif %}
+        </h3>
+        <p>
+            {%if shop.locale=='en' %}
+                Log in to your account to apply. If you’re new to our website, create an account to access the application form.
+            {% else %}
+                Connectez-vous à votre compte pour l'appliquer. Si vous êtes nouveau sur notre site, créez un compte pour accéder au formulaire de demande.
+            {% endif %}
+        </p>
+        <div class="student-teacher-login-buttons">
+            <button id="student-login" class="header-account-link" href="/account/login">
+                {%if shop.locale=='en' %}
+                    Log in to your account
+                {% else %}
+                    Connectez-vous à votre compte
+                {% endif %}
+            </button>
+            <button id="student-create-account">
+                {%if shop.locale=='en' %}
+                    Create an account
+                {% else %}
+                    Créer un compte
+                {% endif %}
+            </button>
+        </div>
+    </section>
+{% endif %}
+
+<!-- Success/Error States -->
+<div id="confirmationMessage" style="display: none;">
+    {% if shop.locale == 'en' %}
+        <p><b>Thank you for your submission!</b></p>
+        <p>We’ve received your documents and our team is reviewing them.</p>
+        <p>You’ll receive an email with your <b>approval decision</b> within <b>24–48 hours</b>.</p>
+        <p>We can’t wait to welcome you to our <b>Yellow Shoes Student & Teacher Discount Program</b>!</p>
+    {% else %}
+        <p><b>Merci pour votre soumission !</b></p>
+        <p>Nous avons bien reçu vos documents et notre équipe est en train de les examiner.</p>
+        <p>Vous recevrez un courriel avec la <b>décision d’approbation</b> dans un délai de <b>24 à </b> heures.</p>
+        <p>Nous avons hâte de vous accueillir dans notre <b>programme de rabais pour étudiants et enseignants Yellow</b> !</p>
+    {% endif %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.documentElement.lang = "{{ shop.locale }}";
+    $("#student-form-step-1").show();
+    $("#student-form-step-2").hide();
+
+    let studentFromStep = 1;
+
+    const params = new URL(window.location.href).searchParams;
+
+    let ref = params.get('ref')
+    let role = params.get('role')
+    if(ref){
+      $("#student-ref").val(ref)
+      loadStep2()
+    }
+
+
+    const verifyBtn = document.getElementById("verifyBtn");
+    const confirmationMessage = document.getElementById("confirmationMessage");
+
+    // Smooth scroll to form
+    verifyBtn.addEventListener("click", () => {
+      document.querySelector(".form-section").scrollIntoView({
+                                                               behavior: "smooth",
+                                                               block: "start",
+                                                             });
+    });
+
+    // Populate DOB dropdowns
+    const monthSelect = document.getElementById("dobMonth");
+    const daySelect = document.getElementById("dobDay");
+    const yearSelect = document.getElementById("dobYear");
+
+      {% if shop.locale == 'en' %}
+    const months = [
+      "January","February","March","April","May","June",
+      "July","August","September","October","November","December"
+    ];
+      {% else %}
+    const months = [
+      "Janvier","Février","Mars","Avril","Mai","Juin",
+      "Juillet","Août","Septembre","Octobre","Novembre","Décembre"
+    ];
+      {% endif %}
+
+    months.forEach((m, i) => {
+      let opt = document.createElement("option");
+      opt.value = i + 1;
+      opt.textContent = m;
+      monthSelect.appendChild(opt);
+    });
+
+    for (let d = 1; d <= 31; d++) {
+      let opt = document.createElement("option");
+      opt.value = d;
+      opt.textContent = d;
+      daySelect.appendChild(opt);
+    }
+
+    const currentYear = new Date().getFullYear();
+    for (let y = currentYear; y >= currentYear - 100; y--) {
+      let opt = document.createElement("option");
+      opt.value = y;
+      opt.textContent = y;
+      yearSelect.appendChild(opt);
+    }
+
+    const form = $("#verificationForm");
+    const btnSubmit = form.find("#student-discount-btn");
+
+
+    btnSubmit.on("click",function(e){
+      if(studentFromStep == 1 && validateStep1()){
+        submitSetp1()
+      }
+
+      if(studentFromStep == 2){
+        submitSetp2()
+      }
+    });
+
+
+    $(".card-header").click(function(){
+      const isOpen = $(this).find('.card-toggle').html() == '-';
+      if(!isOpen){
+        $(this).find('.card-toggle').html('-');
+        $(this).closest('.card').find('.card-body').show();
+      }else{
+        $(this).find('.card-toggle').html('+');
+        $(this).closest('.card').find('.card-body').hide();
+      }
+    })
+
+
+    function validateStep1() {
+      let valid = true;
+
+      // Reset error messages
+      const errorLabels = document.querySelectorAll('.error_label');
+      errorLabels.forEach(error => {
+        error.style.display = 'none';
+      });
+
+      // Role validation
+      const role = document.querySelector('input[name="role"]:checked');
+      if (!role) {
+        document.getElementById('role-error').style.display = 'block';
+        valid = false;
+      }
+
+      // School validation
+      const school = document.getElementById('school');
+      if (!school.value.trim()) {
+        document.getElementById('school-error').style.display = 'block';
+        valid = false;
+      }
+
+      // First Name validation
+      const firstName = document.getElementById('firstName');
+      if (!firstName.value.trim()) {
+        document.getElementById('firstName-error').style.display = 'block';
+        valid = false;
+      }
+
+      // Last Name validation
+      const lastName = document.getElementById('lastName');
+      if (!lastName.value.trim()) {
+        document.getElementById('lastName-error').style.display = 'block';
+        valid = false;
+      }
+
+      // Date of Birth validation
+      const dobMonth = document.getElementById('dobMonth');
+      const dobDay = document.getElementById('dobDay');
+      const dobYear = document.getElementById('dobYear');
+      if (!dobMonth.value || !dobDay.value || !dobYear.value) {
+        document.getElementById('dob-error').style.display = 'block';
+        valid = false;
+      }
+
+      // Email validation
+      const email = document.getElementById('email');
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!email.value.trim() || !emailPattern.test(email.value.trim())) {
+        document.getElementById('email-error').style.display = 'block';
+        valid = false;
+      }
+
+      // Consent checkbox validation
+      const consent = document.getElementById('consent');
+      if (!consent.checked) {
+        document.getElementById('consent-error').style.display = 'block';
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    function submitSetp1(){
+
+      $(".error_label").hide();
+
+      btnSubmit.prop("disabled", true);
+
+      // Build form data
+      var fd = new FormData();
+      fd.append("role", $("input[name='role']:checked").val());
+      fd.append("school", $("#school").val());
+      fd.append("first_name", $("#firstName").val());
+      fd.append("last_name", $("#lastName").val());
+      const dob = `${$("#dobYear").val()}-${$("#dobMonth").val().padStart(2,'0')}-${$("#dobDay").val().padStart(2,'0')}`;
+      fd.append("dob", dob);
+      fd.append("email", $("#email").val());
+      fd.append("locale", '{{ shop.locale }}');
+      fd.append("marketing", $("#marketing").is(":checked") ? 1 : 0);
+      fd.append("consent", $("#consent").is(":checked") ? 1 : 0);
+      fd.append("g-recaptcha-response", grecaptcha.getResponse());
+
+      // POST request
+      $.ajax({
+               url: "https://app.yellowshoes.com/api/student-discount",
+               type: "post",
+               data: fd,
+               contentType: false,
+               processData: false,
+               beforeSend: function (request) {
+                 request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+               },
+               success: function (response) {
+                 const urlParams = new URLSearchParams(window.location.search);
+                 urlParams.set('ref', response);
+                 urlParams.set('role', $("input[name='role']:checked").val());
+                 window.location.search = urlParams;
+               },
+               error: function (data) {
+                 console.log("Error status:", data.status);
+                 grecaptcha.reset();
+                 if (data.status === 422) {
+                   let response = $.parseJSON(data.responseText);
+                   $.each(response.errors, function (key, value) {
+                     console.log(key + ":" + value);
+                     $(`#${key}-error`).show(); // assumes you have error spans with IDs like error_email, error_proof etc.
+                   });
+                 }
+                 if (data.status === 413 || data.status === 0) {
+                   $("#error_proof").show();
+                 }
+                 btnSubmit.prop("disabled", false);
+               },
+             });
+    }
+
+    function submitSetp2(){
+      btnSubmit.prop("disabled", true);
+
+      //Build form data
+      var fd = new FormData();
+      fd.append("g-recaptcha-response", grecaptcha.getResponse());
+      // Add uploaded proof(s)
+      var files = $("#proof")[0].files;
+      if (files.length > 0) {
+        for (let i = 0; i < files.length; i++) {
+          fd.append("proof", files[0]);
+        }
+      }
+      // POST request
+      $.ajax({
+               url: `https://app.yellowshoes.com/api/student-discount/${ref}`,
+               type: "post",
+               data: fd,
+               contentType: false,
+               processData: false,
+               beforeSend: function (request) {
+                 request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+               },
+               success: function (response) {
+                 $("#student-form-section").hide();
+                 $("#confirmationMessage").show()
+                 window.scrollTo({
+                                   top: 0,
+                                   behavior: 'smooth'
+                                 });
+               },
+               error: function (data) {
+                 console.log("Error status:", data.status);
+                 grecaptcha.reset();
+                 if (data.status === 422) {
+                   let response = $.parseJSON(data.responseText);
+                   $.each(response.errors, function (key, value) {
+                     console.log(key + ":" + value);
+                     $(`#${key}-error`).show(); // assumes you have error spans with IDs like error_email, error_proof etc.
+                   });
+                 }
+                 if (data.status === 413 || data.status === 0) {
+                   $("#error_proof").show();
+                 }
+                 btnSubmit.prop("disabled", false);
+               },
+             });
+
+    }
+
+    function loadStep2(){
+      studentFromStep = 2
+      $("#student-form-step-1").hide();
+      $("#student-form-step-2").show();
+      if(role == 'teacher'){
+        document.getElementById("student-doc").style.display = 'none';
+        document.getElementById("teacher-doc").style.display = 'block';
+      }
+      setTimeout(function(){
+        document.querySelector('.card-header')?.click();
+      },500)
+    }
+
+  });
+</script>

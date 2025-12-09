@@ -1,0 +1,616 @@
+<style>
+  :root {
+    --review-ruler-height: 10px;
+}
+  select{
+        box-sizing: border-box;
+    max-width: 100%;
+    margin: 0;
+    padding: .8em 15px;
+    border: 1px var(--input-border-color) solid;
+    border-radius: var(--btn-border-radius);
+    background: var(--input-background-color);
+    color: rgb(var(--input-text-color));
+    font-family: var(--base-font-family);
+    font-size: var(--input-text-size);
+    font-style: var(--base-font-style);
+    font-weight: var(--base-font-weight);
+    line-height: calc(1.3 * var(--input-text-size));
+    vertical-align: middle;
+}
+  }
+   .w-review-btn {
+    display:         inline-block;
+    color:           #595959;
+    border:          1px solid #595959;
+    text-align:      center;
+    text-decoration: none;
+    padding:         7px 0;
+    text-transform:  uppercase;
+    font-weight:     600;
+    background:transparent;
+  }
+
+  .w-review-btn:hover, .w-review-btn.active {
+    color:           #ffffff;
+    background:      #595959;
+    text-decoration: none;
+  }
+
+   #write-review-header {
+    font-size:      30px;
+    font-weight:    100;
+    padding-bottom: 10px;
+    border-bottom:  1px solid #eeeeee;
+  }
+
+  #w-review-product-title {
+    font-size:   25px;
+    font-weight: 100;
+  }
+
+  #w-review-product-title-container {
+    margin: 10px 0 25px 0;
+  }
+
+  #overall-rating {
+    display:     inline-block;
+    padding-top: 7px;
+  }
+
+  .review-fieldset {
+    margin-bottom: 15px;
+  }
+
+  #new-review-form .label-container {
+    margin-bottom: 5px;
+    font-weight:   600;
+  }
+
+  .w-review-btn {
+    display:         inline-block;
+    color:           #595959;
+    border:          1px solid #595959;
+    text-align:      center;
+    text-decoration: none;
+    padding:         7px 0;
+    text-transform:  uppercase;
+    font-weight:     600;
+    background:transparent;
+  }
+
+  .w-review-btn:hover, .w-review-btn.active {
+    color:           #ffffff;
+    background:      #595959;
+    text-decoration: none;
+  }
+
+  .form-top .left {
+    width:         50%;
+    padding-right: 10px;
+  }
+
+  .form-top .right {
+    width:        50%;
+    padding-left: 10px;
+  }
+
+  .w-review-full {
+    margin-top: 40px;
+  }
+
+  .w-review-full-header {
+    font-size:     22px;
+    font-weight:   100;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 15px;
+  }
+  #overall-rating svg{
+    width:30px;
+    height:30px;
+
+  }
+  #overall-rating{
+    padding-top:0;
+    margin-top:0;
+  }
+
+  .font-weight-slim{
+    font-weight: 400;
+  }
+
+  #fits_field{
+    -moz-appearance: auto !important;
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+  }
+  .form-top .left {
+    width: 50%;
+    padding-right: 10px;
+}
+  .form-top .right {
+    width: 50%;
+    padding-left: 10px;
+}
+    #ratings-and-reviews-container {
+    margin-top: 15px;
+  }
+
+  #ratings-and-reviews-title {
+    font-size:   1.3rem;
+    font-weight: 500;
+  }
+
+  .hr {
+    display:    inline-block;
+    width:      100%;
+    height:     2px;
+    background: #eeeeee;
+    margin:     10px 0;
+  }
+
+  .review-gray-block {
+    background: #f8f8f8;
+    width:      33%;
+    padding:    25px 0;
+  }
+
+  .font-weight-bold {
+    font-weight: 700;
+  }
+
+  #review-ruler-container {
+    height:       var(--review-ruler-height);
+      border-right: 1px solid #292929;
+      border-left:  1px solid #292929;
+      }
+
+  #review-ruler-circle {
+    position:      absolute;
+    top:           49%;
+    transform:     translate(-50%,-50%);
+    display:       inline-block;
+    width:         var(--review-ruler-height);
+      height:        var(--review-ruler-height);
+        background:    #ecb639;
+        border-radius: 100%;
+        z-index:       2;
+        }
+
+  #review-ruler-horizontal {
+    position:   absolute;
+    top:        49%;
+    left:       0;
+    transform:  translateY(-50%);
+    display:    inline-block;
+    width:      100%;
+    height:     1px;
+    background: #292929;
+  }
+
+  #review-ruler-vertical-25 {
+    position:   absolute;
+    top:        49%;
+    left:       25%;
+    transform:  translate(-25%, -50%);
+    display:    inline-block;
+    width:      1px;
+    height:     100%;
+    background: #292929;
+  }
+
+  #review-ruler-vertical-50 {
+    position:   absolute;
+    top:        49%;
+    left:       50%;
+    transform:  translate(-50%, -50%);
+    display:    inline-block;
+    width:      1px;
+    height:     100%;
+    background: #292929;
+  }
+
+  #review-ruler-vertical-75 {
+    position:   absolute;
+    top:        49%;
+    left:       75%;
+    transform:  translate(-75%, -50%);
+    display:    inline-block;
+    width:      1px;
+    height:     100%;
+    background: #292929;
+  }
+
+  #reviews-container {
+    margin-top: 20px;
+  }
+  .review-title{
+    font-weight: 700;
+    margin-top: 25px;
+    font-size: 1.1rem;
+  }
+  .review{
+    margin: 25px 0;
+  }
+  .review-btn{
+    color: #fff;
+    background: #212b36;
+    display: inline-block;
+    width: 400px;
+    max-width: 100%;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .review-btn:hover{
+    background: #dfb858;
+    color:#fff;
+  }
+  .review-recommended{
+    margin-top: 20px;
+  }
+    .review-this-product{
+    position:absolute;
+    width: 200px;
+    max-width:100%;
+    bottom:10px;
+    right:0;
+  }
+  .load-mode-review{
+    text-decoration:underline;
+    color:#dfb858;
+    margin-top: 9px;
+    cursor:pointer;
+    /* position:absolute;
+    top:0;
+    right:0; */
+  }
+  @media screen and (max-width:900px){
+    .review-gray-block {
+        width: 100%;
+        padding: 10px 0;
+    }
+        #ratings-and-reviews-title {
+        font-size: .905rem;
+        font-weight: 600;
+    }
+  }
+</style>
+{% assign current_variant = product.selected_or_first_available_variant %}
+<div class="container" id="ratings-and-reviews-container">
+    <div class="d-flex">
+        <div class="d-inline-block w-50">
+            <div id="ratings-and-reviews-title">{{ 'product_reviews.ratings_and_reviews' | t }}</div>
+        </div>
+        <div class="d-inline-block w-50 text-right">
+            {% if customer %}
+                <a href="javascript:;" id="write-review-btns" class="write-review-btns" data-fancybox data-src="#write-review" style="color:#f1b600;">
+                    <i class="fas fa-pencil-alt"></i> <span style="text-decoration: underline;margin-left: 5px">{{ 'product_reviews.write_a_review' | t }}</span>
+                </a>
+            {%else%}
+                <a href="javascript:;" onclick="showLogin(true)" style="color:#f1b600;">
+                    <i class="fas fa-pencil-alt"></i> <span style="text-decoration: underline;margin-left: 5px">{{ 'product_reviews.write_a_review' | t }}</span>
+                </a>
+            {% endif %}
+
+
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="d-flex flex-wrap">
+        <div class="d-inline-block review-gray-block text-center" style="margin-right: 0.1%;">
+            <div style="margin-bottom: 10px;">
+                <span id="reviews-overall">4.5 stars</span> | <span id="reviews-count-reviews" style="text-decoration: underline;">12 </span>
+            </div>
+            <div id="overal-review-stars" class="review-star customer-review m-auto" data-rating=""></div>
+        </div>
+        <div class="d-inline-block review-gray-block text-center" style="margin: 0 0.1%;">
+            <div>{{ 'product_reviews.average_customer_rating' | t }}</div>
+            <div class="font-weight-bold"><span id="recommended-perc">0</span>% {{ 'product_reviews.recommended' | t }}</div>
+        </div>
+        <div class="d-inline-block review-gray-block text-center" style="margin-left:0.1%;">
+            <div>{{ 'product_reviews.customers_say' | t }}</div>
+            <div class="font-weight-bold d-inline-block">
+                <span id="fits-value">{{ 'product_reviews.perfect_fit' | t }}</span>
+                <div class="position-relative d-inline-block w-100 position-relative" id="review-ruler-container">
+                    <div id="review-ruler-horizontal"></div>
+                    <div id="review-ruler-vertical-25"></div>
+                    <div id="review-ruler-vertical-50"></div>
+                    <div id="review-ruler-vertical-75"></div>
+                    <div id="review-ruler-circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="reviews-container">
+        {% comment %}
+        <div class="review">
+          <div class="d-flex">
+            <div class="d-inline-block" style="width:34%;">
+              <div class="font-weight-bold">Colorado Ann</div>
+              <div style="margin-top: 10px">
+                <span class="font-weight-bold">Location:</span> Greenwood Village CO
+              </div>
+            </div>
+            <div class="d-inline-block" style="width:66%;">
+              <div class="d-flex">
+                <div class="d-inline-block w-50">
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                </div>
+                <div class="d-inline-block w-50 text-right">
+                  Dec 11, 2021
+                </div>
+              </div>
+    
+              <div class="review-title">cute but really "cloggy"</div>
+              <p>
+                If you are looking for clogs that look like they're from Holland, these are it. The quality is
+                great, but they were too round and chubby at the toe. The brown color is really pretty though. I was on the fence that I returned them.
+              </p>
+              <div class="review-options">
+                <div class="review-option">
+                  <span class="font-weight-bold">Fits:</span> True to Size
+                </div>
+              </div>
+              <div class="review-recommended">
+                <span class="font-weight-bold">Yes,</span> I recommend this product.
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        </div>
+        <div class="review">
+          <div class="d-flex">
+            <div class="d-inline-block w-25">
+              <div class="font-weight-bold">Colorado Ann</div>
+              <div style="margin-top: 10px">
+                <span class="font-weight-bold">Location:</span> Greenwood Village CO
+              </div>
+            </div>
+            <div class="d-inline-block w-75">
+              <div class="d-flex">
+                <div class="d-inline-block w-50">
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                  <i class="fas fa-star" style="color:#f1b600;"></i>
+                </div>
+                <div class="d-inline-block w-50 text-right">
+                  Dec 11, 2021
+                </div>
+              </div>
+    
+              <div class="review-title">cute but really "cloggy"</div>
+              <p>
+                If you are looking for clogs that look like they're from Holland, these are it. The quality is
+                great, but they were too round and chubby at the toe. The brown color is really pretty though. I was on the fence that I returned them.
+              </p>
+              <div class="review-options">
+                <div class="review-option">
+                  <span class="font-weight-bold">Fits:</span> True to Size
+                </div>
+                <div class="review-option">
+                  <span class="font-weight-bold">Fit Purchased:</span> Standard
+                </div>
+                <div class="review-option">
+                  <span class="font-weight-bold">Size Purchased:</span> 40
+                </div>
+                <div class="review-option">
+                  <span class="font-weight-bold">Size Normally Worn :</span> 40
+                </div>
+              </div>
+              <div class="review-recommended">
+                <span class="font-weight-bold">Yes,</span> I recommend this product.
+              </div>
+            </div>
+          </div>
+          <div class="hr"></div>
+        </div>
+        {%endcomment%}
+
+
+    </div>
+    <div class="position-relative text-center">
+        <div class="text-center">
+            {% if customer %}
+                <a href="javascript:;" data-fancybox data-src="#write-review" class="review-btn write-review-btns">{{ 'product_reviews.write_a_review' | t }}</a>
+            {%else%}
+                <a href="javascript:;" onclick="showLogin(true)" class="review-btn">{{ 'product_reviews.write_a_review' | t }}</a>
+            {% endif %}
+        </div>
+        <div href="javascript:;" class="load-mode-review" style="display:none;">{{ 'product_reviews.load_more_reviews' | t }}</div>
+    </div>
+</div>
+
+<hr>
+<!-- old ones -->
+
+<style>
+    #write-review-btn{
+        border:1px solid #cecece;
+        text-decoration:none !important;
+        color:#4d4d4d;
+        padding: 0.5rem 1rem;
+    }
+    #write-review-btn:hover{
+        border-color: #000;
+    }
+    .jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group.jq-ry-rated-group{
+        color: #f1b600;
+    }
+</style>
+
+
+{%comment %}
+<div class=" container">
+  <div style="display:inline-block;width:49%;">
+    <h4 style="margin-bottom:1rem;">{{ 'product_reviews.reviews' | t }}</h4>
+  </div>
+  <div style="display:inline-block;width:49%; text-align:right;">
+    {% assign url_prefix = '' %}
+    {% if shop.locale == 'fr' %}
+    {% assign url_prefix = '/fr' %}
+    {% endif %}
+    {% if customer %}
+    <a id="write-review-btn" class="review-form-activator" data-fancybox data-src="#write-review" href="javascript:;"><i class="fas fa-pencil-alt"></i> &nbsp;{{ 'product_reviews.write_a_review' | t }}</a>
+    {%else%}
+    <a id="write-review-btn" onclick="showLogin(true)" href="javascript:;"><i class="fas fa-pencil-alt"></i> &nbsp;{{ 'product_reviews.write_a_review' | t }}</a>
+    {% endif %}
+
+
+
+  </div>
+  <hr />
+  <h5 ><span id="reviews-count-reviews"></span> {{ 'product_reviews.reviews' | t }}</h5>
+
+  <div id="review-container">
+
+  </div>
+</div>
+{%endcomment %}
+<script>
+  $(document).ready(function(){
+
+    let $body = $('body');
+    $body.on('click', '.review-form-activator', function(){
+      $body.find('#review-submitted-success').hide();
+      $body.find('#new-review-form').show();
+    });
+    let $_GET = getQueryString();
+    if($_GET.show_review !== undefined && $_GET.show_review.trim() !== ''){
+      setTimeout(function(){
+        $body.find('.review-form-activator')[0].click();
+        history.pushState({}, null, location.href.split('?')[0]);
+      }, 200);
+    }
+
+  });
+  function getQueryString(){
+    let urlParams;
+    (window.onpopstate = function () {
+      var match,
+          pl     = /\+/g,  // Regex for replacing addition symbol with a space
+          search = /([^&=]+)=?([^&]*)/g,
+          decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+          query  = window.location.search.substring(1);
+
+      urlParams = {};
+      while (match = search.exec(query))
+        urlParams[decode(match[1])] = decode(match[2]);
+    })();
+    return urlParams;
+  }
+
+</script>
+
+{% render 'meg_review_form' %}
+
+
+
+
+<script>
+  ;(function($){
+    $('.scrollTop').on('click', function(e){
+      e.preventDefault();
+      let selector = $(this).attr('href');
+      let $el = $('body').find(selector);
+      if($el.length){
+        $('html, body').animate({
+                                  scrollTop: ($(selector).offset().top -100)
+                                }, 'fast');
+      }
+    });
+    try {
+
+      $('#overall-product-rating').rateYo({
+                                            normalFill: "#A0A0A0",
+                                            //       ratedFill: "#DC0B0B",
+                                            halfStar: false,
+                                            readOnly: true,
+                                            starWidth: "18px",
+                                            rating:overall_rating
+                                          });
+    }catch (e){
+      console.log('rateyo problem');
+      console.log(e);
+    }
+    let overAllInterval = setInterval(function(){
+      try {
+        $('#overall-product-rating').rateYo('option','rating', overall_rating);
+        if(overall_rating>0){
+          clearInterval(overAllInterval);
+        }
+      }catch (e){
+        console.log('rateyo problem');
+        console.log(e);
+      }
+      
+    }, 200);
+    let reviewsCountInterval = setInterval(function(){
+      let res_reviews_count = reviews_count + ' {{ 'product_reviews.reviews_count' | t }}';
+      if(res_reviews_count.includes('undefined')){
+        if('{{ shop.locale }}' == 'en'){
+          res_reviews_count = 'No review(s) yet';
+        }else{
+          res_reviews_count = 'Aucun avis';
+        }
+      }
+      $('#reviews-count-reviews').text(res_reviews_count);
+      if(reviews_count>0){
+      }
+    }, 200);
+    setInterval(function(){
+      $('.customer-review').each(function(){
+        let $this = $(this);
+        try {
+          $this.rateYo({
+                         normalFill: "#A0A0A0",
+                         //       ratedFill: "#DC0B0B",
+                         halfStar: false,
+                         readOnly: true,
+                         starWidth: "18px",
+                         rating:$(this).attr('data-rating')
+                       });
+        }catch (e){
+          console.log('rateyo problem');
+          console.log(e);
+        }
+      });
+
+    }, 200);
+
+  })(jQuery);
+</script>
+
+{% schema %}
+{
+  "name": "Product reviews",
+  "class": "section-product-reviews",
+  "templates": ["product"],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add reviews by installing the [Shopify Product Reviews app](https:\/\/apps.shopify.com\/product-reviews)"
+    },
+    {
+      "type": "paragraph",
+      "content": "You may need to reload the page before reviews display correctly."
+    },
+    {
+      "type": "paragraph",
+      "content": "Check the general theme settings for more options."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product reviews",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "enable_product_reviews_by_price": true
+          }
+        },
+        "divider": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_in_quickbuy": false
+          }
+        },
+        "feature_rating_jxJf6D": {
+          "type": "feature-rating",
+          "settings": {
+            "heading": "Fit",
+            "heading_fr": "Ajustement",
+            "segments": 5,
+            "active_segment": "3",
+            "fill_segments": false,
+            "show_labels": true,
+            "label_left": "Small",
+            "label_left_fr": "Petit",
+            "label_middle": "True to size",
+            "label_middle_fr": "Correspond à la taille",
+            "label_right": "Large",
+            "label_right_fr": "Grand",
+            "show_in_quickbuy": false
+          }
+        },
+        "variant-picker": {
+          "type": "variant-picker",
+          "settings": {
+            "show_single": false,
+            "selector_style": "listed",
+            "enable_dynamic_availability": true,
+            "enable_size_chart": false,
+            "size_chart_variant": "Size",
+            "size_chart_page": ""
+          }
+        },
+        "buy-buttons": {
+          "type": "buy-buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_backorder_text": false,
+            "show_pickup_availability": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "divider_ixy3Ax": {
+          "type": "divider",
+          "settings": {
+            "show_in_quickbuy": false
+          }
+        },
+        "countdown_A9NMpp": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Free shipping - limited time only",
+            "heading_fr": "Livraison gratuite - temps limité",
+            "end_date": "2025-10-19",
+            "end_time": "23:59",
+            "end_text": "",
+            "hide_on_end": true,
+            "box_color": "#db2128",
+            "text_color": "#ffffff",
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true,
+            "show_in_quickbuy": false
+          }
+        },
+        "product_icons_DTQ4Ti": {
+          "type": "product-icons",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": false,
+            "open_tab": false,
+            "icon": "",
+            "show_in_quickbuy": false
+          }
+        },
+        "feature_rating_cnbh4D": {
+          "type": "feature-rating",
+          "disabled": true,
+          "settings": {
+            "heading": "Fit",
+            "heading_fr": "Fit",
+            "segments": 5,
+            "active_segment": "4",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "Small",
+            "label_left_fr": "Small",
+            "label_middle": "True to size",
+            "label_middle_fr": "True to size",
+            "label_right": "Large",
+            "label_right_fr": "Large",
+            "show_in_quickbuy": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "divider",
+        "feature_rating_jxJf6D",
+        "variant-picker",
+        "buy-buttons",
+        "divider_ixy3Ax",
+        "countdown_A9NMpp",
+        "product_icons_DTQ4Ti",
+        "description",
+        "feature_rating_cnbh4D"
+      ],
+      "settings": {
+        "show_breadcrumbs": true,
+        "select_first_variant": true,
+        "show_location_underneath": false,
+        "inventory_transfers_enable": true,
+        "enable_sticky_columns": false,
+        "enable_sticky_atc": false,
+        "sticky_atc_position": "end",
+        "sticky_atc_mobile": true,
+        "sticky_atc_behavior": "add_to_cart",
+        "sticky_atc_button_style": "secondary",
+        "gallery_size": "medium",
+        "gallery_layout": "collage-1",
+        "enable_zoom": true,
+        "show_alt_text": false,
+        "alt_text_icon": "",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "enable_media_grouping": true,
+        "media_grouping_option": "color,Color,Colour,Couleur,Farbe"
+      }
+    },
+    "blocks_iDQK9V": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b3aff38_eLFHH4": {
+          "type": "ai_gen_block_b3aff38",
+          "settings": {
+            "badge_alt_text": "Made in Quebec",
+            "badge_size": 80,
+            "badge_position_bottom": 10,
+            "badge_position_right": 10,
+            "badge_size_mobile": 50,
+            "badge_position_bottom_mobile": 5,
+            "badge_position_right_mobile": 5
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b3aff38_eLFHH4"
+      ],
+      "disabled": true,
+      "name": "Made in Quebec badge",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "title": "You may also like",
+        "title_fr": "VOUS AIMEREZ AUSSI",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4
+      }
+    },
+    "featured_collection_aT7HfV": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New arrivals",
+        "title_fr": "Nouveautés",
+        "collection": "homepage-new-arrivals",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": false,
+        "has_subcategories": true
+      }
+    },
+    "featured_collection_JgwV8T": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Best sellers",
+        "title_fr": "MEILLEURS VENDEURS",
+        "collection": "homepage-best-sellers",
+        "main-collection-url": "",
+        "main-collection-url-fr": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": false,
+        "has_subcategories": true
+      }
+    },
+    "spacer_R49BNm": {
+      "type": "spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blocks_iDQK9V",
+    "reviews",
+    "related-products",
+    "featured_collection_aT7HfV",
+    "featured_collection_JgwV8T",
+    "spacer_R49BNm"
+  ]
+}

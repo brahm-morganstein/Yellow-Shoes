@@ -1,0 +1,174 @@
+<link rel="stylesheet" href="{{ 'collapsible-tabs.s.min.css' | asset_url }}" {%- render 'lazy-stylesheet-attrs' %}>
+<div class="container" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+  <div class="collapsible-tabs">
+    {% if section.settings.title != blank %}
+      <h3 class="collapsible-tabs__heading collapsible-tabs__content" id="faq-{{ section.settings.title | handle }}">
+        {% if shop.locale == 'en' %}
+          {{ section.settings.title | escape }}
+        {% else %}
+          {{ section.settings.title_fr | escape }}
+        {% endif %}
+      </h3>
+    {% endif %}
+
+    {%- for block in section.blocks -%}
+      <div class="collapsible-tabs__block" {{ block.shopify_attributes }}>
+        {% if block.type == 'content' %}
+          <div class="collapsible-tabs__text collapsible-tabs__content rte">
+            {% if shop.locale == 'en' %}
+              {{ block.settings.content }}
+            {% else %}
+              {{ block.settings.content_fr }}
+            {% endif %}
+          </div>
+
+        {% elsif block.type == 'button' %}
+          <div class="collapsible-tabs__button collapsible-tabs__content">
+            <a class="btn btn--primary btn--link" href="{{ block.settings.link }}">
+              <span class="btn__text">
+                {% if shop.locale == 'en' %}
+                  {{ block.settings.title | escape }}
+                {% else %}
+                  {{ block.settings.title_fr | escape }}
+                {% endif %}
+              </span>
+            </a>
+          </div>
+
+        {% elsif block.type == 'question' %}
+          <div class="collapsible-tabs__tab">
+            <details-disclosure>
+              <details class="disclosure">
+                <summary class="disclosure__title">
+                  {% if shop.locale == 'en' %}
+                    {{- block.settings.title | escape -}}
+                  {% else %}
+                    {{- block.settings.title_fr | escape -}}
+                  {% endif %}
+                </summary>
+                <div class="disclosure__panel has-motion">
+                  <div class="disclosure__content rte">
+                    {% if shop.locale == 'en' %}
+                      {{- block.settings.answer -}}
+                    {% else %}
+                      {{- block.settings.answer_fr -}}
+                    {% endif %}
+                  </div>
+                </div>
+              </details>
+            </details-disclosure>
+          </div>
+        {% endif %}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Collapsible tabs",
+  "class": "section-collapsible-tabs",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collapsible tabs"
+    },
+    {
+      "type": "text",
+      "id": "title_fr",
+      "label": "Heading (FR)"
+    }    
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Question"
+        },
+        {
+          "type": "text",
+          "id": "title_fr",
+          "label": "Question (FR)"
+        },        
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Answer</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "answer_fr",
+          "label": "Answer (FR)"
+        }        
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "richtext",
+          "id": "content_fr",
+          "label": "Content (FR)"
+        }        
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Button label"
+        },
+        {
+          "type": "text",
+          "id": "title_fr",
+          "label": "Label (FR)"
+        },        
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collapsible tabs",
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "question"
+        },
+        {
+          "type": "question"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,735 @@
+<style>
+    .product-bundle-add-to-cart-container {
+        display: inline-block;
+        width:   100%;
+        padding: 5px 0;
+    }
+
+    .product-bundle_title a, .product-bundle_title a:hover {
+        text-decoration: none;
+        border:          none !important;
+    }
+
+    .product-bundle-disabled-element {
+        position:   absolute;
+        z-index:    999;
+        opacity:    0.5;
+        top:        20px;
+        right:      0;
+        bottom:     0;
+        left:       0;
+        background: #fff;
+    }
+
+    .product-bundle-thumbs {
+        display:         flex;
+        flex-wrap:       wrap;
+        align-items:     center;
+        justify-content: center;
+        padding:         20px 0 0 0;
+    }
+
+    .product-bundle-thumb {
+        display:       inline-block;
+        width:         75px;
+        height:        75px;
+        position:      relative;
+        border-radius: 100%;
+        overflow:      hidden;
+        padding:       1px;
+        margin:        1%;
+        border:        1px solid #dddede;
+        cursor:        pointer;
+    }
+
+    .product-bundle-thumb:hover {
+        cursor:        pointer;
+        --border: 1px solid #000000;
+        overflow: hidden;
+        box-shadow: 0 0 0 3px #fff,0 0 0 4px #0000004d;
+    }
+
+    .product-bundle-thumb img {
+        position:   relative;
+        width:      100%;
+        height:     100%;
+        object-fit: cover;
+    }
+
+    .product-bundle-add-to-cart-btn {
+        cursor:         pointer;
+        background:     #000000;
+        color:          #FFFFFF;
+        text-align:     center;
+        line-height:    1;
+        padding:        7px 0;
+        text-transform: uppercase;
+        font-weight:    500;
+    }
+
+    .product-bundle_title {
+        display:        inline-block;
+        width:          100%;
+        text-transform: uppercase;
+    }
+
+    .product-bundle_container.product-bundle_container-hidden {
+        display: none;
+    }
+
+    .product-crosssell-carousel-next {
+        display: none;
+
+    }
+
+    .product-crosssell-carousel-prev {
+        display: none;
+    }
+
+
+    .product-bundle-carousel-item-hidden {
+        display: none !important;
+    }
+
+    #add_to_cart_crossup {
+        margin-bottom: 10px;
+    }
+
+    .product-bundle_prod-img-overlay {
+        display:    inline-block;
+        position:   absolute;
+        z-index:    99;
+        top:        0;
+        right:      0;
+        bottom:     0;
+        left:       0;
+        background: rgba(0, 0, 0, 0.05);
+
+    }
+
+    .product-bundle_prod-img-magnify-link {
+        display:  inline-block;
+        position: absolute;
+        z-index:  101;
+        top:      0;
+        right:    0;
+        bottom:   0;
+        left:     0;
+        border:   none !important;
+    }
+
+    .product-bundle-add-to-cart-overrider {
+        display:  inline-block;
+        position: absolute;
+        top:      0;
+        right:    0;
+        bottom:   0;
+        left:     0;
+        z-index:  10;
+        cursor:   pointer;
+    }
+
+    .product-bundle_top-row {
+        display:       flex;
+        margin-bottom: 10px;
+    }
+
+    .product-bundle_top-row-half {
+        display:     inline-block;
+        width:       50%;
+        font-weight: 600;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .product-bundle_container {
+        border:  1px solid #000000;
+        display: flex;
+    }
+
+    .product-bundle_prod-img-container {
+        position: relative;
+        display:  inline-block;
+        width:    35%;
+        padding:  10px;
+    }
+
+    .product-bundle_prod-img-container:hover {
+        filter: grayscale(20%);
+    }
+
+    .product-bundle_prod-img-magnifier, .product-bundle_prod-img-magnifier *, .product-bundle_prod-img-container, .product-bundle_prod-img-container * {
+        cursor: pointer;
+
+    }
+
+    .product-bundle_prod-img-magnifier {
+        display:  none;
+        position: absolute;
+        top:      5px;
+        left:     10px;
+        z-index:  2;
+    }
+
+    .product-bundle_prod-img-container:hover .product-bundle_prod-img-magnifier {
+        display: inline-block;
+    }
+
+    .product-bundle_prod-details-container {
+        display:  inline-block;
+        width:    65%;
+        padding:  10px 15px 10px 15px;
+        position: relative;
+    }
+
+    .product-bundle_prod-details-container-add-to-cart {
+        position:   absolute;
+        top:        10px;
+        right:      5px;
+        margin-top: 0;
+
+    }
+
+    .product-bundle_prod-details-container-colors {
+        position:  absolute;
+        display:   flex;
+        flex-wrap: wrap;
+        bottom:    5px;
+        left:      15px;
+        right:     15px;
+    }
+
+    .product-bundle_prod-details-container-color {
+        display:       inline-block;
+        margin:        5px;
+        width:         25px;
+        height:        25px;
+        border:        1px solid #dddede;
+        border-radius: 100%;
+        overflow:      hidden;
+    }
+
+    .product-bundle_prod-details-container-color:hover {
+        --border:        1px solid #000000;
+        overflow: hidden;
+        box-shadow: 0 0 0 3px #fff,0 0 0 4px #0000004d;
+    }
+
+    .product-bundle_prod-details-container-color, .product-bundle_prod-details-container-color * {
+        cursor: pointer;
+    }
+
+    .product-bundle_prod-details-container-color img {
+        position: relative;
+        width:    100%;
+    }
+
+    .product-bundle_prod-title {
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: 900px) {
+        .collection-listing:not(#instagram-slider-listing-hp) .product-list--per-row-4 .product-block {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .product-bundle_title {
+            font-size: 0.85em;
+        }
+
+
+        #product-crosssell-carousel .product-list {
+            justify-content: center;
+        }
+
+        /*#product-crosssell-carousel .collection-listing:not(#instagram-slider-listing-hp) .product-list--per-row-4 .product-block {*/
+        /*    margin-left: 0;*/
+        /*    width:       90%;*/
+        /*}*/
+    }
+
+</style>
+
+<div id="product-bundle-tpl" style="display: none;">
+    <div class="product-detail-accordion not-in-quickbuy">
+        <div class="cc-accordion cc-initialized" data-allow-multi-open="true">
+
+            <details class="cc-accordion-item is-open" open>
+                <summary class="cc-accordion-item__title">
+                    {{ 'product_bundles.customize_this_set' | t }}
+                </summary>
+                <div class="cc-accordion-item__panel">
+                    <div class="cc-accordion-item__content rte cf">
+                        --==bundles==--
+
+                        <div class="product-bundle-thumbs">--==thumbs==--</div>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="product-bundle-product-tpl" style="display: none;">
+    <div class="product-bundle_container --==class==--" style="min-height: 200px;" data-index="--==index==--">
+        <div class="product-bundle_prod-img-container">
+            <div class="product-bundle_prod-img-magnify-link" data-src="--==img-src==--"></div>
+            <div class="product-bundle_prod-img-overlay"></div>
+            <div class="product-bundle_prod-img-magnifier">
+                <i class="fas fa-search-plus"></i>
+            </div>
+            <img src="--==img-src==--" alt="Cross-Sell Product. --==title==--">
+        </div>
+        <div class="product-bundle_prod-details-container">
+            {% comment %}<div class="marketing-radio-container product-bundle_prod-details-container-add-to-cart">
+                <div class="marketing-radio" data-target="#add-to-cart-checkbox-==random-number==-">
+                    <div class="marketing-radio-background">
+                    </div>
+                </div>
+               <div class="marketing-label"></div>{% endcomment %}
+            <input data-compare-at-price="--==compare-at-price==--" data-variant-id="--==variant-id==--" type="checkbox" class="add-to-cart-product-bundle" id="add-to-cart-checkbox-==random-number==-" style="display: none;">
+            {% comment %}</div>{% endcomment %}
+            <div class="product-bundle_prod-title">
+                <div class="product-bundle_title">
+                    --==product-title==--
+                </div>
+                <div class="product-bundle_product-type" style="margin-top:2px; font-size: 0.8em;">
+                    --==product-type==--
+                </div>
+            </div>
+
+            <div>
+                --==product-price==--
+            </div>
+            <div class="product-bundle_prod-details-container-colors">
+                --==product-colors==-
+                <div class="product-bundle-add-to-cart-container position-relative">
+                    <div class="product-bundle-disabled-element" style="display: none;"></div>
+                    <div class="product-bundle-add-to-cart-btn">{{ 'products.product.add_to_cart' | t }}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="product-bundle-thumbs-tpl" style="display: none;">
+    <div class="product-bundle-thumb" data-index="--==index==--">
+        <img src="--==src==--" alt="--==title==--">
+    </div>
+</div>
+<script>
+
+  //let product_json_bundle = '{{ product | json | replace: "'", "\\'" }}';
+  let product_json_bundle = {{ product | json }};
+  // product_json_bundle     = JSON.parse(product_json_bundle);
+  let product_sku_bundle  = '';
+
+
+  let product_variant_bundle = getQueryStringByName('variant');
+  if (product_variant_bundle == undefined || product_variant_bundle == null || (product_variant_bundle !== undefined && product_variant_bundle !== null && product_variant_bundle.trim() === '')) {
+    product_variant_bundle = '{{ product.selected_or_first_available_variant.id }}';
+  }
+  if (Array.isArray(product_json_bundle.variants)) {
+    let $body = $('body');
+    for (let variant of product_json_bundle.variants) {
+      if (variant.id == product_variant_bundle) {
+        product_sku_bundle = variant.sku;
+        console.log(product_sku_bundle)
+        break;
+      }
+    }
+  }
+
+  let product_type_bundle     = '{{ product_type_bundle }}';
+  let product_type_bundle_gen = '';
+  if (product_type_bundle.toLowerCase().includes('women')) {
+    product_type_bundle_gen = 'women';
+  }
+  if (product_type_bundle.toLowerCase().includes('men') && !product_type_bundle.toLowerCase().includes('women')) {
+    product_type_bundle_gen = 'men';
+  }
+  if (product_type_bundle.toLowerCase().includes('kids')) {
+    product_type_bundle_gen = 'kids';
+  }
+
+  let main_product_bundle = '';
+
+  function removeBeforeAndIncluding(search, str) {
+    const index = str.indexOf(search);
+
+    if (index !== -1) {
+      return str.substring(index + search.length);
+    }
+
+    return str;
+  }
+
+  function removeIncludingAndAfter(search, str) {
+    const index = str.indexOf(search);
+
+    if (index !== -1) {
+      return str.substring(0, index);
+    }
+
+    return str;
+  }
+
+  function isIterable(obj) {
+    return obj != null && typeof obj[Symbol.iterator] === 'function';
+  }
+
+  (function($) {
+    $(document).ready(function() {
+
+      let $body                   = $('body');
+      let current_var             = getQueryStringByName('variant');
+      let product_bundle_products = [];
+      $.ajax({
+               url:      '{{ 'product_bundles.json' | asset_url }}',
+               method:   'GET',
+               dataType: 'json',
+               success:  function(response) {
+                 if (Array.isArray(response)) {
+                   for (let product_bundle of response) {
+                     if (product_bundle.sku == product_sku_bundle) {
+                       for (let bundle_product of product_bundle.product_bundle_skus) {
+                         if (bundle_product.handle.trim() !== '') {
+                           $.ajax({
+                                    url:      'https://www.yellowshoes.com/' + (theme.locale == 'fr' ? 'fr/' : '') + 'products/' + bundle_product.handle + '.js',
+                                    method:   'GET',
+                                    dataType: 'json',
+                                    success:  function(response) {
+                                      if (response.id !== undefined) {
+                                        response.is_bundle  = true;
+                                        response.bundle_sku = bundle_product.sku;
+                                        product_bundle_products.push(response);
+                                      }
+                                    },
+                                    error:    function(xhr, status, error) {
+                                      console.log('Status: ' + status);
+                                      console.log('Error: ' + error);
+                                    },
+                                  });
+                         }
+                       }
+
+                       break;
+                     }
+                   }
+                   setTimeout(function() {
+                     populateBundle(product_bundle_products);
+                   }, 1200);
+                 }
+
+               },
+               error:    function(xhr, status, error) {
+                 console.log('Status: ' + status);
+                 console.log('Error: ' + error);
+               },
+             });
+
+      $body.on('click', '.product-bundle-thumb', function() {
+        console.log(this);
+        $body.find('.product-bundle_container').addClass('product-bundle_container-hidden');
+        $body.find('.product-bundle_container[data-index="' + $(this).attr('data-index') + '"]').removeClass('product-bundle_container-hidden');
+      });
+
+      $body.on('change', '.add-to-cart-product-bundle', function() {
+        let add_to_cart_unav_qty = 0;
+        let add_to_cart_av_qty   = 0;
+        if ($body.find('#add-to-cart-count-cross-up-sell').length) {
+          add_to_cart_unav_qty = Number($body.find('#add-to-cart-count-cross-up-sell').text().trim());
+        }
+        if ($body.find('#add-to-cart-count').length) {
+          add_to_cart_av_qty = Number($body.find('#add-to-cart-count').text().trim());
+        }
+        if (this.checked) {
+          add_to_cart_unav_qty++;
+          add_to_cart_av_qty++;
+        } else {
+          add_to_cart_unav_qty--;
+          add_to_cart_av_qty--;
+        }
+        if ($body.find('#add-to-cart-count-cross-up-sell').length) {
+          if (add_to_cart_unav_qty == 0) {
+            $body.find('#add-to-cart-count-cross-up-sell').text((add_to_cart_unav_qty == 0 ? '0' : add_to_cart_unav_qty));
+            $body.find('#add-to-cart-count-cross-up-sell').closest('button').hide();
+          } else {
+            $body.find('#add-to-cart-count-cross-up-sell').text(add_to_cart_unav_qty);
+            $body.find('#add-to-cart-count-cross-up-sell').closest('button').show();
+          }
+
+        }
+        if ($body.find('#add-to-cart-count').length) {
+          $body.find('#add-to-cart-count').text((add_to_cart_av_qty == 0 ? '0' : add_to_cart_av_qty));
+        }
+      });
+
+      if (theme.locale == 'fr') {
+        setInterval(function() {
+          $body.find('.product-bundle_product-type').each(function() {
+            let product_type_bundle = $(this).text().trim();
+            if (window.product_types !== undefined && isIterable(window.product_types)) {
+              for (let prod_type of window.product_types) {
+                product_type_bundle = product_type_bundle.split(prod_type.name.trim()).join(prod_type.name_fr.trim());
+              }
+            }
+            $(this).text(product_type_bundle);
+          });
+          // $body.find('product-bundle_prod-details-container-color').each(function() {
+          //   for (let color_translation of window.color_translations) {
+          //     $(this).attr('data-color-name-fr', $(this).attr('data-color-name-fr').split(color_translation.color_en).join(color_translation.color_fr));
+          //   }
+          // });
+        }, 25);
+      }
+
+      $body.on('click', '.product-bundle-add-to-cart-btn', function() {
+        let $input = $(this).closest('.product-bundle_container').find('.add-to-cart-product-bundle');
+        if (!$input.length) {
+          return;
+        }
+        let $this = $(this);
+        $this.closest('.product-bundle-add-to-cart-container').find('.product-bundle-disabled-element').show();
+        let v_id             = $input.attr('data-variant-id');
+        let compare_at_price = 0;
+        if (!isNaN($input.attr('data-compare-at-price'))) {
+          compare_at_price = $input.attr('data-compare-at-price') === undefined ? 0 : $(this).attr('data-compare-at-price');
+        }
+
+        setTimeout(function() {
+          $.ajax({
+                   url:         '/cart/add.js',
+                   type:        'POST',
+                   dataType:    'json',
+                   contentType: 'application/json',
+                   data:        JSON.stringify({
+                                                 id:         v_id + '',
+                                                 quantity:   1,
+                                                 properties: {'compare_at_price': compare_at_price},
+                                               }),
+                   success:     function(cart) {
+                   },
+                   error:       function(xhr, textStatus, error) {
+                     console.log('Error adding item to cart:', error);
+                   },
+                 });
+          setTimeout(function() {
+            document.dispatchEvent(
+                new CustomEvent('on:cart:change'),
+            );
+            document.dispatchEvent(
+                new CustomEvent('on:cart:add'),
+            );
+            setTimeout(function() {
+              document.dispatchEvent(
+                  new CustomEvent('dispatch:cart-drawer:refresh'),
+              );
+            }, 300);
+            setTimeout(function() {
+              document.dispatchEvent(
+                  new CustomEvent('dispatch:cart-drawer:open'),
+              );
+              $this.closest('.product-bundle-add-to-cart-container').find('.product-bundle-disabled-element').hide();
+
+            }, 500);
+
+          }, 1000);
+        }, 100);
+      });
+
+      $body.on('click', 'product-bundle_prod-details-container-color', function() {
+        let color_name    = $(this).attr('data-color-name');
+        let color_name_fr = $(this).attr('data-color-name-fr');
+        $(this).closest('product-bundle_container').find('product-bundle_prod-img-container').find('img').attr('src', $(this).attr('data-image'));
+        $(this).closest('product-bundle_container').find('product-bundle_prod-img-container').find('product-bundle_prod-img-magnify-link').attr('data-src', $(this).attr('data-image'));
+        $(this).closest('product-bundle_container').find('.add-to-cart-product-bundle').attr('data-variant-id', $(this).attr('data-variant-id'));
+        $(this).closest('product-bundle_container').find('.add-to-cart-product-bundle').attr('data-compare-at-price', $(this).attr('data-compare-at-price'));
+        //TODO remove if wont use for a while
+        // let $el           = $body.find('#clickyboxes-SingleOptionSelector-1').find('a[data-value="' + color_name + '"]');
+        // if (!$el.length) {
+        //   $el = $body.find('#clickyboxes-SingleOptionSelector-1').find('a[data-value="' + color_name_fr + '"]');
+        // }
+        // if ($el.length) {
+        //   if (!$el.hasClass('active')) {
+        //     $el[0].click();
+        //   }
+        // }
+
+      });
+
+      $body.on('click', '.product-bundle_prod-img-magnify-link', function() {
+        let href = $(this).attr('data-src');
+        $.fancybox.open({
+                          src:  href,
+                          type: 'image',
+                        });
+      });
+
+    });
+  })(jQuery);
+
+  function getQueryStringByName(name, url = window.location.href) {
+    name        = name.replace(/[\[\]]/g, '\\$&');
+    var regex   = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+
+  function populateBundle(products = [], color_code = false) {
+    let $body = $('body');
+    if (!Array.isArray(products) || (Array.isArray(products) && products.length == 0)) {
+      $body.find('#product-bundle').html('');
+      return;
+    }
+
+    let products_to_show  = [];
+    let selected_variants = '';
+    let color_found       = false;
+    for (let prod of products) {
+      for (let variant of prod.variants) {
+        if (variant.sku == prod.bundle_sku && variant.available) {
+          products_to_show.push(prod);
+          break;
+        }
+      }
+    }
+
+    let products_html = '';
+    $body.find('#product-bundle').html($body.find('#product-bundle-tpl').html());
+    let product_bundle_final_html = '';
+    let product_bundle_html       = $body.find('#product-bundle-product-tpl').html();
+    //Cross-Sell Top part
+    let variant_id                = '';
+    let the_product_id            = '';
+    let index                     = 0;
+    let img                       = '';
+    let product_bundle_price      = '';
+    let thumbs_html               = '';
+    let compare_at_price          = 0;
+    for (let i = 0; i < products.length; i++) {
+      let style_class = i == 0 ? '' : 'product-bundle_container-hidden';
+
+      product_bundle_price = '';
+      let thumb_html       = $body.find('#product-bundle-thumbs-tpl').html();
+
+      product_bundle_html = $body.find('#product-bundle-product-tpl').html();
+      index               = i;
+      for (let variant of products[i].variants) {
+
+        if (variant.available) {
+          if (Number(variant.compare_at_price) > 0) {
+            compare_at_price = variant.compare_at_price;
+            if (theme.locale == 'en') {
+              product_bundle_price += '<span style="text-decoration: line-through; opacity: .5;">$' + formatPrice(variant.compare_at_price) + '</span>' + '<span style="color:#e53d3d; margin-left: 5px;">$' + variant.price + '</span>';
+            } else {
+              product_bundle_price += '<span style="text-decoration: line-through; opacity: .5;">' + formatPrice(variant.compare_at_price).split('.').join(',') + '$</span>' + '<span style="color:#e53d3d; margin-left: 5px;">' + variant.price.split('.').join(',') + '$</span>';
+            }
+          } else {
+            if (theme.locale == 'en') {
+              product_bundle_price = '$' + formatPrice(variant.price);
+            } else {
+              product_bundle_price = formatPrice(variant.price).split('.').join(',') + '$';
+            }
+          }
+          variant_id     = variant.id;
+          the_product_id = products[i].id;
+          break;
+        }
+      }
+      if (variant_id !== '') {
+        for (let image of products[i].images) {
+          if (image.variant_ids === undefined) {
+            img = products[i].featured_image;
+            break;
+          }
+          for (let v_id of image.variant_ids) {
+            if (v_id == variant_id) {
+              img = image.src;
+              break;
+            }
+          }
+          if (img !== '') {
+            break;
+          }
+        }
+      }
+      if (img !== '') {
+
+        let prod_images = [];
+        for (let variant of products[index].variants) {
+          if (variant.featured_image !== undefined && variant.featured_image.src !== undefined && variant.featured_image.src.trim() !== '') {
+            if (variant.available) {
+              let img        = {};
+              // img.color_name = colors_to_accept.color_names[colors_to_accept.colors.indexOf(color_code)];
+              img.src        = variant.featured_image.src;
+              img.variant_id = variant.id;
+              if (Number(variant.compare_at_price) > 0) {
+                img.compare_at_price = variant.compare_at_price;
+              }
+              prod_images.push(img);
+            }
+          }
+        }
+
+        let prod_colors = '';
+
+        for (let img_obj of prod_images) {
+
+          prod_colors += '<div class="product-bundle_prod-details-container-color" data-compare-at-price="' + img_obj.compare_at_price + '" data-variant-id="' + img_obj.variant_id + '" data-image="' + img_obj.src + '" data-color-name="' + img_obj.color_name + '" data-color-name-fr="' + img_obj.color_name + '">';
+          prod_colors += '<img src="' + img_obj.src + '" alt="color">';
+          prod_colors += '</div>';
+        }
+        thumb_html          = thumb_html.split('--==src==--').join(img);
+        thumb_html          = thumb_html.split('--==title==--').join(products[index].title);
+        thumb_html          = thumb_html.split('--==index==--').join(i);
+        thumbs_html += thumb_html;
+        product_bundle_html = product_bundle_html.split('--==img-src==--').join(img);
+        product_bundle_html = product_bundle_html.split('--==class==--').join(style_class);
+        product_bundle_html = product_bundle_html.split('--==index==--').join(i);
+        product_bundle_html = product_bundle_html.split('--==variant-id==--').join(variant_id);
+        let product_url     = (('{{ shop.locale }}' == 'en') ? '/products/' + products[index].handle : '/fr/products') + '?variant=' + variant_id;
+
+        product_bundle_html = product_bundle_html.split('--==product-title==--').join('<a href="' + product_url + '">' + products[index].title + '</a>');
+        product_bundle_html = product_bundle_html.split('--==title==--').join(products[index].title);
+        product_bundle_html = product_bundle_html.split('--==product-type==--').join((products[index].product_type == undefined ? products[index].type : products[index].product_type));
+        product_bundle_html = product_bundle_html.split('--==product-price==--').join((product_bundle_price));
+        product_bundle_html = product_bundle_html.split('--==compare-at-price==--').join((compare_at_price));
+        product_bundle_html = product_bundle_html.split('--==product-colors==-').join(prod_colors);
+        let random_n        = Date.now() + '_' + (Math.floor(Math.random() * 9000) + 1000);
+        product_bundle_html = product_bundle_html.split('-==random-number==-').join(random_n);
+        product_bundle_final_html += product_bundle_html;
+      }
+    }
+
+    setTimeout(function(){
+      $body.find('#product-crosssell-top').remove();
+    }, 500);
+    $body.find('#product-bundle').html($body.find('#product-bundle').html().split('--==bundles==--').join(product_bundle_final_html));
+    $body.find('#product-bundle').html($body.find('#product-bundle').html().split('--==thumbs==--').join(thumbs_html));
+  }
+
+  function formatPrice(price) {
+    if (isNaN(price) || price < 0) {
+      console.log('Invalid price');
+      return;
+    }
+
+    // Convert to string and check if it contains a decimal point
+    if (String(price).includes('.')) {
+      return price;  // If it's already formatted, just ensure two decimal places
+    } else {
+      let dollars = price / 100;  // If not, convert from cents to dollars
+      return dollars.toFixed(2);
+    }
+  }
+</script>

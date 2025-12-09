@@ -1,0 +1,53 @@
+{% render 'theme.jquery.css' %}
+{% render 'multipass-logic' %}
+{% render 'wishlist' %}
+{% if template contains 'collection' or template contains 'search' %}
+  {% if settings.pagination == 'infinite' %}
+  <script src="{{ 'ajaxinate.s.min.js' | asset_url }}" defer="defer"></script>  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var endlessScroll = new Ajaxinate({
+        container: '#Huratips-Loop',
+        pagination: '#Huratips-Pagination',
+        callback: AjaxinateCallback
+      });
+    });
+  </script>
+
+  <script>
+    function AjaxinateCallback(){
+      
+      const event = new Event("onurlchanged");
+      document.dispatchEvent(event);
+    }
+  </script>    
+  {% endif %}  
+{% endif %}
+
+<style>
+  .opt-btn:checked+.opt-label.opt-label--btn {
+    border: 1px solid black;
+    box-shadow: 0 0 0 var(--input-active-shadow-width) black;
+    cursor: default;
+}
+.opt-btn.is-unavailable+.opt-label--btn:after {
+    background-image: var(--swatch-cross-svg);
+    background-position: center;
+    background-size: auto;
+}
+
+ .opt-btn.is-unavailable+.opt-label--btn:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px var(--input-border-color) solid;
+    border-radius: var(--btn-border-radius);
+}
+  .mg-custom-link{
+    cursor:pointer;
+  }
+</style>

@@ -1,0 +1,226 @@
+{% assign display_map = false %}
+{%- if section.settings.api_key != blank and section.settings.map_address -%}
+    {% assign display_map = true %}
+    <script src="{{ 'location-map.s.min.js' | asset_url }}" defer></script>
+{%- endif -%}
+
+<style>
+    .find-store-image-mobile{
+        display: none;
+    }
+    @media screen and (min-width: 900px) {
+        .section-id-{{ section.id }} .map-section__feature{
+            width: 75%;
+        }
+        .find-store-image-mobile{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 900px) {
+      
+        .find-store-image-desktop{
+            display: none;
+        }
+        .find-store-image-mobile{
+            display: block;
+        }
+    }
+</style>
+<div class="section-id-{{ section.id }} map-section use-color-scheme use-color-scheme--{{ section.settings.color_scheme }}{% unless section.settings.full_width %} map-section--map-constrained{% endunless %}{% if display_map %} map-section--display-map{% endif %}{% if section.settings.show_feature_image %} map-section--has-feature-image{% endif %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+    <div class="container">
+        <div class="map-section__wrapper">
+
+            <div class="map-section__content map-section__text">
+                {% if section.settings.heading != blank %}
+                    <h2>
+                        {% if shop.locale == 'en' %}
+                            {{ section.settings.heading | escape }}
+                        {% else %}
+                            {{ section.settings.heading_fr | escape }}
+                        {% endif %}
+                    </h2>
+                {% endif %}
+                {% if section.settings.address != blank %}
+                    <div class="rte lightly-spaced-row">
+                        {% if shop.locale == 'en' %}
+                            {{ section.settings.address }}
+                        {% else %}
+                            {{ section.settings.address_fr }}
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {% if section.settings.button != blank %}
+                    <div>
+
+                    {% if section.settings.button_url != blank %}
+                        <a href="{% if shop.locale == 'en' %}{{ section.settings.button_url }}{% else %}{{ section.settings.button_url_fr }}{% endif %}" class="btn btn--secondary">
+                            {% endif %}
+                            {% if section.settings.show_pin %}
+                                <span class="icon">{% render 'icon-location' %}</span>
+                            {% endif %}
+                            <span>
+                {% if shop.locale == 'en' %}
+                    {{ section.settings.button | escape }}
+                {% else %}
+                    {{ section.settings.button_fr | escape }}
+                {% endif %}
+              </span>
+                            {% if section.settings.button_url != blank %}
+                        </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if section.settings.show_feature_image %}
+                <div class="map-section__content map-section__feature">
+                    {% if section.settings.feature_image %}
+                        <div class="map-section__feature-image find-store-image-desktop img-fill">
+                        {% if section.settings.button_url != blank %}
+                            <a href="{% if shop.locale == 'en' %}{{ section.settings.button_url }}{% else %}{{ section.settings.button_url_fr }}{% endif %}">
+                                {% endif %}
+                                {%- render 'image' with section.settings.feature_image, size_cols_desktop: 3 -%}
+                                {% if section.settings.button_url != blank %}
+                            </a>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <div class="map-section__feature-image find-store-image-desktop placeholder-image">
+                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                    {% endif %}
+                    {% if section.settings.feature_image_mobile %}
+                        <div class="map-section__feature-image find-store-image-mobile img-fill">
+                        {% if section.settings.button_url != blank %}
+                            <a href="{% if shop.locale == 'en' %}{{ section.settings.button_url }}{% else %}{{ section.settings.button_url_fr }}{% endif %}">
+                                {% endif %}
+                                {%- render 'image' with section.settings.feature_image_mobile, size_cols_desktop: 3 -%}
+                                {% if section.settings.button_url != blank %}
+                            </a>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <div class="map-section__feature-image find-store-image-mobile placeholder-image">
+                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Find a Store",
+  "class": "find-a-store",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "id": "full_width",
+      "type": "checkbox",
+      "label": "Full page width",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "1",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our store"
+    },
+    {
+      "type": "text",
+      "id": "heading_fr",
+      "label": "Heading (FR)"
+    },
+    {
+      "type": "richtext",
+      "id": "address",
+      "label": "Address and hours",
+      "default": "<p>123 Fake St.<br>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br>Saturday, 11am - 9pm<br>Sunday, 11am - 5pm</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "address_fr",
+      "label": "Address and hours (FR)"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button label",
+      "default": "Directions"
+    },
+    {
+      "type": "text",
+      "id": "button_fr",
+      "label": "Button label (FR)"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "url",
+      "id": "button_url_fr",
+      "label": "Button link (FR)"
+    },
+    {
+      "id": "show_pin",
+      "type": "checkbox",
+      "label": "Show pin",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Feature image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_feature_image",
+      "label": "Show",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_image",
+      "label": "Desktop Image",
+      "info": "1104 x 316px recommended. Aspect ratio is ~3.49:1"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_image_mobile",
+      "label": "Mobile Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Find a Store"
+    }
+  ]
+}
+{% endschema %}

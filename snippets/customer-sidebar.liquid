@@ -1,0 +1,51 @@
+{%- liquid
+if shop.locale == 'en'
+	assign dashboard_url = '/account'
+    assign profile_url = '/account?section=profile'
+	assign order-history_url = '/account?section=order-history'
+    assign wishlist_url = '/pages/wishlist'
+else
+	assign dashboard_url = '/fr/account'
+    assign profile_url = '/fr/account?section=profile'
+	assign order-history_url = '/fr/account?section=order-history'
+    assign wishlist_url = '/fr/pages/wishlist'
+endif
+-%}
+<div id="customer_sidebar" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+  <div id="customer_detail" class="group">
+    <h5 class="name" style="margin-bottom:20px;">{{ 'customer.account.title' | t }}</h5>
+
+    <div class="account-sidebar-item dashboard">
+      <a  href="{{ dashboard_url }}">{{ 'customer.account.dashboard' | t }}</a>
+    </div>
+    <div class="account-sidebar-item profile">
+      <a href="{{ profile_url }}">{{ 'customer.account.profile' | t }}</a>
+    </div>
+    <div class="account-sidebar-item order-history">
+      <a href="{{ order-history_url }}">{{ 'customer.account.order_history' | t }}</a>
+    </div>
+    <div class="account-sidebar-item wishlist">
+      <a href="{{ wishlist_url }}">{{ 'customer.account.favourites' | t }}</a>
+    </div>
+    <div class="account-sidebar-item">
+      <a class="" href="{{ routes.account_logout_url }}">{{ 'customer.account.sign_out' | t }}</a>
+    </div>
+{% comment %}
+    <h5 class="name">{{ customer.name }}</h5>
+    <p class="email note">{{ customer.email }}</p>
+    <div class="address note lightly-spaced-row">
+      {% if customer.default_address != nil %}
+        <p>{{ customer.default_address.address1 }}</p>
+        {% if customer.default_address.address2 != "" %}
+          <p>{{ customer.default_address.address2 }}</p>
+        {% endif %}
+        <p>{{ customer.default_address.city }}, {% if address.province_code %}{{ customer.default_address.province_code }}, {% endif %}{{ customer.default_address.country }}</p>
+        <p>{{ customer.default_address.zip }}</p>
+        <p class="address-phone">{{ customer.default_address.phone }}</p>
+      {% endif %}
+    </div>
+
+    <a class="underline" href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+    {%endcomment%}
+  </div>
+</div>

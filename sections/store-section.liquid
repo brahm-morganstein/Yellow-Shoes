@@ -1,0 +1,350 @@
+<style>
+
+  .store-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .store-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .info p, .info strong {
+    margin: 4px 0;
+  }
+
+  .hours {
+    margin-top: 10px;
+  }
+
+  .specials {
+    margin-top: 30px;
+  }
+
+  .specials h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .appointment-btn {
+    background-color: #a94f1d;
+    color: #fff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .appointment-btn:hover {
+    background-color: #92421a;
+  }
+
+  @media(min-width: 768px) {
+    .store-content {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    .store-image {
+      max-width: 50%;
+    }
+
+    .info {
+      max-width: 50%;
+    }
+  }
+
+    .store-carousel-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .store-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 16px;
+      padding-bottom: 10px;
+    }
+
+    .store-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .store-card {
+      flex: 0 0 auto;
+      width: 250px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .store-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .store-card-content {
+      padding: 12px 14px;
+    }
+
+    .store-card-content h4 {
+      font-size: 1rem;
+      margin: 0 0 6px;
+      color: #444;
+    }
+
+    .store-card-content p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .store-carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .store-carousel-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .store-carousel-button.left {
+      left: -10px;
+    }
+
+    .store-carousel-button.right {
+      right: -10px;
+    }
+
+    @media (max-width: 768px) {
+      .store-carousel-button {
+        display: none;
+      }
+    }
+
+    #store-map {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+  .store-header-title{
+    color:gray;
+  }
+
+  .store-header-title:hover{
+    text-decoration:underline;
+  }
+  
+</style>
+
+<header style="display:flex;flex-direction:column;justify-content:center;align-items:center;height: 10rem;background-color:#faf2e6;">
+  <h1>Our Store Locations</h1>
+  <a class="store-header-title" href="https://www.yellowshoes.com/pages/stores">View all Stores</a>
+</header>
+
+<div class="container" style="margin-top:1rem;">
+  <div class="store-content">
+    <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5278.jpg?v=1752001324" alt="Tecovas Store Interior" class="store-image" />
+    
+    <div class="info">
+      <h2>2 - Yellow - Vaudreuil</h2>
+      <p><strong>Address:</strong> 3080 Boulevard de la Gare, Local 900, Vaudreuil, Quebec</p>
+      <p><strong>Store Number:</strong> (450) 510-3177</p>
+      <div class="hours">
+        <p><strong>Hours:</strong></p>
+        <p>Monday/Lundi: 10:00-18:00</p>
+        <p>Tuesday/Mardi: 10:00-18:00</p>
+        <p>Wednesday/Mercredi: 10:00-18:00</p>
+        <p>Thursday/Jeudi: 10:00-20:00</p>
+        <p>Friday/Vendredi: 10:00-20:00</p>
+        <p>Saturday/Samedi: 9:00-17:00</p>
+        <p>Sunday/Dimanche 10:00-17:00</p>
+      </div>
+      <p>
+        Established in 1916, Yellow Shoes is a famous family shoe retailer with over 90 locations across Quebec, with fast shipping available throughout Canada. We are committed to offering the best possible value to our customers, providing stylish and comfortable footwear for the whole family.
+      </p>
+      <button class="appointment-btn">Get directions</button>
+      <div id="store-map"></div>
+    </div>
+  </div>
+
+  <div class="specials">
+    <h3>In-store specials.</h3>
+    <p>
+      Welcome to the Yellow Shoes, where you’ll find incredible savings on shoes and accessories for women, men, and kids. Explore our discounted options, including boots, sneakers, sandals, and more, perfect for every season and style. Upgrade your family’s wardrobe with stylish and budget-friendly footwear today!
+    </p>
+  </div>
+
+  <div class="store-carousel-container">
+    <button class="store-carousel-button left" onclick="storeScrollCarousel(-1)">&#8249;</button>
+    <div class="store-carousel" id="storeCarousel">
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Leather Goods">
+        <div class="store-card-content">
+          <h4>Premium Leather Goods</h4>
+          <p>Hold and try on everything from classic leather boot styles to limited edition releases.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Drinks">
+        <div class="store-card-content">
+          <h4>Drinks on the House</h4>
+          <p>Grab something to sip on from one of our bartenders while you shop — always free.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Boot Shines">
+        <div class="store-card-content">
+          <h4>Boot Shines</h4>
+          <p>Wearing boots? Get them shined up by a pro — complimentary service in-store.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Custom Belts">
+        <div class="store-card-content">
+          <h4>Custom Belt Buckles</h4>
+          <p>Work with a designer to create a buckle that's one-of-a-kind and yours to keep.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Expert Staff">
+        <div class="store-card-content">
+          <h4>Expert Staff</h4>
+          <p>Friendly, knowledgeable staff ready to help you find your perfect fit.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Fitting Room">
+        <div class="store-card-content">
+          <h4>Private Fitting Room</h4>
+          <p>Enjoy a personalized fitting experience in a comfortable private setting.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="New Arrivals">
+        <div class="store-card-content">
+          <h4>New Arrivals Weekly</h4>
+          <p>Be the first to try on our newest styles, just in from the workshop.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Gift Wrap">
+        <div class="store-card-content">
+          <h4>Gift Wrapping</h4>
+          <p>Buying a gift? Let us wrap it with care — no extra charge.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="In-Store Exclusives">
+        <div class="store-card-content">
+          <h4>In-Store Exclusives</h4>
+          <p>Shop limited-run styles and products only available at this location.</p>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://cdn.shopify.com/s/files/1/1080/2420/files/076A5318.jpg?v=1752001190" alt="Events">
+        <div class="store-card-content">
+          <h4>Local Events</h4>
+          <p>Join us for special gatherings, trunk shows, and community events.</p>
+        </div>
+      </div>
+    </div>
+    <button class="store-carousel-button right" onclick="storeScrollCarousel(1)">&#8250;</button>
+  </div>
+  
+</div>
+
+<script>
+  // Function to scroll the store carousel
+  function storeScrollCarousel(direction) {
+    const carousel = document.getElementById('storeCarousel');
+    const scrollAmount = 270;
+    carousel.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+
+  // Make initMap globally available for Google Maps API
+  window.initMap = function () {
+    const storeLocation = { lat: 45.397490, lng: -74.056337 }; // Replace with your desired location
+
+    const map = new google.maps.Map(document.getElementById("store-map"), {
+      zoom: 12,
+      center: storeLocation,
+      disableDefaultUI: true,
+      gestureHandling: "cooperative",
+      styles: [
+        {
+          featureType: "all",
+          elementType: "geometry",
+          stylers: [{ color: "#e5e3df" }]
+        },
+        {
+          featureType: "road",
+          elementType: "geometry.stroke",
+          stylers: [{ color: "#ffffff" }]
+        },
+        {
+          featureType: "water",
+          elementType: "geometry.fill",
+          stylers: [{ color: "#d4cfc4" }]
+        }
+      ]
+    });
+
+    new google.maps.Marker({
+      position: storeLocation,
+      map: map,
+      title: "Our Store",
+      icon: {
+        url: "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-48.png"
+      }
+    });
+  };
+</script>
+
+<!-- Load Google Maps script after defining initMap -->
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpqtKAIUrrPsxbxfU39Pf4DFRbp5Z7j9s&callback=initMap">
+</script>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}

@@ -1,0 +1,132 @@
+{% comment %}
+  Parameters:
+  - product {Object} - Product object.
+  - show_currency_code {Boolean} - Use 'money_with_currency' instead of 'money'.
+  - show_labels {Boolean} - Show Sale/Sold Out labels (optional, default is false).
+  - for_variant_picker {Boolean} - Uses variant price and markup for display of all variant states (optional, default is false).
+  - current_variant {Object} - Current variant, if for_variant_picker is true.
+
+  Usage:
+  {% render 'price', product: product %}
+{% endcomment %}
+
+{%- liquid
+  assign variant = current_variant | default: product.variants | sort: 'price' | first
+  assign cheapest_variant = product.variants | sort: 'price' | first
+
+  if for_variant_picker
+    if current_variant == false
+      assign available = true
+    endif
+  else
+    assign for_variant_picker = false
+    assign available = variant.available | default: false
+  endif
+  assign compare_at_price = cheapest_variant.compare_at_price
+  assign price = cheapest_variant.price | default: 1999
+  assign comp_value = product.metafields.custom.comp_value
+  if comp_value != blank
+    assign comp_value = comp_value | times: 100
+  endif
+-%}
+<div class="price{%- if compare_at_price > price %} price--on-sale{% endif -%}
+                 {%- if available == false %} price--sold-out{% endif -%}">
+  <div class="price__default {% if tamplate contains 'product' %}flex-price{% endif %}">
+    {%- if product.price_varies -%}
+      {%- if for_variant_picker == false -%}
+        <span class="price__from">{{ 'products.product.from' | t }}</span>
+      {%- elsif for_variant_picker and current_variant == false -%}
+        <span class="price__from">{{ 'products.product.from' | t }}</span>
+      {%- endif -%}
+    {%- endif %}
+    {% assign comp_value_class = '' %}
+    {%- if compare_at_price > price -%}
+    {% else %}
+      {% if comp_value != blank %}
+        {% assign comp_value_class = 'comp_value_current' %}
+      {% endif %}
+    {%- endif -%}
+    {% if comp_value_class != blank %}
+      <span class="{{ comp_value_class }}" style="margin-right:5px;">{{ "comp_value.now" | t }}</span>
+    {% endif %}
+    <span class="price__current {{ comp_value_class }}">
+      {%- if show_currency_code -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+    </span>
+    <span class="variant-price price__current {{ comp_value_class }}" style="display:none; {% if comp_value_class != blank %}font-weight:bold;{% endif %}">
+      {%- if show_currency_code -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+    </span>
+    {% assign comp_value = comp_value | strip %}
+    {%- if comp_value_class != blank -%}
+      <span class="comp_value_current_was" style="display:flex; align-items:center; width: 100%; margin-top: -10px;{% if comp_value_class == blank %}display:none;{% endif %}"></span>
+      {% assign percent_off = comp_value | minus: price %}
+      {% comment %}<span class="variant-price price__current comp_value_percent variant-price-unchangeable {% if comp_value != blank %}price-unchangeable{% endif %} {{ comp_value_class }}" style="display:none; font-weight:bold;"> | times: 100 | divided_by: comp_value | floor {% endcomment %}{% comment %}({{ "comp_value.save" | t }} <span class="theme-money">{{ percent_off  |money }}</span>) </span>{% endcomment %}
+      <span class="variant-price price__current variant-price-unchangeable comp_value_current_was_variant {% if comp_value != blank %}price-unchangeable{% endif %} {{ comp_value_class }}" style="display:none; font-weight:bold;">
+          <span class="variant-price price__current variant-price-unchangeable" style="text-decoration: line-through; font-weight:bold;">{{ comp_value | money }}</span> {{ "comp_value.comp_value" | t }}
+        {% render 'comp-value-tooltip' %}
+        </span>
+    {% endif %}
+    {% if for_variant_picker or compare_at_price > price or comp_value_class != blank -%}
+    <span style="margin-left:0;" class="price__was {% if comp_value_class != blank %}price-unchangeable comp_value_current_was{% endif %} ">
+      {%- if compare_at_price > price -%}
+        {{- compare_at_price | money -}}
+      {% else %}
+        {% if comp_value_class != blank %}
+
+          {% comment %}
+           <span class="comp_value_current_was" style="display:flex; align-items:center;">
+               <span style="margin-right:5px;background-color: #eaf4e1; color: #3a9a1c; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; display: inline-block;
+">
+               {% assign percent_off = comp_value | minus: price  %}
+               {{ "comp_value.save" | t }} <span class="theme-money">{{ percent_off  |money }}</span>
+          </span>
+          {% endcomment %}
+          <span style="margin-right:5px; margin-left:2px;text-decoration:line-through; font-weight:bold;" class="price__was">{{ comp_value | money }}</span>
+          <span style="margin-right:5px; font-weight:bold;" class="comp_value_font_normalizer">{{ "comp_value.comp_value" | t }}</span>
+               {% render 'comp-value-tooltip' %}
+                    </span>
+
+        {% endif %}
+      {%- endif -%}
+      </span>
+
+    {%- endif -%}
+  </div>
+
+  {% if show_labels %}
+    {% if settings.prod_sold_out_show and product.available == false %}
+      <span class="price-label price-label--sold-out">{{ 'products.product.sold_out' | t }}</span>
+    {% elsif settings.prod_pre_order_label_show and product.template_suffix contains 'preorder' %}
+      <span class="price-label price-label--preorder">{{ 'products.product.preorder' | t }}</span>
+    {% elsif settings.prod_sale_show and variant.compare_at_price > variant.price %}
+      <span class="price-label price-label--sale">{{ 'products.product.sale' | t }}</span>
+    {% endif %}
+  {% endif %}
+
+  {% if for_variant_picker or variant.unit_price_measurement %}
+    <div class="unit-price"{% if variant.unit_price_measurement == nil %} hidden{% endif %}>
+      <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+      <span class="unit-price__price">{{ variant.unit_price | money }}</span>
+      <span class="unit-price__separator">{{ 'products.product.price.unit_price_separator' | t }}</span>
+      <span class="unit-price__unit">
+        {%- if variant.unit_price_measurement.reference_value != 1 -%}
+          {{- variant.unit_price_measurement.reference_value -}}
+        {%- endif -%}
+        {{ variant.unit_price_measurement.reference_unit }}
+      </span>
+    </div>
+  {% endif %}
+
+  {% if for_variant_picker %}
+    <div class="price__no-variant" hidden>
+      <strong class="price__current">{{ 'products.variant.non_existent' | t }}</strong>
+    </div>
+  {% endif %}
+</div>

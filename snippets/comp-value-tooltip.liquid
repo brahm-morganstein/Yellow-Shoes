@@ -1,0 +1,7 @@
+<span class="comp-price-tooltip-container" onmouseenter="showTooltip(this)" onmouseleave="hideTooltip(this)">
+  <span class="comp-price-tooltip-icon" onclick="event.stopPropagation(); openTooltip(this)">i</span>
+  <span class="comp-price-tooltip-text">
+    <span class="tooltip-close" onclick="event.stopPropagation(); closeTooltip(this)">×</span>
+    {{ "comp_value.popup" | t }}
+  </span>
+</span>

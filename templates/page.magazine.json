@@ -1,0 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_KWKDRn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6XL3nP": {
+          "type": "heading",
+          "settings": {
+            "title": "2025 Catalogue",
+            "title_fr": "2025 Catalogue",
+            "use_h1": true
+          }
+        },
+        "text_h3aGhA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your store with your customers. Describe products, share announcements, or welcome customers to your store.</p>",
+            "text_fr": "",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6XL3nP",
+        "text_h3aGhA"
+      ],
+      "settings": {
+        "height": "small",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    },
+    "main": {
+      "type": "flipbook-1",
+      "settings": {}
+    }
+  },
+  "order": [
+    "rich_text_KWKDRn",
+    "main"
+  ]
+}

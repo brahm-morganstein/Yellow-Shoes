@@ -1,0 +1,175 @@
+<style>
+#barcode-qr-overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:8999;
+  inset:0px;
+}
+
+#barcode-qr-bg{
+  background-color:rgb(0,0,0,0.9);
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  inset:0px;
+}
+
+#barcode-qr-modal{
+  background-color:white;
+  max-width: 28rem;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 0.25rem;
+  margin-top:100px; 
+  background-color:white;
+  z-index:9000;
+  position: relative;
+}  
+
+#barcode-qr-modal-body{
+  padding:0.75rem;
+  max-height:405px;
+  overflow:scroll;    
+}  
+  
+.barcode-qr-content{
+  	min-height:240px;
+  	background-color:white;
+  	display:flex;
+    flex-direction:column;
+  	padding:9px;
+  	justify-content:center;
+    align-items:center;  
+}
+  
+#barcode-qr{
+  --margin-top:2em;
+}  
+</style>
+<div id="barcode-qr-overlay" class="invisible">
+  <div onclick="hideBarcodeModal()" id="barcode-qr-bg" class="duration-500 ease-out transition-all inset-0 opacity-0"></div>
+  <div id="barcode-qr-modal" class="duration-500 ease-out transition-all -translate-y-full opacity-0">
+    <div style="display:flex;justify-content:end;">
+      <div onclick="hideBarcodeModal()" style="cursor:pointer;margin-top:0.5rem;margin-right:1rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </div>
+    </div>
+    <div class="barcode-qr-content">
+      <div id="barcode-qr"></div>
+      <div style="margin-top:1em;font-weight:bold;text-align: center;">
+      {% if shop.locale == 'en' %}
+        <div>Show QR code in store to ship at home.</div>
+      {% else %}
+        <div>Présenter le code QR en magasin pour la livraison à domicile.</div>
+      {% endif %}
+      </div>      
+      <div style="margin-top:0.5em;text-align: center;">
+      {% if shop.locale == 'en' %}
+        <div>For Yellow store employee use only</div>
+      {% else %}
+        <div>À l'usage exclusif des employés du magasin Yellow</div>
+      {% endif %}
+      </div>      
+    </div>
+  </div>
+</div>
+
+<script>
+  setBarcodeClickListener();
+  setOnVariantChangeListener()
+  
+  function setBarcodeClickListener(){
+     $("#upc-code").click(function(){
+      $("#barcode-qr").html("");
+      var bcode = $(this).html().trim();  
+      var options = {
+        // render method: 'canvas', 'image' or 'div'
+        render: 'canvas',
+    
+        // version range somewhere in 1 .. 40
+        minVersion: 1,
+        maxVersion: 40,
+    
+        // error correction level: 'L', 'M', 'Q' or 'H'
+        ecLevel: 'L',
+    
+        // offset in pixel if drawn onto existing canvas
+        left: 0,
+        top: 0,
+    
+        // size in pixel
+        size: 200,
+    
+        // code color or image element
+        fill: '#000',
+    
+        // background color or image element, null for transparent background
+        background: null,
+    
+        // content
+        text: bcode,
+    
+        // corner radius relative to module width: 0.0 .. 0.5
+        radius: 0,
+    
+        // quiet zone in modules
+        quiet: 0,
+    
+        // modes
+        // 0: normal
+        // 1: label strip
+        // 2: label box
+        // 3: image strip
+        // 4: image box
+        mode: 0,
+    
+        mSize: 0.1,
+        mPosX: 0.5,
+        mPosY: 0.5,
+    
+        label: 'no label',
+        fontname: 'sans',
+        fontcolor: '#000',
+    
+        image: null
+      }
+      $("#barcode-qr").qrcode(options);    
+      toggleBarcodeModal()
+    }) 
+  }
+  
+  function hideBarcodeModal(){
+    toggleBarcodeModal()
+  }
+  
+  function toggleBarcodeModal(){
+    document.getElementsByTagName("body")[0].classList.toggle('overflow-hidden');
+    document.getElementById("barcode-qr-overlay").classList.toggle('invisible');
+    document.getElementById("barcode-qr-bg").classList.toggle('opacity-0');
+    document.getElementById("barcode-qr-bg").classList.toggle('opacity-50');
+    document.getElementById("barcode-qr-modal").classList.toggle('-translate-y-full');
+    document.getElementById("barcode-qr-modal").classList.toggle('opacity-0');
+    document.getElementById("barcode-qr-modal").classList.toggle('opacity-1');
+  }
+
+  function updateProductBarcode(currentVariant){
+    $("#upc-code").html(currentVariant.barcode)
+  }
+
+  function setOnVariantChangeListener(){
+    document.addEventListener('on:variant:change', (event) => {
+      let currentVariant = event.detail.variant;
+      updateProductBarcode(currentVariant)
+    });    
+  }
+
+  
+  document.addEventListener('on:quickbuy:after-open', (event) => {
+    // setBarcodeClickListener()
+    // setOnVariantChangeListener()
+    $("#upc-code").hide();
+  });  
+</script>

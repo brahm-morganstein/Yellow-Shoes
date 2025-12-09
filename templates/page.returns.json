@@ -1,0 +1,602 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "full_width": false
+      }
+    },
+    "image_with_text_overlay_wF9cJP": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_jmw47P": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "subheading_fr": ""
+          }
+        },
+        "heading_HU4TJb": {
+          "type": "heading",
+          "settings": {
+            "title": "Returns Guide",
+            "title_fr": "Guide des Retours",
+            "heading_max_width": 15,
+            "title_size": 72,
+            "title_size_mobile": 32,
+            "use_h1": true
+          }
+        },
+        "text_8nUtzF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Follow our step-by-step guide to making a return</p>",
+            "text_fr": "<p>Suivez notre guide étape par étape pour effectuer un retour</p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_jmw47P",
+        "heading_HU4TJb",
+        "text_8nUtzF"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/BANNER_GREEN_DESKTOP_d6ad3d29-a2ed-4fe7-8aa0-bfa0bb917e5c.jpg",
+        "image_fr": "shopify://shop_images/BANNER_GREEN_DESKTOP_d6ad3d29-a2ed-4fe7-8aa0-bfa0bb917e5c.jpg",
+        "mobile_image": "shopify://shop_images/BANNER_GREEN_MOBILE_fc7a5597-0841-4bb2-82a5-0b817885537c.jpg",
+        "mobile_image_fr": "shopify://shop_images/BANNER_GREEN_MOBILE_fc7a5597-0841-4bb2-82a5-0b817885537c.jpg",
+        "height": "fixed",
+        "height_desktop": 420,
+        "height_mobile": 360,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    },
+    "rich_text_xYHxUX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GcfAjR": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Returns Policy",
+            "title_fr": "",
+            "use_h1": false
+          }
+        },
+        "text_m7xMFX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Describe your returns policy in detail to build trust with your customers.</p>",
+            "text_fr": "",
+            "enlarge_text": true
+          }
+        },
+        "button_darepb": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button text",
+            "button_label_fr": "",
+            "is_catalogue_button": false,
+            "button_link": "",
+            "button_link_fr": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GcfAjR",
+        "text_m7xMFX",
+        "button_darepb"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "1"
+      }
+    },
+    "faq_header_wMhwag": {
+      "type": "faq-header",
+      "settings": {
+        "title": "Returns Policy",
+        "title_fr": "Politique de Retour",
+        "use_h1": false,
+        "text": "<p>Welcome to our Returns and Exchanges Policy page. This policy is just for our online shoppers at <a href=\"http://www.yellowshoes.com\">www.yellowshoes.com</a>. If you made your purchase in-store, no worries—you can return or exchange your items at any of our store locations. Below, we’ve answered some common questions to help make your return process smooth and easy, including how to send items back, the conditions, timelines, and how to make a warranty claim. We're here to help!</p><p></p><p><strong>Extension of the Return Policy</strong></p><p>All purchases made between <strong>November 24 and December 25, 2025</strong> will be eligible for an <strong>extended return period</strong>.<br/><br/>It will therefore be possible to <strong>exchange or receive a refund</strong> for your purchases until <strong>January 8, 2026</strong>.</p><p>Please note that <strong>no refunds or exchanges</strong> will be processed on <strong>December 26 and 27, 2025</strong>.</p><p><strong>Happy Holidays! 🎄</strong></p><p>Returned merchandise <strong>must be accompanied by the original receipt and packaging</strong>. In addition, items must be <strong>in new condition with no signs of wear</strong>. This excludes all return types that we do not normally accept: <strong>final sale, clearance (over 41% off), jewelry, socks, care products, insoles, etc.</strong></p>",
+        "text_fr": "<p>Bienvenue sur notre page de Politique de Retours et Échanges. Cette politique est spécialement pour nos clients en ligne sur <a href=\"http://www.yellowshoes.com\">www.chaussuresyellow.com</a>. Si vous avez acheté en magasin, pas de souci—vous pouvez retourner ou échanger vos articles dans l'une de nos boutiques. Plus bas, nous avons répondu à quelques questions fréquentes pour vous aider à rendre votre processus de retour simple et facile, incluant comment renvoyer vos articles, les conditions, les délais, et comment faire une demande de garantie. Nous sommes là pour vous aider!</p><p></p><p><strong>Prolongation de la politique de retour</strong></p><p>Tous les achats effectués entre le <strong>24 novembre et le 25 décembre 2025</strong> seront admissibles à une <strong>prolongation des délais de retour</strong>.<br/><br/>Il sera donc possible d’<strong>échanger ou de vous faire rembourser</strong> vos achats jusqu’au <strong>8 janvier 2026</strong>.</p><p>À noter qu’il n’y aura <strong>aucun remboursement ou échange</strong> les <strong>26 et 27 décembre 2025</strong>.</p><p><strong>Joyeuses Fêtes ! 🎄</strong></p><p>La marchandise retournée doit obligatoirement être accompagnée du <strong>reçu et de l’emballage d’origine</strong>. De plus, cette marchandise doit être <strong>neuve et ne présenter aucun signe d’usure</strong>. Ceci exclut tous les types de retours que nous n’acceptons pas nécessairement : <strong>vente finale (ferme), liquidation (plus de 41 % de rabais), bijoux, bas, produits d’entretien, semelles, etc.</strong></p>",
+        "show_search": false,
+        "show_index": false,
+        "index_heading": "How can we help?",
+        "index_heading_fr": ""
+      }
+    },
+    "rich_text_9HByPw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jEmjym": {
+          "type": "heading",
+          "settings": {
+            "title": "Important Notice: Potential Canada Post Strike – May 23, 2025",
+            "title_fr": "Avis important : Grève possible de Postes Canada – 23 mai 2025",
+            "use_h1": false
+          }
+        },
+        "text_BaKBmT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Due to the possibility of a Canada Post strike beginning May 23, 2025, return shipments may be delayed.</p><p>To support our customers during this time, we are <strong>temporarily extending our return window from 15 to 30 days</strong>.</p><p>For faster processing, we encourage you to return items to any <strong>Yellow store location</strong> during the strike period.</p><p><strong>Please note:</strong><br/><br/>Returns for orders paid with <strong>PayPal or Sezzle cannot be processed in-store</strong>. These must be returned by mail once postal services resume.</p><p>If you have any questions, feel free to contact our Customer Service team at<br/><br/>serviceclient@yellow.qc.ca | 1-888-970-7056</p>",
+            "text_fr": "<p>En raison d’une grève potentielle de Postes Canada à compter du 23 mai 2025, les retours par la poste pourraient subir des délais.</p><p>Pour mieux vous accommoder, nous prolongeons <strong>temporairement notre période de retour de 15 à 30 jours</strong>.</p><p>Pour un traitement plus rapide, nous vous encourageons à retourner vos articles dans <strong>l’un de nos magasins Yellow</strong> pendant cette période.</p><p><strong>Veuillez noter :</strong><br/>Les retours pour les commandes payées avec <strong>PayPal ou Sezzle ne peuvent pas être traités en magasin</strong>. Ces retours devront être effectués par la poste une fois les services postaux rétablis.</p><p>Pour toute question, n’hésitez pas à contacter notre service à la clientèle :<br/>serviceclient@yellow.qc.ca | 1-888-970-7056</p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_jEmjym",
+        "text_BaKBmT"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "height": "medium",
+        "text_alignment": "left",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    },
+    "multi_column_mYX7gb": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_hVDREC": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MAIL-RETURN.jpg",
+            "image_fr": "shopify://shop_images/MAIL-RETURN.jpg",
+            "title": "Return by mail",
+            "title_fr": "Retour par la poste",
+            "text": "<p>Return your online orders by mail - <strong>Sezzle and Paypal orders accepted</strong></p>",
+            "text_fr": "<p>Retournez vos commandes en ligne par la poste - <strong>Commandes Sezzle et PayPal acceptées</strong></p>",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "https://www.yellowshoes.com/apps/returns-center",
+            "link_fr": "https://www.yellowshoes.com/fr/apps/returns-center"
+          }
+        },
+        "text_block_RBHKJK": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/STORE-RETURN.jpg",
+            "image_fr": "shopify://shop_images/STORE-RETURN.jpg",
+            "title": "Return to a store",
+            "title_fr": "Retour en magasin",
+            "text": "<p>In store returns are free - <strong>Paypal and Sezzle orders not accepted</strong></p>",
+            "text_fr": "<p>Tous les retours effectués en magasin sont gratuits - <strong>Commandes PayPal et Sezzle non acceptées</strong></p>",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "https://www.yellowshoes.com/apps/store-locator",
+            "link_fr": "https://www.yellowshoes.com/fr/apps/store-locator"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_hVDREC",
+        "text_block_RBHKJK"
+      ],
+      "settings": {
+        "title": "Start a return",
+        "title_fr": "",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 550,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "default"
+      }
+    },
+    "image_with_text_EWRmm6": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_WRmdJj": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Step One",
+            "subheading_fr": ""
+          }
+        },
+        "heading_bwNNXe": {
+          "type": "heading",
+          "settings": {
+            "title": "Create a returns label",
+            "title_fr": "",
+            "use_h1": false
+          }
+        },
+        "text_mkPBj9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Description of this step for processing a return.</p>",
+            "text_fr": "",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WRmdJj",
+        "heading_bwNNXe",
+        "text_mkPBj9"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "left",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
+    "image_with_text_zK74RN": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_gg7ndR": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Step Two",
+            "subheading_fr": ""
+          }
+        },
+        "heading_d7Adz7": {
+          "type": "heading",
+          "settings": {
+            "title": "Print your label",
+            "title_fr": "",
+            "use_h1": false
+          }
+        },
+        "text_DRgW3F": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Description of this step for processing a return.</p>",
+            "text_fr": "",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_gg7ndR",
+        "heading_d7Adz7",
+        "text_DRgW3F"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "1"
+      }
+    },
+    "image_with_text_89N96B": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_RGtaT7": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Step Three",
+            "subheading_fr": ""
+          }
+        },
+        "heading_PtVaWc": {
+          "type": "heading",
+          "settings": {
+            "title": "Bag it up",
+            "title_fr": "",
+            "use_h1": false
+          }
+        },
+        "text_H4MMUb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Description of this step for processing a return.</p>",
+            "text_fr": "",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_RGtaT7",
+        "heading_PtVaWc",
+        "text_H4MMUb"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "left",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
+    "image_with_text_3j6bBi": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_aP7txq": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Step Four",
+            "subheading_fr": ""
+          }
+        },
+        "heading_dBcMYi": {
+          "type": "heading",
+          "settings": {
+            "title": "Drop it off",
+            "title_fr": "",
+            "use_h1": false
+          }
+        },
+        "text_WxpaiA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Description of this step for processing a return.</p>",
+            "text_fr": "",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_aP7txq",
+        "heading_dBcMYi",
+        "text_WxpaiA"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "1"
+      }
+    },
+    "collapsible_tabs_T3CtBB": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_MaLPNf": {
+          "type": "question",
+          "settings": {
+            "title": "Question",
+            "title_fr": "",
+            "answer": "<p>Answer</p>",
+            "answer_fr": ""
+          }
+        },
+        "question_WrriD8": {
+          "type": "question",
+          "settings": {
+            "title": "Question",
+            "title_fr": "",
+            "answer": "<p>Answer</p>",
+            "answer_fr": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_MaLPNf",
+        "question_WrriD8"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Policy information",
+        "title_fr": ""
+      }
+    },
+    "collapsible_tabs_FAbMDN": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_7CTQQD": {
+          "type": "question",
+          "settings": {
+            "title": "What is the return policy for online purchases?",
+            "title_fr": "Quelle est la politique de retour pour les achats en ligne ?",
+            "answer": "<p>We gladly accept returns of unworn merchandise within 15 days of receiving your order. All items must be returned in their original box/packaging, undamaged, with the original sales receipt.</p><p>Worn items, final sale items, and items reduced by more than 41% are not eligible for return or exchange.</p><p>For hygienic reasons, certain products like socks, laces, hats, jewelry, insoles, mittens, scarves, and shoe care products cannot be returned or exchanged.</p><p>Shipping & return fees are non-refundable.</p>",
+            "answer_fr": "<p>Nous acceptons volontiers les retours de marchandises non portées dans les 15 jours suivant la réception de votre commande. Tous les articles doivent être retournés dans leur emballage d'origine, non endommagé, avec le reçu de vente original.</p><p>Les articles portés, en vente finale, et ceux réduits de plus de 41% ne sont pas admissibles au retour ou à l'échange.</p><p>Pour des raisons d'hygiène, certains produits tels que chaussettes, lacets, tuques, foulards, mitaines, bijoux, semelles, et produits d'entretien des chaussures ne peuvent être retournés ou échangés.</p><p>Les frais de livraison et de retour ne sont pas remboursables.</p>"
+          }
+        },
+        "question_4D86Qg": {
+          "type": "question",
+          "settings": {
+            "title": "How can I return my online purchase?",
+            "title_fr": "Comment puis-je retourner mon achat en ligne ?",
+            "answer": "<h3><strong>There are three options to return your online purchase:</strong></h3><h4><strong>1. Return at a Yellow Store Location</strong></h4><p>All store returns are free across Canada.</p><ul><li>Refunds are issued in person to the original method of payment and can only be processed in-store.</li><li>The original receipt and a valid ID card are required.</li></ul><p><strong>Note:</strong> Stores cannot process refunds for online orders paid via PayPal or Sezzle. If you used these payment methods, please choose one of the return-by-mail options below.</p><h4><strong>2. Return by Mail Using Your Own Carrier</strong></h4><p>For online orders only.</p><ul><li>Visit our <a href=\"https://www.yellowshoes.com/apps/returns-center\">online portal</a> and select \"Use the Carrier of Your Choice.\"</li><li>Send the package at your expense.</li></ul>",
+            "answer_fr": "<h3><strong>Il existe trois options pour retourner votre achat en ligne :</strong></h3><h4><strong>1. Retour en Magasin Yellow</strong></h4><p>Tous les retours en magasin sont gratuits partout au Canada.</p><ul><li>Les remboursements sont effectués en personne en magasin selon le mode de paiement d'origine.</li><li>Le reçu original et une pièce d'identité valide sont requis.</li></ul><p><strong>Remarque :</strong> Les magasins ne peuvent pas rembourser les commandes en ligne payées via <strong>PayPal ou Sezzle</strong>. Pour ces commandes, veuillez utiliser l'une des méthodes de retour par courrier ci-dessous.</p><h4><strong>2. Retour par Courrier par Votre Propre Transporteur</strong></h4><p>Valide pour les achats en ligne uniquement.</p><ul><li>Accédez à notre <a href=\"https://www.yellowshoes.com/fr/apps/returns-center\">portail en ligne</a> et sélectionnez <strong>\"Utilisez le transporteur de votre choix\"</strong>.</li><li>Envoyez le colis à vos frais.</li></ul>"
+          }
+        },
+        "question_DRykgT": {
+          "type": "question",
+          "settings": {
+            "title": "What happens if I return a regular price item purchased during a \"Buy One, Get One\" event?",
+            "title_fr": "Que se passe-t-il si je retourne un article acheté à prix régulier lors d'un événement « Achetez-en un, obtenez-en un » ?",
+            "answer": "<p>If you return a regular price item purchased during a \"Buy One, Get One\" event, the discount on the second item is forfeited. The second item can be repurchased at its current price or both items can be returned for a full refund.</p>",
+            "answer_fr": "<p>Si vous retournez un article acheté à prix régulier lors d'un événement « Achetez-en un, obtenez-en un », la remise sur le deuxième article est annulée. Le deuxième article peut être racheté au prix de vente actuel ou les deux articles peuvent être retournés pour un remboursement complet.</p>"
+          }
+        },
+        "question_f7EhxJ": {
+          "type": "question",
+          "settings": {
+            "title": "How do I initiate a warranty claim?",
+            "title_fr": "Comment initier une réclamation sous garantie ?",
+            "answer": "<p>To initiate a warranty claim, contact our Customer Service team directly by phone at 1-888-970-7056 or email at <a>serviceclient@yellow.qc.ca</a>. Warranty claims cannot be processed at our retail locations.</p>",
+            "answer_fr": "<p>Pour lancer une réclamation sous garantie, contactez directement notre service clientèle par téléphone au 1-888-970-7056 ou par courriel à <a>serviceclient@yellow.qc.ca</a>. Les réclamations sous garantie ne peuvent pas être traitées en magasin.</p>"
+          }
+        },
+        "question_TeaeM3": {
+          "type": "question",
+          "settings": {
+            "title": "How long does it take to process my refund?",
+            "title_fr": "Combien de temps faut-il pour traiter mon remboursement ?",
+            "answer": "<p>Once your return is checked in at our warehouse, you'll receive an email confirmation. Refunds can take up to 20 business days to appear on your original method of payment.</p>",
+            "answer_fr": "<p>Une fois votre retour enregistré à notre entrepôt, vous recevrez un courriel de confirmation. Les remboursements peuvent prendre jusqu'à 20 jours ouvrables pour apparaître sur votre mode de paiement original.</p>"
+          }
+        },
+        "question_LfwTQX": {
+          "type": "question",
+          "settings": {
+            "title": "What should I do if my return package is lost or stolen?",
+            "title_fr": "Que faire si mon colis de retour est perdu ou volé ?",
+            "answer": "<p>Unfortunately, Groupe Yellow Inc. is not responsible for lost or stolen packages. </p>",
+            "answer_fr": "<p>Malheureusement, Groupe Yellow Inc. n'est pas responsable des colis perdus ou volés. Nous vous recommandons d'utiliser un service de livraison avec suivi ou d'acheter une assurance d'expédition.</p>"
+          }
+        },
+        "question_RReGPr": {
+          "type": "question",
+          "settings": {
+            "title": "Who can I contact if I have more questions?",
+            "title_fr": "Qui puis-je contacter pour plus de questions ?",
+            "answer": "<p>For any additional questions regarding returns, please contact our toll-free customer service at 1-888-970-7056, or email <a>serviceclient@yellow.qc.ca</a>.</p>",
+            "answer_fr": "<p>Pour toute question supplémentaire concernant les retours, veuillez contacter notre service à la clientèle sans frais au 1-888-970-7056, ou par courriel à <a>serviceclient@yellow.qc.ca</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_7CTQQD",
+        "question_4D86Qg",
+        "question_DRykgT",
+        "question_f7EhxJ",
+        "question_TeaeM3",
+        "question_LfwTQX",
+        "question_RReGPr"
+      ],
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "title_fr": "Questions Fréquemment Posées"
+      }
+    },
+    "contact_form_akYenb": {
+      "type": "contact-form",
+      "blocks": {
+        "name_input_By4fME": {
+          "type": "name_input",
+          "settings": {
+            "half_width": true
+          }
+        },
+        "custom_input_AwfLmE": {
+          "type": "custom_input",
+          "settings": {
+            "title": "Order Number",
+            "title_fr": "Numéro de commande",
+            "type": "text",
+            "required": false,
+            "half_width": true
+          }
+        },
+        "phone_input_47T7NL": {
+          "type": "phone_input",
+          "settings": {
+            "required": false,
+            "half_width": true
+          }
+        },
+        "email_input_KVyGVU": {
+          "type": "email_input",
+          "settings": {
+            "half_width": true
+          }
+        },
+        "message_input_n8bqWX": {
+          "type": "message_input",
+          "settings": {
+            "half_width": false
+          }
+        }
+      },
+      "block_order": [
+        "name_input_By4fME",
+        "custom_input_AwfLmE",
+        "phone_input_47T7NL",
+        "email_input_KVyGVU",
+        "message_input_n8bqWX"
+      ],
+      "disabled": true,
+      "settings": {
+        "contact_title": "Need more help with your returns?",
+        "contact_title_fr": "Besoin d'aide supplémentaire pour vos retours ?",
+        "contact_text": "<p>Use the form below to contact us and we will be sure to help you as quickly as possible</p>",
+        "contact_text_fr": "<p>Utilisez le formulaire ci-dessous pour nous contacter, et nous vous aiderons dans les plus brefs délais.</p>",
+        "color_scheme": "default"
+      }
+    },
+    "map_mbHWUC": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "color_scheme": "1",
+        "heading": "Our store",
+        "heading_fr": "",
+        "address": "<p>123 Fake St.<br/>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br/>Saturday, 11am - 9pm<br/>Sunday, 11am - 5pm</p>",
+        "address_fr": "",
+        "button": "Directions",
+        "button_fr": "",
+        "button_url": "",
+        "button_url_fr": "",
+        "show_pin": true,
+        "show_feature_image": true,
+        "map_address": "80 Spadina Ave, Toronto",
+        "api_key": "",
+        "map_type": "embed",
+        "map_style": "silver"
+      }
+    },
+    "find_a_store_9igreP": {
+      "type": "find-a-store",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "color_scheme": "1",
+        "heading": "Our store",
+        "heading_fr": "",
+        "address": "<p>123 Fake St.<br/>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br/>Saturday, 11am - 9pm<br/>Sunday, 11am - 5pm</p>",
+        "address_fr": "",
+        "button": "Directions",
+        "button_fr": "",
+        "button_url": "",
+        "button_url_fr": "",
+        "show_pin": true,
+        "show_feature_image": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_wF9cJP",
+    "rich_text_xYHxUX",
+    "faq_header_wMhwag",
+    "rich_text_9HByPw",
+    "multi_column_mYX7gb",
+    "image_with_text_EWRmm6",
+    "image_with_text_zK74RN",
+    "image_with_text_89N96B",
+    "image_with_text_3j6bBi",
+    "collapsible_tabs_T3CtBB",
+    "collapsible_tabs_FAbMDN",
+    "contact_form_akYenb",
+    "map_mbHWUC",
+    "find_a_store_9igreP"
+  ]
+}

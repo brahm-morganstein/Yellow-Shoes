@@ -1,0 +1,648 @@
+<style>
+.btn-store-availability{
+  display:flex;
+  cursor:pointer;
+}
+#store-availability-overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:8999;
+  inset:0px;
+}
+
+#store-availability-bg{
+  background-color:rgb(0,0,0,0.9);
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  inset:0px;
+}
+
+#store-availability-modal{
+  background-color:white;
+  max-width: 48rem;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 0.25rem;
+  margin-top:100px; 
+  background-color:white;
+  z-index:9000;
+  position: relative;
+}
+
+#store-availability-modal-header{
+  border-bottom:1px solid #ccc;
+}
+
+#store-availability-modal-header-container{
+  padding:0.75rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}  
+
+#store-availability-modal-body{
+  padding:0.75rem;
+  max-height:405px;
+  overflow:scroll;    
+}
+  
+#availability-search{
+  display:flex;
+  flex-direction: column;
+}
+  
+#availability-search input{
+  	max-height:47px;
+}
+  
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.translate-x-full{
+  transform: translateX(100%);
+}
+.-translate-y-full{
+  transform: translateY(-100%);
+}
+
+.duration-500{
+  transition-duration: 500ms;
+}  
+
+.ease-out{
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}  
+
+.invisible{
+  visibility: hidden;
+}
+
+.opacity-0{
+  opacity: 0;
+}
+  
+.opacity-50{
+  opacity: 0.5;
+}
+
+.opacity-1{
+  opacity: 1;
+}  
+
+.overflow-hidden{
+   overflow: hidden; 
+}  
+
+.size-6{
+  width: 1.5rem; /* 24px */
+  height: 1.5rem; /* 24px */
+}
+.items-center{
+  align-item:center;
+}
+
+.ml-1{
+  margin-left: 0.25rem;
+}
+
+.mt-1{
+  margin-top: 0.25rem;
+}  
+
+.ml-3{
+  margin-left: 0.75rem; 
+}
+  
+.mt-3{
+  margin-top: 0.75rem; 
+}
+  
+.store-availability-modal-btn{
+  background-color:black;
+  color:white;
+  padding:0.75rem 2rem;
+  cursor:pointer;
+  font-size:13px;
+  text-align:center;
+  margin-top:0.25rem;
+  font-weight:bold;
+}
+
+.store-availability-modal-btn:hover{
+  background-color:#dfb858;
+}  
+  
+#availability-variant-image{
+  height: 15rem; 
+}
+
+.availability-variant{
+  display:flex
+}
+
+#store-availability-modal-loading{
+	position:absolute;
+  	min-width:100%;
+  	min-height:100%;
+  	background-color:rgb(220,220,220,0.6);
+  	display:flex;
+  	justify-content:center;
+    align-items:center;
+}
+  
+.spinner{
+  width:50px;
+  height:50px;
+}  
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+  
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}  
+  
+ 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #availability-search{
+      flex-direction: column;
+  } 
+  .store-availability-modal-btn{
+    margin-top:0.25rem;
+    margin-left:0px;
+  }  
+}  
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #availability-search{
+      flex-direction: column;
+  } 
+  .store-availability-modal-btn{
+    margin-top:0.25rem;
+    margin-left:0px;
+  }
+}  
+
+/* Medium devices (landscape tablets, 768px and up) */  
+@media only screen and (min-width: 768px) {
+  #availability-search{
+      flex-direction: column;
+  } 
+  .store-availability-modal-btn{
+    margin-top:0.25rem;
+    margin-left:0px;
+  }  
+}
+  
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #availability-search{
+      flex-direction: column;
+  }   
+  .store-availability-modal-btn{
+    margin-top:0.25rem;
+    margin-left:0px;
+  }
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1400px) {
+   #availability-search{
+     flex-direction: row;
+     align-item:center;
+  }  
+  #availability-search input{
+    --flex:1;
+  }
+  #availability-search div{
+   align-content: center;
+  }
+  .store-availability-modal-btn{
+    margin-top:0px;
+    margin-left:0.25rem;
+  }  
+}  
+</style>
+
+<div id="store-availability-overlay" class="invisible">
+  <div onclick="hideAvailabilityModal()" id="store-availability-bg" class="duration-500 ease-out transition-all inset-0 opacity-0"></div>
+  <div id="store-availability-modal" class="duration-500 ease-out transition-all -translate-y-full opacity-0">
+    <div id="store-availability-modal-loading" class="hidden">
+      <svg class="spinner rotate"  viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="256" width="256"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128" x2="128" y1="32" y2="64"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="224" x2="192" y1="128" y2="128"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="195.9" x2="173.3" y1="195.9" y2="173.3"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="128" x2="128" y1="224" y2="192"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="60.1" x2="82.7" y1="195.9" y2="173.3"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="32" x2="64" y1="128" y2="128"/><line fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="60.1" x2="82.7" y1="60.1" y2="82.7"/></svg>
+    </div>
+    <div id="store-availability-modal-header">
+      <div id="store-availability-modal-header-container">
+        <div>{{ "instore_availability.find_your_store" | t }}</div>
+        <div onclick="hideAvailabilityModal()">{% render 'svg-x' %}</div>
+      </div>
+    </div>
+    <div id="store-availability-modal-body">
+      <div>{{ "instore_availability.enter_location" | t }}</div>
+      <div class="mt-1">{{ "instore_availability.city_or_postal_code" | t }}</div>
+      <div id="availability-search" class="mt-1">
+        <input type="text" id="input-available-postal"/>
+        <div id="store-availability-modal-btn-search" class="store-availability-modal-btn">{{ "instore_availability.search_button" | t }}</div>
+        <div id="store-availability-modal-btn-location" class="store-availability-modal-btn">{{ "instore_availability.use_my_location" | t }}</div>
+      </div>
+      <div class="availability-variant">
+        <div>
+          <img id="availability-variant-image"/>
+        </div>
+        <div id="availability-variant-options">
+          
+        </div>
+      </div>
+      <div id="availability-limited">{{ "instore_availability.availability_disclaimer" | t }}</div>      
+      <div id="store-availability-modal-results"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let options = [];
+  let barcode = null;
+  let language = "{{ shop.locale }}";
+
+  setBtnStoreAvailability();
+
+  if(language!='en'){
+    $('#store-availability-modal-body').css('max-height','457px')
+  }
+
+  //Click Handlers
+  $("#store-availability-modal-btn-search").click(async function(){
+    $("#store-availability-modal-loading").removeClass('hidden');
+    let postal_code = $("#input-available-postal").val().trim();
+    let response = await fetch(`https://app.yellowshoes.com/api/DistanceMatrix?postal_code=${postal_code}`);
+    if(response.ok){
+      let geos = await response.json();
+      if(geos && geos.length > 0){
+        var geoLat = geos[0]['lat'];
+    	var geoLng = geos[0]['lng'];
+    	var LCID = 1033;
+    	window.geoAvailable = {
+        	geoLat,
+        	geoLng,
+        	LCID,
+        	postal_code
+        };   
+        fetchStores(barcode, geoLng, geoLat, LCID) 
+      }
+    }else{
+        let url = "https://maps.googleapis.com/maps/api/geocode/json?address="+postal_code+"&key=AIzaSyDpqtKAIUrrPsxbxfU39Pf4DFRbp5Z7j9s"
+        const geoResponse = await fetch(url);
+        if(geoResponse.ok){
+          const geos = await geoResponse.json();  
+          if(geos.status == 'OK'){
+            let geoLocation = geos.results[0].geometry.location;
+            let geoLat = geoLocation['lat'];
+        	let geoLng = geoLocation['lng'];
+        	let LCID = 1033;            
+            fetchStores(barcode, geoLng, geoLat, LCID) 
+          }
+        }
+    }
+  });
+
+  $("#store-availability-modal-btn-location").click(function(){
+    if(typeof window.geoAvailable !== "undefined"){
+      $("#store-availability-modal-loading").removeClass('hidden');
+      fetchStores(
+        barcode, 
+        window.geoAvailable.geoLng,
+        window.geoAvailable.geoLat, 
+        window.geoAvailable.LCID
+      )
+    }else{
+      if(navigator.geolocation) {
+        $("#store-availability-modal-loading").removeClass('hidden');
+        navigator.geolocation.getCurrentPosition(async function(position){
+          var geoLat = position.coords.latitude;
+          var geoLng = position.coords.longitude;
+          var LCID = 1033;
+          window.geoAvailable = {
+            geoLat,
+            geoLng,
+            LCID
+          };
+          fetchStores(barcode, geoLng, geoLat, LCID)
+        })
+      }      
+    }
+  });
+
+  //Functions
+  async function fetchStores(barcode, geoLng, geoLat, LCID){
+    let storeLocatorServiceURL = 'https://services.yellowshoes.com/api/StoreLocator?Barcode=' + barcode + '&longitude=' + geoLng + '&latitude=' + geoLat + '&LCID=' + LCID;
+    const response = await fetch(storeLocatorServiceURL)
+    if(response.ok){
+      let stores = await response.json();
+      if(stores.length > 0){
+         clearResults();
+        stores = await calculateStoreDistances(geoLat, geoLng, stores);
+        console.log(stores)
+        loadResults(stores);  
+      }
+    }
+  }
+
+  async function calculateStoreDistances(geoLat, geoLng, stores){
+      for(let x = 0;x < stores.length;x++){
+        let storeIndex = x;
+        let store = stores[storeIndex];
+        let distanceUrl = `https://app.yellowshoes.com/api/DistanceMatrix?lat=${geoLat}&lng=${geoLng}&store_code=${store.store_code}`;
+        const distanceResponse = await fetch(distanceUrl)
+        if(distanceResponse.ok){
+          const distance = await distanceResponse.json();
+          if(distance.length > 0 && distance[0].postal_code){
+            $("#input-available-postal").val(distance[0].postal_code);
+          }
+          store.storeDistance = distance[0].store_distance;
+        }else{
+          let latlng = geoLat+","+geoLng;
+          let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+latlng+"&key=AIzaSyDpqtKAIUrrPsxbxfU39Pf4DFRbp5Z7j9s"
+          const geoResponse = await fetch(url);
+          const geos = await geoResponse.json();
+          const results = geos.results;
+          if(geoResponse.ok && geos && results.length > 0){
+            var stop = false;
+            let postal_code = null;
+            for (let i = 0; i < results.length; i++){
+              if(stop){
+                break;
+              }
+              let result = results[i];
+              if(result.address_components.length > 0){
+                let address_components = result.address_components;
+                for(let y = 0;y < address_components.length;y++){
+                  if(address_components[y].types.includes('postal_code')){
+                    postal_code = address_components[y].long_name;
+                    stop = true;
+                    break;
+                  }
+                }
+              }
+            }
+            console.log(postal_code)
+            $("#input-available-postal").val(postal_code);
+            const service = new google.maps.DistanceMatrixService();
+            //
+            const request = {
+              origins: [{lat:geoLat,lng:geoLng}],
+              destinations:[{lat:parseFloat(store.address.latitude),lng: parseFloat(store.address.longitude)}],
+              travelMode: google.maps.TravelMode.DRIVING,
+              unitSystem: google.maps.UnitSystem.METRIC,
+              avoidHighways: false,
+              avoidTolls: false,
+            }   
+            //
+            let getStoreDistanceResponse = await service.getDistanceMatrix(request);  
+            console.log(getStoreDistanceResponse);
+            if(getStoreDistanceResponse){
+              storeDistance = getStoreDistanceResponse.rows[0].elements[0].distance.text;
+              store.storeDistance = storeDistance.replace(' km','');  
+              var post = {
+                postal_code:postal_code,
+                lat:geoLat,
+                lng:geoLng,
+                store_code:store.store_code,
+                store_distance:storeDistance
+              };
+              $.post("https://app.yellowshoes.com/api/DistanceMatrix",post,function(result){
+                
+              });                  
+            }
+          }
+        }
+      }
+      return stores;
+  }
+  
+  function loadResults(stores){
+    loadHeader(stores);
+    stores.sort(function(a, b) {
+      return parseFloat(a.storeDistance) > parseFloat(b.storeDistance) ? 1 : -1;
+    });
+    for(let x = 0;x < stores.length;x++){
+      let storeIndex = x;
+      let store = stores[storeIndex];
+      let store_code = Number(store.store_code);
+      let label_pairs_available;
+      if(store.quantity == 1){
+        if(language == 'en'){
+          label_pairs_available = 'pair available in size';  
+        }else{
+          label_pairs_available = 'paire disponible en taille';  
+        }
+      }else{
+        if(language == 'en'){
+          label_pairs_available = 'pairs available in size';  
+        }else{
+          label_pairs_available = 'paires disponibles en taille';
+        }
+      }
+      
+      let html = `
+          <div class="single-available-result" style="border:1px solid gray;padding:14px;${storeIndex==0 ? '' : 'margin-top:6px;'}">
+              <div style="display:flex;justify-content: space-between;">
+                  <div>
+                     <div style="font-weight:bold;"><span itemprop="name">${store_code}-${store.store}</span></div>
+                      <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                          <span itemprop="streetAddress">${store.address.line1}</span><br/>
+                          <span itemprop="addressLocality">${store.address.city}</span>,
+                          <span itemprop="addressRegion">${store.address.state}</span>,
+                          <span itemprop="postalCode">${store.address.zip}</span><br/>
+                      </div>
+                      <div style="color:#f0cc7e;margin-top:6px;margin-bottom:6px;font-weight:bold;">
+                        ${store.quantity} ${label_pairs_available} ${options[0].value} ${language == 'en' ? 'in this store' : 'à ce magasin'}
+                      </div>
+                  </div>
+                  <div style="font-weight:bold;">
+                    ${store.storeDistance} ${language == 'en' ? 'km from you' : 'km de vous'}
+                  </div>
+              </div>
+              <div style="display:flex;justify-content: space-between;">
+                  <div>
+                    <span style="font-weight:bold;">${language == 'en' ? 'Call the store' : 'Appeler le magasin'} <a style="color:#2d94e3;" itemprop="telephone" href="tel:${store.address.phone}">${store.address.phone}</a></span>
+                  </div>
+                  <div style="text-decoration:underline;">
+                    <a href="${language == 'en' ? '' : '/fr'}/apps/store-locator?store=${store.store}">
+                      ${language == 'en' ? 'Store details' : 'Voir les détails du magasin'}
+                    </a>
+                  </div>
+              </div>
+          </div>	            
+      `
+      $("#store-availability-modal-results").append(html)
+    } 
+    $("#store-availability-modal-loading").addClass('hidden');
+    if(stores.length > 0){
+      $('#store-availability-modal-body').animate({
+          scrollTop: 380
+      }, 100);       
+    }   
+  }
+
+  function loadHeader(stores){
+    let header = `<div style="margin-top:0.75rem;margin-bottom:0.75rem;">
+      ${language == 'en' 
+        ? `We found ${stores.length} store${stores.length > 1 ? 's':''}`
+        : `Nous avons trouvé ${stores.length} magasin${stores.length > 1 ? 's':''}`
+      }
+    </div>`;
+    $("#store-availability-modal-results").append(header)    
+  }
+
+  function clearResults(){
+    $("#store-availability-modal-results").html('')
+  }
+
+  function toggleStoreAvailability(){
+    document.getElementsByTagName("body")[0].classList.toggle('overflow-hidden');
+    document.getElementById("store-availability-overlay").classList.toggle('invisible');
+    document.getElementById("store-availability-bg").classList.toggle('opacity-0');
+    document.getElementById("store-availability-bg").classList.toggle('opacity-50');
+    document.getElementById("store-availability-modal").classList.toggle('-translate-y-full');
+    document.getElementById("store-availability-modal").classList.toggle('opacity-0');
+    document.getElementById("store-availability-modal").classList.toggle('opacity-1');
+  }
+  
+  function setBtnStoreAvailability(){
+   options = [];
+   barcode = null
+   $(".btn-store-availability").click(function(){
+      clearResults();
+      let product = $(this).data('product');
+      if(options.length == 0){
+        setCurrentOptions(this)
+      }
+      //console.log(options)
+      //console.log(product)
+      loadOptions(product)
+      //console.log(options)
+      showAvailabilityModal(); 
+    }); 
+  }
+
+  function loadOptions(product){
+      options.forEach(function(option,optionIndex){
+        const set = new Set();
+        const images = new Set();
+        product.variants.forEach(function(_variant){
+          if(_variant.available){
+            set.add(_variant[`option${optionIndex +1}`])
+            if(option.name == 'color'){
+              if(_variant.featured_image){
+               images.add(_variant.featured_image.src) 
+              }else{
+                console.log('could not find variant featured_image')
+                console.log(_variant)
+              }
+            }            
+          }
+        })
+        option.values = set;
+        if(option.name == 'color'){
+          option.images = images;
+        }
+      })
+     
+      let variant = product.variants.find(function(_variant){
+        if(_variant.option1 == options[0].value && _variant.option2 == options[1].value){
+          return _variant;
+        }
+      })
+      if(variant){
+        barcode = variant.barcode;
+        $("#availability-variant-image").attr('src',variant.featured_image.src)
+        let html = '<div class="mt-3">'
+        html += `<div class="ml-3" style="font-weight:bold;font-size:18px;">${product.title}</div>`
+        html += `<div class="ml-3">$${(variant.price/100).toFixed(2)}</div>`
+        options.forEach(function(option,optionIndex){
+          html += '<div style="display:flex;" class="mt-3">'
+          Array.from(option.values).forEach(function(value,valueIndex){
+            //console.log(variant[`option${optionIndex+1}`])
+            //console.log(option.value)
+            html += `<div style="cursor:pointer" class="availability-variant-option ml-3" data-option-name="${option.name}" data-option-value="${value}">
+              ${option.name == 'color' 
+                ? `<img src="${Array.from(option.images)[valueIndex]}" style="height:48px;border:${variant.featured_image.src == Array.from(option.images)[valueIndex] ? '2px solid black' : '1px solid #ccc'};border-radius:999px;"/>` 
+                : `<div style="background-color:#efefef;width:40px;height:40px;display:flex;justify-content:center;align-items:center;${variant[`option${optionIndex + 1}`] == value ? 'color:#dfb858;border:1px solid #ccc;' : 'color:black;'}">${value}</div>`
+              }
+            </div>`
+          })
+          html += '</div>'
+        })
+        html+='</div>'
+        $("#availability-variant-options").html(html)
+        $(".availability-variant-option").click(function(){
+          let option_name = $(this).data('option-name');
+          let option_value = $(this).data('option-value');
+          options.forEach(function(option){
+            if(option.name == option_name){
+              option.value = option_value;
+            }
+          })
+          loadOptions(product)
+          let postal_code = $("#input-available-postal").val().trim();
+          if(postal_code != ''){
+            $("#store-availability-modal-btn-search").trigger('click')
+          }          
+        })
+      }    
+  }
+
+  function setCurrentOptions(button){
+    let product = $(button).data('product');
+    let currentVariant = $(button).data('current');
+    barcode = currentVariant.barcode;
+    product.options.forEach(function(option,optionIndex){
+      options.push({
+        name:option,
+        value:currentVariant[`option${optionIndex + 1}`]
+      })
+    })
+  }
+
+  function showAvailabilityModal(){
+    toggleStoreAvailability();
+  }
+  
+  function hideAvailabilityModal(){
+    toggleStoreAvailability();
+  }  
+
+  //Listeners
+  document.addEventListener('on:variant:change', (event) => {
+   options = []
+   //console.log(event.detail)
+   let btn = $(".btn-store-availability");
+   let product = $(btn).data('product');
+   for(let i = 0;i < product.options.length;i++){
+   let optionIndex = i; 
+   let option = product.options[optionIndex]
+    options.push({
+      name:option,
+      value:event.detail.variant[`option${optionIndex + 1}`]
+    })
+   }
+ })
+
+  document.addEventListener('on:quickbuy:after-open', (event) => {
+    setBtnStoreAvailability()
+  })
+  
+</script>

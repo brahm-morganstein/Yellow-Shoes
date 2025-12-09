@@ -1,0 +1,32 @@
+<div style="background-color: {{ section.settings.section_alternate_background }};"><div class="lightly-spaced-row inline-width-container" style="height: {{ section.settings.spacer_height }}px;" {{ section.shopify_attributes }}></div></div>
+
+
+{% schema %}
+  {
+    "name": "Spacer",
+	"class": "section-spacer",
+	"settings": [
+          {
+            "type": "range",
+            "id": "spacer_height",
+            "min": 10,
+            "max": 700,
+            "step": 10,
+            "unit": "px",
+            "label": "Space width",
+            "default": 40
+          },
+{
+"type": "color",
+"label": "Section Background Color",
+"id": "section_alternate_background",
+"default": "#ffffff"
+}
+        ],
+    "presets": [
+          {
+            "name": "Spacer"
+          }
+        ]
+  }
+{% endschema %}

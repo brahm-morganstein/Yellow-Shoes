@@ -1,0 +1,1417 @@
+{% assign characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" | split: '' %}
+{%- if section.settings.video_shopify != blank or section.settings.video_external != blank -%}
+    {%- liquid
+        assign using_video_tag = false
+        if section.settings.video_shopify != blank
+            assign using_video_tag = true
+        endif
+        assign placeholder_image = ''
+        if section.settings.placeholder_image and section.settings.placeholder_image != blank
+            if shop.locale == 'en'
+                assign placeholder_image = section.settings.placeholder_image
+            else
+                assign placeholder_image = section.settings.placeholder_image_fr
+            endif
+        endif
+    -%}
+
+    <link rel="stylesheet" href="{{ 'video.s.min.css' | asset_url }}" {%- render 'lazy-stylesheet-attrs' %}>
+    <script src="{{ 'video.s.min.js' | asset_url }}" defer></script>
+    <style>
+        #section-id-{{ section.id }} .text-overlay__button-row{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 5px 7px;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+    <div id="section-id-{{ section.id }}" class="{% unless section.settings.full_width %}container fully-spaced-row{% endunless %} video-section-desktop video-section video-section--background" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+
+        {% style %}
+            #section-id-{{ section.id }} .height--fixed {
+            --image-height: {{ section.settings.height_mobile }}px;
+            }
+
+            @media (min-width: 768px) {
+            #section-id-{{ section.id }} .height--fixed {
+            --image-height: {{ section.settings.height_desktop }}px;
+            }
+            }
+
+            {%- for block in section.blocks -%}
+                {% if block.type == 'heading' %}
+                    #section-id-{{ section.id }} .block-{{ block.id }} {
+                    --heading-max-width: {{ block.settings.heading_max_width }}em;
+                    font-size: {{ block.settings.title_size_mobile }}px;
+                    {%- if block.settings.title_size_mobile >= 90 -%}
+                        line-height: 1em;
+                    {%- endif %}
+                    }
+
+                    @media (min-width: 768px) {
+                    #section-id-{{ section.id }} .block-{{ block.id }} {
+                    {%- assign title_size_medium = block.settings.title_size | times: 0.7 | at_least: block.settings.title_size_mobile -%}
+                    font-size: {{ title_size_medium }}px;
+                    {%- if title_size_medium >= 90 -%}
+                        line-height: 1em;
+                    {%- endif %}
+                    }
+                    }
+
+                    @media (min-width: 1100px) {
+                    #section-id-{{ section.id }} .block-{{ block.id }} {
+                    font-size: {{ block.settings.title_size }}px;
+                    {%- if block.settings.title_size >= 90 -%}
+                        line-height: 1em;
+                    {%- endif %}
+                    }
+                    }
+                {% endif %}
+            {%- endfor -%}
+        {% endstyle %}
+
+        <div class="height--fixed image-overlay image-overlay--bg-{{ section.settings.overlay_style }}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+            <div class="image-overlay__image height__image">
+                <div class="{% unless using_video_tag %}video-section__bg-iframe-video{% endunless %}">
+                    {%- liquid
+                        if shop.locale == 'en'
+                            assign video_description = section.settings.video_description | escape
+                        else
+                            assign video_description = section.settings.video_description_fr | escape
+                        endif
+                    -%}
+                    <deferred-media>
+                        <template>
+                            <video-component class="{% if using_video_tag %}has-video{% else %}has-iframe{% endif %}"
+                                {% assign external_url = section.settings.video_external %}
+                                {% if shop.locale == 'fr' %}
+                                    {%  assign exernal_url = section.settings.video_external_fr %}
+                                {% endif %}
+                                {%- unless using_video_tag %} data-video-url="{{external_url  | escape }}"{% endunless %}
+                                             data-video-id="{{ section.id }}"
+                                             data-autoplay="true"
+                                             data-background="true"
+                                             data-description="{{ video_description }}">
+                                {%- if using_video_tag -%}
+                                    {% if shop.locale == 'fr' %}
+                                        {{ section.settings.video_shopify_fr | video_tag: playsinline: true, autoplay: true, muted: true, loop: true, poster: '' | replace: '<img ', '<img loading="lazy" hidden ' }}
+                                    {% else %}
+                                        {{ section.settings.video_shopify | video_tag: playsinline: true, autoplay: true, muted: true, loop: true, poster: '' | replace: '<img ', '<img loading="lazy" hidden ' }}
+                                    {% endif %}
+                                {%- else -%}
+                                    <div></div>
+                                {%- endif -%}
+                            </video-component>
+                        </template>
+                    </deferred-media>
+                </div>
+
+                {% if placeholder_image %}
+                    {%- render 'image' with placeholder_image, class: 'video-played-hidden' -%}
+                {% endif %}
+            </div>
+
+            {%- if section.blocks != empty -%}
+                <div class="text-overlay text-overlay--for-banner text-overlay--v-{{ section.settings.text_alignment | split: ' ' | first }} text-overlay--h-{{ section.settings.text_alignment | split: ' ' | last }} image-overlay__over">
+                    <div class="text-overlay__inner">
+                        <div class="text-overlay__text fade-in-up" {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.5s"' -%}>
+                            {% assign skip_block_count = 0 %}
+                            {% for block in section.blocks %}
+                                {%- liquid
+                                    if skip_block_count > 0
+                                        assign skip_block_count = skip_block_count | minus: 1
+                                        continue
+                                    endif
+                                -%}
+                                {% case block.type %}
+                                {% when 'heading' %}
+                                    {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight  | append: '_' | append: block.settings.title_font_style %}
+                                    {%- liquid
+                                        if shop.locale == 'en'
+                                            assign title = block.settings.title
+                                        else
+                                            assign title = block.settings.title_fr
+                                        endif
+                                    -%}
+                                {% if block.settings.use_h1 %}
+                                    <h1 class="{{ title_font_class }} text-overlay__title block-{{ block.id }}" {{ block.shopify_attributes }}>{% render 'multiline-text' with title %}</h1>
+                                {% else %}
+                                    <h2 class="{{ title_font_class }} text-overlay__title h1 block-{{ block.id }}" {{ block.shopify_attributes }}>{% render 'multiline-text' with title %}</h2>
+                                {% endif %}
+
+                                {% when 'subheading' %}
+                                    <div class="text-overlay__subheading subheading subheading--over lightish-spaced-row-above" {{ block.shopify_attributes }}>
+                                        {% if shop.locale == 'en' %}
+                                            {{ block.settings.subheading | escape }}
+                                        {% else %}
+                                            {{ block.settings.subheading_fr | escape }}
+                                        {% endif %}
+                                    </div>
+
+                                {% when 'text' %}
+                                    {% assign text_font_class = block.settings.text_font_family  | append: '_' | append: block.settings.text_font_weight  | append: '_' | append: block.settings.text_font_style %}
+                                    <div class="{{ text_font_class }} text-overlay__rte rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}" {{ block.shopify_attributes }}
+                                         style="color:{{ block.settings.text_color }};">
+                                        {% if shop.locale == 'en' %}
+                                            {{ block.settings.text }}
+                                        {% else %}
+                                            {{ block.settings.text_fr }}
+                                        {% endif %}
+                                    </div>
+
+                                {% when 'button' %}
+                                    <style>
+                                        {% if block.settings.min_buttons_width != blank and block.settings.min_buttons_width > 0 %}
+                                        #section-id-{{ section.id }} .btn-{{ block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ block.id }}{
+                                            width: {{ block.settings.min_buttons_width }}px;
+                                            max-width: 99%;
+                                        }
+                                        #section-id-{{ section.id }} .text-overlay,#section-id-{{ section.id }}-mobile .text-overlay{
+                                            max-width:100%;
+                                        }
+                                        {% endif %}
+
+                                        #section-id-{{ section.id }} .btn-{{ block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ block.id }} {
+                                            background-color: {% if  block.settings.button_color_transparent %} transparent {% else %} {{ block.settings.button_color }} {% endif %}!important;
+                                            color: {{ block.settings.button_text_color }} !important;
+                                        {% if  block.settings.button_color_transparent %}
+                                            border: 1px solid {{ block.settings.button_color }} !important;
+                                        {% endif %}
+                                        }
+
+                                        #section-id-{{ section.id }} .btn-{{ block.id }}:hover,   #section-id-{{ section.id }}-mobile .btn-{{ block.id }}:hover {
+                                            background-color: {{ block.settings.button_color_hover }} !important;
+                                            color: {{ block.settings.button_text_color_hover }} !important;
+                                        }
+                                    </style>
+                                    <div class="text-overlay__button-row button-row lightish-spaced-row-above" {{ block.shopify_attributes }}>
+
+                                        {% assign button_link = block.settings.button_link  %}
+                                        {% assign popup_class = '' %}
+                                        {% assign popup_target = '' %}
+                                        {% if block.settings.button_popup != blank %}
+                                            {% assign button_link = 'javascript:;' %}
+                                            {% assign popup_class = 'block-open-popup' %}
+                                            {% assign popup_target = block.settings.button_popup %}
+                                        {% endif %}
+                                        {% if shop.locale == 'fr' %}
+                                            {% assign popup_class = '' %}
+                                            {% assign popup_target = '' %}
+                                            {% assign button_link = block.settings.button_link_fr  %}
+                                            {% if block.settings.button_popup_fr != blank %}
+                                                {% assign button_link = 'javascript:;' %}
+                                                {% assign popup_class = 'block-open-popup' %}
+                                                {% assign popup_target = block.settings.button_popup_fr %}
+                                            {% endif %}
+                                        {% endif %}
+                                        <{% if popup_class != blank %}button{% else %}a{% endif %}  data-popup-target="{{ popup_target }}" {% if block.settings.is_catalogue_button %} {% if block.settings.open_catalogue_new_window %} target="_blank" {% else %} id="catalogue_btn_{{ block.id }}" data-src="#catalogue_button_{{ block.id }}" data-fancybox="" {% endif %}{% else %} {{ block.settings.is_catalogue_button |  json }}  {% endif %} class="{{ popup_class }} text-overlay__button btn-{{ block.id }} button-row__btn {% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %}" {% if popup_class == blank %}href="{% if block.settings.is_catalogue_button and block.settings.open_catalogue_new_window %}{% if shop.locale =='fr' %}/fr{% endif %}/pages/catalogue_page?catalogue={{ button_link | url_encode }}&toolbar={% if block.settings.enable_catalogue_controls %}true{% else %}false{% endif %}{% else %}{{ button_link }}{% endif %}{% endif %}">
+                                            {% if shop.locale == 'en' %}
+                                                {{ block.settings.button_label | escape }}
+                                            {% else %}
+                                                {{ block.settings.button_label_fr | escape }}
+                                            {% endif %}
+                                        </{% if popup_class != blank %}button{% else %}a{% endif %}>
+                                        {% if block.settings.is_catalogue_button %}
+                                            <div style="display:none;">
+
+                                                <div id="catalogue_button_{{ block.id }}" style="">
+                                                    <div id="is_catalogue_button_{{ block.id }}"></div>
+                                                </div>
+
+
+                                            </div>
+                                            <style>
+                                                #catalogue_button_{{ block.id }}.fancybox-content{
+                                                    width: 90% !important;
+                                                }
+                                            </style>
+                                            <script>
+                                                $(function(){
+                                                    let $body = $('body');
+                                                    $body.on('click', '#catalogue_btn_{{ block.id }}', function(){
+                                                        $body.find('#catalogue_button_{{ block.id }}').html('<div id="is_catalogue_button_{{ block.id }}"></div>')
+
+                                                        setTimeout(function(){
+                                                            let bookOptions = {
+                                                                height   : 600
+                                                                ,width    : 1980
+                                                                ,maxWidth : '90%'
+                                                                ,maxHeight : '90%'
+
+                                                                ,centeredWhenClosed : true
+                                                                ,hardcovers : true
+                                                                ,pageNumbers: true
+                                                                {% if block.settings.enable_catalogue_controls %}
+                                                                ,toolbar : "lastLeft, left, right, lastRight, toc, zoomin, zoomout, slideshow, flipsound, fullscreen, thumbnails, download"
+                                                                {% else %}
+                                                                ,toolbar : "left, fullscreen, right"
+                                                                {% endif %}
+                                                                ,thumbnailsPosition : 'left'
+                                                                ,responsiveHandleWidth : 50
+
+                                                                ,container: $body.find('#is_catalogue_button_{{ block.id }}')[0]
+                                                                ,containerPadding: "20px"
+                                                                // ,toolbarContainerPosition: "top" // default "bottom"
+
+                                                                // The pdf and your webpage must be on the same domain
+                                                                ,pdf: '{{ button_link }}'
+
+                                                                // Uncomment the option toc to create a Table of Contents
+                                                                // ,toc: [                    // table of contents in the format
+                                                                // 	[ "Introduction", 2 ],  // [ "title", page number ]
+                                                                // 	[ "First chapter", 5 ],
+                                                                // 	[ "Go to codecanyon.net", "http://codecanyon.net" ] // or [ "title", "url" ]
+                                                                // ]
+                                                            };
+
+                                                            $body.find('#is_catalogue_button_{{ block.id }}').wowBook( bookOptions );
+                                                        }, 500); // create the book
+                                                    });
+                                                })
+                                            </script>
+                                        {% endif %}
+                                        {%- assign skip_block_count = 0 -%}
+                                        {%- for next_block in section.blocks offset: forloop.index -%}
+                                            {%- if next_block.type == 'button' -%}
+                                                <style>
+                                                    {% if next_block.settings.min_buttons_width != blank and next_block.settings.min_buttons_width > 0 %}
+                                                    #section-id-{{ section.id }} .btn-{{ next_block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ next_block.id }}{
+                                                        width: {{ next_block.settings.min_buttons_width }}px;
+                                                        max-width: 99%;
+                                                    }
+                                                    #section-id-{{ section.id }} .text-overlay,#section-id-{{ section.id }}-mobile .text-overlay{
+                                                        max-width:100%;
+                                                    }
+                                                    {% endif %}
+
+                                                    #section-id-{{ section.id }} .btn-{{ next_block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ next_block.id }} {
+                                                        background-color: {% if  next_block.settings.button_color_transparent %} transparent {% else %} {{ next_block.settings.button_color }} {% endif %} !important;
+                                                        color: {{ next_block.settings.button_text_color }} !important;
+                                                        {% if  next_block.settings.button_color_transparent %}
+                                                            border: 1px solid {{ next_block.settings.button_color }} !important;
+                                                        {% endif %}
+                                                    }
+
+                                                    #section-id-{{ section.id }} .btn-{{ next_block.id }}:hover,   #section-id-{{ section.id }}-mobile .btn-{{ next_block.id }}:hover {
+                                                        background: {{ next_block.settings.button_color_hover }} !important;
+                                                        color: {{ next_block.settings.button_text_color_hover }} !important;
+                                                    }
+                                                </style>
+                                                {%- assign skip_block_count = skip_block_count | plus: 1 -%}
+                                                {% assign button_link = next_block.settings.button_link %}
+                                                {% assign popup_class = '' %}
+                                                {% assign popup_target = '' %}
+                                                {% if next_block.settings.button_popup != blank %}
+                                                    {% assign button_link = 'javascript:;' %}
+                                                    {% assign popup_class = 'block-open-popup' %}
+                                                    {% assign popup_target = next_block.settings.button_popup %}
+                                                {% endif %}
+                                                {% if shop.locale == 'fr' %}
+                                                    {% assign popup_class = '' %}
+                                                    {% assign popup_target = '' %}
+                                                    {% assign button_link = next_block.settings.button_link_fr %}
+                                                    {% if next_block.settings.button_popup_fr != blank %}
+                                                        {% assign button_link = 'javascript:;' %}
+                                                        {% assign popup_class = 'block-open-popup' %}
+                                                        {% assign popup_target = next_block.settings.button_popup_fr %}
+                                                    {% endif %}
+                                                {% endif %}
+
+
+                                                <{% if popup_class != blank %}button{% else %}a{% endif %}  data-popup-target="{{ popup_target }}" {% if next_block.settings.is_catalogue_button %} {% if next_block.settings.open_catalogue_new_window %} target="_blank" {% else %} id="catalogue_btn_{{ next_block.id }}" data-src="#catalogue_button_{{ next_block.id }}" data-fancybox="" {% endif %}{% else %} {{ next_block.settings.is_catalogue_button |  json }}  {% endif %} class="{{ popup_class }} text-overlay__button btn-{{ next_block.id }} button-row__btn {% if next_block.settings.button_style != 'link' %}btn btn--{{ next_block.settings.button_style }}{% else %}small-feature-link{% endif %}" {% if popup_class == blank %}href="{% if next_block.settings.is_catalogue_button and next_block.settings.open_catalogue_new_window %}{% if shop.locale =='fr' %}/fr{% endif %}/pages/catalogue_page?catalogue={{ button_link | url_encode }}&toolbar={% if next_block.settings.enable_catalogue_controls %}true{% else %}false{% endif %}{% else %}{{ button_link }}{% endif %}"{% endif %}>
+                                                    {% if shop.locale == 'en' %}
+                                                        {{ next_block.settings.button_label | escape }}
+                                                    {% else %}
+                                                        {{ next_block.settings.button_label_fr | escape }}
+                                                    {% endif %}
+                                                </{% if popup_class != blank %}button{% else %}a{% endif %}>
+
+                                            {% if next_block.settings.is_catalogue_button %}
+                                                <div style="display:none;">
+
+                                                    <div id="catalogue_button_{{ next_block.id }}" style="">
+                                                        <div id="is_catalogue_button_{{ next_block.id }}"></div>
+                                                    </div>
+
+
+                                                </div>
+                                                <style>
+                                                    #catalogue_button_{{ next_block.id }}.fancybox-content{
+                                                        width: 90% !important;
+                                                    }
+                                                </style>
+                                                <script>
+                                                    $(function(){
+                                                        let $body = $('body');
+                                                        $body.on('click', '#catalogue_btn_{{ next_block.id }}', function(){
+                                                            $body.find('#catalogue_button_{{ next_block.id }}').html('<div id="is_catalogue_button_{{ next_block.id }}"></div>')
+
+                                                            setTimeout(function(){
+                                                                let bookOptions = {
+                                                                    height   : 600
+                                                                    ,width    : 1980
+                                                                    ,maxWidth : '90%'
+                                                                    ,maxHeight : '90%'
+
+                                                                    ,centeredWhenClosed : true
+                                                                    ,hardcovers : true
+                                                                    ,pageNumbers: true
+                                                                    {% if next_block.settings.enable_catalogue_controls %}
+                                                                    ,toolbar : "lastLeft, left, right, lastRight, toc, zoomin, zoomout, slideshow, flipsound, fullscreen, thumbnails, download"
+                                                                    {% else %}
+                                                                    ,toolbar : "left, fullscreen, right"
+                                                                    {% endif %}
+                                                                    ,thumbnailsPosition : 'left'
+                                                                    ,responsiveHandleWidth : 50
+
+                                                                    ,container: $body.find('#is_catalogue_button_{{ block.id }}')[0]
+                                                                    ,containerPadding: "20px"
+                                                                    // ,toolbarContainerPosition: "top" // default "bottom"
+
+                                                                    // The pdf and your webpage must be on the same domain
+                                                                    ,pdf: '{{ button_link }}'
+
+                                                                    // Uncomment the option toc to create a Table of Contents
+                                                                    // ,toc: [                    // table of contents in the format
+                                                                    // 	[ "Introduction", 2 ],  // [ "title", page number ]
+                                                                    // 	[ "First chapter", 5 ],
+                                                                    // 	[ "Go to codecanyon.net", "http://codecanyon.net" ] // or [ "title", "url" ]
+                                                                    // ]
+                                                                };
+
+                                                                $body.find('#is_catalogue_button_{{ next_block.id }}').wowBook( bookOptions );
+                                                            }, 500); // create the book
+                                                        });
+                                                    })
+                                                </script>
+                                            {% endif %}
+                                            {%- else -%}
+                                                {%- break -%}
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    </div>
+
+                                {%- when 'countdown' -%}
+
+                                    <script src="{{ 'countdown-timer.s.min.js' | asset_url }}" defer></script>
+                                    {% style %}
+                                        .block-id-{{ block.id }} .countdown {
+                                        --countdown-desktop-size: {{ block.settings.number_size }}px;
+                                        }
+                                    {% endstyle %}
+
+                                    {%- liquid
+                                        if shop.locale == 'en'
+                                            assign end_text = block.settings.end_text
+                                        else
+                                            assign end_text = block.settings.end_text_fr
+                                        endif
+                                    -%}
+                                    <div class="block-id-{{ block.id }} lightly-spaced-row lightish-spaced-row-above countdown-font-{{ block.settings.number_font }} countdown-divider-{{ block.settings.divider_type }}" {{ block.shopify_attributes }}>
+                                        {% render 'countdown-timer',
+                                            end_date: block.settings.end_date,
+                                            end_time: block.settings.end_time,
+                                            end_text: block.settings.end_text,
+                                            countdown_color:block.settings.countdown_color,
+                                            end_text_color:block.settings.end_text_color,
+
+                                            end_midnight: true,
+                                            hide_on_end: block.settings.hide_on_end,
+                                            show_labels: block.settings.show_timer_labels
+                                        %}
+                                    </div>
+
+                                {% endcase %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {%- endif -%}
+        </div>
+    </div>
+
+    {% comment %}mobile{%endcomment%}
+    {%- liquid
+        assign placeholder_image = ''
+        if section.settings.placeholder_image_mobile and section.settings.placeholder_image_mobile != blank
+            if shop.locale == 'en'
+                assign placeholder_image = section.settings.placeholder_mobile_image
+            else
+                assign placeholder_image = section.settings.placeholder_image_mobile_fr
+            endif
+        endif
+    -%}
+    <div  id="section-id-{{ section.id }}-mobile" class="{% unless section.settings.full_width %}container fully-spaced-row{% endunless %}  video-section-mobile video-section video-section--background" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+        {% style %}
+            #section-id-{{ section.id }}-mobile .height--fixed {
+            --image-height: {{ section.settings.height_mobile }}px;
+            }
+
+            @media (min-width: 768px) {
+            #section-id-{{ section.id }}-mobile .height--fixed {
+            --image-height: {{ section.settings.height_desktop }}px;
+            }
+            }
+
+            {%- for block in section.blocks -%}
+                {% if block.type == 'heading' %}
+                    #section-id-{{ section.id }}-mobile .block-{{ block.id }} {
+                    --heading-max-width: {{ block.settings.heading_max_width }}em;
+                    font-size: {{ block.settings.title_size_mobile }}px;
+                    {%- if block.settings.title_size_mobile >= 90 -%}
+                        line-height: 1em;
+                    {%- endif %}
+                    }
+
+                    @media (min-width: 768px) {
+                    #section-id-{{ section.id }}-mobile .block-{{ block.id }} {
+                    {%- assign title_size_medium = block.settings.title_size | times: 0.7 | at_least: block.settings.title_size_mobile -%}
+                    font-size: {{ title_size_medium }}px;
+                    {%- if title_size_medium >= 90 -%}
+                        line-height: 1em;
+                    {%- endif %}
+                    }
+                    }
+
+                    @media (min-width: 1100px) {
+                    #section-id-{{ section.id }}-mobile .block-{{ block.id }} {
+                    font-size: {{ block.settings.title_size }}px;
+                    {%- if block.settings.title_size >= 90 -%}
+                        line-height: 1em;
+                    {%- endif %}
+                    }
+                    }
+                {% endif %}
+            {%- endfor -%}
+        {% endstyle %}
+
+        <div class="height--fixed image-overlay image-overlay--bg-{{ section.settings.overlay_style }}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+            <div class="image-overlay__image height__image">
+                <div class="{% unless using_video_tag %}video-section__bg-iframe-video{% endunless %}">
+                    {%- liquid
+                        if shop.locale == 'en'
+                            assign video_description = section.settings.video_description_mobile | escape
+                        else
+                            assign video_description = section.settings.video_description_mobile_fr | escape
+                        endif
+                    -%}
+                    <deferred-media>
+                        <template>
+                            <video-component class="{% if using_video_tag %}has-video{% else %}has-iframe{% endif %}"
+                                {% assign external_url = section.settings.video_external_mobile %}
+                                {% if shop.locale == 'fr' %}
+                                    {%  assign exernal_url = section.settings.video_external_mobile_fr %}
+                                {% endif %}
+                                {%- unless using_video_tag %} data-video-url="{{ external_url | escape }}"{% endunless %}
+                                             data-video-id="{{ section.id }}"
+                                             data-autoplay="true"
+                                             data-background="true"
+                                             data-description="{{ video_description }}">
+                                {%- if using_video_tag -%}
+                                    {% if shop.locale == 'fr' %}
+                                        {{ section.settings.video_shopify_mobile_fr | video_tag: playsinline: true, autoplay: true, muted: true, loop: true, poster: '' | replace: '<img ', '<img loading="lazy" hidden ' }}
+                                    {% else %}
+                                        {{ section.settings.video_shopify_mobile | video_tag: playsinline: true, autoplay: true, muted: true, loop: true, poster: '' | replace: '<img ', '<img loading="lazy" hidden ' }}
+                                    {% endif %}
+                                {%- else -%}
+                                    <div></div>
+                                {%- endif -%}
+                            </video-component>
+                        </template>
+                    </deferred-media>
+                </div>
+
+                {% if placeholder_image %}
+                    {%- render 'image' with placeholder_image, class: 'video-played-hidden' -%}
+                {% endif %}
+            </div>
+
+            {%- if section.blocks != empty -%}
+                <div class="text-overlay text-overlay--for-banner text-overlay--v-{{ section.settings.text_alignment | split: ' ' | first }} text-overlay--h-{{ section.settings.text_alignment | split: ' ' | last }} image-overlay__over">
+                    <div class="text-overlay__inner">
+                        <div class="text-overlay__text fade-in-up" {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.5s"' -%}>
+                            {% assign skip_block_count = 0 %}
+                            {% for block in section.blocks %}
+                                {%- liquid
+                                    if skip_block_count > 0
+                                        assign skip_block_count = skip_block_count | minus: 1
+                                        continue
+                                    endif
+                                -%}
+                                {% case block.type %}
+                                {% when 'heading' %}
+                                    {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight  | append: '_' | append: block.settings.title_font_style %}
+                                    {%- liquid
+                                        if shop.locale == 'en'
+                                            assign title = block.settings.title
+                                        else
+                                            assign title = block.settings.title_fr
+                                        endif
+                                    -%}
+                                {% if block.settings.use_h1 %}
+                                    <h1 class="{{ title_font_class }} text-overlay__title block-{{ block.id }}" {{ block.shopify_attributes }}>{% render 'multiline-text' with title %}</h1>
+                                {% else %}
+                                    <h2 class="{{ title_font_class }} text-overlay__title h1 block-{{ block.id }}" {{ block.shopify_attributes }}>{% render 'multiline-text' with title %}</h2>
+                                {% endif %}
+
+                                {% when 'subheading' %}
+                                    <div class="text-overlay__subheading subheading subheading--over lightish-spaced-row-above" {{ block.shopify_attributes }}>
+                                        {% if shop.locale == 'en' %}
+                                            {{ block.settings.subheading | escape }}
+                                        {% else %}
+                                            {{ block.settings.subheading_fr | escape }}
+                                        {% endif %}
+                                    </div>
+
+                                {% when 'text' %}
+                                    <div class="text-overlay__rte rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}" {{ block.shopify_attributes }} style="color:{{ block.settings.text_color }};">
+                                        {% if shop.locale == 'en' %}
+                                            {{ block.settings.text }}
+                                        {% else %}
+                                            {{ block.settings.text_fr }}
+                                        {% endif %}
+                                    </div>
+
+                                {% when 'button' %}
+                                    <style>
+                                        {% if block.settings.min_buttons_width != blank and block.settings.min_buttons_width > 0 %}
+                                        #section-id-{{ section.id }} .btn-{{ block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ block.id }}{
+                                            width: {{ block.settings.min_buttons_width }}px;
+                                            max-width: 99%;
+                                        }
+                                        #section-id-{{ section.id }} .text-overlay,#section-id-{{ section.id }}-mobile .text-overlay{
+                                            max-width:100%;
+                                        }
+                                        {% endif %}
+
+                                        #section-id-{{ section.id }} .btn-{{ block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ block.id }} {
+                                            background-color: {% if  block.settings.button_color_transparent %} transparent {% else %} {{ block.settings.button_color }} {% endif %}!important;
+                                            color: {{ block.settings.button_text_color }} !important;
+                                            {% if  block.settings.button_color_transparent %}
+                                                border: 1px solid {{ block.settings.button_color }} !important;
+                                            {% endif %}
+                                        }
+
+                                        #section-id-{{ section.id }} .btn-{{ block.id }}:hover,   #section-id-{{ section.id }}-mobile .btn-{{ block.id }}:hover {
+                                            background: {{ block.settings.button_color_hover }} !important;
+                                            color: {{ block.settings.button_text_color_hover }} !important;
+                                        }
+                                    </style>
+                                    <div class="text-overlay__button-row button-row lightish-spaced-row-above" {{ block.shopify_attributes }}>
+                                        {% assign button_link = block.settings.button_link %}
+                                        {% assign popup_class = '' %}
+                                        {% assign popup_target = '' %}
+                                        {% if block.settings.button_popup != blank %}
+                                            {% assign button_link = 'javascript:;' %}
+                                            {% assign popup_class = 'block-open-popup' %}
+                                            {% assign popup_target = block.settings.button_popup %}
+                                        {% endif %}
+                                        {% if shop.locale == 'fr' %}
+                                            {% assign popup_class = '' %}
+                                            {% assign popup_target = '' %}
+                                            {% assign button_link = block.settings.button_link_fr %}
+                                            {% if block.settings.button_popup_fr != blank %}
+                                                {% assign button_link = 'javascript:;' %}
+                                                {% assign popup_class = 'block-open-popup' %}
+                                                {% assign popup_target = block.settings.button_popup_fr %}
+                                            {% endif %}
+                                        {% endif %}
+                                        <a data-popup-target="{{ popup_target }}"    {% if block.settings.is_catalogue_button %}data-src="{{ button_link }}" data-fancybox="" data-type="iframe" {% else %} {{ block.settings.is_catalogue_button | json }} {% endif %} class="{{ popup_class }} text-overlay__button btn-{{ block.id }} button-row__btn {% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %}" href="{{ button_link }}">
+                                            {% if shop.locale == 'en' %}
+                                                {{ block.settings.button_label | escape }}
+                                            {% else %}
+                                                {{ block.settings.button_label_fr | escape }}
+                                            {% endif %}
+                                        </a>
+                                        {%- assign skip_block_count = 0 -%}
+                                        {%- for next_block in section.blocks offset: forloop.index -%}
+                                            {%- if next_block.type == 'button' -%}
+                                                <style>
+                                                    {% if next_block.settings.min_buttons_width != blank and next_block.settings.min_buttons_width > 0 %}
+                                                    #section-id-{{ section.id }} .btn-{{ next_block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ next_block.id }}{
+                                                        width: {{ next_block.settings.min_buttons_width }}px;
+                                                        max-width: 99%;
+                                                    }
+                                                    #section-id-{{ section.id }} .text-overlay,#section-id-{{ section.id }}-mobile .text-overlay{
+                                                        max-width:100%;
+                                                    }
+
+                                                    {% endif %}
+
+
+                                                    #section-id-{{ section.id }} .btn-{{ next_block.id }},   #section-id-{{ section.id }}-mobile .btn-{{ next_block.id }} {
+                                                        background-color: {% if  next_block.settings.button_color_transparent %} transparent {% else %} {{ next_block.settings.button_color }} {% endif %}!important;
+                                                        color: {{ next_block.settings.button_text_color }} !important;
+                                                        {% if  next_block.settings.button_color_transparent %}
+                                                            border: 1px solid {{ block.settings.button_color }} !important;
+                                                        {% endif %}
+                                                    }
+
+                                                    #section-id-{{ section.id }} .btn-{{ next_block.id }}:hover,   #section-id-{{ section.id }}-mobile .btn-{{ next_block.id }}:hover {
+                                                        background: {{ next_block.settings.button_color_hover }} !important;
+                                                        color: {{ next_block.settings.button_text_color_hover }} !important;
+                                                    }
+                                                </style>
+                                                {%- assign skip_block_count = skip_block_count | plus: 1 -%}
+
+                                                {% assign button_link = next_block.settings.button_link %}
+                                                {% if shop.locale == 'fr' %}
+                                                    {% assign button_link = next_block.settings.button_link_fr %}
+                                                {% endif %}
+                                                <a {% if next_block.settings.is_catalogue_button %}  data-src="{{ button_link }}" data-fancybox="" data-type="iframe" {% else %} {{ next_block.settings.is_catalogue_button | json }} {% endif %} class="text-overlay__button btn-{{ next_block.id }} button-row__btn {% if next_block.settings.button_style != 'link' %}btn btn--{{ next_block.settings.button_style }}{% else %}small-feature-link{% endif %}" href="{{ button_link }}" {{ block.shopify_attributes }}>
+                                                    {% if shop.locale == 'en' %}
+                                                        {{ next_block.settings.button_label | escape }}
+                                                    {% else %}
+                                                        {{ next_block.settings.button_label_fr | escape }}
+                                                    {% endif %}
+                                                </a>
+                                            {%- else -%}
+                                                {%- break -%}
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    </div>
+
+                                {%- when 'countdown' -%}
+                                    <script src="{{ 'countdown-timer.s.min.js' | asset_url }}" defer></script>
+                                    {% style %}
+                                        .block-id-{{ block.id }} .countdown {
+                                        --countdown-desktop-size: {{ block.settings.number_size }}px;
+                                        }
+                                    {% endstyle %}
+
+                                    {%- liquid
+                                        if shop.locale == 'en'
+                                            assign end_text = block.settings.end_text
+                                        else
+                                            assign end_text = block.settings.end_text_fr
+                                        endif
+                                    -%}
+                                    <div class="block-id-{{ block.id }} lightly-spaced-row lightish-spaced-row-above countdown-font-{{ block.settings.number_font }} countdown-divider-{{ block.settings.divider_type }}" {{ block.shopify_attributes }}>
+                                        {% render 'countdown-timer',
+                                            end_date: block.settings.end_date,
+                                            countdown_color: block.settings.countdown_color,
+                                            end_time: block.settings.end_time,
+                                            end_text: block.settings.end_text,
+                                            end_midnight: true,
+                                            hide_on_end: block.settings.hide_on_end,
+                                            show_labels: block.settings.show_timer_labels
+                                        %}
+                                    </div>
+
+                                {% endcase %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {%- endif -%}
+        </div>
+    </div>
+{% endif %}
+
+
+{% schema %}
+{
+"name": "Background video",
+"class": "section-background-video",
+"disabled_on": {
+"groups": [
+"aside"
+]
+},
+"settings": [
+{
+"type": "paragraph",
+"content": "Background videos play on loop, with no sound. If you need a video with sound use the Video section."
+},
+{
+"type": "paragraph",
+"content": "Please read documentation before using. [Read more](https://cleancanvas.co.uk/support/general/background-video)"
+},
+{
+"id": "video_shopify",
+"type": "video",
+"label": "Video upload",
+"info": "Hosted by Shopify. Replaces External video if both are set."
+},
+{
+"id": "video_shopify_fr",
+"type": "video",
+"label": "Video upload FR",
+"info": "Hosted by Shopify. Replaces External video if both are set."
+},
+{
+"id": "video_external",
+"type": "text",
+"label": "External video",
+"info": "Supports YouTube and Vimeo. Landscape videos with a 16:9 aspect ratio recommended.",
+"default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+},
+{
+"id": "video_external_fr",
+"type": "text",
+"label": "External video FR",
+"info": "Supports YouTube and Vimeo. Landscape videos with a 16:9 aspect ratio recommended.",
+"default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+},
+{
+"type": "text",
+"id": "video_description",
+"label": "Video description",
+"info": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)"
+},
+{
+"type": "text",
+"id": "video_description_fr",
+"label": "Video description (FR)"
+},
+{
+"id": "placeholder_image",
+"type": "image_picker",
+"label": "Custom placeholder image",
+"info": "Shows while the video is loading, or if it cannot autoplay."
+},
+{
+"id": "placeholder_image_fr",
+"type": "image_picker",
+"label": "Custom placeholder image FR",
+"info": "Shows while the video is loading, or if it cannot autoplay."
+},
+{
+"id": "video_shopify_mobile",
+"type": "video",
+"label": "Video upload mobile",
+"info": "Hosted by Shopify. Replaces External video if both are set."
+},
+{
+"id": "video_shopify_mobile_fr",
+"type": "video",
+"label": "Video upload mobile FR",
+"info": "Hosted by Shopify. Replaces External video if both are set."
+},
+{
+"id": "video_external_mobile",
+"type": "text",
+"label": "External video Mobile",
+"info": "Supports YouTube and Vimeo. Landscape videos with a 16:9 aspect ratio recommended.",
+"default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+},
+{
+"id": "video_external_mobile_fr",
+"type": "text",
+"label": "External video mobile FR",
+"info": "Supports YouTube and Vimeo. Landscape videos with a 16:9 aspect ratio recommended.",
+"default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+},
+{
+"type": "text",
+"id": "video_description_mobile",
+"label": "Video description mobile",
+"info": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)"
+},
+{
+"type": "text",
+"id": "video_description_mobile_fr",
+"label": "Video description mobile (FR)"
+},
+{
+"id": "placeholder_image_mobile",
+"type": "image_picker",
+"label": "Custom placeholder image mobile",
+"info": "Shows while the video is loading, or if it cannot autoplay."
+},
+{
+"id": "placeholder_image_mobile_fr",
+"type": "image_picker",
+"label": "Custom placeholder image mobile FR",
+"info": "Shows while the video is loading, or if it cannot autoplay."
+},
+{
+"type": "header",
+"content": "Layout"
+},
+{
+"type": "select",
+"id": "text_alignment",
+"label": "Text overlay position",
+"options": [
+{
+"value": "top left",
+"label": "Top left"
+},
+{
+"value": "top center",
+"label": "Top center"
+},
+{
+"value": "top right",
+"label": "Top right"
+},
+{
+"value": "center left",
+"label": "Middle left"
+},
+{
+"value": "center center",
+"label": "Middle center"
+},
+{
+"value": "center right",
+"label": "Middle right"
+},
+{
+"value": "bottom left",
+"label": "Bottom left"
+},
+{
+"value": "bottom center",
+"label": "Bottom center"
+},
+{
+"value": "bottom right",
+"label": "Bottom right"
+}
+],
+"default": "center center"
+},
+{
+"type": "range",
+"id": "height_desktop",
+"min": 200,
+"max": 1000,
+"step": 20,
+"unit": "px",
+"label": "Desktop fixed height",
+"default": 600
+},
+{
+"type": "range",
+"id": "height_mobile",
+"min": 100,
+"max": 1000,
+"step": 20,
+"unit": "px",
+"label": "Mobile fixed height",
+"default": 500
+},
+{
+"id": "full_width",
+"type": "checkbox",
+"label": "Full page width",
+"default": true
+},
+{
+"id": "overlay_style",
+"type": "select",
+"label": "Overlay style",
+"default": "shadow",
+"options": [
+{
+"value": "full",
+"label": "Tint"
+},
+{
+"value": "box",
+"label": "Box"
+},
+{
+"value": "shadow",
+"label": "Text shadow"
+},
+{
+"value": "full image-overlay--bg-shadow",
+"label": "Text shadow and tint"
+},
+{
+"value": "no_background",
+"label": "No background"
+}
+]
+}
+],
+"blocks": [
+{
+"type": "heading",
+"name": "Heading",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"info": "Enter <br> for a line-break",
+"default": "Background video"
+},
+{
+"type": "text",
+"id": "title_fr",
+"label": "Heading (FR)"
+},
+{
+"type": "range",
+"id": "heading_max_width",
+"min": 4,
+"max": 40,
+"step": 1,
+"unit": "em",
+"label": "Maximum heading width",
+"default": 15
+},
+{
+"type": "range",
+"id": "title_size",
+"min": 20,
+"max": 150,
+"step": 2,
+"unit": "px",
+"label": "Desktop heading text size",
+"default": 84
+},
+    {
+    "type": "select",
+    "id": "title_font_family",
+    "label": "Front family",
+    "options": [
+        {
+        "value": "default",
+        "label": "Default"
+        },
+        {
+        "value": "gelica",
+        "label": "Gelica"
+        },
+        {
+        "value": "hando",
+        "label": "Hando"
+        }        
+    ],
+    "default": "default"
+    },
+    {
+    "type": "select",
+    "id": "title_font_weight",
+    "label": "Front weight",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },
+        {
+        "value": "extralight",
+        "label": "Extra Light"
+        }, 
+        {
+        "value": "light",
+        "label": "Light"
+        },   
+        {
+        "value": "medium",
+        "label": "Medium"
+        }, 
+        {
+        "value": "semibold",
+        "label": "Semi Bold"
+        },   
+        {
+        "value": "black",
+        "label": "Black"
+        },                              
+        {
+        "value": "bold",
+        "label": "Bold"
+        }
+    ],
+    "default": "regular"
+    },
+    {
+    "type": "select",
+    "id": "title_font_style",
+    "label": "Front style",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },
+        {
+        "value": "italic",
+        "label": "Italic"
+        }
+    ],
+    "default": "regular"
+    },  
+{
+"type": "range",
+"id": "title_size_mobile",
+"min": 20,
+"max": 150,
+"step": 2,
+"unit": "px",
+"label": "Mobile heading text size",
+"default": 32
+},
+{
+"type": "checkbox",
+"id": "use_h1",
+"label": "Set as primary page heading",
+"info": "Use <h1> tag. One per page recommended. [Read more](https://cleancanvas.co.uk/support/symmetry/section-h1-setting)",
+    "default": false
+    }
+    ]
+    },
+    {
+    "type": "subheading",
+    "name": "Subheading",
+    "settings": [
+    {
+    "type": "text",
+    "id": "subheading",
+    "label": "Subheading",
+    "default": "Tell your story"
+    },
+    {
+    "type": "text",
+    "id": "subheading_fr",
+    "label": "Subheading (FR)"
+    }
+    ]
+    },
+    {
+    "type": "text",
+    "name": "Text",
+    "settings": [
+    {
+    "type": "richtext",
+    "id": "text",
+    "label": "Text",
+    "default": "<p>Use a video to get a customer's attention</p>"
+    },
+    {
+    "type": "richtext",
+    "id": "text_fr",
+    "label": "Text (FR)"
+    },
+    {
+    "type":"color",
+    "id":"text_color",
+    "label":"Text Color",
+    "default": "#FFFFFF"
+    },
+    {
+    "type": "checkbox",
+    "id": "enlarge_text",
+    "label": "Enlarge text",
+    "default": true
+    },
+    {
+    "type": "select",
+    "id": "text_font_family",
+    "label": "Front family",
+    "options": [
+        {
+        "value": "default",
+        "label": "Default"
+        },
+        {
+        "value": "gelica",
+        "label": "Gelica"
+        },
+        {
+        "value": "hando",
+        "label": "Hando"
+        }        
+    ],
+    "default": "default"
+    },
+    {
+    "type": "select",
+    "id": "text_font_weight",
+    "label": "Front weight",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },
+        {
+        "value": "extralight",
+        "label": "Extra Light"
+        }, 
+        {
+        "value": "light",
+        "label": "Light"
+        },   
+        {
+        "value": "medium",
+        "label": "Medium"
+        }, 
+        {
+        "value": "semibold",
+        "label": "Semi Bold"
+        },   
+        {
+        "value": "black",
+        "label": "Black"
+        },                              
+        {
+        "value": "bold",
+        "label": "Bold"
+        }
+    ],
+    "default": "regular"
+    },
+    {
+    "type": "select",
+    "id": "text_font_style",
+    "label": "Front style",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },
+        {
+        "value": "italic",
+        "label": "Italic"
+        }
+    ],
+    "default": "regular"
+    }       
+    ]
+    },
+    {
+    "type": "button",
+    "name": "Button",
+    "settings": [
+    {
+    "type": "paragraph",
+    "content": "Consecutive buttons will show on the same row"
+    },
+    {
+    "type": "number",
+    "id": "min_buttons_width",
+    "label": "Minimum Button Width (px)",
+    "default": 0
+    },
+    {
+    "type": "text",
+    "id": "button_label",
+    "label": "Button",
+    "default": "Button text"
+    },
+    {
+    "type": "text",
+    "id": "button_label_fr",
+    "label": "Button (FR)"
+    },
+    {
+    "type": "text",
+    "id": "button_popup",
+    "label": "Klaviyo Popup Code",
+    "info": "This will replace the English URL"
+    },
+    {
+    "type": "text",
+    "id": "button_popup_fr",
+    "label": "Klaviyo Popup Code (FR)",
+    "info": "This will replace the French URL"
+    },
+    {
+    "type": "checkbox",
+    "id": "is_catalogue_button",
+    "label": "Enable Catalogue Popup",
+    "default": false
+    },
+    {
+    "type": "checkbox",
+    "id": "open_catalogue_new_window",
+    "label": "Open Catalogue in new Window",
+    "default": false
+    },
+    {
+    "type": "checkbox",
+    "id": "enable_catalogue_controls",
+    "label": "Enable Catalogue Controls",
+    "default": false
+    },
+    {
+    "type": "url",
+    "id": "button_link",
+    "label": "Button link"
+    },
+    {
+    "type": "url",
+    "id": "button_link_fr",
+    "label": "Button link"
+    },
+    {
+    "type":"checkbox",
+    "id":"button_color_transparent",
+    "label":"Button Transparent",
+    "default":false
+    },
+    {
+    "type":"color",
+    "id":"button_color",
+    "label":"Button Color",
+    "default":"#FFF"
+    },
+    {
+    "type":"color",
+    "id":"button_text_color",
+    "label":"Button Text Color",
+    "default":"#FFF"
+    },
+    {
+    "type":"color",
+    "id":"button_color_hover",
+    "label":"Button Color (Hover)",
+    "default":"#FFF"
+    },
+    {
+    "type":"color",
+    "id":"button_text_color_hover",
+    "label":"Button Text Color (Hover)",
+    "default":"#FFF"
+    },
+    {
+    "type": "select",
+    "id": "button_style",
+    "label": "Button style",
+    "default": "primary",
+    "options": [
+    {
+    "label": "Primary",
+    "value": "primary"
+    },
+    {
+    "label": "Secondary",
+    "value": "secondary"
+    },
+    {
+    "label": "Link",
+    "value": "link"
+    }
+    ]
+    }
+    ]
+    },
+    {
+    "type": "countdown",
+    "name": "Countdown timer",
+    "settings": [
+    {
+    "type": "text",
+    "id": "end_date",
+    "label": "End date",
+    "info": "Required. Format: YYYY-MM-DD."
+    },
+    {
+    "type": "text",
+    "id": "end_time",
+    "label": "End time (optional)",
+    "info": "Format: 17:00 (24 hour clock). Uses the store's timezone."
+    },
+    {
+    "type": "color",
+    "id": "countdown_color",
+    "label": "Countdown timer Color",
+    "default": "#ffffff"
+    },
+    {
+    "type": "richtext",
+    "id": "end_text",
+    "label": "End text",
+    "info": "This shows when the date and time elapses."
+    },
+    {
+    "type": "richtext",
+    "id": "end_text_fr",
+    "label": "End text (FR)"
+    },
+    {
+    "type": "color",
+    "id": "end_text_color",
+    "label": "End text Color",
+    "default": "#FFFFFF"
+    },
+    {
+    "type": "checkbox",
+    "id": "hide_on_end",
+    "label": "Hide the timer when the date and time elapses",
+    "default": false
+    },
+    {
+    "type": "range",
+    "id": "number_size",
+    "min": 20,
+    "max": 120,
+    "step": 2,
+    "unit": "px",
+    "label": "Number size",
+    "default": 40
+    },
+    {
+    "type": "select",
+    "id": "number_font",
+    "label": "Number font",
+    "options": [
+    {
+    "label": "Text font",
+    "value": "base"
+    },
+    {
+    "label": "Heading font",
+    "value": "heading"
+    }
+    ],
+    "default": "base"
+    },
+    {
+    "type": "select",
+    "id": "divider_type",
+    "label": "Divider type",
+    "default": "colon",
+    "options": [
+    {
+    "value": "colon",
+    "label": "Colon"
+    },
+    {
+    "value": "dot",
+    "label": "Dot"
+    },
+    {
+    "value": "line",
+    "label": "Line"
+    },
+    {
+    "value": "none",
+    "label": "None"
+    }
+    ]
+    },
+    {
+    "type": "checkbox",
+    "id": "show_timer_labels",
+    "label": "Show labels",
+    "default": true
+    }
+    ]
+    }
+    ],
+    "presets": [
+    {
+    "name": "Background video",
+    "blocks": [
+    {
+    "type": "subheading"
+    },
+    {
+    "type": "heading"
+    },
+    {
+    "type": "text"
+    }
+    ]
+    }
+    ]
+    }
+    {% endschema %}

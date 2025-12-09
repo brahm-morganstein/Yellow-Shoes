@@ -1,0 +1,12 @@
+{%- if pages contains template.name -%}
+  <link 
+    rel="preload" 
+    href="{{ filename | asset_url }}" 
+    as="style" 
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ filename | asset_url }}"></noscript>
+{%- else -%}
+  <link
+    rel="stylesheet"
+    href="{{ filename | asset_url}}">
+{%- endif -%}

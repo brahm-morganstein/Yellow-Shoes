@@ -1,0 +1,527 @@
+<style type="text/css">
+  input[disabled] {
+    color: #666;
+    background-image: none;
+    background:#f3f3f3;
+  }
+</style>
+
+<div id="customer_profile_section" class="account-section" style="display: none;">
+  <div class="d-flex flex-wrap">
+    <div class="d-inline-block profile-left">
+      <div class="my-account-title-with-underline">
+        <div class="title-text d-inline-block w-75">
+          {{ 'customer.account.personal_information' | t }}
+        </div>
+        <div class="d-inline-block w-25 text-right">
+          <a href="javascript:;" style="text-decoration: underline;" onclick="showPopup('#profile-info-popup')">{{ 'dashboard.edit' | t }}</a>
+        </div>
+      </div>
+
+      <div class="profile-info-row">
+        <div>
+          <strong>{{ 'customer.account.first_name' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+          {{ customer.first_name | capitalize }}
+        </div>
+        <div>
+          <strong>{{ 'customer.account.last_name' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+          {{ customer.last_name | capitalize }}
+        </div>
+
+        {% comment %}
+        {% if customer.phone != '' %}
+        <div>
+            <strong>{{ 'customer.account.mobile' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+            <span class="phone">{{ customer.phone }}</span>
+        </div>
+        {% endif %}
+        {% endcomment %}
+        {% comment %}
+        <div class="gender-container">
+            <strong>Gender: </strong>
+            <span id="gender"></span>
+        </div>
+        {% endcomment %}
+        <div class="birthday-container">
+          <strong>{{ 'customer.account.birthday' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %}</strong>
+          <span class="dob"></span>
+        </div>
+        <div>
+          <div>
+            {% if customer.orders.size != 0 %}
+              {% assign order = customer.orders | first %}
+              <strong>{{ 'customer.account.member_since' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+              {% if shop.locale == 'en' %}
+                <span class="date-container">{{ order.created_at | split: " " | first | date: "%B, %d %Y"}}</span>
+              {% else %}
+                <span class="date-container">{{ order.created_at | split: " " | first | date: "%d %B %Y" | replace: "January", "janvier" | replace: "February", "février" | replace: "March", "mars" | replace: "April", "avril" | replace: "May", "mai" | replace: "June", "juin" | replace: "July", "juillet" | replace: "August", "août" | replace: "September", "septembre" | replace: "October", "octobre" | replace: "November", "novembre" | replace: "December", "décembre"}}</span>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="d-inline-block profile-right">
+      <div class="my-account-title-with-underline">
+        <div class="title-text d-inline-block w-75">
+          Address
+        </div>
+        <div class="d-inline-block w-25 text-right">
+          <a href="javascript:;" style="text-decoration: underline;" onclick="showPopup('#profile-address-popup')">Edit</a>
+        </div>
+      </div>
+
+      <div class="dashboard-def-add">
+        {% if customer.default_address %}
+          <div style="text-transform:capitalize;">{{ customer.default_address.name | capitalize }}</div>
+          <div>{{ customer.default_address.address1 }}</div>
+
+          {% if customer.default_address.address2 != blank %}
+            <div>{{ customer.default_address.address2 }}</div>
+          {% endif %}
+
+          <div>{{ customer.default_address.city }}, {% if customer.default_address.province_code %}{{ customer.default_address.province }}{% endif %} <span class="postal-code">{{ customer.default_address.zip }}</span>
+            <div>{{ customer.default_address.country }}</div>
+          </div>
+        {%endif%}
+      </div>
+    </div>
+  </div>
+
+  <div class="account-subsection">
+
+    <div class="d-flex flex-wrap">
+
+      <div class="d-inline-block profile-left">
+        <div class="my-account-title-with-underline">
+          <div class="title-text d-inline-block w-75">
+            {{ 'customer.account.contact_preferences' | t }}
+          </div>
+          <div class="d-inline-block w-25 text-right">
+            <a href="javascript:;" onclick="showPopup('#profile-marketing-popup')" style="text-decoration: underline;">Edit</a>
+          </div>
+        </div>
+
+        <div>
+          {{ 'customer.account.update_your_preferences' | t }}
+        </div>
+        <div>
+          <strong>{{ 'customer.account.interest' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+          <span id="interests_in">Everything</span>
+        </div>
+        <div>
+          <strong>{{ 'customer.account.frequency' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+          <span id="frequency_in">{{ 'customer.account.marketing_frequency_all' | t }}</span>
+        </div>
+        <div>
+          <strong>{{ 'customer.account.language' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+          <span id="language_in">marketing_frequency_promos
+                    {{ 'customer.account.marketing_frequency_promos' | t }}
+                    </span>
+        </div>
+        <div>
+          <strong>{{ 'customer.account.email' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+          {{ customer.email }}
+        </div>
+        <div class="phone-container">
+          <strong>{{ 'customer.account.phone' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
+          <span class="phone mobile-phone"></span>
+        </div>
+      </div>
+      <div class="d-inline-block profile-right">
+        <div class="my-account-title-with-underline">
+          <div class="title-text d-inline-block w-75">
+            {{ 'customer.reset_password.title' | t }}
+          </div>
+          <div class="d-inline-block w-25 text-right">
+            <a href="javascript:;" style="text-decoration: underline;" onclick="showPopup('#change-password-popup')">{{ 'dashboard.edit' | t }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="profile-popup-container" id="change-password-popup" style="display: none;">
+  <div class="profile-popup-content-absolute">
+    <div class="profile-popup-content">
+      <div class="profile-popup-close">
+        <a href="javascript:;" class="profile-popup-close-btn">{% render 'svg-x' %}</a>
+      </div>
+
+      <div class="my-account-title-with-underline">
+        <div class="title-text d-inline-block w-100 text-center">
+          {{ 'customer.reset_password.title' | t }}
+        </div>
+      </div>
+
+      <div id="form">
+        {% comment %}  <div>
+              <div class="label">{{ 'customer.reset_password.password' | t }}</div>
+              <input class="w-100" type="password" id="password_field">
+              <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+          </div>{% endcomment %}
+
+        <div>
+          <div class="label">{{ 'customer.reset_password.password' | t }}</div>
+          <input class="w-100" type="password" id="new_password_field">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+
+        <div>
+          <div class="label">{{ 'customer.reset_password.password_confirm' | t }}</div>
+          <input class="w-100" type="password" id="confirm_password_field">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div style="margin-top:40px;">
+          <button class="btn w-100 change-password" type="submit">
+            {{ 'dashboard.save' | t }}
+          </button>
+        </div>
+        <div style="margin-top:20px;" class="text-center">
+          <a href="javascript:;" class="profile-popup-close-btn"  style="text-decoration:underline;">{{ 'customer.account.cancel' | t }}</a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+<div class="profile-popup-container" id="profile-info-popup" style="display: none;">
+  <div class="profile-popup-content-absolute">
+    <div class="profile-popup-content">
+      <div class="profile-popup-close">
+        <a href="javascript:;" class="profile-popup-close-btn">{% render 'svg-x' %}</a>
+      </div>
+
+      <div class="my-account-title-with-underline">
+        <div class="title-text d-inline-block w-100 text-center">
+          {{ 'customer.account.edit_personal_information' | t }}
+        </div>
+      </div>
+
+      <div id="form">
+        <div>
+          <div class="label">{{ 'customer.account.first_name' | t }}</div>
+          <input class="w-100" type="text" id="first_name_field" value="{{customer.first_name}}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div>
+          <div class="label">{{ 'customer.account.last_name' | t }}</div>
+          <input class="w-100" type="text" id="last_name_field" value="{{customer.last_name}}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div style="display:none;">
+          <div class="label">{{ 'customer.account.email' | t }}</div>
+          <input class="w-100" type="text" id="email_field" value="{{customer.email}}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        {%comment %}
+        <div>
+            <div class="label">{{ 'customer.account.phone' | t }}</div>
+            <input class="w-100" type="text" id="phone_field" value="{{customer.phone}}">
+            <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        {%endcomment %}
+        <div>
+          <div class="label">{{ 'customer.account.birthday' | t }}</div>
+          <input class="w-100 profile-dob" type="text" id="dob_field">
+        </div>
+        {%comment %}
+        <div>
+            <div class="label">Gender</div>
+            <select class="profile-select w-100" id="gender_field">
+                <option value="">Select</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        {%endcomment %}
+        <div style="margin-top:40px;">
+          <button class="btn w-100 save-profile" type="submit">
+            {{ 'dashboard.save' | t }}
+          </button>
+        </div>
+        <div style="margin-top:20px;" class="text-center">
+          <a href="javascript:;" onclick="window.location.reload();" style="text-decoration:underline;">{{ 'customer.account.cancel' | t }}</a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+<div class="profile-popup-container" id="profile-marketing-popup" style="display: none;">
+  <div class="profile-popup-content-absolute">
+    <div class="profile-popup-content">
+      <div class="profile-popup-close">
+        <a href="javascript:;" class="profile-popup-close-btn">{% render 'svg-x' %}</a>
+      </div>
+
+      <div class="my-account-title-with-underline">
+        <div class="title-text d-inline-block w-100 text-center">
+          {{ 'customer.account.update_preferences_title' | t}}
+        </div>
+      </div>
+
+      <div id="marketng-form">
+        <div>
+          <div class="label">{{ 'customer.account.email' | t }}</div>
+          <input class="w-100" type="text" id="marketing_email_field" value="{{customer.email}}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div>
+          <div class="label">{{ 'customer.account.phone' | t }}</div>
+          <input class="w-100" type="text" id="marketing_phone_field" value="">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+
+        <div>
+          <div style="line-height:1;margin-top:10px;">
+            {{ 'customer.account.keep_me_updated' | t }}
+          </div>
+          <div class="marketing-radio-container">
+            <div class="marketing-radio" data-target="#marketing-email-subscribe">
+              <div class="marketing-radio-background">
+              </div>
+            </div>
+            <div class="marketing-label">{{ 'customer.account.email_signup' | t }}</div>
+            <input type="checkbox" id="marketing-email-subscribe" value="yes">
+          </div>
+        </div>
+        <div class="marketing-radio-container">
+          <div class="marketing-radio" data-target="#marketing-phone-subscribe">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">SMS</div>
+          <input type="checkbox" id="marketing-phone-subscribe" value="yes">
+        </div>
+      </div>
+      <div style="color:#e41100; margin-top:10px;">
+        {{ 'customer.account.select_both' | t }}
+      </div>
+      <div style="padding: 10px;line-height:1;font-weight:100; background:#f9f7f8;color:#e9b82b; border:3px solid #e9b82b; border-radius:5px; margin:10px 0;">
+        {{ 'customer.account.sms_agreement' | t }}
+      </div>
+      <div>
+        <div class="label">{{ 'customer.account.interest' | t }}</div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio" id="all-marketing-products">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.all_products' | t }}</div>
+        </div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio marketing-products" data-target="#marketing-products-women">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.womens_products' | t }}</div>
+          <input type="checkbox" id="marketing-products-women" value="women">
+        </div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio marketing-products" data-target="#marketing-products-men">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.mens_products' | t }}</div>
+          <input type="checkbox" id="marketing-products-men" value="men">
+        </div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio marketing-products" data-target="#marketing-products-kids">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.kids_products' | t }}</div>
+          <input type="checkbox" id="marketing-products-kids" value="kids">
+        </div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio marketing-products" data-target="#marketing-products-accessories">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.accessories' | t }}</div>
+          <input type="checkbox" id="marketing-products-accessories" value="accessories">
+        </div>
+
+
+      </div>
+
+      <div style="margin-top:15px;">
+        <div class="label">{{ 'customer.account.frequency' | t }}</div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio" data-type="radio" data-name="marketing-frequency" data-target="#marketing-frequency-all">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.marketing_frequency_all' | t }}</div>
+          <input type="radio" id="marketing-frequency-all" name="marketing-frequency" value="all">
+        </div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio" data-type="radio" data-name="marketing-frequency" data-target="#marketing-frequency-promo">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.marketing_frequency_promos' | t }}</div>
+          <input type="radio" id="marketing-frequency-promo" name="marketing-frequency" value="promos">
+        </div>
+
+        <div class="marketing-radio-container">
+          <div class="marketing-radio" data-type="radio" data-name="marketing-frequency" data-target="#marketing-frequency-uns">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">{{ 'customer.account.marketing_frequency_unsubscribe' | t }}</div>
+
+          <input type="radio" id="marketing-frequency-uns" name="marketing-frequency" value="unsubscribe">
+        </div>
+
+
+      </div>
+
+      <div style="margin-top:15px;">
+        <div class="label">{{ 'customer.account.language' | t }}</div>
+
+        <div class="marketing-radio-container">
+          {% assign class = '' %}
+          {% if shop.locale == 'fr' %}
+            {% assign class = 'selected' %}
+          {% endif %}
+          <div class="marketing-radio {{class}}" data-type="radio" data-name="marketing-language" data-target="#marketing-language-fr">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">J'aimerais recevoir les communications en français</div>
+          <input type="radio" id="marketing-language-fr" name="marketing-language" value="fr">
+        </div>
+        <div class="marketing-radio-container">{% assign class = '' %}
+          {% if shop.locale == 'en' %}
+            {% assign class = 'selected' %}
+          {% endif %}
+          <div class="marketing-radio {{class}}" data-type="radio" data-name="marketing-language" data-target="#marketing-language-en">
+            <div class="marketing-radio-background">
+            </div>
+          </div>
+          <div class="marketing-label">I would like to receive communications in English</div>
+          <input type="radio" id="marketing-language-en" name="marketing-language" value="en">
+
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <button class="btn w-100 save-marketing" type="submit">
+          {{ 'customer.account.update_preferences_title' | t}}
+        </button>
+      </div>
+      <div style="margin:10px 0; text-align:center; line-height:1;font-weight:100;">
+        {{ 'customer.account.please_note_msg' | t}}
+      </div>
+      <div style="margin-top:20px;" class="text-center">
+        <a href="javascript:;" onclick="window.location.reload();"
+           style="text-decoration:underline;">{{ 'customer.account.cancel' | t }}</a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div class="profile-popup-container" id="profile-address-popup" style="display: none;">
+  <div class="profile-popup-content-absolute">
+    <div class="profile-popup-content">
+      <div class="profile-popup-close">
+        <a href="javascript:;" class="profile-popup-close-btn">{% render 'svg-x' %}</a>
+      </div>
+
+      <div class="my-account-title-with-underline">
+        <div class="title-text d-inline-block w-100 text-center">
+          {{ 'customer.account.edit_your_default_address' | t }}
+        </div>
+      </div>
+
+      <div id="address-form">
+        <div>
+          <div class="label">{{ 'customer.addresses.first_name' | t }}</div>
+          <input class="w-100" type="text" id="address_first_name_field" value="{{ customer.default_address.first_name }}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div>
+          <div class="label">{{ 'customer.addresses.last_name' | t }}</div>
+          <input class="w-100" type="text" id="address_last_name_field" value="{{ customer.default_address.last_name }}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div>
+          <div class="label">{{ 'customer.addresses.address1' | t }}</div>
+          <input class="w-100" type="text" id="address1_field" value="{{ customer.default_address.address1 }}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div>
+          <div class="label">{{ 'customer.addresses.address2' | t }}</div>
+          <input class="w-100" type="text" id="address2_field" value="{{ customer.default_address.address2 }}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div>
+          <div class="label">{{ 'customer.addresses.city' | t }}</div>
+          <input class="w-100" type="text" id="city_field" value="{{ customer.default_address.city }}">
+          <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+        </div>
+        <div class="d-flex">
+          <div class="d-inline-block w-50" style="padding-right:5px;">
+            <div>
+              <div class="label">{{ 'customer.addresses.zip' | t }}</div>
+              <input class="w-100" type="text" id="zip_field" value="{{ customer.default_address.zip }}">
+              <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+            </div>
+          </div>
+          <div class="d-inline-block w-50" style="padding-left:5px;">
+            <div>
+              <div class="label">{{ 'customer.addresses.province' | t }}</div>
+              <select class="profile-select w-100" id="province_field" style="padding:0.7em 15px;-webkit-appearance: auto !important;-moz-appearance: auto !important;appearance: auto !important;">
+                <option value="">{{ 'provinces.select' | t }}</option>
+                <option value="AB">Alberta</option>
+                <option value="BC">{{ 'provinces.british_columbia' | t }}</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">{{ 'provinces.new_brunswick' | t }}</option>
+                <option value="NL">{{ 'provinces.newfoundland_labrador' | t }}</option>
+                <option value="NT">{{ 'provinces.northwest_territories' | t }}</option>
+                <option value="NS">{{ 'provinces.nova_scotia' | t }}</option>
+                <option value="NU">Nunavut</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">{{ 'provinces.prince_edward_island' | t }}</option>
+                <option value="QC">{{ 'provinces.quebec' | t }}</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="YT">Yukon</option>
+              </select>
+              <div style="margin-top:10px; color:red; display:none;" class="profile-error-message"></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:40px;">
+          <button class="btn w-100 save-address" type="submit">
+            {{ 'customer.account.save' | t }}
+          </button>
+        </div>
+        <div style="margin-top:20px;" class="text-center">
+          <a href="javascript:;"  onclick="window.location.reload();" style="text-decoration:underline;">{{ 'customer.account.cancel' | t }}</a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
