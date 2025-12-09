@@ -1,1 +1,492 @@
-{"type":"header","name":"Header Group","sections":{"blocks_FnmLyQ":{"type":"_blocks","blocks":{"ai_gen_block_4a36a55_L97TxD":{"type":"ai_gen_block_4a36a55","settings":{"language":"en","header_en":"Black Friday Flash Sale","subheader_en":"50% OFF SELECT STYLES","expired_message_en":"","days_label_en":"Days","hours_label_en":"Hours","minutes_label_en":"Minutes","seconds_label_en":"Seconds","header_fr":"Vente éclair du Black Friday","subheader_fr":"50% DE RABAIS SUR SÉLECTION D’ARTICLES","expired_message_fr":"Cette offre est terminée.","days_label_fr":"Jours","hours_label_fr":"Heures","minutes_label_fr":"Minutes","seconds_label_fr":"Secondes","end_date":"2025-11-30","end_time":"23:59","enable_gradient":true,"gradient_start":"#000000","gradient_middle":"#8b0000","gradient_end":"#c20000","gradient_angle":90,"text_color":"#ffffff","header_size":22,"subheader_size":14,"number_size":28,"label_size":11},"blocks":{}}},"block_order":["ai_gen_block_4a36a55_L97TxD"],"disabled":true,"name":"Countdown timer","settings":{}},"announcement-bar":{"type":"announcement-bar","blocks":{"announcement_mLdP76":{"type":"announcement","disabled":true,"settings":{"text":"<strong>⚡ 50% OFF + Free Shipping ⚡<\/strong><a href=\"\/collections\/black-friday-cyber-monday-flash-sale-50-off-selected-styles\" title=\"Black Friday & Cyber Monday Flash Sale – 50% Off Selected Styles\"><strong>Cyber Monday Flash Sale<\/strong><\/a>","text_fr":"⚡<strong> 50% Rabais + Livraison gratuite<\/strong> <strong>⚡<\/strong><a href=\"\/collections\/black-friday-cyber-monday-flash-sale-50-off-selected-styles\" title=\"Black Friday & Cyber Monday Flash Sale – 50% Off Selected Styles\"><strong>Vente éclair du Cyber lundi<\/strong><\/a>","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":true,"hide_on_end":false,"end_date":"2025-12-02","end_time":"09:00","number_font":"heading","countdown_separator":"space","use_custom_colors":false,"bg_color":"#4a4a4a","bg_gradient":"linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)","text_color":"#ffffff"}},"announcement_M9n4tM":{"type":"announcement","settings":{"text":"🚚 <strong>Free shipping<\/strong> on order over $85","text_fr":"🚚 <strong>Livraison gratuite<\/strong> dès 85$","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":false,"hide_on_end":false,"end_date":"","end_time":"","number_font":"heading","countdown_separator":"space","use_custom_colors":false,"bg_color":"#9ecc3b","bg_gradient":"","text_color":"#ffffff"}},"announcement_Jw8kcf":{"type":"announcement","settings":{"text":"🎁 <a href=\"\/pages\/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Holiday Gift Guide<\/strong><\/a> — Shop now & spread the cheer","text_fr":"🎁 <a href=\"\/pages\/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Guide-cadeaux des Fêtes<\/strong><\/a> — Magasiner ici","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":false,"hide_on_end":false,"end_date":"2024-09-03","end_time":"08:30","number_font":"base","countdown_separator":"box","use_custom_colors":false,"bg_color":"#4a4a4a","bg_gradient":"","text_color":"#ffffff"}},"announcement_7Vqrkz":{"type":"announcement","disabled":true,"settings":{"text":"🤍 New! <strong>Made in Quebec<\/strong> Collection — <a href=\"\/collections\/made-in-quebec-collection\" title=\"Made in Quebec Collection\">Shop Now<\/a>","text_fr":"🤍 Nouveau! <strong>Fabriqué au Québec - <\/strong><a href=\"\/collections\/made-in-quebec-collection\" title=\"Made in Quebec Collection\">Magasiner ici<\/a>","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":false,"hide_on_end":false,"end_date":"2025-04-27","end_time":"23:59","number_font":"base","countdown_separator":"space","use_custom_colors":false,"bg_color":"#4a4a4a","bg_gradient":"","text_color":"#ffffff"}},"announcement_TaPzKD":{"type":"announcement","disabled":true,"settings":{"text":"✏️ <strong>10% Off<\/strong> for Students & Teachers — <a href=\"\/pages\/student-teacher-discount\" title=\"Student Teacher Discount\"><strong>Apply now<\/strong><\/a>","text_fr":"Étudiants & enseignants : <strong>10% de rabais<\/strong> – <a href=\"\/pages\/student-teacher-discount\" title=\"Student Teacher Discount\"><strong>Faites votre demande<\/strong><\/a>","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":true,"hide_on_end":false,"end_date":"2025-09-28","end_time":"23:59","number_font":"heading","countdown_separator":"space","use_custom_colors":false,"bg_color":"#c10101","bg_gradient":"","text_color":"#ffffff"}},"announcement_qiQWqx":{"type":"announcement","disabled":true,"settings":{"text":"🐑 New! Riverland Heritage – <a href=\"\/pages\/riverland-heritage-collection\" title=\"Riverland heritage collection\"><strong>Shop Now<\/strong><\/a>","text_fr":"🐑 Nouveau ! Riverland Heritage – <a href=\"\/pages\/riverland-heritage-collection\" title=\"Riverland heritage collection\"><strong>Magasiner<\/strong><\/a>","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":false,"hide_on_end":false,"end_date":"","end_time":"","number_font":"base","countdown_separator":"box","use_custom_colors":false,"bg_color":"#4a4a4a","bg_gradient":"","text_color":"#ffffff"}},"announcement_F7egfq":{"type":"announcement","disabled":true,"settings":{"text":"🛒 Shop now, pay later with <a href=\"https:\/\/www.yellowshoes.com\/pages\/new-arrivals-for-the-entire-family?page=1\" title=\"https:\/\/www.yellowshoes.com\/pages\/new-arrivals-for-the-entire-family?page=1\"><strong>Sezzle<\/strong><\/a>","text_fr":"🛒 Achetez maintenant, payez plus tard avec <a href=\"https:\/\/www.yellowshoes.com\/fr\/pages\/new-arrivals-for-the-entire-family?page=1\" title=\"https:\/\/www.yellowshoes.com\/fr\/pages\/new-arrivals-for-the-entire-family?page=1\"><strong>Sezzle<\/strong><\/a>","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":false,"hide_on_end":false,"end_date":"","end_time":"","number_font":"base","countdown_separator":"box","use_custom_colors":false,"bg_color":"#4a4a4a","bg_gradient":"","text_color":"#ffffff"}},"announcement-1":{"type":"announcement","disabled":true,"settings":{"text":"Visit us in-store for even more choice! <a href=\"https:\/\/www.yellowshoes.com\/apps\/store-locator\" title=\"https:\/\/www.yellowshoes.com\/apps\/store-locator\"><strong>Find a store<\/strong><\/a>","text_fr":"Encore plus de choix en boutique ! <a href=\"https:\/\/www.yellowshoes.com\/fr\/apps\/store-locator\" title=\"Trouver un magasin\"><strong>Trouver un magasin<\/strong><\/a>","popup_text_replacement":"","popup_text_replacement_fr":"","button_popup":"","button_popup_fr":"","show_countdown":false,"hide_on_end":false,"end_date":"","end_time":"","number_font":"base","countdown_separator":"box","use_custom_colors":false,"bg_color":"#4a4a4a","bg_gradient":"","text_color":"#ffffff"}}},"block_order":["announcement_mLdP76","announcement_M9n4tM","announcement_Jw8kcf","announcement_7Vqrkz","announcement_TaPzKD","announcement_qiQWqx","announcement_F7egfq","announcement-1"],"settings":{"message_font_size":14,"announcement_bar_col":"#000000","announcement_bar_gradient":"linear-gradient(57deg, rgba(35, 35, 35, 1) 53%, rgba(194, 0, 0, 1) 97%)","announcement_text_col":"#ffffff","show_social_icons":true,"menu":"","enable_country_selector":true,"enable_language_selector":true}},"header":{"type":"header","blocks":{"menu_promotion_small_xGMMib":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"New","dropdown_link_title_fr":"Nouveautés","image":"shopify:\/\/shop_images\/MEMORY_H20_0407.jpg","image_fr":"shopify:\/\/shop_images\/MEMORY_H20_0407.jpg","title":"SHOP THE HERITAGE COLLECTION","title_fr":"Magasiner la COLLECTION HéRITAGE","link_url":"shopify:\/\/pages\/riverland-heritage-collection"}},"menu_promotion_small_U6EcqP":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"New","dropdown_link_title_fr":"Nouveautés","image":"shopify:\/\/shop_images\/MANUFACTURED_IN_QUEBEC.png","image_fr":"shopify:\/\/shop_images\/FABRIQUE_AU_QUEBEC.png","title":"Made in Quebec Collection","title_fr":"Collection Fabriquée au Québec","link_url":"shopify:\/\/collections\/made-in-quebec-collection"}},"menu_promotion_small_w7rEYW":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Women's","dropdown_link_title_fr":"Femmes","image":"shopify:\/\/shop_images\/1993_PRESLEY_0174.jpg","image_fr":"shopify:\/\/shop_images\/1993_PRESLEY_0174.jpg","title":"Shop BOOTS","title_fr":"magasiner bottillons","link_url":"shopify:\/\/collections\/womens-boots"}},"menu_promotion_small_JmLEBi":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Women's","dropdown_link_title_fr":"Femmes","image":"shopify:\/\/shop_images\/ARIANE_9808.jpg","image_fr":"shopify:\/\/shop_images\/ARIANE_9808.jpg","title":"SHOP tall boots","title_fr":"Magasiner bottes hautes","link_url":"shopify:\/\/collections\/womens-tall-light-boots"}},"menu_promotion_small_ngUQVF":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Men's","dropdown_link_title_fr":"Hommes","image":"shopify:\/\/shop_images\/HIVERNAL_H20_0419.jpg","image_fr":"shopify:\/\/shop_images\/HIVERNAL_H20_0419.jpg","title":"Shop boots for men","title_fr":"magasiner bottes pour hommes","link_url":"shopify:\/\/collections\/mens-boots"}},"menu_promotion_small_xEDiDy":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Men's","dropdown_link_title_fr":"Hommes","image":"shopify:\/\/shop_images\/MEMORY_M_H20_0358.jpg","image_fr":"shopify:\/\/shop_images\/MEMORY_M_H20_0358.jpg","title":"Shop Heritage collection","title_fr":"la collection Héritage","link_url":"shopify:\/\/pages\/riverland-heritage-collection"}},"menu_promotion_small_KyRxnL":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Kids","dropdown_link_title_fr":"Enfants","image":"shopify:\/\/shop_images\/MEMORY-G_TDLR_1265.jpg","image_fr":"shopify:\/\/shop_images\/MEMORY-G_TDLR_1265.jpg","title":"Shop new arrivals","title_fr":"Magasiner les nouveautés","link_url":"shopify:\/\/collections\/kids-new-arrivals"}},"menu_promotion_small_MENrVe":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"kids","dropdown_link_title_fr":"Enfants","image":"shopify:\/\/shop_images\/MONCTON-G_TDLR_0319.jpg","image_fr":"shopify:\/\/shop_images\/MONCTON-G_TDLR_0319.jpg","title":"shop kids winter boots","title_fr":"bottes d’hiver pour enfants","link_url":"shopify:\/\/collections\/kids-winter-boots"}},"menu_promotion_small_XYHNpQ":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Accessories","dropdown_link_title_fr":"Accessoires","image":"shopify:\/\/shop_images\/ACCESSORIES_1510.jpg","image_fr":"shopify:\/\/shop_images\/ACCESSORIES_1510.jpg","title":"Women's winter accessories","title_fr":"accessoires d’hiver pour femmes","link_url":"shopify:\/\/collections\/womens-winter-accessories"}},"menu_promotion_small_LNWmXW":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Accessories","dropdown_link_title_fr":"Accessoires","image":"shopify:\/\/shop_images\/CALLY_HIVER_HAUTE_1384.jpg","image_fr":"shopify:\/\/shop_images\/CALLY_HIVER_HAUTE_1384.jpg","title":"shop women's handbags","title_fr":"sacs à main pour femmes","link_url":"shopify:\/\/collections\/accessories-womens-handbags"}},"menu_promotion_small_jhky7D":{"type":"menu-promotion-small","settings":{"dropdown_link_title":"Sale","dropdown_link_title_fr":"Soldes","image":"shopify:\/\/shop_images\/EN.gif","image_fr":"shopify:\/\/shop_images\/FR.gif","title":"Shop all sales","title_fr":"Magasiner tous les soldes","link_url":"shopify:\/\/pages\/sale"}}},"block_order":["menu_promotion_small_xGMMib","menu_promotion_small_U6EcqP","menu_promotion_small_w7rEYW","menu_promotion_small_JmLEBi","menu_promotion_small_ngUQVF","menu_promotion_small_xEDiDy","menu_promotion_small_KyRxnL","menu_promotion_small_MENrVe","menu_promotion_small_XYHNpQ","menu_promotion_small_LNWmXW","menu_promotion_small_jhky7D"],"settings":{"logo":"shopify:\/\/shop_images\/logo_yellow_150x_eadf4e34-cf81-4820-a387-de6c16edfa8d.svg","logo_img_width_int":175,"mobile_logo_img_width_int":100,"logo_h1":true,"enable_sticky":true,"enable_transparent":false,"transparent_color":"#ffffff","menu_linklist":"new-main-menu-symmetry","menu_layout":"inline-menu-center","nav_featured_link":"Sale","nav_featured_link_fr":"Soldes","menu_linklist_mobile":"new-main-menu-symmetry-dev","mobile_expand_with_entire_link":true,"enable_mobile_promo_carousel":true,"enable_nav_mob_products":false,"nav_mob_products_title":"Best Sellers","nav_mob_products_title_fr":"","nav_mob_products_collection":"","enable_search":true,"search_recommendations_title":"","search_recommendations_title_fr":"","search_recommendations_menu":"","icon_strategy":"icons_only","cart_icon":"bag"}},"store-messages":{"type":"store-messages","blocks":{"1601308104445":{"type":"message","settings":{"heading":"Visit us in-store for even more choice! Find a store","heading_fr":"","subheading":"","subheading_fr":"","link_url":"https:\/\/www.yellowshoes.com\/apps\/store-locator"}},"1601308125690":{"type":"message","settings":{"heading":"","heading_fr":"","subheading":"Free Click & Collect to US stores*","subheading_fr":"","link_url":""}},"1601308127822":{"type":"message","settings":{"heading":"","heading_fr":"","subheading":"Free and easy domestic returns","subheading_fr":"","link_url":""}}},"block_order":["1601308104445","1601308125690","1601308127822"],"disabled":true,"settings":{"head_not_home_only":false,"head_not_col_bg":"#f4f6f8","head_not_col_txt1":"#171717","head_not_col_txt2":"#4c4c4b","head_not_mob_show":true,"head_not_mob_text":"Free shipping on orders over $100","head_not_mob_text_fr":"","head_not_mob_url":""}}},"order":["blocks_FnmLyQ","announcement-bar","header","store-messages"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "blocks_FnmLyQ": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4a36a55_L97TxD": {
+          "type": "ai_gen_block_4a36a55",
+          "settings": {
+            "language": "en",
+            "header_en": "Black Friday Flash Sale",
+            "subheader_en": "50% OFF SELECT STYLES",
+            "expired_message_en": "",
+            "days_label_en": "Days",
+            "hours_label_en": "Hours",
+            "minutes_label_en": "Minutes",
+            "seconds_label_en": "Seconds",
+            "header_fr": "Vente éclair du Black Friday",
+            "subheader_fr": "50% DE RABAIS SUR SÉLECTION D’ARTICLES",
+            "expired_message_fr": "Cette offre est terminée.",
+            "days_label_fr": "Jours",
+            "hours_label_fr": "Heures",
+            "minutes_label_fr": "Minutes",
+            "seconds_label_fr": "Secondes",
+            "end_date": "2025-11-30",
+            "end_time": "23:59",
+            "enable_gradient": true,
+            "gradient_start": "#000000",
+            "gradient_middle": "#8b0000",
+            "gradient_end": "#c20000",
+            "gradient_angle": 90,
+            "text_color": "#ffffff",
+            "header_size": 22,
+            "subheader_size": 14,
+            "number_size": 28,
+            "label_size": 11
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4a36a55_L97TxD"
+      ],
+      "disabled": true,
+      "name": "Countdown timer",
+      "settings": {}
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_mLdP76": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "<strong>⚡ 50% OFF + Free Shipping ⚡</strong><a href=\"/collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles\" title=\"Black Friday & Cyber Monday Flash Sale – 50% Off Selected Styles\"><strong>Cyber Monday Flash Sale</strong></a>",
+            "text_fr": "⚡<strong> 50% Rabais + Livraison gratuite</strong> <strong>⚡</strong><a href=\"/collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles\" title=\"Black Friday & Cyber Monday Flash Sale – 50% Off Selected Styles\"><strong>Vente éclair du Cyber lundi</strong></a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": true,
+            "hide_on_end": false,
+            "end_date": "2025-12-02",
+            "end_time": "09:00",
+            "number_font": "heading",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_M9n4tM": {
+          "type": "announcement",
+          "settings": {
+            "text": "🚚 <strong>Free shipping</strong> on all orders",
+            "text_fr": "🚚 Livraison gratuite sur tout",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": true,
+            "hide_on_end": false,
+            "end_date": "2025-12-13",
+            "end_time": "23:59",
+            "number_font": "heading",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#9ecc3b",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_Jw8kcf": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Holiday Gift Guide</strong></a> — Shop now & spread the cheer",
+            "text_fr": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Guide-cadeaux des Fêtes</strong></a> — Magasiner ici",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": false,
+            "hide_on_end": false,
+            "end_date": "2024-09-03",
+            "end_time": "08:30",
+            "number_font": "base",
+            "countdown_separator": "box",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_7Vqrkz": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "🤍 New! <strong>Made in Quebec</strong> Collection — <a href=\"/collections/made-in-quebec-collection\" title=\"Made in Quebec Collection\">Shop Now</a>",
+            "text_fr": "🤍 Nouveau! <strong>Fabriqué au Québec - </strong><a href=\"/collections/made-in-quebec-collection\" title=\"Made in Quebec Collection\">Magasiner ici</a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": false,
+            "hide_on_end": false,
+            "end_date": "2025-04-27",
+            "end_time": "23:59",
+            "number_font": "base",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_TaPzKD": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "✏️ <strong>10% Off</strong> for Students & Teachers — <a href=\"/pages/student-teacher-discount\" title=\"Student Teacher Discount\"><strong>Apply now</strong></a>",
+            "text_fr": "Étudiants & enseignants : <strong>10% de rabais</strong> – <a href=\"/pages/student-teacher-discount\" title=\"Student Teacher Discount\"><strong>Faites votre demande</strong></a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": true,
+            "hide_on_end": false,
+            "end_date": "2025-09-28",
+            "end_time": "23:59",
+            "number_font": "heading",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#c10101",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_qiQWqx": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "🐑 New! Riverland Heritage – <a href=\"/pages/riverland-heritage-collection\" title=\"Riverland heritage collection\"><strong>Shop Now</strong></a>",
+            "text_fr": "🐑 Nouveau ! Riverland Heritage – <a href=\"/pages/riverland-heritage-collection\" title=\"Riverland heritage collection\"><strong>Magasiner</strong></a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": false,
+            "hide_on_end": false,
+            "end_date": "",
+            "end_time": "",
+            "number_font": "base",
+            "countdown_separator": "box",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_F7egfq": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "🛒 Shop now, pay later with <a href=\"https://www.yellowshoes.com/pages/new-arrivals-for-the-entire-family?page=1\" title=\"https://www.yellowshoes.com/pages/new-arrivals-for-the-entire-family?page=1\"><strong>Sezzle</strong></a>",
+            "text_fr": "🛒 Achetez maintenant, payez plus tard avec <a href=\"https://www.yellowshoes.com/fr/pages/new-arrivals-for-the-entire-family?page=1\" title=\"https://www.yellowshoes.com/fr/pages/new-arrivals-for-the-entire-family?page=1\"><strong>Sezzle</strong></a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": false,
+            "hide_on_end": false,
+            "end_date": "",
+            "end_time": "",
+            "number_font": "base",
+            "countdown_separator": "box",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement-1": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Visit us in-store for even more choice! <a href=\"https://www.yellowshoes.com/apps/store-locator\" title=\"https://www.yellowshoes.com/apps/store-locator\"><strong>Find a store</strong></a>",
+            "text_fr": "Encore plus de choix en boutique ! <a href=\"https://www.yellowshoes.com/fr/apps/store-locator\" title=\"Trouver un magasin\"><strong>Trouver un magasin</strong></a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": false,
+            "hide_on_end": false,
+            "end_date": "",
+            "end_time": "",
+            "number_font": "base",
+            "countdown_separator": "box",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_mLdP76",
+        "announcement_M9n4tM",
+        "announcement_Jw8kcf",
+        "announcement_7Vqrkz",
+        "announcement_TaPzKD",
+        "announcement_qiQWqx",
+        "announcement_F7egfq",
+        "announcement-1"
+      ],
+      "settings": {
+        "message_font_size": 14,
+        "announcement_bar_col": "#000000",
+        "announcement_bar_gradient": "linear-gradient(57deg, rgba(35, 35, 35, 1) 53%, rgba(194, 0, 0, 1) 97%)",
+        "announcement_text_col": "#ffffff",
+        "show_social_icons": true,
+        "menu": "",
+        "enable_country_selector": true,
+        "enable_language_selector": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menu_promotion_small_xGMMib": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "New",
+            "dropdown_link_title_fr": "Nouveautés",
+            "image": "shopify://shop_images/MEMORY_H20_0407.jpg",
+            "image_fr": "shopify://shop_images/MEMORY_H20_0407.jpg",
+            "title": "SHOP THE HERITAGE COLLECTION",
+            "title_fr": "Magasiner la COLLECTION HéRITAGE",
+            "link_url": "shopify://pages/riverland-heritage-collection"
+          }
+        },
+        "menu_promotion_small_U6EcqP": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "New",
+            "dropdown_link_title_fr": "Nouveautés",
+            "image": "shopify://shop_images/MANUFACTURED_IN_QUEBEC.png",
+            "image_fr": "shopify://shop_images/FABRIQUE_AU_QUEBEC.png",
+            "title": "Made in Quebec Collection",
+            "title_fr": "Collection Fabriquée au Québec",
+            "link_url": "shopify://collections/made-in-quebec-collection"
+          }
+        },
+        "menu_promotion_small_w7rEYW": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Women's",
+            "dropdown_link_title_fr": "Femmes",
+            "image": "shopify://shop_images/1993_PRESLEY_0174.jpg",
+            "image_fr": "shopify://shop_images/1993_PRESLEY_0174.jpg",
+            "title": "Shop BOOTS",
+            "title_fr": "magasiner bottillons",
+            "link_url": "shopify://collections/womens-boots"
+          }
+        },
+        "menu_promotion_small_JmLEBi": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Women's",
+            "dropdown_link_title_fr": "Femmes",
+            "image": "shopify://shop_images/ARIANE_9808.jpg",
+            "image_fr": "shopify://shop_images/ARIANE_9808.jpg",
+            "title": "SHOP tall boots",
+            "title_fr": "Magasiner bottes hautes",
+            "link_url": "shopify://collections/womens-tall-light-boots"
+          }
+        },
+        "menu_promotion_small_ngUQVF": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Men's",
+            "dropdown_link_title_fr": "Hommes",
+            "image": "shopify://shop_images/HIVERNAL_H20_0419.jpg",
+            "image_fr": "shopify://shop_images/HIVERNAL_H20_0419.jpg",
+            "title": "Shop boots for men",
+            "title_fr": "magasiner bottes pour hommes",
+            "link_url": "shopify://collections/mens-boots"
+          }
+        },
+        "menu_promotion_small_xEDiDy": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Men's",
+            "dropdown_link_title_fr": "Hommes",
+            "image": "shopify://shop_images/MEMORY_M_H20_0358.jpg",
+            "image_fr": "shopify://shop_images/MEMORY_M_H20_0358.jpg",
+            "title": "Shop Heritage collection",
+            "title_fr": "la collection Héritage",
+            "link_url": "shopify://pages/riverland-heritage-collection"
+          }
+        },
+        "menu_promotion_small_KyRxnL": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Kids",
+            "dropdown_link_title_fr": "Enfants",
+            "image": "shopify://shop_images/MEMORY-G_TDLR_1265.jpg",
+            "image_fr": "shopify://shop_images/MEMORY-G_TDLR_1265.jpg",
+            "title": "Shop new arrivals",
+            "title_fr": "Magasiner les nouveautés",
+            "link_url": "shopify://collections/kids-new-arrivals"
+          }
+        },
+        "menu_promotion_small_MENrVe": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "kids",
+            "dropdown_link_title_fr": "Enfants",
+            "image": "shopify://shop_images/MONCTON-G_TDLR_0319.jpg",
+            "image_fr": "shopify://shop_images/MONCTON-G_TDLR_0319.jpg",
+            "title": "shop kids winter boots",
+            "title_fr": "bottes d’hiver pour enfants",
+            "link_url": "shopify://collections/kids-winter-boots"
+          }
+        },
+        "menu_promotion_small_XYHNpQ": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Accessories",
+            "dropdown_link_title_fr": "Accessoires",
+            "image": "shopify://shop_images/ACCESSORIES_1510.jpg",
+            "image_fr": "shopify://shop_images/ACCESSORIES_1510.jpg",
+            "title": "Women's winter accessories",
+            "title_fr": "accessoires d’hiver pour femmes",
+            "link_url": "shopify://collections/womens-winter-accessories"
+          }
+        },
+        "menu_promotion_small_LNWmXW": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Accessories",
+            "dropdown_link_title_fr": "Accessoires",
+            "image": "shopify://shop_images/CALLY_HIVER_HAUTE_1384.jpg",
+            "image_fr": "shopify://shop_images/CALLY_HIVER_HAUTE_1384.jpg",
+            "title": "shop women's handbags",
+            "title_fr": "sacs à main pour femmes",
+            "link_url": "shopify://collections/accessories-womens-handbags"
+          }
+        },
+        "menu_promotion_small_jhky7D": {
+          "type": "menu-promotion-small",
+          "settings": {
+            "dropdown_link_title": "Sale",
+            "dropdown_link_title_fr": "Soldes",
+            "image": "shopify://shop_images/EN.gif",
+            "image_fr": "shopify://shop_images/FR.gif",
+            "title": "Shop all sales",
+            "title_fr": "Magasiner tous les soldes",
+            "link_url": "shopify://pages/sale"
+          }
+        }
+      },
+      "block_order": [
+        "menu_promotion_small_xGMMib",
+        "menu_promotion_small_U6EcqP",
+        "menu_promotion_small_w7rEYW",
+        "menu_promotion_small_JmLEBi",
+        "menu_promotion_small_ngUQVF",
+        "menu_promotion_small_xEDiDy",
+        "menu_promotion_small_KyRxnL",
+        "menu_promotion_small_MENrVe",
+        "menu_promotion_small_XYHNpQ",
+        "menu_promotion_small_LNWmXW",
+        "menu_promotion_small_jhky7D"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/logo_yellow_150x_eadf4e34-cf81-4820-a387-de6c16edfa8d.svg",
+        "logo_img_width_int": 175,
+        "mobile_logo_img_width_int": 100,
+        "logo_h1": true,
+        "enable_sticky": true,
+        "enable_transparent": false,
+        "transparent_color": "#ffffff",
+        "menu_linklist": "new-main-menu-symmetry",
+        "menu_layout": "inline-menu-center",
+        "nav_featured_link": "Sale",
+        "nav_featured_link_fr": "Soldes",
+        "menu_linklist_mobile": "new-main-menu-symmetry-dev",
+        "mobile_expand_with_entire_link": true,
+        "enable_mobile_promo_carousel": true,
+        "enable_nav_mob_products": false,
+        "nav_mob_products_title": "Best Sellers",
+        "nav_mob_products_title_fr": "",
+        "nav_mob_products_collection": "",
+        "enable_search": true,
+        "search_recommendations_title": "",
+        "search_recommendations_title_fr": "",
+        "search_recommendations_menu": "",
+        "icon_strategy": "icons_only",
+        "cart_icon": "bag"
+      }
+    },
+    "store-messages": {
+      "type": "store-messages",
+      "blocks": {
+        "1601308104445": {
+          "type": "message",
+          "settings": {
+            "heading": "Visit us in-store for even more choice! Find a store",
+            "heading_fr": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "link_url": "https://www.yellowshoes.com/apps/store-locator"
+          }
+        },
+        "1601308125690": {
+          "type": "message",
+          "settings": {
+            "heading": "",
+            "heading_fr": "",
+            "subheading": "Free Click & Collect to US stores*",
+            "subheading_fr": "",
+            "link_url": ""
+          }
+        },
+        "1601308127822": {
+          "type": "message",
+          "settings": {
+            "heading": "",
+            "heading_fr": "",
+            "subheading": "Free and easy domestic returns",
+            "subheading_fr": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "1601308104445",
+        "1601308125690",
+        "1601308127822"
+      ],
+      "disabled": true,
+      "settings": {
+        "head_not_home_only": false,
+        "head_not_col_bg": "#f4f6f8",
+        "head_not_col_txt1": "#171717",
+        "head_not_col_txt2": "#4c4c4b",
+        "head_not_mob_show": true,
+        "head_not_mob_text": "Free shipping on orders over $100",
+        "head_not_mob_text_fr": "",
+        "head_not_mob_url": ""
+      }
+    }
+  },
+  "order": [
+    "blocks_FnmLyQ",
+    "announcement-bar",
+    "header",
+    "store-messages"
+  ]
+}
