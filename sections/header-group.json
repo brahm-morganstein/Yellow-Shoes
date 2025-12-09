@@ -247,7 +247,7 @@
       "settings": {
         "message_font_size": 14,
         "announcement_bar_col": "#000000",
-        "announcement_bar_gradient": "linear-gradient(57deg, rgba(35, 35, 35, 1) 53%, rgba(194, 0, 0, 1) 97%)",
+        "announcement_bar_gradient": "linear-gradient(57deg, rgba(35, 35, 35, 1) 53%, rgba(2, 38, 127, 1) 97%)",
         "announcement_text_col": "#ffffff",
         "show_social_icons": true,
         "menu": "",
