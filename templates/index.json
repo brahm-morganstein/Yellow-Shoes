@@ -728,8 +728,8 @@
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
       "settings": {
-        "title": "Shop Winter Sales! Up to 75% Off",
-        "title_fr": "Soldes d'hiver! Jusqu’à 75% de rabais",
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
         "main-collection-url": "shopify://pages/sale",
         "main-collection-url-fr": "shopify://pages/sale",
         "womens-collection": "womens-sale",
