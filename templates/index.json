@@ -536,7 +536,6 @@
     },
     "spacer_HETqKm": {
       "type": "spacer",
-      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
