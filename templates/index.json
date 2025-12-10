@@ -686,13 +686,13 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "Shop Holiday Sales! Up to 75% Off Select Styles",
-            "text_fr": "Soldes des Fêtes! Jusqu’à 75% de rabais",
+            "text": "Shop Winter Sales! Up to 75% Off",
+            "text_fr": "Soldes d'hiver! Jusqu’à 75% de rabais",
             "color": "#ffffff",
             "link": "shopify://pages/sale",
             "use_h1": false,
             "stencil_all_text": false,
-            "stencil_text": "Up to 75% Off Select Styles",
+            "stencil_text": "Up to 75% Off",
             "stencil_text_fr": "Jusqu’à 75% de rabais"
           }
         },
