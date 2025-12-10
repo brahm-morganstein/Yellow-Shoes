@@ -723,6 +723,29 @@
         "space": 30
       }
     },
+    "meg_featured_collection_4jUYY7": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
+      }
+    },
     "spacer_knGPxK": {
       "type": "spacer",
       "name": "Spacer",
@@ -1201,6 +1224,7 @@
     "background_video_6VW4tD",
     "multi_column_GqgGEh",
     "scrolling_banner_g3CU8i",
+    "meg_featured_collection_4jUYY7",
     "spacer_knGPxK",
     "shop_the_look_GCmEwM",
     "multi_column_ydD4dr",
