@@ -512,39 +512,19 @@
         "space": 30
       }
     },
-    "featured_collection_iK8Aa6": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "Featured collection",
-      "settings": {
-        "title": "50% off - Black Friday Flash Sale",
-        "title_fr": "50% de rabais – Vente éclair du Black Friday",
-        "collection": "black-friday-cyber-monday-flash-sale-50-off-selected-styles",
-        "main-collection-url": "shopify://collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles",
-        "main-collection-url-fr": "shopify://collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
-    "meg_featured_collection_HtjHDq": {
+    "meg_featured_collection_WpCRqR": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
       "settings": {
-        "title": "Gift the perfect pair this season",
-        "title_fr": "Offrez la paire parfaite pour la saison",
-        "main-collection-url": "shopify://pages/holiday-gift-guides",
-        "main-collection-url-fr": "shopify://pages/holiday-gift-guides",
-        "womens-collection": "womens-new-arrivals",
-        "mens-collection": "mens-new-arrivals",
-        "girls-collection": "girls-new-arrivals",
-        "boys-collection": "boys-new-arrivals",
-        "accessories-collection": "new-arrivals-accessories",
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
         "show_vendor": false,
         "enable_carousel": true,
         "grid": 5,
@@ -553,106 +533,6 @@
         "show_view_all": true,
         "full_width": true,
         "has_subcategories": true
-      }
-    },
-    "spacer_HETqKm": {
-      "type": "spacer",
-      "disabled": true,
-      "name": "Spacer",
-      "settings": {
-        "spacer_height": 40,
-        "section_alternate_background": "#ffffff"
-      }
-    },
-    "background_video_6VW4tD": {
-      "type": "background-video",
-      "blocks": {
-        "subheading_D9b7qN": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Tell your story",
-            "subheading_fr": ""
-          }
-        },
-        "heading_RCmigM": {
-          "type": "heading",
-          "settings": {
-            "title": "THE HOLIDAY GIFT GUIDE",
-            "title_fr": "GUIDE CADEAUX DES FÊTES",
-            "heading_max_width": 15,
-            "title_size": 84,
-            "title_font_family": "default",
-            "title_font_weight": "regular",
-            "title_font_style": "regular",
-            "title_size_mobile": 32,
-            "use_h1": false
-          }
-        },
-        "text_FpwPMb": {
-          "type": "text",
-          "settings": {
-            "text": "<p>FOR EVERYONE ON YOUR LIST</p>",
-            "text_fr": "<p>POUR TOUT LE MONDE SUR VOTRE LISTE</p>",
-            "text_color": "#ffffff",
-            "enlarge_text": true,
-            "text_font_family": "default",
-            "text_font_weight": "regular",
-            "text_font_style": "regular"
-          }
-        },
-        "button_7E7NGg": {
-          "type": "button",
-          "settings": {
-            "min_buttons_width": 160,
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "button_popup": "",
-            "button_popup_fr": "",
-            "is_catalogue_button": false,
-            "open_catalogue_new_window": false,
-            "enable_catalogue_controls": false,
-            "button_link": "shopify://pages/holiday-gift-guides",
-            "button_link_fr": "shopify://pages/holiday-gift-guides",
-            "button_color_transparent": false,
-            "button_color": "#ffffff",
-            "button_text_color": "#000000",
-            "button_color_hover": "#c20000",
-            "button_text_color_hover": "#ffffff",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_D9b7qN",
-        "heading_RCmigM",
-        "text_FpwPMb",
-        "button_7E7NGg"
-      ],
-      "disabled": true,
-      "name": "Background video",
-      "settings": {
-        "video_shopify": "shopify://files/videos/HolidayBanner - Video.mp4",
-        "video_shopify_fr": "shopify://files/videos/HolidayBanner - Video.mp4",
-        "video_external": "",
-        "video_external_fr": "https://www.youtube.com/watch?",
-        "video_description": "",
-        "video_description_fr": "",
-        "placeholder_image": "shopify://shop_images/VIDEO-BANNER---GIFT-GIUDE-DESKTOIP.jpg",
-        "placeholder_image_fr": "shopify://shop_images/VIDEO-BANNER---GIFT-GIUDE-DESKTOIP.jpg",
-        "video_shopify_mobile": "shopify://files/videos/HolidayBanner - Video.mp4",
-        "video_shopify_mobile_fr": "shopify://files/videos/HolidayBanner - Video.mp4",
-        "video_external_mobile": "",
-        "video_external_mobile_fr": "",
-        "video_description_mobile": "",
-        "video_description_mobile_fr": "",
-        "placeholder_image_mobile": "shopify://shop_images/VIDEO-BANNER---GIFT-GIUDE-DESKTOIP.jpg",
-        "placeholder_image_mobile_fr": "shopify://shop_images/VIDEO-BANNER---GIFT-GIUDE-DESKTOIP.jpg",
-        "text_alignment": "center center",
-        "height_desktop": 600,
-        "height_mobile": 500,
-        "full_width": true,
-        "overlay_style": "shadow"
       }
     },
     "multi_column_GqgGEh": {
@@ -724,19 +604,19 @@
         "color_scheme": "default"
       }
     },
-    "meg_featured_collection_WpCRqR": {
+    "meg_featured_collection_HtjHDq": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
       "settings": {
-        "title": "Hurry, limited time only!",
-        "title_fr": "Dépêchez-vous, offre limitée!",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
+        "title": "Gift the perfect pair this season",
+        "title_fr": "Offrez la paire parfaite pour la saison",
+        "main-collection-url": "shopify://pages/holiday-gift-guides",
+        "main-collection-url-fr": "shopify://pages/holiday-gift-guides",
+        "womens-collection": "womens-new-arrivals",
+        "mens-collection": "mens-new-arrivals",
+        "girls-collection": "girls-new-arrivals",
+        "boys-collection": "boys-new-arrivals",
+        "accessories-collection": "new-arrivals-accessories",
         "show_vendor": false,
         "enable_carousel": true,
         "grid": 5,
@@ -1221,9 +1101,6 @@
     "compact_messages_4thNGK",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_WpCRqR",
-    "featured_collection_iK8Aa6",
-    "spacer_HETqKm",
-    "background_video_6VW4tD",
     "multi_column_GqgGEh",
     "meg_featured_collection_HtjHDq",
     "spacer_knGPxK",
