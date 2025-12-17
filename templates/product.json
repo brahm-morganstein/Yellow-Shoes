@@ -78,13 +78,13 @@
         "countdown_A9NMpp": {
           "type": "countdown",
           "settings": {
-            "heading": "Free shipping - limited time only",
-            "heading_fr": "Livraison gratuite - temps limité",
-            "end_date": "2025-10-19",
-            "end_time": "23:59",
+            "heading": "Free shipping - Limited time only",
+            "heading_fr": "Livraison gratuite - Temps limité",
+            "end_date": "2025-12-21",
+            "end_time": "18:00",
             "end_text": "",
             "hide_on_end": true,
-            "box_color": "#db2128",
+            "box_color": "#3ea36a",
             "text_color": "#ffffff",
             "number_font": "base",
             "divider_type": "colon",
