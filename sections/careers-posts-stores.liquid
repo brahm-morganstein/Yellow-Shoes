@@ -110,6 +110,8 @@
     }
 </style>
 
+<script src="{{ 'jobs.js' | asset_url }}"/>
+
 <div class="container{% unless section.settings.full_width %} container--reading-width{% endunless %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
   {%- if section.settings.show_page_title -%}
     <div class="page-header">
