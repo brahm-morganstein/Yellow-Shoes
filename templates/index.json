@@ -474,8 +474,8 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "Shop Winter Sales! Up to 75% Off",
-            "text_fr": "Soldes d'hiver! Jusqu’à 75% de rabais",
+            "text": "Boxing Day Sales! Up to 75% Off",
+            "text_fr": "Soldes du Boxing Day! Jusqu’à 75% de rabais",
             "color": "#ffffff",
             "link": "shopify://pages/sale",
             "use_h1": false,
