@@ -105,7 +105,7 @@
           "type": "announcement",
           "settings": {
             "text": "🎁 <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Boxing Day Deals </strong></a>- Shop & save!",
-            "text_fr": "🎁<a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Soldes du Boxing Day</strong></a> - À ne pas manquer",
+            "text_fr": "🎁 <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Soldes du Boxing Day</strong></a> - À ne pas manquer",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",
