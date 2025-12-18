@@ -171,7 +171,29 @@
       </div>
   </div>  
 </div>
+<script>
+  $(document).ready(function(){
+    let jobsHtml = '';
 
+    for(let i = 0; i < jobs.public_requests; i++) {
+      let jobHtml = `
+      <tr class="career-city">
+        <td>
+          <span class="opportunity-location">Store ${jobs.public_requests[i].client}</span>
+          <br>
+          <a data-fancybox="" data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="//yellow.bamboohr.com/careers/5005">
+            Assistant(e) gérant(e) (1401, Boulevard Talbot Chicoutimi, Québec G7H 5N6)
+          </a>
+        </td>
+        <td>
+          Chicoutimi, QC
+        </td>
+      </tr>
+      `
+    }
+
+  })
+</script>
 
 {% schema %}
 {
