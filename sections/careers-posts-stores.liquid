@@ -110,7 +110,7 @@
     }
 </style>
 
-<script src="{{ 'jobs.js' | asset_url }}"/>
+<script src="{{ 'jobs.js' | asset_url }}" defer></script>
 
 <div class="container{% unless section.settings.full_width %} container--reading-width{% endunless %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
   {%- if section.settings.show_page_title -%}
