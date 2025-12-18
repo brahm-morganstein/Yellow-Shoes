@@ -181,7 +181,7 @@
         <td>
           <span class="opportunity-location">Store ${jobs.public_requests[i].client}</span>
           <br>
-          <a data-fancybox="" data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="${jobs.public_requests[i].job_url}${language == 'en' && 'l=en'}">
+          <a data-fancybox="" data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="${jobs.public_requests[i].job_url}${language == 'en' && '&l=en'}">
             ${language == 'en ' ? jobs.public_requests[i].fr_title : jobs.public_requests[i].en_title} (${jobs.public_requests[i].location?.line1}, ${jobs.public_requests[i].location?.state} ${jobs.public_requests[i].location?.zip})
           </a>
         </td>
