@@ -1080,13 +1080,13 @@ function initCookieBanner() {
   
   //trigger custom gtag consent event
   if(window.Shopify.customerPrivacy.marketingAllowed()){
-    dataLayer.push({
+    {% comment %} dataLayer.push({
       event: "didomi-consent",
       didomiVendorsConsent: "iab:238,didomi:google,c:cloudflare,c:googlea" +
                         "na-4TXnJigR,c:metaads-6qFLjR3N,c:klaviyo-MQw" +
                         "7tgJM,c:sezzle-LaNLy4PJ,c:kimonix-3pirF9wQ,c" +
                         ":pinterest,"
-    })
+    }) {% endcomment %}
 
     //Show Zendesk Dialog
     setTimeout(function(){
@@ -1094,10 +1094,10 @@ function initCookieBanner() {
     },2000)
     
   }else{
-    dataLayer.push({
+    {% comment %} dataLayer.push({
       event: "didomi-consent",
       didomiVendorsConsent: "didomi:google,c:googleana-4TXnJigR,c:metaads-6qFLjR3N"
-    })    
+    })     {% endcomment %}
   }
 }
 
