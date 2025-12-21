@@ -611,6 +611,49 @@
         "overlay_style": "shadow"
       }
     },
+    "scrolling_banner_g3CU8i": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_3DkM3T": {
+          "type": "text",
+          "settings": {
+            "text": "Shop Winter Sales! Up to 75% Off",
+            "text_fr": "Soldes d'hiver! Jusqu’à 75% de rabais",
+            "color": "#ffffff",
+            "link": "shopify://pages/sale",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": "Up to 75% Off",
+            "stencil_text_fr": "Jusqu’à 75% de rabais"
+          }
+        },
+        "button_T4CMEb": {
+          "type": "button",
+          "settings": {
+            "text": "Shop now",
+            "text_fr": "Magasiner",
+            "link": "shopify://pages/sale",
+            "button_style": "custom",
+            "color_bg": "#b41921",
+            "color_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "text_3DkM3T",
+        "button_T4CMEb"
+      ],
+      "settings": {
+        "full_width": true,
+        "color_scheme": "2",
+        "text_size": 56,
+        "vertical_padding": 0,
+        "speed": 31,
+        "direction": "left",
+        "font": "base",
+        "space": 30
+      }
+    },
     "multi_column_GqgGEh": {
       "type": "multi-column",
       "blocks": {
@@ -678,49 +721,6 @@
         "text_alignment": "center",
         "button_style": "secondary",
         "color_scheme": "default"
-      }
-    },
-    "scrolling_banner_g3CU8i": {
-      "type": "scrolling-banner",
-      "blocks": {
-        "text_3DkM3T": {
-          "type": "text",
-          "settings": {
-            "text": "Shop Winter Sales! Up to 75% Off",
-            "text_fr": "Soldes d'hiver! Jusqu’à 75% de rabais",
-            "color": "#ffffff",
-            "link": "shopify://pages/sale",
-            "use_h1": false,
-            "stencil_all_text": false,
-            "stencil_text": "Up to 75% Off",
-            "stencil_text_fr": "Jusqu’à 75% de rabais"
-          }
-        },
-        "button_T4CMEb": {
-          "type": "button",
-          "settings": {
-            "text": "Shop now",
-            "text_fr": "Magasiner",
-            "link": "shopify://pages/sale",
-            "button_style": "custom",
-            "color_bg": "#b41921",
-            "color_text": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "text_3DkM3T",
-        "button_T4CMEb"
-      ],
-      "settings": {
-        "full_width": true,
-        "color_scheme": "2",
-        "text_size": 56,
-        "vertical_padding": 0,
-        "speed": 31,
-        "direction": "left",
-        "font": "base",
-        "space": 30
       }
     },
     "meg_featured_collection_mzBMmP": {
@@ -1218,13 +1218,13 @@
     "slideshow_UmwmBT",
     "background_video_bNKRBe",
     "compact_messages_4thNGK",
+    "scrolling_banner_g3CU8i",
+    "meg_featured_collection_mzBMmP",
     "featured_collection_iK8Aa6",
-    "meg_featured_collection_HtjHDq",
     "spacer_HETqKm",
     "background_video_6VW4tD",
     "multi_column_GqgGEh",
-    "scrolling_banner_g3CU8i",
-    "meg_featured_collection_mzBMmP",
+    "meg_featured_collection_HtjHDq",
     "spacer_knGPxK",
     "shop_the_look_GCmEwM",
     "multi_column_ydD4dr",
