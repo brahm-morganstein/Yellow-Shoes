@@ -474,13 +474,13 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "Hurry, Limited Time Only! Up to 75% Off",
-            "text_fr": "Dépêchez-vous, offre limitée! Jusqu’à 75% de rabais",
+            "text": "Don’t miss out! Up to 75% off",
+            "text_fr": "À ne pas manquer! Jusqu’à 75% de rabais",
             "color": "#ffffff",
             "link": "shopify://pages/sale",
             "use_h1": false,
             "stencil_all_text": false,
-            "stencil_text": "Up to 75% Off",
+            "stencil_text": "Up to 75% off",
             "stencil_text_fr": "Jusqu’à 75% de rabais"
           }
         },
