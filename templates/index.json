@@ -165,8 +165,8 @@
             "button_url_4_fr": "shopify://collections/new-arrivals-accessories",
             "text_alignment": "bottom center",
             "show_countdown": true,
-            "end_date": "2025-12-21",
-            "end_time": "23:59",
+            "end_date": "2025-12-22",
+            "end_time": "08:59",
             "end_text": "",
             "end_text_fr": "",
             "hide_on_end": true,
@@ -468,16 +468,62 @@
         "head_not_mob_url": "shopify://pages/student-teacher-discount"
       }
     },
-    "featured_collection_iK8Aa6": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "Featured collection",
+    "scrolling_banner_g3CU8i": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_3DkM3T": {
+          "type": "text",
+          "settings": {
+            "text": "Shop Winter Sales! Up to 75% Off",
+            "text_fr": "Soldes d'hiver! Jusqu’à 75% de rabais",
+            "color": "#ffffff",
+            "link": "shopify://pages/sale",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": "Up to 75% Off",
+            "stencil_text_fr": "Jusqu’à 75% de rabais"
+          }
+        },
+        "button_T4CMEb": {
+          "type": "button",
+          "settings": {
+            "text": "Shop now",
+            "text_fr": "Magasiner",
+            "link": "shopify://pages/sale",
+            "button_style": "custom",
+            "color_bg": "#b41921",
+            "color_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "text_3DkM3T",
+        "button_T4CMEb"
+      ],
       "settings": {
-        "title": "50% off - Black Friday Flash Sale",
-        "title_fr": "50% de rabais – Vente éclair du Black Friday",
-        "collection": "black-friday-cyber-monday-flash-sale-50-off-selected-styles",
-        "main-collection-url": "shopify://collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles",
-        "main-collection-url-fr": "shopify://collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles",
+        "full_width": true,
+        "color_scheme": "2",
+        "text_size": 56,
+        "vertical_padding": 0,
+        "speed": 31,
+        "direction": "left",
+        "font": "base",
+        "space": 30
+      }
+    },
+    "meg_featured_collection_mzBMmP": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
         "show_vendor": false,
         "enable_carousel": true,
         "grid": 5,
@@ -488,19 +534,16 @@
         "has_subcategories": true
       }
     },
-    "meg_featured_collection_HtjHDq": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
+    "featured_collection_iK8Aa6": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "Featured collection",
       "settings": {
-        "title": "Gift the perfect pair this season",
-        "title_fr": "Offrez la paire parfaite pour la saison",
-        "main-collection-url": "shopify://pages/holiday-gift-guides",
-        "main-collection-url-fr": "shopify://pages/holiday-gift-guides",
-        "womens-collection": "womens-new-arrivals",
-        "mens-collection": "mens-new-arrivals",
-        "girls-collection": "girls-new-arrivals",
-        "boys-collection": "boys-new-arrivals",
-        "accessories-collection": "new-arrivals-accessories",
+        "title": "50% off - Black Friday Flash Sale",
+        "title_fr": "50% de rabais – Vente éclair du Black Friday",
+        "collection": "black-friday-cyber-monday-flash-sale-50-off-selected-styles",
+        "main-collection-url": "shopify://collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles",
+        "main-collection-url-fr": "shopify://collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles",
         "show_vendor": false,
         "enable_carousel": true,
         "grid": 5,
@@ -611,49 +654,6 @@
         "overlay_style": "shadow"
       }
     },
-    "scrolling_banner_g3CU8i": {
-      "type": "scrolling-banner",
-      "blocks": {
-        "text_3DkM3T": {
-          "type": "text",
-          "settings": {
-            "text": "Shop Winter Sales! Up to 75% Off",
-            "text_fr": "Soldes d'hiver! Jusqu’à 75% de rabais",
-            "color": "#ffffff",
-            "link": "shopify://pages/sale",
-            "use_h1": false,
-            "stencil_all_text": false,
-            "stencil_text": "Up to 75% Off",
-            "stencil_text_fr": "Jusqu’à 75% de rabais"
-          }
-        },
-        "button_T4CMEb": {
-          "type": "button",
-          "settings": {
-            "text": "Shop now",
-            "text_fr": "Magasiner",
-            "link": "shopify://pages/sale",
-            "button_style": "custom",
-            "color_bg": "#b41921",
-            "color_text": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "text_3DkM3T",
-        "button_T4CMEb"
-      ],
-      "settings": {
-        "full_width": true,
-        "color_scheme": "2",
-        "text_size": 56,
-        "vertical_padding": 0,
-        "speed": 31,
-        "direction": "left",
-        "font": "base",
-        "space": 30
-      }
-    },
     "multi_column_GqgGEh": {
       "type": "multi-column",
       "blocks": {
@@ -723,19 +723,19 @@
         "color_scheme": "default"
       }
     },
-    "meg_featured_collection_mzBMmP": {
+    "meg_featured_collection_HtjHDq": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
       "settings": {
-        "title": "Hurry, limited time only!",
-        "title_fr": "Dépêchez-vous, offre limitée!",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
+        "title": "Gift the perfect pair this season",
+        "title_fr": "Offrez la paire parfaite pour la saison",
+        "main-collection-url": "shopify://pages/holiday-gift-guides",
+        "main-collection-url-fr": "shopify://pages/holiday-gift-guides",
+        "womens-collection": "womens-new-arrivals",
+        "mens-collection": "mens-new-arrivals",
+        "girls-collection": "girls-new-arrivals",
+        "boys-collection": "boys-new-arrivals",
+        "accessories-collection": "new-arrivals-accessories",
         "show_vendor": false,
         "enable_carousel": true,
         "grid": 5,
