@@ -143,7 +143,7 @@
             "button_text_color_3": "#000000",
             "button_background_color_hover_3": "#000000",
             "button_text_color_hover_3": "#ffffff",
-            "is_catalogue_button_3": true,
+            "is_catalogue_button_3": false,
             "open_catalogue_new_window_3": true,
             "enable_catalogue_controls_3": false,
             "button_url_3": "shopify://collections/kids-sale",
