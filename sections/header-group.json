@@ -103,6 +103,7 @@
         },
         "announcement_Jw8kcf": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Holiday Gift Guide</strong></a> — Shop now & spread the cheer",
             "text_fr": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Guide-cadeaux des Fêtes</strong></a> — Magasiner ici",
