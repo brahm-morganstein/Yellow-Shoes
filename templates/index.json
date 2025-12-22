@@ -195,6 +195,129 @@
         "accessibility_info": ""
       }
     },
+    "compact_messages_4thNGK": {
+      "type": "compact-messages",
+      "blocks": {
+        "message_NgjBHx": {
+          "type": "message",
+          "settings": {
+            "heading": "FAST SHIPPING",
+            "heading_fr": "LIVRAISON RAPIDE",
+            "subheading": "Free shipping on order over $85",
+            "subheading_fr": "Livraison gratuite dès 85$",
+            "link_url": ""
+          }
+        },
+        "message_6FNRK7": {
+          "type": "message",
+          "settings": {
+            "heading": "PROUDLY CANADIAN",
+            "heading_fr": "FIÈREMENT QUÉBÉCOIS",
+            "subheading": "Serving families since 1916",
+            "subheading_fr": "Au service des familles depuis 1916",
+            "link_url": ""
+          }
+        },
+        "message_gjP3ek": {
+          "type": "message",
+          "settings": {
+            "heading": "Student & Teacher Discount",
+            "heading_fr": "10% Rabais Étudiants & Enseignants",
+            "subheading": "Show valid ID and enjoy 10% off your purchase",
+            "subheading_fr": "Pour tous les étudiants et enseignants avec preuve valide",
+            "link_url": "shopify://pages/student-teacher-discount"
+          }
+        }
+      },
+      "block_order": [
+        "message_NgjBHx",
+        "message_6FNRK7",
+        "message_gjP3ek"
+      ],
+      "settings": {
+        "head_not_col_bg": "#f2f2f2",
+        "head_not_col_txt1": "#000000",
+        "head_not_col_txt2": "#000000",
+        "head_not_mob_show": true,
+        "head_not_mob_text": "Students & Teachers Save 10% — Start Saving Today!",
+        "head_not_mob_text_fr": "Étudiants & enseignants : 10 % de rabais – Profitez-en!",
+        "head_not_mob_url": "shopify://pages/student-teacher-discount"
+      }
+    },
+    "scrolling_banner_g3CU8i": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_3DkM3T": {
+          "type": "text",
+          "settings": {
+            "text": "Last chance! Up to 75% off",
+            "text_fr": "Dernière chance! Jusqu’à 75% de rabais",
+            "color": "#ffffff",
+            "link": "shopify://pages/sale",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": "Up to 75% off",
+            "stencil_text_fr": "Jusqu’à 75% de rabais"
+          }
+        },
+        "button_T4CMEb": {
+          "type": "button",
+          "settings": {
+            "text": "Shop now",
+            "text_fr": "Magasiner",
+            "link": "shopify://pages/sale",
+            "button_style": "custom",
+            "color_bg": "#b41921",
+            "color_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "text_3DkM3T",
+        "button_T4CMEb"
+      ],
+      "settings": {
+        "full_width": true,
+        "color_scheme": "2",
+        "text_size": 56,
+        "vertical_padding": 0,
+        "speed": 31,
+        "direction": "left",
+        "font": "base",
+        "space": 30
+      }
+    },
+    "meg_featured_collection_WpCRqR": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
+      }
+    },
+    "spacer_mJztgT": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
     "background_video_bNKRBe": {
       "type": "background-video",
       "blocks": {
@@ -394,7 +517,6 @@
         "button_7wUQ3a",
         "button_VBFxWi"
       ],
-      "disabled": true,
       "settings": {
         "video_shopify": "shopify://files/videos/Hero Banner_EN.mp4",
         "video_shopify_fr": "shopify://files/videos/Hero Banner_FR.mp4",
@@ -417,121 +539,6 @@
         "height_mobile": 600,
         "full_width": true,
         "overlay_style": "no_background"
-      }
-    },
-    "compact_messages_4thNGK": {
-      "type": "compact-messages",
-      "blocks": {
-        "message_NgjBHx": {
-          "type": "message",
-          "settings": {
-            "heading": "FAST SHIPPING",
-            "heading_fr": "LIVRAISON RAPIDE",
-            "subheading": "Free shipping on order over $85",
-            "subheading_fr": "Livraison gratuite dès 85$",
-            "link_url": ""
-          }
-        },
-        "message_6FNRK7": {
-          "type": "message",
-          "settings": {
-            "heading": "PROUDLY CANADIAN",
-            "heading_fr": "FIÈREMENT QUÉBÉCOIS",
-            "subheading": "Serving families since 1916",
-            "subheading_fr": "Au service des familles depuis 1916",
-            "link_url": ""
-          }
-        },
-        "message_gjP3ek": {
-          "type": "message",
-          "settings": {
-            "heading": "Student & Teacher Discount",
-            "heading_fr": "10% Rabais Étudiants & Enseignants",
-            "subheading": "Show valid ID and enjoy 10% off your purchase",
-            "subheading_fr": "Pour tous les étudiants et enseignants avec preuve valide",
-            "link_url": "shopify://pages/student-teacher-discount"
-          }
-        }
-      },
-      "block_order": [
-        "message_NgjBHx",
-        "message_6FNRK7",
-        "message_gjP3ek"
-      ],
-      "settings": {
-        "head_not_col_bg": "#f2f2f2",
-        "head_not_col_txt1": "#000000",
-        "head_not_col_txt2": "#000000",
-        "head_not_mob_show": true,
-        "head_not_mob_text": "Students & Teachers Save 10% — Start Saving Today!",
-        "head_not_mob_text_fr": "Étudiants & enseignants : 10 % de rabais – Profitez-en!",
-        "head_not_mob_url": "shopify://pages/student-teacher-discount"
-      }
-    },
-    "scrolling_banner_g3CU8i": {
-      "type": "scrolling-banner",
-      "blocks": {
-        "text_3DkM3T": {
-          "type": "text",
-          "settings": {
-            "text": "Last chance! Up to 75% off",
-            "text_fr": "Dernière chance! Jusqu’à 75% de rabais",
-            "color": "#ffffff",
-            "link": "shopify://pages/sale",
-            "use_h1": false,
-            "stencil_all_text": false,
-            "stencil_text": "Up to 75% off",
-            "stencil_text_fr": "Jusqu’à 75% de rabais"
-          }
-        },
-        "button_T4CMEb": {
-          "type": "button",
-          "settings": {
-            "text": "Shop now",
-            "text_fr": "Magasiner",
-            "link": "shopify://pages/sale",
-            "button_style": "custom",
-            "color_bg": "#b41921",
-            "color_text": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "text_3DkM3T",
-        "button_T4CMEb"
-      ],
-      "settings": {
-        "full_width": true,
-        "color_scheme": "2",
-        "text_size": 56,
-        "vertical_padding": 0,
-        "speed": 31,
-        "direction": "left",
-        "font": "base",
-        "space": 30
-      }
-    },
-    "meg_featured_collection_WpCRqR": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Hurry, limited time only!",
-        "title_fr": "Dépêchez-vous, offre limitée!",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
       }
     },
     "multi_column_GqgGEh": {
@@ -1096,10 +1103,11 @@
     "176062646746014805",
     "text_cta_block_dCmN73",
     "slideshow_UmwmBT",
-    "background_video_bNKRBe",
     "compact_messages_4thNGK",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_WpCRqR",
+    "spacer_mJztgT",
+    "background_video_bNKRBe",
     "multi_column_GqgGEh",
     "meg_featured_collection_HtjHDq",
     "spacer_knGPxK",
