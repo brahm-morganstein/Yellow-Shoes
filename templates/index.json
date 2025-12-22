@@ -474,8 +474,8 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "Don’t miss out! Up to 75% off",
-            "text_fr": "À ne pas manquer! Jusqu’à 75% de rabais",
+            "text": "Last chance! Up to 75% off",
+            "text_fr": "Dernière chance! Jusqu’à 75% de rabais",
             "color": "#ffffff",
             "link": "shopify://pages/sale",
             "use_h1": false,
