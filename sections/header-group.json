@@ -83,8 +83,8 @@
         "announcement_7Vqrkz": {
           "type": "announcement",
           "settings": {
-            "text": "❄️ Winter Sale: <strong>Up to 75% Off</strong>! <a href=\"/pages/sale\" title=\"End of Season Sale\">Shop Now</a>",
-            "text_fr": "❄️ Solde d’hiver : <strong>Jusqu’à 75% de rabais</strong>! <a href=\"/pages/sale\" title=\"End of Season Sale\">Magasiner</a>",
+            "text": "❄️ Last chance! <strong>Up to 75% Off</strong>! <a href=\"/pages/sale\" title=\"End of Season Sale\">Shop Now</a>",
+            "text_fr": "❄️ Dernière chance! <strong>Jusqu’à 75% de rabais</strong>! <a href=\"/pages/sale\" title=\"End of Season Sale\">Magasiner</a>",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",
