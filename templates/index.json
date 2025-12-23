@@ -250,8 +250,8 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "Last chance! Up to 75% off",
-            "text_fr": "Dernière chance! Jusqu’à 75% de rabais",
+            "text": "Boxing Day Sales! Up to 75% Off",
+            "text_fr": "Soldes du Boxing Day! Jusqu’à 75% de rabais",
             "color": "#ffffff",
             "link": "shopify://pages/sale",
             "use_h1": false,
