@@ -607,6 +607,7 @@
         "text_FpwPMb",
         "button_7E7NGg"
       ],
+      "disabled": true,
       "name": "Background video",
       "settings": {
         "video_shopify": "shopify://files/videos/HolidayBanner - Video.mp4",
@@ -689,6 +690,7 @@
         "text_block_9yUYpT",
         "text_block_KGm9My"
       ],
+      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "title": "Shop now & spread the cheer",
@@ -703,6 +705,7 @@
     },
     "meg_featured_collection_HtjHDq": {
       "type": "meg-featured-collection",
+      "disabled": true,
       "name": "Meg Featured collection",
       "settings": {
         "title": "Gift the perfect pair this season",
@@ -726,6 +729,7 @@
     },
     "spacer_knGPxK": {
       "type": "spacer",
+      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
