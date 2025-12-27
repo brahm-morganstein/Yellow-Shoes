@@ -727,9 +727,111 @@
         "has_subcategories": true
       }
     },
+    "collection_list_WRjFwt": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_X3jccR": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-winter-boots",
+            "image": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_EN_2af839f0-55a5-4c3d-8801-f002a1f4d4e1.jpg",
+            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_FR_b457572c-b4a4-4b6a-80ef-7c24a59f5645.jpg",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "Magasiner"
+          }
+        },
+        "collection_eXixXz": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-winter-boots",
+            "image": "shopify://shop_images/COLLECTION_LIST_-_MEN_-_EN.jpg",
+            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_MEN_-_FR.jpg",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "Magasiner"
+          }
+        },
+        "collection_dXAbaj": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-tall-light-boots",
+            "image": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_BOTTES_HAUTES_-_EN_1c60cdff-c6a4-4e95-9ea0-a453b226604c.jpg",
+            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_BOTTES_HAUTES_-_FR_f5f2aed7-bdf7-4088-ae99-30b4cf809cdc.jpg",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner"
+          }
+        },
+        "collection_eC9jeA": {
+          "type": "collection",
+          "settings": {
+            "collection": "boys-winter-boots",
+            "image": "shopify://shop_images/COLLECTION_LIST_-_GARCONS_-_EN.jpg",
+            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_GARCONS_-_FR.jpg",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner"
+          }
+        },
+        "collection_trmURU": {
+          "type": "collection",
+          "settings": {
+            "collection": "girls-winter-boots",
+            "image": "shopify://shop_images/COLLECTION_LIST_-_FILLES_-_EN.jpg",
+            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FILLES_-_FR.jpg",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner"
+          }
+        },
+        "collection_gcNxcL": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories-women",
+            "image": "shopify://shop_images/COLLECTION_LIST_-_ACCESSOIRES_-_EN.jpg",
+            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_ACCESSOIRES_-_FR.jpg",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner"
+          }
+        }
+      },
+      "block_order": [
+        "collection_X3jccR",
+        "collection_eXixXz",
+        "collection_dXAbaj",
+        "collection_eC9jeA",
+        "collection_trmURU",
+        "collection_gcNxcL"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "Top collections",
+        "title_fr": "Collections vedettes",
+        "enable_carousel": true,
+        "grid": 3,
+        "color_scheme": "default",
+        "full_width": true,
+        "coll_grid_image_shape": "portrait-45",
+        "coll_grid_image_position": "center center",
+        "coll_thumb_mob_per_row": "2",
+        "coll_grid_show_count": false,
+        "coll_text_position": "below",
+        "coll_text_position_under_mobile": true,
+        "coll_thumb_text_align_x": "center",
+        "coll_thumb_text_align_y": "center",
+        "coll_button_style": "secondary"
+      }
+    },
     "spacer_knGPxK": {
       "type": "spacer",
-      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
@@ -1079,109 +1181,6 @@
         "overlay_style": "shadow"
       }
     },
-    "collection_list_WRjFwt": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_X3jccR": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_EN_2af839f0-55a5-4c3d-8801-f002a1f4d4e1.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_FR_b457572c-b4a4-4b6a-80ef-7c24a59f5645.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_eXixXz": {
-          "type": "collection",
-          "settings": {
-            "collection": "mens-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_MEN_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_MEN_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_dXAbaj": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-tall-light-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_BOTTES_HAUTES_-_EN_1c60cdff-c6a4-4e95-9ea0-a453b226604c.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_BOTTES_HAUTES_-_FR_f5f2aed7-bdf7-4088-ae99-30b4cf809cdc.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_eC9jeA": {
-          "type": "collection",
-          "settings": {
-            "collection": "boys-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_GARCONS_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_GARCONS_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_trmURU": {
-          "type": "collection",
-          "settings": {
-            "collection": "girls-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_FILLES_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FILLES_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_gcNxcL": {
-          "type": "collection",
-          "settings": {
-            "collection": "accessories-women",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_ACCESSOIRES_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_ACCESSOIRES_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        }
-      },
-      "block_order": [
-        "collection_X3jccR",
-        "collection_eXixXz",
-        "collection_dXAbaj",
-        "collection_eC9jeA",
-        "collection_trmURU",
-        "collection_gcNxcL"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "title": "Top collections",
-        "title_fr": "Collections vedettes",
-        "enable_carousel": true,
-        "grid": 3,
-        "color_scheme": "default",
-        "full_width": true,
-        "coll_grid_image_shape": "portrait-45",
-        "coll_grid_image_position": "center center",
-        "coll_thumb_mob_per_row": "2",
-        "coll_grid_show_count": false,
-        "coll_text_position": "below",
-        "coll_text_position_under_mobile": true,
-        "coll_thumb_text_align_x": "center",
-        "coll_thumb_text_align_y": "center",
-        "coll_button_style": "secondary"
-      }
-    },
     "instagram-posts-1": {
       "type": "instagram-posts",
       "settings": {
@@ -1206,6 +1205,7 @@
     "background_video_6VW4tD",
     "multi_column_GqgGEh",
     "meg_featured_collection_HtjHDq",
+    "collection_list_WRjFwt",
     "spacer_knGPxK",
     "shop_the_look_GCmEwM",
     "multi_column_ydD4dr",
@@ -1215,7 +1215,6 @@
     "featured_collection_djkdqW",
     "spacer_UxMHFT",
     "shop_the_look_6UBBrC",
-    "collection_list_WRjFwt",
     "instagram-posts-1"
   ]
 }
