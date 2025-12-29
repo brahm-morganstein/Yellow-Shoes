@@ -318,6 +318,253 @@
         "section_alternate_background": "#ffffff"
       }
     },
+    "shop_the_look_GCmEwM": {
+      "type": "shop-the-look",
+      "blocks": {
+        "heading_MC4zJx": {
+          "type": "heading",
+          "settings": {
+            "title": "FRIKSION TECHNOLOGY",
+            "title_fr": "TECHNOLOGIE FRIKSION",
+            "heading_max_width": 10,
+            "title_size": 56,
+            "title_size_mobile": 26,
+            "use_h1": false
+          }
+        },
+        "text_V37YqP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>An optimized grip system made entirely of fiberglass and natural rubber to maximize your safety on all types of icy surfaces.</p>",
+            "text_fr": "<p>Un système d'adhérence optimisé composé entièrement de fibres de verre et de caoutchouc naturel pour maximiser votre sécurité sur tous les types de surfaces glacées.<br/></p>",
+            "enlarge_text": false
+          }
+        },
+        "button_wEL7AP": {
+          "type": "button",
+          "settings": {
+            "button_label": "shop the collection",
+            "button_label_fr": "magasiner la collection",
+            "button_link": "shopify://pages/friksion",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MC4zJx",
+        "text_V37YqP",
+        "button_wEL7AP"
+      ],
+      "name": "Shop the look",
+      "settings": {
+        "image": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
+        "image_fr": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
+        "mobile_image": "shopify://shop_images/LOGO-LIST-MOBILE.png",
+        "mobile_image_fr": "shopify://shop_images/LOGO-LIST-MOBILE.png",
+        "video_external": "",
+        "video_description": "",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "product_list": [
+          "121216",
+          "121209",
+          "120006",
+          "121210",
+          "121211",
+          "120042",
+          "120017",
+          "120018",
+          "120019",
+          "120020",
+          "118668",
+          "116732",
+          "120021"
+        ],
+        "products_alignment": "bottom center",
+        "product_card_layout": "landscape",
+        "show_swatches": true,
+        "full_width": true,
+        "text_alignment": "top center",
+        "mobile_overlay_over": true,
+        "overlay_style": "shadow"
+      }
+    },
+    "meg_featured_collection_HtjHDq": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Our Most-Wanted Styles",
+        "title_fr": "Les essentiels en demande",
+        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
+        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
+        "womens-collection": "womens-new-arrivals",
+        "mens-collection": "mens-new-arrivals",
+        "girls-collection": "girls-new-arrivals",
+        "boys-collection": "boys-new-arrivals",
+        "accessories-collection": "new-arrivals-accessories",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
+      }
+    },
+    "multi_column_GqgGEh": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_qgqRtt": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/076A9847.jpg",
+            "image_fr": "shopify://shop_images/076A9847.jpg",
+            "title": "for him",
+            "title_fr": "",
+            "text": "<p>Men's gift guide</p>",
+            "text_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/mens-gift-guide",
+            "link_fr": "shopify://collections/mens-gift-guide"
+          }
+        },
+        "text_block_9yUYpT": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/076A9652.jpg",
+            "image_fr": "shopify://shop_images/076A9652.jpg",
+            "title": "for her",
+            "title_fr": "",
+            "text": "<p>Women's gift guide</p>",
+            "text_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/womens-gift-guide",
+            "link_fr": "shopify://collections/womens-gift-guide"
+          }
+        },
+        "text_block_KGm9My": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/076A9813.jpg",
+            "image_fr": "shopify://shop_images/076A9813.jpg",
+            "title": "For kids",
+            "title_fr": "",
+            "text": "<p>Kids gift guide</p>",
+            "text_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/kids-gift-guide",
+            "link_fr": "shopify://collections/kids-gift-guide"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_qgqRtt",
+        "text_block_9yUYpT",
+        "text_block_KGm9My"
+      ],
+      "disabled": true,
+      "name": "Multi-column",
+      "settings": {
+        "title": "Shop now & spread the cheer",
+        "title_fr": "Magasiner et partager la magie",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "secondary",
+        "color_scheme": "default"
+      }
+    },
+    "shop_the_look_Ei9CJR": {
+      "type": "shop-the-look",
+      "blocks": {
+        "subheading_ehRXUK": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Our most comfortable, premium boots & slippers — crafted for the whole family.",
+            "subheading_fr": "Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille."
+          }
+        },
+        "heading_bGLmFm": {
+          "type": "heading",
+          "settings": {
+            "title": "Heritage, Elevated",
+            "title_fr": "La qualité RIVERLAND",
+            "heading_max_width": 10,
+            "title_size": 56,
+            "title_size_mobile": 26,
+            "use_h1": false
+          }
+        },
+        "text_Pxhe4j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our most comfortable, premium boots & slippers — crafted for the whole family.</p>",
+            "text_fr": "<p>Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille.</p>",
+            "enlarge_text": true
+          }
+        },
+        "button_ddDyGW": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP THE COLLECTION",
+            "button_label_fr": "MAGASINER LA COLLECTION",
+            "button_link": "shopify://pages/riverland-heritage-collection",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_ehRXUK",
+        "heading_bGLmFm",
+        "text_Pxhe4j",
+        "button_ddDyGW"
+      ],
+      "name": "Shop the look",
+      "settings": {
+        "image": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
+        "image_fr": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
+        "mobile_image": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
+        "mobile_image_fr": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
+        "video_external": "",
+        "video_description": "",
+        "height": "adapt",
+        "height_desktop": 680,
+        "height_mobile": 460,
+        "product_list": [
+          "121336",
+          "119901",
+          "121206",
+          "120337",
+          "121212",
+          "121207",
+          "121194",
+          "121195",
+          "121318",
+          "121316",
+          "121326",
+          "121277",
+          "121279",
+          "121278"
+        ],
+        "products_alignment": "bottom right",
+        "product_card_layout": "portrait",
+        "show_swatches": true,
+        "full_width": true,
+        "text_alignment": "center left",
+        "mobile_overlay_over": true,
+        "overlay_style": "shadow"
+      }
+    },
     "background_video_bNKRBe": {
       "type": "background-video",
       "blocks": {
@@ -517,6 +764,7 @@
         "button_7wUQ3a",
         "button_VBFxWi"
       ],
+      "disabled": true,
       "settings": {
         "video_shopify": "shopify://files/videos/Hero Banner_EN.mp4",
         "video_shopify_fr": "shopify://files/videos/Hero Banner_FR.mp4",
@@ -541,176 +789,12 @@
         "overlay_style": "no_background"
       }
     },
-    "multi_column_GqgGEh": {
-      "type": "multi-column",
-      "blocks": {
-        "text_block_qgqRtt": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9847.jpg",
-            "image_fr": "shopify://shop_images/076A9847.jpg",
-            "title": "for him",
-            "title_fr": "",
-            "text": "<p>Men's gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/mens-gift-guide",
-            "link_fr": "shopify://collections/mens-gift-guide"
-          }
-        },
-        "text_block_9yUYpT": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9652.jpg",
-            "image_fr": "shopify://shop_images/076A9652.jpg",
-            "title": "for her",
-            "title_fr": "",
-            "text": "<p>Women's gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/womens-gift-guide",
-            "link_fr": "shopify://collections/womens-gift-guide"
-          }
-        },
-        "text_block_KGm9My": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9813.jpg",
-            "image_fr": "shopify://shop_images/076A9813.jpg",
-            "title": "For kids",
-            "title_fr": "",
-            "text": "<p>Kids gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/kids-gift-guide",
-            "link_fr": "shopify://collections/kids-gift-guide"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_qgqRtt",
-        "text_block_9yUYpT",
-        "text_block_KGm9My"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "title": "Shop now & spread the cheer",
-        "title_fr": "Magasiner et partager la magie",
-        "show_2_per_row_mobile": false,
-        "media_aspect_ratio": "s",
-        "media_width": 700,
-        "text_alignment": "center",
-        "button_style": "secondary",
-        "color_scheme": "default"
-      }
-    },
-    "meg_featured_collection_HtjHDq": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Gift the perfect pair this season",
-        "title_fr": "Offrez la paire parfaite pour la saison",
-        "main-collection-url": "shopify://pages/holiday-gift-guides",
-        "main-collection-url-fr": "shopify://pages/holiday-gift-guides",
-        "womens-collection": "womens-new-arrivals",
-        "mens-collection": "mens-new-arrivals",
-        "girls-collection": "girls-new-arrivals",
-        "boys-collection": "boys-new-arrivals",
-        "accessories-collection": "new-arrivals-accessories",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "spacer_knGPxK": {
       "type": "spacer",
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
         "section_alternate_background": "#ffffff"
-      }
-    },
-    "shop_the_look_GCmEwM": {
-      "type": "shop-the-look",
-      "blocks": {
-        "heading_MC4zJx": {
-          "type": "heading",
-          "settings": {
-            "title": "FRIKSION TECHNOLOGY",
-            "title_fr": "TECHNOLOGIE FRIKSION",
-            "heading_max_width": 10,
-            "title_size": 56,
-            "title_size_mobile": 26,
-            "use_h1": false
-          }
-        },
-        "text_V37YqP": {
-          "type": "text",
-          "settings": {
-            "text": "<p>An optimized grip system made entirely of fiberglass and natural rubber to maximize your safety on all types of icy surfaces.</p>",
-            "text_fr": "<p>Un système d'adhérence optimisé composé entièrement de fibres de verre et de caoutchouc naturel pour maximiser votre sécurité sur tous les types de surfaces glacées.<br/></p>",
-            "enlarge_text": false
-          }
-        },
-        "button_wEL7AP": {
-          "type": "button",
-          "settings": {
-            "button_label": "shop the collection",
-            "button_label_fr": "magasiner la collection",
-            "button_link": "shopify://pages/friksion",
-            "button_style": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_MC4zJx",
-        "text_V37YqP",
-        "button_wEL7AP"
-      ],
-      "name": "Shop the look",
-      "settings": {
-        "image": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
-        "image_fr": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
-        "mobile_image": "shopify://shop_images/LOGO-LIST-MOBILE.png",
-        "mobile_image_fr": "shopify://shop_images/LOGO-LIST-MOBILE.png",
-        "video_external": "",
-        "video_description": "",
-        "height": "adapt",
-        "height_desktop": 600,
-        "height_mobile": 460,
-        "product_list": [
-          "121216",
-          "121209",
-          "120006",
-          "121210",
-          "121211",
-          "120042",
-          "120017",
-          "120018",
-          "120019",
-          "120020",
-          "118668",
-          "116732",
-          "120021"
-        ],
-        "products_alignment": "bottom center",
-        "product_card_layout": "landscape",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "top center",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow"
       }
     },
     "multi_column_ydD4dr": {
@@ -810,88 +894,6 @@
       "settings": {
         "spacer_height": 40,
         "section_alternate_background": "#ffffff"
-      }
-    },
-    "shop_the_look_Ei9CJR": {
-      "type": "shop-the-look",
-      "blocks": {
-        "subheading_ehRXUK": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Our most comfortable, premium boots & slippers — crafted for the whole family.",
-            "subheading_fr": "Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille."
-          }
-        },
-        "heading_bGLmFm": {
-          "type": "heading",
-          "settings": {
-            "title": "Heritage, Elevated",
-            "title_fr": "La qualité RIVERLAND",
-            "heading_max_width": 10,
-            "title_size": 56,
-            "title_size_mobile": 26,
-            "use_h1": false
-          }
-        },
-        "text_Pxhe4j": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our most comfortable, premium boots & slippers — crafted for the whole family.</p>",
-            "text_fr": "<p>Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille.</p>",
-            "enlarge_text": true
-          }
-        },
-        "button_ddDyGW": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP THE COLLECTION",
-            "button_label_fr": "MAGASINER LA COLLECTION",
-            "button_link": "shopify://pages/riverland-heritage-collection",
-            "button_style": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_ehRXUK",
-        "heading_bGLmFm",
-        "text_Pxhe4j",
-        "button_ddDyGW"
-      ],
-      "name": "Shop the look",
-      "settings": {
-        "image": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
-        "image_fr": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
-        "mobile_image": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
-        "mobile_image_fr": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
-        "video_external": "",
-        "video_description": "",
-        "height": "adapt",
-        "height_desktop": 680,
-        "height_mobile": 460,
-        "product_list": [
-          "121336",
-          "119901",
-          "121206",
-          "120337",
-          "121212",
-          "121207",
-          "121194",
-          "121195",
-          "121318",
-          "121316",
-          "121326",
-          "121277",
-          "121279",
-          "121278"
-        ],
-        "products_alignment": "bottom right",
-        "product_card_layout": "portrait",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "center left",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow"
       }
     },
     "featured_collection_djkdqW": {
@@ -1107,15 +1109,15 @@
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_WpCRqR",
     "spacer_mJztgT",
-    "background_video_bNKRBe",
-    "multi_column_GqgGEh",
-    "meg_featured_collection_HtjHDq",
-    "spacer_knGPxK",
     "shop_the_look_GCmEwM",
+    "meg_featured_collection_HtjHDq",
+    "multi_column_GqgGEh",
+    "spacer_knGPxK",
+    "shop_the_look_Ei9CJR",
+    "background_video_bNKRBe",
     "multi_column_ydD4dr",
     "meg_featured_collection_mH3Pgz",
     "spacer_LLkJfj",
-    "shop_the_look_Ei9CJR",
     "featured_collection_djkdqW",
     "spacer_UxMHFT",
     "shop_the_look_6UBBrC",
