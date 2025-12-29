@@ -310,12 +310,143 @@
         "has_subcategories": true
       }
     },
-    "spacer_mJztgT": {
-      "type": "spacer",
-      "name": "Spacer",
+    "multi_column_GqgGEh": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_qgqRtt": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/076A9847.jpg",
+            "image_fr": "shopify://shop_images/076A9847.jpg",
+            "title": "for him",
+            "title_fr": "",
+            "text": "<p>Men's gift guide</p>",
+            "text_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/mens-gift-guide",
+            "link_fr": "shopify://collections/mens-gift-guide"
+          }
+        },
+        "text_block_9yUYpT": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/076A9652.jpg",
+            "image_fr": "shopify://shop_images/076A9652.jpg",
+            "title": "for her",
+            "title_fr": "",
+            "text": "<p>Women's gift guide</p>",
+            "text_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/womens-gift-guide",
+            "link_fr": "shopify://collections/womens-gift-guide"
+          }
+        },
+        "text_block_KGm9My": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/076A9813.jpg",
+            "image_fr": "shopify://shop_images/076A9813.jpg",
+            "title": "For kids",
+            "title_fr": "",
+            "text": "<p>Kids gift guide</p>",
+            "text_fr": "",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/kids-gift-guide",
+            "link_fr": "shopify://collections/kids-gift-guide"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_qgqRtt",
+        "text_block_9yUYpT",
+        "text_block_KGm9My"
+      ],
+      "disabled": true,
+      "name": "Multi-column",
       "settings": {
-        "spacer_height": 40,
-        "section_alternate_background": "#ffffff"
+        "title": "Shop now & spread the cheer",
+        "title_fr": "Magasiner et partager la magie",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "secondary",
+        "color_scheme": "default"
+      }
+    },
+    "multi_column_ydD4dr": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_xkQRKK": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
+            "title": "Women’s Winter Boots",
+            "title_fr": "Bottes d’hiver pour femmes",
+            "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
+            "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/womens-winter-boots",
+            "link_fr": "shopify://collections/womens-winter-boots"
+          }
+        },
+        "text_block_yGhX4p": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
+            "title": "Men’s Winter Boots",
+            "title_fr": "Bottes d’hiver pour hommes",
+            "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
+            "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/mens-winter-boots",
+            "link_fr": "shopify://collections/mens-winter-boots"
+          }
+        },
+        "text_block_wRzx6d": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
+            "title": "Kids’ Winter Boots",
+            "title_fr": "Bottes d’hiver pour enfants",
+            "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
+            "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/kids-winter-boots",
+            "link_fr": "shopify://collections/kids-winter-boots"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xkQRKK",
+        "text_block_yGhX4p",
+        "text_block_wRzx6d"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "title": "Winter’s here! Discover your must-haves",
+        "title_fr": "L’hiver est là ! Découvrez vos incontournables",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "secondary",
+        "color_scheme": "default"
       }
     },
     "shop_the_look_GCmEwM": {
@@ -413,151 +544,12 @@
         "has_subcategories": true
       }
     },
-    "multi_column_GqgGEh": {
-      "type": "multi-column",
-      "blocks": {
-        "text_block_qgqRtt": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9847.jpg",
-            "image_fr": "shopify://shop_images/076A9847.jpg",
-            "title": "for him",
-            "title_fr": "",
-            "text": "<p>Men's gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/mens-gift-guide",
-            "link_fr": "shopify://collections/mens-gift-guide"
-          }
-        },
-        "text_block_9yUYpT": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9652.jpg",
-            "image_fr": "shopify://shop_images/076A9652.jpg",
-            "title": "for her",
-            "title_fr": "",
-            "text": "<p>Women's gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/womens-gift-guide",
-            "link_fr": "shopify://collections/womens-gift-guide"
-          }
-        },
-        "text_block_KGm9My": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9813.jpg",
-            "image_fr": "shopify://shop_images/076A9813.jpg",
-            "title": "For kids",
-            "title_fr": "",
-            "text": "<p>Kids gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/kids-gift-guide",
-            "link_fr": "shopify://collections/kids-gift-guide"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_qgqRtt",
-        "text_block_9yUYpT",
-        "text_block_KGm9My"
-      ],
-      "disabled": true,
-      "name": "Multi-column",
-      "settings": {
-        "title": "Shop now & spread the cheer",
-        "title_fr": "Magasiner et partager la magie",
-        "show_2_per_row_mobile": false,
-        "media_aspect_ratio": "s",
-        "media_width": 700,
-        "text_alignment": "center",
-        "button_style": "secondary",
-        "color_scheme": "default"
-      }
-    },
     "spacer_knGPxK": {
       "type": "spacer",
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
         "section_alternate_background": "#ffffff"
-      }
-    },
-    "multi_column_ydD4dr": {
-      "type": "multi-column",
-      "blocks": {
-        "text_block_xkQRKK": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "title": "Women’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour femmes",
-            "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
-            "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/womens-winter-boots",
-            "link_fr": "shopify://collections/womens-winter-boots"
-          }
-        },
-        "text_block_yGhX4p": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "title": "Men’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour hommes",
-            "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
-            "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/mens-winter-boots",
-            "link_fr": "shopify://collections/mens-winter-boots"
-          }
-        },
-        "text_block_wRzx6d": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "title": "Kids’ Winter Boots",
-            "title_fr": "Bottes d’hiver pour enfants",
-            "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
-            "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/kids-winter-boots",
-            "link_fr": "shopify://collections/kids-winter-boots"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_xkQRKK",
-        "text_block_yGhX4p",
-        "text_block_wRzx6d"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "title": "Winter’s here! Discover your must-haves",
-        "title_fr": "L’hiver est là ! Découvrez vos incontournables",
-        "show_2_per_row_mobile": false,
-        "media_aspect_ratio": "s",
-        "media_width": 700,
-        "text_alignment": "center",
-        "button_style": "secondary",
-        "color_scheme": "default"
       }
     },
     "shop_the_look_Ei9CJR": {
@@ -640,6 +632,33 @@
         "text_alignment": "center left",
         "mobile_overlay_over": true,
         "overlay_style": "shadow"
+      }
+    },
+    "spacer_mJztgT": {
+      "type": "spacer",
+      "disabled": true,
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "featured_collection_djkdqW": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "All New, All Together",
+        "title_fr": "Nouveautés à l’horizon",
+        "collection": "homepage-new-arrivals",
+        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
+        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
       }
     },
     "background_video_bNKRBe": {
@@ -866,29 +885,6 @@
         "overlay_style": "no_background"
       }
     },
-    "meg_featured_collection_mH3Pgz": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Top Picks of the Season",
-        "title_fr": "Meilleurs choix de la saison",
-        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
-        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
-        "womens-collection": "best-sellers-womens",
-        "mens-collection": "best-sellers-mens",
-        "girls-collection": "best-sellers-girls",
-        "boys-collection": "best-sellers-boys",
-        "accessories-collection": "best-sellers-accessories",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "spacer_LLkJfj": {
       "type": "spacer",
       "settings": {
@@ -896,26 +892,9 @@
         "section_alternate_background": "#ffffff"
       }
     },
-    "featured_collection_djkdqW": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "All New, All Together",
-        "title_fr": "Nouveautés à l’horizon",
-        "collection": "homepage-new-arrivals",
-        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
-        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "spacer_UxMHFT": {
       "type": "spacer",
+      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
@@ -984,6 +963,29 @@
         "text_alignment": "top center",
         "mobile_overlay_over": true,
         "overlay_style": "shadow"
+      }
+    },
+    "meg_featured_collection_mH3Pgz": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Best Sellers This Week",
+        "title_fr": "Meilleures ventes de la semaine",
+        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
+        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
+        "womens-collection": "best-sellers-womens",
+        "mens-collection": "best-sellers-mens",
+        "girls-collection": "best-sellers-girls",
+        "boys-collection": "best-sellers-boys",
+        "accessories-collection": "best-sellers-accessories",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
       }
     },
     "collection_list_WRjFwt": {
@@ -1115,12 +1117,12 @@
     "spacer_knGPxK",
     "shop_the_look_Ei9CJR",
     "spacer_mJztgT",
-    "background_video_bNKRBe",
-    "meg_featured_collection_mH3Pgz",
-    "spacer_LLkJfj",
     "featured_collection_djkdqW",
+    "background_video_bNKRBe",
+    "spacer_LLkJfj",
     "spacer_UxMHFT",
     "shop_the_look_6UBBrC",
+    "meg_featured_collection_mH3Pgz",
     "collection_list_WRjFwt",
     "instagram-posts-1"
   ]
