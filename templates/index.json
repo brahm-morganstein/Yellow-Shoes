@@ -483,6 +483,83 @@
         "color_scheme": "default"
       }
     },
+    "spacer_knGPxK": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "multi_column_ydD4dr": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_xkQRKK": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
+            "title": "Women’s Winter Boots",
+            "title_fr": "Bottes d’hiver pour femmes",
+            "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
+            "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/womens-winter-boots",
+            "link_fr": "shopify://collections/womens-winter-boots"
+          }
+        },
+        "text_block_yGhX4p": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
+            "title": "Men’s Winter Boots",
+            "title_fr": "Bottes d’hiver pour hommes",
+            "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
+            "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/mens-winter-boots",
+            "link_fr": "shopify://collections/mens-winter-boots"
+          }
+        },
+        "text_block_wRzx6d": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
+            "title": "Kids’ Winter Boots",
+            "title_fr": "Bottes d’hiver pour enfants",
+            "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
+            "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/kids-winter-boots",
+            "link_fr": "shopify://collections/kids-winter-boots"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xkQRKK",
+        "text_block_yGhX4p",
+        "text_block_wRzx6d"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "title": "Winter’s here! Discover your must-haves",
+        "title_fr": "L’hiver est là ! Découvrez vos incontournables",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "secondary",
+        "color_scheme": "default"
+      }
+    },
     "shop_the_look_Ei9CJR": {
       "type": "shop-the-look",
       "blocks": {
@@ -789,83 +866,6 @@
         "overlay_style": "no_background"
       }
     },
-    "spacer_knGPxK": {
-      "type": "spacer",
-      "name": "Spacer",
-      "settings": {
-        "spacer_height": 40,
-        "section_alternate_background": "#ffffff"
-      }
-    },
-    "multi_column_ydD4dr": {
-      "type": "multi-column",
-      "blocks": {
-        "text_block_xkQRKK": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "title": "Women’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour femmes",
-            "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
-            "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/womens-winter-boots",
-            "link_fr": "shopify://collections/womens-winter-boots"
-          }
-        },
-        "text_block_yGhX4p": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "title": "Men’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour hommes",
-            "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
-            "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/mens-winter-boots",
-            "link_fr": "shopify://collections/mens-winter-boots"
-          }
-        },
-        "text_block_wRzx6d": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "title": "Kids’ Winter Boots",
-            "title_fr": "Bottes d’hiver pour enfants",
-            "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
-            "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/kids-winter-boots",
-            "link_fr": "shopify://collections/kids-winter-boots"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_xkQRKK",
-        "text_block_yGhX4p",
-        "text_block_wRzx6d"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "title": "Winter’s here! Discover your must-haves",
-        "title_fr": "L’hiver est là ! Découvrez vos incontournables",
-        "show_2_per_row_mobile": false,
-        "media_aspect_ratio": "s",
-        "media_width": 700,
-        "text_alignment": "center",
-        "button_style": "secondary",
-        "color_scheme": "default"
-      }
-    },
     "meg_featured_collection_mH3Pgz": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
@@ -1108,14 +1108,14 @@
     "compact_messages_4thNGK",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_WpCRqR",
-    "spacer_mJztgT",
+    "multi_column_GqgGEh",
+    "multi_column_ydD4dr",
     "shop_the_look_GCmEwM",
     "meg_featured_collection_HtjHDq",
-    "multi_column_GqgGEh",
     "spacer_knGPxK",
     "shop_the_look_Ei9CJR",
+    "spacer_mJztgT",
     "background_video_bNKRBe",
-    "multi_column_ydD4dr",
     "meg_featured_collection_mH3Pgz",
     "spacer_LLkJfj",
     "featured_collection_djkdqW",
