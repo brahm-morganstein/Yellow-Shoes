@@ -646,8 +646,8 @@
     "featured_collection_djkdqW": {
       "type": "featured-collection",
       "settings": {
-        "title": "All New, All Together",
-        "title_fr": "Nouveautés à l’horizon",
+        "title": "This Season’s Newest",
+        "title_fr": "Les nouveautés de la saison",
         "collection": "homepage-new-arrivals",
         "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
         "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
