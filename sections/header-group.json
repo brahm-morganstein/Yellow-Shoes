@@ -83,8 +83,8 @@
         "announcement_7Vqrkz": {
           "type": "announcement",
           "settings": {
-            "text": "🎁 <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Boxing Day Deals </strong></a>- Limited Time Only!",
-            "text_fr": "🎁 <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Soldes du Boxing Day</strong></a> - Pour un temps limité!",
+            "text": "🚨<a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>End of Season Sales</strong></a> - Limited Time Only!",
+            "text_fr": "🚨 <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Soldes de fin de saison</strong></a> — durée limité!",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",
