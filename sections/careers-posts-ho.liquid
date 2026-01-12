@@ -109,7 +109,7 @@
         }
     }
 </style>
-
+<script src="{{ 'jobs.js' | asset_url }}" defer></script>
 <div class="container{% unless section.settings.full_width %} container--reading-width{% endunless %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
   {%- if section.settings.show_page_title -%}
     <div class="page-header">
@@ -144,101 +144,58 @@
           <a href="{{ 'careers.view_store_opportunities_link' | t }}" class="btn career-button"><nobr>{{ 'careers.view_store_opportunities' | t }}</nobr></a>
           <a href="{{ 'careers.join_talent_network_btn_url' | t }}" class="btn career-button">{{ 'careers.join_talent_network_btn' | t }}</a>
       </div>
+      <div >
   
-      <div class="text-right" style="margin-bottom: 10px;">
-          <select id="city-select" style="display:none;">
-              <option value="">{{ 'careers.filter_by_city' | t }}</option>
-          </select>
+          <div class="text-right" style="margin-bottom: 10px;">
+              <select id="city-select" style="display:none;">
+                  <option value="">{{ 'careers.filter_by_city' | t }}</option>
+              </select>
+          </div>
+          <table style="width:100%;">
+              <thead>
+              <tr>
+                  <td><strong>{{ 'careers.table_header_job_title' | t }}</strong></td>
+                  <td><strong>{{ 'careers.table_header_location' | t }}</strong></td>
+              </tr>
+              </thead>
+              <tbody id="jobs">
+              <tr id="loader">
+                  <td colspan="2">
+                      <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
       </div>
-      <table style="width:100%;">
-          <thead>
-          <tr>
-              <td><strong>{{ 'careers.table_header_job_title' | t }}</strong></td>
-              <td><strong>{{ 'careers.table_header_location' | t }}</strong></td>
-          </tr>
-          </thead>
-          <tbody id="jobs">
-          <tr id="loader">
-              <td colspan="2">
-                  <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-              </td>
-          </tr>
-          </tbody>
-      </table>
-  </div>
   </div>  
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    let $body        = $('body');
-    let $bambooHR    = $body.find('#BambooHR');
-    let $bambooHRats = null;
-    let opportunity_html = '';
-    let cities = new Object();
-    let select_cities_html = '';
+<script>
+  $(document).ready(function(){
+    let jobsHtml = '';
 
-    if ($bambooHR.length) {
-      let bambooHRinterval = setInterval(function() {
-        $bambooHRats = $body.find('.BambooHR-ATS-board');
-        if ($bambooHRats.length) {
-          let $departments = $bambooHRats.find('.BambooHR-ATS-Department-Item');
-          if ($departments.length) {
-            $departments.each(function() {
-              let header = $(this).find('.BambooHR-ATS-Department-Header');
-              header     = header.length ? header.text().trim() : '';
-              let $job_list = $(this).find('.BambooHR-ATS-Jobs-Item');
-              if (($job_list.length && header === '') || (header.length >= 2 && header[1].toLowerCase() !== '-')) {
-                $job_list.each(function() {
-                  let job_name     = $(this).find('a');
-                  let job_url = job_name.length ? job_name.attr('href') : 'javascript:void(0)';
-                  job_name         = job_name.length ? job_name.text().trim() : '';
-                  let job_location = $(this).find('.BambooHR-ATS-Location');
-                  job_location     = job_location.length ? job_location.text().trim() : '';
-                  if(job_name !== ''){
-                    let job_opportunity_key = job_location.split(' ').join('').split(',').join('_').toLowerCase();
-                    cities[job_opportunity_key] = job_location;
-                    opportunity_html += '<tr class="career-city career-city-'+job_opportunity_key+'">';
-                    opportunity_html += '<td>';
-                    opportunity_html += header !== '' ? '<span class="opportunity-location">' + header + '</span><br>' : '';
-                    opportunity_html += '<a data-fancybox data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="' + job_url + '">' + job_name + '</a>';
-                    opportunity_html += '</td>';
-                    opportunity_html += '<td>';
-                    opportunity_html += job_location;
-                    opportunity_html += '</td>';
-                    opportunity_html += '</tr>';
-                  }
-                });
-              }
-              $body.find('#loader').hide();
-            });
-          }
-          clearInterval(bambooHRinterval);
-          $body.find('#jobs').append(opportunity_html);
-          cities = sortObject(cities);
-          Object.keys(cities).forEach(function(key) {
-            select_cities_html += '<option value="'+key+'">'+cities[key]+'</option>';
-          });
-          $body.find('#city-select').append(select_cities_html).show();
-        }
-      }, 100);
+    for(let i = 0; i < jobs.public_requests.length; i++) {
+      if(!jobs.public_requests[i].client.startsWith('Y-')){
+        jobsHtml += `
+        <tr class="career-city">
+          <td>
+            <span class="opportunity-location">${language =='en'?'Store':'Magasin'} ${jobs.public_requests[i].client}</span>
+            <br>
+            <a data-fancybox="" data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="${jobs.public_requests[i].job_url}${language == 'en' && '&l=en'}">
+              ${language == 'en ' ? jobs.public_requests[i].fr_title : jobs.public_requests[i].en_title} (${jobs.public_requests[i].location?.line1}, ${jobs.public_requests[i].location?.state} ${jobs.public_requests[i].location?.zip})
+            </a>
+          </td>
+          <td>
+            Chicoutimi, QC
+          </td>
+        </tr>
+        `;
+      }
     }
 
-    $body.on('change', '#city-select', function(){
-      if($(this).val().trim() === ''){
-        $body.find('.career-city').show();
-      }else{
-        $body.find('.career-city').hide();
-        $body.find('.career-city-' + $(this).val()).show();
-      }
-    });
-  });
-  function sortObject(obj) {
-    return Object.keys(obj).sort().reduce(function (result, key) {
-      result[key] = obj[key];
-      return result;
-    }, {});
-  }
+    document.getElementById('jobs').innerHTML = jobsHtml;
+
+  })
 </script>
 
 {% schema %}
