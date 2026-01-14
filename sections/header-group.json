@@ -91,7 +91,7 @@
             "button_popup_fr": "",
             "show_countdown": true,
             "hide_on_end": false,
-            "end_date": "2026-01-12",
+            "end_date": "2026-01-19",
             "end_time": "09:59",
             "number_font": "heading",
             "countdown_separator": "space",
@@ -246,7 +246,7 @@
       "settings": {
         "message_font_size": 14,
         "announcement_bar_col": "#000000",
-        "announcement_bar_gradient": "linear-gradient(57deg, rgba(35, 35, 35, 1) 53%, rgba(194, 0, 0, 1) 97%)",
+        "announcement_bar_gradient": "linear-gradient(57deg, rgba(35, 35, 35, 1) 53%, rgba(214, 135, 87, 1) 97%)",
         "announcement_text_col": "#ffffff",
         "show_social_icons": true,
         "menu": "",

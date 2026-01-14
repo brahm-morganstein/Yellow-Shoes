@@ -86,10 +86,10 @@
         "image_YynHUa": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HeroBanner_FreeShipping_EN_1.jpg",
-            "image_fr": "shopify://shop_images/HeroBanner_FreeShipping_FR.jpg",
-            "mobile_image": "shopify://shop_images/HeroBanner_FreeShipping_MOBILE_EN_1.jpg",
-            "mobile_image_fr": "shopify://shop_images/HeroBanner_FreeShipping_MOBILE_FR_db868ed1-e0c2-41d4-aea0-168086f0d798.jpg",
+            "image": "shopify://shop_images/HeroBanner_FreeShipping-DESK-JAN2026-EN.jpg",
+            "image_fr": "shopify://shop_images/HeroBanner_FreeShipping-DESK-JAN2026-FR.jpg",
+            "mobile_image": "shopify://shop_images/HeroBanner_FreeShipping-MOBILE-JAN2026-EN.jpg",
+            "mobile_image_fr": "shopify://shop_images/HeroBanner_FreeShipping-MOBILE-JAN2026-FR.jpg",
             "slide_link": "",
             "subheading": "",
             "subheading_fr": "",
@@ -165,7 +165,7 @@
             "button_url_4_fr": "shopify://collections/new-arrivals-accessories",
             "text_alignment": "bottom center",
             "show_countdown": true,
-            "end_date": "2026-01-12",
+            "end_date": "2026-01-19",
             "end_time": "09:59",
             "end_text": "",
             "end_text_fr": "",
