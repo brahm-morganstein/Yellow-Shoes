@@ -177,6 +177,7 @@
 
     for(let i = 0; i < jobs.public_requests.length; i++) {
       if(!jobs.public_requests[i].client.startsWith('Y-')){
+        console.log('JOB',jobs.public_requests[i])
         jobsHtml += `
         <tr class="career-city">
           <td>
@@ -187,7 +188,7 @@
             </a>
           </td>
           <td>
-            ${jobs.public_requests[i].location.city},  ${jobs.public_requests[i].location.state}
+            ${jobs.public_requests[i].location?.city},  ${jobs.public_requests[i].location?.state}
           </td>
         </tr>
         `;
