@@ -542,7 +542,9 @@
                                 -%}
                                 {% case block.type %}
                                 {% when 'heading' %}
-                                    {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight  | append: '_' | append: block.settings.title_font_style %}
+                                    {% if block.settings.title_font_family == 'default' or block.settings.title_font_family == 'gelica' or block.settings.title_font_family == 'hando' %}
+                                        {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight  | append: '_' | append: block.settings.title_font_style %}
+                                    {% endif %}
                                     {%- liquid
                                         if shop.locale == 'en'
                                             assign title = block.settings.title
