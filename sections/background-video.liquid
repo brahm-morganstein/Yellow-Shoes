@@ -1038,6 +1038,24 @@
     },
     {
     "type": "select",
+    "id": "title_font_weight_muoto",
+    "label": "Front weight",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },                             
+        {
+        "value": "bold",
+        "label": "Bold"
+        }
+    ],
+    "visible_if": "{{ block.settings.title_font_family == 'muoto'}}",
+    "default": "regular"
+    },
+
+    {
+    "type": "select",
     "id": "title_font_style",
     "label": "Front style",
     "options": [
