@@ -77,7 +77,7 @@ function setProductPageLabels() {
             let tags_to_process = l.tags.split(',');
             for(let tag_to_process of tags_to_process){
                 if (tags.includes(tag_to_process.toLowerCase().trim())) {
-                if (!labels.includes('product-label-' + tag_to_process.trim())) {
+                if (!labels.includes('product-label-' + tag_to_process.toLowerCase().trim())) {
                     labels += `
             <span class="product-label product-label--sale product-label-${tag_to_process.toLowerCase().trim()}">
               <span style="background-color:${l.bg_color};color:${l.fg_color};">${language == 'en' ? l.message : l.message_fr}</span>
