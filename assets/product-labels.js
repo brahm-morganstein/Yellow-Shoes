@@ -1,141 +1,168 @@
-window.setProductBlockLabels = function () {
-    let $body = $('body');
-    $body.find('product-block').each(function() {
-        let tags            = $(this).attr('data-tags');
+class ProductLabelManager {
+    constructor() {
+        this.language = Shopify.locale;
+        this.body = $('body');
+        this.oldHref = window.location.href;
+        this.init();
+    }
 
-        let $product_labels = $(this).find('.product-label-container');
-        let labels          = '';
-        if($(this).closest('#product-crosssell-carousel').length){
-        }
-        if ($product_labels.length > 1) {
-            for (let i = 1; i < $product_labels.length; i++) {
-                labels += $product_labels.eq(i).html();
-                $product_labels.eq(i).remove();
+    init() {
+        this.setupInitialLabels();
+        this.setupUrlChangeListener();
+        this.setupCustomEventListeners();
+    }
+
+    setupInitialLabels() {
+        setTimeout(() => {
+            this.setProductBlockLabels();
+            if (this.isProductPage()) {
+                this.setProductPageLabels();
             }
-        }
-        if (tags) {
-            Object.keys(app_settings.product_labels).forEach(function(key) {
-                let l = app_settings.product_labels[key];
-                let tags_to_process = l.tags.split(',');
-                for(let tag_to_process of tags_to_process){
-                    if (tags.includes(tag_to_process.trim())) {
-                        if (!labels.includes('product-label-' + tag_to_process.trim())) {
-                            labels += `
-            <span class="product-label product-label--sale product-label-${tag_to_process.trim()}">
-              <span style="background-color:${l.bg_color};color:${l.fg_color};">${language == 'en' ? l.message : l.message_fr}</span>
+        }, 1000);
+    }
+
+    setupUrlChangeListener() {
+        setInterval(() => {
+            if (window.location.href !== this.oldHref) {
+                this.oldHref = window.location.href;
+                setTimeout(() => {
+                    this.setProductBlockLabels();
+                    if (this.isProductPage()) {
+                        this.setProductPageLabels();
+                    }
+                }, 500);
+            }
+        }, 100);
+    }
+
+    setupCustomEventListeners() {
+        document.addEventListener('onurlchanged', () => {
+            setTimeout(() => this.setProductBlockLabels(), 1000);
+        });
+    }
+
+    isProductPage() {
+        return window.location.href.includes('/products/');
+    }
+
+    normalizeTag(tag) {
+        return tag.toLowerCase().trim();
+    }
+
+    generateLabelHTML(labelData, tag) {
+        const message = this.language === 'en' ? labelData.message : labelData.message_fr;
+        const className = `product-label product-label--sale product-label-${tag}`;
+        
+        return `
+            <span class="${className}">
+                <span style="background-color:${labelData.bg_color};color:${labelData.fg_color};">${message}</span>
             </span>
-          `;
-                        }
+        `;
+    }
+
+    mergeLabelContainers($containers) {
+        if ($containers.length <= 1) return $containers.first();
+
+        const $firstContainer = $containers.first();
+        for (let i = 1; i < $containers.length; i++) {
+            $firstContainer.append($containers.eq(i).html());
+            $containers.eq(i).remove();
+        }
+        return $firstContainer;
+    }
+
+    getLabelsForTags(tags, existingLabels = '') {
+        let labels = existingLabels || '';
+        
+        if (!tags || !app_settings?.product_labels) return labels;
+
+        // Track which tags we've already processed to avoid duplicates
+        const processedTags = new Set();
+        
+        Object.keys(app_settings.product_labels).forEach((key) => {
+            const l = app_settings.product_labels[key];
+            const tags_to_process = l.tags.split(',');
+            
+            for(let tag_to_process of tags_to_process) {
+                const normalizedTag = this.normalizeTag(tag_to_process);
+                
+                // Check if this tag matches and we haven't processed it yet
+                if (tags.includes(normalizedTag) && !processedTags.has(normalizedTag)) {
+                    // Check if this specific label tag is already in the labels HTML
+                    if (!labels.includes('product-label-' + normalizedTag)) {
+                        labels += this.generateLabelHTML(l, normalizedTag);
+                        processedTags.add(normalizedTag);
                     }
                 }
-
-            });
-            if(labels != ''){
-                $(this).find('.product-label-container').first().html(labels);
-            }
-
-            /*
-             let label = app_settings.product_labels.find(function(label){
-             return tags.includes(label.tags)
-             })
-             if(label){
-             let html = `
-             <span class="product-label product-label--sale product-label-${label.tags}">
-             <span style="background-color:${label.bg_color};color:${label.fg_color};">${language == 'en' ? label.message : label.message_fr}</span>
-             </span>
-             `
-             if($(this).find('.product-label-container').first().find(`.product-label-${label.tags}`).first().length == 0){
-             // $(this).find('.product-label-container').first().append(html)
-             }
-             }
-
-             */
-
-        }
-    });
-}
-
-function setProductPageLabels() {
-    let $body = $('body');
-    let tags  = $body.find('product-form').data('tags');
-    if (!$body.find('.main-image').find('variant-content').find('.product-label-container').length) {
-        $body.find('.main-image').find('variant-content').append('<div class="product-label-container"></div>');
-    }
-    if (tags) {
-
-        let $product_labels = $body.find('.main-image').find('variant-content').find('.product-label-container');
-
-        if ($product_labels.length > 1) {
-            for (let i = 1; i < $product_labels.length; i++) {
-                $product_labels.eq(0).append($product_labels.eq(i).html());
-                $product_labels.eq(i).remove();
-            }
-        }
-        let labels = '';
-        Object.keys(app_settings.product_labels).forEach(function(key) {
-            let l = app_settings.product_labels[key];
-            let tags_to_process = l.tags.split(',');
-            for(let tag_to_process of tags_to_process){
-                if (tags.includes(tag_to_process.trim())) {
-                if (!labels.includes('product-label-' + tag_to_process.trim())) {
-                    labels += `
-            <span class="product-label product-label--sale product-label-${tag_to_process.trim()}">
-              <span style="background-color:${l.bg_color};color:${l.fg_color};">${language == 'en' ? l.message : l.message_fr}</span>
-            </span>
-          `;
-                }
-            }
             }
         });
-        $body.find('.main-image').find('variant-content').find('.product-label-container').first().append(labels);
-        /*
-         let label = app_settings.product_labels.find(function(label){
-         return tags.includes(label.tags)
-         })
-         if(label){
-         let html = `
-         <span class="product-label product-label--sale">
-         <span style="background-color:${label.bg_color};color:${label.fg_color};">${language == 'en' ? label.message : label.message_fr}</span>
-         </span>
-         `
-         $(".product-label-container").first().append(html)
-         }
-         */
 
+        return labels;
+    }
+
+    setProductBlockLabels() {
+        this.body.find('product-block').each((index, element) => {
+            const $block = $(element);
+            const tags = $block.attr('data-tags');
+            
+            // Skip if in cross-sell carousel (based on original logic)
+            if ($block.closest('#product-crosssell-carousel').length) {
+                return;
+            }
+
+            const $labelContainers = $block.find('.product-label-container');
+            if ($labelContainers.length === 0) return;
+
+            // Merge multiple containers if they exist
+            const $mainContainer = this.mergeLabelContainers($labelContainers);
+            
+            // Get existing labels from the container
+            const existingLabels = $mainContainer.html();
+            
+            // Generate new labels (this function now properly checks for duplicates)
+            const labels = this.getLabelsForTags(tags, existingLabels);
+            
+            // Update container if we have labels
+            if (labels && labels !== existingLabels) {
+                $mainContainer.html(labels);
+            }
+        });
+    }
+
+    setProductPageLabels() {
+        const $productForm = this.body.find('product-form');
+        const tags = $productForm.data('tags');
+        
+        if (!tags) return;
+
+        const $variantContent = this.body.find('.main-image').find('variant-content');
+        
+        // Ensure label container exists
+        let $labelContainer = $variantContent.find('.product-label-container');
+        if ($labelContainer.length === 0) {
+            $labelContainer = $('<div class="product-label-container"></div>');
+            $variantContent.append($labelContainer);
+        }
+
+        // Merge multiple containers if they exist
+        const $mainContainer = this.mergeLabelContainers($labelContainer);
+        
+        // Get existing labels from the container
+        const existingLabels = $mainContainer.html();
+        
+        // Generate and append labels
+        const labels = this.getLabelsForTags(tags, existingLabels);
+        if (labels && labels !== existingLabels) {
+            $mainContainer.html(labels);
+        }
     }
 }
 
-//product-label-container
-$(document).ready(function() {
-    let language = Shopify.locale;
-    let $body    = $('body');
-
-    //Product Blocks
-    setTimeout(function() {
-        setProductBlockLabels();
-        if (window.location.href.includes('/products/')) {
-            setProductPageLabels();
-        }
-    }, 1000);
-
-    let old_href = window.location.href;
-    setInterval(function() {
-        if (window.location.href !== old_href) {
-            old_href = window.location.href;
-            setTimeout(function() {
-                setProductBlockLabels();
-
-                if (window.location.href.includes('/products/')) {
-                    setProductPageLabels();
-                }
-            }, 500);
-        }
-    }, 100);
-
-    document.addEventListener('onurlchanged', function() {
-        setTimeout(function() {
-            setProductBlockLabels();
-        }, 1000);
-    });
+// Initialize when DOM is ready
+$(document).ready(() => {
+    window.productLabelManager = new ProductLabelManager();
+    
+    // Export the functions for global access if needed
+    window.setProductBlockLabels = () => productLabelManager.setProductBlockLabels();
+    window.setProductPageLabels = () => productLabelManager.setProductPageLabels();
 });
-
