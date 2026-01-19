@@ -74,10 +74,9 @@ function setProductPageLabels() {
         let labels = '';
         Object.keys(app_settings.product_labels).forEach(function(key) {
             let l = app_settings.product_labels[key];
-            console.log("LABEL",l)
             let tags_to_process = l.tags.split(',');
             for(let tag_to_process of tags_to_process){
-                if (tags.includes(tag_to_process.toLowerCase().trim())) {
+                if (tags.includes(tag_to_process.trim())) {
                 if (!labels.includes('product-label-' + tag_to_process.trim())) {
                     labels += `
             <span class="product-label product-label--sale product-label-${tag_to_process.trim()}">
