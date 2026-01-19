@@ -18,7 +18,7 @@ window.setProductBlockLabels = function () {
                 let l = app_settings.product_labels[key];
                 let tags_to_process = l.tags.split(',');
                 for(let tag_to_process of tags_to_process){
-                    if (tags.includes(tag_to_process.trim())) {
+                    if (tags.includes(tag_to_process.toLowerCase().trim())) {
                         if (!labels.includes('product-label-' + tag_to_process.trim())) {
                             labels += `
             <span class="product-label product-label--sale product-label-${tag_to_process.trim()}">
