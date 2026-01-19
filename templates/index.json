@@ -559,8 +559,8 @@
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
       "settings": {
-        "title": "Our Most-Wanted Styles",
-        "title_fr": "Les essentiels en demande",
+        "title": "This Season’s Newest",
+        "title_fr": "Les nouveautés de la saison",
         "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
         "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
         "womens-collection": "womens-new-arrivals",
@@ -650,8 +650,8 @@
     "featured_collection_djkdqW": {
       "type": "featured-collection",
       "settings": {
-        "title": "This Season’s Newest",
-        "title_fr": "Les nouveautés de la saison",
+        "title": "Our Most-Wanted Styles",
+        "title_fr": "Les essentiels en demande",
         "collection": "homepage-new-arrivals",
         "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
         "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
@@ -785,6 +785,7 @@
             "title_size": 84,
             "title_font_family": "gelica",
             "title_font_weight": "bold",
+            "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
             "title_size_mobile": 48,
             "use_h1": false
