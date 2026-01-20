@@ -11,6 +11,7 @@ document.addEventListener('on:quickbuy:after-open', (event) => {
 
   //hide unavailable option label image
   const productForm = $(event.target).find('product-form')
+  console.log('ProductForm',productForm)
   let opt_labels = $(event.target).find('.opt-label--image')
   opt_labels.each(function(opt_label_index,opt_label){
     let img = $(opt_label).find('img').first();
