@@ -1197,6 +1197,7 @@
         }
 
         function hideOutOfStockColor(){
+            console.log('DATA',product)
             let colors = [];
             if(product.variants !== undefined && product.variants){
                 colors  = product.variants.map(function(_variant){
