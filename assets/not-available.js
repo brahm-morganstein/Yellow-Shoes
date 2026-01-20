@@ -114,6 +114,7 @@ if($btn_selected.length){
   function hideOutOfStockColor(event) {
     let data   = JSON.parse($(event.target).find('product-form').find('script[type="application/ld+json"]').html());
     const is_coming_soon = data.tags.includes('coming-soon');
+    alert(is_coming_soon)
     let colors = [];
     if (data.offers !== undefined && data.offers) {
       colors = data.offers.map(function(_offer) {
