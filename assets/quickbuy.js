@@ -21,7 +21,7 @@ document.addEventListener('on:quickbuy:after-open', (event) => {
     $(".product-block-options__item").each(function(option_item_index,option_item){
       let option_img = $(option_item).find('img').first();
       if(src == option_img.attr('src')){
-        if($(option_item).attr('class').includes('product-block-options__item--unavailable')){
+        if($(option_item).attr('class').includes('product-block-options__item--unavailable') && !is_coming_soon){
           $(opt_label).hide();
         }
       }
