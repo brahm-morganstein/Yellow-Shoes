@@ -1743,8 +1743,8 @@
                        console.log(product_sku)
                        if (isIterable(response)) {
                            for (let el of response) {
-                               console.log('variant_sku')
-                               console.log(el.variant_sku)
+                               //console.log('variant_sku')
+                               //console.log(el.variant_sku)
                                if (el.variant_sku.trim() === product_sku.trim()) {
                                    console.log(response)
                                    if (isIterable(el.upsell_skus)) {
