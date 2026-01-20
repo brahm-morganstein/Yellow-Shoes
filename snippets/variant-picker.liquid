@@ -35,7 +35,7 @@ assign current_variant = product.selected_or_first_available_variant
 
     <variant-picker class="no-js-hidden" data-url="{{ product.url }}" data-update-url="{{ update_url | default: false }}" data-show-availability="{{ block.settings.enable_dynamic_availability }}" data-availability-mode="{{ dynamic_availability_mode | default: 'selection' }}">
       {%- for option in product.options_with_values -%}
-        
+        <script>console.log('OPTION','{{ option.values }}')</script>
         {%- capture option_id %}{{ product_form_id }}-{{ option.name | handle }}{% endcapture -%}
         {%- liquid
           assign is_color_selector = false
