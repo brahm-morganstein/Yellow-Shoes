@@ -17,7 +17,7 @@
     assign media = product.featured_media
   endif
 -%}
-
+<script>console.log('PRODUCT DATA',{{ product|json }})</script>
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
