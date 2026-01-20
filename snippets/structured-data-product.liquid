@@ -17,13 +17,13 @@
     assign media = product.featured_media
   endif
 -%}
-
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "Product",
     "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
+    "tags":"{{ product.tags | join:',' }}",
     {%- if media -%}
       "image": [
         {{ media | image_url: width: media.width | prepend: "https:" | json }}
