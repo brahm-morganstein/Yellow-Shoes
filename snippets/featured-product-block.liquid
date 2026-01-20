@@ -216,7 +216,6 @@ Parameters:
                                 endif
                             -%}
                             {%- for product_option in product.options_with_values -%}
-                              <script>console.log('{{ product_option | json }}');</script>
                                 {%- if options_to_show contains product_option.name -%}
                                     {%- liquid
                                         if settings.swatch_option_name contains product_option.name
