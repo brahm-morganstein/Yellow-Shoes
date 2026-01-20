@@ -99,7 +99,7 @@ if($btn_selected.length){
 
   //Hide Out of Stock Color
   document.addEventListener('on:quickbuy:after-open', (event) => {
-    hideOptionWithNoImage();
+    //hideOptionWithNoImage();
     hideOutOfStockColor(event);
   });
 
