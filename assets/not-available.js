@@ -113,6 +113,7 @@ if($btn_selected.length){
 
   function hideOutOfStockColor(event) {
     let data   = JSON.parse($(event.target).find('product-form').find('script[type="application/ld+json"]').html());
+    console.log('OFFERS',data.offers)
     const is_coming_soon = data.tags.includes('coming-soon');
     let colors = [];
     if (data.offers !== undefined && data.offers) {
@@ -120,7 +121,6 @@ if($btn_selected.length){
         return _offer.additionalProperty[0].value;
       });
     }
-    console.log('COLORS',colors)
     colors = new Set(colors);
     colors.forEach(function(color) {
       let qty = 0;
