@@ -120,9 +120,9 @@ if($btn_selected.length){
         return _offer.additionalProperty[0].value;
       });
     }
+    console.log('COLORS',colors)
     colors = new Set(colors);
     colors.forEach(function(color) {
-      alert(1)
       let qty = 0;
       data.offers.forEach(function(offer) {
         if (offer.additionalProperty[0].value == color && offer.availability.includes('InStock')) {
