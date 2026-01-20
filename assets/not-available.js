@@ -106,6 +106,7 @@ if($btn_selected.length){
   function hideOptionWithNoImage() {
     $('.opt-label--image').each(function(_elementIndex, _element) {
       if ($(_element).find('img').length == 0) {
+        console.log(`Hidden1 element: ${_element}`)
         $(_element).hide();
       }
     });
@@ -132,7 +133,7 @@ if($btn_selected.length){
       if (qty == 0 && !is_coming_soon) {
         $(event.target).find('product-form').find('.opt-label--image').each(function(_elementIndex, _element) {
           if ($(_element).html().includes(color)) {
-            //console.log(`Hidden element: ${_element}`)
+            console.log(`Hidden2 element: ${_element}`)
             $(_element).hide();
           }
         });
