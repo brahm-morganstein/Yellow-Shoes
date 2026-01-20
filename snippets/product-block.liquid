@@ -319,7 +319,7 @@ Parameters:
                                                             continue
                                                         endif
                                                     -%}
-                                                    <span data-compare-at-price="{{ option_compare_at_price }}" data-price="{{ option_price }}" class="product-block-options__item{% if is_unavailable and not is_coming_soon %} product-block-options__item--unavailable{% endif %}{% if forloop.index > option_limit and is_swatch %} product-block-options__item--truncated{% endif %}"
+                                                    <span data-compare-at-price="{{ option_compare_at_price }}" data-price="{{ option_price }}" class="product-block-options__item{% if is_unavailable %} product-block-options__item--unavailable{% endif %}{% if forloop.index > option_limit and is_swatch %} product-block-options__item--truncated{% endif %}"
                                                           data-option-item="{{ product_option_value | escape }}"
                                                           {% if option_value_variant.featured_media %}data-media="{{ option_value_variant.featured_media.id }}"{% endif %}
                                                     {% if is_swatch and settings.swatch_method == 'swatches' -%}
