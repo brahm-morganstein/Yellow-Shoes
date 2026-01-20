@@ -23,6 +23,7 @@
     "@type": "Product",
     "name": {{ product.title | json }},
     "url": {{ request.origin | append: product.url | json }},
+    "tags":"TEST",
     {%- if media -%}
       "image": [
         {{ media | image_url: width: media.width | prepend: "https:" | json }}
