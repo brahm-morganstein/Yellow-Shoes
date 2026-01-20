@@ -1212,7 +1212,7 @@
                         qty++;
                     }
                 })
-                if(qty == 0){
+                if(qty == 0 && !is_coming_soon){
                     $(".opt-label--image").each(function(_elementIndex,_element){
                         if($(_element).html().includes(color)){
                             $(_element).hide()
