@@ -255,7 +255,7 @@ Parameters:
                                                             continue
                                                         endif
                                                     -%}
-                                                    <span data-compare-at-price="{{ variant.compare_at_price }}" data-price="{{ variant.price | money_without_currency }}"  class="product-block-options__item{% unless settings.prod_thumb_options_disable_unavailable == false or variant.available or is_coming_soon %} product-block-options__item--unavailable{% endunless %}{% if forloop.index > option_limit and is_swatch %} product-block-options__item--truncated{% endif %}"
+                                                    <span data-compare-at-price="{{ variant.compare_at_price }}" data-price="{{ variant.price | money_without_currency }}"  class="product-block-options__item{% unless settings.prod_thumb_options_disable_unavailable == false or variant.available %} product-block-options__item--unavailable{% endunless %}{% if forloop.index > option_limit and is_swatch %} product-block-options__item--truncated{% endif %}"
                                                           data-option-item="{{ variant.title | escape }}"
                                                           {% if variant.featured_media %}data-media="{{ variant.featured_media.id }}"{% endif %}
                                                     {% if is_swatch and settings.swatch_method == 'swatches' -%}
