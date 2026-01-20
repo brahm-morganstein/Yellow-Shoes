@@ -317,6 +317,10 @@ Parameters:
                                                             assign is_unavailable = false
                                                         endif
 
+                                                        if is_coming_soon
+                                                            assign is_unavailable = false
+                                                        endif
+
                                                         if is_swatch and settings.swatch_method == 'variant-images' and option_value_variant.featured_media == blank
                                                             continue
                                                         endif
