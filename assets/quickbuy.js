@@ -19,7 +19,6 @@ document.addEventListener('on:quickbuy:after-open', (event) => {
       let option_img = $(option_item).find('img').first();
       if(src == option_img.attr('src')){
         if($(option_item).attr('class').includes('product-block-options__item--unavailable')){
-          console.log('Hidden3:',opt_label)
           $(opt_label).hide();
         }
       }
