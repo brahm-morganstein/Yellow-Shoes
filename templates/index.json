@@ -165,8 +165,8 @@
             "button_url_4_fr": "shopify://collections/new-arrivals-accessories",
             "text_alignment": "bottom center",
             "show_countdown": true,
-            "end_date": "2026-01-19",
-            "end_time": "09:59",
+            "end_date": "2026-01-25",
+            "end_time": "23:59",
             "end_text": "",
             "end_text_fr": "",
             "hide_on_end": true,
@@ -216,6 +216,7 @@
             "title_size": 84,
             "title_font_family": "gelica",
             "title_font_weight": "bold",
+            "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
             "title_size_mobile": 48,
             "use_h1": false
@@ -562,6 +563,7 @@
             "title_size": 84,
             "title_font_family": "default",
             "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
             "title_size_mobile": 32,
             "use_h1": false
