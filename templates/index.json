@@ -537,6 +537,7 @@
     },
     "spacer_HETqKm": {
       "type": "spacer",
+      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
@@ -834,151 +835,11 @@
     },
     "spacer_knGPxK": {
       "type": "spacer",
+      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
         "section_alternate_background": "#ffffff"
-      }
-    },
-    "shop_the_look_GCmEwM": {
-      "type": "shop-the-look",
-      "blocks": {
-        "heading_MC4zJx": {
-          "type": "heading",
-          "settings": {
-            "title": "FRIKSION TECHNOLOGY",
-            "title_fr": "TECHNOLOGIE FRIKSION",
-            "heading_max_width": 10,
-            "title_size": 56,
-            "title_size_mobile": 26,
-            "use_h1": false
-          }
-        },
-        "text_V37YqP": {
-          "type": "text",
-          "settings": {
-            "text": "<p>An optimized grip system made entirely of fiberglass and natural rubber to maximize your safety on all types of icy surfaces.</p>",
-            "text_fr": "<p>Un système d'adhérence optimisé composé entièrement de fibres de verre et de caoutchouc naturel pour maximiser votre sécurité sur tous les types de surfaces glacées.<br/></p>",
-            "enlarge_text": false
-          }
-        },
-        "button_wEL7AP": {
-          "type": "button",
-          "settings": {
-            "button_label": "shop the collection",
-            "button_label_fr": "magasiner la collection",
-            "button_link": "shopify://pages/friksion",
-            "button_style": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_MC4zJx",
-        "text_V37YqP",
-        "button_wEL7AP"
-      ],
-      "name": "Shop the look",
-      "settings": {
-        "image": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
-        "image_fr": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
-        "mobile_image": "shopify://shop_images/LOGO-LIST-MOBILE.png",
-        "mobile_image_fr": "shopify://shop_images/LOGO-LIST-MOBILE.png",
-        "video_external": "",
-        "video_description": "",
-        "height": "adapt",
-        "height_desktop": 600,
-        "height_mobile": 460,
-        "product_list": [
-          "121216",
-          "121209",
-          "120006",
-          "121210",
-          "121211",
-          "120042",
-          "120017",
-          "120018",
-          "120019",
-          "120020",
-          "118668",
-          "116732",
-          "120021"
-        ],
-        "products_alignment": "bottom center",
-        "product_card_layout": "landscape",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "top center",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow"
-      }
-    },
-    "multi_column_ydD4dr": {
-      "type": "multi-column",
-      "blocks": {
-        "text_block_xkQRKK": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "title": "Women’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour femmes",
-            "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
-            "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/womens-winter-boots",
-            "link_fr": "shopify://collections/womens-winter-boots"
-          }
-        },
-        "text_block_yGhX4p": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "title": "Men’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour hommes",
-            "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
-            "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/mens-winter-boots",
-            "link_fr": "shopify://collections/mens-winter-boots"
-          }
-        },
-        "text_block_wRzx6d": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "title": "Kids’ Winter Boots",
-            "title_fr": "Bottes d’hiver pour enfants",
-            "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
-            "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/kids-winter-boots",
-            "link_fr": "shopify://collections/kids-winter-boots"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_xkQRKK",
-        "text_block_yGhX4p",
-        "text_block_wRzx6d"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "title": "Winter’s here! Discover your must-haves",
-        "title_fr": "L’hiver est là ! Découvrez vos incontournables",
-        "show_2_per_row_mobile": false,
-        "media_aspect_ratio": "s",
-        "media_width": 700,
-        "text_alignment": "center",
-        "button_style": "secondary",
-        "color_scheme": "default"
       }
     },
     "meg_featured_collection_mH3Pgz": {
@@ -1183,6 +1044,148 @@
         "overlay_style": "shadow"
       }
     },
+    "multi_column_ydD4dr": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_xkQRKK": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
+            "title": "Women’s Winter Boots",
+            "title_fr": "Bottes d’hiver pour femmes",
+            "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
+            "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/womens-winter-boots",
+            "link_fr": "shopify://collections/womens-winter-boots"
+          }
+        },
+        "text_block_yGhX4p": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
+            "title": "Men’s Winter Boots",
+            "title_fr": "Bottes d’hiver pour hommes",
+            "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
+            "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/mens-winter-boots",
+            "link_fr": "shopify://collections/mens-winter-boots"
+          }
+        },
+        "text_block_wRzx6d": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
+            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
+            "title": "Kids’ Winter Boots",
+            "title_fr": "Bottes d’hiver pour enfants",
+            "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
+            "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
+            "button_label": "shop now",
+            "button_label_fr": "magasiner",
+            "link": "shopify://collections/kids-winter-boots",
+            "link_fr": "shopify://collections/kids-winter-boots"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xkQRKK",
+        "text_block_yGhX4p",
+        "text_block_wRzx6d"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "title": "Winter’s here! Discover your must-haves",
+        "title_fr": "L’hiver est là ! Découvrez vos incontournables",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "secondary",
+        "color_scheme": "default"
+      }
+    },
+    "shop_the_look_GCmEwM": {
+      "type": "shop-the-look",
+      "blocks": {
+        "heading_MC4zJx": {
+          "type": "heading",
+          "settings": {
+            "title": "FRIKSION TECHNOLOGY",
+            "title_fr": "TECHNOLOGIE FRIKSION",
+            "heading_max_width": 10,
+            "title_size": 56,
+            "title_size_mobile": 26,
+            "use_h1": false
+          }
+        },
+        "text_V37YqP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>An optimized grip system made entirely of fiberglass and natural rubber to maximize your safety on all types of icy surfaces.</p>",
+            "text_fr": "<p>Un système d'adhérence optimisé composé entièrement de fibres de verre et de caoutchouc naturel pour maximiser votre sécurité sur tous les types de surfaces glacées.<br/></p>",
+            "enlarge_text": false
+          }
+        },
+        "button_wEL7AP": {
+          "type": "button",
+          "settings": {
+            "button_label": "shop the collection",
+            "button_label_fr": "magasiner la collection",
+            "button_link": "shopify://pages/friksion",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MC4zJx",
+        "text_V37YqP",
+        "button_wEL7AP"
+      ],
+      "disabled": true,
+      "name": "Shop the look",
+      "settings": {
+        "image": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
+        "image_fr": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
+        "mobile_image": "shopify://shop_images/LOGO-LIST-MOBILE.png",
+        "mobile_image_fr": "shopify://shop_images/LOGO-LIST-MOBILE.png",
+        "video_external": "",
+        "video_description": "",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "product_list": [
+          "121216",
+          "121209",
+          "120006",
+          "121210",
+          "121211",
+          "120042",
+          "120017",
+          "120018",
+          "120019",
+          "120020",
+          "118668",
+          "116732",
+          "120021"
+        ],
+        "products_alignment": "bottom center",
+        "product_card_layout": "landscape",
+        "show_swatches": true,
+        "full_width": true,
+        "text_alignment": "top center",
+        "mobile_overlay_over": true,
+        "overlay_style": "shadow"
+      }
+    },
     "instagram-posts-1": {
       "type": "instagram-posts",
       "settings": {
@@ -1209,14 +1212,14 @@
     "meg_featured_collection_HtjHDq",
     "collection_list_WRjFwt",
     "spacer_knGPxK",
-    "shop_the_look_GCmEwM",
-    "multi_column_ydD4dr",
     "meg_featured_collection_mH3Pgz",
     "spacer_LLkJfj",
     "shop_the_look_Ei9CJR",
     "featured_collection_djkdqW",
     "spacer_UxMHFT",
     "shop_the_look_6UBBrC",
+    "multi_column_ydD4dr",
+    "shop_the_look_GCmEwM",
     "instagram-posts-1"
   ]
 }
