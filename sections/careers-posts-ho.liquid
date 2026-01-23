@@ -178,13 +178,13 @@
     for(let i = 0; i < jobs.public_requests.length; i++) {
       if(!jobs.public_requests[i].client.startsWith('Y-')){
         //console.log('JOB Index',i)
-        location = 'N/A'
-    {% comment %} if(jobs.public_requests[i].location) {
-        location = `${jobs.public_requests[i].location?.city}, ${jobs.public_requests[i].location?.state}`;
+        _location = 'N/A'
+    if(jobs.public_requests[i].location) {
+        _location = `${jobs.public_requests[i].location?.city}, ${jobs.public_requests[i].location?.state}`;
     } else if(jobs.public_requests[i].address) {
         const ads = jobs.public_requests[i].address.split(',');
-        location = `${ads[1]}, ${ads[2]}`;
-    } {% endcomment %}
+        _location = `${ads[1]}, ${ads[2]}`;
+    }
         jobsHtml += `
         <tr class="career-city">
           <td>
@@ -195,7 +195,7 @@
             </a>
           </td>
           <td>
-            ${location}
+            ${_location}
           </td>
         </tr>
         `;
