@@ -179,12 +179,12 @@
       if(!jobs.public_requests[i].client.startsWith('Y-')){
         //console.log('JOB Index',i)
         location = 'N/A'
-        if(jobs.public_requests[i].location) {
-            location = `${jobs.public_requests[i].location?.city}, ${jobs.public_requests[i].location?.state}`;
-        } else if(jobs.public_requests[i].address) {
-            const ads = jobs.public_requests[i].address.split(',');
-            location = `${ads[1]}, ${ads[2]}`;
-        }
+    {% comment %} if(jobs.public_requests[i].location) {
+        location = `${jobs.public_requests[i].location?.city}, ${jobs.public_requests[i].location?.state}`;
+    } else if(jobs.public_requests[i].address) {
+        const ads = jobs.public_requests[i].address.split(',');
+        location = `${ads[1]}, ${ads[2]}`;
+    } {% endcomment %}
         jobsHtml += `
         <tr class="career-city">
           <td>
