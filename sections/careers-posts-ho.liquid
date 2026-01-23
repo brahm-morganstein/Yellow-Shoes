@@ -178,6 +178,13 @@
     for(let i = 0; i < jobs.public_requests.length; i++) {
       if(!jobs.public_requests[i].client.startsWith('Y-')){
         //console.log('JOB Index',i)
+        location = 'N/A'
+        if(jobs.public_requests[i].location){
+            location = `${jobs.public_requests[i].location?.city},  ${jobs.public_requests[i].location?.state}`
+        }else{
+            jobs.public_requests[i].address
+            location = 
+        }
         jobsHtml += `
         <tr class="career-city">
           <td>
@@ -188,7 +195,7 @@
             </a>
           </td>
           <td>
-            ${jobs.public_requests[i].location?.city},  ${jobs.public_requests[i].location?.state}
+            ${location}
           </td>
         </tr>
         `;
