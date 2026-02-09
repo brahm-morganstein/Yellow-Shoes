@@ -62,8 +62,8 @@
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "<strong>⚡ 50% OFF + Free Shipping ⚡</strong><a href=\"/collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles\" title=\"Black Friday & Cyber Monday Flash Sale – 50% Off Selected Styles\"><strong>Cyber Monday Flash Sale</strong></a>",
-            "text_fr": "⚡<strong> 50% Rabais + Livraison gratuite</strong> <strong>⚡</strong><a href=\"/collections/black-friday-cyber-monday-flash-sale-50-off-selected-styles\" title=\"Black Friday & Cyber Monday Flash Sale – 50% Off Selected Styles\"><strong>Vente éclair du Cyber lundi</strong></a>",
+            "text": "💘15% OFF <a href=\"/collections/new-arrivals-accessories\" title=\"Accessories New Arrivals\"><strong>all accessories</strong></a>. Valentine’s Day ends soon!",
+            "text_fr": "💘15% de rabais sur<strong> </strong><a href=\"/collections/new-arrivals-accessories\" title=\"Accessories New Arrivals\"><strong>tous les accessoires</strong></a>",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",
