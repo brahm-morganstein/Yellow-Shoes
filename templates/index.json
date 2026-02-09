@@ -250,7 +250,7 @@
         "countdown_EDPhMy": {
           "type": "countdown",
           "settings": {
-            "end_date": "2026-02-11",
+            "end_date": "2026-02-15",
             "end_time": "23:59",
             "end_text": "",
             "end_text_fr": "",
@@ -264,14 +264,14 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "End of Season Sales! Up to 75% Off",
-            "text_fr": "Soldes de fin de saison! Jusqu’à 75% de rabais",
-            "color": "#ffffff",
-            "link": "shopify://pages/sale",
+            "text": "15% OFF all accessories — ends soon!",
+            "text_fr": "15% de rabais sur tous les accessoires — faites vite!",
+            "color": "#000000",
+            "link": "shopify://collections/new-arrivals-accessories",
             "use_h1": false,
             "stencil_all_text": false,
-            "stencil_text": "Up to 75% Off",
-            "stencil_text_fr": "Jusqu’à 75% de rabais"
+            "stencil_text": "15% OFF",
+            "stencil_text_fr": "15% de rabais"
           }
         },
         "button_T4CMEb": {
@@ -293,7 +293,7 @@
       ],
       "settings": {
         "full_width": true,
-        "color_scheme": "2",
+        "color_scheme": "1",
         "text_size": 56,
         "vertical_padding": 0,
         "speed": 31,
