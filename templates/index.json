@@ -279,7 +279,7 @@
           "settings": {
             "text": "Shop now",
             "text_fr": "Magasiner",
-            "link": "shopify://pages/sale",
+            "link": "shopify://collections/new-arrivals-accessories",
             "button_style": "custom",
             "color_bg": "#b41921",
             "color_text": "#ffffff"
