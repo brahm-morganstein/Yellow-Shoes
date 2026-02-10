@@ -531,6 +531,7 @@
         "text_Pxhe4j",
         "button_ddDyGW"
       ],
+      "disabled": true,
       "name": "Shop the look",
       "settings": {
         "image": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
