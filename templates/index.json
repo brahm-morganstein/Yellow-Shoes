@@ -244,6 +244,85 @@
         "head_not_mob_url": "shopify://pages/student-teacher-discount"
       }
     },
+    "meg_featured_collection_WpCRqR": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
+      }
+    },
+    "1770754611289b3562": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8d86437_xWWDNR": {
+          "type": "ai_gen_block_8d86437",
+          "settings": {
+            "text_before_en": "VALENTINE'S DAY SPECIAL<br>",
+            "discount_text_en": "15% off all accessories",
+            "text_after_en": "— Limited time only",
+            "link_text_en": "Shop now",
+            "text_before_fr": "SPÉCIAL SAINT-VALENTIN :<br>",
+            "discount_text_fr": "15% de rabais sur tous les accessoires",
+            "text_after_fr": "— Offre à durée limitée",
+            "link_text_fr": "Magasiner",
+            "link_url": "",
+            "show_countdown": true,
+            "countdown_end_date": "2026-02-16",
+            "countdown_end_time": "00:00:00",
+            "countdown_label_en": "Ends in:",
+            "countdown_label_fr": "Se termine dans :",
+            "days_label_en": "Days",
+            "days_label_fr": "Jours",
+            "hours_label_en": "Hours",
+            "hours_label_fr": "Heures",
+            "minutes_label_en": "Minutes",
+            "minutes_label_fr": "Minutes",
+            "seconds_label_en": "Seconds",
+            "seconds_label_fr": "Secondes",
+            "cta_url": "shopify://collections/accessories",
+            "cta_text_en": "SHOP NOW",
+            "cta_text_fr": "Magasinez Maintenant",
+            "cta_bg_color": "#ffffff",
+            "cta_text_color": "#c20000",
+            "cta_hover_bg_color": "#ffebcd",
+            "cta_border_radius": 4,
+            "padding_vertical": 40,
+            "max_width": 1000,
+            "font_size": 20,
+            "font_weight": "600",
+            "background_color_1": "#c20000",
+            "background_color_2": "#8b0000",
+            "text_color": "#ffffff",
+            "highlight_color": "#ffebcd",
+            "link_color": "#ffffff",
+            "show_hearts": true,
+            "heart_color": "#ff69b4",
+            "heart_opacity": 0.3
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8d86437_xWWDNR"
+      ],
+      "settings": {}
+    },
     "scrolling_banner_g3CU8i": {
       "type": "scrolling-banner",
       "blocks": {
@@ -291,6 +370,7 @@
         "text_3DkM3T",
         "button_T4CMEb"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "color_scheme": "1",
@@ -300,29 +380,6 @@
         "direction": "left",
         "font": "base",
         "space": 30
-      }
-    },
-    "meg_featured_collection_WpCRqR": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Hurry, limited time only!",
-        "title_fr": "Dépêchez-vous, offre limitée!",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
       }
     },
     "collection_list_WRjFwt": {
@@ -883,8 +940,9 @@
     "text_cta_block_dCmN73",
     "slideshow_UmwmBT",
     "compact_messages_4thNGK",
-    "scrolling_banner_g3CU8i",
     "meg_featured_collection_WpCRqR",
+    "1770754611289b3562",
+    "scrolling_banner_g3CU8i",
     "collection_list_WRjFwt",
     "shop_the_look_Ei9CJR",
     "multi_column_GqgGEh",
