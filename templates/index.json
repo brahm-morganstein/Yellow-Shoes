@@ -459,6 +459,7 @@
         "message_6FNRK7",
         "message_gjP3ek"
       ],
+      "disabled": true,
       "settings": {
         "head_not_col_bg": "#f2f2f2",
         "head_not_col_txt1": "#000000",
@@ -501,6 +502,7 @@
         "text_3DkM3T",
         "button_T4CMEb"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "color_scheme": "2",
