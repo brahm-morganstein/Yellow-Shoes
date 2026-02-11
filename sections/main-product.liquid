@@ -588,7 +588,7 @@
                             <div style="margin-left:3px;text-decoration:underline;">{{ 'store_availability.general.check_in-store_link' | t }}</div>
                         </div>
                     {% when 'product-icons' %}
-                    <script>console.log('product-icons')</script>
+                    
                         <div id="product-icons-container">
                           {% if shop.locale == 'en' %}
                             <div id="product-icons-container-title" style="display:none;font-weight:bold;">Product Features</div>
@@ -1111,7 +1111,7 @@
         let product = {{product|json}}
         console.log(product)
         let currentVariant = {{current_variant|json}}
-        console.log('currentVariant',currentVariant)
+        //console.log('currentVariant',currentVariant)
         let currentUrl = window.location.href;
         setTimeout(function(){
             // Append to URL without reloading
@@ -1197,6 +1197,7 @@
         }
 
         function hideOutOfStockColor(){
+            const is_coming_soon = product.tags.includes('coming-soon');
             let colors = [];
             if(product.variants !== undefined && product.variants){
                 colors  = product.variants.map(function(_variant){
@@ -1211,7 +1212,7 @@
                         qty++;
                     }
                 })
-                if(qty == 0){
+                if(qty == 0 && !is_coming_soon){
                     $(".opt-label--image").each(function(_elementIndex,_element){
                         if($(_element).html().includes(color)){
                             $(_element).hide()

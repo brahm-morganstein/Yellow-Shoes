@@ -106,6 +106,7 @@ if($btn_selected.length){
   function hideOptionWithNoImage() {
     $('.opt-label--image').each(function(_elementIndex, _element) {
       if ($(_element).find('img').length == 0) {
+        console.log(`Hidden1 element: ${_element}`)
         $(_element).hide();
       }
     });
@@ -113,6 +114,8 @@ if($btn_selected.length){
 
   function hideOutOfStockColor(event) {
     let data   = JSON.parse($(event.target).find('product-form').find('script[type="application/ld+json"]').html());
+    console.log('DATA',data)
+    const is_coming_soon = data.tags.includes('coming-soon');
     let colors = [];
     if (data.offers !== undefined && data.offers) {
       colors = data.offers.map(function(_offer) {
@@ -127,9 +130,10 @@ if($btn_selected.length){
           qty++;
         }
       });
-      if (qty == 0) {
+      if (qty == 0 && !is_coming_soon) {
         $(event.target).find('product-form').find('.opt-label--image').each(function(_elementIndex, _element) {
           if ($(_element).html().includes(color)) {
+            console.log(`Hidden2 element: ${_element}`)
             $(_element).hide();
           }
         });

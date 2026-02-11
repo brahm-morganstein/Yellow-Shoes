@@ -10,6 +10,9 @@ document.addEventListener('on:quickbuy:after-open', (event) => {
   console.log(event)
 
   //hide unavailable option label image
+  const productForm = $(event.target).find('product-form');
+  const productTags = $(productForm).data("tags");
+  const is_coming_soon = productTags.includes('coming-soon');
   let opt_labels = $(event.target).find('.opt-label--image')
   opt_labels.each(function(opt_label_index,opt_label){
     let img = $(opt_label).find('img').first();
@@ -18,7 +21,7 @@ document.addEventListener('on:quickbuy:after-open', (event) => {
     $(".product-block-options__item").each(function(option_item_index,option_item){
       let option_img = $(option_item).find('img').first();
       if(src == option_img.attr('src')){
-        if($(option_item).attr('class').includes('product-block-options__item--unavailable')){
+        if($(option_item).attr('class').includes('product-block-options__item--unavailable') && !is_coming_soon){
           $(opt_label).hide();
         }
       }

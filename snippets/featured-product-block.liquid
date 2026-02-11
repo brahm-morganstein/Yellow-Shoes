@@ -19,6 +19,10 @@ Parameters:
 {%- liquid
     assign cheapest_variant = product.variants | sort: 'price' | first
     assign tags = product.tags | join: " "
+    assign is_coming_soon = false
+    if tags contains "coming-soon"
+        assign is_coming_soon = true
+    endif    
     if collection and settings.prod_thumb_url_within_coll and product.collections contains collection
         assign product_url = product.url | within: collection
     else
@@ -212,7 +216,6 @@ Parameters:
                                 endif
                             -%}
                             {%- for product_option in product.options_with_values -%}
-                              <script>console.log('{{ product_option | json }}');</script>
                                 {%- if options_to_show contains product_option.name -%}
                                     {%- liquid
                                         if settings.swatch_option_name contains product_option.name
@@ -293,6 +296,10 @@ Parameters:
                                                                 endif
                                                             endfor
                                                         else
+                                                            assign is_unavailable = false
+                                                        endif
+
+                                                        if is_coming_soon
                                                             assign is_unavailable = false
                                                         endif
 

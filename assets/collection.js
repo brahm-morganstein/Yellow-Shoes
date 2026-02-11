@@ -90,7 +90,7 @@ $(document).ready(function(){
     //console.log('fixhiddenimages')
     setTimeout(function(){
           $(".product-block__image").each(function(_elementIndex,_element){
-      console.log('element',_element)
+      //console.log('element',_element)
       let image_conatiner = $(_element).find('.img-ar--contain').first()
       let imgs = image_conatiner.find('img')
       if(imgs.length == 1){
