@@ -60,6 +60,7 @@
       "blocks": {
         "announcement_mLdP76": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "💘15% OFF <a href=\"/collections/new-arrivals-accessories\" title=\"Accessories New Arrivals\"><strong>all accessories</strong></a>. Valentine’s Day ends soon!",
             "text_fr": "💘15% de rabais sur<strong> </strong><a href=\"/collections/new-arrivals-accessories\" title=\"Accessories New Arrivals\"><strong>tous les accessoires</strong></a>",
