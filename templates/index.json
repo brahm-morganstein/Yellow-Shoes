@@ -86,15 +86,15 @@
         "subheading_prQ9nE": {
           "type": "subheading",
           "settings": {
-            "subheading": "Tell your story",
-            "subheading_fr": ""
+            "subheading": "Celebrating 110 years of style",
+            "subheading_fr": "Célébrons 110 ans de style"
           }
         },
         "heading_JjrHrd": {
           "type": "heading",
           "settings": {
-            "title": "Background video",
-            "title_fr": "",
+            "title": "New – Spring 2026",
+            "title_fr": "Nouveautés – Printemps 2026",
             "heading_max_width": 15,
             "title_size": 84,
             "title_font_family": "default",
@@ -108,8 +108,8 @@
         "text_pAaJVt": {
           "type": "text",
           "settings": {
-            "text": "<p>Use a video to get a customer's attention</p>",
-            "text_fr": "",
+            "text": "<p>Celebrating a legacy since 1916 — shop the latest Spring 2026 styles for the whole family.</p>",
+            "text_fr": "<p>Depuis 1916, une histoire de style et de famille. Magasinez les nouveautés du printemps!</p>",
             "text_color": "#FFFFFF",
             "enlarge_text": true,
             "text_font_family": "default",
