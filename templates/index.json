@@ -267,29 +267,6 @@
         "has_subcategories": true
       }
     },
-    "meg_featured_collection_WpCRqR": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Hurry, limited time only!",
-        "title_fr": "Dépêchez-vous, offre limitée!",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "1770754611289b3562": {
       "type": "_blocks",
       "blocks": {
@@ -346,6 +323,29 @@
         "ai_gen_block_8d86437_xWWDNR"
       ],
       "settings": {}
+    },
+    "meg_featured_collection_WpCRqR": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
+      }
     },
     "scrolling_banner_g3CU8i": {
       "type": "scrolling-banner",
@@ -943,10 +943,10 @@
     "slideshow_UmwmBT",
     "compact_messages_4thNGK",
     "meg_featured_collection_HtjHDq",
-    "meg_featured_collection_WpCRqR",
     "1770754611289b3562",
     "scrolling_banner_g3CU8i",
     "collection_list_WRjFwt",
+    "meg_featured_collection_WpCRqR",
     "shop_the_look_Ei9CJR",
     "multi_column_GqgGEh",
     "spacer_VUrmbi",
