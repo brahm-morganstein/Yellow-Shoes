@@ -483,7 +483,7 @@
         "coll_text_position_under_mobile": true,
         "coll_thumb_text_align_x": "center",
         "coll_thumb_text_align_y": "center",
-        "coll_button_style": "secondary"
+        "coll_button_style": "primary"
       }
     },
     "meg_featured_collection_WpCRqR": {
@@ -698,7 +698,7 @@
             "button_label": "SHOP THE COLLECTION",
             "button_label_fr": "MAGASINER LA COLLECTION",
             "button_link": "shopify://collections/made-in-quebec-collection",
-            "button_style": "secondary"
+            "button_style": "primary"
           }
         }
       },
@@ -812,7 +812,7 @@
             "button_label": "shop the collection",
             "button_label_fr": "magasiner la collection",
             "button_link": "shopify://pages/friksion",
-            "button_style": "secondary"
+            "button_style": "primary"
           }
         }
       },
@@ -921,7 +921,7 @@
         "media_aspect_ratio": "s",
         "media_width": 700,
         "text_alignment": "center",
-        "button_style": "secondary",
+        "button_style": "primary",
         "color_scheme": "default"
       }
     },
