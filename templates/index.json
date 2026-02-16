@@ -329,6 +329,7 @@
       "blocks": {
         "countdown_EDPhMy": {
           "type": "countdown",
+          "disabled": true,
           "settings": {
             "end_date": "2026-02-15",
             "end_time": "23:59",
@@ -359,7 +360,7 @@
           "settings": {
             "text": "Shop now",
             "text_fr": "Magasiner",
-            "link": "shopify://collections/new-arrivals-accessories",
+            "link": "shopify://pages/new-arrivals-for-the-entire-family",
             "button_style": "custom",
             "color_bg": "#ff522a",
             "color_text": "#fcfaf3"
