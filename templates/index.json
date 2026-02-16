@@ -273,11 +273,11 @@
         "ai_gen_block_8d86437_xWWDNR": {
           "type": "ai_gen_block_8d86437",
           "settings": {
-            "text_before_en": "VALENTINE'S DAY SPECIAL<br>",
+            "text_before_en": "VALENTINE'S DAY SPECIAL",
             "discount_text_en": "15% off all accessories",
             "text_after_en": "— Limited time only",
             "link_text_en": "Shop now",
-            "text_before_fr": "SPÉCIAL SAINT-VALENTIN :<br>",
+            "text_before_fr": "SPÉCIAL SAINT-VALENTIN :",
             "discount_text_fr": "15% de rabais sur tous les accessoires",
             "text_after_fr": "— Offre à durée limitée",
             "link_text_fr": "Magasiner",
@@ -321,6 +321,7 @@
       "block_order": [
         "ai_gen_block_8d86437_xWWDNR"
       ],
+      "disabled": true,
       "settings": {}
     },
     "scrolling_banner_g3CU8i": {
