@@ -347,7 +347,7 @@
           "settings": {
             "text": "Just Dropped: Spring Collection",
             "text_fr": "Nouveauté : collection printemps",
-            "color": "#fff45d",
+            "color": "#fcfaf3",
             "link": "shopify://collections/new-arrivals-accessories",
             "use_h1": false,
             "stencil_all_text": false,
@@ -362,7 +362,7 @@
             "text_fr": "Magasiner",
             "link": "shopify://pages/new-arrivals-for-the-entire-family",
             "button_style": "custom",
-            "color_bg": "#fff45d",
+            "color_bg": "#fcfaf3",
             "color_text": "#000000"
           }
         }
