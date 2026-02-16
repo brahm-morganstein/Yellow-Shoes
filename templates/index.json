@@ -345,14 +345,14 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "New Spring Collection Is Here",
-            "text_fr": "La nouvelle collection printanière est arrivée",
+            "text": "Just Dropped: Spring Collection",
+            "text_fr": "Nouveauté : collection printemps",
             "color": "#fcfaf3",
             "link": "shopify://collections/new-arrivals-accessories",
             "use_h1": false,
             "stencil_all_text": false,
             "stencil_text": "Spring Collection",
-            "stencil_text_fr": "collection printanière"
+            "stencil_text_fr": "collection printemps"
           }
         },
         "button_T4CMEb": {
