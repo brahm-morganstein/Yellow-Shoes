@@ -107,10 +107,11 @@
         },
         "text_pAaJVt": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>Celebrating a legacy since 1916 — shop the latest Spring 2026 styles for the whole family.</p>",
             "text_fr": "<p>Depuis 1916, une histoire de style et de famille. Magasinez les nouveautés du printemps!</p>",
-            "text_color": "#FFFFFF",
+            "text_color": "#ffffff",
             "enlarge_text": true,
             "text_font_family": "default",
             "text_font_weight": "regular",
