@@ -244,6 +244,29 @@
         "head_not_mob_url": "shopify://pages/student-teacher-discount"
       }
     },
+    "meg_featured_collection_HtjHDq": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "New Spring Arrivals",
+        "title_fr": "Nouveautés du printemps",
+        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
+        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
+        "womens-collection": "womens-new-arrivals",
+        "mens-collection": "mens-new-arrivals",
+        "girls-collection": "girls-new-arrivals",
+        "boys-collection": "boys-new-arrivals",
+        "accessories-collection": "new-arrivals-accessories",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
+      }
+    },
     "meg_featured_collection_WpCRqR": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
@@ -639,29 +662,6 @@
         "color_scheme": "default"
       }
     },
-    "meg_featured_collection_HtjHDq": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "New Spring Arrivals",
-        "title_fr": "Nouveautés du printemps",
-        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
-        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
-        "womens-collection": "womens-new-arrivals",
-        "mens-collection": "mens-new-arrivals",
-        "girls-collection": "girls-new-arrivals",
-        "boys-collection": "boys-new-arrivals",
-        "accessories-collection": "new-arrivals-accessories",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "spacer_VUrmbi": {
       "type": "spacer",
       "name": "Spacer",
@@ -942,13 +942,13 @@
     "text_cta_block_dCmN73",
     "slideshow_UmwmBT",
     "compact_messages_4thNGK",
+    "meg_featured_collection_HtjHDq",
     "meg_featured_collection_WpCRqR",
     "1770754611289b3562",
     "scrolling_banner_g3CU8i",
     "collection_list_WRjFwt",
     "shop_the_look_Ei9CJR",
     "multi_column_GqgGEh",
-    "meg_featured_collection_HtjHDq",
     "spacer_VUrmbi",
     "shop_the_look_6UBBrC",
     "featured_collection_djkdqW",
