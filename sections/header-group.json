@@ -82,7 +82,6 @@
         },
         "announcement_7Vqrkz": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "🚨<a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>End of Season Sales</strong></a> - Limited Time Only!",
             "text_fr": "🚨 <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Soldes de fin de saison</strong></a> — durée limité!",
@@ -127,8 +126,8 @@
         "announcement_M9n4tM": {
           "type": "announcement",
           "settings": {
-            "text": "🚨 <strong>Free shipping</strong> on all orders",
-            "text_fr": "🚨 <strong>Livraison gratuite</strong> sur tout",
+            "text": "🚚 <strong>Free shipping</strong> on order over $85",
+            "text_fr": "🚚 <strong>Livraison gratuite</strong> dès 85$",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",

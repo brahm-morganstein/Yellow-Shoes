@@ -86,10 +86,10 @@
         "image_YynHUa": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HeroBanner_FreeShipping-JAN2026-EN.jpg",
-            "image_fr": "shopify://shop_images/HeroBanner_FreeShipping-JAN2026-FR_d8571309-8351-4a39-90d4-7b8e3e24ca9d.jpg",
-            "mobile_image": "shopify://shop_images/HeroBanner_FreeShipping-MOBILE-JAN2026-EN_1.jpg",
-            "mobile_image_fr": "shopify://shop_images/HeroBanner_FreeShipping-MOBILE-JAN2026-FR_1.jpg",
+            "image": "shopify://shop_images/DESKTOP_EOSS_WINTER_2025_EN_2.jpg",
+            "image_fr": "shopify://shop_images/DESKTOP_EOSS_WINTER_2025_FR_2.jpg",
+            "mobile_image": "shopify://shop_images/MOBILE_EOSS_WINTER_2025_EN_2.jpg",
+            "mobile_image_fr": "shopify://shop_images/MOBILE_EOSS_WINTER_2025_FR_2.jpg",
             "slide_link": "",
             "subheading": "",
             "subheading_fr": "",
@@ -203,8 +203,8 @@
           "settings": {
             "heading": "FAST SHIPPING",
             "heading_fr": "LIVRAISON RAPIDE",
-            "subheading": "Free shipping on all orders",
-            "subheading_fr": "Livraison gratuite sur tout",
+            "subheading": "Free shipping on orders over $85",
+            "subheading_fr": "Livraison gratuite dès 85$",
             "link_url": ""
           }
         },
