@@ -416,7 +416,7 @@
     "font_col_nav": "#000000",
     "font_col_nav_hov": "#ecb100",
     "panel_nav_bg": "#ffffff",
-    "nav_featured_col": "#832324",
+    "nav_featured_col": "#ecb100",
     "image_overlay_text": "#ffffff",
     "image_overlay_bg": "#000000",
     "image_overlay_opacity": 12,
