@@ -417,7 +417,7 @@
     "font_col_nav_hov": "#ecb100",
     "panel_nav_bg": "#ffffff",
     "nav_featured_col": "#ff522a",
-    "image_overlay_text": "#ffffff",
+    "image_overlay_text": "#fcfaf3",
     "image_overlay_bg": "#000000",
     "image_overlay_opacity": 12,
     "image_overlay_shadow_opacity": 16,
