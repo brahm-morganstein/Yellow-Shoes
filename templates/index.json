@@ -80,6 +80,67 @@
         "button_link": "shopify://pages/sale"
       }
     },
+    "background_video_ca9zwX": {
+      "type": "background-video",
+      "blocks": {
+        "subheading_prQ9nE": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Tell your story",
+            "subheading_fr": ""
+          }
+        },
+        "heading_JjrHrd": {
+          "type": "heading",
+          "settings": {
+            "title": "Background video",
+            "title_fr": "",
+            "heading_max_width": 15,
+            "title_size": 84,
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text_pAaJVt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use a video to get a customer's attention</p>",
+            "text_fr": "",
+            "text_color": "#FFFFFF",
+            "enlarge_text": true,
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_style": "regular"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_prQ9nE",
+        "heading_JjrHrd",
+        "text_pAaJVt"
+      ],
+      "name": "Background video",
+      "settings": {
+        "video_shopify": "shopify://files/videos/Finals_4K_2x1_Yellow_Family_2x1_Final_4K.mp4",
+        "video_external": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_external_fr": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_description": "",
+        "video_description_fr": "",
+        "video_external_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_external_mobile_fr": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_description_mobile": "",
+        "video_description_mobile_fr": "",
+        "text_alignment": "center center",
+        "height_desktop": 600,
+        "height_mobile": 500,
+        "full_width": true,
+        "overlay_style": "shadow"
+      }
+    },
     "slideshow_UmwmBT": {
       "type": "slideshow",
       "blocks": {
@@ -181,6 +242,7 @@
       "block_order": [
         "image_YynHUa"
       ],
+      "disabled": true,
       "settings": {
         "height": "adapt",
         "height_desktop": 800,
@@ -940,6 +1002,7 @@
   "order": [
     "176062646746014805",
     "text_cta_block_dCmN73",
+    "background_video_ca9zwX",
     "slideshow_UmwmBT",
     "compact_messages_4thNGK",
     "meg_featured_collection_HtjHDq",
