@@ -335,7 +335,7 @@
             "end_text": "",
             "end_text_fr": "",
             "hide_on_end": false,
-            "color": "rgba(0,0,0,0)",
+            "color": "#fcfaf3",
             "number_size": 40,
             "divider_type": "colon",
             "show_timer_labels": true
@@ -344,14 +344,14 @@
         "text_3DkM3T": {
           "type": "text",
           "settings": {
-            "text": "Extra 15% OFF all accessories — ends soon!",
-            "text_fr": "15% de rabais sur tous les accessoires — faites vite!",
-            "color": "#000000",
+            "text": "New Spring Collection Is Here",
+            "text_fr": "La nouvelle collection printanière est arrivée",
+            "color": "#fcfaf3",
             "link": "shopify://collections/new-arrivals-accessories",
             "use_h1": false,
             "stencil_all_text": false,
-            "stencil_text": "15% OFF",
-            "stencil_text_fr": "15% de rabais"
+            "stencil_text": "Spring Collection",
+            "stencil_text_fr": "collection printanière"
           }
         },
         "button_T4CMEb": {
@@ -361,8 +361,8 @@
             "text_fr": "Magasiner",
             "link": "shopify://collections/new-arrivals-accessories",
             "button_style": "custom",
-            "color_bg": "#b41921",
-            "color_text": "#ffffff"
+            "color_bg": "#ff522a",
+            "color_text": "#fcfaf3"
           }
         }
       },
@@ -371,10 +371,9 @@
         "text_3DkM3T",
         "button_T4CMEb"
       ],
-      "disabled": true,
       "settings": {
         "full_width": true,
-        "color_scheme": "1",
+        "color_scheme": "2",
         "text_size": 56,
         "vertical_padding": 0,
         "speed": 31,
