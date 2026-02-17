@@ -302,11 +302,9 @@
           "settings": {
             "dropdown_link_title": "Men's",
             "dropdown_link_title_fr": "Hommes",
-            "image": "shopify://shop_images/HIVERNAL_H20_0419.jpg",
-            "image_fr": "shopify://shop_images/HIVERNAL_H20_0419.jpg",
-            "title": "Shop boots for men",
-            "title_fr": "magasiner bottes pour hommes",
-            "link_url": "shopify://collections/mens-boots"
+            "title": "Shop sneakers",
+            "title_fr": "magasiner les sneakers",
+            "link_url": "shopify://collections/mens-shoes"
           }
         },
         "menu_promotion_small_xEDiDy": {
@@ -314,10 +312,8 @@
           "settings": {
             "dropdown_link_title": "Men's",
             "dropdown_link_title_fr": "Hommes",
-            "image": "shopify://shop_images/MEMORY_M_H20_0358.jpg",
-            "image_fr": "shopify://shop_images/MEMORY_M_H20_0358.jpg",
-            "title": "Shop Heritage collection",
-            "title_fr": "la collection Héritage",
+            "title": "Shop new arrivals",
+            "title_fr": "Magasiner les nouveautés",
             "link_url": "shopify://pages/riverland-heritage-collection"
           }
         },
@@ -326,11 +322,9 @@
           "settings": {
             "dropdown_link_title": "Kids",
             "dropdown_link_title_fr": "Enfants",
-            "image": "shopify://shop_images/MEMORY-G_TDLR_1265.jpg",
-            "image_fr": "shopify://shop_images/MEMORY-G_TDLR_1265.jpg",
-            "title": "Shop new arrivals",
-            "title_fr": "Magasiner les nouveautés",
-            "link_url": "shopify://collections/kids-new-arrivals"
+            "title": "Shop rain boots",
+            "title_fr": "Magasiner les bottes de pluie",
+            "link_url": "shopify://collections/kids-rain-boots"
           }
         },
         "menu_promotion_small_MENrVe": {
@@ -338,11 +332,9 @@
           "settings": {
             "dropdown_link_title": "kids",
             "dropdown_link_title_fr": "Enfants",
-            "image": "shopify://shop_images/MONCTON-G_TDLR_0319.jpg",
-            "image_fr": "shopify://shop_images/MONCTON-G_TDLR_0319.jpg",
-            "title": "shop kids winter boots",
-            "title_fr": "bottes d’hiver pour enfants",
-            "link_url": "shopify://collections/kids-winter-boots"
+            "title": "Shop athletic shoes",
+            "title_fr": "Magasiner les souliers",
+            "link_url": "shopify://collections/running-shoes-for-kids"
           }
         },
         "menu_promotion_small_XYHNpQ": {
