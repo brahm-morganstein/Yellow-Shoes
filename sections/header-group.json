@@ -342,11 +342,9 @@
           "settings": {
             "dropdown_link_title": "Accessories",
             "dropdown_link_title_fr": "Accessoires",
-            "image": "shopify://shop_images/ACCESSORIES_1510.jpg",
-            "image_fr": "shopify://shop_images/ACCESSORIES_1510.jpg",
-            "title": "Women's winter accessories",
-            "title_fr": "accessoires d’hiver pour femmes",
-            "link_url": "shopify://collections/womens-winter-accessories"
+            "title": "Shop new bags",
+            "title_fr": "Magasiner les sacs",
+            "link_url": "shopify://collections/accessories-womens-handbags"
           }
         },
         "menu_promotion_small_LNWmXW": {
@@ -354,11 +352,9 @@
           "settings": {
             "dropdown_link_title": "Accessories",
             "dropdown_link_title_fr": "Accessoires",
-            "image": "shopify://shop_images/CALLY_HIVER_HAUTE_1384.jpg",
-            "image_fr": "shopify://shop_images/CALLY_HIVER_HAUTE_1384.jpg",
-            "title": "shop women's handbags",
-            "title_fr": "sacs à main pour femmes",
-            "link_url": "shopify://collections/accessories-womens-handbags"
+            "title": "shop new accessories",
+            "title_fr": "Magasiner les nouveaux accessoires",
+            "link_url": "shopify://collections/new-arrivals-accessories"
           }
         },
         "menu_promotion_small_jhky7D": {
