@@ -149,8 +149,9 @@
       "name": "Background video",
       "settings": {
         "video_shopify": "shopify://files/videos/Finals_4K_2x1_Yellow_Family_2x1_Final_4K.mp4",
-        "video_external": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "video_external_fr": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_shopify_fr": "shopify://files/videos/Finals_4K_2x1_Yellow_Family_2x1_Final_4K.mp4",
+        "video_external": "",
+        "video_external_fr": "",
         "video_description": "",
         "video_description_fr": "",
         "video_external_mobile": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
