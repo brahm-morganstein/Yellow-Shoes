@@ -22,15 +22,15 @@
         "heading_JjrHrd": {
           "type": "heading",
           "settings": {
-            "title": "Spring 2026 collection",
-            "title_fr": "Nouveautés – Printemps 2026",
+            "title": "New Spring 2026 Collection",
+            "title_fr": "Nouvelle collection Printemps",
             "heading_max_width": 15,
             "title_size": 84,
             "title_font_family": "gelica",
             "title_font_weight": "semibold",
             "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
-            "title_size_mobile": 32,
+            "title_size_mobile": 42,
             "use_h1": false
           }
         },
