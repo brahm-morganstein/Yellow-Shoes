@@ -105,19 +105,6 @@
             "use_h1": false
           }
         },
-        "text_pAaJVt": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>Celebrating a legacy since 1916 — shop the latest Spring 2026 styles for the whole family.</p>",
-            "text_fr": "<p>Depuis 1916, une histoire de style et de famille. Magasinez les nouveautés du printemps!</p>",
-            "text_color": "#ffffff",
-            "enlarge_text": true,
-            "text_font_family": "default",
-            "text_font_weight": "regular",
-            "text_font_style": "regular"
-          }
-        },
         "button_mC6REN": {
           "type": "button",
           "settings": {
@@ -143,7 +130,6 @@
       "block_order": [
         "subheading_prQ9nE",
         "heading_JjrHrd",
-        "text_pAaJVt",
         "button_mC6REN"
       ],
       "name": "Background video",
@@ -236,63 +222,6 @@
         "full_width": true,
         "has_subcategories": true
       }
-    },
-    "1770754611289b3562": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_8d86437_xWWDNR": {
-          "type": "ai_gen_block_8d86437",
-          "settings": {
-            "text_before_en": "VALENTINE'S DAY SPECIAL",
-            "discount_text_en": "15% off all accessories",
-            "text_after_en": "— Limited time only",
-            "link_text_en": "Shop now",
-            "text_before_fr": "SPÉCIAL SAINT-VALENTIN :",
-            "discount_text_fr": "15% de rabais sur tous les accessoires",
-            "text_after_fr": "— Offre à durée limitée",
-            "link_text_fr": "Magasiner",
-            "link_url": "",
-            "show_countdown": true,
-            "countdown_end_date": "2026-02-16",
-            "countdown_end_time": "00:00:00",
-            "countdown_label_en": "Ends in:",
-            "countdown_label_fr": "Se termine dans :",
-            "days_label_en": "Days",
-            "days_label_fr": "Jours",
-            "hours_label_en": "Hours",
-            "hours_label_fr": "Heures",
-            "minutes_label_en": "Minutes",
-            "minutes_label_fr": "Minutes",
-            "seconds_label_en": "Seconds",
-            "seconds_label_fr": "Secondes",
-            "cta_url": "shopify://collections/accessories",
-            "cta_text_en": "SHOP NOW",
-            "cta_text_fr": "Magasinez Maintenant",
-            "cta_bg_color": "#ffffff",
-            "cta_text_color": "#c20000",
-            "cta_hover_bg_color": "#ffebcd",
-            "cta_border_radius": 4,
-            "padding_vertical": 40,
-            "max_width": 1000,
-            "font_size": 20,
-            "font_weight": "600",
-            "background_color_1": "#c20000",
-            "background_color_2": "#8b0000",
-            "text_color": "#ffffff",
-            "highlight_color": "#ffebcd",
-            "link_color": "#ffffff",
-            "show_hearts": true,
-            "heart_color": "#ff69b4",
-            "heart_opacity": 0.3
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_8d86437_xWWDNR"
-      ],
-      "disabled": true,
-      "settings": {}
     },
     "slideshow_UmwmBT": {
       "type": "slideshow",
@@ -707,7 +636,6 @@
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
     "meg_featured_collection_HtjHDq",
-    "1770754611289b3562",
     "slideshow_UmwmBT",
     "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
