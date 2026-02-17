@@ -262,11 +262,9 @@
           "settings": {
             "dropdown_link_title": "New",
             "dropdown_link_title_fr": "Nouveautés",
-            "image": "shopify://shop_images/MEMORY_H20_0407.jpg",
-            "image_fr": "shopify://shop_images/MEMORY_H20_0407.jpg",
-            "title": "SHOP THE HERITAGE COLLECTION",
-            "title_fr": "Magasiner la COLLECTION HéRITAGE",
-            "link_url": "shopify://pages/riverland-heritage-collection"
+            "title": "KIDS spring break essentials",
+            "title_fr": "NOUVEAUTÉS POUR ENFANTS",
+            "link_url": "shopify://collections/kids-new-arrivals"
           }
         },
         "menu_promotion_small_U6EcqP": {
@@ -274,11 +272,9 @@
           "settings": {
             "dropdown_link_title": "New",
             "dropdown_link_title_fr": "Nouveautés",
-            "image": "shopify://shop_images/MANUFACTURED_IN_QUEBEC.png",
-            "image_fr": "shopify://shop_images/FABRIQUE_AU_QUEBEC.png",
-            "title": "Made in Quebec Collection",
-            "title_fr": "Collection Fabriquée au Québec",
-            "link_url": "shopify://collections/made-in-quebec-collection"
+            "title": "Women's spring new arrivals",
+            "title_fr": "Nouveautés pour femmes",
+            "link_url": "shopify://collections/womens-new-arrivals"
           }
         },
         "menu_promotion_small_w7rEYW": {
@@ -286,11 +282,9 @@
           "settings": {
             "dropdown_link_title": "Women's",
             "dropdown_link_title_fr": "Femmes",
-            "image": "shopify://shop_images/1993_PRESLEY_0174.jpg",
-            "image_fr": "shopify://shop_images/1993_PRESLEY_0174.jpg",
-            "title": "Shop BOOTS",
-            "title_fr": "magasiner bottillons",
-            "link_url": "shopify://collections/womens-boots"
+            "title": "shop rain boots",
+            "title_fr": "magasiner les bottes de pluie",
+            "link_url": "shopify://collections/womens-rain-boots"
           }
         },
         "menu_promotion_small_JmLEBi": {
@@ -298,11 +292,9 @@
           "settings": {
             "dropdown_link_title": "Women's",
             "dropdown_link_title_fr": "Femmes",
-            "image": "shopify://shop_images/ARIANE_9808.jpg",
-            "image_fr": "shopify://shop_images/ARIANE_9808.jpg",
-            "title": "SHOP tall boots",
-            "title_fr": "Magasiner bottes hautes",
-            "link_url": "shopify://collections/womens-tall-light-boots"
+            "title": "Shop spring booties",
+            "title_fr": "Magasiner les bottillons",
+            "link_url": "shopify://collections/womens-light-boots"
           }
         },
         "menu_promotion_small_ngUQVF": {
