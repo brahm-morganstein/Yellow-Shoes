@@ -159,8 +159,8 @@
         "video_description_mobile": "",
         "video_description_mobile_fr": "",
         "text_alignment": "center center",
-        "height_desktop": 600,
-        "height_mobile": 500,
+        "height_desktop": 800,
+        "height_mobile": 620,
         "full_width": true,
         "overlay_style": "shadow"
       }
