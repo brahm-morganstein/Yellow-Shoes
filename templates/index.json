@@ -9,77 +9,6 @@
  */
 {
   "sections": {
-    "176062646746014805": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_4a36a55_JtEFHn": {
-          "type": "ai_gen_block_4a36a55",
-          "disabled": true,
-          "settings": {
-            "language": "en",
-            "header_en": "Free Shipping - Limited Time Only",
-            "subheader_en": "Offer ends soon! Don't miss out.",
-            "expired_message_en": "This offer has ended.",
-            "days_label_en": "Days",
-            "hours_label_en": "Hours",
-            "minutes_label_en": "Minutes",
-            "seconds_label_en": "Seconds",
-            "header_fr": "Livraison Gratuite - Offre Limitée",
-            "subheader_fr": "L'offre se termine bientôt! Ne manquez pas cette occasion.",
-            "expired_message_fr": "Cette offre est terminée.",
-            "days_label_fr": "Jours",
-            "hours_label_fr": "Heures",
-            "minutes_label_fr": "Minutes",
-            "seconds_label_fr": "Secondes",
-            "end_date": "2025-10-19",
-            "end_time": "23:59",
-            "enable_gradient": true,
-            "gradient_start": "#c20000",
-            "gradient_middle": "#8b0000",
-            "gradient_end": "#c20000",
-            "gradient_angle": 90,
-            "text_color": "#ffffff",
-            "header_size": 22,
-            "subheader_size": 14,
-            "number_size": 36,
-            "label_size": 11
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_4a36a55_JtEFHn"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
-    "text_cta_block_dCmN73": {
-      "type": "text-cta-block",
-      "disabled": true,
-      "settings": {
-        "banner_color": "#e5c9b4",
-        "heading": "Still looking for deals?",
-        "heading_fr": "Toujours en quête de rabais d’hiver?",
-        "heading_color": "#232323",
-        "heading_font_size": 32,
-        "heading_font_size_mobile": 16,
-        "text": "<p>Get up to 75% off on winter styles for the entire family</p>",
-        "text_fr": "<p>Profitez de rabais jusqu’à 75% sur les styles d’hiver pour toute la famille</p>",
-        "text_color": "#232323",
-        "text_font_size": 18,
-        "text_font_size_mobile": 14,
-        "button_label": "shop sales",
-        "button_label_fr": "Magasinez les soldes",
-        "btn_color": "#fcfaf3",
-        "btn_hover_color": "#fcfaf3",
-        "btn_background_color": "#232323",
-        "btn_background_hover_color": "#232323",
-        "trigger_newsletter": false,
-        "klaviyo_popup_id": "SeL9SH",
-        "klaviyo_popup_id_fr": "Vx7TEC",
-        "button_link": "shopify://pages/sale"
-      }
-    },
     "background_video_ca9zwX": {
       "type": "background-video",
       "blocks": {
@@ -631,8 +560,6 @@
     }
   },
   "order": [
-    "176062646746014805",
-    "text_cta_block_dCmN73",
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
     "meg_featured_collection_HtjHDq",
