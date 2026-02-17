@@ -1287,6 +1287,10 @@
     "info": "Not used if buttons or text contain links"
 },
 {
+    "type": "header",
+    "content": "Overlay"
+},
+    {
     "type": "select",
     "id": "title_font_family",
     "label": "Front family",
@@ -1317,8 +1321,8 @@
         }                                
     ],
     "default": "default"
-},
-{
+    },
+    {
     "type": "select",
     "id": "title_font_weight",
     "label": "Front weight",
@@ -1354,8 +1358,8 @@
     ],
     "visible_if": "{{ block.settings.title_font_family == 'default' or block.settings.title_font_family == 'gelica' or block.settings.title_font_family == 'hando' }}",
     "default": "regular"
-},
-{
+    },
+    {
     "type": "select",
     "id": "title_font_weight_regular_bold",
     "label": "Front weight",
@@ -1371,8 +1375,9 @@
     ],
     "visible_if": "{{ block.settings.title_font_family == 'muoto' or block.settings.title_font_family == 'khtekamono'}}",
     "default": "regular"
-},
-{
+    },
+
+    {
     "type": "select",
     "id": "title_font_style",
     "label": "Front style",
@@ -1387,12 +1392,8 @@
         }
     ],
     "default": "regular"
-},  
+    },  
 
-{
-    "type": "header",
-    "content": "Overlay"
-},
     {
     "type": "text",
     "id": "subheading",
