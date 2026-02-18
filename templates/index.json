@@ -129,29 +129,6 @@
         "head_not_mob_url": "shopify://pages/student-teacher-discount"
       }
     },
-    "meg_featured_collection_HtjHDq": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "New Spring Arrivals",
-        "title_fr": "Nouveautés du printemps",
-        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
-        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
-        "womens-collection": "womens-new-arrivals",
-        "mens-collection": "mens-new-arrivals",
-        "girls-collection": "girls-new-arrivals",
-        "boys-collection": "boys-new-arrivals",
-        "accessories-collection": "new-arrivals-accessories",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "collection_list_F3rmVw": {
       "type": "collection-list",
       "blocks": {
@@ -262,6 +239,18 @@
             "button_label": "Shop now",
             "button_label_fr": "magasiner"
           }
+        },
+        "collection_9wPh3F": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-athletic-athleisure",
+            "image": "shopify://shop_images/HP_Collection__M_Impact.png",
+            "image_fr": "shopify://shop_images/HP_Collection__M_Impact.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
         }
       },
       "block_order": [
@@ -273,7 +262,8 @@
         "collection_bxfabc",
         "collection_PYYkCa",
         "collection_93iyW8",
-        "collection_fLndGb"
+        "collection_fLndGb",
+        "collection_9wPh3F"
       ],
       "name": "Collection list",
       "settings": {
@@ -286,12 +276,35 @@
         "coll_grid_image_shape": "tallest",
         "coll_grid_image_position": "center center",
         "coll_thumb_mob_per_row": "2",
-        "coll_grid_show_count": true,
+        "coll_grid_show_count": false,
         "coll_text_position": "below",
         "coll_text_position_under_mobile": false,
         "coll_thumb_text_align_x": "center",
         "coll_thumb_text_align_y": "center",
         "coll_button_style": "primary"
+      }
+    },
+    "meg_featured_collection_HtjHDq": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "New Spring Arrivals",
+        "title_fr": "Nouveautés du printemps",
+        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
+        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
+        "womens-collection": "womens-new-arrivals",
+        "mens-collection": "mens-new-arrivals",
+        "girls-collection": "girls-new-arrivals",
+        "boys-collection": "boys-new-arrivals",
+        "accessories-collection": "new-arrivals-accessories",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
       }
     },
     "slideshow_UmwmBT": {
@@ -704,8 +717,8 @@
   "order": [
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
-    "meg_featured_collection_HtjHDq",
     "collection_list_F3rmVw",
+    "meg_featured_collection_HtjHDq",
     "slideshow_UmwmBT",
     "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
