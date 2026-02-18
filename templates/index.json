@@ -155,64 +155,16 @@
     "collection_list_F3rmVw": {
       "type": "collection-list",
       "blocks": {
-        "collection_bxfabc": {
+        "collection_JFtAyc": {
           "type": "collection",
           "settings": {
-            "collection": "accessories-women",
-            "image": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
+            "collection": "womens-light-boots",
+            "image": "shopify://shop_images/HP_Collection__W_Intuition.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition.png",
             "subheading": "",
             "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
-          }
-        },
-        "collection_fLndGb": {
-          "type": "collection",
-          "settings": {
-            "collection": "mens-dress-and-semi-dress-shoes",
-            "image": "shopify://shop_images/HP_Collection__M_Miles.png",
-            "image_fr": "shopify://shop_images/HP_Collection__M_Miles.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
-          }
-        },
-        "collection_PYYkCa": {
-          "type": "collection",
-          "settings": {
-            "collection": "running-shoes-for-kids",
-            "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
-            "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
-          }
-        },
-        "collection_93iyW8": {
-          "type": "collection",
-          "settings": {
-            "collection": "kids-rain-boots",
-            "image": "shopify://shop_images/HP_Collection__K_Maeva.png",
-            "image_fr": "shopify://shop_images/HP_Collection__K_Maeva.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
-          }
-        },
-        "collection_JRYWJq": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-heels",
-            "image": "shopify://shop_images/HP_Collection__W_Romance.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Romance.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner"
           }
         },
         "collection_3UiYgz": {
@@ -223,20 +175,8 @@
             "image_fr": "shopify://shop_images/HP_Collection__W_Ally.png",
             "subheading": "",
             "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
-          }
-        },
-        "collection_JFtAyc": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-light-boots",
-            "image": "shopify://shop_images/HP_Collection__W_Intuition.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
           }
         },
         "collection_PNyYfx": {
@@ -247,8 +187,8 @@
             "image_fr": "shopify://shop_images/HP_Collection__W_Celestine.png",
             "subheading": "",
             "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
           }
         },
         "collection_WRFNq8": {
@@ -259,21 +199,81 @@
             "image_fr": "shopify://shop_images/HP_Collection__W_Impact_554d4e26-b6c3-4fb8-bb05-c9c900b5efe9.png",
             "subheading": "",
             "subheading_fr": "",
-            "button_label": "",
-            "button_label_fr": ""
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_JRYWJq": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-heels",
+            "image": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_bxfabc": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories-women",
+            "image": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_PYYkCa": {
+          "type": "collection",
+          "settings": {
+            "collection": "running-shoes-for-kids",
+            "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_93iyW8": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-rain-boots",
+            "image": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_fLndGb": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-dress-and-semi-dress-shoes",
+            "image": "shopify://shop_images/HP_Collection__M_Miles.png",
+            "image_fr": "shopify://shop_images/HP_Collection__M_Miles.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
           }
         }
       },
       "block_order": [
+        "collection_JFtAyc",
+        "collection_3UiYgz",
+        "collection_PNyYfx",
+        "collection_WRFNq8",
+        "collection_JRYWJq",
         "collection_bxfabc",
-        "collection_fLndGb",
         "collection_PYYkCa",
         "collection_93iyW8",
-        "collection_JRYWJq",
-        "collection_3UiYgz",
-        "collection_JFtAyc",
-        "collection_PNyYfx",
-        "collection_WRFNq8"
+        "collection_fLndGb"
       ],
       "name": "Collection list",
       "settings": {
