@@ -6,7 +6,15 @@
   endif
 -%}
 
-<div class="{% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--medium{% else %}fully-spaced-row--medium{% endif %}">
+{% if section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' %}
+    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight  | append: '_' | append: section.settings.title_font_style %}
+{% elsif section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono' %}
+    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight_regular_bold  | append: '_' | append: section.settings.title_font_style %}
+{% else %}
+    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_style %}
+{% endif %}
+
+<div class="{{title_font_class}} {% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--medium{% else %}fully-spaced-row--medium{% endif %}">
   <div class="container">
     <div class="flexible-layout valign-middle">
       <div class="column column--half {% if section.settings.image_position == 'right' %}column--order-push-desktop{% endif %}">
