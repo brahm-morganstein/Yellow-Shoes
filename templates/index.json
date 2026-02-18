@@ -931,7 +931,7 @@
         "text_alignment": "center",
         "button_style": "secondary",
         "color_scheme": "default",
-        "title_font_family": "hando",
+        "title_font_family": "default",
         "title_font_weight": "regular",
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular"
