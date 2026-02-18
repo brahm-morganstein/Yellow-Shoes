@@ -671,6 +671,54 @@
         "color_scheme": "default"
       }
     },
+    "image_with_text_8VEiDg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nMHPcD": {
+          "type": "heading",
+          "settings": {
+            "title": "A fan favorite returns",
+            "title_fr": "Le retour d’un favori",
+            "use_h1": false
+          }
+        },
+        "text_wVwXp4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Back in on-trend colors, INEZ pairs effortlessly with all your in-between-season looks. A reliable, comfortable boot that’s easy to wear — rain or shine.</p>",
+            "text_fr": "<p>De retour dans des couleurs actuelles, INEZ accompagne tous les looks de mi-saison. Une botte fiable, confortable et toujours aussi facile à porter — pluie ou soleil.</p>",
+            "enlarge_text": false
+          }
+        },
+        "button_e7qACg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Inez",
+            "button_label_fr": "Magasiner Inez",
+            "button_link": "shopify://products/119282",
+            "button_link_fr": "shopify://products/119282",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nMHPcD",
+        "text_wVwXp4",
+        "button_e7qACg"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Frame_73.png",
+        "image_fr": "shopify://shop_images/Frame_73.png",
+        "image_2": "shopify://shop_images/Frame_74.png",
+        "image_2_fr": "shopify://shop_images/Frame_74.png",
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
     "spacer_XJwmXX": {
       "type": "spacer",
       "name": "Spacer",
@@ -780,6 +828,7 @@
     "collection_list_F3rmVw",
     "slideshow_UmwmBT",
     "image_with_text_afNDhQ",
+    "image_with_text_8VEiDg",
     "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_FqhAyf",
