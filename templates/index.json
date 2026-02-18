@@ -152,6 +152,122 @@
         "has_subcategories": true
       }
     },
+    "collection_list_F3rmVw": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_PYYkCa": {
+          "type": "collection",
+          "settings": {
+            "collection": "running-shoes-for-kids",
+            "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "",
+            "button_label_fr": ""
+          }
+        },
+        "collection_93iyW8": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-rain-boots",
+            "image": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "",
+            "button_label_fr": ""
+          }
+        },
+        "collection_JRYWJq": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-heels",
+            "image": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "",
+            "button_label_fr": ""
+          }
+        },
+        "collection_3UiYgz": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-rain-boots",
+            "image": "shopify://shop_images/HP_Collection__W_Ally.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Ally.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "",
+            "button_label_fr": ""
+          }
+        },
+        "collection_JFtAyc": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-light-boots",
+            "image": "shopify://shop_images/HP_Collection__W_Intuition.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "",
+            "button_label_fr": ""
+          }
+        },
+        "collection_PNyYfx": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-loafers",
+            "image": "shopify://shop_images/HP_Collection__W_Celestine.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Celestine.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "",
+            "button_label_fr": ""
+          }
+        },
+        "collection_WRFNq8": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-shoes-sneakers",
+            "image": "shopify://shop_images/HP_Collection__W_Impact.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Impact_554d4e26-b6c3-4fb8-bb05-c9c900b5efe9.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "",
+            "button_label_fr": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_PYYkCa",
+        "collection_93iyW8",
+        "collection_JRYWJq",
+        "collection_3UiYgz",
+        "collection_JFtAyc",
+        "collection_PNyYfx",
+        "collection_WRFNq8"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "Trending Now",
+        "title_fr": "Tendance du moment",
+        "enable_carousel": true,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true,
+        "coll_grid_image_shape": "tallest",
+        "coll_grid_image_position": "center center",
+        "coll_thumb_mob_per_row": "2",
+        "coll_grid_show_count": true,
+        "coll_text_position": "below",
+        "coll_text_position_under_mobile": false,
+        "coll_thumb_text_align_x": "center",
+        "coll_thumb_text_align_y": "center",
+        "coll_button_style": "primary"
+      }
+    },
     "slideshow_UmwmBT": {
       "type": "slideshow",
       "blocks": {
@@ -563,6 +679,7 @@
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
     "meg_featured_collection_HtjHDq",
+    "collection_list_F3rmVw",
     "slideshow_UmwmBT",
     "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
