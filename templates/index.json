@@ -91,6 +91,10 @@
             "mobile_image": "shopify://shop_images/MOBILE_EOSS_WINTER_2025_EN_2.jpg",
             "mobile_image_fr": "shopify://shop_images/MOBILE_EOSS_WINTER_2025_FR_2.jpg",
             "slide_link": "",
+            "title_font_family": "hando",
+            "title_font_weight": "bold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "subheading": "",
             "subheading_fr": "",
             "title": "",
@@ -324,29 +328,6 @@
       ],
       "settings": {}
     },
-    "meg_featured_collection_WpCRqR": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Hurry, limited time only!",
-        "title_fr": "Dépêchez-vous, offre limitée!",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "scrolling_banner_g3CU8i": {
       "type": "scrolling-banner",
       "blocks": {
@@ -507,6 +488,29 @@
         "coll_thumb_text_align_x": "center",
         "coll_thumb_text_align_y": "center",
         "coll_button_style": "secondary"
+      }
+    },
+    "meg_featured_collection_WpCRqR": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Hurry, limited time only!",
+        "title_fr": "Dépêchez-vous, offre limitée!",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
       }
     },
     "shop_the_look_Ei9CJR": {
