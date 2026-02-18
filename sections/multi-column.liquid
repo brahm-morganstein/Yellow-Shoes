@@ -140,7 +140,7 @@
     {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_style %}
 {% endif %}
 
-<div id="section-id-{{ section.id }}" class="{{title_font_class}}{% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--medium{% else %}fully-spaced-row--medium{% endif %}">
+<div id="section-id-{{ section.id }}" class="{{title_font_class}} {% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--medium{% else %}fully-spaced-row--medium{% endif %}">
     {% style %}
         #section-id-{{ section.id }} .text-column__image {
         max-width: {{ section.settings.media_width }}px;
