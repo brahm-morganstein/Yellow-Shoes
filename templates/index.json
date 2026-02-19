@@ -890,17 +890,6 @@
         "has_subcategories": false
       }
     },
-    "instagram-posts-1": {
-      "type": "instagram-posts",
-      "settings": {
-        "hover_text": "Shop Now",
-        "hover_text_fr": "Acheter maintenant",
-        "title": "INSTA SHOP",
-        "title_fr": "EN DIRECT D'INSTA",
-        "sub_title": "Share your looks using #yellowamespieds for the chance to be featured!",
-        "sub_title_fr": "Partagez vos looks en utilisant #yellowamespieds pour avoir une chance d'être mis en avant !"
-      }
-    },
     "multi_column_BdpFhJ": {
       "type": "multi-column",
       "blocks": {
@@ -973,6 +962,17 @@
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular"
       }
+    },
+    "instagram-posts-1": {
+      "type": "instagram-posts",
+      "settings": {
+        "hover_text": "Shop Now",
+        "hover_text_fr": "Acheter maintenant",
+        "title": "INSTA SHOP",
+        "title_fr": "EN DIRECT D'INSTA",
+        "sub_title": "Share your looks using #yellowamespieds for the chance to be featured!",
+        "sub_title_fr": "Partagez vos looks en utilisant #yellowamespieds pour avoir une chance d'être mis en avant !"
+      }
     }
   },
   "order": [
@@ -987,7 +987,7 @@
     "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_FqhAyf",
-    "instagram-posts-1",
-    "multi_column_BdpFhJ"
+    "multi_column_BdpFhJ",
+    "instagram-posts-1"
   ]
 }
