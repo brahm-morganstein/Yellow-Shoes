@@ -271,6 +271,15 @@
                 {% endif %}
 
                 {% if block.settings.title != blank %}
+
+                    {% if block.settings.title_font_family == 'default' or block.settings.title_font_family == 'gelica' or block.settings.title_font_family == 'hando' %}
+                        {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight  | append: '_' | append: block.settings.title_font_style %}
+                    {% elsif block.settings.title_font_family == 'muoto' or block.settings.title_font_family == 'khtekamono' %}
+                        {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight_regular_bold  | append: '_' | append: block.settings.title_font_style %}
+                    {% else %}
+                        {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_style %}
+                    {% endif %}
+
                     <h3 class="text-column__title">
                         {% if shop.locale == 'en' %}
                             {{ block.settings.title | escape }}
