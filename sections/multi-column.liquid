@@ -660,7 +660,7 @@
             "label": "Bold"
             }
         ],
-        "visible_if": "{{ section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' }}",
+        "visible_if": "{{ block.settings.text_font_family == 'default' or block.settings.text_font_family == 'gelica' or block.settings.text_font_family == 'hando' }}",
         "default": "regular"
         },
         {
@@ -677,10 +677,9 @@
             "label": "Bold"
             }
         ],
-        "visible_if": "{{ section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono'}}",
+        "visible_if": "{{ block.settings.text_font_family == 'muoto' or block.settings.text_font_family == 'khtekamono'}}",
         "default": "regular"
         },
-
         {
         "type": "select",
         "id": "text_font_style",
