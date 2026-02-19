@@ -65,13 +65,7 @@
   assign products_alignment_y = section.settings.products_alignment | split: ' ' | first
 -%}
 
-{% if section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight  | append: '_' | append: section.settings.title_font_style %}
-{% elsif section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono' %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight_regular_bold  | append: '_' | append: section.settings.title_font_style %}
-{% else %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_style %}
-{% endif %}
+
 
 <image-with-text-overlay id="section-id-{{ section.id }}" class="{{title_font_class}} {% if section.settings.video_shopify != blank or section.settings.video_external != blank %}video-section video-section--background{% endif %}">
   {% style %}
@@ -765,11 +759,25 @@
           "label": "No background"
         }
       ]
-    },
+    }
+  ],
+  "blocks": [
     {
-      "type": "header",
-      "content": "Font"
-    },    
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "info": "Enter <br> for a line-break",
+          "default": "Shop the look"
+        },
+        {
+          "type": "text",
+          "id": "title_fr",
+          "label": "Heading (FR)"
+        },   
     {
     "type": "select",
     "id": "title_font_family",
@@ -872,26 +880,8 @@
         }
     ],
     "default": "regular"
-    }    
+    },
 
-  ],
-  "blocks": [
-    {
-      "type": "heading",
-      "name": "Heading",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "info": "Enter <br> for a line-break",
-          "default": "Shop the look"
-        },
-        {
-          "type": "text",
-          "id": "title_fr",
-          "label": "Heading (FR)"
-        },
         {
           "type": "range",
           "id": "heading_max_width",
