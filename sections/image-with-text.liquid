@@ -488,8 +488,8 @@
         },
         {
         "type": "select",
-        "id": "title_font_weight_regular_bold",
-        "label": "Front weight",
+        "id": "text_font_weight_regular_bold",
+        "label": "Subheading Front weight",
         "options": [
             {
             "value": "regular",
@@ -500,14 +500,14 @@
             "label": "Bold"
             }
         ],
-        "visible_if": "{{ block.settings.title_font_family == 'muoto' or block.settings.title_font_family == 'khtekamono'}}",
+        "visible_if": "{{ block.settings.text_font_family == 'muoto' or block.settings.text_font_family == 'khtekamono'}}",
         "default": "regular"
         },
 
         {
         "type": "select",
-        "id": "title_font_style",
-        "label": "Front style",
+        "id": "text_font_style",
+        "label": "Subheading Front style",
         "options": [
             {
             "value": "regular",
@@ -519,7 +519,7 @@
             }
         ],
         "default": "regular"
-        },              
+        }              
       ]
     },
     {
