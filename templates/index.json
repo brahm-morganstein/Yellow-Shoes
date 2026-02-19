@@ -515,7 +515,7 @@
         "image_position": "right",
         "text_alignment": "center",
         "color_scheme": "default",
-        "title_font_family": "default",
+        "title_font_family": "gelica",
         "title_font_weight": "regular",
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular"
@@ -550,12 +550,22 @@
             "subheading": "Comfortable, versatile and easy to style — made for spring.",
             "subheading_fr": ""
           }
+        },
+        "button_J8KnfP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "button_link": "shopify://collections/womens-shoes-sneakers",
+            "button_style": "primary"
+          }
         }
       },
       "block_order": [
         "heading_XHTLtw",
         "text_nafKtQ",
-        "subheading_bBjgWj"
+        "subheading_bBjgWj",
+        "button_J8KnfP"
       ],
       "name": "Shop the look",
       "settings": {
@@ -587,8 +597,8 @@
         "text_alignment": "top left",
         "mobile_overlay_over": true,
         "overlay_style": "shadow",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular"
       }
@@ -805,7 +815,7 @@
         "image_position": "left",
         "text_alignment": "center",
         "color_scheme": "default",
-        "title_font_family": "default",
+        "title_font_family": "gelica",
         "title_font_weight": "regular",
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular"
