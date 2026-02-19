@@ -293,7 +293,7 @@
         {
         "type": "select",
         "id": "title_font_family",
-        "label": "Front family",
+        "label": "Heading Front family",
         "options": [
             {
             "value": "default",
@@ -325,7 +325,7 @@
         {
         "type": "select",
         "id": "title_font_weight",
-        "label": "Front weight",
+        "label": "Heading Front weight",
         "options": [
             {
             "value": "regular",
@@ -362,7 +362,7 @@
         {
         "type": "select",
         "id": "title_font_weight_regular_bold",
-        "label": "Front weight",
+        "label": "Heading Front weight",
         "options": [
             {
             "value": "regular",
@@ -380,7 +380,7 @@
         {
         "type": "select",
         "id": "title_font_style",
-        "label": "Front style",
+        "label": "Heading Front style",
         "options": [
             {
             "value": "regular",
@@ -419,7 +419,7 @@
         },
         {
         "type": "select",
-        "id": "text_font_family",
+        "id": "subheading_font_family",
         "label": "Subheading Front family",
         "options": [
             {
@@ -451,7 +451,7 @@
         },
         {
         "type": "select",
-        "id": "text_font_weight",
+        "id": "subheading_font_weight",
         "label": "Subheading Front weight",
         "options": [
             {
@@ -483,12 +483,12 @@
             "label": "Bold"
             }
         ],
-        "visible_if": "{{ block.settings.text_font_family == 'default' or block.settings.text_font_family == 'gelica' or block.settings.text_font_family == 'hando' }}",
+        "visible_if": "{{ block.settings.subheading_font_family == 'default' or block.settings.subheading_font_family == 'gelica' or block.settings.subheading_font_family == 'hando' }}",
         "default": "regular"
         },
         {
         "type": "select",
-        "id": "text_font_weight_regular_bold",
+        "id": "subheading_font_weight_regular_bold",
         "label": "Subheading Front weight",
         "options": [
             {
@@ -500,13 +500,13 @@
             "label": "Bold"
             }
         ],
-        "visible_if": "{{ block.settings.text_font_family == 'muoto' or block.settings.text_font_family == 'khtekamono'}}",
+        "visible_if": "{{ block.settings.subheading_font_family == 'muoto' or block.settings.subheading_font_family == 'khtekamono'}}",
         "default": "regular"
         },
 
         {
         "type": "select",
-        "id": "text_font_style",
+        "id": "subheading_font_style",
         "label": "Subheading Front style",
         "options": [
             {
