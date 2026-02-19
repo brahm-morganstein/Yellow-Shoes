@@ -581,7 +581,7 @@
           "120937"
         ],
         "products_alignment": "bottom right",
-        "product_card_layout": "landscape",
+        "product_card_layout": "portrait",
         "show_swatches": true,
         "full_width": true,
         "text_alignment": "top left",
