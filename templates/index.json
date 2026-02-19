@@ -152,337 +152,6 @@
         "has_subcategories": true
       }
     },
-    "image_with_text_8VEiDg": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_nMHPcD": {
-          "type": "heading",
-          "settings": {
-            "title": "A fan favorite returns",
-            "title_fr": "Le retour d’un favori",
-            "use_h1": false
-          }
-        },
-        "text_wVwXp4": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Back in on-trend colors, INEZ pairs effortlessly with all your in-between-season looks. A reliable, comfortable boot that’s easy to wear — rain or shine.</p>",
-            "text_fr": "<p>De retour dans des couleurs actuelles, INEZ accompagne tous les looks de mi-saison. Une botte fiable, confortable et toujours aussi facile à porter — pluie ou soleil.</p>",
-            "enlarge_text": false
-          }
-        },
-        "button_e7qACg": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Inez",
-            "button_label_fr": "Magasiner Inez",
-            "button_link": "shopify://products/119282",
-            "button_link_fr": "shopify://products/119282",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_nMHPcD",
-        "text_wVwXp4",
-        "button_e7qACg"
-      ],
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/Frame_73.png",
-        "image_fr": "shopify://shop_images/Frame_73.png",
-        "image_2": "shopify://shop_images/Frame_74.png",
-        "image_2_fr": "shopify://shop_images/Frame_74.png",
-        "image_width": 700,
-        "image_link": "",
-        "image_position": "right",
-        "text_alignment": "center",
-        "color_scheme": "default",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular"
-      }
-    },
-    "shop_the_look_rq3PNN": {
-      "type": "shop-the-look",
-      "blocks": {
-        "heading_XHTLtw": {
-          "type": "heading",
-          "settings": {
-            "title": "MUST-HAVE SNEAKERS",
-            "title_fr": "SNEAKERS MODE INCONTOURNABLES",
-            "heading_max_width": 10,
-            "title_size": 56,
-            "title_size_mobile": 26,
-            "use_h1": false
-          }
-        },
-        "text_nafKtQ": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Comfortable, versatile and easy to style — made for spring.</p>",
-            "text_fr": "<p>Confortables, polyvalentes et faciles à styliser — faites pour le printemps.</p>",
-            "enlarge_text": true
-          }
-        },
-        "subheading_bBjgWj": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Comfortable, versatile and easy to style — made for spring.",
-            "subheading_fr": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_XHTLtw",
-        "text_nafKtQ",
-        "subheading_bBjgWj"
-      ],
-      "name": "Shop the look",
-      "settings": {
-        "image": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
-        "image_fr": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
-        "mobile_image": "shopify://shop_images/HP_LogoList__1024x1024_f473e896-62e5-44be-b166-68bd7cf1c7e2.png",
-        "mobile_image_fr": "shopify://shop_images/HP_LogoList__1024x1024_f473e896-62e5-44be-b166-68bd7cf1c7e2.png",
-        "video_external": "",
-        "video_description": "",
-        "height": "adapt",
-        "height_desktop": 600,
-        "height_mobile": 460,
-        "product_list": [],
-        "products_alignment": "bottom right",
-        "product_card_layout": "landscape",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "top left",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular"
-      }
-    },
-    "collection_list_F3rmVw": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_JFtAyc": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-light-boots",
-            "image": "shopify://shop_images/HP_Collection__W_Intuition.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_3UiYgz": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-rain-boots",
-            "image": "shopify://shop_images/HP_Collection__W_Ally.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Ally.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_PNyYfx": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-loafers",
-            "image": "shopify://shop_images/HP_Collection__W_Celestine.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Celestine.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_WRFNq8": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-shoes-sneakers",
-            "image": "shopify://shop_images/HP_Collection__W_Impact.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Impact_554d4e26-b6c3-4fb8-bb05-c9c900b5efe9.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_JRYWJq": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-heels",
-            "image": "shopify://shop_images/HP_Collection__W_Romance.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Romance.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_bxfabc": {
-          "type": "collection",
-          "settings": {
-            "collection": "accessories-women",
-            "image": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
-            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_PYYkCa": {
-          "type": "collection",
-          "settings": {
-            "collection": "running-shoes-for-kids",
-            "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
-            "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_93iyW8": {
-          "type": "collection",
-          "settings": {
-            "collection": "kids-rain-boots",
-            "image": "shopify://shop_images/HP_Collection__K_Maeva.png",
-            "image_fr": "shopify://shop_images/HP_Collection__K_Maeva.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_9wPh3F": {
-          "type": "collection",
-          "settings": {
-            "collection": "mens-athletic-athleisure",
-            "image": "shopify://shop_images/HP_Collection__M_Impact.png",
-            "image_fr": "shopify://shop_images/HP_Collection__M_Impact.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        },
-        "collection_fLndGb": {
-          "type": "collection",
-          "settings": {
-            "collection": "mens-dress-and-semi-dress-shoes",
-            "image": "shopify://shop_images/HP_Collection__M_Miles.png",
-            "image_fr": "shopify://shop_images/HP_Collection__M_Miles.png",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "magasiner"
-          }
-        }
-      },
-      "block_order": [
-        "collection_JFtAyc",
-        "collection_3UiYgz",
-        "collection_PNyYfx",
-        "collection_WRFNq8",
-        "collection_JRYWJq",
-        "collection_bxfabc",
-        "collection_PYYkCa",
-        "collection_93iyW8",
-        "collection_9wPh3F",
-        "collection_fLndGb"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "title": "Trending Now",
-        "title_fr": "Tendance du moment",
-        "enable_carousel": true,
-        "grid": 4,
-        "color_scheme": "default",
-        "full_width": true,
-        "coll_grid_image_shape": "tallest",
-        "coll_grid_image_position": "center center",
-        "coll_thumb_mob_per_row": "2",
-        "coll_grid_show_count": false,
-        "coll_text_position": "below",
-        "coll_text_position_under_mobile": false,
-        "coll_thumb_text_align_x": "center",
-        "coll_thumb_text_align_y": "center",
-        "coll_button_style": "primary"
-      }
-    },
-    "image_with_text_afNDhQ": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_RzxVPn": {
-          "type": "heading",
-          "settings": {
-            "title": "Modern Western",
-            "title_fr": "Donnez du yeehaw à votre style !",
-            "use_h1": false
-          }
-        },
-        "text_gT86bp": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Genuine leather cowboy booties and boots with a bold western edge. Iconic short and tall silhouettes designed to elevate every look — from everyday wear to standout moments.</p>",
-            "text_fr": "<p>Des bottes cowboy en cuir véritable au caractère western assumé pour rehausser chaque tenue du quotidien aux moments qui se démarquent.</p>",
-            "enlarge_text": false
-          }
-        },
-        "button_WE8cei": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Arizona",
-            "button_label_fr": "Magasiner Arizona",
-            "button_link": "shopify://products/122086",
-            "button_link_fr": "shopify://products/122086",
-            "button_style": "primary"
-          }
-        },
-        "button_QHUkiG": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Colorado",
-            "button_label_fr": "Magasiner Colorado",
-            "button_link": "shopify://products/122088",
-            "button_link_fr": "shopify://products/122088",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_RzxVPn",
-        "text_gT86bp",
-        "button_WE8cei",
-        "button_QHUkiG"
-      ],
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
-        "image_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
-        "image_2": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
-        "image_2_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
-        "image_width": 700,
-        "image_link": "",
-        "image_position": "left",
-        "text_alignment": "center",
-        "color_scheme": "default",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular"
-      }
-    },
     "slideshow_UmwmBT": {
       "type": "slideshow",
       "blocks": {
@@ -800,6 +469,348 @@
         "accessibility_info": ""
       }
     },
+    "image_with_text_8VEiDg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nMHPcD": {
+          "type": "heading",
+          "settings": {
+            "title": "A fan favorite returns",
+            "title_fr": "Le retour d’un favori",
+            "use_h1": false
+          }
+        },
+        "text_wVwXp4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Back in on-trend colors, INEZ pairs effortlessly with all your in-between-season looks. A reliable, comfortable boot that’s easy to wear — rain or shine.</p>",
+            "text_fr": "<p>De retour dans des couleurs actuelles, INEZ accompagne tous les looks de mi-saison. Une botte fiable, confortable et toujours aussi facile à porter — pluie ou soleil.</p>",
+            "enlarge_text": false
+          }
+        },
+        "button_e7qACg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Inez",
+            "button_label_fr": "Magasiner Inez",
+            "button_link": "shopify://products/119282",
+            "button_link_fr": "shopify://products/119282",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nMHPcD",
+        "text_wVwXp4",
+        "button_e7qACg"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Frame_73.png",
+        "image_fr": "shopify://shop_images/Frame_73.png",
+        "image_2": "shopify://shop_images/Frame_74.png",
+        "image_2_fr": "shopify://shop_images/Frame_74.png",
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "center",
+        "color_scheme": "default",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
+      }
+    },
+    "shop_the_look_rq3PNN": {
+      "type": "shop-the-look",
+      "blocks": {
+        "heading_XHTLtw": {
+          "type": "heading",
+          "settings": {
+            "title": "MUST-HAVE SNEAKERS",
+            "title_fr": "SNEAKERS MODE INCONTOURNABLES",
+            "heading_max_width": 10,
+            "title_size": 56,
+            "title_size_mobile": 26,
+            "use_h1": false
+          }
+        },
+        "text_nafKtQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Comfortable, versatile and easy to style — made for spring.</p>",
+            "text_fr": "<p>Confortables, polyvalentes et faciles à styliser — faites pour le printemps.</p>",
+            "enlarge_text": true
+          }
+        },
+        "subheading_bBjgWj": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Comfortable, versatile and easy to style — made for spring.",
+            "subheading_fr": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_XHTLtw",
+        "text_nafKtQ",
+        "subheading_bBjgWj"
+      ],
+      "name": "Shop the look",
+      "settings": {
+        "image": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
+        "image_fr": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
+        "mobile_image": "shopify://shop_images/HP_LogoList__1024x1024_f473e896-62e5-44be-b166-68bd7cf1c7e2.png",
+        "mobile_image_fr": "shopify://shop_images/HP_LogoList__1024x1024_f473e896-62e5-44be-b166-68bd7cf1c7e2.png",
+        "video_external": "",
+        "video_description": "",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "product_list": [
+          "120779",
+          "121798",
+          "121797",
+          "120890",
+          "120662",
+          "121856",
+          "121857",
+          "120012",
+          "120778",
+          "120937"
+        ],
+        "products_alignment": "bottom right",
+        "product_card_layout": "landscape",
+        "show_swatches": true,
+        "full_width": true,
+        "text_alignment": "top left",
+        "mobile_overlay_over": true,
+        "overlay_style": "shadow",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
+      }
+    },
+    "collection_list_F3rmVw": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_JFtAyc": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-light-boots",
+            "image": "shopify://shop_images/HP_Collection__W_Intuition.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner"
+          }
+        },
+        "collection_3UiYgz": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-rain-boots",
+            "image": "shopify://shop_images/HP_Collection__W_Ally.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Ally.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_PNyYfx": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-loafers",
+            "image": "shopify://shop_images/HP_Collection__W_Celestine.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Celestine.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_WRFNq8": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-shoes-sneakers",
+            "image": "shopify://shop_images/HP_Collection__W_Impact.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Impact_554d4e26-b6c3-4fb8-bb05-c9c900b5efe9.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_JRYWJq": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-heels",
+            "image": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_bxfabc": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories-women",
+            "image": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_PYYkCa": {
+          "type": "collection",
+          "settings": {
+            "collection": "running-shoes-for-kids",
+            "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_93iyW8": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-rain-boots",
+            "image": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_9wPh3F": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-athletic-athleisure",
+            "image": "shopify://shop_images/HP_Collection__M_Impact.png",
+            "image_fr": "shopify://shop_images/HP_Collection__M_Impact.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_fLndGb": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-dress-and-semi-dress-shoes",
+            "image": "shopify://shop_images/HP_Collection__M_Miles.png",
+            "image_fr": "shopify://shop_images/HP_Collection__M_Miles.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        }
+      },
+      "block_order": [
+        "collection_JFtAyc",
+        "collection_3UiYgz",
+        "collection_PNyYfx",
+        "collection_WRFNq8",
+        "collection_JRYWJq",
+        "collection_bxfabc",
+        "collection_PYYkCa",
+        "collection_93iyW8",
+        "collection_9wPh3F",
+        "collection_fLndGb"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "Trending Now",
+        "title_fr": "Tendance du moment",
+        "enable_carousel": true,
+        "grid": 4,
+        "color_scheme": "default",
+        "full_width": true,
+        "coll_grid_image_shape": "tallest",
+        "coll_grid_image_position": "center center",
+        "coll_thumb_mob_per_row": "2",
+        "coll_grid_show_count": false,
+        "coll_text_position": "below",
+        "coll_text_position_under_mobile": false,
+        "coll_thumb_text_align_x": "center",
+        "coll_thumb_text_align_y": "center",
+        "coll_button_style": "primary"
+      }
+    },
+    "image_with_text_afNDhQ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RzxVPn": {
+          "type": "heading",
+          "settings": {
+            "title": "Modern Western",
+            "title_fr": "Donnez du yeehaw à votre style !",
+            "use_h1": false
+          }
+        },
+        "text_gT86bp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Genuine leather cowboy booties and boots with a bold western edge. Iconic short and tall silhouettes designed to elevate every look — from everyday wear to standout moments.</p>",
+            "text_fr": "<p>Des bottes cowboy en cuir véritable au caractère western assumé pour rehausser chaque tenue du quotidien aux moments qui se démarquent.</p>",
+            "enlarge_text": false
+          }
+        },
+        "button_WE8cei": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Arizona",
+            "button_label_fr": "Magasiner Arizona",
+            "button_link": "shopify://products/122086",
+            "button_link_fr": "shopify://products/122086",
+            "button_style": "primary"
+          }
+        },
+        "button_QHUkiG": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Colorado",
+            "button_label_fr": "Magasiner Colorado",
+            "button_link": "shopify://products/122088",
+            "button_link_fr": "shopify://products/122088",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RzxVPn",
+        "text_gT86bp",
+        "button_WE8cei",
+        "button_QHUkiG"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
+        "image_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
+        "image_2": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
+        "image_2_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "left",
+        "text_alignment": "center",
+        "color_scheme": "default",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
+      }
+    },
     "spacer_XJwmXX": {
       "type": "spacer",
       "name": "Spacer",
@@ -979,11 +990,11 @@
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
     "meg_featured_collection_HtjHDq",
+    "slideshow_UmwmBT",
     "image_with_text_8VEiDg",
     "shop_the_look_rq3PNN",
     "collection_list_F3rmVw",
     "image_with_text_afNDhQ",
-    "slideshow_UmwmBT",
     "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_FqhAyf",
