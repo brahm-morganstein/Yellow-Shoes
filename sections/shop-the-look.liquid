@@ -395,7 +395,7 @@
                     {% endif %}
 
                   {% when 'subheading' %}
-                    <div class="text-overlay__subheading subheading subheading--over lightish-spaced-row-above" {{ block.shopify_attributes }}>
+                    <div class="{{title_font_class}} text-overlay__subheading subheading subheading--over lightish-spaced-row-above" {{ block.shopify_attributes }}>
                       {% if shop.locale == 'en' %}
                         {{ block.settings.subheading | escape }}
                       {% else %}
@@ -404,7 +404,7 @@
                     </div>
 
                   {% when 'text' %}
-                    <div class="text-overlay__rte rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}" {{ block.shopify_attributes }}>
+                    <div class="{{title_font_class}} text-overlay__rte rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}" {{ block.shopify_attributes }}>
                       {% if shop.locale == 'en' %}
                         {{ block.settings.text }}
                       {% else %}
