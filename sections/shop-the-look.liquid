@@ -189,7 +189,7 @@
               </div>
 
             {% when 'text' %}
-              <div class="rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}">
+              <div class="{{title_font_class}} rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}">
                 {% if shop.locale == 'en' %}
                   {{ block.settings.text }}
                 {% else %}
