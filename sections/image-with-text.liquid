@@ -65,6 +65,14 @@
             -%}
             {% case block.type %}
               {% when 'heading' %}
+                  {% if block.settings.title_font_family == 'default' or block.settings.title_font_family == 'gelica' or block.settings.title_font_family == 'hando' %}
+                      {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight  | append: '_' | append: block.settings.title_font_style %}
+                  {% elsif block.settings.title_font_family == 'muoto' or block.settings.title_font_family == 'khtekamono' %}
+                      {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight_regular_bold  | append: '_' | append: block.settings.title_font_style %}
+                  {% else %}
+                      {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_style %}
+                  {% endif %}
+
                 {% if block.settings.use_h1 %}
                   <h1 class="majortitle in-content" {{ block.shopify_attributes }}>
                     {% if shop.locale == 'en' %}
