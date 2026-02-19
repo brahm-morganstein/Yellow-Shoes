@@ -197,7 +197,11 @@
         "image_link": "",
         "image_position": "right",
         "text_alignment": "left",
-        "color_scheme": "default"
+        "color_scheme": "default",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
       }
     },
     "shop_the_look_rq3PNN": {
@@ -254,7 +258,11 @@
         "full_width": true,
         "text_alignment": "top left",
         "mobile_overlay_over": true,
-        "overlay_style": "shadow"
+        "overlay_style": "shadow",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
       }
     },
     "collection_list_F3rmVw": {
@@ -468,7 +476,11 @@
         "image_link": "",
         "image_position": "left",
         "text_alignment": "left",
-        "color_scheme": "default"
+        "color_scheme": "default",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
       }
     },
     "slideshow_UmwmBT": {
@@ -482,6 +494,10 @@
             "mobile_image": "shopify://shop_images/SLIDE_HEADING_1_3__1024_x_2048_px.png",
             "mobile_image_fr": "shopify://shop_images/SLIDE_HEADING_1_3__1024_x_2048_px_12f98874-582c-4a6b-914c-5b2ac8b4acc0.png",
             "slide_link": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "subheading": "",
             "subheading_fr": "",
             "title": "Spring Looks Loading...",
@@ -576,6 +592,10 @@
             "mobile_image": "shopify://shop_images/SLIDE_HEADING_2_3__1024_x_2048_px.png",
             "mobile_image_fr": "shopify://shop_images/SLIDE_HEADING_2_3__1024_x_2048_px_3002ba53-131f-42fa-96d8-0e3ff77bbef6.png",
             "slide_link": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "subheading": "",
             "subheading_fr": "",
             "title": "Must-Have Fashion Booties",
@@ -670,6 +690,10 @@
             "mobile_image": "shopify://shop_images/SLIDE_HEADING_3_3__1024_x_2048_px.png",
             "mobile_image_fr": "shopify://shop_images/SLIDE_HEADING_3_3__1024_x_2048_px_89743058-7fb8-4797-be2c-e5e29e096383.png",
             "slide_link": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "subheading": "",
             "subheading_fr": "",
             "title": "Spring, Made for Kids",
@@ -876,6 +900,79 @@
         "sub_title": "Share your looks using #yellowamespieds for the chance to be featured!",
         "sub_title_fr": "Partagez vos looks en utilisant #yellowamespieds pour avoir une chance d'être mis en avant !"
       }
+    },
+    "multi_column_BdpFhJ": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_xcNyqf": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
+            "title": "Add a title or tagline",
+            "title_fr": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+            "text_fr": "",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "",
+            "link_fr": ""
+          }
+        },
+        "text_block_NqMtm7": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
+            "title": "Add a title or tagline",
+            "title_fr": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+            "text_fr": "",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "",
+            "link_fr": ""
+          }
+        },
+        "text_block_KrqaGj": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
+            "title": "Add a title or tagline",
+            "title_fr": "",
+            "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+            "text_fr": "",
+            "button_label": "",
+            "button_label_fr": "",
+            "link": "",
+            "link_fr": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xcNyqf",
+        "text_block_NqMtm7",
+        "text_block_KrqaGj"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "title": "Multi-column",
+        "title_fr": "",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "default",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
+      }
     }
   },
   "order": [
@@ -890,6 +987,7 @@
     "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_FqhAyf",
-    "instagram-posts-1"
+    "instagram-posts-1",
+    "multi_column_BdpFhJ"
   ]
 }
