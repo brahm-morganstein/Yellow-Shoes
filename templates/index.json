@@ -529,6 +529,10 @@
           "settings": {
             "title": "MUST-HAVE SNEAKERS",
             "title_fr": "SNEAKERS MODE INCONTOURNABLES",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "heading_max_width": 10,
             "title_size": 56,
             "title_size_mobile": 26,
@@ -540,7 +544,11 @@
           "settings": {
             "text": "<p>Comfortable, versatile and easy to style — made for spring.</p>",
             "text_fr": "<p>Confortables, polyvalentes et faciles à styliser — faites pour le printemps.</p>",
-            "enlarge_text": true
+            "enlarge_text": true,
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
           }
         },
         "subheading_bBjgWj": {
@@ -548,7 +556,11 @@
           "disabled": true,
           "settings": {
             "subheading": "Comfortable, versatile and easy to style — made for spring.",
-            "subheading_fr": ""
+            "subheading_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
           }
         },
         "button_J8KnfP": {
@@ -596,11 +608,7 @@
         "full_width": true,
         "text_alignment": "top left",
         "mobile_overlay_over": true,
-        "overlay_style": "shadow",
-        "title_font_family": "gelica",
-        "title_font_weight": "semibold",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular"
+        "overlay_style": "shadow"
       }
     },
     "collection_list_F3rmVw": {
