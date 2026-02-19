@@ -262,6 +262,8 @@
           "settings": {
             "dropdown_link_title": "New",
             "dropdown_link_title_fr": "Nouveautés",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG08.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG08.png",
             "title": "KIDS spring break essentials",
             "title_fr": "NOUVEAUTÉS POUR ENFANTS",
             "link_url": "shopify://collections/kids-new-arrivals"
@@ -272,6 +274,8 @@
           "settings": {
             "dropdown_link_title": "New",
             "dropdown_link_title_fr": "Nouveautés",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG02.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG02.png",
             "title": "Women's spring new arrivals",
             "title_fr": "Nouveautés pour femmes",
             "link_url": "shopify://collections/womens-new-arrivals"
@@ -282,6 +286,8 @@
           "settings": {
             "dropdown_link_title": "Women's",
             "dropdown_link_title_fr": "Femmes",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG03.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG03.png",
             "title": "shop rain boots",
             "title_fr": "magasiner les bottes de pluie",
             "link_url": "shopify://collections/womens-rain-boots"
@@ -292,6 +298,8 @@
           "settings": {
             "dropdown_link_title": "Women's",
             "dropdown_link_title_fr": "Femmes",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG04.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG04.png",
             "title": "Shop spring booties",
             "title_fr": "Magasiner les bottillons",
             "link_url": "shopify://collections/womens-light-boots"
@@ -302,9 +310,11 @@
           "settings": {
             "dropdown_link_title": "Men's",
             "dropdown_link_title_fr": "Hommes",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG05.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG05.png",
             "title": "Shop sneakers",
             "title_fr": "magasiner les sneakers",
-            "link_url": "shopify://collections/mens-shoes"
+            "link_url": "shopify://collections/mens-athletic-athleisure"
           }
         },
         "menu_promotion_small_xEDiDy": {
@@ -312,9 +322,11 @@
           "settings": {
             "dropdown_link_title": "Men's",
             "dropdown_link_title_fr": "Hommes",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG06.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG06.png",
             "title": "Shop new arrivals",
             "title_fr": "Magasiner les nouveautés",
-            "link_url": "shopify://pages/riverland-heritage-collection"
+            "link_url": "shopify://collections/mens-new-arrivals"
           }
         },
         "menu_promotion_small_KyRxnL": {
@@ -322,6 +334,8 @@
           "settings": {
             "dropdown_link_title": "Kids",
             "dropdown_link_title_fr": "Enfants",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG07.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG07.png",
             "title": "Shop rain boots",
             "title_fr": "Magasiner les bottes de pluie",
             "link_url": "shopify://collections/kids-rain-boots"
@@ -332,8 +346,10 @@
           "settings": {
             "dropdown_link_title": "kids",
             "dropdown_link_title_fr": "Enfants",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG01.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG01.png",
             "title": "Shop athletic shoes",
-            "title_fr": "Magasiner les souliers",
+            "title_fr": "Magasiner les chaussures sport",
             "link_url": "shopify://collections/running-shoes-for-kids"
           }
         },
