@@ -141,6 +141,7 @@
 
     <div class="container">
         {% if section.settings.title != blank %}
+            
             <h2 class="hometitle h4 align-center" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
                 {% if shop.locale == 'en' %}
                     {{- section.settings.title | escape -}}
