@@ -181,7 +181,7 @@
               {% endif %}
 
             {% when 'subheading' %}
-              <div class="subheading subheading--over lightish-spaced-row-above">
+              <div class="{{title_font_class}} subheading subheading--over lightish-spaced-row-above">
                 {% if shop.locale == 'en' %}
                   {{ block.settings.subheading | escape }}
                 {% else %}
@@ -190,7 +190,7 @@
               </div>
 
             {% when 'text' %}
-              <div class="rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}">
+              <div class="{{title_font_class}} rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}">
                 {% if shop.locale == 'en' %}
                   {{ block.settings.text }}
                 {% else %}
