@@ -167,20 +167,20 @@
             {% when 'heading' %}
               {% if block.settings.use_h1 %}
                 {% if shop.locale == 'en' %}
-                  <h1 class="block-{{ block.id }}">{% render 'multiline-text' with block.settings.title %}</h1>
+                  <h1 class="{{title_font_class}} block-{{ block.id }}">{% render 'multiline-text' with block.settings.title %}</h1>
                 {% else %}
-                  <h1 class="block-{{ block.id }}">{% render 'multiline-text' with block.settings.title_fr %}</h1>
+                  <h1 class="{{title_font_class}} block-{{ block.id }}">{% render 'multiline-text' with block.settings.title_fr %}</h1>
                 {% endif %}  
               {% else %}
                 {% if shop.locale == 'en' %}
-                  <h2 class="h1 block-{{ block.id }}">{% render 'multiline-text' with block.settings.title %}</h2>
+                  <h2 class="{{title_font_class}} h1 block-{{ block.id }}">{% render 'multiline-text' with block.settings.title %}</h2>
                 {% else %}
-                  <h2 class="h1 block-{{ block.id }}">{% render 'multiline-text' with block.settings.title_fr %}</h2>
+                  <h2 class="{{title_font_class}} h1 block-{{ block.id }}">{% render 'multiline-text' with block.settings.title_fr %}</h2>
                 {% endif %}  
               {% endif %}
 
             {% when 'subheading' %}
-              <div class="subheading subheading--over lightish-spaced-row-above">
+              <div class="{{title_font_class}} subheading subheading--over lightish-spaced-row-above">
                 {% if shop.locale == 'en' %}
                   {{ block.settings.subheading | escape }}
                 {% else %}
