@@ -382,8 +382,8 @@
           "settings": {
             "dropdown_link_title": "Sale",
             "dropdown_link_title_fr": "Soldes",
-            "image": "shopify://shop_images/EN.gif",
-            "image_fr": "shopify://shop_images/FR.gif",
+            "image": "shopify://shop_images/HP_SALES-BANNER_EN.png",
+            "image_fr": "shopify://shop_images/HP_SALES-BANNER_FR.png",
             "title": "Shop all sales",
             "title_fr": "Magasiner tous les soldes",
             "link_url": "shopify://pages/sale"
