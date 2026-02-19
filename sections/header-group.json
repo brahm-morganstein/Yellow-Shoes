@@ -358,6 +358,8 @@
           "settings": {
             "dropdown_link_title": "Accessories",
             "dropdown_link_title_fr": "Accessoires",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG010.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG010.png",
             "title": "Shop new bags",
             "title_fr": "Magasiner les sacs",
             "link_url": "shopify://collections/accessories-womens-handbags"
@@ -368,6 +370,8 @@
           "settings": {
             "dropdown_link_title": "Accessories",
             "dropdown_link_title_fr": "Accessoires",
+            "image": "shopify://shop_images/HP_MegaMenu_IMG09.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG09.png",
             "title": "shop new accessories",
             "title_fr": "Magasiner les nouveaux accessoires",
             "link_url": "shopify://collections/new-arrivals-accessories"
