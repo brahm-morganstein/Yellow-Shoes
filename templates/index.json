@@ -914,10 +914,10 @@
             "title_fr": "NOUVEAUTÉS POUR FEMMES",
             "text": "<p>New Season, New Styles! Explore Our Trendiest Women's Shoes and Fan-Favourite Booties</p>",
             "text_fr": "<p>Nouvelle saison, nouveaux styles ! Découvrez nos chaussures pour femmes les plus tendance et nos bottillons préférées</p>",
-            "button_label": "",
-            "button_label_fr": "",
-            "link": "",
-            "link_fr": ""
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/womens-new-arrivals",
+            "link_fr": "shopify://collections/womens-new-arrivals"
           }
         },
         "text_block_NqMtm7": {
@@ -930,10 +930,10 @@
             "title_fr": "NOUVEAUTÉS POUR ENFANTS",
             "text": "<p>New season, new adventures! School-ready sneakers, everyday shoes and boots made for spring.</p>",
             "text_fr": "<p>Nouvelle saison, nouvelles aventures ! Sneakers pour l’école, chaussures du quotidien et bottes prêtes pour le printemps.</p>",
-            "button_label": "",
-            "button_label_fr": "",
-            "link": "",
-            "link_fr": ""
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/kids-new-arrivals",
+            "link_fr": "shopify://collections/kids-new-arrivals"
           }
         },
         "text_block_KrqaGj": {
@@ -942,14 +942,14 @@
             "enable_media": true,
             "image": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
             "image_fr": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
-            "title": "MEN'S NEW ARRIVALS",
-            "title_fr": "NOUVEAUTÉS POUR HOMMES",
+            "title": "Shop the Latest",
+            "title_fr": "Magasinez les nouveautés",
             "text": "<p>New season, new essentials! Discover men’s shoes and sneakers made for everyday wear and the in-between season.</p>",
             "text_fr": "<p>Nouvelle saison, nouveaux essentiels ! Découvrez nos chaussures et sneakers pour hommes, pensées pour le quotidien et la mi-saison.</p>",
-            "button_label": "",
-            "button_label_fr": "",
-            "link": "",
-            "link_fr": ""
+            "button_label": "shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/mens-new-arrivals",
+            "link_fr": "shopify://collections/mens-new-arrivals"
           }
         }
       },
