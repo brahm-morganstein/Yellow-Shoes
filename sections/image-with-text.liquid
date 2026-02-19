@@ -74,7 +74,7 @@
                   {% endif %}
 
                 {% if block.settings.use_h1 %}
-                  <h1 class="majortitle in-content" {{ block.shopify_attributes }}>
+                  <h1 class="{{title_font_class}} majortitle in-content" {{ block.shopify_attributes }}>
                     {% if shop.locale == 'en' %}
                       {{ block.settings.title | escape }}
                     {% else %}
@@ -82,7 +82,7 @@
                     {% endif %}
                   </h1>
                 {% else %}
-                  <h2 class="majortitle in-content h1" {{ block.shopify_attributes }}>
+                  <h2 class="{{title_font_class}} majortitle in-content h1" {{ block.shopify_attributes }}>
                     {% if shop.locale == 'en' %}
                       {{ block.settings.title | escape }}
                     {% else %}
