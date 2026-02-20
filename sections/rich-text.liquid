@@ -1,12 +1,4 @@
-{% if section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight  | append: '_' | append: section.settings.title_font_style %}
-{% elsif section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono' %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight_regular_bold  | append: '_' | append: section.settings.title_font_style %}
-{% else %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_style %}
-{% endif %}
-
-<div class="{{title_font_class}} {% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--{{ section.settings.height }}{% else %}fully-spaced-row--{{ section.settings.height }}{% endif %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+<div class="{% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--{{ section.settings.height }}{% else %}fully-spaced-row--{{ section.settings.height }}{% endif %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
   <div class="container{% unless section.settings.full_width %} container--reading-width{% endunless %}">
     <div class="align-ltr-{{ section.settings.text_alignment }} spaced-column">
       {% assign skip_block_count = 0 %}
