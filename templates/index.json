@@ -91,14 +91,18 @@
             "mobile_image": "shopify://shop_images/HeroBanner_FreeShipping-MOBILE-JAN2026-EN.jpg",
             "mobile_image_fr": "shopify://shop_images/HeroBanner_FreeShipping-MOBILE-JAN2026-FR.jpg",
             "slide_link": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "title": "",
+            "title_fr": "",
             "title_font_family": "default",
             "title_font_weight": "regular",
             "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
-            "subheading": "",
-            "subheading_fr": "",
-            "title": "",
-            "title_fr": "",
             "heading_max_width": 15,
             "heading_max_width_fr": 15,
             "title_size": 84,
@@ -106,6 +110,10 @@
             "use_h1": false,
             "text": "",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "enlarge_text": true,
             "min_buttons_width_1": 140,
             "min_buttons_width_1_fr": 140,
@@ -254,6 +262,10 @@
       "settings": {
         "title": "New Spring Arrivals",
         "title_fr": "Nouveautés du printemps",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
         "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
         "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
         "womens-collection": "womens-new-arrivals",
@@ -398,6 +410,10 @@
             "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_FR_b457572c-b4a4-4b6a-80ef-7c24a59f5645.jpg",
             "subheading": "",
             "subheading_fr": "",
+            "subheading_font_family": "khtekamono",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "Magasiner"
           }
@@ -410,6 +426,10 @@
             "image_fr": "shopify://shop_images/COLLECTION_LIST_-_MEN_-_FR.jpg",
             "subheading": "",
             "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "Magasiner"
           }
@@ -422,6 +442,10 @@
             "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_BOTTES_HAUTES_-_FR_f5f2aed7-bdf7-4088-ae99-30b4cf809cdc.jpg",
             "subheading": "",
             "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
             "button_label": "Shop now",
             "button_label_fr": "Magasiner"
           }
@@ -434,6 +458,10 @@
             "image_fr": "shopify://shop_images/COLLECTION_LIST_-_GARCONS_-_FR.jpg",
             "subheading": "",
             "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
             "button_label": "Shop now",
             "button_label_fr": "Magasiner"
           }
@@ -446,6 +474,10 @@
             "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FILLES_-_FR.jpg",
             "subheading": "",
             "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
             "button_label": "Shop now",
             "button_label_fr": "Magasiner"
           }
@@ -458,6 +490,10 @@
             "image_fr": "shopify://shop_images/COLLECTION_LIST_-_ACCESSOIRES_-_FR.jpg",
             "subheading": "",
             "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
             "button_label": "Shop now",
             "button_label_fr": "Magasiner"
           }
@@ -475,6 +511,10 @@
       "settings": {
         "title": "Top collections",
         "title_fr": "Collections vedettes",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
         "enable_carousel": true,
         "grid": 3,
         "color_scheme": "default",
@@ -496,6 +536,10 @@
       "settings": {
         "title": "Hurry, limited time only!",
         "title_fr": "Dépêchez-vous, offre limitée!",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
         "main-collection-url": "shopify://pages/sale",
         "main-collection-url-fr": "shopify://pages/sale",
         "womens-collection": "womens-sale",
@@ -521,7 +565,11 @@
           "disabled": true,
           "settings": {
             "subheading": "Our most comfortable, premium boots & slippers — crafted for the whole family.",
-            "subheading_fr": "Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille."
+            "subheading_fr": "Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille.",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
           }
         },
         "heading_bGLmFm": {
@@ -529,6 +577,10 @@
           "settings": {
             "title": "Heritage, Elevated",
             "title_fr": "La qualité RIVERLAND",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "heading_max_width": 10,
             "title_size": 56,
             "title_size_mobile": 26,
@@ -540,7 +592,11 @@
           "settings": {
             "text": "<p>Our most comfortable, premium boots & slippers — crafted for the whole family.</p>",
             "text_fr": "<p>Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille.</p>",
-            "enlarge_text": true
+            "enlarge_text": true,
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
           }
         },
         "button_ddDyGW": {
@@ -607,8 +663,16 @@
             "image_fr": "shopify://shop_images/076A9847.jpg",
             "title": "for him",
             "title_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>Men's gift guide</p>",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "magasiner",
             "link": "shopify://collections/mens-gift-guide",
@@ -623,8 +687,16 @@
             "image_fr": "shopify://shop_images/076A9652.jpg",
             "title": "for her",
             "title_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>Women's gift guide</p>",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "magasiner",
             "link": "shopify://collections/womens-gift-guide",
@@ -639,8 +711,16 @@
             "image_fr": "shopify://shop_images/076A9813.jpg",
             "title": "For kids",
             "title_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>Kids gift guide</p>",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "magasiner",
             "link": "shopify://collections/kids-gift-guide",
@@ -663,11 +743,7 @@
         "media_width": 700,
         "text_alignment": "center",
         "button_style": "secondary",
-        "color_scheme": "default",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular"
+        "color_scheme": "default"
       }
     },
     "spacer_VUrmbi": {
@@ -686,7 +762,11 @@
           "settings": {
             "text": "<p>COLLECTION ENTIRELY</p>",
             "text_fr": "<p>COLLECTION ENTIÈREMENT</p>",
-            "enlarge_text": true
+            "enlarge_text": true,
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
           }
         },
         "heading_fNqfB9": {
@@ -694,6 +774,10 @@
           "settings": {
             "title": "MADE IN QUEBEC",
             "title_fr": "FABRIQUÉE AU QUÉBEC",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "heading_max_width": 10,
             "title_size": 56,
             "title_size_mobile": 26,
@@ -767,6 +851,10 @@
       "settings": {
         "title": "Best Sellers This Week",
         "title_fr": "Meilleures ventes de la semaine",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
         "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
         "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
         "womens-collection": "best-sellers-womens",
@@ -800,6 +888,10 @@
           "settings": {
             "title": "FRIKSION TECHNOLOGY",
             "title_fr": "TECHNOLOGIE FRIKSION",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "heading_max_width": 10,
             "title_size": 56,
             "title_size_mobile": 26,
@@ -811,7 +903,11 @@
           "settings": {
             "text": "<p>An optimized grip system made entirely of fiberglass and natural rubber to maximize your safety on all types of icy surfaces.</p>",
             "text_fr": "<p>Un système d'adhérence optimisé composé entièrement de fibres de verre et de caoutchouc naturel pour maximiser votre sécurité sur tous les types de surfaces glacées.<br/></p>",
-            "enlarge_text": false
+            "enlarge_text": false,
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
           }
         },
         "button_wEL7AP": {
@@ -875,8 +971,16 @@
             "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
             "title": "Women’s Winter Boots",
             "title_fr": "Bottes d’hiver pour femmes",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
             "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "magasiner",
             "link": "shopify://collections/womens-winter-boots",
@@ -891,8 +995,16 @@
             "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
             "title": "Men’s Winter Boots",
             "title_fr": "Bottes d’hiver pour hommes",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
             "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "magasiner",
             "link": "shopify://collections/mens-winter-boots",
@@ -907,8 +1019,16 @@
             "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
             "title": "Kids’ Winter Boots",
             "title_fr": "Bottes d’hiver pour enfants",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
             "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "shop now",
             "button_label_fr": "magasiner",
             "link": "shopify://collections/kids-winter-boots",
@@ -930,11 +1050,7 @@
         "media_width": 700,
         "text_alignment": "center",
         "button_style": "secondary",
-        "color_scheme": "default",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular"
+        "color_scheme": "default"
       }
     },
     "instagram-posts-1": {
