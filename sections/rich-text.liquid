@@ -447,7 +447,7 @@
             }
         ],
         "default": "regular"
-        },               
+        }               
       ]
     },
     {
@@ -464,7 +464,110 @@
           "type": "richtext",
           "id": "text_fr",
           "label": "Text (FR)"
-        },        
+        },   
+        {
+        "type": "select",
+        "id": "text_font_family",
+        "label": "Text Font family",
+        "options": [
+            {
+            "value": "default",
+            "label": "Default"
+            },
+            {
+            "value": "gelica",
+            "label": "Gelica"
+            },
+            {
+            "value": "hando",
+            "label": "Hando"
+            },
+            {
+            "value": "muoto",
+            "label": "Muoto"
+            },
+            {
+            "value": "khtekamono",
+            "label": "KHTekaMono"
+            },
+            {
+            "value": "abcotto_bold",
+            "label": "ABCOtto Bold"
+            }                                
+        ],
+        "default": "default"
+        },
+        {
+        "type": "select",
+        "id": "text_font_weight",
+        "label": "Text Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "extralight",
+            "label": "Extra Light"
+            }, 
+            {
+            "value": "light",
+            "label": "Light"
+            },   
+            {
+            "value": "medium",
+            "label": "Medium"
+            }, 
+            {
+            "value": "semibold",
+            "label": "Semi Bold"
+            },   
+            {
+            "value": "black",
+            "label": "Black"
+            },                              
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.text_font_family == 'default' or block.settings.text_font_family == 'gelica' or block.settings.text_font_family == 'hando' }}",
+        "default": "regular"
+        },
+        {
+        "type": "select",
+        "id": "text_font_weight_regular_bold",
+        "label": "Text Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },                             
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.text_font_family == 'muoto' or block.settings.text_font_family == 'khtekamono'}}",
+        "default": "regular"
+        },
+
+        {
+        "type": "select",
+        "id": "text_font_style",
+        "label": "Text Font style",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "italic",
+            "label": "Italic"
+            }
+        ],
+        "default": "regular"
+        },             
         {
           "type": "checkbox",
           "id": "enlarge_text",
