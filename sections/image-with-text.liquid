@@ -6,14 +6,6 @@
   endif
 -%}
 
-{% if section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight  | append: '_' | append: section.settings.title_font_style %}
-{% elsif section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono' %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight_regular_bold  | append: '_' | append: section.settings.title_font_style %}
-{% else %}
-    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_style %}
-{% endif %}
-
 <div class="{{title_font_class}} {% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--medium{% else %}fully-spaced-row--medium{% endif %}">
   <div class="container">
     <div class="flexible-layout valign-middle">
@@ -73,8 +65,16 @@
             -%}
             {% case block.type %}
               {% when 'heading' %}
+                  {% if block.settings.title_font_family == 'default' or block.settings.title_font_family == 'gelica' or block.settings.title_font_family == 'hando' %}
+                      {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight  | append: '_' | append: block.settings.title_font_style %}
+                  {% elsif block.settings.title_font_family == 'muoto' or block.settings.title_font_family == 'khtekamono' %}
+                      {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_weight_regular_bold  | append: '_' | append: block.settings.title_font_style %}
+                  {% else %}
+                      {% assign title_font_class = block.settings.title_font_family  | append: '_' | append: block.settings.title_font_style %}
+                  {% endif %}
+
                 {% if block.settings.use_h1 %}
-                  <h1 class="majortitle in-content" {{ block.shopify_attributes }}>
+                  <h1 class="{{title_font_class}} majortitle in-content" {{ block.shopify_attributes }}>
                     {% if shop.locale == 'en' %}
                       {{ block.settings.title | escape }}
                     {% else %}
@@ -82,7 +82,7 @@
                     {% endif %}
                   </h1>
                 {% else %}
-                  <h2 class="majortitle in-content h1" {{ block.shopify_attributes }}>
+                  <h2 class="{{title_font_class}} majortitle in-content h1" {{ block.shopify_attributes }}>
                     {% if shop.locale == 'en' %}
                       {{ block.settings.title | escape }}
                     {% else %}
@@ -92,7 +92,15 @@
                 {% endif %}
 
               {% when 'subheading' %}
-                <div class="subheading subheading--over lightish-spaced-row-above" {{ block.shopify_attributes }}>
+                  {% if block.settings.subheading_font_family == 'default' or block.settings.subheading_font_family == 'gelica' or block.settings.subheading_font_family == 'hando' %}
+                      {% assign subheading_font_class = block.settings.subheading_font_family  | append: '_' | append: block.settings.subheading_font_weight  | append: '_' | append: block.settings.subheading_font_style %}
+                  {% elsif block.settings.subheading_font_family == 'muoto' or block.settings.subheading_font_family == 'khtekamono' %}
+                      {% assign subheading_font_class = block.settings.subheading_font_family  | append: '_' | append: block.settings.subheading_font_weight_regular_bold  | append: '_' | append: block.settings.subheading_font_style %}
+                  {% else %}
+                      {% assign subheading_font_class = block.settings.subheading_font_family  | append: '_' | append: block.settings.subheading_font_style %}
+                  {% endif %}
+
+                <div class="{{subheading_font_class}} subheading subheading--over lightish-spaced-row-above" {{ block.shopify_attributes }}>
                   {% if shop.locale == 'en' %}
                     {{ block.settings.subheading | escape }}
                   {% else %}
@@ -101,7 +109,15 @@
                 </div>
 
               {% when 'text' %}
-                <div class="rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}" {{ block.shopify_attributes }}>
+                  {% if block.settings.text_font_family == 'default' or block.settings.text_font_family == 'gelica' or block.settings.text_font_family == 'hando' %}
+                      {% assign text_font_class = block.settings.text_font_family  | append: '_' | append: block.settings.text_font_weight  | append: '_' | append: block.settings.text_font_style %}
+                  {% elsif block.settings.text_font_family == 'muoto' or block.settings.text_font_family == 'khtekamono' %}
+                      {% assign text_font_class = block.settings.text_font_family  | append: '_' | append: block.settings.text_font_weight_regular_bold  | append: '_' | append: block.settings.text_font_style %}
+                  {% else %}
+                      {% assign text_font_class = block.settings.text_font_family  | append: '_' | append: block.settings.text_font_style %}
+                  {% endif %}
+
+                <div class="{{text_font_class}} rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}" {{ block.shopify_attributes }}>
                   {% if shop.locale == 'en' %}
                     {{ block.settings.text }}
                   {% else %}
@@ -280,109 +296,6 @@
           "label": "2"
         }
       ]
-    },    
-    {
-    "type": "select",
-    "id": "title_font_family",
-    "label": "Front family",
-    "options": [
-        {
-        "value": "default",
-        "label": "Default"
-        },
-        {
-        "value": "gelica",
-        "label": "Gelica"
-        },
-        {
-        "value": "hando",
-        "label": "Hando"
-        },
-        {
-        "value": "muoto",
-        "label": "Muoto"
-        },
-        {
-        "value": "khtekamono",
-        "label": "KHTekaMono"
-        },
-        {
-        "value": "abcotto_bold",
-        "label": "ABCOtto Bold"
-        }                                
-    ],
-    "default": "default"
-    },
-    {
-    "type": "select",
-    "id": "title_font_weight",
-    "label": "Front weight",
-    "options": [
-        {
-        "value": "regular",
-        "label": "Regular"
-        },
-        {
-        "value": "extralight",
-        "label": "Extra Light"
-        }, 
-        {
-        "value": "light",
-        "label": "Light"
-        },   
-        {
-        "value": "medium",
-        "label": "Medium"
-        }, 
-        {
-        "value": "semibold",
-        "label": "Semi Bold"
-        },   
-        {
-        "value": "black",
-        "label": "Black"
-        },                              
-        {
-        "value": "bold",
-        "label": "Bold"
-        }
-    ],
-    "visible_if": "{{ section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' }}",
-    "default": "regular"
-    },
-    {
-    "type": "select",
-    "id": "title_font_weight_regular_bold",
-    "label": "Front weight",
-    "options": [
-        {
-        "value": "regular",
-        "label": "Regular"
-        },                             
-        {
-        "value": "bold",
-        "label": "Bold"
-        }
-    ],
-    "visible_if": "{{ section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono'}}",
-    "default": "regular"
-    },
-
-    {
-    "type": "select",
-    "id": "title_font_style",
-    "label": "Front style",
-    "options": [
-        {
-        "value": "regular",
-        "label": "Regular"
-        },
-        {
-        "value": "italic",
-        "label": "Italic"
-        }
-    ],
-    "default": "regular"
     } 
   ],
   "blocks": [
@@ -400,6 +313,109 @@
           "type": "text",
           "id": "title_fr",
           "label": "Heading (FR)"
+        },  
+        {
+        "type": "select",
+        "id": "title_font_family",
+        "label": "Heading Font family",
+        "options": [
+            {
+            "value": "default",
+            "label": "Default"
+            },
+            {
+            "value": "gelica",
+            "label": "Gelica"
+            },
+            {
+            "value": "hando",
+            "label": "Hando"
+            },
+            {
+            "value": "muoto",
+            "label": "Muoto"
+            },
+            {
+            "value": "khtekamono",
+            "label": "KHTekaMono"
+            },
+            {
+            "value": "abcotto_bold",
+            "label": "ABCOtto Bold"
+            }                                
+        ],
+        "default": "default"
+        },
+        {
+        "type": "select",
+        "id": "title_font_weight",
+        "label": "Heading Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "extralight",
+            "label": "Extra Light"
+            }, 
+            {
+            "value": "light",
+            "label": "Light"
+            },   
+            {
+            "value": "medium",
+            "label": "Medium"
+            }, 
+            {
+            "value": "semibold",
+            "label": "Semi Bold"
+            },   
+            {
+            "value": "black",
+            "label": "Black"
+            },                              
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.title_font_family == 'default' or block.settings.title_font_family == 'gelica' or block.settings.title_font_family == 'hando' }}",
+        "default": "regular"
+        },
+        {
+        "type": "select",
+        "id": "title_font_weight_regular_bold",
+        "label": "Heading Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },                             
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.title_font_family == 'muoto' or block.settings.title_font_family == 'khtekamono'}}",
+        "default": "regular"
+        },
+
+        {
+        "type": "select",
+        "id": "title_font_style",
+        "label": "Heading Font style",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "italic",
+            "label": "Italic"
+            }
+        ],
+        "default": "regular"
         },        
         {
           "type": "checkbox",
@@ -424,7 +440,110 @@
           "type": "text",
           "id": "subheading_fr",
           "label": "Subheading (FR)"
-        }        
+        },
+        {
+        "type": "select",
+        "id": "subheading_font_family",
+        "label": "Subheading Font family",
+        "options": [
+            {
+            "value": "default",
+            "label": "Default"
+            },
+            {
+            "value": "gelica",
+            "label": "Gelica"
+            },
+            {
+            "value": "hando",
+            "label": "Hando"
+            },
+            {
+            "value": "muoto",
+            "label": "Muoto"
+            },
+            {
+            "value": "khtekamono",
+            "label": "KHTekaMono"
+            },
+            {
+            "value": "abcotto_bold",
+            "label": "ABCOtto Bold"
+            }                                
+        ],
+        "default": "default"
+        },
+        {
+        "type": "select",
+        "id": "subheading_font_weight",
+        "label": "Subheading Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "extralight",
+            "label": "Extra Light"
+            }, 
+            {
+            "value": "light",
+            "label": "Light"
+            },   
+            {
+            "value": "medium",
+            "label": "Medium"
+            }, 
+            {
+            "value": "semibold",
+            "label": "Semi Bold"
+            },   
+            {
+            "value": "black",
+            "label": "Black"
+            },                              
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.subheading_font_family == 'default' or block.settings.subheading_font_family == 'gelica' or block.settings.subheading_font_family == 'hando' }}",
+        "default": "regular"
+        },
+        {
+        "type": "select",
+        "id": "subheading_font_weight_regular_bold",
+        "label": "Subheading Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },                             
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.subheading_font_family == 'muoto' or block.settings.subheading_font_family == 'khtekamono'}}",
+        "default": "regular"
+        },
+
+        {
+        "type": "select",
+        "id": "subheading_font_style",
+        "label": "Subheading Font style",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "italic",
+            "label": "Italic"
+            }
+        ],
+        "default": "regular"
+        }              
       ]
     },
     {
@@ -441,7 +560,110 @@
           "type": "richtext",
           "id": "text_fr",
           "label": "Text (FR)"
-        },        
+        }, 
+        {
+        "type": "select",
+        "id": "text_font_family",
+        "label": "Text Font family",
+        "options": [
+            {
+            "value": "default",
+            "label": "Default"
+            },
+            {
+            "value": "gelica",
+            "label": "Gelica"
+            },
+            {
+            "value": "hando",
+            "label": "Hando"
+            },
+            {
+            "value": "muoto",
+            "label": "Muoto"
+            },
+            {
+            "value": "khtekamono",
+            "label": "KHTekaMono"
+            },
+            {
+            "value": "abcotto_bold",
+            "label": "ABCOtto Bold"
+            }                                
+        ],
+        "default": "default"
+        },
+        {
+        "type": "select",
+        "id": "text_font_weight",
+        "label": "Text Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "extralight",
+            "label": "Extra Light"
+            }, 
+            {
+            "value": "light",
+            "label": "Light"
+            },   
+            {
+            "value": "medium",
+            "label": "Medium"
+            }, 
+            {
+            "value": "semibold",
+            "label": "Semi Bold"
+            },   
+            {
+            "value": "black",
+            "label": "Black"
+            },                              
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.text_font_family == 'default' or block.settings.text_font_family == 'gelica' or block.settings.text_font_family == 'hando' }}",
+        "default": "regular"
+        },
+        {
+        "type": "select",
+        "id": "text_font_weight_regular_bold",
+        "label": "Text Font weight",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },                             
+            {
+            "value": "bold",
+            "label": "Bold"
+            }
+        ],
+        "visible_if": "{{ block.settings.text_font_family == 'muoto' or block.settings.text_font_family == 'khtekamono'}}",
+        "default": "regular"
+        },
+
+        {
+        "type": "select",
+        "id": "text_font_style",
+        "label": "Text Font style",
+        "options": [
+            {
+            "value": "regular",
+            "label": "Regular"
+            },
+            {
+            "value": "italic",
+            "label": "Italic"
+            }
+        ],
+        "default": "regular"
+        },                   
         {
           "type": "checkbox",
           "id": "enlarge_text",
