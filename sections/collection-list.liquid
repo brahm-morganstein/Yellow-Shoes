@@ -595,13 +595,13 @@
         "label": "Bold"
         }
     ],
-    "visible_if": "{{ section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' }}",
+    "visible_if": "{{ block.settings.subheading_font_family == 'default' or block.settings.subheading_font_family == 'gelica' or block.settings.subheading_font_family == 'hando' }}",
     "default": "regular"
     },
     {
     "type": "select",
-    "id": "title_font_weight_regular_bold",
-    "label": "Heading Front weight",
+    "id": "subheading_font_weight_regular_bold",
+    "label": "Subheading Font weight",
     "options": [
         {
         "value": "regular",
@@ -612,14 +612,14 @@
         "label": "Bold"
         }
     ],
-    "visible_if": "{{ section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono'}}",
+    "visible_if": "{{ block.settings.subheading_font_family == 'muoto' or block.settings.subheading_font_family == 'khtekamono'}}",
     "default": "regular"
     },
 
     {
     "type": "select",
-    "id": "title_font_style",
-    "label": "Heading Front style",
+    "id": "subheading_font_style",
+    "label": "Subheading Font style",
     "options": [
         {
         "value": "regular",
