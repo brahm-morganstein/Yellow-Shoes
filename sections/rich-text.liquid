@@ -11,8 +11,15 @@
         -%}
         {% case block.type %}
           {% when 'heading' %}
+            {% if section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' %}
+                {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight  | append: '_' | append: section.settings.title_font_style %}
+            {% elsif section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono' %}
+                {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight_regular_bold  | append: '_' | append: section.settings.title_font_style %}
+            {% else %}
+                {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_style %}
+            {% endif %}
             {% if block.settings.use_h1 %}
-              <h1 class="majortitle in-content" {{ block.shopify_attributes }}>
+              <h1 class="{{title_font_class}} majortitle in-content" {{ block.shopify_attributes }}>
                 {% if shop.locale == 'en' %}
                   {{ block.settings.title | escape }}
                 {% else %}
@@ -20,7 +27,7 @@
                 {% endif %}
               </h1>
             {% else %}
-              <h2 class="majortitle in-content h1" {{ block.shopify_attributes }}>
+              <h2 class="{{title_font_class}} majortitle in-content h1" {{ block.shopify_attributes }}>
                 {% if shop.locale == 'en' %}
                   {{ block.settings.title | escape }}
                 {% else %}
