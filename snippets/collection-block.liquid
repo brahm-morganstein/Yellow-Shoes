@@ -17,7 +17,19 @@
   unless settings_object
     assign settings_object = settings
   endunless
+
+  assign subheading_font_class = ""
 -%}
+{% if settings_block %}
+      {% if settings_block.subheading_font_family == 'default' or settings_block.subheading_font_family == 'gelica' or settings_block.subheading_font_family == 'hando' %}
+          {% assign subheading_font_class = settings_block.subheading_font_family  | append: '_' | append: settings_block.subheading_font_weight  | append: '_' | append: settings_block.subheading_font_style %}
+      {% elsif settings_block.subheading_font_family == 'muoto' or settings_block.subheading_font_family == 'khtekamono' %}
+          {% assign subheading_font_class = settings_block.subheading_font_family  | append: '_' | append: settings_block.subheading_font_weight_regular_bold  | append: '_' | append: settings_block.subheading_font_style %}
+      {% else %}
+          {% assign subheading_font_class = settings_block.subheading_font_family  | append: '_' | append: settings_block.subheading_font_style %}
+      {% endif %}
+{% endif %}
+<script>console.log('subheading_font_class','{{ subheading_font_class }}')</script>
 <div class="product-block collection-block" data-collection-id="{{ collection.id }}" {{ custom_attrs }} {% if animate %}{%- render 'animation-attrs', attrs: 'data-cc-animate', always: true -%}{% endif %}>
   <div class="block-inner">
     <a class="product-link" href="{{ collection.url }}">
@@ -57,7 +69,7 @@
             <div class="text-overlay__inner">
               <div class="text-overlay__text">
                 {%- if subheading != blank -%}
-                  <div class="text-overlay__subheading subheading subheading--over">{{ subheading | escape }}</div>
+                  <div class="{{subheading_font_class}} text-overlay__subheading subheading subheading--over">{{ subheading | escape }}</div>
                 {%- endif -%}
 
                 <div class="text-overlay__title">
@@ -80,7 +92,7 @@
       {%- if settings_object.coll_text_position == 'below' or settings_object.coll_text_position_under_mobile -%}
         <div class="product-block__detail align-{{ settings_object.coll_thumb_text_align_x }}{% if settings_object.coll_text_position != 'below' %} mobile-only{% endif %}">
           {%- if subheading != blank -%}
-            <div class="subheading lightly-spaced-row">{{ subheading | escape }}</div>
+            <div class="{{subheading_font_class}} subheading lightly-spaced-row">{{ subheading | escape }}</div>
           {%- endif -%}
           <div class="product-block__title">{{ collection.title }}</div>
           {%- if settings_object.coll_grid_show_count and collection.all_products_count > 0 -%}
