@@ -29,6 +29,7 @@
           {% assign subheading_font_class = block_settings.subheading_font_family  | append: '_' | append: block_settings.subheading_font_style %}
       {% endif %}
 {% endif %}
+<script>console.log('subheading_font_class','{{ subheading_font_class }}')</script>
 <div class="product-block collection-block" data-collection-id="{{ collection.id }}" {{ custom_attrs }} {% if animate %}{%- render 'animation-attrs', attrs: 'data-cc-animate', always: true -%}{% endif %}>
   <div class="block-inner">
     <a class="product-link" href="{{ collection.url }}">
