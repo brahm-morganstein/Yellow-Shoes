@@ -410,7 +410,7 @@
             "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_FR_b457572c-b4a4-4b6a-80ef-7c24a59f5645.jpg",
             "subheading": "",
             "subheading_fr": "",
-            "subheading_font_family": "khtekamono",
+            "subheading_font_family": "default",
             "subheading_font_weight": "regular",
             "subheading_font_weight_regular_bold": "regular",
             "subheading_font_style": "regular",
