@@ -17,6 +17,8 @@
   unless settings_object
     assign settings_object = settings
   endunless
+
+  assign subheading_font_class = ""
 -%}
 <div class="product-block collection-block" data-collection-id="{{ collection.id }}" {{ custom_attrs }} {% if animate %}{%- render 'animation-attrs', attrs: 'data-cc-animate', always: true -%}{% endif %}>
   <div class="block-inner">
