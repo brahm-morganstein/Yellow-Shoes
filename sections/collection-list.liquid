@@ -103,7 +103,7 @@
                   assign custom_image = block.settings.image_fr | default: collection.featured_image
                 endif
                   
-                render 'collection-block', collection: collection, subheading: subheading, button_label: button_label, custom_attrs: block.shopify_attributes, custom_image: custom_image, custom_aspect_ratio: chosen_aspect_ratio, settings_object: section.settings, setting_block:block.settings
+                render 'collection-block', collection: collection, subheading: subheading, button_label: button_label, custom_attrs: block.shopify_attributes, custom_image: custom_image, custom_aspect_ratio: chosen_aspect_ratio, settings_object: section.settings, settings_block:block.settings
               else
                 render 'onboarding-collection-block', forloop: forloop, settings_object: section.settings
               endunless
