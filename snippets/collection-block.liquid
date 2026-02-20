@@ -20,13 +20,13 @@
 
   assign subheading_font_class = ""
 -%}
-{% if block_settings %}
-      {% if block_settings.subheading_font_family == 'default' or block_settings.subheading_font_family == 'gelica' or block_settings.subheading_font_family == 'hando' %}
-          {% assign subheading_font_class = block_settings.subheading_font_family  | append: '_' | append: block_settings.subheading_font_weight  | append: '_' | append: block_settings.subheading_font_style %}
-      {% elsif block_settings.subheading_font_family == 'muoto' or block_settings.subheading_font_family == 'khtekamono' %}
-          {% assign subheading_font_class = block_settings.subheading_font_family  | append: '_' | append: block_settings.subheading_font_weight_regular_bold  | append: '_' | append: block_settings.subheading_font_style %}
+{% if settings_block %}
+      {% if settings_block.subheading_font_family == 'default' or settings_block.subheading_font_family == 'gelica' or settings_block.subheading_font_family == 'hando' %}
+          {% assign subheading_font_class = settings_block.subheading_font_family  | append: '_' | append: settings_block.subheading_font_weight  | append: '_' | append: settings_block.subheading_font_style %}
+      {% elsif settings_block.subheading_font_family == 'muoto' or settings_block.subheading_font_family == 'khtekamono' %}
+          {% assign subheading_font_class = settings_block.subheading_font_family  | append: '_' | append: settings_block.subheading_font_weight_regular_bold  | append: '_' | append: settings_block.subheading_font_style %}
       {% else %}
-          {% assign subheading_font_class = block_settings.subheading_font_family  | append: '_' | append: block_settings.subheading_font_style %}
+          {% assign subheading_font_class = settings_block.subheading_font_family  | append: '_' | append: settings_block.subheading_font_style %}
       {% endif %}
 {% endif %}
 <script>console.log('subheading_font_class','{{ subheading_font_class }}')</script>
