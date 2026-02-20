@@ -286,8 +286,17 @@
                                         {% endif %}
                                           
                                             {%- if block.settings.subheading != blank -%}
+                                                
+                                                {% if block.settings.subheading_font_family == 'default' or block.settings.subheading_font_family == 'gelica' or block.settings.subheading_font_family == 'hando' %}
+                                                    {% assign subheading_font_class = block.settings.subheading_font_family  | append: '_' | append: block.settings.subheading_font_weight  | append: '_' | append: block.settings.subheading_font_style %}
+                                                {% elsif block.settings.subheading_font_family == 'muoto' or block.settings.subheading_font_family == 'khtekamono' %}
+                                                    {% assign subheading_font_class = block.settings.subheading_font_family  | append: '_' | append: block.settings.subheading_font_weight_regular_bold  | append: '_' | append: block.settings.subheading_font_style %}
+                                                {% else %}
+                                                    {% assign subheading_font_class = block.settings.subheading_font_family  | append: '_' | append: block.settings.subheading_font_style %}
+                                                {% endif %}
+
                                                 <div class="text-overlay__reveal">
-                                                    <div class="text-overlay__subheading subheading subheading--over has-motion">
+                                                    <div class="{{subheading_font_class}} text-overlay__subheading subheading subheading--over has-motion">
                                                         {% if shop.locale == 'en' %}
                                                             {{ block.settings.subheading | escape }}
                                                         {% else %}
