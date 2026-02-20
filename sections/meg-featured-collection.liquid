@@ -39,7 +39,16 @@
                         {% render 'icon-chevron-left' %}
                     </button>
                 {% endif %}
-                <a style="display: inline-block; width: 100%" href="{% if shop.locale == 'en' %} {{ section.settings.main-collection-url }} {% else %} {{ section.settings.main-collection-url-fr }} {% endif %}">
+
+                {% if section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' %}
+                    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight  | append: '_' | append: section.settings.title_font_style %}
+                {% elsif section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono' %}
+                    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_weight_regular_bold  | append: '_' | append: section.settings.title_font_style %}
+                {% else %}
+                    {% assign title_font_class = section.settings.title_font_family  | append: '_' | append: section.settings.title_font_style %}
+                {% endif %}
+
+                <a class="{{ title_font_class }}" style="display: inline-block; width: 100%" href="{% if shop.locale == 'en' %} {{ section.settings.main-collection-url }} {% else %} {{ section.settings.main-collection-url-fr }} {% endif %}">
                 {% if shop.locale == 'en' %}
                     {{ section.settings.title | escape }}
                 {% else %}
@@ -287,6 +296,111 @@
       "id": "title_fr",
       "label": "Heading (FR)"
     },
+
+    {
+    "type": "select",
+    "id": "title_font_family",
+    "label": "Heading Front family",
+    "options": [
+        {
+        "value": "default",
+        "label": "Default"
+        },
+        {
+        "value": "gelica",
+        "label": "Gelica"
+        },
+        {
+        "value": "hando",
+        "label": "Hando"
+        },
+        {
+        "value": "muoto",
+        "label": "Muoto"
+        },
+        {
+        "value": "khtekamono",
+        "label": "KHTekaMono"
+        },
+        {
+        "value": "abcotto_bold",
+        "label": "ABCOtto Bold"
+        }                                
+    ],
+    "default": "default"
+    },
+    {
+    "type": "select",
+    "id": "title_font_weight",
+    "label": "Headin Front weight",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },
+        {
+        "value": "extralight",
+        "label": "Extra Light"
+        }, 
+        {
+        "value": "light",
+        "label": "Light"
+        },   
+        {
+        "value": "medium",
+        "label": "Medium"
+        }, 
+        {
+        "value": "semibold",
+        "label": "Semi Bold"
+        },   
+        {
+        "value": "black",
+        "label": "Black"
+        },                              
+        {
+        "value": "bold",
+        "label": "Bold"
+        }
+    ],
+    "visible_if": "{{ section.settings.title_font_family == 'default' or section.settings.title_font_family == 'gelica' or section.settings.title_font_family == 'hando' }}",
+    "default": "regular"
+    },
+    {
+    "type": "select",
+    "id": "title_font_weight_regular_bold",
+    "label": "Heading Front weight",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },                             
+        {
+        "value": "bold",
+        "label": "Bold"
+        }
+    ],
+    "visible_if": "{{ section.settings.title_font_family == 'muoto' or section.settings.title_font_family == 'khtekamono'}}",
+    "default": "regular"
+    },
+
+    {
+    "type": "select",
+    "id": "title_font_style",
+    "label": "Heading Front style",
+    "options": [
+        {
+        "value": "regular",
+        "label": "Regular"
+        },
+        {
+        "value": "italic",
+        "label": "Italic"
+        }
+    ],
+    "default": "regular"
+    },
+
     {
       "type": "url",
       "id": "main-collection-url",
