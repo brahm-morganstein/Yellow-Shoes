@@ -11024,16 +11024,6 @@ a.boost-pfs-filter-scroll-to-top:before {
   bottom:0px;width:100%;
   z-index:999;    
 }
-#mobile-add-to-cart-section-btn{
-  background-color:#dfb858;
-  color:white;
-  width:100%;
-  text-align:center;
-  padding-top:1em;
-  padding-bottom:1em;
-  text-transform:uppercase;
-  cursor:pointer;
-}
 
 .mobile-add-to-cart-section-options{
   background-color:white;
