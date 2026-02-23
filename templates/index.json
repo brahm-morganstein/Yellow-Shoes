@@ -135,8 +135,8 @@
       "settings": {
         "title": "New Spring Arrivals",
         "title_fr": "Nouveautés du printemps",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular",
         "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
@@ -733,8 +733,8 @@
       "settings": {
         "title": "Trending Now",
         "title_fr": "Tendance du moment",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular",
         "enable_carousel": true,
@@ -761,7 +761,7 @@
             "title": "Modern Western",
             "title_fr": "Donnez du yeehaw à votre style !",
             "title_font_family": "gelica",
-            "title_font_weight": "regular",
+            "title_font_weight": "semibold",
             "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
             "use_h1": false
@@ -982,8 +982,8 @@
       "settings": {
         "title": "Don’t Miss Out — Sale Ending Soon",
         "title_fr": "Ne manquez pas ça — soldes bientôt terminées",
-        "title_font_family": "default",
-        "title_font_weight": "regular",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
         "title_font_weight_regular_bold": "regular",
         "title_font_style": "regular",
         "main-collection-url": "shopify://pages/sale",
