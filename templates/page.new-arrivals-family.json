@@ -19,10 +19,10 @@
         "image_biKyN6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
-            "image_fr": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
-            "mobile_image": "shopify://shop_images/MEMORY_H20_0392.jpg",
-            "mobile_image_fr": "shopify://shop_images/MEMORY_H20_0392.jpg",
+            "image": "shopify://shop_images/SLIDE_HEADING_1_3_2048_x_1024px_68dc2950-229f-4c60-b50e-e23e8ca51e44.png",
+            "image_fr": "shopify://shop_images/SLIDE_HEADING_1_3_2048_x_1024px_68dc2950-229f-4c60-b50e-e23e8ca51e44.png",
+            "mobile_image": "shopify://shop_images/SLIDE_HEADING_1_3__1024_x_2048_px_12f98874-582c-4a6b-914c-5b2ac8b4acc0.png",
+            "mobile_image_fr": "shopify://shop_images/SLIDE_HEADING_1_3__1024_x_2048_px_12f98874-582c-4a6b-914c-5b2ac8b4acc0.png",
             "slide_link": "",
             "subheading": "",
             "subheading_fr": "",
@@ -128,11 +128,11 @@
       ],
       "settings": {
         "height": "fixed",
-        "height_desktop": 360,
+        "height_desktop": 520,
         "height_mobile": 500,
         "full_width": true,
         "mobile_overlay_under": false,
-        "overlay_style": "box",
+        "overlay_style": "shadow",
         "transition": "fade",
         "navigation": "arrows",
         "autoplay": true,
@@ -165,12 +165,12 @@
         "section_alternate_background": "#ffffff"
       }
     },
-    "featured_collection_ixj48f": {
+    "featured_collection_qMtPGT": {
       "type": "featured-collection",
       "settings": {
-        "title": "Men's New Arrivals",
-        "title_fr": "Nouveautés pour hommes",
-        "collection": "mens-new-arrivals",
+        "title": "Kids New Arrivals",
+        "title_fr": "Nouveautés pour enfants",
+        "collection": "kids-new-arrivals",
         "main-collection-url": "",
         "main-collection-url-fr": "",
         "show_vendor": false,
@@ -190,12 +190,12 @@
         "section_alternate_background": "#ffffff"
       }
     },
-    "featured_collection_qMtPGT": {
+    "featured_collection_ixj48f": {
       "type": "featured-collection",
       "settings": {
-        "title": "Kids New Arrivals",
-        "title_fr": "Nouveautés pour enfants",
-        "collection": "kids-new-arrivals",
+        "title": "Men's New Arrivals",
+        "title_fr": "Nouveautés pour hommes",
+        "collection": "mens-new-arrivals",
         "main-collection-url": "",
         "main-collection-url-fr": "",
         "show_vendor": false,
