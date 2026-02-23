@@ -825,6 +825,14 @@
         "coll_button_style": "primary"
       }
     },
+    "spacer_grFXfH": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 10,
+        "section_alternate_background": "#ffffff"
+      }
+    },
     "shop_the_look_rq3PNN": {
       "type": "shop-the-look",
       "blocks": {
@@ -1111,14 +1119,6 @@
         "title_fr": "EN DIRECT D'INSTA",
         "sub_title": "Share your looks using #yellowamespieds for the chance to be featured!",
         "sub_title_fr": "Partagez vos looks en utilisant #yellowamespieds pour avoir une chance d'être mis en avant !"
-      }
-    },
-    "spacer_grFXfH": {
-      "type": "spacer",
-      "name": "Spacer",
-      "settings": {
-        "spacer_height": 40,
-        "section_alternate_background": "#ffffff"
       }
     }
   },
