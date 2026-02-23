@@ -63,10 +63,8 @@
       ],
       "name": "Background video",
       "settings": {
-        "video_shopify": "shopify://files/videos/Compressed video Yellow Shoes Spring 2026 Header Video.mp4",
-        "video_shopify_fr": "shopify://files/videos/Compressed video Yellow Shoes Spring 2026 Header Video.mp4",
-        "video_external": "",
-        "video_external_fr": "",
+        "video_external": "https://youtu.be/xeQ_CnTlRPI",
+        "video_external_fr": "https://youtu.be/xeQ_CnTlRPI",
         "video_description": "New Spring 2026 Collection",
         "video_description_fr": "New Spring 2026 Collection",
         "placeholder_image": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
