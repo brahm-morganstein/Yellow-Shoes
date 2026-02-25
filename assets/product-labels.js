@@ -124,6 +124,8 @@ class ProductLabelManager {
             
             // Generate new labels (this function now properly checks for duplicates)
             const labels = this.getLabelsForTags(tags, existingLabels);
+
+            console.log('labels',labels)
             
             // Update container if we have labels
             if (labels && labels !== existingLabels) {
