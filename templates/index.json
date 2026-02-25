@@ -663,6 +663,8 @@
             "button_label": "click here",
             "button_label_fr": "Cliquez ici",
             "button_link": "",
+            "button_popup": "SFGrse",
+            "button_popup_fr": "SxRERB",
             "button_style": "primary"
           }
         }
