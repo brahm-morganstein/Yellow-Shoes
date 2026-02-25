@@ -80,8 +80,11 @@ class ProductLabelManager {
         const processedTags = new Set();
         
         Object.keys(app_settings.product_labels).forEach((key) => {
+            
             const l = app_settings.product_labels[key];
             const tags_to_process = l.tags.split(',');
+
+            console.log('tags_to_process',tags_to_process)
             
             for(let tag_to_process of tags_to_process) {
                 const normalizedTag = this.normalizeTag(tag_to_process);
