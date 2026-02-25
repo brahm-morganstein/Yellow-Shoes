@@ -165,6 +165,8 @@ $(document).ready(() => {
     window.productLabelManager = new ProductLabelManager();
     
     // Export the functions for global access if needed
-    window.setProductBlockLabels = () => productLabelManager.setProductBlockLabels();
-    window.setProductPageLabels = () => productLabelManager.setProductPageLabels();
+    setTimeout(function(){
+        window.setProductBlockLabels = () => productLabelManager.setProductBlockLabels();
+        window.setProductPageLabels = () => productLabelManager.setProductPageLabels();
+    },500)
 });
