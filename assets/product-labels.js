@@ -89,7 +89,7 @@ class ProductLabelManager {
             for(let tag_to_process of tags_to_process) {
                 const normalizedTag = this.normalizeTag(tag_to_process);
                 console.log(normalizedTag)
-                console.log('includes',tags.includes(normalizedTag))
+                console.log('includes',tags.toLowerCase().includes(normalizedTag))
                 console.log('not processed',!processedTags.has(normalizedTag))
                 // Check if this tag matches and we haven't processed it yet
                 if (tags.includes(normalizedTag) && !processedTags.has(normalizedTag)) {
