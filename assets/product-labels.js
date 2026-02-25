@@ -119,6 +119,7 @@ class ProductLabelManager {
             // Get existing labels from the container
             const existingLabels = $mainContainer.html();
 
+            console.log('tags',tags)
             console.log('existingLabels',existingLabels)
             
             // Generate new labels (this function now properly checks for duplicates)
