@@ -60,7 +60,6 @@
       "blocks": {
         "announcement_mLdP76": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "🔥End of Season Sale — Final Days! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Shop Now</strong></a>",
             "text_fr": "🔥Soldes de fin de saison — Derniers jours! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Magasinez maintenant</strong></a>",
@@ -70,8 +69,8 @@
             "button_popup_fr": "",
             "show_countdown": true,
             "hide_on_end": false,
-            "end_date": "",
-            "end_time": "",
+            "end_date": "2026-03-01",
+            "end_time": "23:59",
             "number_font": "heading",
             "countdown_separator": "space",
             "use_custom_colors": false,
