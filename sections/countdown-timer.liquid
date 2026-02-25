@@ -104,6 +104,14 @@
                                             {{ block.settings.button_label_fr | escape }}
                                         {% endif %}
                                     </a>
+                                {% else %}
+                                     <div class="{% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__btn" onclick="{% if shop.locale == 'en' %}window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', '{{  block.settings.button_popup }}']){% else %}window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', '{{  block.settings.button_popup_fr }}']);{% endif %}">
+                                        {% if shop.locale == 'en' %}
+                                            {{ block.settings.button_label | escape }}
+                                        {% else %}
+                                            {{ block.settings.button_label_fr | escape }}
+                                        {% endif %}
+                                    </div>                                   
                                 {% endif %}
 
                                 {%- assign skip_block_count = 0 -%}
