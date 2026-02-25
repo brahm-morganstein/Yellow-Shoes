@@ -131,6 +131,80 @@
         "head_not_mob_url": "shopify://pages/student-teacher-discount"
       }
     },
+    "scrolling_banner_g3CU8i": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "countdown_EDPhMy": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "end_date": "2026-02-15",
+            "end_time": "23:59",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "color": "#fcfaf3",
+            "number_size": 40,
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "text_3DkM3T": {
+          "type": "text",
+          "settings": {
+            "text": "Last Chance Sales - Ends Soon",
+            "text_fr": "Soldes dernière chance — bientôt terminées",
+            "color": "#fcfaf3",
+            "link": "shopify://pages/sale",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": "Ends Soon",
+            "stencil_text_fr": "bientôt terminées"
+          }
+        },
+        "countdown_Bd4z9a": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "2026-03-01",
+            "end_time": "23:59",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": true,
+            "color": "rgba(0,0,0,0)",
+            "number_size": 40,
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "button_T4CMEb": {
+          "type": "button",
+          "settings": {
+            "text": "Shop now",
+            "text_fr": "Magasiner",
+            "link": "shopify://pages/new-arrivals-for-the-entire-family",
+            "button_style": "custom",
+            "color_bg": "#fcfaf3",
+            "color_text": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "countdown_EDPhMy",
+        "text_3DkM3T",
+        "countdown_Bd4z9a",
+        "button_T4CMEb"
+      ],
+      "settings": {
+        "full_width": true,
+        "color_scheme": "2",
+        "text_size": 56,
+        "vertical_padding": 0,
+        "speed": 31,
+        "direction": "left",
+        "font": "base",
+        "space": 30
+      }
+    },
     "meg_featured_collection_HtjHDq": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
@@ -927,80 +1001,6 @@
         "section_alternate_background": "#ffffff"
       }
     },
-    "scrolling_banner_g3CU8i": {
-      "type": "scrolling-banner",
-      "blocks": {
-        "countdown_EDPhMy": {
-          "type": "countdown",
-          "disabled": true,
-          "settings": {
-            "end_date": "2026-02-15",
-            "end_time": "23:59",
-            "end_text": "",
-            "end_text_fr": "",
-            "hide_on_end": false,
-            "color": "#fcfaf3",
-            "number_size": 40,
-            "divider_type": "colon",
-            "show_timer_labels": true
-          }
-        },
-        "text_3DkM3T": {
-          "type": "text",
-          "settings": {
-            "text": "Last Chance Sales - Ends Soon",
-            "text_fr": "Soldes dernière chance — bientôt terminées",
-            "color": "#fcfaf3",
-            "link": "shopify://pages/sale",
-            "use_h1": false,
-            "stencil_all_text": false,
-            "stencil_text": "Ends Soon",
-            "stencil_text_fr": "bientôt terminées"
-          }
-        },
-        "countdown_Bd4z9a": {
-          "type": "countdown",
-          "settings": {
-            "end_date": "2026-03-01",
-            "end_time": "23:59",
-            "end_text": "",
-            "end_text_fr": "",
-            "hide_on_end": true,
-            "color": "rgba(0,0,0,0)",
-            "number_size": 40,
-            "divider_type": "colon",
-            "show_timer_labels": true
-          }
-        },
-        "button_T4CMEb": {
-          "type": "button",
-          "settings": {
-            "text": "Shop now",
-            "text_fr": "Magasiner",
-            "link": "shopify://pages/new-arrivals-for-the-entire-family",
-            "button_style": "custom",
-            "color_bg": "#fcfaf3",
-            "color_text": "#000000"
-          }
-        }
-      },
-      "block_order": [
-        "countdown_EDPhMy",
-        "text_3DkM3T",
-        "countdown_Bd4z9a",
-        "button_T4CMEb"
-      ],
-      "settings": {
-        "full_width": true,
-        "color_scheme": "2",
-        "text_size": 56,
-        "vertical_padding": 0,
-        "speed": 31,
-        "direction": "left",
-        "font": "base",
-        "space": 30
-      }
-    },
     "meg_featured_collection_FqhAyf": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
@@ -1136,16 +1136,16 @@
   "order": [
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
-    "meg_featured_collection_HtjHDq",
-    "image_with_text_8VEiDg",
-    "slideshow_UmwmBT",
-    "image_with_text_afNDhQ",
-    "collection_list_F3rmVw",
-    "spacer_grFXfH",
-    "shop_the_look_rq3PNN",
-    "spacer_XJwmXX",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_FqhAyf",
+    "spacer_XJwmXX",
+    "slideshow_UmwmBT",
+    "meg_featured_collection_HtjHDq",
+    "image_with_text_8VEiDg",
+    "collection_list_F3rmVw",
+    "image_with_text_afNDhQ",
+    "spacer_grFXfH",
+    "shop_the_look_rq3PNN",
     "multi_column_BdpFhJ",
     "instagram-posts-1"
   ]
