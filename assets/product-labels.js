@@ -115,7 +115,7 @@ class ProductLabelManager {
 
             // Merge multiple containers if they exist
             const $mainContainer = this.mergeLabelContainers($labelContainers);
-            
+            console.log('mainContainer',$mainContainer)
             // Get existing labels from the container
             const existingLabels = $mainContainer.html();
 
