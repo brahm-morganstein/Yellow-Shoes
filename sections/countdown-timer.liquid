@@ -96,7 +96,7 @@
 
                         {% when 'button' %}
                             <div class="lightly-spaced-row button-row" {{ block.shopify_attributes }}>
-                                {% unless block.settings.button_popup == blank %}
+                                {% if block.settings.button_popup == blank %}
                                     <a class="{% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__btn" href="{{ block.settings.button_link }}">
                                         {% if shop.locale == 'en' %}
                                             {{ block.settings.button_label | escape }}
@@ -104,7 +104,7 @@
                                             {{ block.settings.button_label_fr | escape }}
                                         {% endif %}
                                     </a>
-                                {% endunless %}
+                                {% endif %}
 
                                 {%- assign skip_block_count = 0 -%}
                                 {%- for next_block in section.blocks offset: forloop.index -%}
