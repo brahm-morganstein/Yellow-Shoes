@@ -102,37 +102,32 @@ class ProductLabelManager {
 
     setProductBlockLabels() {
         this.body.find('product-block').each((index, element) => {
-            setTimeout(() => {
-                const $block = $(element);
-                const tags = $block.attr('data-tags');
-                
-                // Skip if in cross-sell carousel (based on original logic)
-                if ($block.closest('#product-crosssell-carousel').length) {
-                    return;
-                }
+            const $block = $(element);
+            const tags = $block.attr('data-tags');
+            
+            // Skip if in cross-sell carousel (based on original logic)
+            if ($block.closest('#product-crosssell-carousel').length) {
+                return;
+            }
 
-                const $labelContainers = $block.find('.product-label-container');
-                if ($labelContainers.length === 0) return;
+            const $labelContainers = $block.find('.product-label-container');
+            if ($labelContainers.length === 0) return;
 
-                // Merge multiple containers if they exist
-                const $mainContainer = this.mergeLabelContainers($labelContainers);
+            // Merge multiple containers if they exist
+            const $mainContainer = this.mergeLabelContainers($labelContainers);
+            console.log('mainContainer',$mainContainer)
+            // Get existing labels from the container
+            const existingLabels = $mainContainer.html();
 
-                
-                    
-                
-                // Get existing labels from the container
-                const existingLabels = $mainContainer.html();
-
-                //console.log('existingLabels',existingLabels)
-                
-                // Generate new labels (this function now properly checks for duplicates)
-                const labels = this.getLabelsForTags(tags, existingLabels);
-                
-                // Update container if we have labels
-                if (labels && labels !== existingLabels) {
-                    $mainContainer.html(labels);
-                }
-            }, 1000);
+            console.log('existingLabels',existingLabels)
+            
+            // Generate new labels (this function now properly checks for duplicates)
+            const labels = this.getLabelsForTags(tags, existingLabels);
+            
+            // Update container if we have labels
+            if (labels && labels !== existingLabels) {
+                $mainContainer.html(labels);
+            }
         });
     }
 
