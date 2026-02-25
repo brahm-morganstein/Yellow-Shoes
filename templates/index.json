@@ -608,6 +608,88 @@
         "has_subcategories": true
       }
     },
+    "countdown_timer_jYmaEF": {
+      "type": "countdown-timer",
+      "blocks": {
+        "subheading_pKkLbA": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "in-stores & online",
+            "subheading_fr": "en magasin & en ligne"
+          }
+        },
+        "heading_GYPMmE": {
+          "type": "heading",
+          "settings": {
+            "title": "SCRATCH & SAVE",
+            "title_fr": "GRATTEZ ET GAGNEZ",
+            "use_h1": false
+          }
+        },
+        "text_9ye6eR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Reveal your surprise discount!<br/>on all kids’ shoes & accessories at regular price</p>",
+            "text_fr": "<p>pour obtenir votre rabais<br/>sur toutes les chaussures et accessoires pour enfantsà prix régulier<br/></p>",
+            "enlarge_text": true
+          }
+        },
+        "heading_pKfht6": {
+          "type": "heading",
+          "settings": {
+            "title": "up to 20% off",
+            "title_fr": "JUSQU'À20% DE RABAIS",
+            "use_h1": false
+          }
+        },
+        "countdown_YDLaqx": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "2026-03-09",
+            "end_time": "23:59",
+            "countdown_color": "#ffffff",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "number_size": 60,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "button_CtbQex": {
+          "type": "button",
+          "settings": {
+            "button_label": "click here",
+            "button_label_fr": "Cliquez ici",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_pKkLbA",
+        "heading_GYPMmE",
+        "text_9ye6eR",
+        "heading_pKfht6",
+        "countdown_YDLaqx",
+        "button_CtbQex"
+      ],
+      "disabled": true,
+      "name": "Countdown timer",
+      "settings": {
+        "show_image": true,
+        "image": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
+        "image_fr": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
+        "image_mobile": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
+        "image_mobile_fr": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
+        "image_link": "",
+        "show_image_space": false,
+        "image_position": "left",
+        "text_alignment": "center",
+        "color_scheme": "2"
+      }
+    },
     "image_with_text_8VEiDg": {
       "type": "image-with-text",
       "blocks": {
@@ -1141,6 +1223,7 @@
     "spacer_XJwmXX",
     "slideshow_UmwmBT",
     "meg_featured_collection_HtjHDq",
+    "countdown_timer_jYmaEF",
     "image_with_text_8VEiDg",
     "collection_list_F3rmVw",
     "image_with_text_afNDhQ",
