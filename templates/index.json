@@ -965,7 +965,7 @@
             "end_time": "23:59",
             "end_text": "",
             "end_text_fr": "",
-            "hide_on_end": false,
+            "hide_on_end": true,
             "color": "rgba(0,0,0,0)",
             "number_size": 40,
             "divider_type": "colon",
