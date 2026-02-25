@@ -80,12 +80,12 @@ class ProductLabelManager {
         const processedTags = new Set();
         
         Object.keys(app_settings.product_labels).forEach((key) => {
+            
             const l = app_settings.product_labels[key];
             const tags_to_process = l.tags.split(',');
             
             for(let tag_to_process of tags_to_process) {
                 const normalizedTag = this.normalizeTag(tag_to_process);
-                
                 // Check if this tag matches and we haven't processed it yet
                 if (tags.includes(normalizedTag) && !processedTags.has(normalizedTag)) {
                     // Check if this specific label tag is already in the labels HTML
@@ -115,13 +115,13 @@ class ProductLabelManager {
 
             // Merge multiple containers if they exist
             const $mainContainer = this.mergeLabelContainers($labelContainers);
-            
+
             // Get existing labels from the container
             const existingLabels = $mainContainer.html();
-            
+
             // Generate new labels (this function now properly checks for duplicates)
-            const labels = this.getLabelsForTags(tags, existingLabels);
-            
+            const labels = this.getLabelsForTags(tags.toLowerCase(), existingLabels);
+
             // Update container if we have labels
             if (labels && labels !== existingLabels) {
                 $mainContainer.html(labels);
@@ -151,7 +151,7 @@ class ProductLabelManager {
         const existingLabels = $mainContainer.html();
         
         // Generate and append labels
-        const labels = this.getLabelsForTags(tags, existingLabels);
+        const labels = this.getLabelsForTags(tags.toLowerCase(), existingLabels);
         if (labels && labels !== existingLabels) {
             $mainContainer.html(labels);
         }
