@@ -119,14 +119,13 @@ class ProductLabelManager {
 
             // Merge multiple containers if they exist
             const $mainContainer = this.mergeLabelContainers($labelContainers);
-            console.log('mainContainer',$mainContainer)
+
             // Get existing labels from the container
             const existingLabels = $mainContainer.html();
+
             // Generate new labels (this function now properly checks for duplicates)
             const labels = this.getLabelsForTags(tags.toLowerCase(), existingLabels);
 
-            console.log('labels',labels)
-            
             // Update container if we have labels
             if (labels && labels !== existingLabels) {
                 $mainContainer.html(labels);
@@ -156,7 +155,7 @@ class ProductLabelManager {
         const existingLabels = $mainContainer.html();
         
         // Generate and append labels
-        const labels = this.getLabelsForTags(tags, existingLabels);
+        const labels = this.getLabelsForTags(tags.toLowerCase(), existingLabels);
         if (labels && labels !== existingLabels) {
             $mainContainer.html(labels);
         }
