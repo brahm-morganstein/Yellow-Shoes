@@ -958,6 +958,20 @@
             "stencil_text_fr": "bientôt terminées"
           }
         },
+        "countdown_Bd4z9a": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "2026-03-01",
+            "end_time": "23:59",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "color": "rgba(0,0,0,0)",
+            "number_size": 40,
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
         "button_T4CMEb": {
           "type": "button",
           "settings": {
@@ -973,6 +987,7 @@
       "block_order": [
         "countdown_EDPhMy",
         "text_3DkM3T",
+        "countdown_Bd4z9a",
         "button_T4CMEb"
       ],
       "settings": {
