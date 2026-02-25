@@ -168,5 +168,5 @@ $(document).ready(() => {
     setTimeout(function(){
         window.setProductBlockLabels = () => productLabelManager.setProductBlockLabels();
         window.setProductPageLabels = () => productLabelManager.setProductPageLabels();
-    },1000)
+    },3000)
 });
