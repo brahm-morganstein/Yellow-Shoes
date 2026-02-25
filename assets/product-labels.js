@@ -83,13 +83,9 @@ class ProductLabelManager {
             
             const l = app_settings.product_labels[key];
             const tags_to_process = l.tags.split(',');
-
-            console.log('tags_to_process',tags_to_process)
             
             for(let tag_to_process of tags_to_process) {
                 const normalizedTag = this.normalizeTag(tag_to_process);
-                console.log(normalizedTag)
-                console.log('includes',tags.includes(normalizedTag))
                 // Check if this tag matches and we haven't processed it yet
                 if (tags.includes(normalizedTag) && !processedTags.has(normalizedTag)) {
                     // Check if this specific label tag is already in the labels HTML
