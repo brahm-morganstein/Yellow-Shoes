@@ -685,7 +685,7 @@
         "image_mobile": "shopify://shop_images/HP_Collection__K_GroupShot.png",
         "image_mobile_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
         "image_link": "",
-        "show_image_space": false,
+        "show_image_space": true,
         "image_position": "left",
         "text_alignment": "center",
         "color_scheme": "2"
