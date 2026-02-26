@@ -677,14 +677,13 @@
         "countdown_YDLaqx",
         "button_CtbQex"
       ],
-      "disabled": true,
       "name": "Countdown timer",
       "settings": {
         "show_image": true,
-        "image": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
-        "image_fr": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
-        "image_mobile": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
-        "image_mobile_fr": "shopify://shop_images/DAKOTAH_121233-25_YellowShoes_2376-Edit_4-5.jpg",
+        "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+        "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+        "image_mobile": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+        "image_mobile_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
         "image_link": "",
         "show_image_space": false,
         "image_position": "left",
