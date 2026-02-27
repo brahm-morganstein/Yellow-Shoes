@@ -37,16 +37,79 @@
         "button_mC6REN": {
           "type": "button",
           "settings": {
-            "min_buttons_width": 0,
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner",
+            "min_buttons_width": 140,
+            "button_label": "Women's",
+            "button_label_fr": "femmes",
             "button_popup": "",
             "button_popup_fr": "",
             "is_catalogue_button": false,
             "open_catalogue_new_window": false,
             "enable_catalogue_controls": false,
-            "button_link": "shopify://pages/new-arrivals-for-the-entire-family",
-            "button_link_fr": "shopify://pages/new-arrivals-for-the-entire-family",
+            "button_link": "shopify://collections/womens-new-arrivals",
+            "button_link_fr": "shopify://collections/womens-new-arrivals",
+            "button_color_transparent": false,
+            "button_color": "#fff45d",
+            "button_text_color": "#000000",
+            "button_color_hover": "#fefe01",
+            "button_text_color_hover": "#000000",
+            "button_style": "primary"
+          }
+        },
+        "button_DqmRz7": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 140,
+            "button_label": "Men's",
+            "button_label_fr": "Hommes",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://collections/mens-new-arrivals",
+            "button_link_fr": "shopify://collections/mens-new-arrivals",
+            "button_color_transparent": false,
+            "button_color": "#fff45d",
+            "button_text_color": "#000000",
+            "button_color_hover": "#fefe01",
+            "button_text_color_hover": "#000000",
+            "button_style": "primary"
+          }
+        },
+        "button_LR3nai": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 140,
+            "button_label": "Kids",
+            "button_label_fr": "Enfants",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://collections/kids-new-arrivals",
+            "button_link_fr": "shopify://collections/kids-new-arrivals",
+            "button_color_transparent": false,
+            "button_color": "#fff45d",
+            "button_text_color": "#000000",
+            "button_color_hover": "#fefe01",
+            "button_text_color_hover": "#000000",
+            "button_style": "primary"
+          }
+        },
+        "button_GVtBRe": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 140,
+            "button_label": "Accessories",
+            "button_label_fr": "Accessoires",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://collections/new-arrivals-accessories",
+            "button_link_fr": "shopify://collections/new-arrivals-accessories",
             "button_color_transparent": false,
             "button_color": "#fff45d",
             "button_text_color": "#000000",
@@ -59,7 +122,10 @@
       "block_order": [
         "subheading_prQ9nE",
         "heading_JjrHrd",
-        "button_mC6REN"
+        "button_mC6REN",
+        "button_DqmRz7",
+        "button_LR3nai",
+        "button_GVtBRe"
       ],
       "name": "Background video",
       "settings": {
@@ -1092,6 +1158,7 @@
         "height_mobile": 460,
         "product_list": [
           "120779",
+          "122109",
           "121798",
           "121797",
           "120890",
@@ -1100,8 +1167,7 @@
           "121857",
           "120012",
           "120778",
-          "120937",
-          "122109"
+          "120937"
         ],
         "products_alignment": "bottom right",
         "product_card_layout": "portrait",
