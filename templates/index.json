@@ -1181,21 +1181,6 @@
     "scrolling_banner_g3CU8i": {
       "type": "scrolling-banner",
       "blocks": {
-        "countdown_EDPhMy": {
-          "type": "countdown",
-          "disabled": true,
-          "settings": {
-            "end_date": "2026-02-15",
-            "end_time": "23:59",
-            "end_text": "",
-            "end_text_fr": "",
-            "hide_on_end": false,
-            "color": "#fcfaf3",
-            "number_size": 40,
-            "divider_type": "colon",
-            "show_timer_labels": true
-          }
-        },
         "text_3DkM3T": {
           "type": "text",
           "settings": {
@@ -1212,7 +1197,7 @@
         "countdown_Bd4z9a": {
           "type": "countdown",
           "settings": {
-            "end_date": "2026-03-01",
+            "end_date": "2026-03-05",
             "end_time": "23:59",
             "end_text": "",
             "end_text_fr": "",
@@ -1236,7 +1221,6 @@
         }
       },
       "block_order": [
-        "countdown_EDPhMy",
         "text_3DkM3T",
         "countdown_Bd4z9a",
         "button_T4CMEb"
