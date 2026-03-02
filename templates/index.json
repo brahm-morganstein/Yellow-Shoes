@@ -224,6 +224,99 @@
         "has_subcategories": true
       }
     },
+    "multi_column_BdpFhJ": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_xcNyqf": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
+            "title": "WOMEN'S NEW ARRIVALS",
+            "title_fr": "NOUVEAUTÉS POUR FEMMES",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "text": "<p>New Season, New Styles! Explore Our Trendiest Women's Shoes and Fan-Favourite Booties</p>",
+            "text_fr": "<p>Nouvelle saison, nouveaux styles ! Découvrez nos chaussures pour femmes les plus tendance et nos bottillons préférées</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/womens-new-arrivals",
+            "link_fr": "shopify://collections/womens-new-arrivals"
+          }
+        },
+        "text_block_NqMtm7": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
+            "title": "KIDS NEW ARRIVALS",
+            "title_fr": "NOUVEAUTÉS POUR ENFANTS",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "text": "<p>New season, new adventures! School-ready sneakers, everyday shoes and boots made for spring.</p>",
+            "text_fr": "<p>Nouvelle saison, nouvelles aventures ! Sneakers pour l’école, chaussures du quotidien et bottes prêtes pour le printemps.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/kids-new-arrivals",
+            "link_fr": "shopify://collections/kids-new-arrivals"
+          }
+        },
+        "text_block_KrqaGj": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
+            "title": "Men's new arrivals",
+            "title_fr": "NOUVEAUTÉS POUR HOMMES",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "text": "<p>New season, new essentials! Discover men’s shoes and sneakers made for everyday wear and the in-between season.</p>",
+            "text_fr": "<p>Nouvelle saison, nouveaux essentiels ! Découvrez nos chaussures et sneakers pour hommes, pensées pour le quotidien et la mi-saison.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "button_label": "shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/mens-new-arrivals",
+            "link_fr": "shopify://collections/mens-new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xcNyqf",
+        "text_block_NqMtm7",
+        "text_block_KrqaGj"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "title": "Shop the Latest",
+        "title_fr": "Magasinez les nouveautés",
+        "show_2_per_row_mobile": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "default"
+      }
+    },
     "spacer_XJwmXX": {
       "type": "spacer",
       "name": "Spacer",
@@ -1077,6 +1170,14 @@
         "overlay_style": "shadow"
       }
     },
+    "spacer_N9VHcj": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
     "scrolling_banner_g3CU8i": {
       "type": "scrolling-banner",
       "blocks": {
@@ -1178,99 +1279,6 @@
         "has_subcategories": true
       }
     },
-    "multi_column_BdpFhJ": {
-      "type": "multi-column",
-      "blocks": {
-        "text_block_xcNyqf": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
-            "image_fr": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
-            "title": "WOMEN'S NEW ARRIVALS",
-            "title_fr": "NOUVEAUTÉS POUR FEMMES",
-            "title_font_family": "gelica",
-            "title_font_weight": "semibold",
-            "title_font_weight_regular_bold": "regular",
-            "title_font_style": "regular",
-            "text": "<p>New Season, New Styles! Explore Our Trendiest Women's Shoes and Fan-Favourite Booties</p>",
-            "text_fr": "<p>Nouvelle saison, nouveaux styles ! Découvrez nos chaussures pour femmes les plus tendance et nos bottillons préférées</p>",
-            "text_font_family": "default",
-            "text_font_weight": "regular",
-            "text_font_weight_regular_bold": "regular",
-            "text_font_style": "regular",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner",
-            "link": "shopify://collections/womens-new-arrivals",
-            "link_fr": "shopify://collections/womens-new-arrivals"
-          }
-        },
-        "text_block_NqMtm7": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
-            "image_fr": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
-            "title": "KIDS NEW ARRIVALS",
-            "title_fr": "NOUVEAUTÉS POUR ENFANTS",
-            "title_font_family": "gelica",
-            "title_font_weight": "semibold",
-            "title_font_weight_regular_bold": "regular",
-            "title_font_style": "regular",
-            "text": "<p>New season, new adventures! School-ready sneakers, everyday shoes and boots made for spring.</p>",
-            "text_fr": "<p>Nouvelle saison, nouvelles aventures ! Sneakers pour l’école, chaussures du quotidien et bottes prêtes pour le printemps.</p>",
-            "text_font_family": "default",
-            "text_font_weight": "regular",
-            "text_font_weight_regular_bold": "regular",
-            "text_font_style": "regular",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner",
-            "link": "shopify://collections/kids-new-arrivals",
-            "link_fr": "shopify://collections/kids-new-arrivals"
-          }
-        },
-        "text_block_KrqaGj": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
-            "image_fr": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
-            "title": "Men's new arrivals",
-            "title_fr": "NOUVEAUTÉS POUR HOMMES",
-            "title_font_family": "gelica",
-            "title_font_weight": "semibold",
-            "title_font_weight_regular_bold": "regular",
-            "title_font_style": "regular",
-            "text": "<p>New season, new essentials! Discover men’s shoes and sneakers made for everyday wear and the in-between season.</p>",
-            "text_fr": "<p>Nouvelle saison, nouveaux essentiels ! Découvrez nos chaussures et sneakers pour hommes, pensées pour le quotidien et la mi-saison.</p>",
-            "text_font_family": "default",
-            "text_font_weight": "regular",
-            "text_font_weight_regular_bold": "regular",
-            "text_font_style": "regular",
-            "button_label": "shop now",
-            "button_label_fr": "Magasiner",
-            "link": "shopify://collections/mens-new-arrivals",
-            "link_fr": "shopify://collections/mens-new-arrivals"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_xcNyqf",
-        "text_block_NqMtm7",
-        "text_block_KrqaGj"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "title": "Shop the Latest",
-        "title_fr": "Magasinez les nouveautés",
-        "show_2_per_row_mobile": false,
-        "media_aspect_ratio": "s",
-        "media_width": 700,
-        "text_alignment": "center",
-        "button_style": "primary",
-        "color_scheme": "default"
-      }
-    },
     "instagram-posts-1": {
       "type": "instagram-posts",
       "settings": {
@@ -1281,20 +1289,13 @@
         "sub_title": "Share your looks using #yellowamespieds for the chance to be featured!",
         "sub_title_fr": "Partagez vos looks en utilisant #yellowamespieds pour avoir une chance d'être mis en avant !"
       }
-    },
-    "spacer_N9VHcj": {
-      "type": "spacer",
-      "name": "Spacer",
-      "settings": {
-        "spacer_height": 40,
-        "section_alternate_background": "#ffffff"
-      }
     }
   },
   "order": [
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
     "meg_featured_collection_HtjHDq",
+    "multi_column_BdpFhJ",
     "spacer_XJwmXX",
     "slideshow_UmwmBT",
     "image_with_text_afNDhQ",
@@ -1306,7 +1307,6 @@
     "spacer_N9VHcj",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_FqhAyf",
-    "multi_column_BdpFhJ",
     "instagram-posts-1"
   ]
 }
