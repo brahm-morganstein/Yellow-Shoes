@@ -676,6 +676,73 @@
         "accessibility_info": ""
       }
     },
+    "image_with_text_afNDhQ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RzxVPn": {
+          "type": "heading",
+          "settings": {
+            "title": "Modern Western",
+            "title_fr": "Donnez du yeehaw à votre style !",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "use_h1": false
+          }
+        },
+        "text_gT86bp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Genuine leather cowboy booties and boots with a bold western edge. Iconic short and tall silhouettes designed to elevate every look — from everyday wear to standout moments.</p>",
+            "text_fr": "<p>Des bottes cowboy en cuir véritable au caractère western assumé pour rehausser chaque tenue du quotidien aux moments qui se démarquent.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": false
+          }
+        },
+        "button_WE8cei": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Arizona",
+            "button_label_fr": "Magasiner Arizona",
+            "button_link": "shopify://products/122086",
+            "button_link_fr": "shopify://products/122086",
+            "button_style": "primary"
+          }
+        },
+        "button_QHUkiG": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Colorado",
+            "button_label_fr": "Magasiner Colorado",
+            "button_link": "shopify://products/122088",
+            "button_link_fr": "shopify://products/122088",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RzxVPn",
+        "text_gT86bp",
+        "button_WE8cei",
+        "button_QHUkiG"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
+        "image_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
+        "image_2": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
+        "image_2_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "left",
+        "text_alignment": "center",
+        "color_scheme": "default"
+      }
+    },
     "image_with_text_8VEiDg": {
       "type": "image-with-text",
       "blocks": {
@@ -813,73 +880,6 @@
         "image_position": "left",
         "text_alignment": "center",
         "color_scheme": "2"
-      }
-    },
-    "image_with_text_afNDhQ": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_RzxVPn": {
-          "type": "heading",
-          "settings": {
-            "title": "Modern Western",
-            "title_fr": "Donnez du yeehaw à votre style !",
-            "title_font_family": "gelica",
-            "title_font_weight": "semibold",
-            "title_font_weight_regular_bold": "regular",
-            "title_font_style": "regular",
-            "use_h1": false
-          }
-        },
-        "text_gT86bp": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Genuine leather cowboy booties and boots with a bold western edge. Iconic short and tall silhouettes designed to elevate every look — from everyday wear to standout moments.</p>",
-            "text_fr": "<p>Des bottes cowboy en cuir véritable au caractère western assumé pour rehausser chaque tenue du quotidien aux moments qui se démarquent.</p>",
-            "text_font_family": "default",
-            "text_font_weight": "regular",
-            "text_font_weight_regular_bold": "regular",
-            "text_font_style": "regular",
-            "enlarge_text": false
-          }
-        },
-        "button_WE8cei": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Arizona",
-            "button_label_fr": "Magasiner Arizona",
-            "button_link": "shopify://products/122086",
-            "button_link_fr": "shopify://products/122086",
-            "button_style": "primary"
-          }
-        },
-        "button_QHUkiG": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Colorado",
-            "button_label_fr": "Magasiner Colorado",
-            "button_link": "shopify://products/122088",
-            "button_link_fr": "shopify://products/122088",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_RzxVPn",
-        "text_gT86bp",
-        "button_WE8cei",
-        "button_QHUkiG"
-      ],
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
-        "image_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
-        "image_2": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
-        "image_2_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
-        "image_width": 700,
-        "image_link": "",
-        "image_position": "left",
-        "text_alignment": "center",
-        "color_scheme": "default"
       }
     },
     "collection_list_F3rmVw": {
@@ -1293,9 +1293,9 @@
     "meg_featured_collection_HtjHDq",
     "spacer_XJwmXX",
     "slideshow_UmwmBT",
-    "image_with_text_8VEiDg",
-    "countdown_timer_jYmaEF",
     "image_with_text_afNDhQ",
+    "countdown_timer_jYmaEF",
+    "image_with_text_8VEiDg",
     "collection_list_F3rmVw",
     "spacer_grFXfH",
     "shop_the_look_rq3PNN",
