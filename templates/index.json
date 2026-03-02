@@ -260,6 +260,7 @@
         "countdown_Bd4z9a",
         "button_T4CMEb"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "color_scheme": "2",
@@ -273,6 +274,7 @@
     },
     "meg_featured_collection_FqhAyf": {
       "type": "meg-featured-collection",
+      "disabled": true,
       "name": "Meg Featured collection",
       "settings": {
         "title": "Don’t Miss Out — Sale Ending Soon",
@@ -1288,11 +1290,11 @@
     "compact_messages_4thNGK",
     "scrolling_banner_g3CU8i",
     "meg_featured_collection_FqhAyf",
+    "meg_featured_collection_HtjHDq",
     "spacer_XJwmXX",
     "slideshow_UmwmBT",
-    "meg_featured_collection_HtjHDq",
-    "countdown_timer_jYmaEF",
     "image_with_text_8VEiDg",
+    "countdown_timer_jYmaEF",
     "collection_list_F3rmVw",
     "image_with_text_afNDhQ",
     "spacer_grFXfH",

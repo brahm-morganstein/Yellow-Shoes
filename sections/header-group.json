@@ -60,6 +60,7 @@
       "blocks": {
         "announcement_mLdP76": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "🔥End of Season Sale — Final Days! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Shop Now</strong></a>",
             "text_fr": "🔥Soldes de fin de saison — Derniers jours! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Magasinez maintenant</strong></a>",
