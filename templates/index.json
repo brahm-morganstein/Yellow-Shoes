@@ -197,109 +197,6 @@
         "head_not_mob_url": "shopify://pages/student-teacher-discount"
       }
     },
-    "scrolling_banner_g3CU8i": {
-      "type": "scrolling-banner",
-      "blocks": {
-        "countdown_EDPhMy": {
-          "type": "countdown",
-          "disabled": true,
-          "settings": {
-            "end_date": "2026-02-15",
-            "end_time": "23:59",
-            "end_text": "",
-            "end_text_fr": "",
-            "hide_on_end": false,
-            "color": "#fcfaf3",
-            "number_size": 40,
-            "divider_type": "colon",
-            "show_timer_labels": true
-          }
-        },
-        "text_3DkM3T": {
-          "type": "text",
-          "settings": {
-            "text": "Last Chance Sales - Ends Soon",
-            "text_fr": "Soldes dernière chance — bientôt terminées",
-            "color": "#fcfaf3",
-            "link": "shopify://pages/sale",
-            "use_h1": false,
-            "stencil_all_text": false,
-            "stencil_text": "Ends Soon",
-            "stencil_text_fr": "bientôt terminées"
-          }
-        },
-        "countdown_Bd4z9a": {
-          "type": "countdown",
-          "settings": {
-            "end_date": "2026-03-01",
-            "end_time": "23:59",
-            "end_text": "",
-            "end_text_fr": "",
-            "hide_on_end": true,
-            "color": "rgba(0,0,0,0)",
-            "number_size": 40,
-            "divider_type": "colon",
-            "show_timer_labels": true
-          }
-        },
-        "button_T4CMEb": {
-          "type": "button",
-          "settings": {
-            "text": "Shop now",
-            "text_fr": "Magasiner",
-            "link": "shopify://pages/new-arrivals-for-the-entire-family",
-            "button_style": "custom",
-            "color_bg": "#fcfaf3",
-            "color_text": "#000000"
-          }
-        }
-      },
-      "block_order": [
-        "countdown_EDPhMy",
-        "text_3DkM3T",
-        "countdown_Bd4z9a",
-        "button_T4CMEb"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "color_scheme": "2",
-        "text_size": 56,
-        "vertical_padding": 0,
-        "speed": 31,
-        "direction": "left",
-        "font": "base",
-        "space": 30
-      }
-    },
-    "meg_featured_collection_FqhAyf": {
-      "type": "meg-featured-collection",
-      "disabled": true,
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Don’t Miss Out — Sale Ending Soon",
-        "title_fr": "Ne manquez pas ça — soldes bientôt terminées",
-        "title_font_family": "gelica",
-        "title_font_weight": "semibold",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 4,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
     "meg_featured_collection_HtjHDq": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
@@ -743,62 +640,6 @@
         "color_scheme": "default"
       }
     },
-    "image_with_text_8VEiDg": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_nMHPcD": {
-          "type": "heading",
-          "settings": {
-            "title": "A fan favorite returns",
-            "title_fr": "Le retour d’un favori",
-            "title_font_family": "gelica",
-            "title_font_weight": "semibold",
-            "title_font_weight_regular_bold": "regular",
-            "title_font_style": "regular",
-            "use_h1": false
-          }
-        },
-        "text_wVwXp4": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Back in on-trend colors, INEZ pairs effortlessly with all your in-between-season looks. A reliable, comfortable boot that’s easy to wear — rain or shine.</p>",
-            "text_fr": "<p>De retour dans des couleurs actuelles, INEZ accompagne tous les looks de mi-saison. Une botte fiable, confortable et toujours aussi facile à porter — pluie ou soleil.</p>",
-            "text_font_family": "default",
-            "text_font_weight": "regular",
-            "text_font_weight_regular_bold": "regular",
-            "text_font_style": "regular",
-            "enlarge_text": false
-          }
-        },
-        "button_e7qACg": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Inez",
-            "button_label_fr": "Magasiner Inez",
-            "button_link": "shopify://products/119282",
-            "button_link_fr": "shopify://products/119282",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_nMHPcD",
-        "text_wVwXp4",
-        "button_e7qACg"
-      ],
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/Frame_73.png",
-        "image_fr": "shopify://shop_images/Frame_73.png",
-        "image_2": "shopify://shop_images/Frame_74.png",
-        "image_2_fr": "shopify://shop_images/Frame_74.png",
-        "image_width": 700,
-        "image_link": "",
-        "image_position": "right",
-        "text_alignment": "center",
-        "color_scheme": "default"
-      }
-    },
     "countdown_timer_jYmaEF": {
       "type": "countdown-timer",
       "blocks": {
@@ -880,6 +721,62 @@
         "image_position": "left",
         "text_alignment": "center",
         "color_scheme": "2"
+      }
+    },
+    "image_with_text_8VEiDg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nMHPcD": {
+          "type": "heading",
+          "settings": {
+            "title": "A fan favorite returns",
+            "title_fr": "Le retour d’un favori",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "use_h1": false
+          }
+        },
+        "text_wVwXp4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Back in on-trend colors, INEZ pairs effortlessly with all your in-between-season looks. A reliable, comfortable boot that’s easy to wear — rain or shine.</p>",
+            "text_fr": "<p>De retour dans des couleurs actuelles, INEZ accompagne tous les looks de mi-saison. Une botte fiable, confortable et toujours aussi facile à porter — pluie ou soleil.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": false
+          }
+        },
+        "button_e7qACg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Inez",
+            "button_label_fr": "Magasiner Inez",
+            "button_link": "shopify://products/119282",
+            "button_link_fr": "shopify://products/119282",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nMHPcD",
+        "text_wVwXp4",
+        "button_e7qACg"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Frame_73.png",
+        "image_fr": "shopify://shop_images/Frame_73.png",
+        "image_2": "shopify://shop_images/Frame_74.png",
+        "image_2_fr": "shopify://shop_images/Frame_74.png",
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "center",
+        "color_scheme": "default"
       }
     },
     "collection_list_F3rmVw": {
@@ -1180,6 +1077,107 @@
         "overlay_style": "shadow"
       }
     },
+    "scrolling_banner_g3CU8i": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "countdown_EDPhMy": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "end_date": "2026-02-15",
+            "end_time": "23:59",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "color": "#fcfaf3",
+            "number_size": 40,
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "text_3DkM3T": {
+          "type": "text",
+          "settings": {
+            "text": "Last Chance Sales - Ends Soon",
+            "text_fr": "Soldes dernière chance — bientôt terminées",
+            "color": "#fcfaf3",
+            "link": "shopify://pages/sale",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": "Ends Soon",
+            "stencil_text_fr": "bientôt terminées"
+          }
+        },
+        "countdown_Bd4z9a": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "2026-03-01",
+            "end_time": "23:59",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": true,
+            "color": "rgba(0,0,0,0)",
+            "number_size": 40,
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "button_T4CMEb": {
+          "type": "button",
+          "settings": {
+            "text": "Shop now",
+            "text_fr": "Magasiner",
+            "link": "shopify://pages/new-arrivals-for-the-entire-family",
+            "button_style": "custom",
+            "color_bg": "#fcfaf3",
+            "color_text": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "countdown_EDPhMy",
+        "text_3DkM3T",
+        "countdown_Bd4z9a",
+        "button_T4CMEb"
+      ],
+      "settings": {
+        "full_width": true,
+        "color_scheme": "2",
+        "text_size": 56,
+        "vertical_padding": 0,
+        "speed": 31,
+        "direction": "left",
+        "font": "base",
+        "space": 30
+      }
+    },
+    "meg_featured_collection_FqhAyf": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Don’t Miss Out — Sale Ending Soon",
+        "title_fr": "Ne manquez pas ça — soldes bientôt terminées",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 4,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
+      }
+    },
     "multi_column_BdpFhJ": {
       "type": "multi-column",
       "blocks": {
@@ -1283,13 +1281,19 @@
         "sub_title": "Share your looks using #yellowamespieds for the chance to be featured!",
         "sub_title_fr": "Partagez vos looks en utilisant #yellowamespieds pour avoir une chance d'être mis en avant !"
       }
+    },
+    "spacer_N9VHcj": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
     }
   },
   "order": [
     "background_video_ca9zwX",
     "compact_messages_4thNGK",
-    "scrolling_banner_g3CU8i",
-    "meg_featured_collection_FqhAyf",
     "meg_featured_collection_HtjHDq",
     "spacer_XJwmXX",
     "slideshow_UmwmBT",
@@ -1299,6 +1303,9 @@
     "collection_list_F3rmVw",
     "spacer_grFXfH",
     "shop_the_look_rq3PNN",
+    "spacer_N9VHcj",
+    "scrolling_banner_g3CU8i",
+    "meg_featured_collection_FqhAyf",
     "multi_column_BdpFhJ",
     "instagram-posts-1"
   ]
