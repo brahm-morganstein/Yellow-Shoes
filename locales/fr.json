@@ -702,7 +702,9 @@
       "discounts": "Discounts",
       "tax": "Taxes",
       "see_our_return_policy_html": "Pour la FAQ ou les retours, consultez notre <a href=\"/fr/pages/return-policy\">Politique de retour</a>.",
-      "questions_about_your_order_html": "Des questions sur votre commande ? <a href=\"javascript:$zopim.livechat.window.show();\">Clavardez avec nous</a>."
+      "questions_about_your_order_html": "Des questions sur votre commande ? <a href=\"javascript:$zopim.livechat.window.show();\">Clavardez avec nous</a>.",
+      "home": "Accueil du compte",
+      "log_out": "Déconnexion"
     },
     "order_items": {
       "item_status": "Statut",
@@ -963,7 +965,8 @@
         "phone_number": "Numero de téléphone est requis",
         "street_address": "Adresse postale est requise",
         "city": "Ville est requise",
-        "required_field": "Ce champ est requis"
+        "required_field": "Ce champ est requis",
+        "zip": "Le code postal est requis."
       },
       "yes": "Oui",
       "no": "Non"
