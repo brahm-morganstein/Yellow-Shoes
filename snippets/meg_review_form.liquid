@@ -821,6 +821,7 @@
                                         <select class="spr-form-input w-100 required" id="size_purchased_field">
                                             <option value="">{{ 'product_reviews.select' | t }}</option>
                                             {% for option in product.options_with_values %}
+                                              <script>console.log('OPTION NAME','{{option.name}}')</script>
                                                 {% if option.name == 'size' %}
                                                     {% for value in option.values %}
                                                         <option value="{{ value | escape }}">{{ value }}</option>
