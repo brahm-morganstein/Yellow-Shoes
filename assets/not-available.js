@@ -42,7 +42,7 @@ if($btn_selected.length){
     }
     $body.on('click', '#availability-reminder-submit-btn', function(e){
       e.preventDefault();
-      console.log('here')
+      console.log('VARIANT ID',variant_id)
       $body.find('.availability-reminder-input').removeClass('border-danger');
       $body.find('#availability-reminder-error').attr('style', 'opacity:0;').text('');
       $body.find('[data-target="#agree-to-get-sms"]').removeClass('border-danger');
