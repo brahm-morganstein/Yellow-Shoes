@@ -1,32 +1,27 @@
 $(document).ready(function() {
   let $body = $('body');
-  let currentVariant = null; // Store the current variant globally
-  
   setTimeout(function(){
-    let $btn_selected = $body.find('.opt-btn.is-unavailable:checked+.opt-label');
-    let $btn_not_selected = $body.find('.opt-btn:not(:checked)+.opt-label');
-    if($btn_selected.length){
-      if($btn_not_selected.length){
-        $btn_not_selected[0].click();
-      }
-      setTimeout(function(){
-        $btn_selected[0].click();
-      }, 100);
-    }
+let $btn_selected = $body.find('.opt-btn.is-unavailable:checked+.opt-label');
+let $btn_not_selected = $body.find('.opt-btn:not(:checked)+.opt-label');
+if($btn_selected.length){
+
+  if($btn_not_selected.length){
+    $btn_not_selected[0].click();
+  }
+  setTimeout(function(){
+    $btn_selected[0].click();
   }, 100);
-  
+}
+  }, 100);
   hideOptionWithNoImage();
 
-  // Notify me when available - Store variant and update UI
+  //Notify me when available
   document.addEventListener('on:variant:change', (event) => {
-    let language = theme.locale;
-    let detail = event.detail;
-    let form = detail.form;
+    let language           = theme.locale;
+    let detail             = event.detail;
+    let form               = detail.form;
     let add_to_cart_button = $(form).find('.quantity-submit-row__submit').first();
-    let variant = detail.variant;
-    
-    // Store the current variant globally
-    currentVariant = variant;
+    let variant            = detail.variant;
 
     let submit_btn = `
     <button class="btn btn--large add-to-cart w-full" type="submit" name="add" data-add-to-cart-text="Add to cart">
@@ -45,69 +40,61 @@ $(document).ready(function() {
     } else {
       $(add_to_cart_button).html(submit_btn);
     }
-  });
+    $body.on('click', '#availability-reminder-submit-btn', function(e){
+      e.preventDefault();
+      console.log('VARIANT ID',variant.id)
+      $body.find('.availability-reminder-input').removeClass('border-danger');
+      $body.find('#availability-reminder-error').attr('style', 'opacity:0;').text('');
+      $body.find('[data-target="#agree-to-get-sms"]').removeClass('border-danger');
+      $body.find('[data-target="#agree-to-get-sms"]').closest('.custom-checkbox-container').find('.custom-checkbox-label').removeClass('text-danger');
+      $.ajax({
+               url:      'https://app.yellowshoes.com/api/availability-reminders',
+               method:   'POST',
+               data:     {
+                 action:           'record email',
+                 variant_id:       variant.id,
+                 email:            $body.find('#availability-reminder-email').val().trim(),
+                 phone:            $body.find('#availability-reminder-phone').val().trim(),
+                 postal_code:      $body.find('#availability-reminder-zip').val().trim(),
+                 signup_for_sms:   $body.find('#agree-to-get-sms')[0].checked ? '1' : '0',
+                 signup_for_email: $body.find('#agree-to-get-email')[0].checked ? '1' : '0',
 
-  // Move click handler outside the variant change event - this only gets attached once
-  $body.on('click', '#availability-reminder-submit-btn', function(e){
-    e.preventDefault();
-    
-    // Use the stored currentVariant instead of trying to access from event
-    if (!currentVariant) {
-      console.error('No variant selected');
-      return;
-    }
-    
-    console.log('VARIANT ID', currentVariant.id);
-    
-    $body.find('.availability-reminder-input').removeClass('border-danger');
-    $body.find('#availability-reminder-error').attr('style', 'opacity:0;').text('');
-    $body.find('[data-target="#agree-to-get-sms"]').removeClass('border-danger');
-    $body.find('[data-target="#agree-to-get-sms"]').closest('.custom-checkbox-container').find('.custom-checkbox-label').removeClass('text-danger');
-    
-    $.ajax({
-      url: 'https://app.yellowshoes.com/api/availability-reminders',
-      method: 'POST',
-      data: {
-        action: 'record email',
-        variant_id: currentVariant.id, // Use stored variant
-        email: $body.find('#availability-reminder-email').val().trim(),
-        phone: $body.find('#availability-reminder-phone').val().trim(),
-        postal_code: $body.find('#availability-reminder-zip').val().trim(),
-        signup_for_sms: $body.find('#agree-to-get-sms')[0].checked ? '1' : '0',
-        signup_for_email: $body.find('#agree-to-get-email')[0].checked ? '1' : '0',
-        language: theme.locale,
-      },
-      dataType: 'json',
-      success: function(response_data) {
-        if (response_data.success) {
-          $body.find('.fancybox-button').trigger('click');
-          $body.find('.availability-reminder-input:not(#availability-reminder-variant-id)').val('');
-          setTimeout(function() {
-            new Swal({
-              title: '',
-              text: '',
-              icon: 'success',
-            });
-          }, 250);
-        } else {
-          if (response_data.fields !== undefined) {
-            for (let el of response_data.fields) {
-              $(el).addClass('border-danger');
-              $('#availability-reminder-error')
-                .html(response_data.message)
-                .attr('style', 'opacity:1;');
-              if (el == '#availability-reminder-phone-checkbox') {
-                $('[data-target="#agree-to-get-sms"]').addClass('border-danger');
-                $('[data-target="#agree-to-get-sms"]').closest('.custom-checkbox-container').find('.custom-checkbox-label').addClass('text-danger');
-              }
-            }
-          }
-        }
-      },
-      error: function(response_data) {
-        console.error('AJAX error:', response_data);
-      },
+                 language: theme.locale,
+               },
+               dataType: 'json',
+               success:  function(response_data) {
+                 if (response_data.success) {
+                   $body.find('.fancybox-button').trigger('click');
+                   $body.find('.availability-reminder-input:not(#availability-reminder-variant-id)').val('');
+                   setTimeout(function() {
+                     new Swal({
+                                title: '',
+                                text:  '',
+                                icon:  'success',
+                              });
+                   }, 250);
+                   // $('.fancybox-button')[0].click();
+                 } else {
+                   if (response_data.fields !== undefined) {
+                     for (let el of response_data.fields) {
+                       $(el).addClass('border-danger');
+                       $('#availability-reminder-error').
+                           html(response_data.message).
+                           attr('style', 'opacity:1;');
+                       if (el == '#availability-reminder-phone-checkbox') {
+                         $('[data-target="#agree-to-get-sms"]').addClass('border-danger');
+                         $('[data-target="#agree-to-get-sms"]').closest('.custom-checkbox-container').find('.custom-checkbox-label').addClass('text-danger');
+                       }
+                     }
+                   }
+                 }
+               },
+               error:    function(response_data) {
+               },
+             });
     });
+
+
   });
 
   //Hide Out of Stock Color
@@ -126,7 +113,7 @@ $(document).ready(function() {
   }
 
   function hideOutOfStockColor(event) {
-    let data = JSON.parse($(event.target).find('product-form').find('script[type="application/ld+json"]').html());
+    let data   = JSON.parse($(event.target).find('product-form').find('script[type="application/ld+json"]').html());
     console.log('DATA',data)
     const is_coming_soon = data.tags.includes('coming-soon');
     let colors = [];
