@@ -1190,8 +1190,8 @@
             "link": "shopify://pages/sale",
             "use_h1": false,
             "stencil_all_text": false,
-            "stencil_text": "Ends Soon",
-            "stencil_text_fr": "Soldes dernière chance"
+            "stencil_text": "",
+            "stencil_text_fr": ""
           }
         },
         "countdown_Bd4z9a": {
