@@ -131,7 +131,7 @@
                     {% if shop.locale == 'en' %}
                       {{ block.settings.button_label | escape }}
                     {% else %}
-                      {{ block.settings.button_label_fr | escape }}
+                      {{ block.settings.button_label_fr | escape }} -
                     {% endif %}
                   </a>
                   {%- assign skip_block_count = 0 -%}
