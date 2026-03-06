@@ -11064,9 +11064,9 @@ a.boost-pfs-filter-scroll-to-top:before {
 }
 
 .border-danger{
-
+  border:1px solid red;
 }
 
 .text-danger{
-  
+  color:red;
 }
