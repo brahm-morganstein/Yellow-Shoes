@@ -246,7 +246,7 @@
             "text_font_weight_regular_bold": "regular",
             "text_font_style": "regular",
             "button_label": "Shop now",
-            "button_label_fr": "Magasiner",
+            "button_label_fr": "",
             "link": "shopify://collections/womens-new-arrivals",
             "link_fr": "shopify://collections/womens-new-arrivals"
           }
@@ -282,7 +282,7 @@
             "image": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
             "image_fr": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
             "title": "Men's new arrivals",
-            "title_fr": "NOUVEAUTÉS POUR HOMMES",
+            "title_fr": "Nouveautés pour hommes",
             "title_font_family": "gelica",
             "title_font_weight": "semibold",
             "title_font_weight_regular_bold": "regular",
