@@ -805,7 +805,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Arizona",
-            "button_label_fr": "Magasiner Arizona-",
+            "button_label_fr": "Magasiner Arizona",
             "button_link": "shopify://products/122086",
             "button_link_fr": "shopify://products/122086",
             "button_style": "primary"
