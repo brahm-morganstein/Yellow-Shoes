@@ -246,7 +246,7 @@
             "text_font_weight_regular_bold": "regular",
             "text_font_style": "regular",
             "button_label": "Shop now",
-            "button_label_fr": "",
+            "button_label_fr": "Magasiner",
             "link": "shopify://collections/womens-new-arrivals",
             "link_fr": "shopify://collections/womens-new-arrivals"
           }
