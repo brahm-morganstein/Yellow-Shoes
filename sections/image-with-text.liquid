@@ -128,12 +128,11 @@
               {% when 'button' %}
                 <div class="lightly-spaced-row button-row" {{ block.shopify_attributes }}>
                   <a class="{% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__btn" href="{% if shop.locale == 'en' %}{{ block.settings.button_link }}{% else %}{% unless block.settings.button_link_fr == blank %}{{ block.settings.button_link_fr }}{% else %}{{ block.settings.button_link }}{% endunless %}{% endif %}">
-                    {% comment %} {% if shop.locale == 'en' %}
+                    {% if shop.locale == 'en' %}
                       {{ block.settings.button_label | escape }}
                     {% else %}
                       {{ block.settings.button_label_fr | escape }}
-                    {% endif %} {% endcomment %}
-                     {{ block.settings.button_label_fr | escape }}
+                    {% endif %}
                   </a>
                   {%- assign skip_block_count = 0 -%}
                   {%- for next_block in section.blocks offset: forloop.index -%}
