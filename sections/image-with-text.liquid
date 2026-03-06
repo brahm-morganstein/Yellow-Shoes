@@ -133,6 +133,7 @@
                     {% else %}
                       {{ block.settings.button_label_fr | escape }}
                     {% endif %} {% endcomment %}
+                     {{ block.settings.button_label_fr | escape }}
                   </a>
                   {%- assign skip_block_count = 0 -%}
                   {%- for next_block in section.blocks offset: forloop.index -%}
