@@ -9,6 +9,57 @@
  */
 {
   "sections": {
+    "image_with_text_overlay_VqTJep": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_pWkVff": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "subheading_fr": ""
+          }
+        },
+        "heading_8jVLTN": {
+          "type": "heading",
+          "settings": {
+            "title": "Solange Pilote collection",
+            "title_fr": "Collection de Solange Pilote",
+            "heading_max_width": 15,
+            "title_size": 84,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text_8cYCjK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Rich artistic prints on must-have sneakers, sandals and rain boots.</p>",
+            "text_fr": "<p>De riches imprimés artistiques sur des espadrilles, sandales et bottes de pluie incontournables.</p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_pWkVff",
+        "heading_8jVLTN",
+        "text_8cYCjK"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "image": "shopify://shop_images/Solange_Banner_Wide.png",
+        "image_fr": "shopify://shop_images/Solange_Banner_Wide.png",
+        "mobile_image": "shopify://shop_images/Solange_Banner_Tall.png",
+        "mobile_image_fr": "shopify://shop_images/Solange_Banner_Tall.png",
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    },
     "main": {
       "type": "main-collection",
       "settings": {
@@ -48,6 +99,7 @@
     }
   },
   "order": [
+    "image_with_text_overlay_VqTJep",
     "main"
   ]
 }
