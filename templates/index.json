@@ -9,190 +9,143 @@
  */
 {
   "sections": {
-    "176062646746014805": {
-      "type": "_blocks",
+    "background_video_ca9zwX": {
+      "type": "background-video",
       "blocks": {
-        "ai_gen_block_4a36a55_JtEFHn": {
-          "type": "ai_gen_block_4a36a55",
-          "disabled": true,
+        "subheading_prQ9nE": {
+          "type": "subheading",
           "settings": {
-            "language": "en",
-            "header_en": "Free Shipping - Limited Time Only",
-            "subheader_en": "Offer ends soon! Don't miss out.",
-            "expired_message_en": "This offer has ended.",
-            "days_label_en": "Days",
-            "hours_label_en": "Hours",
-            "minutes_label_en": "Minutes",
-            "seconds_label_en": "Seconds",
-            "header_fr": "Livraison Gratuite - Offre Limitée",
-            "subheader_fr": "L'offre se termine bientôt! Ne manquez pas cette occasion.",
-            "expired_message_fr": "Cette offre est terminée.",
-            "days_label_fr": "Jours",
-            "hours_label_fr": "Heures",
-            "minutes_label_fr": "Minutes",
-            "seconds_label_fr": "Secondes",
-            "end_date": "2025-10-19",
-            "end_time": "23:59",
-            "enable_gradient": true,
-            "gradient_start": "#c20000",
-            "gradient_middle": "#8b0000",
-            "gradient_end": "#c20000",
-            "gradient_angle": 90,
-            "text_color": "#ffffff",
-            "header_size": 22,
-            "subheader_size": 14,
-            "number_size": 36,
-            "label_size": 11
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_4a36a55_JtEFHn"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
-    "text_cta_block_dCmN73": {
-      "type": "text-cta-block",
-      "disabled": true,
-      "settings": {
-        "banner_color": "#e5c9b4",
-        "heading": "Still looking for deals?",
-        "heading_fr": "Toujours en quête de rabais d’hiver?",
-        "heading_color": "#232323",
-        "heading_font_size": 32,
-        "heading_font_size_mobile": 16,
-        "text": "<p>Get up to 75% off on winter styles for the entire family</p>",
-        "text_fr": "<p>Profitez de rabais jusqu’à 75% sur les styles d’hiver pour toute la famille</p>",
-        "text_color": "#232323",
-        "text_font_size": 18,
-        "text_font_size_mobile": 14,
-        "button_label": "shop sales",
-        "button_label_fr": "Magasinez les soldes",
-        "btn_color": "#fcfaf3",
-        "btn_hover_color": "#fcfaf3",
-        "btn_background_color": "#232323",
-        "btn_background_hover_color": "#232323",
-        "trigger_newsletter": false,
-        "klaviyo_popup_id": "SeL9SH",
-        "klaviyo_popup_id_fr": "Vx7TEC",
-        "button_link": "shopify://pages/sale"
-      }
-    },
-    "slideshow_UmwmBT": {
-      "type": "slideshow",
-      "blocks": {
-        "image_YynHUa": {
-          "type": "image",
+            "subheading": "Celebrating 110 years of style",
+            "subheading_fr": "Célébrons 110 ans de style"
+          }
+        },
+        "heading_JjrHrd": {
+          "type": "heading",
           "settings": {
-            "image": "shopify://shop_images/DESKTOP_EOSS_WINTER_2025_EN_2.jpg",
-            "image_fr": "shopify://shop_images/DESKTOP_EOSS_WINTER_2025_FR_2.jpg",
-            "mobile_image": "shopify://shop_images/MOBILE_EOSS_WINTER_2025_EN_2.jpg",
-            "mobile_image_fr": "shopify://shop_images/MOBILE_EOSS_WINTER_2025_FR_2.jpg",
-            "slide_link": "",
-            "subheading": "",
-            "subheading_fr": "",
-            "title": "",
-            "title_fr": "",
+            "title": "All New Spring Collection",
+            "title_fr": "Nouvelle collection Printemps",
             "heading_max_width": 15,
-            "heading_max_width_fr": 15,
             "title_size": 84,
-            "title_size_mobile": 46,
-            "use_h1": false,
-            "text": "",
-            "text_fr": "",
-            "enlarge_text": true,
-            "min_buttons_width_1": 140,
-            "min_buttons_width_1_fr": 140,
-            "min_buttons_mobile_width_1": 140,
-            "min_buttons_mobile_width_1_fr": 140,
-            "button_label_1": "Women's",
-            "button_label_1_fr": "femmes",
-            "button_background_color_1": "#ffffff",
-            "button_text_color_1": "#000000",
-            "button_background_color_hover_1": "#000000",
-            "button_text_color_hover_1": "#ffffff",
-            "is_catalogue_button_1": false,
-            "open_catalogue_new_window_1": false,
-            "enable_catalogue_controls_1": false,
-            "button_url_1": "shopify://collections/womens-sale",
-            "button_url_1_fr": "shopify://collections/womens-sale",
-            "min_buttons_width_2": 140,
-            "min_buttons_width_2_fr": 140,
-            "min_buttons_mobile_width_2": 140,
-            "min_buttons_mobile_width_2_fr": 140,
-            "button_label_2": "men's",
-            "button_label_2_fr": "hommes",
-            "button_background_color_2": "#ffffff",
-            "button_text_color_2": "#000000",
-            "button_background_color_hover_2": "#000000",
-            "button_text_color_hover_2": "#ffffff",
-            "is_catalogue_button_2": false,
-            "open_catalogue_new_window_2": false,
-            "enable_catalogue_controls_2": false,
-            "button_url_2": "shopify://collections/mens-sale",
-            "button_url_2_fr": "shopify://collections/mens-sale",
-            "min_buttons_width_3": 140,
-            "min_buttons_width_3_fr": 140,
-            "min_buttons_mobile_width_3": 140,
-            "min_buttons_mobile_width_3_fr": 140,
-            "button_label_3": "kids",
-            "button_label_3_fr": "enfants",
-            "button_background_color_3": "#ffffff",
-            "button_text_color_3": "#000000",
-            "button_background_color_hover_3": "#000000",
-            "button_text_color_hover_3": "#ffffff",
-            "is_catalogue_button_3": false,
-            "open_catalogue_new_window_3": false,
-            "enable_catalogue_controls_3": false,
-            "button_url_3": "shopify://collections/kids-sale",
-            "button_url_3_fr": "shopify://collections/kids-sale",
-            "min_buttons_width_4": 140,
-            "min_buttons_width_4_fr": 140,
-            "min_buttons_mobile_width_4": 140,
-            "min_buttons_mobile_width_4_fr": 140,
-            "button_label_4": "accessories",
-            "button_label_4_fr": "accessoires",
-            "button_background_color_4": "#ffffff",
-            "button_text_color_4": "#000000",
-            "button_background_color_hover_4": "#000000",
-            "button_text_color_hover_4": "#ffffff",
-            "is_catalogue_button_4": false,
-            "open_catalogue_new_window_4": false,
-            "enable_catalogue_controls_4": false,
-            "button_url_4": "shopify://collections/accessories-sale",
-            "button_url_4_fr": "shopify://collections/accessories-sale",
-            "text_alignment": "bottom center",
-            "show_countdown": true,
-            "end_date": "2025-12-08",
-            "end_time": "09:59",
-            "end_text": "",
-            "end_text_fr": "",
-            "hide_on_end": true,
-            "countdown_text_color": "#ffffff",
-            "number_size": 40,
-            "number_font": "heading",
-            "divider_type": "colon",
-            "show_timer_labels": true
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "title_size_mobile": 42,
+            "use_h1": false
+          }
+        },
+        "button_mC6REN": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 140,
+            "button_label": "Women's",
+            "button_label_fr": "femmes",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://collections/womens-new-arrivals",
+            "button_link_fr": "shopify://collections/womens-new-arrivals",
+            "button_color_transparent": false,
+            "button_color": "#fff45d",
+            "button_text_color": "#000000",
+            "button_color_hover": "#fefe01",
+            "button_text_color_hover": "#000000",
+            "button_style": "primary"
+          }
+        },
+        "button_DqmRz7": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 140,
+            "button_label": "Men's",
+            "button_label_fr": "Hommes",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://collections/mens-new-arrivals",
+            "button_link_fr": "shopify://collections/mens-new-arrivals",
+            "button_color_transparent": false,
+            "button_color": "#fff45d",
+            "button_text_color": "#000000",
+            "button_color_hover": "#fefe01",
+            "button_text_color_hover": "#000000",
+            "button_style": "primary"
+          }
+        },
+        "button_LR3nai": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 140,
+            "button_label": "Kids",
+            "button_label_fr": "Enfants",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://collections/kids-new-arrivals",
+            "button_link_fr": "shopify://collections/kids-new-arrivals",
+            "button_color_transparent": false,
+            "button_color": "#fff45d",
+            "button_text_color": "#000000",
+            "button_color_hover": "#fefe01",
+            "button_text_color_hover": "#000000",
+            "button_style": "primary"
+          }
+        },
+        "button_GVtBRe": {
+          "type": "button",
+          "settings": {
+            "min_buttons_width": 140,
+            "button_label": "Accessories",
+            "button_label_fr": "Accessoires",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "is_catalogue_button": false,
+            "open_catalogue_new_window": false,
+            "enable_catalogue_controls": false,
+            "button_link": "shopify://collections/new-arrivals-accessories",
+            "button_link_fr": "shopify://collections/new-arrivals-accessories",
+            "button_color_transparent": false,
+            "button_color": "#fff45d",
+            "button_text_color": "#000000",
+            "button_color_hover": "#fefe01",
+            "button_text_color_hover": "#000000",
+            "button_style": "primary"
           }
         }
       },
       "block_order": [
-        "image_YynHUa"
+        "subheading_prQ9nE",
+        "heading_JjrHrd",
+        "button_mC6REN",
+        "button_DqmRz7",
+        "button_LR3nai",
+        "button_GVtBRe"
       ],
+      "name": "Background video",
       "settings": {
-        "height": "adapt",
-        "height_desktop": 800,
-        "height_mobile": 680,
+        "video_external": "https://youtu.be/qTn1AqcYZ3U",
+        "video_external_fr": "https://youtu.be/qTn1AqcYZ3U",
+        "video_description": "New Spring 2026 Collection",
+        "video_description_fr": "New Spring 2026 Collection",
+        "placeholder_image": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
+        "placeholder_image_fr": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
+        "video_external_mobile": "https://youtu.be/qTn1AqcYZ3U",
+        "video_external_mobile_fr": "https://youtu.be/qTn1AqcYZ3U",
+        "video_description_mobile": "New Spring 2026 Collection",
+        "video_description_mobile_fr": "New Spring 2026 Collection",
+        "placeholder_image_mobile": "shopify://shop_images/HP_MegaMenu_IMG04.png",
+        "placeholder_image_mobile_fr": "shopify://shop_images/HP_MegaMenu_IMG04.png",
+        "text_alignment": "center center",
+        "height_desktop": 1000,
+        "height_mobile": 620,
         "full_width": true,
-        "mobile_overlay_under": false,
-        "overlay_style": "no_background",
-        "transition": "instant",
-        "navigation": "dots",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "accessibility_info": ""
+        "overlay_style": "shadow"
       }
     },
     "compact_messages_4thNGK": {
@@ -244,406 +197,16 @@
         "head_not_mob_url": "shopify://pages/student-teacher-discount"
       }
     },
-    "meg_featured_collection_WpCRqR": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Hurry, limited time only!",
-        "title_fr": "Dépêchez-vous, offre limitée!",
-        "main-collection-url": "shopify://pages/sale",
-        "main-collection-url-fr": "shopify://pages/sale",
-        "womens-collection": "womens-sale",
-        "mens-collection": "mens-sale",
-        "girls-collection": "girls-sale",
-        "boys-collection": "boys-sale",
-        "accessories-collection": "accessories-sale",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": true
-      }
-    },
-    "1770754611289b3562": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_8d86437_xWWDNR": {
-          "type": "ai_gen_block_8d86437",
-          "settings": {
-            "text_before_en": "VALENTINE'S DAY SPECIAL<br>",
-            "discount_text_en": "15% off all accessories",
-            "text_after_en": "— Limited time only",
-            "link_text_en": "Shop now",
-            "text_before_fr": "SPÉCIAL SAINT-VALENTIN :<br>",
-            "discount_text_fr": "15% de rabais sur tous les accessoires",
-            "text_after_fr": "— Offre à durée limitée",
-            "link_text_fr": "Magasiner",
-            "link_url": "",
-            "show_countdown": true,
-            "countdown_end_date": "2026-02-16",
-            "countdown_end_time": "00:00:00",
-            "countdown_label_en": "Ends in:",
-            "countdown_label_fr": "Se termine dans :",
-            "days_label_en": "Days",
-            "days_label_fr": "Jours",
-            "hours_label_en": "Hours",
-            "hours_label_fr": "Heures",
-            "minutes_label_en": "Minutes",
-            "minutes_label_fr": "Minutes",
-            "seconds_label_en": "Seconds",
-            "seconds_label_fr": "Secondes",
-            "cta_url": "shopify://collections/accessories",
-            "cta_text_en": "SHOP NOW",
-            "cta_text_fr": "Magasinez Maintenant",
-            "cta_bg_color": "#ffffff",
-            "cta_text_color": "#c20000",
-            "cta_hover_bg_color": "#ffebcd",
-            "cta_border_radius": 4,
-            "padding_vertical": 40,
-            "max_width": 1000,
-            "font_size": 20,
-            "font_weight": "600",
-            "background_color_1": "#c20000",
-            "background_color_2": "#8b0000",
-            "text_color": "#ffffff",
-            "highlight_color": "#ffebcd",
-            "link_color": "#ffffff",
-            "show_hearts": true,
-            "heart_color": "#ff69b4",
-            "heart_opacity": 0.3
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_8d86437_xWWDNR"
-      ],
-      "settings": {}
-    },
-    "scrolling_banner_g3CU8i": {
-      "type": "scrolling-banner",
-      "blocks": {
-        "countdown_EDPhMy": {
-          "type": "countdown",
-          "settings": {
-            "end_date": "2026-02-15",
-            "end_time": "23:59",
-            "end_text": "",
-            "end_text_fr": "",
-            "hide_on_end": false,
-            "color": "rgba(0,0,0,0)",
-            "number_size": 40,
-            "divider_type": "colon",
-            "show_timer_labels": true
-          }
-        },
-        "text_3DkM3T": {
-          "type": "text",
-          "settings": {
-            "text": "Extra 15% OFF all accessories — ends soon!",
-            "text_fr": "15% de rabais sur tous les accessoires — faites vite!",
-            "color": "#000000",
-            "link": "shopify://collections/new-arrivals-accessories",
-            "use_h1": false,
-            "stencil_all_text": false,
-            "stencil_text": "15% OFF",
-            "stencil_text_fr": "15% de rabais"
-          }
-        },
-        "button_T4CMEb": {
-          "type": "button",
-          "settings": {
-            "text": "Shop now",
-            "text_fr": "Magasiner",
-            "link": "shopify://collections/new-arrivals-accessories",
-            "button_style": "custom",
-            "color_bg": "#b41921",
-            "color_text": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "countdown_EDPhMy",
-        "text_3DkM3T",
-        "button_T4CMEb"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": true,
-        "color_scheme": "1",
-        "text_size": 56,
-        "vertical_padding": 0,
-        "speed": 31,
-        "direction": "left",
-        "font": "base",
-        "space": 30
-      }
-    },
-    "collection_list_WRjFwt": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_X3jccR": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_EN_2af839f0-55a5-4c3d-8801-f002a1f4d4e1.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_-_FR_b457572c-b4a4-4b6a-80ef-7c24a59f5645.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_eXixXz": {
-          "type": "collection",
-          "settings": {
-            "collection": "mens-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_MEN_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_MEN_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_dXAbaj": {
-          "type": "collection",
-          "settings": {
-            "collection": "womens-tall-light-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_BOTTES_HAUTES_-_EN_1c60cdff-c6a4-4e95-9ea0-a453b226604c.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FEMMES_BOTTES_HAUTES_-_FR_f5f2aed7-bdf7-4088-ae99-30b4cf809cdc.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_eC9jeA": {
-          "type": "collection",
-          "settings": {
-            "collection": "boys-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_GARCONS_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_GARCONS_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_trmURU": {
-          "type": "collection",
-          "settings": {
-            "collection": "girls-winter-boots",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_FILLES_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_FILLES_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        },
-        "collection_gcNxcL": {
-          "type": "collection",
-          "settings": {
-            "collection": "accessories-women",
-            "image": "shopify://shop_images/COLLECTION_LIST_-_ACCESSOIRES_-_EN.jpg",
-            "image_fr": "shopify://shop_images/COLLECTION_LIST_-_ACCESSOIRES_-_FR.jpg",
-            "subheading": "",
-            "subheading_fr": "",
-            "button_label": "Shop now",
-            "button_label_fr": "Magasiner"
-          }
-        }
-      },
-      "block_order": [
-        "collection_X3jccR",
-        "collection_eXixXz",
-        "collection_dXAbaj",
-        "collection_eC9jeA",
-        "collection_trmURU",
-        "collection_gcNxcL"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "title": "Top collections",
-        "title_fr": "Collections vedettes",
-        "enable_carousel": true,
-        "grid": 3,
-        "color_scheme": "default",
-        "full_width": true,
-        "coll_grid_image_shape": "portrait-45",
-        "coll_grid_image_position": "center center",
-        "coll_thumb_mob_per_row": "2",
-        "coll_grid_show_count": false,
-        "coll_text_position": "below",
-        "coll_text_position_under_mobile": true,
-        "coll_thumb_text_align_x": "center",
-        "coll_thumb_text_align_y": "center",
-        "coll_button_style": "secondary"
-      }
-    },
-    "shop_the_look_Ei9CJR": {
-      "type": "shop-the-look",
-      "blocks": {
-        "subheading_ehRXUK": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Our most comfortable, premium boots & slippers — crafted for the whole family.",
-            "subheading_fr": "Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille."
-          }
-        },
-        "heading_bGLmFm": {
-          "type": "heading",
-          "settings": {
-            "title": "Heritage, Elevated",
-            "title_fr": "La qualité RIVERLAND",
-            "heading_max_width": 10,
-            "title_size": 56,
-            "title_size_mobile": 26,
-            "use_h1": false
-          }
-        },
-        "text_Pxhe4j": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our most comfortable, premium boots & slippers — crafted for the whole family.</p>",
-            "text_fr": "<p>Nos bottes et chaussures les plus confortables et haut de gamme — conçues pour toute la famille.</p>",
-            "enlarge_text": true
-          }
-        },
-        "button_ddDyGW": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP THE COLLECTION",
-            "button_label_fr": "MAGASINER LA COLLECTION",
-            "button_link": "shopify://pages/riverland-heritage-collection",
-            "button_style": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_ehRXUK",
-        "heading_bGLmFm",
-        "text_Pxhe4j",
-        "button_ddDyGW"
-      ],
-      "disabled": true,
-      "name": "Shop the look",
-      "settings": {
-        "image": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
-        "image_fr": "shopify://shop_images/ShopTheLook-DESKTOP.jpg",
-        "mobile_image": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
-        "mobile_image_fr": "shopify://shop_images/ShopTheLook_MOBILE.jpg",
-        "video_external": "",
-        "video_description": "",
-        "height": "adapt",
-        "height_desktop": 680,
-        "height_mobile": 460,
-        "product_list": [
-          "121336",
-          "119901",
-          "121206",
-          "120337",
-          "121212",
-          "121207",
-          "121194",
-          "121195",
-          "121318",
-          "121316",
-          "121326",
-          "121277",
-          "121279",
-          "121278"
-        ],
-        "products_alignment": "bottom right",
-        "product_card_layout": "portrait",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "center left",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow"
-      }
-    },
-    "multi_column_GqgGEh": {
-      "type": "multi-column",
-      "blocks": {
-        "text_block_qgqRtt": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9847.jpg",
-            "image_fr": "shopify://shop_images/076A9847.jpg",
-            "title": "for him",
-            "title_fr": "",
-            "text": "<p>Men's gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/mens-gift-guide",
-            "link_fr": "shopify://collections/mens-gift-guide"
-          }
-        },
-        "text_block_9yUYpT": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9652.jpg",
-            "image_fr": "shopify://shop_images/076A9652.jpg",
-            "title": "for her",
-            "title_fr": "",
-            "text": "<p>Women's gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/womens-gift-guide",
-            "link_fr": "shopify://collections/womens-gift-guide"
-          }
-        },
-        "text_block_KGm9My": {
-          "type": "text_block",
-          "settings": {
-            "enable_media": true,
-            "image": "shopify://shop_images/076A9813.jpg",
-            "image_fr": "shopify://shop_images/076A9813.jpg",
-            "title": "For kids",
-            "title_fr": "",
-            "text": "<p>Kids gift guide</p>",
-            "text_fr": "",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/kids-gift-guide",
-            "link_fr": "shopify://collections/kids-gift-guide"
-          }
-        }
-      },
-      "block_order": [
-        "text_block_qgqRtt",
-        "text_block_9yUYpT",
-        "text_block_KGm9My"
-      ],
-      "disabled": true,
-      "name": "Multi-column",
-      "settings": {
-        "title": "Shop now & spread the cheer",
-        "title_fr": "Magasiner et partager la magie",
-        "show_2_per_row_mobile": false,
-        "media_aspect_ratio": "s",
-        "media_width": 700,
-        "text_alignment": "center",
-        "button_style": "secondary",
-        "color_scheme": "default"
-      }
-    },
     "meg_featured_collection_HtjHDq": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
       "settings": {
-        "title": "This Season’s Newest",
-        "title_fr": "Les nouveautés de la saison",
+        "title": "New Spring Arrivals",
+        "title_fr": "Nouveautés du printemps",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
         "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
         "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
         "womens-collection": "womens-new-arrivals",
@@ -661,110 +224,682 @@
         "has_subcategories": true
       }
     },
-    "spacer_VUrmbi": {
+    "spacer_XJwmXX": {
       "type": "spacer",
+      "disabled": true,
       "name": "Spacer",
       "settings": {
         "spacer_height": 40,
         "section_alternate_background": "#ffffff"
       }
     },
-    "shop_the_look_6UBBrC": {
-      "type": "shop-the-look",
+    "collection_list_F3rmVw": {
+      "type": "collection-list",
       "blocks": {
-        "text_aQ8mwJ": {
-          "type": "text",
+        "collection_JFtAyc": {
+          "type": "collection",
           "settings": {
-            "text": "<p>COLLECTION ENTIRELY</p>",
-            "text_fr": "<p>COLLECTION ENTIÈREMENT</p>",
-            "enlarge_text": true
+            "collection": "womens-light-boots",
+            "image": "shopify://shop_images/HP_Collection__W_Intuition.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner"
           }
         },
-        "heading_fNqfB9": {
-          "type": "heading",
+        "collection_3UiYgz": {
+          "type": "collection",
           "settings": {
-            "title": "MADE IN QUEBEC",
-            "title_fr": "FABRIQUÉE AU QUÉBEC",
-            "heading_max_width": 10,
-            "title_size": 56,
-            "title_size_mobile": 26,
-            "use_h1": false
+            "collection": "womens-rain-boots",
+            "image": "shopify://shop_images/HP_Collection__W_Ally.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Ally.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
           }
         },
-        "button_wDeiFR": {
-          "type": "button",
+        "collection_PNyYfx": {
+          "type": "collection",
           "settings": {
-            "button_label": "SHOP THE COLLECTION",
-            "button_label_fr": "MAGASINER LA COLLECTION",
-            "button_link": "shopify://collections/made-in-quebec-collection",
-            "button_style": "secondary"
+            "collection": "womens-loafers",
+            "image": "shopify://shop_images/HP_Collection__W_Celestine.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Celestine.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_WRFNq8": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-shoes-sneakers",
+            "image": "shopify://shop_images/HP_Collection__W_Impact.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Impact_554d4e26-b6c3-4fb8-bb05-c9c900b5efe9.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_JRYWJq": {
+          "type": "collection",
+          "settings": {
+            "collection": "womens-heels",
+            "image": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Romance.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_bxfabc": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories-women",
+            "image": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
+            "image_fr": "shopify://shop_images/HP_Collection__W_Intuition_2.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_PYYkCa": {
+          "type": "collection",
+          "settings": {
+            "collection": "running-shoes-for-kids",
+            "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_93iyW8": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-rain-boots",
+            "image": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "image_fr": "shopify://shop_images/HP_Collection__K_Maeva.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_9wPh3F": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-athletic-athleisure",
+            "image": "shopify://shop_images/HP_Collection__M_Impact.png",
+            "image_fr": "shopify://shop_images/HP_Collection__M_Impact.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
+          }
+        },
+        "collection_fLndGb": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-dress-and-semi-dress-shoes",
+            "image": "shopify://shop_images/HP_Collection__M_Miles.png",
+            "image_fr": "shopify://shop_images/HP_Collection__M_Miles.png",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "magasiner"
           }
         }
       },
       "block_order": [
-        "text_aQ8mwJ",
-        "heading_fNqfB9",
-        "button_wDeiFR"
+        "collection_JFtAyc",
+        "collection_3UiYgz",
+        "collection_PNyYfx",
+        "collection_WRFNq8",
+        "collection_JRYWJq",
+        "collection_bxfabc",
+        "collection_PYYkCa",
+        "collection_93iyW8",
+        "collection_9wPh3F",
+        "collection_fLndGb"
       ],
-      "name": "Shop the look",
+      "name": "Collection list",
       "settings": {
-        "image": "shopify://shop_images/HERO-BANNER---MADE-IN-QUEBEC-DESKTOP.png",
-        "image_fr": "shopify://shop_images/HERO-BANNER---MADE-IN-QUEBEC-DESKTOP.png",
-        "mobile_image": "shopify://shop_images/HERO-BANNER---MADE-IN-QUEBEC-MOBILE.jpg",
-        "mobile_image_fr": "shopify://shop_images/HERO-BANNER---MADE-IN-QUEBEC-MOBILE.jpg",
-        "video_external": "",
-        "video_description": "",
-        "height": "adapt",
-        "height_desktop": 600,
-        "height_mobile": 460,
-        "product_list": [
-          "121430",
-          "121432",
-          "121431",
-          "121460",
-          "121459"
-        ],
-        "products_alignment": "center center",
-        "product_card_layout": "landscape",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "top center",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow"
-      }
-    },
-    "featured_collection_djkdqW": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Our Most-Wanted Styles",
-        "title_fr": "Les essentiels en demande",
-        "collection": "homepage-new-arrivals",
-        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
-        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
-        "show_vendor": false,
+        "title": "Trending Now",
+        "title_fr": "Tendance du moment",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
         "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
+        "grid": 4,
         "color_scheme": "default",
-        "show_view_all": true,
         "full_width": true,
-        "has_subcategories": true
+        "coll_grid_image_shape": "tallest",
+        "coll_grid_image_position": "center center",
+        "coll_thumb_mob_per_row": "2",
+        "coll_grid_show_count": false,
+        "coll_text_position": "below",
+        "coll_text_position_under_mobile": false,
+        "coll_thumb_text_align_x": "center",
+        "coll_thumb_text_align_y": "center",
+        "coll_button_style": "primary"
       }
     },
-    "meg_featured_collection_mH3Pgz": {
+    "slideshow_UmwmBT": {
+      "type": "slideshow",
+      "blocks": {
+        "image_DBkmwi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Solange_Banner_Wide.png",
+            "image_fr": "shopify://shop_images/Solange_Banner_Wide.png",
+            "mobile_image": "shopify://shop_images/Solange_Banner_Tall.png",
+            "mobile_image_fr": "shopify://shop_images/Solange_Banner_Tall.png",
+            "slide_link": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "title": "Solange Pilote Collection",
+            "title_fr": "Collection Solange Pilote",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 84,
+            "title_size_mobile": 46,
+            "use_h1": false,
+            "text": "<p>Rich artistic prints on must-have sneakers, sandals and rain boots.<br/></p>",
+            "text_fr": "<p>De riches imprimés artistiques sur des espadrilles, sandales et bottes de pluie incontournables.<br/></p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": true,
+            "min_buttons_width_1": 0,
+            "min_buttons_width_1_fr": 0,
+            "min_buttons_mobile_width_1": 0,
+            "min_buttons_mobile_width_1_fr": 0,
+            "button_label_1": "Shop the collection",
+            "button_label_1_fr": "Magasiner la collection",
+            "button_background_color_1": "#fff45d",
+            "button_text_color_1": "#000000",
+            "button_background_color_hover_1": "#fefe01",
+            "button_text_color_hover_1": "#000000",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "shopify://collections/solange-pilote",
+            "button_url_1_fr": "shopify://collections/solange-pilote",
+            "min_buttons_width_2": 0,
+            "min_buttons_width_2_fr": 0,
+            "min_buttons_mobile_width_2": 0,
+            "min_buttons_mobile_width_2_fr": 0,
+            "button_label_2": "",
+            "button_label_2_fr": "",
+            "button_background_color_2": "",
+            "button_text_color_2": "",
+            "button_background_color_hover_2": "",
+            "button_text_color_hover_2": "",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "",
+            "button_url_2_fr": "",
+            "min_buttons_width_3": 0,
+            "min_buttons_width_3_fr": 0,
+            "min_buttons_mobile_width_3": 0,
+            "min_buttons_mobile_width_3_fr": 0,
+            "button_label_3": "",
+            "button_label_3_fr": "",
+            "button_background_color_3": "",
+            "button_text_color_3": "",
+            "button_background_color_hover_3": "",
+            "button_text_color_hover_3": "",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "",
+            "button_url_3_fr": "",
+            "min_buttons_width_4": 0,
+            "min_buttons_width_4_fr": 0,
+            "min_buttons_mobile_width_4": 0,
+            "min_buttons_mobile_width_4_fr": 0,
+            "button_label_4": "",
+            "button_label_4_fr": "",
+            "button_background_color_4": "",
+            "button_text_color_4": "",
+            "button_background_color_hover_4": "",
+            "button_text_color_hover_4": "",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "",
+            "button_url_4_fr": "",
+            "text_alignment": "center center",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "image_TQ7V8L": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/SLIDE_HEADING_1_3_2048_x_1024px.png",
+            "image_fr": "shopify://shop_images/SLIDE_HEADING_1_3_2048_x_1024px_68dc2950-229f-4c60-b50e-e23e8ca51e44.png",
+            "mobile_image": "shopify://shop_images/SLIDE_HEADING_1_3__1024_x_2048_px.png",
+            "mobile_image_fr": "shopify://shop_images/SLIDE_HEADING_1_3__1024_x_2048_px_12f98874-582c-4a6b-914c-5b2ac8b4acc0.png",
+            "slide_link": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "title": "Spring Looks Loading...",
+            "title_fr": "Le printemps vous appelle...",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 84,
+            "title_size_mobile": 46,
+            "use_h1": false,
+            "text": "<p>Celebrating a legacy since 1916 — shop the latest Spring 2026 styles for the whole family.</p>",
+            "text_fr": "<p>Depuis 1916, une histoire de style et de famille. Magasinez les nouveautés du printemps !</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": true,
+            "min_buttons_width_1": 140,
+            "min_buttons_width_1_fr": 140,
+            "min_buttons_mobile_width_1": 140,
+            "min_buttons_mobile_width_1_fr": 140,
+            "button_label_1": "Women's",
+            "button_label_1_fr": "Femmes",
+            "button_background_color_1": "#fff45d",
+            "button_text_color_1": "#000000",
+            "button_background_color_hover_1": "#fefe01",
+            "button_text_color_hover_1": "#000000",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "shopify://collections/womens-new-arrivals",
+            "button_url_1_fr": "shopify://collections/womens-new-arrivals",
+            "min_buttons_width_2": 140,
+            "min_buttons_width_2_fr": 140,
+            "min_buttons_mobile_width_2": 140,
+            "min_buttons_mobile_width_2_fr": 140,
+            "button_label_2": "Men's",
+            "button_label_2_fr": "Hommes",
+            "button_background_color_2": "#fff45d",
+            "button_text_color_2": "#000000",
+            "button_background_color_hover_2": "#fefe01",
+            "button_text_color_hover_2": "#000000",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "shopify://collections/mens-new-arrivals",
+            "button_url_2_fr": "shopify://collections/mens-new-arrivals",
+            "min_buttons_width_3": 140,
+            "min_buttons_width_3_fr": 140,
+            "min_buttons_mobile_width_3": 140,
+            "min_buttons_mobile_width_3_fr": 140,
+            "button_label_3": "kids",
+            "button_label_3_fr": "enfants",
+            "button_background_color_3": "#fff45d",
+            "button_text_color_3": "#000000",
+            "button_background_color_hover_3": "#fefe01",
+            "button_text_color_hover_3": "#000000",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "shopify://collections/kids-new-arrivals",
+            "button_url_3_fr": "shopify://collections/kids-new-arrivals",
+            "min_buttons_width_4": 140,
+            "min_buttons_width_4_fr": 140,
+            "min_buttons_mobile_width_4": 140,
+            "min_buttons_mobile_width_4_fr": 140,
+            "button_label_4": "accessories",
+            "button_label_4_fr": "accessoires",
+            "button_background_color_4": "#fff45d",
+            "button_text_color_4": "#000000",
+            "button_background_color_hover_4": "#fefe01",
+            "button_text_color_hover_4": "#000000",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "shopify://collections/new-arrivals-accessories",
+            "button_url_4_fr": "shopify://collections/new-arrivals-accessories",
+            "text_alignment": "center center",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "image_LHYV6n": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/SLIDE_HEADING_2_3_2048_x_1024px.png",
+            "image_fr": "shopify://shop_images/SLIDE_HEADING_2_3_2048_x_1024px_7f1ada58-87c4-4bde-9c32-be8a1b0501f1.png",
+            "mobile_image": "shopify://shop_images/SLIDE_HEADING_2_3__1024_x_2048_px.png",
+            "mobile_image_fr": "shopify://shop_images/SLIDE_HEADING_2_3__1024_x_2048_px_3002ba53-131f-42fa-96d8-0e3ff77bbef6.png",
+            "slide_link": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "title": "Must-Have Fashion Booties",
+            "title_fr": "Bottillons mode essentiels",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 84,
+            "title_size_mobile": 46,
+            "use_h1": false,
+            "text": "<p>Quality you can feel. Value you’ll love.<br/></p>",
+            "text_fr": "<p>Une qualité qu’on ressent. Une valeur qu’on aime.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": true,
+            "min_buttons_width_1": 0,
+            "min_buttons_width_1_fr": 0,
+            "min_buttons_mobile_width_1": 0,
+            "min_buttons_mobile_width_1_fr": 0,
+            "button_label_1": "Women's Boots",
+            "button_label_1_fr": "Bottillons Femmes",
+            "button_background_color_1": "#fff45d",
+            "button_text_color_1": "#171717",
+            "button_background_color_hover_1": "#fefe01",
+            "button_text_color_hover_1": "#000000",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "shopify://collections/womens-light-boots",
+            "button_url_1_fr": "shopify://collections/womens-light-boots",
+            "min_buttons_width_2": 0,
+            "min_buttons_width_2_fr": 0,
+            "min_buttons_mobile_width_2": 0,
+            "min_buttons_mobile_width_2_fr": 0,
+            "button_label_2": "",
+            "button_label_2_fr": "",
+            "button_background_color_2": "",
+            "button_text_color_2": "",
+            "button_background_color_hover_2": "",
+            "button_text_color_hover_2": "",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "",
+            "button_url_2_fr": "",
+            "min_buttons_width_3": 0,
+            "min_buttons_width_3_fr": 0,
+            "min_buttons_mobile_width_3": 0,
+            "min_buttons_mobile_width_3_fr": 0,
+            "button_label_3": "",
+            "button_label_3_fr": "",
+            "button_background_color_3": "",
+            "button_text_color_3": "",
+            "button_background_color_hover_3": "",
+            "button_text_color_hover_3": "",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "",
+            "button_url_3_fr": "",
+            "min_buttons_width_4": 0,
+            "min_buttons_width_4_fr": 0,
+            "min_buttons_mobile_width_4": 0,
+            "min_buttons_mobile_width_4_fr": 0,
+            "button_label_4": "",
+            "button_label_4_fr": "",
+            "button_background_color_4": "",
+            "button_text_color_4": "",
+            "button_background_color_hover_4": "",
+            "button_text_color_hover_4": "",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "",
+            "button_url_4_fr": "",
+            "text_alignment": "center center",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "image_PaRHL3": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/SLIDE_HEADING_3_3_2048_x_1024px.png",
+            "image_fr": "shopify://shop_images/SLIDE_HEADING_3_3_2048_x_1024px_3e09c96d-b4b1-4051-a036-d6d146518583.png",
+            "mobile_image": "shopify://shop_images/SLIDE_HEADING_3_3__1024_x_2048_px.png",
+            "mobile_image_fr": "shopify://shop_images/SLIDE_HEADING_3_3__1024_x_2048_px_89743058-7fb8-4797-be2c-e5e29e096383.png",
+            "slide_link": "",
+            "subheading": "",
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular",
+            "title": "Spring, Made for Kids",
+            "title_fr": "Le printemps, pensé pour les enfants",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "heading_max_width": 15,
+            "heading_max_width_fr": 15,
+            "title_size": 84,
+            "title_size_mobile": 46,
+            "use_h1": false,
+            "text": "<p>School-ready sneakers, everyday booties and rain boots for fun.</p>",
+            "text_fr": "<p>Sneakers prêts pour l’école, bottillons du quotidien et bottes de pluie pour s’amuser.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": true,
+            "min_buttons_width_1": 200,
+            "min_buttons_width_1_fr": 200,
+            "min_buttons_mobile_width_1": 200,
+            "min_buttons_mobile_width_1_fr": 200,
+            "button_label_1": "Kids New Arrivals",
+            "button_label_1_fr": "Nouveautés pour enfants",
+            "button_background_color_1": "#fff45d",
+            "button_text_color_1": "#000000",
+            "button_background_color_hover_1": "#fefe01",
+            "button_text_color_hover_1": "#000000",
+            "is_catalogue_button_1": false,
+            "open_catalogue_new_window_1": false,
+            "enable_catalogue_controls_1": false,
+            "button_url_1": "shopify://collections/kids-new-arrivals",
+            "button_url_1_fr": "shopify://collections/kids-new-arrivals",
+            "min_buttons_width_2": 0,
+            "min_buttons_width_2_fr": 0,
+            "min_buttons_mobile_width_2": 0,
+            "min_buttons_mobile_width_2_fr": 0,
+            "button_label_2": "",
+            "button_label_2_fr": "",
+            "button_background_color_2": "",
+            "button_text_color_2": "",
+            "button_background_color_hover_2": "",
+            "button_text_color_hover_2": "",
+            "is_catalogue_button_2": false,
+            "open_catalogue_new_window_2": false,
+            "enable_catalogue_controls_2": false,
+            "button_url_2": "",
+            "button_url_2_fr": "",
+            "min_buttons_width_3": 0,
+            "min_buttons_width_3_fr": 0,
+            "min_buttons_mobile_width_3": 0,
+            "min_buttons_mobile_width_3_fr": 0,
+            "button_label_3": "",
+            "button_label_3_fr": "",
+            "button_background_color_3": "",
+            "button_text_color_3": "",
+            "button_background_color_hover_3": "",
+            "button_text_color_hover_3": "",
+            "is_catalogue_button_3": false,
+            "open_catalogue_new_window_3": false,
+            "enable_catalogue_controls_3": false,
+            "button_url_3": "",
+            "button_url_3_fr": "",
+            "min_buttons_width_4": 0,
+            "min_buttons_width_4_fr": 0,
+            "min_buttons_mobile_width_4": 0,
+            "min_buttons_mobile_width_4_fr": 0,
+            "button_label_4": "",
+            "button_label_4_fr": "",
+            "button_background_color_4": "",
+            "button_text_color_4": "",
+            "button_background_color_hover_4": "",
+            "button_text_color_hover_4": "",
+            "is_catalogue_button_4": false,
+            "open_catalogue_new_window_4": false,
+            "enable_catalogue_controls_4": false,
+            "button_url_4": "",
+            "button_url_4_fr": "",
+            "text_alignment": "center center",
+            "show_countdown": false,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "countdown_text_color": "",
+            "number_size": 40,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        }
+      },
+      "block_order": [
+        "image_DBkmwi",
+        "image_TQ7V8L",
+        "image_LHYV6n",
+        "image_PaRHL3"
+      ],
+      "settings": {
+        "height": "adapt",
+        "height_desktop": 800,
+        "height_mobile": 680,
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "full image-overlay--bg-shadow",
+        "transition": "instant",
+        "navigation": "dots",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "accessibility_info": ""
+      }
+    },
+    "meg_featured_collection_JWNwWr": {
       "type": "meg-featured-collection",
       "name": "Meg Featured collection",
       "settings": {
-        "title": "Best Sellers This Week",
-        "title_fr": "Meilleures ventes de la semaine",
-        "main-collection-url": "shopify://pages/new-arrivals-for-the-entire-family",
-        "main-collection-url-fr": "shopify://pages/new-arrivals-for-the-entire-family",
-        "womens-collection": "best-sellers-womens",
-        "mens-collection": "best-sellers-mens",
-        "girls-collection": "best-sellers-girls",
-        "boys-collection": "best-sellers-boys",
-        "accessories-collection": "best-sellers-accessories",
+        "title": "Solange Pilote Collection",
+        "title_fr": "Collection Solange Pilote",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
+        "main-collection-url": "shopify://collections/solange-pilote",
+        "main-collection-url-fr": "shopify://collections/solange-pilote",
+        "womens-collection": "solange-pilote",
+        "mens-collection": "",
+        "girls-collection": "",
+        "boys-collection": "",
+        "accessories-collection": "",
         "show_vendor": false,
         "enable_carousel": true,
         "grid": 5,
@@ -772,156 +907,499 @@
         "color_scheme": "default",
         "show_view_all": true,
         "full_width": true,
-        "has_subcategories": true
+        "has_subcategories": false
       }
     },
-    "spacer_knGPxK": {
-      "type": "spacer",
-      "name": "Spacer",
-      "settings": {
-        "spacer_height": 40,
-        "section_alternate_background": "#ffffff"
-      }
-    },
-    "shop_the_look_GCmEwM": {
-      "type": "shop-the-look",
-      "blocks": {
-        "heading_MC4zJx": {
-          "type": "heading",
-          "settings": {
-            "title": "FRIKSION TECHNOLOGY",
-            "title_fr": "TECHNOLOGIE FRIKSION",
-            "heading_max_width": 10,
-            "title_size": 56,
-            "title_size_mobile": 26,
-            "use_h1": false
-          }
-        },
-        "text_V37YqP": {
-          "type": "text",
-          "settings": {
-            "text": "<p>An optimized grip system made entirely of fiberglass and natural rubber to maximize your safety on all types of icy surfaces.</p>",
-            "text_fr": "<p>Un système d'adhérence optimisé composé entièrement de fibres de verre et de caoutchouc naturel pour maximiser votre sécurité sur tous les types de surfaces glacées.<br/></p>",
-            "enlarge_text": false
-          }
-        },
-        "button_wEL7AP": {
-          "type": "button",
-          "settings": {
-            "button_label": "shop the collection",
-            "button_label_fr": "magasiner la collection",
-            "button_link": "shopify://pages/friksion",
-            "button_style": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_MC4zJx",
-        "text_V37YqP",
-        "button_wEL7AP"
-      ],
-      "name": "Shop the look",
-      "settings": {
-        "image": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
-        "image_fr": "shopify://shop_images/LOGO-LIST-DESKTOP.png",
-        "mobile_image": "shopify://shop_images/LOGO-LIST-MOBILE.png",
-        "mobile_image_fr": "shopify://shop_images/LOGO-LIST-MOBILE.png",
-        "video_external": "",
-        "video_description": "",
-        "height": "adapt",
-        "height_desktop": 600,
-        "height_mobile": 460,
-        "product_list": [
-          "121216",
-          "121209",
-          "120006",
-          "121210",
-          "121211",
-          "120042",
-          "120017",
-          "120018",
-          "120019",
-          "120020",
-          "118668",
-          "116732",
-          "120021"
-        ],
-        "products_alignment": "bottom center",
-        "product_card_layout": "landscape",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "top center",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow"
-      }
-    },
-    "multi_column_ydD4dr": {
+    "multi_column_BdpFhJ": {
       "type": "multi-column",
       "blocks": {
-        "text_block_xkQRKK": {
+        "text_block_xcNyqf": {
           "type": "text_block",
           "settings": {
             "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_1_3.jpg",
-            "title": "Women’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour femmes",
-            "text": "<p>Stay warm and stylish all season long. Discover cozy waterproof boots made for every snowy adventure.</p>",
-            "text_fr": "<p>Restez au chaud avec style tout l’hiver. Découvrez des bottes imperméables parfaites pour chaque aventure enneigée.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/womens-winter-boots",
-            "link_fr": "shopify://collections/womens-winter-boots"
+            "image": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn_W_Intuition.png",
+            "title": "WOMEN'S NEW ARRIVALS",
+            "title_fr": "NOUVEAUTÉS POUR FEMMES",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "text": "<p>New Season, New Styles! Explore Our Trendiest Women's Shoes and Fan-Favourite Booties</p>",
+            "text_fr": "<p>Nouvelle saison, nouveaux styles ! Découvrez nos chaussures pour femmes les plus tendance et nos bottillons préférées</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/womens-new-arrivals",
+            "link_fr": "shopify://collections/womens-new-arrivals"
           }
         },
-        "text_block_yGhX4p": {
+        "text_block_NqMtm7": {
           "type": "text_block",
           "settings": {
             "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_2_3.jpg",
-            "title": "Men’s Winter Boots",
-            "title_fr": "Bottes d’hiver pour hommes",
-            "text": "<p>Built for warmth and grip. Explore durable, weather-ready boots crafted for Canadian winters.</p>",
-            "text_fr": "<p>Conçues pour la chaleur et l’adhérence. Explorez des bottes robustes prêtes à affronter l’hiver canadien.</p>",
-            "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/mens-winter-boots",
-            "link_fr": "shopify://collections/mens-winter-boots"
+            "image": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn__K_Rain.png",
+            "title": "KIDS NEW ARRIVALS",
+            "title_fr": "NOUVEAUTÉS POUR ENFANTS",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "text": "<p>New season, new adventures! School-ready sneakers, everyday shoes and boots made for spring.</p>",
+            "text_fr": "<p>Nouvelle saison, nouvelles aventures ! Sneakers pour l’école, chaussures du quotidien et bottes prêtes pour le printemps.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/kids-new-arrivals",
+            "link_fr": "shopify://collections/kids-new-arrivals"
           }
         },
-        "text_block_wRzx6d": {
+        "text_block_KrqaGj": {
           "type": "text_block",
           "settings": {
             "enable_media": true,
-            "image": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "image_fr": "shopify://shop_images/MULTI_COLUMN_-_3_3.jpg",
-            "title": "Kids’ Winter Boots",
-            "title_fr": "Bottes d’hiver pour enfants",
-            "text": "<p>Keep little feet warm and dry from school days to snow forts — fun, functional boots for every kid.</p>",
-            "text_fr": "<p>Gardez les petits pieds au chaud et au sec — des bottes amusantes et pratiques pour chaque enfant.</p>",
+            "image": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
+            "image_fr": "shopify://shop_images/HP_MultiColumn__M_Impact.png",
+            "title": "Men's new arrivals",
+            "title_fr": "Nouveautés pour hommes",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "text": "<p>New season, new essentials! Discover men’s shoes and sneakers made for everyday wear and the in-between season.</p>",
+            "text_fr": "<p>Nouvelle saison, nouveaux essentiels ! Découvrez nos chaussures et sneakers pour hommes, pensées pour le quotidien et la mi-saison.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "shop now",
-            "button_label_fr": "magasiner",
-            "link": "shopify://collections/kids-winter-boots",
-            "link_fr": "shopify://collections/kids-winter-boots"
+            "button_label_fr": "Magasiner",
+            "link": "shopify://collections/mens-new-arrivals",
+            "link_fr": "shopify://collections/mens-new-arrivals"
           }
         }
       },
       "block_order": [
-        "text_block_xkQRKK",
-        "text_block_yGhX4p",
-        "text_block_wRzx6d"
+        "text_block_xcNyqf",
+        "text_block_NqMtm7",
+        "text_block_KrqaGj"
       ],
       "name": "Multi-column",
       "settings": {
-        "title": "Winter’s here! Discover your must-haves",
-        "title_fr": "L’hiver est là ! Découvrez vos incontournables",
+        "title": "Shop the Latest",
+        "title_fr": "Magasinez les nouveautés",
         "show_2_per_row_mobile": false,
         "media_aspect_ratio": "s",
         "media_width": 700,
         "text_alignment": "center",
-        "button_style": "secondary",
+        "button_style": "primary",
         "color_scheme": "default"
+      }
+    },
+    "image_with_text_afNDhQ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RzxVPn": {
+          "type": "heading",
+          "settings": {
+            "title": "Modern Western",
+            "title_fr": "Donnez du yeehaw à votre style !",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "use_h1": false
+          }
+        },
+        "text_gT86bp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Genuine leather cowboy booties and boots with a bold western edge. Iconic short and tall silhouettes designed to elevate every look — from everyday wear to standout moments.</p>",
+            "text_fr": "<p>Des bottes cowboy en cuir véritable au caractère western assumé pour rehausser chaque tenue du quotidien aux moments qui se démarquent.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": false
+          }
+        },
+        "button_WE8cei": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Arizona",
+            "button_label_fr": "Magasiner Arizona",
+            "button_link": "shopify://products/122086",
+            "button_link_fr": "shopify://products/122086",
+            "button_style": "primary"
+          }
+        },
+        "button_QHUkiG": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Colorado",
+            "button_label_fr": "Magasiner Colorado",
+            "button_link": "shopify://products/122088",
+            "button_link_fr": "shopify://products/122088",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RzxVPn",
+        "text_gT86bp",
+        "button_WE8cei",
+        "button_QHUkiG"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
+        "image_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_01.png",
+        "image_2": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
+        "image_2_fr": "shopify://shop_images/IMG_TEXT_cowboyboots_02.png",
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "left",
+        "text_alignment": "center",
+        "color_scheme": "default"
+      }
+    },
+    "countdown_timer_jYmaEF": {
+      "type": "countdown-timer",
+      "blocks": {
+        "subheading_pKkLbA": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "in-stores & online",
+            "subheading_fr": "en magasin & en ligne"
+          }
+        },
+        "heading_GYPMmE": {
+          "type": "heading",
+          "settings": {
+            "title": "SCRATCH & SAVE",
+            "title_fr": "GRATTEZ ET GAGNEZ",
+            "use_h1": false
+          }
+        },
+        "text_9ye6eR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Reveal your surprise discount!<br/>Valid on all kids’ shoes & accessories at regular price</p>",
+            "text_fr": "<p>pour obtenir votre rabais<br/>sur toutes les chaussures et accessoires pour enfants à prix régulier<br/></p>",
+            "enlarge_text": true
+          }
+        },
+        "heading_pKfht6": {
+          "type": "heading",
+          "settings": {
+            "title": "up to 20% off",
+            "title_fr": "JUSQU'À20% DE RABAIS",
+            "use_h1": false
+          }
+        },
+        "countdown_YDLaqx": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "2026-03-09",
+            "end_time": "23:59",
+            "countdown_color": "#ffffff",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": false,
+            "number_size": 60,
+            "number_font": "base",
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "button_CtbQex": {
+          "type": "button",
+          "settings": {
+            "button_label": "click here",
+            "button_label_fr": "Cliquez ici",
+            "button_link": "",
+            "button_popup": "SFGrse",
+            "button_popup_fr": "SxRERB",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_pKkLbA",
+        "heading_GYPMmE",
+        "text_9ye6eR",
+        "heading_pKfht6",
+        "countdown_YDLaqx",
+        "button_CtbQex"
+      ],
+      "disabled": true,
+      "name": "Countdown timer",
+      "settings": {
+        "show_image": true,
+        "image": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+        "image_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+        "image_mobile": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+        "image_mobile_fr": "shopify://shop_images/HP_Collection__K_GroupShot.png",
+        "image_link": "",
+        "show_image_space": true,
+        "image_position": "left",
+        "text_alignment": "center",
+        "color_scheme": "2"
+      }
+    },
+    "image_with_text_8VEiDg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nMHPcD": {
+          "type": "heading",
+          "settings": {
+            "title": "A fan favorite returns",
+            "title_fr": "Le retour d’un favori",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "use_h1": false
+          }
+        },
+        "text_wVwXp4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Back in on-trend colors, INEZ pairs effortlessly with all your in-between-season looks. A reliable, comfortable boot that’s easy to wear — rain or shine.</p>",
+            "text_fr": "<p>De retour dans des couleurs actuelles, INEZ accompagne tous les looks de mi-saison. Une botte fiable, confortable et toujours aussi facile à porter — pluie ou soleil.</p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
+            "enlarge_text": false
+          }
+        },
+        "button_e7qACg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Inez",
+            "button_label_fr": "Magasiner Inez",
+            "button_link": "shopify://products/119282",
+            "button_link_fr": "shopify://products/119282",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nMHPcD",
+        "text_wVwXp4",
+        "button_e7qACg"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Frame_73.png",
+        "image_fr": "shopify://shop_images/Frame_73.png",
+        "image_2": "shopify://shop_images/Frame_74.png",
+        "image_2_fr": "shopify://shop_images/Frame_74.png",
+        "image_width": 700,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "center",
+        "color_scheme": "default"
+      }
+    },
+    "spacer_grFXfH": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 10,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "shop_the_look_rq3PNN": {
+      "type": "shop-the-look",
+      "blocks": {
+        "heading_XHTLtw": {
+          "type": "heading",
+          "settings": {
+            "title": "MUST-HAVE SNEAKERS",
+            "title_fr": "SNEAKERS MODE INCONTOURNABLES",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
+            "heading_max_width": 10,
+            "title_size": 56,
+            "title_size_mobile": 26,
+            "use_h1": false
+          }
+        },
+        "text_nafKtQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Comfortable, versatile and easy to style — made for spring.</p>",
+            "text_fr": "<p>Confortables, polyvalentes et faciles à styliser — faites pour le printemps.</p>",
+            "enlarge_text": true,
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
+          }
+        },
+        "subheading_bBjgWj": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Comfortable, versatile and easy to style — made for spring.",
+            "subheading_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular"
+          }
+        },
+        "button_J8KnfP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_label_fr": "Magasiner",
+            "button_link": "shopify://collections/womens-shoes-sneakers",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XHTLtw",
+        "text_nafKtQ",
+        "subheading_bBjgWj",
+        "button_J8KnfP"
+      ],
+      "name": "Shop the look",
+      "settings": {
+        "image": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
+        "image_fr": "shopify://shop_images/HP_LogoList__2048x1024_e64ceb8e-5b6c-4c2f-a64a-f3b82ed5df72.png",
+        "mobile_image": "shopify://shop_images/HP_LogoList__1024x1024_f473e896-62e5-44be-b166-68bd7cf1c7e2.png",
+        "mobile_image_fr": "shopify://shop_images/HP_LogoList__1024x1024_f473e896-62e5-44be-b166-68bd7cf1c7e2.png",
+        "video_external": "",
+        "video_description": "",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "product_list": [
+          "120779",
+          "122109",
+          "121798",
+          "121797",
+          "120890",
+          "120662",
+          "121856",
+          "121857",
+          "120012",
+          "120778",
+          "120937"
+        ],
+        "products_alignment": "bottom right",
+        "product_card_layout": "portrait",
+        "show_swatches": true,
+        "full_width": true,
+        "text_alignment": "top left",
+        "mobile_overlay_over": true,
+        "overlay_style": "shadow"
+      }
+    },
+    "spacer_N9VHcj": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 40,
+        "section_alternate_background": "#ffffff"
+      }
+    },
+    "scrolling_banner_g3CU8i": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_3DkM3T": {
+          "type": "text",
+          "settings": {
+            "text": "Last Chance Sales - Ends Soon",
+            "text_fr": "Soldes dernière chance — bientôt terminées",
+            "color": "#fcfaf3",
+            "link": "shopify://pages/sale",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": "",
+            "stencil_text_fr": ""
+          }
+        },
+        "countdown_Bd4z9a": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "2026-03-05",
+            "end_time": "23:59",
+            "end_text": "",
+            "end_text_fr": "",
+            "hide_on_end": true,
+            "color": "rgba(0,0,0,0)",
+            "number_size": 40,
+            "divider_type": "colon",
+            "show_timer_labels": true
+          }
+        },
+        "button_T4CMEb": {
+          "type": "button",
+          "settings": {
+            "text": "Shop now",
+            "text_fr": "Magasiner",
+            "link": "shopify://pages/new-arrivals-for-the-entire-family",
+            "button_style": "custom",
+            "color_bg": "#fcfaf3",
+            "color_text": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "text_3DkM3T",
+        "countdown_Bd4z9a",
+        "button_T4CMEb"
+      ],
+      "settings": {
+        "full_width": true,
+        "color_scheme": "2",
+        "text_size": 56,
+        "vertical_padding": 0,
+        "speed": 31,
+        "direction": "left",
+        "font": "base",
+        "space": 30
+      }
+    },
+    "meg_featured_collection_FqhAyf": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Don’t Miss Out — Sale Ending Soon",
+        "title_fr": "Ne manquez pas ça — soldes bientôt terminées",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
+        "main-collection-url": "shopify://pages/sale",
+        "main-collection-url-fr": "shopify://pages/sale",
+        "womens-collection": "womens-sale",
+        "mens-collection": "mens-sale",
+        "girls-collection": "girls-sale",
+        "boys-collection": "boys-sale",
+        "accessories-collection": "accessories-sale",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": true
       }
     },
     "instagram-posts-1": {
@@ -937,24 +1415,22 @@
     }
   },
   "order": [
-    "176062646746014805",
-    "text_cta_block_dCmN73",
-    "slideshow_UmwmBT",
+    "background_video_ca9zwX",
     "compact_messages_4thNGK",
-    "meg_featured_collection_WpCRqR",
-    "1770754611289b3562",
-    "scrolling_banner_g3CU8i",
-    "collection_list_WRjFwt",
-    "shop_the_look_Ei9CJR",
-    "multi_column_GqgGEh",
     "meg_featured_collection_HtjHDq",
-    "spacer_VUrmbi",
-    "shop_the_look_6UBBrC",
-    "featured_collection_djkdqW",
-    "meg_featured_collection_mH3Pgz",
-    "spacer_knGPxK",
-    "shop_the_look_GCmEwM",
-    "multi_column_ydD4dr",
+    "spacer_XJwmXX",
+    "collection_list_F3rmVw",
+    "slideshow_UmwmBT",
+    "meg_featured_collection_JWNwWr",
+    "multi_column_BdpFhJ",
+    "image_with_text_afNDhQ",
+    "countdown_timer_jYmaEF",
+    "image_with_text_8VEiDg",
+    "spacer_grFXfH",
+    "shop_the_look_rq3PNN",
+    "spacer_N9VHcj",
+    "scrolling_banner_g3CU8i",
+    "meg_featured_collection_FqhAyf",
     "instagram-posts-1"
   ]
 }

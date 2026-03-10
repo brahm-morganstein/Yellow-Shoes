@@ -58,65 +58,21 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_mLdP76": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "💘15% OFF <a href=\"/collections/new-arrivals-accessories\" title=\"Accessories New Arrivals\"><strong>all accessories</strong></a>. Valentine’s Day ends soon!",
-            "text_fr": "💘15% de rabais sur<strong> </strong><a href=\"/collections/new-arrivals-accessories\" title=\"Accessories New Arrivals\"><strong>tous les accessoires</strong></a>",
-            "popup_text_replacement": "",
-            "popup_text_replacement_fr": "",
-            "button_popup": "",
-            "button_popup_fr": "",
-            "show_countdown": true,
-            "hide_on_end": false,
-            "end_date": "",
-            "end_time": "",
-            "number_font": "heading",
-            "countdown_separator": "space",
-            "use_custom_colors": false,
-            "bg_color": "#4a4a4a",
-            "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
-            "text_color": "#ffffff"
-          }
-        },
         "announcement_7Vqrkz": {
           "type": "announcement",
           "settings": {
-            "text": "🚨<a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>End of Season Sales</strong></a> - Limited Time Only!",
-            "text_fr": "🚨 <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Soldes de fin de saison</strong></a> — durée limité!",
-            "popup_text_replacement": "",
-            "popup_text_replacement_fr": "",
-            "button_popup": "",
-            "button_popup_fr": "",
-            "show_countdown": true,
-            "hide_on_end": false,
-            "end_date": "2026-02-11",
-            "end_time": "23:59",
-            "number_font": "base",
-            "countdown_separator": "space",
-            "use_custom_colors": false,
-            "bg_color": "#4a4a4a",
-            "bg_gradient": "",
-            "text_color": "#ffffff"
-          }
-        },
-        "announcement_Jw8kcf": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Holiday Gift Guide</strong></a> — Shop now & spread the cheer",
-            "text_fr": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Guide-cadeaux des Fêtes</strong></a> — Magasiner ici",
+            "text": "☀️ Now Live – Spring 2026. <a href=\"/pages/new-arrivals-for-the-entire-family\" title=\"New Arrivals For the Entire Family\"><strong>Shop Now</strong></a>",
+            "text_fr": "☀️ Printemps 2026 en ligne. <a href=\"/pages/new-arrivals-for-the-entire-family\" title=\"New Arrivals For the Entire Family\"><strong>Voir la collection</strong></a>",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",
             "button_popup_fr": "",
             "show_countdown": false,
             "hide_on_end": false,
-            "end_date": "2024-09-03",
-            "end_time": "08:30",
-            "number_font": "base",
-            "countdown_separator": "box",
+            "end_date": "",
+            "end_time": "",
+            "number_font": "heading",
+            "countdown_separator": "space",
             "use_custom_colors": false,
             "bg_color": "#4a4a4a",
             "bg_gradient": "",
@@ -140,6 +96,49 @@
             "countdown_separator": "space",
             "use_custom_colors": false,
             "bg_color": "#9ecc3b",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_mLdP76": {
+          "type": "announcement",
+          "settings": {
+            "text": "🔥End of Season Sale — Final Days! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Shop Now</strong></a>",
+            "text_fr": "🔥Soldes de fin de saison — Derniers jours! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Magasinez maintenant</strong></a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": true,
+            "hide_on_end": false,
+            "end_date": "2026-03-05",
+            "end_time": "23:59",
+            "number_font": "heading",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_Jw8kcf": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Holiday Gift Guide</strong></a> — Shop now & spread the cheer",
+            "text_fr": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Guide-cadeaux des Fêtes</strong></a> — Magasiner ici",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": false,
+            "hide_on_end": false,
+            "end_date": "2024-09-03",
+            "end_time": "08:30",
+            "number_font": "base",
+            "countdown_separator": "box",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
             "bg_gradient": "",
             "text_color": "#ffffff"
           }
@@ -234,10 +233,10 @@
         }
       },
       "block_order": [
-        "announcement_mLdP76",
         "announcement_7Vqrkz",
-        "announcement_Jw8kcf",
         "announcement_M9n4tM",
+        "announcement_mLdP76",
+        "announcement_Jw8kcf",
         "announcement_TaPzKD",
         "announcement_qiQWqx",
         "announcement_F7egfq",
@@ -246,8 +245,8 @@
       "settings": {
         "message_font_size": 14,
         "announcement_bar_col": "#000000",
-        "announcement_bar_gradient": "linear-gradient(57deg, rgba(35, 35, 35, 1) 53%, rgba(194, 0, 0, 1) 97%)",
-        "announcement_text_col": "#ffffff",
+        "announcement_bar_gradient": "linear-gradient(57deg, rgba(255, 82, 42, 1) 58%, rgba(255, 82, 42, 1) 100%)",
+        "announcement_text_col": "#fcfaf3",
         "show_social_icons": true,
         "menu": "",
         "enable_country_selector": true,
@@ -262,11 +261,11 @@
           "settings": {
             "dropdown_link_title": "New",
             "dropdown_link_title_fr": "Nouveautés",
-            "image": "shopify://shop_images/MEMORY_H20_0407.jpg",
-            "image_fr": "shopify://shop_images/MEMORY_H20_0407.jpg",
-            "title": "SHOP THE HERITAGE COLLECTION",
-            "title_fr": "Magasiner la COLLECTION HéRITAGE",
-            "link_url": "shopify://pages/riverland-heritage-collection"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG08.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG08.png",
+            "title": "KIDS spring break essentials",
+            "title_fr": "NOUVEAUTÉS POUR ENFANTS",
+            "link_url": "shopify://collections/kids-new-arrivals"
           }
         },
         "menu_promotion_small_U6EcqP": {
@@ -274,11 +273,11 @@
           "settings": {
             "dropdown_link_title": "New",
             "dropdown_link_title_fr": "Nouveautés",
-            "image": "shopify://shop_images/MANUFACTURED_IN_QUEBEC.png",
-            "image_fr": "shopify://shop_images/FABRIQUE_AU_QUEBEC.png",
-            "title": "Made in Quebec Collection",
-            "title_fr": "Collection Fabriquée au Québec",
-            "link_url": "shopify://collections/made-in-quebec-collection"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG02.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG02.png",
+            "title": "Women's spring new arrivals",
+            "title_fr": "Nouveautés pour femmes",
+            "link_url": "shopify://collections/womens-new-arrivals"
           }
         },
         "menu_promotion_small_w7rEYW": {
@@ -286,11 +285,11 @@
           "settings": {
             "dropdown_link_title": "Women's",
             "dropdown_link_title_fr": "Femmes",
-            "image": "shopify://shop_images/1993_PRESLEY_0174.jpg",
-            "image_fr": "shopify://shop_images/1993_PRESLEY_0174.jpg",
-            "title": "Shop BOOTS",
-            "title_fr": "magasiner bottillons",
-            "link_url": "shopify://collections/womens-boots"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG03.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG03.png",
+            "title": "shop rain boots",
+            "title_fr": "magasiner les bottes de pluie",
+            "link_url": "shopify://collections/womens-rain-boots"
           }
         },
         "menu_promotion_small_JmLEBi": {
@@ -298,11 +297,11 @@
           "settings": {
             "dropdown_link_title": "Women's",
             "dropdown_link_title_fr": "Femmes",
-            "image": "shopify://shop_images/ARIANE_9808.jpg",
-            "image_fr": "shopify://shop_images/ARIANE_9808.jpg",
-            "title": "SHOP tall boots",
-            "title_fr": "Magasiner bottes hautes",
-            "link_url": "shopify://collections/womens-tall-light-boots"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG04.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG04.png",
+            "title": "Shop spring booties",
+            "title_fr": "Magasiner les bottillons",
+            "link_url": "shopify://collections/womens-light-boots"
           }
         },
         "menu_promotion_small_ngUQVF": {
@@ -310,11 +309,11 @@
           "settings": {
             "dropdown_link_title": "Men's",
             "dropdown_link_title_fr": "Hommes",
-            "image": "shopify://shop_images/HIVERNAL_H20_0419.jpg",
-            "image_fr": "shopify://shop_images/HIVERNAL_H20_0419.jpg",
-            "title": "Shop boots for men",
-            "title_fr": "magasiner bottes pour hommes",
-            "link_url": "shopify://collections/mens-boots"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG05.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG05.png",
+            "title": "Shop sneakers",
+            "title_fr": "magasiner les sneakers",
+            "link_url": "shopify://collections/mens-athletic-athleisure"
           }
         },
         "menu_promotion_small_xEDiDy": {
@@ -322,11 +321,11 @@
           "settings": {
             "dropdown_link_title": "Men's",
             "dropdown_link_title_fr": "Hommes",
-            "image": "shopify://shop_images/MEMORY_M_H20_0358.jpg",
-            "image_fr": "shopify://shop_images/MEMORY_M_H20_0358.jpg",
-            "title": "Shop Heritage collection",
-            "title_fr": "la collection Héritage",
-            "link_url": "shopify://pages/riverland-heritage-collection"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG06.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG06.png",
+            "title": "Shop new arrivals",
+            "title_fr": "Magasiner les nouveautés",
+            "link_url": "shopify://collections/mens-new-arrivals"
           }
         },
         "menu_promotion_small_KyRxnL": {
@@ -334,11 +333,11 @@
           "settings": {
             "dropdown_link_title": "Kids",
             "dropdown_link_title_fr": "Enfants",
-            "image": "shopify://shop_images/MEMORY-G_TDLR_1265.jpg",
-            "image_fr": "shopify://shop_images/MEMORY-G_TDLR_1265.jpg",
-            "title": "Shop new arrivals",
-            "title_fr": "Magasiner les nouveautés",
-            "link_url": "shopify://collections/kids-new-arrivals"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG07.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG07.png",
+            "title": "Shop rain boots",
+            "title_fr": "Magasiner les bottes de pluie",
+            "link_url": "shopify://collections/kids-rain-boots"
           }
         },
         "menu_promotion_small_MENrVe": {
@@ -346,11 +345,11 @@
           "settings": {
             "dropdown_link_title": "kids",
             "dropdown_link_title_fr": "Enfants",
-            "image": "shopify://shop_images/MONCTON-G_TDLR_0319.jpg",
-            "image_fr": "shopify://shop_images/MONCTON-G_TDLR_0319.jpg",
-            "title": "shop kids winter boots",
-            "title_fr": "bottes d’hiver pour enfants",
-            "link_url": "shopify://collections/kids-winter-boots"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG01.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG01.png",
+            "title": "Shop athletic shoes",
+            "title_fr": "Magasiner les chaussures sport",
+            "link_url": "shopify://collections/running-shoes-for-kids"
           }
         },
         "menu_promotion_small_XYHNpQ": {
@@ -358,11 +357,11 @@
           "settings": {
             "dropdown_link_title": "Accessories",
             "dropdown_link_title_fr": "Accessoires",
-            "image": "shopify://shop_images/ACCESSORIES_1510.jpg",
-            "image_fr": "shopify://shop_images/ACCESSORIES_1510.jpg",
-            "title": "Women's winter accessories",
-            "title_fr": "accessoires d’hiver pour femmes",
-            "link_url": "shopify://collections/womens-winter-accessories"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG010.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG010.png",
+            "title": "Shop new bags",
+            "title_fr": "Magasiner les sacs",
+            "link_url": "shopify://collections/accessories-womens-handbags"
           }
         },
         "menu_promotion_small_LNWmXW": {
@@ -370,11 +369,11 @@
           "settings": {
             "dropdown_link_title": "Accessories",
             "dropdown_link_title_fr": "Accessoires",
-            "image": "shopify://shop_images/CALLY_HIVER_HAUTE_1384.jpg",
-            "image_fr": "shopify://shop_images/CALLY_HIVER_HAUTE_1384.jpg",
-            "title": "shop women's handbags",
-            "title_fr": "sacs à main pour femmes",
-            "link_url": "shopify://collections/accessories-womens-handbags"
+            "image": "shopify://shop_images/HP_MegaMenu_IMG09.png",
+            "image_fr": "shopify://shop_images/HP_MegaMenu_IMG09.png",
+            "title": "shop new accessories",
+            "title_fr": "Magasiner les nouveaux accessoires",
+            "link_url": "shopify://collections/new-arrivals-accessories"
           }
         },
         "menu_promotion_small_jhky7D": {
@@ -382,8 +381,8 @@
           "settings": {
             "dropdown_link_title": "Sale",
             "dropdown_link_title_fr": "Soldes",
-            "image": "shopify://shop_images/EN.gif",
-            "image_fr": "shopify://shop_images/FR.gif",
+            "image": "shopify://shop_images/HP_SALES-BANNER_EN.png",
+            "image_fr": "shopify://shop_images/HP_SALES-BANNER_FR.png",
             "title": "Shop all sales",
             "title_fr": "Magasiner tous les soldes",
             "link_url": "shopify://pages/sale"

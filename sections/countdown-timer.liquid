@@ -96,13 +96,24 @@
 
                         {% when 'button' %}
                             <div class="lightly-spaced-row button-row" {{ block.shopify_attributes }}>
-                                <a class="{% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__btn" href="{{ block.settings.button_link }}">
-                                    {% if shop.locale == 'en' %}
-                                        {{ block.settings.button_label | escape }}
-                                    {% else %}
-                                        {{ block.settings.button_label_fr | escape }}
-                                    {% endif %}
-                                </a>
+                                {% if block.settings.button_popup == blank %}
+                                    <a class="{% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__btn" href="{{ block.settings.button_link }}">
+                                        {% if shop.locale == 'en' %}
+                                            {{ block.settings.button_label | escape }}
+                                        {% else %}
+                                            {{ block.settings.button_label_fr | escape }}
+                                        {% endif %}
+                                    </a>
+                                {% else %}
+                                     <div class="{% if block.settings.button_style != 'link' %}btn btn--{{ block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__btn" onclick="{% if shop.locale == 'en' %}window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', '{{  block.settings.button_popup }}']){% else %}window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', '{{  block.settings.button_popup_fr }}']);{% endif %}">
+                                        {% if shop.locale == 'en' %}
+                                            {{ block.settings.button_label | escape }}
+                                        {% else %}
+                                            {{ block.settings.button_label_fr | escape }}
+                                        {% endif %}
+                                    </div>                                   
+                                {% endif %}
+
                                 {%- assign skip_block_count = 0 -%}
                                 {%- for next_block in section.blocks offset: forloop.index -%}
                                     {%- if next_block.type == 'button' -%}
@@ -359,6 +370,18 @@
     "id": "button_link",
     "label": "Button link"
     },
+    {
+    "type": "text",
+    "id": "button_popup",
+    "label": "Klaviyo Popup Code",
+    "info": "This will replace the English URL"
+    },
+    {
+    "type": "text",
+    "id": "button_popup_fr",
+    "label": "Klaviyo Popup Code (FR)",
+    "info": "This will replace the French URL"
+    },    
     {
     "type": "select",
     "id": "button_style",
