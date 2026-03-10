@@ -29,8 +29,8 @@
             "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
             "heading_max_width": 15,
-            "title_size": 84,
-            "title_size_mobile": 52,
+            "title_size": 74,
+            "title_size_mobile": 44,
             "use_h1": false
           }
         },
