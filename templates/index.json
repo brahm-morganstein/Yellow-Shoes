@@ -330,7 +330,6 @@
       "blocks": {
         "image_DBkmwi": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Solange_Banner_Wide.png",
             "image_fr": "shopify://shop_images/Solange_Banner_Wide.png",
@@ -345,8 +344,8 @@
             "subheading_font_style": "regular",
             "title": "Solange Pilote Collection",
             "title_fr": "Collection Solange Pilote",
-            "title_font_family": "default",
-            "title_font_weight": "regular",
+            "title_font_family": "gelica",
+            "title_font_weight": "semibold",
             "title_font_weight_regular_bold": "regular",
             "title_font_style": "regular",
             "heading_max_width": 15,
@@ -437,6 +436,7 @@
         },
         "image_TQ7V8L": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/SLIDE_HEADING_1_3_2048_x_1024px.png",
             "image_fr": "shopify://shop_images/SLIDE_HEADING_1_3_2048_x_1024px_68dc2950-229f-4c60-b50e-e23e8ca51e44.png",
@@ -543,6 +543,7 @@
         },
         "image_LHYV6n": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/SLIDE_HEADING_2_3_2048_x_1024px.png",
             "image_fr": "shopify://shop_images/SLIDE_HEADING_2_3_2048_x_1024px_7f1ada58-87c4-4bde-9c32-be8a1b0501f1.png",
@@ -649,6 +650,7 @@
         },
         "image_PaRHL3": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/SLIDE_HEADING_3_3_2048_x_1024px.png",
             "image_fr": "shopify://shop_images/SLIDE_HEADING_3_3_2048_x_1024px_3e09c96d-b4b1-4051-a036-d6d146518583.png",
