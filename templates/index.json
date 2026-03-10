@@ -912,6 +912,7 @@
         "countdown_YDLaqx",
         "button_CtbQex"
       ],
+      "disabled": true,
       "name": "Countdown timer",
       "settings": {
         "show_image": true,
