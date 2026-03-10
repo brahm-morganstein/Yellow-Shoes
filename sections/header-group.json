@@ -79,27 +79,6 @@
             "text_color": "#ffffff"
           }
         },
-        "announcement_M9n4tM": {
-          "type": "announcement",
-          "settings": {
-            "text": "🚚 <strong>Free shipping</strong> on order over $85",
-            "text_fr": "🚚 <strong>Livraison gratuite</strong> dès 85$",
-            "popup_text_replacement": "",
-            "popup_text_replacement_fr": "",
-            "button_popup": "",
-            "button_popup_fr": "",
-            "show_countdown": false,
-            "hide_on_end": false,
-            "end_date": "",
-            "end_time": "",
-            "number_font": "heading",
-            "countdown_separator": "space",
-            "use_custom_colors": false,
-            "bg_color": "#9ecc3b",
-            "bg_gradient": "",
-            "text_color": "#ffffff"
-          }
-        },
         "announcement_mLdP76": {
           "type": "announcement",
           "settings": {
@@ -118,6 +97,27 @@
             "use_custom_colors": false,
             "bg_color": "#4a4a4a",
             "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
+            "text_color": "#ffffff"
+          }
+        },
+        "announcement_M9n4tM": {
+          "type": "announcement",
+          "settings": {
+            "text": "🚚 <strong>Free shipping</strong> on order over $85",
+            "text_fr": "🚚 <strong>Livraison gratuite</strong> dès 85$",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": false,
+            "hide_on_end": false,
+            "end_date": "",
+            "end_time": "",
+            "number_font": "heading",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#9ecc3b",
+            "bg_gradient": "",
             "text_color": "#ffffff"
           }
         },
@@ -234,8 +234,8 @@
       },
       "block_order": [
         "announcement_7Vqrkz",
-        "announcement_M9n4tM",
         "announcement_mLdP76",
+        "announcement_M9n4tM",
         "announcement_Jw8kcf",
         "announcement_TaPzKD",
         "announcement_qiQWqx",
