@@ -160,8 +160,8 @@
             "mobile_image": "shopify://shop_images/HP_Banner_Tall.png",
             "mobile_image_fr": "shopify://shop_images/HP_Banner_Tall.png",
             "slide_link": "",
-            "subheading": "Hurry! Limited time only",
-            "subheading_fr": "Faites vite ! Pour un temps limité seulement",
+            "subheading": "",
+            "subheading_fr": "",
             "subheading_font_family": "default",
             "subheading_font_weight": "regular",
             "subheading_font_weight_regular_bold": "regular",
@@ -177,8 +177,8 @@
             "title_size": 84,
             "title_size_mobile": 46,
             "use_h1": false,
-            "text": "",
-            "text_fr": "",
+            "text": "<p>Hurry! Limited time only</p>",
+            "text_fr": "<p>Faites vite ! Pour un temps limité seulement</p>",
             "text_font_family": "default",
             "text_font_weight": "regular",
             "text_font_weight_regular_bold": "regular",
@@ -812,6 +812,33 @@
         "accessibility_info": ""
       }
     },
+    "meg_featured_collection_JWNwWr": {
+      "type": "meg-featured-collection",
+      "name": "Meg Featured collection",
+      "settings": {
+        "title": "Solange Pilote Collection",
+        "title_fr": "Collection Solange Pilote",
+        "title_font_family": "gelica",
+        "title_font_weight": "semibold",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular",
+        "main-collection-url": "shopify://collections/solange-pilote",
+        "main-collection-url-fr": "shopify://collections/solange-pilote",
+        "womens-collection": "solange-pilote",
+        "mens-collection": "",
+        "girls-collection": "",
+        "boys-collection": "",
+        "accessories-collection": "",
+        "show_vendor": false,
+        "enable_carousel": true,
+        "grid": 5,
+        "rows": 1,
+        "color_scheme": "default",
+        "show_view_all": true,
+        "full_width": true,
+        "has_subcategories": false
+      }
+    },
     "collection_list_F3rmVw": {
       "type": "collection-list",
       "blocks": {
@@ -1009,33 +1036,6 @@
         "coll_thumb_text_align_x": "center",
         "coll_thumb_text_align_y": "center",
         "coll_button_style": "primary"
-      }
-    },
-    "meg_featured_collection_JWNwWr": {
-      "type": "meg-featured-collection",
-      "name": "Meg Featured collection",
-      "settings": {
-        "title": "Solange Pilote Collection",
-        "title_fr": "Collection Solange Pilote",
-        "title_font_family": "gelica",
-        "title_font_weight": "semibold",
-        "title_font_weight_regular_bold": "regular",
-        "title_font_style": "regular",
-        "main-collection-url": "shopify://collections/solange-pilote",
-        "main-collection-url-fr": "shopify://collections/solange-pilote",
-        "womens-collection": "solange-pilote",
-        "mens-collection": "",
-        "girls-collection": "",
-        "boys-collection": "",
-        "accessories-collection": "",
-        "show_vendor": false,
-        "enable_carousel": true,
-        "grid": 5,
-        "rows": 1,
-        "color_scheme": "default",
-        "show_view_all": true,
-        "full_width": true,
-        "has_subcategories": false
       }
     },
     "multi_column_BdpFhJ": {
