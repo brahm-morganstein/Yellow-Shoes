@@ -103,8 +103,8 @@
         "announcement_M9n4tM": {
           "type": "announcement",
           "settings": {
-            "text": "Free shipping on all orders - <strong>Limited time!</strong>",
-            "text_fr": "🚚 Livraison gratuite sur tout — <strong>Temps limité!</strong>",
+            "text": "🚨<strong>Free shipping</strong> on all orders - <strong>Limited time!</strong>",
+            "text_fr": "🚨<strong>Livraison gratuit</strong>e sur tout — <strong>Temps limité!</strong>",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",
