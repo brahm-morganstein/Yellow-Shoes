@@ -285,6 +285,52 @@
                                                     {% endif %}
                                                 </div>
                                             {%- endif -%}
+                                        {% if block.settings.show_countdown %}
+                                               <div class="text-overlay__reveal">
+                                                    <div class="text-overlay__subheading subheading subheading--over has-motion">
+                                                      <script src="{{ 'countdown-timer.s.min.js' | asset_url }}" defer></script>
+                                                      {% style %}
+                                                          .block-id-{{ block.id }} .countdown {
+                                                          --countdown-desktop-size: {{ block.settings.number_size }}px;
+                                                            {% unless block.settings.countdown_text_color == blank %}
+                                                              color:{{block.settings.countdown_text_color}}!important;
+                                                            {% endunless %}
+                                                          }
+
+                                                          .block-id-{{ block.id }} .countdown .countdown__number-part{
+                                                            {% unless block.settings.countdown_text_color == blank %}
+                                                              color:{{block.settings.countdown_text_color}}!important;
+                                                            {% endunless %}
+                                                          }
+
+                                                          .block-id-{{ block.id }} .countdown .countdown__number::after{
+                                                            {% unless block.settings.countdown_text_color == blank %}
+                                                              color:{{block.settings.countdown_text_color}}!important;
+                                                            {% endunless %}
+                                                          }
+                                                      {% endstyle %}
+              
+                                                      <div class="block-id-{{ block.id }} lightly-spaced-row lightish-spaced-row-above countdown-font-{{ block.settings.number_font }} countdown-divider-{{ block.settings.divider_type }}" {{ block.shopify_attributes }}>
+                                                          {%-liquid
+                                                              if shop.locale == 'en'
+                                                                  assign end_text = block.settings.end_text
+                                                              else
+                                                                  assign end_text = block.settings.end_text_fr
+                                                              endif
+                                                          -%}
+                                                          {% render 'countdown-timer',
+                                                                  end_date: block.settings.end_date,
+                                                                  end_time: block.settings.end_time,
+                                                                  end_text: end_text,
+                                                                  end_midnight: true,
+                                                                  hide_on_end: block.settings.hide_on_end,
+                                                                  show_labels: block.settings.show_timer_labels
+                                                          %}
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                        {% endif %}
+
                                             {%- if block.settings.text != blank -%}
 
                                                 {% if block.settings.text_font_family == 'default' or block.settings.text_font_family == 'gelica' or block.settings.text_font_family == 'hando' %}
