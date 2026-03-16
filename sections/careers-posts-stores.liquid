@@ -108,7 +108,15 @@
             margin: 10px 0 !important;
         }
     }
+
+    @media screen and (max-width: 500px){
+      .fancybox-slide{
+        padding:0;
+      }
+    }
 </style>
+
+<script src="{{ 'jobs.js' | asset_url }}" defer></script>
 
 <div class="container{% unless section.settings.full_width %} container--reading-width{% endunless %}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
   {%- if section.settings.show_page_title -%}
@@ -121,12 +129,12 @@
     {{- page.content -}}
   </div>
 
-  <div id="BambooHR" style="display: none;">
+  {% comment %} <div id="BambooHR" style="display: none;">
       <script src="https://yellow.bamboohr.com/js/jobs2.php" type="text/javascript"></script>
       <div id="BambooHR-Footer">Powered by<a href="http://www.bamboohr.com" target="_blank"
                                              rel="noopener external nofollow noreferrer"><img
                       src="https://resources.bamboohr.com/images/footer-logo.png" alt="BambooHR - HR software"/></a></div>
-  </div>
+  </div> {% endcomment %}
   <div class="page-width page-content">
       <div style="margin-bottom:1em;">
           <a href="{{ 'careers.back_to_careers_btn_link' | t }}" style="margin-left:0; display: flex; align-items: center;">
@@ -169,7 +177,33 @@
       </div>
   </div>  
 </div>
+<script>
+  $(document).ready(function(){
+    let jobsHtml = '';
 
+    for(let i = 0; i < jobs.public_requests.length; i++) {
+      if(jobs.public_requests[i].client.startsWith('Y-')){
+        jobsHtml += `
+        <tr class="career-city">
+          <td>
+            <span class="opportunity-location">${language =='en'?'Store':'Magasin'} ${jobs.public_requests[i].client}</span>
+            <br>
+            <a data-fancybox="" data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="${jobs.public_requests[i].job_url}${language == 'en' && '&l=en'}">
+              ${language == 'en ' ? jobs.public_requests[i].fr_title : jobs.public_requests[i].en_title} (${jobs.public_requests[i].location?.line1}, ${jobs.public_requests[i].location?.state} ${jobs.public_requests[i].location?.zip})
+            </a>
+          </td>
+          <td>
+             ${jobs.public_requests[i].location?.city},  ${jobs.public_requests[i].location?.state}
+          </td>
+        </tr>
+        `;
+      }
+    }
+
+    document.getElementById('jobs').innerHTML = jobsHtml;
+
+  })
+</script>
 
 {% schema %}
 {
