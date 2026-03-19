@@ -185,7 +185,7 @@
       if(jobs.public_requests[i].client.startsWith('Y-')){
         console.log(jobs.public_requests[i].address)
         const splitAddress = jobs.public_requests[i].address.split(',');
-        const cityProv = splitAddress[1] + ',Quebec';
+        const cityProv = jobs.public_requests[i].address ? splitAddress[1] + ',Quebec' : 'Quebec';
         console.log(cityProv)
         jobsHtml += `
         <tr class="career-city">
