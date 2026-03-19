@@ -185,13 +185,17 @@
       if(jobs.public_requests[i].client.startsWith('Y-')){
         const splitAddress = jobs.public_requests[i].address.split(',');
         const cityProv = jobs.public_requests[i].address ? splitAddress[1] + ', Québec' : 'Québec';
+        let title = jobs.public_requests[i].fr_title;
+        if(language == 'en' && jobs.public_requests[i].en_title){
+          title = jobs.public_requests[i].en_title;
+        }
         jobsHtml += `
         <tr class="career-city">
           <td>
             <span class="opportunity-location">${language =='en'?'Store':'Magasin'} ${jobs.public_requests[i].client}</span>
             <br>
             <a data-fancybox="" data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="${jobs.public_requests[i].job_url}${language == 'en' && '&l=en'}">
-              ${language == 'en' ? jobs.public_requests[i].en_title : jobs.public_requests[i].fr_title} (${jobs.public_requests[i].address}})
+              ${title} (${jobs.public_requests[i].address}})
             </a>
           </td>
           <td>
