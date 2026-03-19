@@ -183,6 +183,7 @@
 
     for(let i = 0; i < jobs.public_requests.length; i++) {
       if(jobs.public_requests[i].client.startsWith('Y-')){
+        console.log(jobs.public_requests[i].address)
         const splitAddress = jobs.public_requests[i].address.split(',');
         const cityProv = splitAddress[1] + ',Quebec';
         console.log(cityProv)
