@@ -179,19 +179,23 @@
       if(!jobs.public_requests[i].client.startsWith('Y-')){
         //console.log('JOB Index',i)
         _location = 'N/A'
-    if(jobs.public_requests[i].location) {
-        _location = `${jobs.public_requests[i].location?.city}, ${jobs.public_requests[i].location?.state}`;
-    } else if(jobs.public_requests[i].address) {
-        const ads = jobs.public_requests[i].address.split(',');
-        _location = `${ads[1]}, ${ads[2]}`;
-    }
+        if(jobs.public_requests[i].location) {
+            _location = `${jobs.public_requests[i].location?.city}, ${jobs.public_requests[i].location?.state}`;
+        } else if(jobs.public_requests[i].address) {
+            const ads = jobs.public_requests[i].address.split(',');
+            _location = `${ads[1]}, ${ads[2]}`;
+        }
+        let title = jobs.public_requests[i].fr_title;
+        if(language == 'en' && jobs.public_requests[i].en_title){
+            title = jobs.public_requests[i].en_title;
+        }
         jobsHtml += `
         <tr class="career-city">
           <td>
             <span class="opportunity-location">${jobs.public_requests[i].client.replace('Siège social-','')}</span>
             <br>
             <a data-fancybox="" data-type="iframe" style="color:#0772b3;" href="javascript:;" data-src="${jobs.public_requests[i].job_url}${language == 'en' && '&l=en'}">
-              ${language == 'en ' ? jobs.public_requests[i].en_title : jobs.public_requests[i].fr_title}
+              ${title}
             </a>
           </td>
           <td>
