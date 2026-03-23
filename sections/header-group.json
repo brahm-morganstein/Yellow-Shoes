@@ -79,6 +79,27 @@
             "text_color": "#ffffff"
           }
         },
+        "announcement_mLdP76": {
+          "type": "announcement",
+          "settings": {
+            "text": "🎨 New <strong>Solange Pilote</strong> Collection — <a href=\"/collections/solange-pilote\" title=\"Solange Pilote x Yellow\"><strong>Shop Now</strong></a>",
+            "text_fr": "🎨 Nouvelle collection <strong>Solange Pilote</strong> — <a href=\"/collections/solange-pilote\" title=\"Solange Pilote x Yellow\"><strong>Magasiner</strong></a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": true,
+            "hide_on_end": false,
+            "end_date": "2026-03-05",
+            "end_time": "23:59",
+            "number_font": "heading",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
+            "text_color": "#ffffff"
+          }
+        },
         "announcement_M9n4tM": {
           "type": "announcement",
           "settings": {
@@ -97,27 +118,6 @@
             "use_custom_colors": false,
             "bg_color": "#9ecc3b",
             "bg_gradient": "",
-            "text_color": "#ffffff"
-          }
-        },
-        "announcement_mLdP76": {
-          "type": "announcement",
-          "settings": {
-            "text": "🔥End of Season Sale — Final Days! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Shop Now</strong></a>",
-            "text_fr": "🔥Soldes de fin de saison — Derniers jours! <a href=\"/pages/sale\" title=\"End of Season Sale\"><strong>Magasinez maintenant</strong></a>",
-            "popup_text_replacement": "",
-            "popup_text_replacement_fr": "",
-            "button_popup": "",
-            "button_popup_fr": "",
-            "show_countdown": true,
-            "hide_on_end": false,
-            "end_date": "2026-03-05",
-            "end_time": "23:59",
-            "number_font": "heading",
-            "countdown_separator": "space",
-            "use_custom_colors": false,
-            "bg_color": "#4a4a4a",
-            "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
             "text_color": "#ffffff"
           }
         },
@@ -234,8 +234,8 @@
       },
       "block_order": [
         "announcement_7Vqrkz",
-        "announcement_M9n4tM",
         "announcement_mLdP76",
+        "announcement_M9n4tM",
         "announcement_Jw8kcf",
         "announcement_TaPzKD",
         "announcement_qiQWqx",
