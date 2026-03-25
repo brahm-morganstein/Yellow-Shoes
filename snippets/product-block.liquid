@@ -232,6 +232,7 @@ Parameters:
                                     assign swatch_loading = 'lazy'
                                 endif
                             -%}
+                            <script>console.log('OPTION TO SHOW',"{{  options_to_show }}")</script>
                             {%- for product_option in product.options_with_values -%}
                                 {%- if options_to_show contains product_option.name -%}
                                     {%- liquid
