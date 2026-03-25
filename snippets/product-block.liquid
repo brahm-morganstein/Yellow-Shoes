@@ -226,7 +226,6 @@ Parameters:
                                     assign option_limit = 3
                                 endif
                                 assign options_to_show = settings.swatch_option_name | append: ',' | append: settings.prod_thumb_options_names | replace: ', ', ',' | split: ','
-                                assign options_to_show = options_to_show | downcase 
                                 if manual_loading
                                     assign swatch_loading = 'manual'
                                 else
