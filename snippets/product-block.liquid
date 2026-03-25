@@ -234,8 +234,6 @@ Parameters:
                             -%}
                             {%- for product_option in product.options_with_values -%}
                                 {%- if options_to_show contains product_option.name -%}
-                                    <script>console.log('OPTIONS TO SHOW','{{ options_to_show }}')</script>
-                                    <script>console.log('PRODUCT OPTION NAME','{{ product_option.name }}')</script>
                                     {%- liquid
                                         if settings.swatch_option_name contains product_option.name
                                             assign is_swatch = true
