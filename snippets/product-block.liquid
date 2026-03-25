@@ -232,11 +232,8 @@ Parameters:
                                     assign swatch_loading = 'lazy'
                                 endif
                             -%}
-                            <script>console.log('OPTION TO SHOW',"{{  options_to_show }}")</script>
                             {%- for product_option in product.options_with_values -%}
-                                <script>console.log('PRODUCT OPTION NAME',"{{ product_option.name }}")</script>
                                 {%- if options_to_show contains product_option.name -%}
-                                    <script>console.log('WE IN',"{{ product_option.name }}")</script>
                                     {%- liquid
                                         if settings.swatch_option_name contains product_option.name
                                             assign is_swatch = true
@@ -245,7 +242,7 @@ Parameters:
                                         endif
                                     -%}
 
-                                    <div {% if data_color_hover != blank %} data-selected-option="{{ data_color_hover }}" {% endif %} class="product-block-options{% if is_swatch %} product-block-options--swatch {% endif %}" data-option-name="{{ product_option.name | escape }}">
+                                    <div {% if data_color_hover != blank %} data-selected-option="{{ data_color_hover }}" {% endif %} class="product-block-options{% if is_swatch %} product-block-options--swatch{% endif %}" data-option-name="{{ product_option.name | escape }}">
                                         <div class="product-block-options__inner">
                                             {%- if product.options.size == 1 -%}
                                                 {%- for variant in product.variants -%}
