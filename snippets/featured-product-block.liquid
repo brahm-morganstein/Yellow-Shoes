@@ -224,7 +224,7 @@ Parameters:
                                             assign is_swatch = false
                                         endif
                                     -%}
-                                    <div class="product-block-options{% if is_swatch %} product-block-options--swatch 456{% endif %}" data-option-name="{{ product_option.name | escape }}">
+                                    <div class="product-block-options{% if is_swatch %} product-block-options--swatch {% endif %}" data-option-name="{{ product_option.name | escape }}">
                                         <div class="product-block-options__inner">
                                             {%- if product.options.size == 1 -%}
                                                 {%- for variant in product.variants -%}
