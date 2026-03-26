@@ -51,7 +51,6 @@
       "block_order": [
         "ai_gen_block_4a36a55_L97TxD"
       ],
-      "disabled": true,
       "name": "Countdown timer",
       "settings": {}
     },
@@ -242,6 +241,7 @@
         "announcement_F7egfq",
         "announcement-1"
       ],
+      "disabled": true,
       "settings": {
         "message_font_size": 14,
         "announcement_bar_col": "#000000",
@@ -402,6 +402,7 @@
         "menu_promotion_small_LNWmXW",
         "menu_promotion_small_jhky7D"
       ],
+      "disabled": true,
       "settings": {
         "logo": "shopify://shop_images/logo_yellow_150x_eadf4e34-cf81-4820-a387-de6c16edfa8d.svg",
         "logo_img_width_int": 175,

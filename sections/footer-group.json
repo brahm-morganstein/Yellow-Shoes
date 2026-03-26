@@ -61,6 +61,7 @@
         "1478526645605",
         "1478527611164"
       ],
+      "disabled": true,
       "settings": {
         "cross_page_promo_bg": "#ff522a",
         "cross_page_promo_color": "#fcfaf3",
@@ -131,6 +132,7 @@
         "menu_PbwTpA",
         "newsletter_Fgbj7J"
       ],
+      "disabled": true,
       "settings": {
         "lower_menu": "legal-footer",
         "show_powered_by": false,
