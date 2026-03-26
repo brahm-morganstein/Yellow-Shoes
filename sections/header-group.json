@@ -51,6 +51,7 @@
       "block_order": [
         "ai_gen_block_4a36a55_L97TxD"
       ],
+      "disabled": true,
       "name": "Countdown timer",
       "settings": {}
     },
