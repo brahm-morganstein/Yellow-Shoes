@@ -1119,7 +1119,15 @@
 </div>
 <script>
     $('.btn-klaviyo').click(function(){
-        alert();
+      let target = $(this).attr('data-popup-target');
+      if(window.Shopify.customerPrivacy.marketingAllowed()
+         && window.Shopify.customerPrivacy.userCanBeTracked()
+         && window.Shopify.customerPrivacy.getTrackingConsent() != 'no_interaction'){
+          //
+          console.log('_klOnsite')
+          window._klOnsite = window._klOnsite || [];
+          window._klOnsite = window._klOnsite || []; window._klOnsite.push(['openForm', target]);
+      }
     });
 </script>
 
