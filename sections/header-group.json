@@ -60,6 +60,7 @@
       "blocks": {
         "announcement_M9n4tM": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "🚨<strong>Free shipping</strong> on all orders - <strong>Limited time!</strong>",
             "text_fr": "🚨<strong>Livraison gratuit</strong>e sur tout — <strong>Temps limité!</strong>",
