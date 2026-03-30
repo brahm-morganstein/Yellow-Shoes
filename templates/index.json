@@ -245,7 +245,7 @@
             "button_url_4": "shopify://collections/new-arrivals-accessories",
             "button_url_4_fr": "shopify://collections/new-arrivals-accessories",
             "text_alignment": "bottom center",
-            "show_countdown": true,
+            "show_countdown": false,
             "end_date": "2026-04-06",
             "end_time": "23:59",
             "end_text": "",
