@@ -1026,6 +1026,16 @@
                                                         {% if shop.locale == 'fr' %}
                                                             {% assign button_url = block.settings.button_url_4_fr %}
                                                         {% endif %}
+                                                        {% if block.settings.button_popup_4 != blank and block.settings.button_popup_fr_4 != blank %}
+                                                            {% assign button_url = 'javascript:;' %}
+                                                            {% assign is_pop_up = true %}
+                                                            {% if shop.locale == 'en' %}
+                                                                {% assign popup_code = block.settings.button_popup_4 %}
+                                                            {% else %}
+                                                                {% assign popup_code = block.settings.button_popup_fr_4 %}
+                                                            {% endif %}
+                                                        {% endif %}
+
                                                         <a {% if block.settings.is_catalogue_button_4 %} {% if block.settings.open_catalogue_new_window_4 %} target="_blank" {% else %} id="catalogue_btn_4_{{ random_string }}" data-src="#catalogue_button_4_{{ random_string }}" data-fancybox="" {% comment %}data-type="ajax"{% endcomment %} {% endif %} {% endif %} class="text-overlay__button btn btn--secondary btn-{{ random_string }} button-label-4-{{ block.id }}" href="{% if block.settings.is_catalogue_button_4 and block.settings.open_catalogue_new_window_4 %}{% if shop.locale =='fr' %}/fr{% endif %}/pages/catalogue_page?catalogue={{ button_url | url_encode }}&toolbar={% if block.settings.enable_catalogue_controls_4 %}true{% else %}false{% endif %}{% else %}{{ button_url }}{% endif %}">
                                                             {% if shop.locale == 'en' %}
                                                                 {{ block.settings.button_label_4 | escape }}
