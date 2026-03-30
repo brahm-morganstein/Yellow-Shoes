@@ -895,8 +895,18 @@
                                                         </style>
                                                     <br class="desktop-only">
                                                         {% assign button_url = block.settings.button_url_3 %}
+                                                        {% assign is_pop_up = false %}
                                                         {% if shop.locale == 'fr' %}
                                                             {% assign button_url = block.settings.button_url_3_fr %}
+                                                        {% endif %}
+                                                        {% if block.settings.button_popup_3 != blank and block.settings.button_popup_fr_3 != blank %}
+                                                            {% assign button_url = 'javascript:;' %}
+                                                            {% assign is_pop_up = true %}
+                                                            {% if shop.locale == 'en' %}
+                                                                {% assign popup_code = block.settings.button_popup_3 %}
+                                                            {% else %}
+                                                                {% assign popup_code = block.settings.button_popup_fr_3 %}
+                                                            {% endif %}
                                                         {% endif %}
                                                         <a {% if block.settings.is_catalogue_button_3 %} {% if block.settings.open_catalogue_new_window_3 %} target="_blank" {% else %} id="catalogue_btn_3_{{ random_string }}" data-src="#catalogue_button_3_{{ random_string }}" data-fancybox="" {% comment %}data-type="ajax"{% endcomment %} {% endif %} {% endif %} class="text-overlay__button btn btn--secondary btn-{{ random_string }} button-label-3-{{ block.id }}" href="{% if block.settings.is_catalogue_button_3 and block.settings.open_catalogue_new_window_3 %}{% if shop.locale =='fr' %}/fr{% endif %}/pages/catalogue_page?catalogue={{ button_url | url_encode }}&toolbar={% if block.settings.enable_catalogue_controls_3 %}true{% else %}false{% endif %}{% else %}{{ button_url }}{% endif %}">
                                                             {% if shop.locale == 'en' %}
