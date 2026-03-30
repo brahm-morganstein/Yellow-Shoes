@@ -293,8 +293,8 @@
           "settings": {
             "heading": "FAST SHIPPING",
             "heading_fr": "LIVRAISON RAPIDE",
-            "subheading": "Free shipping on all orders - Limited time",
-            "subheading_fr": "Livraison gratuite sur tout — Temps limité",
+            "subheading": "Free shipping on order over $85",
+            "subheading_fr": "Livraison gratuite dès 85$",
             "link_url": ""
           }
         },
