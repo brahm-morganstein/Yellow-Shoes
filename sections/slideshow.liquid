@@ -764,10 +764,20 @@
                                                         </style>
 
                                                         {% assign button_url = block.settings.button_url_2 %}
+                                                        {% assign is_pop_up = false %}
                                                         {% if shop.locale == 'fr' %}
                                                             {% assign button_url = block.settings.button_url_2_fr %}
                                                         {% endif %}
-                                                        <a {% if block.settings.is_catalogue_button_2 %} {% if block.settings.open_catalogue_new_window_2 %} target="_blank" {% else %} id="catalogue_btn_2_{{ random_string }}" data-src="#catalogue_button_2_{{ random_string }}" data-fancybox="" {% comment %}data-type="ajax"{% endcomment %} {% endif %} {% endif %} class="text-overlay__button btn btn--secondary btn-{{ random_string }} button-label-2-{{ block.id }}" href="{% if block.settings.is_catalogue_button_2 and block.settings.open_catalogue_new_window_2 %}{% if shop.locale =='fr' %}/fr{% endif %}/pages/catalogue_page?catalogue={{ button_url | url_encode }}&toolbar={% if block.settings.enable_catalogue_controls_2 %}true{% else %}false{% endif %}{% else %}{{ button_url }}{% endif %}">
+                                                        {% if block.settings.button_popup_2 != blank and block.settings.button_popup_fr_2 != blank %}
+                                                            {% assign button_url = 'javascript:;' %}
+                                                            {% assign is_pop_up = true %}
+                                                            {% if shop.locale == 'en' %}
+                                                                {% assign popup_code = block.settings.button_popup_2 %}
+                                                            {% else %}
+                                                                {% assign popup_code = block.settings.button_popup_fr_2 %}
+                                                            {% endif %}
+                                                        {% endif %}
+                                                        <a {% if is_pop_up %} data-popup-target="{{ popup_code }}" {% endif %} {% if block.settings.is_catalogue_button_2 %} {% if block.settings.open_catalogue_new_window_2 %} target="_blank" {% else %} id="catalogue_btn_2_{{ random_string }}" data-src="#catalogue_button_2_{{ random_string }}" data-fancybox="" {% comment %}data-type="ajax"{% endcomment %} {% endif %} {% endif %} class="text-overlay__button btn btn--secondary btn-{{ random_string }} button-label-2-{{ block.id }} {% if is_pop_up %} btn-klaviyo {% endif %}" href="{% if block.settings.is_catalogue_button_2 and block.settings.open_catalogue_new_window_2 %}{% if shop.locale =='fr' %}/fr{% endif %}/pages/catalogue_page?catalogue={{ button_url | url_encode }}&toolbar={% if block.settings.enable_catalogue_controls_2 %}true{% else %}false{% endif %}{% else %}{{ button_url }}{% endif %}">
                                                             {% if shop.locale == 'en' %}
                                                                 {{ block.settings.button_label_2 | escape }}
                                                             {% else %}
