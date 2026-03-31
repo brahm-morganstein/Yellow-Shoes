@@ -155,10 +155,10 @@
         "image_DaKBMz": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/YELLOW_HERO_SCRATCH_EN_wide.png",
-            "image_fr": "shopify://shop_images/YELLOW_HERO_SCRATCH_FR_wide.png",
-            "mobile_image": "shopify://shop_images/YELLOW_HERO_SCRATCH_EN_tall.png",
-            "mobile_image_fr": "shopify://shop_images/YELLOW_HERO_SCRATCH_FR_tall.png",
+            "image": "shopify://shop_images/YELLOW_HERO_SCRATCH_EN_wide_1.png",
+            "image_fr": "shopify://shop_images/YELLOW_HERO_SCRATCH_FR_wide_1.png",
+            "mobile_image": "shopify://shop_images/YELLOW_HERO_SCRATCH_EN_tall_1.png",
+            "mobile_image_fr": "shopify://shop_images/YELLOW_HERO_SCRATCH_FR_tall_1.png",
             "slide_link": "",
             "subheading": "",
             "subheading_fr": "",
