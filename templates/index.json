@@ -260,7 +260,7 @@
             "end_text_fr": "",
             "hide_on_end": false,
             "countdown_text_color": "",
-            "number_size": 30,
+            "number_size": 46,
             "number_font": "heading",
             "divider_type": "colon",
             "show_timer_labels": true
@@ -269,8 +269,8 @@
         "image_QaQAQV": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/BANNER_HEADER.png",
-            "image_fr": "shopify://shop_images/BANNER_HEADER.png",
+            "image": "shopify://shop_images/SPRING_BANNER_DESKTOP.png",
+            "image_fr": "shopify://shop_images/SPRING_BANNER_DESKTOP.png",
             "mobile_image": "shopify://shop_images/MOBILE_BANNER_BOLTON_MANCHESTER_M.png",
             "mobile_image_fr": "shopify://shop_images/MOBILE_BANNER_BOLTON_MANCHESTER_M.png",
             "slide_link": "",
