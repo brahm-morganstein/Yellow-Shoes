@@ -155,10 +155,10 @@
         "image_wecywR": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/YELLOW_HERO_LAPIN20_EN_wide_2.png",
-            "image_fr": "shopify://shop_images/YELLOW_HERO_LAPIN20_FR_wide_1.png",
-            "mobile_image": "shopify://shop_images/YELLOW_HERO_LAPIN20_EN_tall_1.png",
-            "mobile_image_fr": "shopify://shop_images/YELLOW_HERO_LAPIN20_FR_tall_2.png",
+            "image": "shopify://shop_images/Yellow_HP_LAPIN20_wide_EN.png",
+            "image_fr": "shopify://shop_images/Yellow_HP_LAPIN20_wide_FR.png",
+            "mobile_image": "shopify://shop_images/Yellow_HP_LAPIN20_tall_EN.png",
+            "mobile_image_fr": "shopify://shop_images/Yellow_HP_LAPIN20_tall_FR.png",
             "slide_link": "",
             "subheading": "",
             "subheading_fr": "",
