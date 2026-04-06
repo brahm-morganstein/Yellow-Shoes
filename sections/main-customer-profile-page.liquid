@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" defer></script>
+{% if shop.locale == 'fr' %}
+  <script src="https://jqueryui.com/resources/demos/datepicker/i18n/datepicker-fr.js" defer></script>
+{% endif%}
+
+<div class="container fully-spaced-row--small">
+  {% if customer %}
+    {% render 'customer.profile.styles' %}
+    {% render 'customer.profile' %}
+    {% render 'customer.profile.behavior' %}
+  {% else %}
+    <div class="align-center" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+      <h2 class="title">{{ 'customer.login.title' | t }}</h2>
+      <p>
+        <a class="btn" href="{{ routes.account_login_url }}?return_url={{ request.path }}">
+          {{ 'customer.login.submit' | t }}
+        </a>
+      </p>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Customer profile page",
+  "class": "page-section-spacing",
+  "settings": []
+}
+{% endschema %}
