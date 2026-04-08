@@ -1,0 +1,468 @@
+<script>
+  function showPopup(selector = '#some-selector') {
+    let $body = $('body');
+    $body.find(selector).show();
+  }
+
+  function initializeCustomerProfileBehavior($body) {
+    let $dobField = $body.find('#dob_field');
+
+    if ($dobField.length) {
+      $dobField.datepicker({
+        dateFormat: $.datepicker.regional[window.language],
+        changeYear: true,
+        yearRange: '1900:+10',
+        firstDay: 1,
+        onSelect: function(dateText, inst) {
+          $dobField.val((inst.selectedMonth + 1) + '/' + inst.selectedDay + '/' + inst.selectedYear);
+        },
+      });
+    }
+
+    $body.find('#province_field').val('{{ customer.default_address.province_code }}');
+    loadCustomerProfileData($body);
+  }
+
+  function loadCustomerProfileData($body) {
+    $.ajax({
+      url: 'https://app.yellowshoes.com/api/customers',
+      method: 'POST',
+      data: {
+        action: 'get customer info',
+        lang: '{{shop.locale}}',
+        id: '{{customer.id}}',
+        dataType: 'json',
+      },
+      dataType: 'json',
+      success: function(response_data) {
+        if (response_data.success) {
+          $body.find('#gender_field').val(response_data.customer.gender);
+          $body.find('#dob_field').val(response_data.customer.dob);
+          if (response_data.customer.dob != null && response_data.customer.dob.trim() !== '') {
+            $body.find('#dob_field').attr('disabled', '');
+          }
+          $body.find('#marketing_phone_field').val(response_data.customer.marketing_phone);
+          if (response_data.customer.marketing_phone != null && response_data.customer.marketing_phone.trim() !== '') {
+            $body.find('.mobile-phone').text(response_data.customer.marketing_phone);
+          } else {
+            $body.find('.phone-container').hide();
+          }
+          if (response_data.customer.sms_subscribed == 1) {
+            $body.find('div[data-target="#marketing-phone-subscribe"]')[0].click();
+          }
+          $body.find('#gender').html(response_data.customer.formatted_gender);
+          if (response_data.customer.formatted_gender.trim() === '') {
+            $body.find('.gender-container').hide();
+          }
+          if (response_data.customer.formatted_dob.trim() === '') {
+            $body.find('.birthday-container').hide();
+          }
+          $body.find('.dob').html(response_data.customer.formatted_dob);
+          if (response_data.customer.marketing_frequency === 'unsubscribe') {
+            $body.find('#interests_in').html('Unsubscribed');
+            $body.find('div[data-target="#marketing-frequency-uns"]')[0].click();
+          } else {
+            let all_products = false;
+            if (
+              response_data.customer.marketing_products.women == 'true'
+              && response_data.customer.marketing_products.men == 'true'
+              && response_data.customer.marketing_products.kids == 'true'
+              && response_data.customer.marketing_products.accessories == 'true'
+            ) {
+              all_products = true;
+            }
+            if (all_products) {
+              $body.find('#all-marketing-products')[0].click();
+              $body.find('#interests_in').html('All products');
+            } else {
+              let interest_html = '';
+              if (response_data.customer.marketing_products.women == 'true') {
+                interest_html += "Women's products";
+                $body.find('div[data-target="#marketing-products-women"]')[0].click();
+              }
+              if (response_data.customer.marketing_products.men == 'true') {
+                if (interest_html === '') {
+                  interest_html += "Men's products";
+                } else {
+                  interest_html += ", Men's products";
+                }
+                $body.find('div[data-target="#marketing-products-men"]')[0].click();
+              }
+              if (response_data.customer.marketing_products.kids == 'true') {
+                if (interest_html === '') {
+                  interest_html += 'Kids products';
+                } else {
+                  interest_html += ', Kids products';
+                }
+                $body.find('div[data-target="#marketing-products-kids"]')[0].click();
+              }
+              if (response_data.customer.marketing_products.accessories == 'true') {
+                if (interest_html === '') {
+                  interest_html += 'Accessories';
+                } else {
+                  interest_html += ', Accessories';
+                }
+                $body.find('div[data-target="#marketing-products-accessories"]')[0].click();
+              }
+              $body.find('#interests_in').html(interest_html);
+            }
+          }
+          if (response_data.customer.marketing_frequency === 'all') {
+            $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+            $body.find('div[data-target="#marketing-frequency-all"]')[0].click();
+            if ($body.find('#interests_in').text().trim() === '') {
+              $body.find('#interests_in').text('All products');
+            }
+            {% if shop.locale == 'en' %}
+            $body.find('#frequency_in').text("I don't want to miss a thing!");
+            {% else %}
+            $body.find('#frequency_in').text('Je ne veux rien rater !');
+            {% endif %}
+          }
+          if (response_data.customer.marketing_frequency === 'unsubscribe') {
+            $body.find('#frequency_in').text("Unsubscribe from all Yellow's Emails");
+          }
+          if (response_data.customer.marketing_frequency === 'promos') {
+            $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+            $body.find('#frequency_in').text("I'm happy to hear about Yellow's promotions and deals.");
+            $body.find('div[data-target="#marketing-frequency-promo"]')[0].click();
+          }
+          if (response_data.customer.marketing_language !== null) {
+            if (response_data.customer.marketing_language === 'fr') {
+              $body.find('div[data-target="#marketing-language-fr"]')[0].click();
+              $body.find('#language_in').text("J'aimerais recevoir les communications en français");
+            } else {
+              $body.find('div[data-target="#marketing-language-en"]')[0].click();
+              $body.find('#language_in').text('I would like to receive communications in English');
+            }
+          } else {
+            $body.find('#language_in').closest('div').hide();
+          }
+
+          setTimeout(function() {
+            $body.find('.phone').each(function() {
+              let phone = $(this).text();
+              if (phone.length > 9) {
+                phone = phone.replace(/\D/g, '');
+                if (phone.length > 10) {
+                  phone = phone[0] + '-' + phone[1] + phone[2] + phone[3] + '-' + phone[4] + phone[5] + phone[6] + '-' + phone[7] + phone[8] + phone[9] + phone[10];
+                } else {
+                  phone = phone[0] + phone[1] + phone[2] + '-' + phone[3] + phone[4] + phone[5] + '-' + phone[6] + phone[7] + phone[8] + phone[9];
+                }
+                $(this).html(phone);
+              }
+            });
+          }, 500);
+        }
+      },
+      error: function(response_data) {},
+    });
+  }
+
+  $(document).ready(function() {
+    let $body = $('body');
+    let $profileSection = $body.find('#customer_profile_section');
+
+    if (!$profileSection.length) {
+      return;
+    }
+
+    initializeCustomerProfileBehavior($body);
+
+    $body.on('click', 'div[data-target="#marketing-frequency-all"]', function() {
+      if (!$body.find('div[data-target="#marketing-email-subscribe"]').hasClass('selected')) {
+        $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+      }
+    });
+
+    $body.on('click', 'div[data-target="#marketing-frequency-promo"]', function() {
+      if (!$body.find('div[data-target="#marketing-email-subscribe"]').hasClass('selected')) {
+        $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+      }
+    });
+
+    $body.on('click', 'div[data-target="#marketing-frequency-uns"]', function() {
+      if ($body.find('div[data-target="#marketing-email-subscribe"]').hasClass('selected')) {
+        $body.find('div[data-target="#marketing-email-subscribe"]')[0].click();
+      }
+    });
+
+    $body.on('click', '.profile-popup-close-btn', function() {
+      $(this).closest('.profile-popup-container').hide();
+    });
+
+    $body.on('click', '.save-address', function() {
+      let $this = $(this);
+      $this.attr('disabled', 'disabled');
+      $body.find('.profile-error-message').hide();
+      $.ajax({
+        url: 'https://app.yellowshoes.com/api/customers',
+        method: 'POST',
+        data: {
+          action: 'edit address',
+          first_name: $body.find('#address_first_name_field').val().trim(),
+          last_name: $body.find('#address_last_name_field').val().trim(),
+          address1: $body.find('#address1_field').val().trim(),
+          address2: $body.find('#address2_field').val().trim(),
+          city: $body.find('#city_field').val().trim(),
+          province: $body.find('#province_field').val().trim(),
+          zip: $body.find('#zip_field').val().trim(),
+          lang: '{{shop.locale}}',
+          id: '{{customer.id}}',
+          address_id: '{{customer.default_address.id}}',
+        },
+        dataType: 'json',
+        success: function(response_data) {
+          $this[0].removeAttribute('disabled');
+
+          if (!response_data.success) {
+            for (let error_field of response_data.error_fields) {
+              let $error_container = $body.find(error_field.selector).closest('div').find('.profile-error-message');
+              $error_container.html(error_field.error_message);
+              $error_container.show();
+            }
+          } else {
+            $this.closest('.profile-popup-container').hide();
+            new Swal({
+              title: '',
+              text: '',
+              icon: 'success',
+            }).then(function() {
+              window.location.reload();
+            });
+          }
+        },
+        error: function(response_data) {
+          $this[0].removeAttribute('disabled');
+          console.log(response_data);
+          new Swal({
+            title: 'Error',
+            text: 'Something went wrong!',
+            icon: 'error',
+          });
+        },
+      });
+    });
+
+    $body.on('click', '.change-password', function() {
+      let $this = $(this);
+      $this.attr('disabled', 'disabled');
+      $body.find('.profile-error-message').hide();
+      $.ajax({
+        url: 'https://app.yellowshoes.com/api/customers',
+        method: 'POST',
+        data: {
+          action: 'change password',
+          password: $body.find('#new_password_field').val().trim(),
+          conf_password: $body.find('#confirm_password_field').val().trim(),
+          email: $body.find('#email_field').val().trim(),
+          lang: '{{shop.locale}}',
+          id: '{{customer.id}}',
+        },
+        dataType: 'json',
+        success: function(response_data) {
+          $this[0].removeAttribute('disabled');
+
+          if (!response_data.success) {
+            for (let error_field of response_data.error_fields) {
+              let $error_container = $body.find(error_field.selector).closest('div').find('.profile-error-message');
+              $error_container.html(error_field.error_message);
+              $error_container.show();
+            }
+          } else {
+            $this.closest('.profile-popup-container').hide();
+            new Swal({
+              title: '',
+              text: '',
+              icon: 'success',
+            }).then(function() {
+              window.location.reload();
+            });
+          }
+        },
+        error: function(response_data) {
+          $this[0].removeAttribute('disabled');
+          console.log(response_data);
+          new Swal({
+            title: 'Error',
+            text: 'Something went wrong!',
+            icon: 'error',
+          });
+        },
+      });
+    });
+
+    $body.on('click', '.save-profile', function() {
+      let $this = $(this);
+      $this.attr('disabled', 'disabled');
+      $body.find('.profile-error-message').hide();
+      $.ajax({
+        url: 'https://app.yellowshoes.com/api/customers',
+        method: 'POST',
+        data: {
+          action: 'update profile',
+          first_name: $body.find('#first_name_field').val().trim(),
+          last_name: $body.find('#last_name_field').val().trim(),
+          email: $body.find('#email_field').val().trim(),
+          old_email: '{{customer.email}}',
+          dob: $body.find('#dob_field').val().trim(),
+          lang: '{{shop.locale}}',
+          id: '{{customer.id}}',
+        },
+        dataType: 'json',
+        success: function(response_data) {
+          $this[0].removeAttribute('disabled');
+
+          if (!response_data.success) {
+            for (let error_field of response_data.error_fields) {
+              let $error_container = $body.find(error_field.selector).closest('div').find('.profile-error-message');
+              $error_container.html(error_field.error_message);
+              $error_container.show();
+            }
+          } else {
+            $this.closest('.profile-popup-container').hide();
+            new Swal({
+              title: '',
+              text: '',
+              icon: 'success',
+            }).then(function() {
+              window.location.reload();
+            });
+          }
+        },
+        error: function(response_data) {
+          $this[0].removeAttribute('disabled');
+          console.log(response_data);
+          new Swal({
+            title: 'Error',
+            text: 'Something went wrong!',
+            icon: 'error',
+          });
+        },
+      });
+    });
+
+    $body.on('change', '#marketing-email-subscribe', function() {
+      if (this.checked) {
+        $body.find('div[data-target="#marketing-frequency-all"]')[0].click();
+      } else {
+        $body.find('div[data-target="#marketing-frequency-uns"]')[0].click();
+      }
+    });
+
+    $body.on('click', '.save-marketing', function() {
+      let $this = $(this);
+      $this.attr('disabled', 'disabled');
+      $body.find('.profile-error-message').hide();
+      $.ajax({
+        url: 'https://app.yellowshoes.com/api/customers',
+        method: 'POST',
+        data: {
+          action: 'update marketing',
+          first_name: '{{ customer.first_name }}',
+          last_name: '{{ customer.last_name }}',
+          email: $body.find('#marketing_email_field').val().trim(),
+          old_email: '{{customer.email}}',
+          phone: $body.find('#marketing_phone_field').val().trim(),
+          sms_subscribe: $body.find('#marketing-phone-subscribe')[0].checked ? '1' : '0',
+          frequency: $body.find('input[name="marketing-frequency"]:checked').val(),
+          marketing_language: $body.find('input[name="marketing-language"]:checked').val(),
+          women: $body.find('#marketing-products-women')[0].checked,
+          men: $body.find('#marketing-products-men')[0].checked,
+          kids: $body.find('#marketing-products-kids')[0].checked,
+          accessories: $body.find('#marketing-products-accessories')[0].checked,
+          lang: '{{shop.locale}}',
+          id: '{{customer.id}}',
+        },
+        dataType: 'json',
+        success: function(response_data) {
+          $this[0].removeAttribute('disabled');
+
+          if (!response_data.success) {
+            for (let error_field of response_data.error_fields) {
+              let $error_container = $body.find(error_field.selector).closest('div').find('.profile-error-message');
+              $error_container.html(error_field.error_message);
+              $error_container.show();
+            }
+          } else {
+            $this.closest('.profile-popup-container').hide();
+            new Swal({
+              title: '',
+              text: '',
+              icon: 'success',
+            }).then(function() {
+              window.location.reload();
+            });
+          }
+        },
+        error: function(response_data) {
+          $this[0].removeAttribute('disabled');
+          console.log(response_data);
+          new Swal({
+            title: 'Error',
+            text: 'Something went wrong!',
+            icon: 'error',
+          });
+        },
+      });
+    });
+
+    $body.on('click', '.marketing-products:not(#all-marketing-products)', function() {
+      setTimeout(function() {
+        let all_selected = true;
+        $body.find('.marketing-products:not(#all-marketing-products').each(function() {
+          if (!$(this).hasClass('selected')) {
+            all_selected = false;
+          }
+        });
+        if ($body.find('#all-marketing-products').length) {
+          if (all_selected) {
+            $body.find('#all-marketing-products').addClass('selected');
+          } else {
+            $body.find('#all-marketing-products').removeClass('selected');
+          }
+        }
+      }, 150);
+    });
+
+    $body.on('click', '.marketing-radio:not(#all-marketing-products)', function() {
+      let target = $(this).attr('data-target');
+      if ($(this).attr('data-type') === 'radio' && !$(this).hasClass('selected')) {
+        let name = $(this).attr('data-name');
+        $body.find('div[data-name="' + name + '"]').removeClass('selected');
+        $body.find(target)[0].checked = true;
+        $(this).addClass('selected');
+      } else if ($(this).attr('data-type') !== 'radio') {
+        if ($(this).hasClass('selected')) {
+          $(this).removeClass('selected');
+        } else {
+          $(this).addClass('selected');
+        }
+        $body.find(target)[0].checked = !$body.find(target)[0].checked;
+        $body.find(target).trigger('change');
+      }
+    });
+
+    $body.on('click', '.marketing-label', function() {
+      $(this).closest('.marketing-radio-container').find('.marketing-radio')[0].click();
+    });
+
+    $body.on('click', '#all-marketing-products', function() {
+      if ($(this).hasClass('selected')) {
+        $body.find('.marketing-products').each(function() {
+          if ($(this).hasClass('selected')) {
+            $(this).trigger('click');
+          }
+        });
+        $(this).removeClass('selected');
+      } else {
+        $body.find('.marketing-products').each(function() {
+          if (!$(this).hasClass('selected')) {
+            $(this).trigger('click');
+          }
+        });
+        $(this).addClass('selected');
+      }
+    });
+  });
+</script>
