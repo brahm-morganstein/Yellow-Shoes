@@ -1,12 +1,4 @@
-<style type="text/css">
-  input[disabled] {
-    color: #666;
-    background-image: none;
-    background:#f3f3f3;
-  }
-</style>
-
-<div id="customer_profile_section" class="account-section" style="display: none;">
+<div id="customer_profile_section" class="account-section">
   <div class="d-flex flex-wrap">
     <div class="d-inline-block profile-left">
       <div class="my-account-title-with-underline">
@@ -128,16 +120,6 @@
         <div class="phone-container">
           <strong>{{ 'customer.account.phone' | t }}{% if shop.locale == 'fr' %} :{% else %}:{% endif %} </strong>
           <span class="phone mobile-phone"></span>
-        </div>
-      </div>
-      <div class="d-inline-block profile-right">
-        <div class="my-account-title-with-underline">
-          <div class="title-text d-inline-block w-75">
-            {{ 'customer.reset_password.title' | t }}
-          </div>
-          <div class="d-inline-block w-25 text-right">
-            <a href="javascript:;" style="text-decoration: underline;" onclick="showPopup('#change-password-popup')">{{ 'dashboard.edit' | t }}</a>
-          </div>
         </div>
       </div>
     </div>
