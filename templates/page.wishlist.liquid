@@ -336,7 +336,7 @@
             //         if(theme.locale === 'fr'){
             //           wishlist_url += '/fr';
             //         }
-            wishlist_url += '/pages/wishlist?favorites=';
+            wishlist_url += '/pages/favourites?favorites=';
             $.ajax({
                      url: "https://apps-yellow.meginteractive.net/api/wishlist",
                      method: "POST",
@@ -364,7 +364,7 @@
           {%else%}
 
           if($_GET.favorites === undefined || ($_GET.favorites !== undefined && $_GET.favorites.trim() === '')){
-            window.location.href = (theme.locale === 'fr' ? '/fr/' : '/') + 'account/login?return=/pages/wishlist';
+            window.location.href = (theme.locale === 'fr' ? '/fr/' : '/') + 'account/login?return=/pages/favourites';
             return;
           }
           getItems($_GET.favorites.trim(), true);
