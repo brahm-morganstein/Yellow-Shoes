@@ -6,10 +6,12 @@
 
 
   #wishlist-container #customer_orders {
-    float: none;
+    display: block;
     width: 100%;
     max-width: none;
-    margin: 0 auto;
+    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #wishlist-container #items-container {
@@ -190,7 +192,6 @@
       <script>
         $(document).ready(function(){
           let $body = $('body');
-          $body.find('.account-sidebar-item.wishlist').addClass('active');
           let $_GET = getQueryString();
           let res_email;
 
