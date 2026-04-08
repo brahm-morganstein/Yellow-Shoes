@@ -4,7 +4,16 @@
   <script src="https://jqueryui.com/resources/demos/datepicker/i18n/datepicker-fr.js" defer></script>
 {% endif%}
 
-<div class="container fully-spaced-row--small">
+<div class="container fully-spaced-row--small" style="--page-container-width: {{ settings.max_page_width | at_most: 1200 }}px;">
+  <a
+    class="customer-profile-back-link"
+    href="{{ routes.account_url }}"
+    onclick="if (window.history.length > 1) { history.back(); return false; }"
+  >
+    <span aria-hidden="true">&larr;</span>
+    {{ 'customer.account.return' | t }}
+  </a>
+
   {% if customer %}
     {% render 'customer.profile.styles' %}
     {% render 'customer.profile' %}
@@ -20,6 +29,23 @@
     </div>
   {% endif %}
 </div>
+
+<style>
+  .customer-profile-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: rgb(var(--body-text-color));
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .customer-profile-back-link:hover {
+    opacity: 0.7;
+  }
+</style>
 
 {% schema %}
 {
