@@ -462,7 +462,7 @@
         $("#cart-footer-savings").css('display','none');
         $("#shipping_discount").hide();
         try {
-          const cartResponse = await fetch('/cart.js', {
+          const cartResponse = await fetch(`${shopRoot}cart.js`, {
             credentials: 'same-origin'
           });
           if (!cartResponse.ok) {
