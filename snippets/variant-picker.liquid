@@ -41,13 +41,36 @@ assign current_variant = product.selected_or_first_available_variant
           assign is_variant_image_style = false
           assign show_size_chart = false
           assign is_dropdown = false
+          assign normalized_option_name = option.name | strip | downcase
+          assign color_option_aliases = 'color,colour,couleur,farbe'
+          assign normalized_swatch_option_names = settings.swatch_option_name | downcase | split: ','
 
           if block.settings.selector_style == 'dropdown'
             assign is_dropdown = true
           endif
 
-          if settings.swatch_enabled and settings.swatch_option_name contains option.name
-            assign is_color_selector = true
+          if settings.swatch_enabled
+            for swatch_option_name in normalized_swatch_option_names
+              assign normalized_swatch_option_name = swatch_option_name | strip
+              if normalized_swatch_option_name == normalized_option_name
+                assign is_color_selector = true
+                break
+              endif
+            endfor
+
+            unless is_color_selector
+              for color_option_alias in color_option_aliases | split: ','
+                assign normalized_color_option_alias = color_option_alias | strip
+                if normalized_option_name == normalized_color_option_alias
+                  assign is_color_selector = true
+                  break
+                endif
+              endfor
+            endunless
+
+          endif
+
+          if is_color_selector
             assign is_dropdown = false
             if settings.swatch_style == 'dropdown'
               assign is_dropdown = true
