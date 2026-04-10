@@ -103,19 +103,19 @@
                     </button>
                 </header>
 
-              {% comment %}{% if section.settings.show_progressbar %}{% endcomment %}
-                {% comment %}{% assign number_of_tier = section.settings.progress_bar_nb_tier %}{% endcomment %}
-                {% comment %}{% assign number_of_tier_int = number_of_tier | plus: 0 %}{% endcomment %}
-                {% comment %}{% if number_of_tier_int == 1 %}{% endcomment %}
-                  {% comment %}{%- render 'cart-progress-bar-dynamic-1-tier' cart:cart, section:section -%}{% endcomment %}
-                {% comment %}{% endif %}{% endcomment %}
-                {% comment %}{% if number_of_tier_int == 2 %}{% endcomment %}
-                  {% comment %}{%- render 'cart-progress-bar-dynamic-2-tier' cart:cart, section:section -%}{% endcomment %}
-                {% comment %}{% endif %}                                {% endcomment %}
-                {% comment %}{% if number_of_tier_int == 3 %}{% endcomment %}
-                  {% comment %}{%- render 'cart-progress-bar-dynamic-3-tier' cart:cart, section:section -%}{% endcomment %}
-                {% comment %}{% endif %}{% endcomment %}
-              {% comment %}{% endif %}{% endcomment %}
+              {% if section.settings.show_progressbar %}
+                {% assign number_of_tier = section.settings.progress_bar_nb_tier %}
+                {% assign number_of_tier_int = number_of_tier | plus: 0 %}
+                {% if number_of_tier_int == 1 %}
+                  {%- render 'cart-progress-bar-dynamic-1-tier' cart:cart, section:section -%}
+                {% endif %}
+                {% if number_of_tier_int == 2 %}
+                  {%- render 'cart-progress-bar-dynamic-2-tier' cart:cart, section:section -%}
+                {% endif %}
+                {% if number_of_tier_int == 3 %}
+                  {%- render 'cart-progress-bar-dynamic-3-tier' cart:cart, section:section -%}
+                {% endif %}
+              {% endif %}
 
                 {%- if settings.show_free_shipping_bar -%}
                     <div class="cart-drawer__content-item">
