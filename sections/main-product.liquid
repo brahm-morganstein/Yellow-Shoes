@@ -1272,11 +1272,30 @@
 
       
       function setAddToCartOptions(){
-        let options = $('product-form').find('.option-selector__label-value');
-        let size = options[0].innerHTML;
-        let color = options[1].innerHTML;
-        $('#mobile-add-to-cart-size').html(size)
-        $('#mobile-add-to-cart-color').html(color)
+        let productForm = $('product-form');
+        let options = productForm.find('.option-selector__label-value');
+        let size = options.eq(0).text() || options.get(0)?.innerHTML;
+        let color = options.eq(1).text() || options.get(1)?.innerHTML;
+
+        if(!size || !color){
+          let selectedOptions = [];
+          productForm.find('.option-selector').each(function(){
+            let selectedValue = $(this).find('.js-option:checked').val();
+            if(selectedValue){
+              selectedOptions.push(selectedValue);
+            }
+          });
+
+          size = size || selectedOptions[0];
+          color = color || selectedOptions[1];
+        }
+
+        if(size){
+          $('#mobile-add-to-cart-size').html(size);
+        }
+        if(color){
+          $('#mobile-add-to-cart-color').html(color);
+        }
       }
 
       function handleAddtoCartVisibility(){
