@@ -125,7 +125,7 @@ function calculateProgressBar(subtotal) {
 document.addEventListener('on:cart:after-merge', async (event) => {
   // your code here
   console.log(event)
-  const cartResponse = await fetch('https://www.yellowshoes.com/cart.json');
+  const cartResponse = await fetch('/cart.json');
   const cartData = await cartResponse.json();
   let subtotal = cartData.original_total_price / 100;
   subtotal = Number.parseFloat(subtotal.toString().replace('$',''));
