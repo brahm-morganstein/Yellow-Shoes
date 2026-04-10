@@ -181,18 +181,19 @@ $(document).ready(function(){
             $('fieldset').each(function(){
                 let option = $(this).data('option');
                 if(option == 'color'){
-                    let html = $(this).html().replace('color:','couleur:');
-                    $(this).html(html)
-                    let text = '';
-                    if($(this).find('span').length > 0){
-                        text =  $(this).find('span').html().trim()
-                    }
-                    let color = app_settings.color_translations.find(function(_color){
-                        return _color.color_en.toLowerCase() == text.toLowerCase()
-                    })
-                    if(color){
-                        $(this).find('span').html(color[`color_${language}`]);
-                        $('#mobile-add-to-cart-color').html(color[`color_${language}`])
+                    let label = $(this).find('legend')
+                    let html = $(label).html().replace('color:','couleur:');
+                    $(label).html(html)
+
+                    let selectedColorText = $(this).find('.js-color-text').first().html()
+                    if(selectedColorText){
+                        let color = app_settings.color_translations.find(function(_color){
+                            return _color.color_en.toLowerCase() == selectedColorText.trim().toLowerCase()
+                        })
+                        if(color){
+                            $(this).find('.js-color-text').first().html(color[`color_${language}`]);
+                            $('#mobile-add-to-cart-color').html(color[`color_${language}`])
+                        }
                     }
                 }
                 if(option == 'size'){
