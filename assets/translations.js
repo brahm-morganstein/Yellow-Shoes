@@ -222,7 +222,7 @@ $(document).ready(function(){
                 }
                 if(isSizeOption(option)){
                     let label = $(this).find('legend')
-                    let html = $(label).html().replace(/\b(Size|size|Pointure|pointure)\b/g,'pointure');
+                    let html = $(label).html().replace(/\b(Size|size|Taille|taille)\b/g,'taille');
                     $(label).html(html)
                 }
             })
