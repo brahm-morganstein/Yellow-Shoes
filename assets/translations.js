@@ -1,27 +1,6 @@
 $(document).ready(function(){
     let $body = $('body');
     let language = theme.locale
-    const colorOptionAliases = ['color','colour','couleur'];
-    const sizeOptionAliases = ['size','pointure'];
-
-    function normalizeOptionName(value){
-        return (value || '').toString().trim().toLowerCase();
-    }
-
-    function isColorOption(value){
-        return colorOptionAliases.includes(normalizeOptionName(value));
-    }
-
-    function isSizeOption(value){
-        return sizeOptionAliases.includes(normalizeOptionName(value));
-    }
-
-    function hasOptionAlias(value, aliases){
-        let normalizedValue = normalizeOptionName(value);
-        return aliases.some(function(alias){
-            return normalizedValue.includes(alias);
-        });
-    }
 
     setTimeout(function(){
         setTranslation()
