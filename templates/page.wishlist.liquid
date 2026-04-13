@@ -218,7 +218,6 @@
                 return;
               }
               if(finalSale == 'true'){
-                console.log('FINAL IS TRUE');
                 var postData = {
                   id:$select.val().trim(),
                   quantity:1,
@@ -428,8 +427,6 @@
                          let color = response_data.product.color;
                          let img_html = '<img src="'+response_data.product.featured_image+'"  alt="'+data.sku+'"/>';
                          for(let variant of response_data.product.variants){
-                           console.log('language below');
-                           console.log(language);
                            var variant_color_fr = '';
                            window.color_translations.forEach(function(_color){
                              if(_color.color_en == variant.option2 || variant.option2 == _color.color_fr){
@@ -472,8 +469,6 @@
                          }
                          setTimeout(function(){
                            let html = $('#grid-tpl').html();
-                           console.log('Product below');
-                           console.log(product);
                            html = html.replace('--==itemSizes==--', sizes_html);
                            html = html.replace('--==itemTags==--', product.tags.join(','));
                            html = html.replace('--==itemColor==--', color);
@@ -561,7 +556,6 @@
                                   console.log(response_data);
                                 },
                               });
-                       console.log(response_data);
                      }
                    });
           }, frenchItemCounter);
