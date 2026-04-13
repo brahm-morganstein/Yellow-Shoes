@@ -127,7 +127,6 @@
         "button_LR3nai",
         "button_GVtBRe"
       ],
-      "disabled": true,
       "name": "Background video",
       "settings": {
         "video_external": "https://youtu.be/qTn1AqcYZ3U",
@@ -262,6 +261,7 @@
       "block_order": [
         "image_AhVFJt"
       ],
+      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "height": "adapt",
