@@ -341,7 +341,6 @@
     for (let variant of product_json_bundle.variants) {
       if (variant.id == product_variant_bundle) {
         product_sku_bundle = variant.sku;
-        console.log(product_sku_bundle)
         break;
       }
     }
@@ -436,7 +435,6 @@
              });
 
       $body.on('click', '.product-bundle-thumb', function() {
-        console.log(this);
         $body.find('.product-bundle_container').addClass('product-bundle_container-hidden');
         $body.find('.product-bundle_container[data-index="' + $(this).attr('data-index') + '"]').removeClass('product-bundle_container-hidden');
       });
