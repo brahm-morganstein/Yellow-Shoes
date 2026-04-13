@@ -77,11 +77,10 @@
 %}
 
 <script>
-    //alert('{{ progress }}')
-    console.log('subtotal_dollars','{{ subtotal_dollars }}')
+    {% comment %} console.log('subtotal_dollars','{{ subtotal_dollars }}')
     console.log('tier_1_value','{{ tier_1_value }}')
     console.log('remaining','{{ remaining }}')
-    console.log('progress','{{ progress }}')
+    console.log('progress','{{ progress }}') {% endcomment %}
 </script>
 
 <div>
@@ -221,7 +220,6 @@ document.addEventListener('on:cart:after-merge', async (event) => {
   const cart_url = `${shopRoot}cart.json`;
   const cartResponse = await fetch(cart_url);
   const cartData = await cartResponse.json();
-  console.log('cartData',cartData)
   let subtotal = cartData.original_total_price / 100;
   subtotal = Number.parseFloat(subtotal.toString().replace('$',''));
   const item_count = cartData.item_count;
