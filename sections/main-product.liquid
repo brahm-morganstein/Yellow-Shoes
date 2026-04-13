@@ -1122,12 +1122,100 @@
     $(document).ready(function(){
         let product = {{product|json}}
         let currentVariant = {{current_variant|json}}
+        const OPTION_ALIASES = {
+            color: ['color', 'colour', 'couleur'],
+            size: ['size', 'pointure']
+        };
+
+        function normalizeOptionName(name){
+            return (name || '').toString().trim().toLowerCase();
+        }
+
+        function getCanonicalOptionName(name){
+            const normalizedName = normalizeOptionName(name);
+            const aliasKey = Object.keys(OPTION_ALIASES).find(function(key){
+                return OPTION_ALIASES[key].includes(normalizedName);
+            });
+            return aliasKey || normalizedName;
+        }
+
+        function getOptionMetaByCanonicalName(canonicalName){
+            if(!product || !Array.isArray(product.options)){
+                return null;
+            }
+
+            for(let index = 0; index < product.options.length; index++){
+                const optionName = product.options[index];
+                if(getCanonicalOptionName(optionName) === canonicalName){
+                    return {
+                        index: index,
+                        property: `option${index + 1}`
+                    };
+                }
+            }
+
+            return null;
+        }
+
+        function getVariantOptionValue(variant, canonicalName){
+            const optionMeta = getOptionMetaByCanonicalName(canonicalName);
+            if(!variant || !optionMeta){
+                return null;
+            }
+
+            return variant[optionMeta.property] || null;
+        }
+
+        function getSelectedOptionValuesByName(){
+            const selectedValues = {};
+            const productForm = $('product-form');
+
+            productForm.find('.option-selector[data-option], fieldset[data-option]').each(function(){
+                const optionName = getCanonicalOptionName($(this).data('option'));
+                if(!optionName || selectedValues[optionName]){
+                    return;
+                }
+
+                let selectedValue = $(this).find('.js-option:checked').first().val();
+                if(!selectedValue){
+                    selectedValue = $(this).find('select.js-option').first().val();
+                }
+                if(!selectedValue){
+                    const labelValueElement = $(this).find('.option-selector__label-value').first();
+                    const labelValueNode = labelValueElement.get(0);
+                    const labelText = labelValueElement.text();
+                    const safeLabelText = (labelText && labelText.trim()) || (labelValueNode?.innerHTML || '');
+                    selectedValue = safeLabelText || null;
+                }
+
+                if(selectedValue){
+                    selectedValues[optionName] = selectedValue;
+                }
+            });
+
+            return selectedValues;
+        }
+
+        function getSizeFieldset(){
+            const selectors = $('fieldset[data-option], .option-selector[data-option]');
+            let sizeFieldset = null;
+
+            selectors.each(function(){
+                if(getCanonicalOptionName($(this).data('option')) === 'size'){
+                    sizeFieldset = $(this).is('fieldset') ? $(this) : $(this).find('fieldset').first();
+                    return false;
+                }
+            });
+
+            return sizeFieldset;
+        }
         //console.log('currentVariant',currentVariant)
         let currentUrl = window.location.href;
         setTimeout(function(){
             // Append to URL without reloading
-            if(currentVariant.option2 && !currentUrl.includes('color=')){
-                let newParam = "color="+currentVariant.option2;
+            const currentColor = getVariantOptionValue(currentVariant, 'color');
+            if(currentColor && !currentUrl.includes('color=')){
+                let newParam = "color="+currentColor;
                 if (currentUrl.includes("?")) {
                     // If URL already has query params, append with &
                     currentUrl += "&" + newParam;
@@ -1184,48 +1272,59 @@
 
         function setProductSizes(){
             //set sizes
-            $('fieldset').each(function(){
-                let option = $(this).data('option')
-                if(option == 'size'){
-                    let label = $(this).find('legend')
-                    let html = $(label).html();
-                    html += `<span class="option-selector__label-value js-size-text">${currentVariant.option1}</span>`
-                    $(label).html(html)
+            const sizeFieldset = getSizeFieldset();
+            const sizeValue = getVariantOptionValue(currentVariant, 'size');
+
+            if(sizeFieldset && sizeFieldset.length && sizeValue){
+                let label = sizeFieldset.find('legend').first();
+                if(label.length){
+                    let html = label.html() || '';
+                    html += `<span class="option-selector__label-value js-size-text">${sizeValue}</span>`;
+                    label.html(html);
                 }
-            });
+            }
         }
 
         function updateProductSizes(){
             //Update Size option
-            $('fieldset').each(function(){
-                let option = $(this).data('option')
-                if(option == 'size'){
-                    let label = $(this).find('legend')
-                    let span = $(label).find('span');
-                    $(span).html(`${currentVariant.option1}`)
+            const sizeFieldset = getSizeFieldset();
+            const sizeValue = getVariantOptionValue(currentVariant, 'size');
+
+            if(sizeFieldset && sizeFieldset.length && sizeValue){
+                let label = sizeFieldset.find('legend').first();
+                let span = label.find('span').first();
+                if(span.length){
+                    span.html(`${sizeValue}`);
                 }
-            });
+            }
         }
 
         function hideOutOfStockColor(){
             const is_coming_soon = product.tags.includes('coming-soon');
+            const colorOptionMeta = getOptionMetaByCanonicalName('color');
+            if(!colorOptionMeta){
+                return;
+            }
+
             let colors = [];
             if(product.variants !== undefined && product.variants){
                 colors  = product.variants.map(function(_variant){
-                    return _variant.option2
-                })
+                    return _variant[colorOptionMeta.property]
+                }).filter(Boolean)
             }
             colors = new Set(colors)
             colors.forEach(function(color){
                 let qty = 0
                 product.variants.forEach(function(variant){
-                    if(variant.option2 == color && variant.inventory_quantity > 0){
+                    if(variant[colorOptionMeta.property] == color && variant.inventory_quantity > 0){
                         qty++;
                     }
                 })
                 if(qty == 0 && !is_coming_soon){
                     $(".opt-label--image").each(function(_elementIndex,_element){
-                        if($(_element).html().includes(color)){
+                        const elementHtml = $(_element).html() || '';
+                        const elementText = $(_element).text() || '';
+                        if(elementHtml.includes(color) || elementText.includes(color)){
                             $(_element).hide()
                         }
                     })
@@ -1235,8 +1334,9 @@
 
         document.addEventListener('on:variant:change', (event) => {
             currentVariant = event.detail.variant;
-            if(currentVariant.option2 != null){
-             addParamToURL('color', currentVariant.option2)
+            const currentColor = getVariantOptionValue(currentVariant, 'color');
+            if(currentColor != null){
+             addParamToURL('color', currentColor)
             }
             updateProductSizes();
             setAddToCartOptions();
@@ -1271,11 +1371,16 @@
 
       
       function setAddToCartOptions(){
-        let options = $('product-form').find('.option-selector__label-value');
-        let size = options[0].innerHTML;
-        let color = options[1].innerHTML;
-        $('#mobile-add-to-cart-size').html(size)
-        $('#mobile-add-to-cart-color').html(color)
+        const selectedOptionsByName = getSelectedOptionValuesByName();
+        let size = selectedOptionsByName.size || getVariantOptionValue(currentVariant, 'size');
+        let color = selectedOptionsByName.color || getVariantOptionValue(currentVariant, 'color');
+
+        if(size){
+          $('#mobile-add-to-cart-size').html(size);
+        }
+        if(color){
+          $('#mobile-add-to-cart-color').html(color);
+        }
       }
 
       function handleAddtoCartVisibility(){
