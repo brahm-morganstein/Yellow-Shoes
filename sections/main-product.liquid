@@ -1250,7 +1250,7 @@
                 "ProductID": ""+currentVariant.id,
                 "SKU": currentVariant.sku,
                 "Categories": [product.type],
-                "ImageURL": 'https:'+currentVariant.featured_image.src,
+                "ImageURL": 'https:'+currentVariant.featured_image?.src,
                 "URL": location.href,
                 "Brand": product.vendor,
                 "Price": currentVariant.price/100,
