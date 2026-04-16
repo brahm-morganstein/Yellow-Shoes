@@ -61,8 +61,8 @@
         "announcement_M9n4tM": {
           "type": "announcement",
           "settings": {
-            "text": "🚚 <strong>Free shipping</strong> on all orders*",
-            "text_fr": "🚚 <strong>Livraison gratuite</strong> sur tout",
+            "text": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Free shipping</strong> on all orders*</a>",
+            "text_fr": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Livraison gratuite</strong> sur tout</a>",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
             "button_popup": "",
