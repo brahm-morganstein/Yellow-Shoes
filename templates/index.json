@@ -177,8 +177,8 @@
             "title_size": 84,
             "title_size_mobile": 46,
             "use_h1": false,
-            "text": "<p>Hurry! For a limited time only</p>",
-            "text_fr": "<p>Faites vite! Pour une durée limitée seulement</p>",
+            "text": "<p>Hurry! For a limited time only.<strong> </strong><em><strong>Some regions excluded.</strong></em></p>",
+            "text_fr": "<p>Faites vite! Pour une durée limitée seulement. <strong>Certaines régions exclues.</strong></p>",
             "text_font_family": "default",
             "text_font_weight": "regular",
             "text_font_weight_regular_bold": "regular",
@@ -285,8 +285,8 @@
           "settings": {
             "heading": "FAST SHIPPING",
             "heading_fr": "LIVRAISON RAPIDE",
-            "subheading": "Free shipping on all orders",
-            "subheading_fr": "Livraison gratuite sur tout",
+            "subheading": "Free shipping on all orders*",
+            "subheading_fr": "Livraison gratuite sur tout*",
             "link_url": "shopify://pages/delivery-and-shipping"
           }
         },
