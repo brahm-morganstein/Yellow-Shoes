@@ -62,7 +62,7 @@
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Free shipping</strong> on all orders*</a>",
+            "text": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Free shipping on </strong></a>",
             "text_fr": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Livraison gratuite</strong> sur tout</a>",
             "popup_text_replacement": "",
             "popup_text_replacement_fr": "",
