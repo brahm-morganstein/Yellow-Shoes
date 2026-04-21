@@ -60,6 +60,7 @@
       "blocks": {
         "announcement_M9n4tM": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Free shipping</strong> on all orders*</a>",
             "text_fr": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Livraison gratuite</strong> sur tout</a>",
@@ -475,7 +476,7 @@
         "head_not_col_txt1": "#171717",
         "head_not_col_txt2": "#4c4c4b",
         "head_not_mob_show": true,
-        "head_not_mob_text": "Free shipping on orders over $100",
+        "head_not_mob_text": "Free shipping on orders over $85",
         "head_not_mob_text_fr": "",
         "head_not_mob_url": ""
       }
