@@ -4,12 +4,51 @@
     opacity: .5;
   }
 
+
+  #wishlist-container #customer_orders {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #wishlist-container #items-container {
+    width: 100%;
+  }
+
+  .customer-profile-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: rgb(var(--body-text-color));
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .customer-profile-back-link:hover {
+    opacity: 0.7;
+  }
+
+
+  .product-link img{
+    height:100%;
+  }
 </style>
-<div class="container fully-spaced-row--medium cf" id="wishlist-container">
-  {% if customer %}
-    {% render 'customer-sidebar', customer: customer %}
-  {% endif %}
-  <div id="customer_orders" {% unless customer %} style="margin:auto !important; float:none !important;" {% endunless %}>
+<div class="container fully-spaced-row--small" id="wishlist-container" style="--page-container-width: {{ settings.max_page_width | at_most: 1200 }}px;">
+  <a
+    class="customer-profile-back-link"
+    href="{{ routes.account_url }}"
+    onclick="if (window.history.length > 1) { history.back(); return false; }"
+  >
+    <span aria-hidden="true">&larr;</span>
+    {{ 'general.navigation.back' | t }}
+  </a>
+
+  <div id="customer_orders">
     <div id="wishlist-url-container" style="display:none;">
       <div style="display:flex;">
         <div style="display:inline-block; width:50%;">
@@ -153,7 +192,6 @@
       <script>
         $(document).ready(function(){
           let $body = $('body');
-          $body.find('.account-sidebar-item.wishlist').addClass('active');
           let $_GET = getQueryString();
           let res_email;
 
@@ -180,7 +218,6 @@
                 return;
               }
               if(finalSale == 'true'){
-                console.log('FINAL IS TRUE');
                 var postData = {
                   id:$select.val().trim(),
                   quantity:1,
@@ -298,7 +335,7 @@
             //         if(theme.locale === 'fr'){
             //           wishlist_url += '/fr';
             //         }
-            wishlist_url += '/pages/wishlist?favorites=';
+            wishlist_url += '/pages/favourites?favorites=';
             $.ajax({
                      url: "https://apps-yellow.meginteractive.net/api/wishlist",
                      method: "POST",
@@ -326,7 +363,7 @@
           {%else%}
 
           if($_GET.favorites === undefined || ($_GET.favorites !== undefined && $_GET.favorites.trim() === '')){
-            window.location.href = (theme.locale === 'fr' ? '/fr/' : '/') + 'account/login?return=/pages/wishlist';
+            window.location.href = (theme.locale === 'fr' ? '/fr/' : '/') + 'account/login?return=/pages/favourites';
             return;
           }
           getItems($_GET.favorites.trim(), true);
@@ -390,8 +427,6 @@
                          let color = response_data.product.color;
                          let img_html = '<img src="'+response_data.product.featured_image+'"  alt="'+data.sku+'"/>';
                          for(let variant of response_data.product.variants){
-                           console.log('language below');
-                           console.log(language);
                            var variant_color_fr = '';
                            window.color_translations.forEach(function(_color){
                              if(_color.color_en == variant.option2 || variant.option2 == _color.color_fr){
@@ -434,8 +469,6 @@
                          }
                          setTimeout(function(){
                            let html = $('#grid-tpl').html();
-                           console.log('Product below');
-                           console.log(product);
                            html = html.replace('--==itemSizes==--', sizes_html);
                            html = html.replace('--==itemTags==--', product.tags.join(','));
                            html = html.replace('--==itemColor==--', color);
@@ -523,7 +556,6 @@
                                   console.log(response_data);
                                 },
                               });
-                       console.log(response_data);
                      }
                    });
           }, frenchItemCounter);

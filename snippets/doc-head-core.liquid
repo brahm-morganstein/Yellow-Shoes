@@ -11,6 +11,10 @@
   {%- endif -%}
 </title>
 
+{%- if request.path contains '_pilot' -%}
+  <meta name="robots" content="noindex, nofollow">
+{%- endif -%}
+
 {%- if canonical_url != blank -%}
   <link rel="canonical" href="{{ canonical_url }}">
 {%- endif -%}

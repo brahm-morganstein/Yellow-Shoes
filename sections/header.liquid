@@ -167,20 +167,12 @@
             </div>
           {% if shop.customer_accounts_enabled %}
             {% if customer %}
-              <div class=" header-dropdown-toggle">
-              <a class="header-account-link header-my-account" href="{{ routes.account_url }}" aria-label="{{ 'sections.header.account' | t | escape }}">
+              <a class="header-account-link header-my-account" href="{% if shop.locale == 'fr' %}/fr/account{% else %}/account{% endif %}" aria-label="{{ 'sections.header.account' | t | escape }}">
                 <span class="header-account-link__text {% if section.settings.icon_strategy == 'icons_only' %}visually-hidden{% else %}visually-hidden-mobile{% endif %}">{{ 'sections.header.account' | t }}</span>
-                <span class="header-account-link__icon{% if section.settings.icon_strategy == 'icons_cart_search' %} mobile-only{% endif %}">{% render 'icon-user' %}  <i class="fas fa-angle-down header-dropdown-icon" style="font-weight:700;"></i></span>
+                <span class="header-account-link__icon{% if section.settings.icon_strategy == 'icons_cart_search' %} mobile-only{% endif %}">
+                  {% render 'icon-user' %}
+                </span>
               </a>
-                   <div class="header-dropdown">
-                    <div style='text-align: center; font-weight:bold; font-size:16px; cursor: initial ;'>{{ 'customer.account.title' | t }}</div>
-                    <a href="{{ routes.account_url }}">{{ 'customer.account.dashboard' | t }}</a>
-                    <a href="{{ routes.account_url }}?section=profile">{{ 'customer.account.profile' | t }}</a>
-                    <a href="{{ routes.account_url }}?section=order-history">{{ 'customer.account.order_history' | t }}</a>
-                    <a href="{% if shop.locale == 'fr' %}/fr{% endif %}/pages/wishlist">{{ 'customer.account.favourites' | t }}</a>
-                    <a href="{% if shop.locale == 'fr' %}/fr{% endif %}/account/logout">{{ 'customer.account.sign_out' | t }}</a>
-                  </div>
-                  </div>
               {% if shop.locale == 'fr' %}
                   <a class="header-account-link position-relative" href="https://yellowshoes.com/fr/pages/wishlist" aria-label="Favorites">
                     <span id="header-favourites-icon">{%- render 'svg-heart' -%}<span id="wishlist-count" style="display:none;">0</span></span>

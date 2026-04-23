@@ -111,7 +111,7 @@
                 {% endif %}
                 {% if number_of_tier_int == 2 %}
                   {%- render 'cart-progress-bar-dynamic-2-tier' cart:cart, section:section -%}
-                {% endif %}                                
+                {% endif %}
                 {% if number_of_tier_int == 3 %}
                   {%- render 'cart-progress-bar-dynamic-3-tier' cart:cart, section:section -%}
                 {% endif %}
@@ -456,10 +456,18 @@
 
       const setCartDrawerSavings = async () => {
         const language = '{{ shop.locale }}';
+        const shopRoot = window.Shopify && window.Shopify.routes && window.Shopify.routes.root
+          ? window.Shopify.routes.root
+          : '/';
         $("#cart-footer-savings").css('display','none');
         $("#shipping_discount").hide();
         try {
-          const cartResponse = await fetch('https://www.yellowshoes.com/cart.json');
+          const cartResponse = await fetch(`${shopRoot}cart.js`, {
+            credentials: 'same-origin'
+          });
+          if (!cartResponse.ok) {
+            throw new Error(`Failed cart request with status ${cartResponse.status}`);
+          }
           const cartData = await cartResponse.json();
           console.log(cartData);
       
@@ -472,16 +480,26 @@
             const variant_id = item.variant_id;
       
             try {
-              const itemResponse = await fetch(`https://www.yellowshoes.com/products/${item.handle}.json`);
+              const itemResponse = await fetch(`${shopRoot}products/${item.handle}.js`, {
+                credentials: 'same-origin'
+              });
+              if (!itemResponse.ok) {
+                throw new Error(`Failed product request with status ${itemResponse.status}`);
+              }
               const itemData = await itemResponse.json();
               console.log(itemData);
       
-              const variant = itemData.product.variants.find(v => v.id == variant_id);
+              const variants = itemData.product && itemData.product.variants ? itemData.product.variants : itemData.variants;
+              const variant = variants ? variants.find(v => v.id == variant_id) : null;
               console.log(variant);
       
               if (variant && variant.compare_at_price) {
-                const compare_at_price = Number(variant.compare_at_price);
-                const variant_price = Number(variant.price);
+                const compare_at_raw = Number(variant.compare_at_price);
+                const variant_price_raw = Number(variant.price);
+                const pricesAreInCents =
+                  !String(variant.compare_at_price).includes('.') && !String(variant.price).includes('.');
+                const compare_at_price = pricesAreInCents ? compare_at_raw / 100 : compare_at_raw;
+                const variant_price = pricesAreInCents ? variant_price_raw / 100 : variant_price_raw;
       
                 if (compare_at_price !== 0 && variant_price < compare_at_price) {
                   const saving = compare_at_price - variant_price;

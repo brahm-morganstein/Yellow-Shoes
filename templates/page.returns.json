@@ -32,6 +32,10 @@
           "settings": {
             "title": "Returns Guide",
             "title_fr": "Guide des Retours",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "heading_max_width": 15,
             "title_size": 72,
             "title_size_mobile": 32,
@@ -108,7 +112,11 @@
         "height": "medium",
         "text_alignment": "center",
         "full_width": false,
-        "color_scheme": "1"
+        "color_scheme": "1",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
       }
     },
     "faq_header_wMhwag": {
@@ -117,8 +125,8 @@
         "title": "Returns Policy",
         "title_fr": "Politique de Retour",
         "use_h1": false,
-        "text": "<p>Welcome to our Returns and Exchanges Policy page. This policy is just for our online shoppers at <a href=\"http://www.yellowshoes.com\">www.yellowshoes.com</a>. If you made your purchase in-store, no worries—you can return or exchange your items at any of our store locations. Below, we’ve answered some common questions to help make your return process smooth and easy, including how to send items back, the conditions, timelines, and how to make a warranty claim. We're here to help!</p><p></p><p><strong>Extension of the Return Policy</strong></p><p>All purchases made between <strong>November 24 and December 25, 2025</strong> will be eligible for an <strong>extended return period</strong>.<br/><br/>It will therefore be possible to <strong>exchange or receive a refund</strong> for your purchases until <strong>January 8, 2026</strong>.</p><p>Please note that <strong>no refunds or exchanges</strong> will be processed on <strong>December 26 and 27, 2025</strong>.</p><p><strong>Happy Holidays! 🎄</strong></p><p>Returned merchandise <strong>must be accompanied by the original receipt and packaging</strong>. In addition, items must be <strong>in new condition with no signs of wear</strong>. This excludes all return types that we do not normally accept: <strong>final sale, clearance (over 41% off), jewelry, socks, care products, insoles, etc.</strong></p>",
-        "text_fr": "<p>Bienvenue sur notre page de Politique de Retours et Échanges. Cette politique est spécialement pour nos clients en ligne sur <a href=\"http://www.yellowshoes.com\">www.chaussuresyellow.com</a>. Si vous avez acheté en magasin, pas de souci—vous pouvez retourner ou échanger vos articles dans l'une de nos boutiques. Plus bas, nous avons répondu à quelques questions fréquentes pour vous aider à rendre votre processus de retour simple et facile, incluant comment renvoyer vos articles, les conditions, les délais, et comment faire une demande de garantie. Nous sommes là pour vous aider!</p><p></p><p><strong>Prolongation de la politique de retour</strong></p><p>Tous les achats effectués entre le <strong>24 novembre et le 25 décembre 2025</strong> seront admissibles à une <strong>prolongation des délais de retour</strong>.<br/><br/>Il sera donc possible d’<strong>échanger ou de vous faire rembourser</strong> vos achats jusqu’au <strong>8 janvier 2026</strong>.</p><p>À noter qu’il n’y aura <strong>aucun remboursement ou échange</strong> les <strong>26 et 27 décembre 2025</strong>.</p><p><strong>Joyeuses Fêtes ! 🎄</strong></p><p>La marchandise retournée doit obligatoirement être accompagnée du <strong>reçu et de l’emballage d’origine</strong>. De plus, cette marchandise doit être <strong>neuve et ne présenter aucun signe d’usure</strong>. Ceci exclut tous les types de retours que nous n’acceptons pas nécessairement : <strong>vente finale (ferme), liquidation (plus de 41 % de rabais), bijoux, bas, produits d’entretien, semelles, etc.</strong></p>",
+        "text": "<p>Welcome to our Returns and Exchanges Policy page. This policy is just for our online shoppers at <a href=\"http://www.yellowshoes.com\">www.yellowshoes.com</a>. If you made your purchase in-store, no worries—you can return or exchange your items at any of our store locations. Below, we’ve answered some common questions to help make your return process smooth and easy, including how to send items back, the conditions, timelines, and how to make a warranty claim. We're here to help!</p><p>Returned merchandise <strong>must be accompanied by the original receipt and packaging</strong>. In addition, items must be <strong>in new condition with no signs of wear</strong>. This excludes all return types that we do not normally accept: <strong>final sale, clearance (over 41% off), jewelry, socks, care products, insoles, etc.</strong></p>",
+        "text_fr": "<p>Bienvenue sur notre page de Politique de Retours et Échanges. Cette politique est spécialement pour nos clients en ligne sur <a href=\"http://www.yellowshoes.com\">www.chaussuresyellow.com</a>. Si vous avez acheté en magasin, pas de souci—vous pouvez retourner ou échanger vos articles dans l'une de nos boutiques. Plus bas, nous avons répondu à quelques questions fréquentes pour vous aider à rendre votre processus de retour simple et facile, incluant comment renvoyer vos articles, les conditions, les délais, et comment faire une demande de garantie. Nous sommes là pour vous aider!</p><p>La marchandise retournée doit obligatoirement être accompagnée du <strong>reçu et de l’emballage d’origine</strong>. De plus, cette marchandise doit être <strong>neuve et ne présenter aucun signe d’usure</strong>. Ceci exclut tous les types de retours que nous n’acceptons pas nécessairement : <strong>vente finale (ferme), liquidation (plus de 41 % de rabais), bijoux, bas, produits d’entretien, semelles, etc.</strong></p>",
         "show_search": false,
         "show_index": false,
         "index_heading": "How can we help?",
@@ -155,7 +163,11 @@
         "height": "medium",
         "text_alignment": "left",
         "full_width": false,
-        "color_scheme": "default"
+        "color_scheme": "default",
+        "title_font_family": "default",
+        "title_font_weight": "regular",
+        "title_font_weight_regular_bold": "regular",
+        "title_font_style": "regular"
       }
     },
     "multi_column_mYX7gb": {
@@ -169,8 +181,16 @@
             "image_fr": "shopify://shop_images/MAIL-RETURN.jpg",
             "title": "Return by mail",
             "title_fr": "Retour par la poste",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>Return your online orders by mail - <strong>Sezzle and Paypal orders accepted</strong></p>",
             "text_fr": "<p>Retournez vos commandes en ligne par la poste - <strong>Commandes Sezzle et PayPal acceptées</strong></p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "",
             "button_label_fr": "",
             "link": "https://www.yellowshoes.com/apps/returns-center",
@@ -185,8 +205,16 @@
             "image_fr": "shopify://shop_images/STORE-RETURN.jpg",
             "title": "Return to a store",
             "title_fr": "Retour en magasin",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "text": "<p>In store returns are free - <strong>Paypal and Sezzle orders not accepted</strong></p>",
             "text_fr": "<p>Tous les retours effectués en magasin sont gratuits - <strong>Commandes PayPal et Sezzle non acceptées</strong></p>",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "button_label": "",
             "button_label_fr": "",
             "link": "https://www.yellowshoes.com/apps/store-locator",
@@ -216,7 +244,11 @@
           "type": "subheading",
           "settings": {
             "subheading": "Step One",
-            "subheading_fr": ""
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular"
           }
         },
         "heading_bwNNXe": {
@@ -224,6 +256,10 @@
           "settings": {
             "title": "Create a returns label",
             "title_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "use_h1": false
           }
         },
@@ -232,6 +268,10 @@
           "settings": {
             "text": "<p>Description of this step for processing a return.</p>",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "enlarge_text": false
           }
         }
@@ -257,7 +297,11 @@
           "type": "subheading",
           "settings": {
             "subheading": "Step Two",
-            "subheading_fr": ""
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular"
           }
         },
         "heading_d7Adz7": {
@@ -265,6 +309,10 @@
           "settings": {
             "title": "Print your label",
             "title_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "use_h1": false
           }
         },
@@ -273,6 +321,10 @@
           "settings": {
             "text": "<p>Description of this step for processing a return.</p>",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "enlarge_text": false
           }
         }
@@ -298,7 +350,11 @@
           "type": "subheading",
           "settings": {
             "subheading": "Step Three",
-            "subheading_fr": ""
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular"
           }
         },
         "heading_PtVaWc": {
@@ -306,6 +362,10 @@
           "settings": {
             "title": "Bag it up",
             "title_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "use_h1": false
           }
         },
@@ -314,6 +374,10 @@
           "settings": {
             "text": "<p>Description of this step for processing a return.</p>",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "enlarge_text": false
           }
         }
@@ -339,7 +403,11 @@
           "type": "subheading",
           "settings": {
             "subheading": "Step Four",
-            "subheading_fr": ""
+            "subheading_fr": "",
+            "subheading_font_family": "default",
+            "subheading_font_weight": "regular",
+            "subheading_font_weight_regular_bold": "regular",
+            "subheading_font_style": "regular"
           }
         },
         "heading_dBcMYi": {
@@ -347,6 +415,10 @@
           "settings": {
             "title": "Drop it off",
             "title_fr": "",
+            "title_font_family": "default",
+            "title_font_weight": "regular",
+            "title_font_weight_regular_bold": "regular",
+            "title_font_style": "regular",
             "use_h1": false
           }
         },
@@ -355,6 +427,10 @@
           "settings": {
             "text": "<p>Description of this step for processing a return.</p>",
             "text_fr": "",
+            "text_font_family": "default",
+            "text_font_weight": "regular",
+            "text_font_weight_regular_bold": "regular",
+            "text_font_style": "regular",
             "enlarge_text": false
           }
         }

@@ -491,7 +491,7 @@
     "prod_pre_order_label_show": false,
     "enable_product_reviews_collection": false,
     "swatch_enabled": true,
-    "swatch_option_name": "Color,color,Colour,Couleur",
+    "swatch_option_name": "Color,color,Colour,Couleur,couleur",
     "swatch_method": "variant-images",
     "swatch_value_list": "Black:#000000\nNoir:#000000\nBrown:#964B00\nBrun:#964B00\nRed:#D2042D\nRouge:#D2042D\nYellow:#F5E821\nJaune:#F5E821\nBlue:#0047AB\nBleu:#0047AB\nGrey:#CCC\nGris:#CCC\nPink:#FFC0CB\nRose:#FFC0CB\nPurple:#752EC2\nMauve:#752EC2\nGreen:#098407\nVert:#098407\nOrange:#EE8B0A\nOrange:#EE8B0A\nMulti:colour-multi.jpg",
     "swatch_style": "icon_circle",
@@ -553,6 +553,11 @@
       "11068332061543699368": {
         "type": "shopify://apps/booster-page-speed-optimizer/blocks/app-embed/d920faf3-7c60-423a-9636-22618b5561b5",
         "disabled": false,
+        "settings": {}
+      },
+      "7721651268894810972": {
+        "type": "shopify://apps/love-loyalty-program/blocks/cart-membership/8e46a2a8-82de-4569-80eb-5c6a231931d5",
+        "disabled": true,
         "settings": {}
       }
     }

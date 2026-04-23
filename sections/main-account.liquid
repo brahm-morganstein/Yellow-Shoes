@@ -16,7 +16,9 @@
     {% render 'customer-sidebar', customer: customer %}
     <div id="customer_orders" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
       {% render 'customer.dashboard', customer: customer %}
+      {% render 'customer.profile.styles' %}
       {% render 'customer.profile' %}
+      {% render 'customer.profile.behavior' %}
 
       {% render 'customer.order_history' %}
       {% comment %}
@@ -92,33 +94,43 @@
 
 
   $(document).ready(function(){
-    let $body = $('body');
     let $_GET = getQueryString();
     checkSection($_GET.section);
-    $( "#dob_field" ).datepicker({ dateFormat: $.datepicker.regional[window.language],  changeYear: true,yearRange: '1900:+10',firstDay: 1,
-                                   onSelect: function(dateText, inst) {
-                                     // console.log(inst);
-                                     $( "#dob_field" ).val((inst.selectedMonth + 1) + '/' + inst.selectedDay + '/' + inst.selectedYear);
-                                   }});
   });
 
   function checkSection(section){
     let $body = $('body');
+    let $accountSections = $body.find('.account-section');
+    let $dashboardSection = $body.find('#customer_dashboard_section');
+    let $profileSection = $body.find('#customer_profile_section');
+    let $ordersSection = $body.find('#customer_orders_section');
 
     if(section === undefined || section ==='dashboard'){
       $body.find('.account-sidebar-item.dashboard').addClass('active');
-      $body.find('.account-section').hide();
-      $body.find('#customer_dashboard_section').show();
+      if ($accountSections.length) {
+        $accountSections.hide();
+      }
+      if ($dashboardSection.length) {
+        $dashboardSection.show();
+      }
     }
     if(section === 'profile'){
       $body.find('.account-sidebar-item.profile').addClass('active');
-      $body.find('.account-section').hide();
-      $body.find('#customer_profile_section').show();
+      if ($accountSections.length) {
+        $accountSections.hide();
+      }
+      if ($profileSection.length) {
+        $profileSection.show();
+      }
     }
     if(section === 'order-history'){
       $body.find('.account-sidebar-item.order-history').addClass('active');
-      $body.find('.account-section').hide();
-      $body.find('#customer_orders_section').show();
+      if ($accountSections.length) {
+        $accountSections.hide();
+      }
+      if ($ordersSection.length) {
+        $ordersSection.show();
+      }
     }
   }
   function getQueryString(){

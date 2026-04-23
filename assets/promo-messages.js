@@ -17,8 +17,8 @@ function setProductBlockPromoMessage(){
         let promo_tags = _promo.tags.toLowerCase().split(',')
         promo_tags.forEach(function(promo_tag){
           if(_promo.enabled && tags.includes(promo_tag.trim())){
-            console.log('tags',tags)
-            console.log('promo_tag',promo_tag.trim())
+            // console.log('tags',tags)
+            // console.log('promo_tag',promo_tag.trim())
             let message = language == 'en' ? _promo.message : _promo.message_fr;
             let _html = `<div class="_promo" style="color:${_promo.fg_color};">${message}</div>`
             if($(_pbElement).find('.product-block__detail').find('.product-link').first().find('._promo').length == 0){

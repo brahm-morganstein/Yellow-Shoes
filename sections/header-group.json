@@ -58,6 +58,28 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_M9n4tM": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Free shipping on </strong></a>",
+            "text_fr": "🚚 <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Livraison gratuite</strong> sur tout</a>",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": true,
+            "hide_on_end": false,
+            "end_date": "2026-04-20",
+            "end_time": "23:59",
+            "number_font": "heading",
+            "countdown_separator": "space",
+            "use_custom_colors": false,
+            "bg_color": "#9ecc3b",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
         "announcement_7Vqrkz": {
           "type": "announcement",
           "settings": {
@@ -97,27 +119,6 @@
             "use_custom_colors": false,
             "bg_color": "#4a4a4a",
             "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
-            "text_color": "#ffffff"
-          }
-        },
-        "announcement_M9n4tM": {
-          "type": "announcement",
-          "settings": {
-            "text": "🚚 <strong>Free shipping</strong> on order over $85",
-            "text_fr": "🚚 <strong>Livraison gratuite</strong> dès 85$",
-            "popup_text_replacement": "",
-            "popup_text_replacement_fr": "",
-            "button_popup": "",
-            "button_popup_fr": "",
-            "show_countdown": false,
-            "hide_on_end": false,
-            "end_date": "",
-            "end_time": "",
-            "number_font": "heading",
-            "countdown_separator": "space",
-            "use_custom_colors": false,
-            "bg_color": "#9ecc3b",
-            "bg_gradient": "",
             "text_color": "#ffffff"
           }
         },
@@ -233,9 +234,9 @@
         }
       },
       "block_order": [
+        "announcement_M9n4tM",
         "announcement_7Vqrkz",
         "announcement_mLdP76",
-        "announcement_M9n4tM",
         "announcement_Jw8kcf",
         "announcement_TaPzKD",
         "announcement_qiQWqx",
@@ -475,7 +476,7 @@
         "head_not_col_txt1": "#171717",
         "head_not_col_txt2": "#4c4c4b",
         "head_not_mob_show": true,
-        "head_not_mob_text": "Free shipping on orders over $100",
+        "head_not_mob_text": "Free shipping on orders over $85",
         "head_not_mob_text_fr": "",
         "head_not_mob_url": ""
       }

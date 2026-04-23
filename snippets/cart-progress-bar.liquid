@@ -124,8 +124,11 @@ function calculateProgressBar(subtotal) {
   
 document.addEventListener('on:cart:after-merge', async (event) => {
   // your code here
-  console.log(event)
-  const cartResponse = await fetch('https://www.yellowshoes.com/cart.json');
+  const shopRoot = window.Shopify && window.Shopify.routes && window.Shopify.routes.root
+                   ? window.Shopify.routes.root
+                   : '/';
+  const cart_url = `${shopRoot}cart.json`;
+  const cartResponse = await fetch(cart_url);
   const cartData = await cartResponse.json();
   let subtotal = cartData.original_total_price / 100;
   subtotal = Number.parseFloat(subtotal.toString().replace('$',''));

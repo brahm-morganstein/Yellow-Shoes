@@ -57,13 +57,37 @@ $(document).ready(function(){
             if(language!='en'){
                 //Product page option color on variant change
                 let variant = event.detail.variant;
-                let text = variant.option2;
-                let color = app_settings.color_translations.find(function(_color){
-                    return _color.color_en.toLowerCase() == text.toLowerCase()
-                })
-                if(color){
-                    $('.js-color-text').first().html(color[`color_${language}`]);
-                    $('#mobile-add-to-cart-color').html(color[`color_${language}`])
+                let selectedOptions = (event.detail && event.detail.selectedOptions) || [];
+                let colorOptionIndex = selectedOptions.findIndex(function(option){
+                    return isColorOption(option.name);
+                });
+
+                if(colorOptionIndex < 0 && variant && Array.isArray(variant.options)){
+                    $('fieldset').each(function(index){
+                        if(colorOptionIndex >= 0){
+                            return;
+                        }
+                        if(isColorOption($(this).data('option'))){
+                            colorOptionIndex = index;
+                        }
+                    })
+                }
+
+                let text = '';
+                if(colorOptionIndex >= 0 && selectedOptions[colorOptionIndex]){
+                    text = selectedOptions[colorOptionIndex].value || '';
+                } else if(colorOptionIndex >= 0 && variant){
+                    text = variant.options ? variant.options[colorOptionIndex] : '';
+                }
+
+                if(text){
+                    let color = app_settings.color_translations.find(function(_color){
+                        return _color.color_en.toLowerCase() == text.toLowerCase()
+                    })
+                    if(color){
+                        $('.js-color-text').first().html(color[`color_${language}`]);
+                        $('#mobile-add-to-cart-color').html(color[`color_${language}`])
+                    }
                 }
             }
         });
@@ -98,7 +122,7 @@ $(document).ready(function(){
                 let input = $(this).find('input')
                 let input_name = $(input).attr('name')
                 //Colors
-                if(input_name.includes('color')){
+                if(hasOptionAlias(input_name, colorOptionAliases)){
 
                     let text = '';
                     if($(this).find('span').length > 0){
@@ -112,7 +136,7 @@ $(document).ready(function(){
                     }
                 }
                 //Sizes
-                if(input_name.includes('size')){
+                if(hasOptionAlias(input_name, sizeOptionAliases)){
                     let text = '';
                     if($(this).find('span').length > 0){
                         text = $(this).find('span').html().trim()
@@ -179,25 +203,26 @@ $(document).ready(function(){
         if(language!='en'){
             //Products Page Options
             $('fieldset').each(function(){
-                let option = $(this).data('option');
-                if(option == 'color'){
-                    let html = $(this).html().replace('color:','couleur:');
-                    $(this).html(html)
-                    let text = '';
-                    if($(this).find('span').length > 0){
-                        text =  $(this).find('span').html().trim()
-                    }
-                    let color = app_settings.color_translations.find(function(_color){
-                        return _color.color_en.toLowerCase() == text.toLowerCase()
-                    })
-                    if(color){
-                        $(this).find('span').html(color[`color_${language}`]);
-                        $('#mobile-add-to-cart-color').html(color[`color_${language}`])
+                let option = normalizeOptionName($(this).data('option'));
+                if(isColorOption(option)){
+                    let label = $(this).find('legend')
+                    let html = $(label).html().replace(/\b(Color|color|Colour|colour|Couleur|couleur)\s*:/g,'couleur:');
+                    $(label).html(html)
+
+                    let selectedColorText = $(this).find('.js-color-text').first().html()
+                    if(selectedColorText){
+                        let color = app_settings.color_translations.find(function(_color){
+                            return _color.color_en.toLowerCase() == selectedColorText.trim().toLowerCase()
+                        })
+                        if(color){
+                            $(this).find('.js-color-text').first().html(color[`color_${language}`]);
+                            $('#mobile-add-to-cart-color').html(color[`color_${language}`])
+                        }
                     }
                 }
-                if(option == 'size'){
+                if(isSizeOption(option)){
                     let label = $(this).find('legend')
-                    let html = $(label).html().replace('size','pointure');
+                    let html = $(label).html().replace(/\b(Size|size|Taille|taille)\b/g,'taille');
                     $(label).html(html)
                 }
             })
@@ -209,7 +234,7 @@ $(document).ready(function(){
             //
             $(".opt-label").each(function(){
                 let input_for = $(this).attr('for')
-                if(input_for.includes('color')){
+                if(hasOptionAlias(input_for, colorOptionAliases)){
                     let text = '';
                     if($(this).find('span').length > 0){
                         text =  $(this).find('span').html().trim()
@@ -251,11 +276,11 @@ $(document).ready(function(){
         if(language != 'en'){
             $(".cart-item__variant-label").each(function(){
                 let label = $(this).html();
-                if(label.includes('color')){
-                    $(this).html(label.replace('color','couleur'))
+                if(/\b(Color|color|Colour|colour|Couleur|couleur)\b/.test(label)){
+                    $(this).html(label.replace(/\b(Color|color|Colour|colour|Couleur|couleur)\b/g,'couleur'))
                 }
-                if(label.includes('size')){
-                    $(this).html(label.replace('size','pointure'))
+                if(/\b(Size|size|Pointure|pointure)\b/.test(label)){
+                    $(this).html(label.replace(/\b(Size|size|Pointure|pointure)\b/g,'pointure'))
                 }
             })
             $('.cart-item__variant-value').each(function(){
