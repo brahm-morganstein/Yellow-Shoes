@@ -127,6 +127,7 @@
         "button_LR3nai",
         "button_GVtBRe"
       ],
+      "disabled": true,
       "name": "Background video",
       "settings": {
         "video_external": "https://youtu.be/qTn1AqcYZ3U",
@@ -154,10 +155,10 @@
         "image_AhVFJt": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HP_Banner_Wide.png",
-            "image_fr": "shopify://shop_images/HP_Banner_Wide.png",
-            "mobile_image": "shopify://shop_images/HP_Banner_Tall.png",
-            "mobile_image_fr": "shopify://shop_images/HP_Banner_Tall.png",
+            "image": "shopify://shop_images/Yellow_HERO_FLASHSALE_2048x1024_EN.gif",
+            "image_fr": "shopify://shop_images/Yellow_HERO_FLASHSALE_2048x1024_FR.gif",
+            "mobile_image": "shopify://shop_images/Yellow_HERO_FLASHSALE_1080x1920_EN.gif",
+            "mobile_image_fr": "shopify://shop_images/Yellow_HERO_FLASHSALE_1080x1920_FR.gif",
             "slide_link": "",
             "subheading": "",
             "subheading_fr": "",
@@ -165,8 +166,8 @@
             "subheading_font_weight": "regular",
             "subheading_font_weight_regular_bold": "regular",
             "subheading_font_style": "regular",
-            "title": "Free Shipping on everything",
-            "title_fr": "Livraison gratuite sur tout",
+            "title": "",
+            "title_fr": "",
             "title_font_family": "gelica",
             "title_font_weight": "regular",
             "title_font_weight_regular_bold": "regular",
@@ -176,8 +177,8 @@
             "title_size": 84,
             "title_size_mobile": 46,
             "use_h1": false,
-            "text": "<p>Hurry! For a limited time only.<strong> </strong><a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><em><strong>Some regions excluded.</strong></em></a></p>",
-            "text_fr": "<p>Faites vite! Pour une durée limitée seulement. <a href=\"/pages/delivery-and-shipping\" title=\"Online shipping policy\"><strong>Certaines régions exclues.</strong></a></p>",
+            "text": "",
+            "text_fr": "",
             "text_font_family": "default",
             "text_font_weight": "regular",
             "text_font_weight_regular_bold": "regular",
@@ -243,7 +244,7 @@
             "enable_catalogue_controls_4": false,
             "button_url_4": "shopify://collections/new-arrivals-accessories",
             "button_url_4_fr": "shopify://collections/new-arrivals-accessories",
-            "text_alignment": "center center",
+            "text_alignment": "bottom center",
             "show_countdown": true,
             "end_date": "2026-04-20",
             "end_time": "23:59",
@@ -261,7 +262,6 @@
       "block_order": [
         "image_AhVFJt"
       ],
-      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "height": "adapt",
