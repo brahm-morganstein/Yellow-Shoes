@@ -80,8 +80,30 @@
             "text_color": "#ffffff"
           }
         },
+        "announcement_Jw8kcf": {
+          "type": "announcement",
+          "settings": {
+            "text": "🚨<strong>20% off everything — WOW20</strong>, tonight only!",
+            "text_fr": "🚨<strong>20% sur tout </strong>— WOW20, ce soir seulement",
+            "popup_text_replacement": "",
+            "popup_text_replacement_fr": "",
+            "button_popup": "",
+            "button_popup_fr": "",
+            "show_countdown": true,
+            "hide_on_end": false,
+            "end_date": "2026-04-26",
+            "end_time": "23:59",
+            "number_font": "base",
+            "countdown_separator": "box",
+            "use_custom_colors": false,
+            "bg_color": "#4a4a4a",
+            "bg_gradient": "",
+            "text_color": "#ffffff"
+          }
+        },
         "announcement_7Vqrkz": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "☀️ Now Live – Spring 2026. <a href=\"/pages/new-arrivals-for-the-entire-family\" title=\"New Arrivals For the Entire Family\"><strong>Shop Now</strong></a>",
             "text_fr": "☀️ Printemps 2026 en ligne. <a href=\"/pages/new-arrivals-for-the-entire-family\" title=\"New Arrivals For the Entire Family\"><strong>Voir la collection</strong></a>",
@@ -103,6 +125,7 @@
         },
         "announcement_mLdP76": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "🎨 New <strong>Solange Pilote</strong> Collection — <a href=\"/collections/solange-pilote\" title=\"Solange Pilote x Yellow\"><strong>Shop Now</strong></a>",
             "text_fr": "🎨 Nouvelle collection <strong>Solange Pilote</strong> — <a href=\"/collections/solange-pilote\" title=\"Solange Pilote x Yellow\"><strong>Magasiner</strong></a>",
@@ -119,28 +142,6 @@
             "use_custom_colors": false,
             "bg_color": "#4a4a4a",
             "bg_gradient": "linear-gradient(180deg, rgba(230, 81, 59, 1), rgba(230, 81, 59, 1) 60%, rgba(235, 83, 60, 1) 100%)",
-            "text_color": "#ffffff"
-          }
-        },
-        "announcement_Jw8kcf": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Holiday Gift Guide</strong></a> — Shop now & spread the cheer",
-            "text_fr": "🎁 <a href=\"/pages/holiday-gift-guides\" title=\"Holiday Gift Guides\"><strong>Guide-cadeaux des Fêtes</strong></a> — Magasiner ici",
-            "popup_text_replacement": "",
-            "popup_text_replacement_fr": "",
-            "button_popup": "",
-            "button_popup_fr": "",
-            "show_countdown": false,
-            "hide_on_end": false,
-            "end_date": "2024-09-03",
-            "end_time": "08:30",
-            "number_font": "base",
-            "countdown_separator": "box",
-            "use_custom_colors": false,
-            "bg_color": "#4a4a4a",
-            "bg_gradient": "",
             "text_color": "#ffffff"
           }
         },
@@ -235,9 +236,9 @@
       },
       "block_order": [
         "announcement_M9n4tM",
+        "announcement_Jw8kcf",
         "announcement_7Vqrkz",
         "announcement_mLdP76",
-        "announcement_Jw8kcf",
         "announcement_TaPzKD",
         "announcement_qiQWqx",
         "announcement_F7egfq",
