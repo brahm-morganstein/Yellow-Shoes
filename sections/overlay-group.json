@@ -54,7 +54,7 @@
         "tier_reward_type": "amount",
         "tier_1_reward_text": "Free shipping",
         "tier_1_reward_text_fr": "Livraison gratuite",
-        "tier_1_value": 85,
+        "tier_1_value": 0,
         "tier_1_reward_value": 0,
         "tier_1_free_shipping": true,
         "tier_2_reward_text": "",
