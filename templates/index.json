@@ -269,7 +269,7 @@
         "height_mobile": 460,
         "full_width": true,
         "mobile_overlay_under": false,
-        "overlay_style": "shadow",
+        "overlay_style": "no_background",
         "transition": "fade",
         "navigation": "arrows",
         "autoplay": true,
