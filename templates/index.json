@@ -285,8 +285,8 @@
           "settings": {
             "heading": "FAST SHIPPING",
             "heading_fr": "LIVRAISON RAPIDE",
-            "subheading": "Free shipping on orders over $85",
-            "subheading_fr": "Livraison gratuite dès 85$",
+            "subheading": "Free shipping on all orders*",
+            "subheading_fr": "Livraison gratuite sur tout*",
             "link_url": "shopify://pages/delivery-and-shipping"
           }
         },
