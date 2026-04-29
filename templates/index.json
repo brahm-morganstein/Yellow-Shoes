@@ -127,6 +127,7 @@
         "button_LR3nai",
         "button_GVtBRe"
       ],
+      "disabled": true,
       "name": "Background video",
       "settings": {
         "video_external": "https://youtu.be/qTn1AqcYZ3U",
@@ -245,7 +246,7 @@
             "button_url_4_fr": "shopify://collections/new-arrivals-accessories",
             "text_alignment": "center center",
             "show_countdown": true,
-            "end_date": "2026-04-20",
+            "end_date": "2026-05-04",
             "end_time": "23:59",
             "end_text": "",
             "end_text_fr": "",
@@ -261,7 +262,6 @@
       "block_order": [
         "image_AhVFJt"
       ],
-      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "height": "adapt",
